@@ -3,7 +3,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>columncv@micz.it</em:id>
     <em:type>2</em:type>
-    <em:name>LocationCV</em:name>
+    <em:name>ColumnCV</em:name>
     <em:version>2.0</em:version>
     <em:creator>m@micz.it</em:creator>
     <em:contributor></em:contributor>
