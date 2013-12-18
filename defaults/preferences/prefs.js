@@ -1,1 +1,1 @@
-pref("extensions.LocationCV@micz.it.description", "chrome://LocationCV/locale/overlay.properties");
+pref("extensions.ColumnCV@micz.it.description", "chrome://ColumnCV/locale/overlay.properties");

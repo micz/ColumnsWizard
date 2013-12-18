@@ -1,8 +1,8 @@
 if(!it) var it={};
 if(!it.micz) it.micz={};
-if(!it.micz.LocationCV) it.micz.LocationCV={};
+if(!it.micz.ColumnCV) it.micz.ColumnCV={};
 
-it.micz.LocationCV = {
+it.micz.ColumnCV = {
 	init: function() {
 	try{
 		// initialization code
@@ -25,8 +25,8 @@ it.micz.LocationCV = {
 	},
 	
 	initDelayed: function(){
-  	setTimeout(function() { it.micz.LocationCV.init(); }, 750);
+  	setTimeout(function() { it.micz.ColumnCV.init(); }, 750);
 	},
 };
 
-window.addEventListener("load", it.micz.LocationCV.initDelayed, false);
+window.addEventListener("load", it.micz.ColumnCV.initDelayed, false);

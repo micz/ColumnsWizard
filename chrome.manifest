@@ -1,5 +1,5 @@
-content   LocationCV                 chrome/content/
-locale    LocationCV   en-US         chrome/locale/en-US/
-locale    LocationCV   it-IT         chrome/locale/it-IT/
+content   ColumnCV                 chrome/content/
+locale    ColumnCV   en-US         chrome/locale/en-US/
+locale    ColumnCV   it-IT         chrome/locale/it-IT/
 
-overlay chrome://messenger/content/messenger.xul chrome://LocationCV/content/overlay.xul
+overlay chrome://messenger/content/messenger.xul chrome://ColumnCV/content/overlay.xul
