@@ -4,7 +4,7 @@
     <em:id>locationcv@micz.it</em:id>
     <em:type>2</em:type>
     <em:name>ColumnCV</em:name>
-    <em:version>2.0</em:version>
+    <em:version>2.1alpha</em:version>
     <em:creator>m@micz.it</em:creator>
     <em:contributor></em:contributor>
     <em:optionsURL>chrome://ColumnCV/content/settings.xul</em:optionsURL>
