@@ -1,0 +1,5 @@
+<!ENTITY ColumnCV.SettingsTitle "ColumnCV Settings">
+<!ENTITY ColumnCV.GlobalDesc "Choose here which additional columns you want to see in the Conversation View.">
+<!ENTITY ShowLocation.label "Location">
+<!ENTITY ShowAccount.label "Account">
+<!ENTITY ShowAttachment.label "Attachment">

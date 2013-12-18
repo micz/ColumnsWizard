@@ -7,6 +7,7 @@
     <em:version>2.0</em:version>
     <em:creator>m@micz.it</em:creator>
     <em:contributor></em:contributor>
+    <em:optionsURL>chrome://ColumnCV/content/settings.xul</em:optionsURL>
     <em:localized>
       <Description>
         <em:locale>it-IT</em:locale>

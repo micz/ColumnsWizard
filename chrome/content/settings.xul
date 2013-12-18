@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://ColumnCV/locale/settings.dtd">
+<prefwindow id="ColumnCV_Settings"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  title="&ColumnCV.SettingsTitle;">
+  <prefpane id="ColumnCV_PrefPane">
+    <preferences>
+      <preference id="ColumnCV.ShowLocation"
+        name="extensions.ColumnCV.ShowLocation"
+        type="bool" />
+      <preference id="ColumnCV.ShowAccount"
+        name="extensions.ColumnCV.ShowAccount"
+        type="bool" />
+      <preference id="ColumnCV.ShowAttachment"
+        name="extensions.ColumnCV.ShowAttachment"
+        type="bool" />
+    </preferences>
+    <label control="symbol" value="&ColumnCV.GlobalDesc;"/>
+    <label control="symbol" value=" "/>
+    <checkbox id="ColumnCV.ShowLocation_checkbox" label="&ShowLocation.label;"
+      preference="ColumnCV.ShowLocation" />
+    <checkbox id="ColumnCV.ShowAccount_checkbox" label="&ShowAccount.label;"
+      preference="ColumnCV.ShowAccount" />
+    <checkbox id="ColumnCV.ShowAttachment_checkbox" label="&ShowAttachment.label;"
+      preference="ColumnCV.ShowAttachment" />
+  </prefpane>
+</prefwindow>
