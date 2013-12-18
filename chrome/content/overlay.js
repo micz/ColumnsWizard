@@ -23,7 +23,7 @@ it.micz.ColumnCV = {
 		this.initialized = true;
 	},
 	
-	showColumn: function(tab){
+	showColumns: function(tab){
     let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
     prefs = prefs.getBranch("extensions.ColumnCV.");
     this.showLocation = prefs.getBoolPref("ShowLocation");
@@ -43,7 +43,6 @@ it.micz.ColumnCV = {
       let attachcv = document.getElementById("attachmentCol");
       if(attachcv) attachcv.setAttribute("hidden", "false");
      }
-
     }
   },
 	
