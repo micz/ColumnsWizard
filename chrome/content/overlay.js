@@ -14,7 +14,16 @@ it.micz.ColumnCV = {
     let tabmail = document.getElementById("tabmail");
     let monitor = {
       onTabTitleChanged:function(tab){},
-      onTabSwitched: function(tab)
+      onTabSwitched: this.showColumns,
+    };
+    tabmail.registerTabMonitor(monitor);
+    }catch(e){
+      alert("No tabContainer available! " + e);
+    }
+		this.initialized = true;
+	},
+	
+	showColumn: function(tab)
       {
         let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
         prefs = prefs.getBranch("extensions.ColumnCV.");
@@ -37,14 +46,7 @@ it.micz.ColumnCV = {
          }
 
         }
-      }
-    };
-    tabmail.registerTabMonitor(monitor);
-    }catch(e){
-      alert("No tabContainer available! " + e);
-    }
-		this.initialized = true;
-	},
+      },
 	
 	initDelayed: function(){
   	setTimeout(function() { it.micz.ColumnCV.init(); }, 750);
