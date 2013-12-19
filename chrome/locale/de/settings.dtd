@@ -1,0 +1,5 @@
+<!ENTITY ColumnCV.SettingsTitle "ColumnCV Einstellungen">
+<!ENTITY ColumnCV.GlobalDesc "Entscheiden Sie hier welche zusätzlichen Spalten in der Konversations-Ansicht dargestellt werden sollen.">
+<!ENTITY ShowLocation.label "Ablageort">
+<!ENTITY ShowAccount.label "Konto">
+<!ENTITY ShowAttachment.label "Anhang">

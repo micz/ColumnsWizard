@@ -1,5 +1,6 @@
 content   ColumnCV                 chrome/content/
 locale    ColumnCV   en-US         chrome/locale/en-US/
 locale    ColumnCV   it-IT         chrome/locale/it-IT/
+locale    ColumnCV   de            chrome/locale/de/
 
 overlay chrome://messenger/content/messenger.xul chrome://ColumnCV/content/overlay.xul
