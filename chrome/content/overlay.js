@@ -1,8 +1,6 @@
-if(!it) var it={};
-if(!it.micz) it.micz={};
-if(!it.micz.ColumnsWizard) it.micz.ColumnsWizard={};
+if(!miczColumnsWizard) miczColumnsWizard={};
 
-it.micz.ColumnsWizard = {
+miczColumnsWizard = {
 
   showLocation: true,
   showAccount: false,
