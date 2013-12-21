@@ -11,7 +11,7 @@
     <em:optionsURL>chrome://ColumnCV/content/settings.xul</em:optionsURL>
     <em:localized>
       <Description>
-        <em:locale>it-IT</em:locale>
+        <em:locale>it</em:locale>
         <em:name>ColumnCV</em:name>
         <em:description>Un'estensione di Thunderbird che permette di mostrare le colonne nascoste nella visualizzazione "Conversazione".</em:description>
       </Description>
