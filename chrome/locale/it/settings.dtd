@@ -1,5 +1,5 @@
 <!ENTITY ColumnCV.SettingsTitle "Opzioni ColumnCV">
-<!ENTITY ColumnCV.GlobalDesc "Scegli qui quali colonne aggiuntive mostrare nella visualizzazione Conversazione.">
+<!ENTITY ColumnCV.GlobalDesc "Scegli qui quali colonne aggiuntive mostrare nel tab di visualizzazione a Conversazione.">
 <!ENTITY ShowLocation.label "Posizione">
 <!ENTITY ShowAccount.label "Account">
 <!ENTITY ShowAttachment.label "Allegato">

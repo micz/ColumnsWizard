@@ -13,10 +13,10 @@
       <Description>
         <em:locale>it</em:locale>
         <em:name>ColumnCV</em:name>
-        <em:description>Un'estensione di Thunderbird che permette di mostrare le colonne nascoste nella visualizzazione "Conversazione".</em:description>
+        <em:description>Un'estensione di Thunderbird che permette di mostrare le colonne nascoste nel tab di visualizzazione a "Conversazione".</em:description>
       </Description>
     </em:localized>
-    <em:description>A Thunderbird extension that shows hidden columns in the Conversation View.</em:description>
+    <em:description>A Thunderbird extension that shows hidden columns in the Conversation Tab.</em:description>
     <em:targetApplication>
       <Description>
         <em:id>{3550f703-e582-4d05-9a08-453d09bdfdc6}</em:id> <!-- Thunderbird -->
