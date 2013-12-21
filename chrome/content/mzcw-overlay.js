@@ -1,4 +1,4 @@
-if(!miczColumnsWizard) miczColumnsWizard={};
+var miczColumnsWizard={};
 
 miczColumnsWizard = {
 
@@ -45,8 +45,8 @@ miczColumnsWizard = {
   },
 	
 	initDelayed: function(){
-  	setTimeout(function() { it.micz.ColumnsWizard.init(); }, 750);
+  	setTimeout(function() { miczColumnsWizard.init(); }, 750);
 	},
 };
 
-window.addEventListener("load", it.micz.ColumnsWizard.initDelayed, false);
+window.addEventListener("load", miczColumnsWizard.initDelayed, false);

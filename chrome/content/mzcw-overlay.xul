@@ -5,7 +5,7 @@
 <overlay id="ColumnCV-browser-overlay"
  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-<script type="application/x-javascript" src="chrome://ColumnsWizard/content/overlay.js" />
+<script type="application/x-javascript" src="chrome://ColumnsWizard/content/mzcw-overlay.js" />
 
 <stringbundleset id="stringbundleset">
   <stringbundle id="ColumnsWizard-string-bundle"
