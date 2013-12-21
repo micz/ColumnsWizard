@@ -1,28 +1,28 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<!DOCTYPE overlay SYSTEM "chrome://ColumnCV/locale/settings.dtd">
-<prefwindow id="ColumnCV_Settings"
+<!DOCTYPE overlay SYSTEM "chrome://ColumnsWizard/locale/settings.dtd">
+<prefwindow id="ColumnsWizard_Settings"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-  title="&ColumnCV.SettingsTitle;">
-  <prefpane id="ColumnCV_PrefPane">
+  title="&ColumnsWizard.SettingsTitle;">
+  <prefpane id="ColumnsWizard_PrefPane">
     <preferences>
-      <preference id="ColumnCV.ShowLocation"
-        name="extensions.ColumnCV.ShowLocation"
+      <preference id="ColumnsWizard.ShowLocation"
+        name="extensions.ColumnsWizard.ShowLocation"
         type="bool" />
-      <preference id="ColumnCV.ShowAccount"
-        name="extensions.ColumnCV.ShowAccount"
+      <preference id="ColumnsWizard.ShowAccount"
+        name="extensions.ColumnsWizard.ShowAccount"
         type="bool" />
-      <preference id="ColumnCV.ShowAttachment"
-        name="extensions.ColumnCV.ShowAttachment"
+      <preference id="ColumnsWizard.ShowAttachment"
+        name="extensions.ColumnsWizard.ShowAttachment"
         type="bool" />
     </preferences>
-    <label control="symbol" value="&ColumnCV.GlobalDesc;"/>
+    <label control="symbol" value="&ColumnsWizard.GlobalDesc;"/>
     <label control="symbol" value=" "/>
-    <checkbox id="ColumnCV.ShowLocation_checkbox" label="&ShowLocation.label;"
-      preference="ColumnCV.ShowLocation" />
-    <checkbox id="ColumnCV.ShowAccount_checkbox" label="&ShowAccount.label;"
-      preference="ColumnCV.ShowAccount" />
-    <checkbox id="ColumnCV.ShowAttachment_checkbox" label="&ShowAttachment.label;"
-      preference="ColumnCV.ShowAttachment" />
+    <checkbox id="ColumnsWizard.ShowLocation_checkbox" label="&ShowLocation.label;"
+      preference="ColumnsWizard.ShowLocation" />
+    <checkbox id="ColumnsWizard.ShowAccount_checkbox" label="&ShowAccount.label;"
+      preference="ColumnsWizard.ShowAccount" />
+    <checkbox id="ColumnsWizard.ShowAttachment_checkbox" label="&ShowAttachment.label;"
+      preference="ColumnsWizard.ShowAttachment" />
   </prefpane>
 </prefwindow>

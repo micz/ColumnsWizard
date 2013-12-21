@@ -1,8 +1,8 @@
 if(!it) var it={};
 if(!it.micz) it.micz={};
-if(!it.micz.ColumnCV) it.micz.ColumnCV={};
+if(!it.micz.ColumnsWizard) it.micz.ColumnsWizard={};
 
-it.micz.ColumnCV = {
+it.micz.ColumnsWizard = {
 
   showLocation: true,
   showAccount: false,
@@ -25,7 +25,7 @@ it.micz.ColumnCV = {
 	
 	showColumns: function(tab){
     let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-    prefs = prefs.getBranch("extensions.ColumnCV.");
+    prefs = prefs.getBranch("extensions.ColumnsWizard.");
     this.showLocation = prefs.getBoolPref("ShowLocation");
     this.showAccount = prefs.getBoolPref("ShowAccount");
     this.showAttachment = prefs.getBoolPref("ShowAttachment");
@@ -47,8 +47,8 @@ it.micz.ColumnCV = {
   },
 	
 	initDelayed: function(){
-  	setTimeout(function() { it.micz.ColumnCV.init(); }, 750);
+  	setTimeout(function() { it.micz.ColumnsWizard.init(); }, 750);
 	},
 };
 
-window.addEventListener("load", it.micz.ColumnCV.initDelayed, false);
+window.addEventListener("load", it.micz.ColumnsWizard.initDelayed, false);

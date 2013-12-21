@@ -1,4 +1,4 @@
-pref("extensions.ColumnCV@micz.it.description", "chrome://ColumnCV/locale/overlay.properties");
-pref("extensions.ColumnCV.ShowLocation", true);
-pref("extensions.ColumnCV.ShowAccount", false);
-pref("extensions.ColumnCV.ShowAttachment", false);
+pref("extensions.ColumnsWizard@micz.it.description", "chrome://ColumnsWizard/locale/overlay.properties");
+pref("extensions.ColumnsWizard.ShowLocation", true);
+pref("extensions.ColumnsWizard.ShowAccount", false);
+pref("extensions.ColumnsWizard.ShowAttachment", false);

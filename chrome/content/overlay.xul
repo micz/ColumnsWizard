@@ -1,15 +1,15 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
-<!DOCTYPE overlay SYSTEM "chrome://ColumnCV/locale/overlay.dtd">
+<!DOCTYPE overlay SYSTEM "chrome://ColumnsWizard/locale/overlay.dtd">
 
 <overlay id="ColumnCV-browser-overlay"
  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-<script type="application/x-javascript" src="chrome://ColumnCV/content/overlay.js" />
+<script type="application/x-javascript" src="chrome://ColumnsWizard/content/overlay.js" />
 
 <stringbundleset id="stringbundleset">
-  <stringbundle id="ColumnCV-string-bundle"
-    src="chrome://ColumnCV/locale/overlay.properties" />
+  <stringbundle id="ColumnsWizard-string-bundle"
+    src="chrome://ColumnsWizard/locale/overlay.properties" />
 </stringbundleset>
 
 </overlay>

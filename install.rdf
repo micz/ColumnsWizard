@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <RDF xmlns="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:em="http://www.mozilla.org/2004/em-rdf#">
   <Description about="urn:mozilla:install-manifest">
-    <em:id>locationcv@micz.it</em:id>
+    <em:id>columnswizard@micz.it</em:id>
     <em:type>2</em:type>
-    <em:name>ColumnCV</em:name>
+    <em:name>ColumnsWizard</em:name>
     <em:version>2.1alpha</em:version>
     <em:creator>m@micz.it</em:creator>
     <em:contributor></em:contributor>
 	<em:translator>Axel Grude (de)</em:translator>
-    <em:optionsURL>chrome://ColumnCV/content/settings.xul</em:optionsURL>
+    <em:optionsURL>chrome://ColumnsWizard/content/settings.xul</em:optionsURL>
     <em:localized>
       <Description>
         <em:locale>it</em:locale>
-        <em:name>ColumnCV</em:name>
+        <em:name>ColumnsWizard</em:name>
         <em:description>Un'estensione di Thunderbird che permette di mostrare le colonne nascoste nel tab di visualizzazione a "Conversazione".</em:description>
       </Description>
     </em:localized>
