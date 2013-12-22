@@ -4,7 +4,7 @@
     <em:id>columnswizard@micz.it</em:id>
     <em:type>2</em:type>
     <em:name>ColumnsWizard</em:name>
-    <em:version>2.2alpha</em:version>
+    <em:version>3.0alpha</em:version>
     <em:creator>m@micz.it</em:creator>
     <em:contributor></em:contributor>
     <em:optionsURL>chrome://ColumnsWizard/content/mzcw-settings.xul</em:optionsURL>
