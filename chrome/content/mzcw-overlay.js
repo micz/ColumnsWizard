@@ -12,7 +12,7 @@ miczColumnsWizard = {
     let tabmail = document.getElementById("tabmail");
     let monitor = {
       onTabTitleChanged:function(tab){},
-      //onTabSwitched: this.showColumns,
+      onTabSwitched: function(tab){}, //this.showColumns,
       //onTabRestored: this.showColumns,
       onTabOpened: this.showColumns,
     };
