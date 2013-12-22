@@ -2,8 +2,16 @@
 <?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
 <!DOCTYPE overlay SYSTEM "chrome://ColumnsWizard/locale/overlay.dtd">
 
-<overlay id="ColumnCV-browser-overlay"
+<overlay id="ColumnsWizard-browser-overlay"
  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+  <tree id="threadTree">
+    <treecols id="threadCols">
+    <splitter class="tree-splitter" />
+    <treecol id="ccCol" persist="hidden ordinal width" hidden="true" flex="2"
+           label="&ColumnsWizardCc.label;" tooltiptext="&ColumnsWizardCcDesc.label;" />
+    </treecols>
+  </tree>
 
 <script type="application/x-javascript" src="chrome://ColumnsWizard/content/mzcw-overlay.js" />
 
