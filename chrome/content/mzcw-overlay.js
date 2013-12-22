@@ -7,12 +7,17 @@ miczColumnsWizard = {
   showAttachment: false,
 
 	initDelayed: function(){
+    //Adding custom columns
+    var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+    ObserverService.addObserver(miczColumnsWizard.CreateDbObserver, "MsgCreateDBView", false);
+
+    //Conversation Tab add columns - delayed
   	setTimeout(function() { miczColumnsWizard.init(); }, 750);
 	},
 
 	init: function() {
 	try{
-		// Conversation Tab add columns
+		//Conversation Tab add columns
     let tabmail = document.getElementById("tabmail");
     let monitor = {
       onTabTitleChanged:function(tab){},
@@ -24,10 +29,6 @@ miczColumnsWizard = {
     }catch(e){
       alert("No tabContainer available! " + e);
     }
-    
-    //Adding custom columns
-    var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-    ObserverService.addObserver(this.CreateDbObserver, "MsgCreateDBView", false);
     
 		this.initialized = true;
 	},
