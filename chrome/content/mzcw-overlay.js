@@ -8,11 +8,11 @@ miczColumnsWizard = {
 
 	init: function() {
 	try{
-		// initialization code
+		// Conversation Tab add columns
     let tabmail = document.getElementById("tabmail");
     let monitor = {
       onTabTitleChanged:function(tab){},
-      //onTabSwitched: this.showColumns,
+      onTabSwitched: function(tab){}, //this.showColumns,
       //onTabRestored: this.showColumns,
       onTabOpened: this.showColumns,
     };
@@ -20,6 +20,11 @@ miczColumnsWizard = {
     }catch(e){
       alert("No tabContainer available! " + e);
     }
+    
+    //Adding custom columns
+    var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+    ObserverService.addObserver(this.CreateDbObserver, "MsgCreateDBView", false);
+    
 		this.initialized = true;
 	},
 	
@@ -49,6 +54,40 @@ miczColumnsWizard = {
 	initDelayed: function(){
   	setTimeout(function() { miczColumnsWizard.init(); }, 750);
 	},
+	
+	
+	//Custom columns
+
+  CreateDbObserver: {
+    // Components.interfaces.nsIObserver
+    observe: function(aMsgFolder, aTopic, aData)
+                {  
+                   this.addCustomColumnHandler();
+                }
+  },
+
+	//Cc
+  columnHandler_Cc: {
+     getCellText:         function(row, col) {
+        //get the message's header so that we can extract the cc to field
+        var hdr = gDBView.getMsgHdrAt(row);
+        return hdr.getStringProperty("Cc");
+     },
+     getSortStringForRow: function(hdr) {return hdr.getStringProperty("Cc");},
+     isString:            function() {return true;},
+     getCellProperties:   function(row, col, props){},
+     getRowProperties:    function(row, props){},
+     getImageSrc:         function(row, col) {return null;},
+     getSortLongForRow:   function(hdr) {return 0;}
+  },
+  
+  addCustomColumnHandler: function() {
+     gDBView.addColumnHandler("ccCol", this.columnHandler_Cc);
+  },
+  //Cc - END
+  
+  //Custom columns - END
+	
 };
 
 window.addEventListener("load", miczColumnsWizard.initDelayed, false);
