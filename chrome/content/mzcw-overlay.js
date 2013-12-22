@@ -6,6 +6,10 @@ miczColumnsWizard = {
   showAccount: false,
   showAttachment: false,
 
+	initDelayed: function(){
+  	setTimeout(function() { miczColumnsWizard.init(); }, 750);
+	},
+
 	init: function() {
 	try{
 		// Conversation Tab add columns
@@ -51,29 +55,25 @@ miczColumnsWizard = {
     }
   },
 	
-	initDelayed: function(){
-  	setTimeout(function() { miczColumnsWizard.init(); }, 750);
-	},
-	
 	
 	//Custom columns
 
   CreateDbObserver: {
     // Components.interfaces.nsIObserver
     observe: function(aMsgFolder, aTopic, aData)
-                {  
-                   this.addCustomColumnHandler();
+                {
+                   miczColumnsWizard.addCustomColumnHandler();
                 }
   },
 
 	//Cc
   columnHandler_Cc: {
-     getCellText:         function(row, col) {
+     getCellText:         function(row, col) {alert("qui1");
         //get the message's header so that we can extract the cc to field
         var hdr = gDBView.getMsgHdrAt(row);
-        return hdr.getStringProperty("Cc");
+        return hdr.getStringProperty("ccList");alert("qui");
      },
-     getSortStringForRow: function(hdr) {return hdr.getStringProperty("Cc");},
+     getSortStringForRow: function(hdr) {return hdr.getStringProperty("ccList");},
      isString:            function() {return true;},
      getCellProperties:   function(row, col, props){},
      getRowProperties:    function(row, props){},
@@ -82,7 +82,7 @@ miczColumnsWizard = {
   },
   
   addCustomColumnHandler: function() {
-     gDBView.addColumnHandler("ccCol", this.columnHandler_Cc);
+     gDBView.addColumnHandler("ccCol_cw", this.columnHandler_Cc);alert("qui2");
   },
   //Cc - END
   

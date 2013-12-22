@@ -8,7 +8,7 @@
   <tree id="threadTree">
     <treecols id="threadCols">
     <splitter class="tree-splitter" />
-    <treecol id="ccCol" persist="hidden ordinal width" hidden="true" flex="2"
+    <treecol id="ccCol_cw" persist="hidden ordinal width" hidden="true" flex="2"
            label="&ColumnsWizardCc.label;" tooltiptext="&ColumnsWizardCcDesc.label;" />
     </treecols>
   </tree>
