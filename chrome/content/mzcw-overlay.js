@@ -68,10 +68,10 @@ miczColumnsWizard = {
 
 	//Cc
   columnHandler_Cc: {
-     getCellText:         function(row, col) {alert("qui1");
+     getCellText:         function(row, col) {
         //get the message's header so that we can extract the cc to field
         var hdr = gDBView.getMsgHdrAt(row);
-        return hdr.getStringProperty("ccList");alert("qui");
+        return hdr.getStringProperty("ccList");
      },
      getSortStringForRow: function(hdr) {return hdr.getStringProperty("ccList");},
      isString:            function() {return true;},
@@ -82,7 +82,7 @@ miczColumnsWizard = {
   },
   
   addCustomColumnHandler: function() {
-     gDBView.addColumnHandler("ccCol_cw", this.columnHandler_Cc);alert("qui2");
+     gDBView.addColumnHandler("ccCol_cw", this.columnHandler_Cc);
   },
   //Cc - END
   
