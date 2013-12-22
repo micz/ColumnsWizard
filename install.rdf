@@ -7,13 +7,18 @@
     <em:version>2.2alpha</em:version>
     <em:creator>m@micz.it</em:creator>
     <em:contributor></em:contributor>
-	<em:translator>Axel Grude (de)</em:translator>
     <em:optionsURL>chrome://ColumnsWizard/content/mzcw-settings.xul</em:optionsURL>
     <em:localized>
       <Description>
         <em:locale>it</em:locale>
         <em:name>ColumnsWizard</em:name>
         <em:description>Un'estensione di Thunderbird che permette di mostrare le colonne nascoste nel tab di visualizzazione a "Conversazione".</em:description>
+      </Description>
+      <Description>
+        <em:locale>de</em:locale>
+        <em:name>ColumnsWizard</em:name>
+        <em:description>Eine Thunderbird Erweiterung die versteckte Spalten in der Konversations-Ansicht anzeigt.</em:description>
+        <em:translator>Axel Grude</em:translator>
       </Description>
     </em:localized>
     <em:description>A Thunderbird extension that shows hidden columns in the Conversation Tab.</em:description>
