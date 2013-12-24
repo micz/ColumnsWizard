@@ -1,5 +1,5 @@
 <!ENTITY ColumnsWizard.SettingsTitle "ColumnsWizard Einstellungen">
-<!ENTITY ColumnsWizard.GlobalDesc "Entscheiden Sie hier welche zusätzlichen Spalten in der Konversations-Ansicht dargestellt werden sollen.">
-<!ENTITY ShowLocation.label "Ablageort">
-<!ENTITY ShowAccount.label "Konto">
-<!ENTITY ShowAttachment.label "Anhang">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Entscheiden Sie hier welche zusätzlichen Spalten in der Konversations-Ansicht dargestellt werden sollen.">
+<!ENTITY ColumnsWizard.ShowLocation.label "Ablageort">
+<!ENTITY ColumnsWizard.ShowAccount.label "Konto">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Anhang">

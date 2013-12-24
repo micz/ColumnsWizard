@@ -1,5 +1,10 @@
 <!ENTITY ColumnsWizard.SettingsTitle "ColumnsWizard Settings">
-<!ENTITY ColumnsWizard.GlobalDesc "Choose here which additional columns you want to see in the Conversation Tab.">
-<!ENTITY ShowLocation.label "Location">
-<!ENTITY ShowAccount.label "Account">
-<!ENTITY ShowAttachment.label "Attachment">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Choose here which additional columns you want to see in the Conversation Tab.">
+<!ENTITY ColumnsWizard.ShowLocation.label "Location">
+<!ENTITY ColumnsWizard.ShowAccount.label "Account">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Attachment">
+<!ENTITY ColumnsWizard.TabConversation.label "Conversation Tab">
+<!ENTITY ColumnsWizard.TabCustomCols.label "Custom Columns">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Choose here which custom columns you want to add.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Once selected, you need to show the column in the folder view where you need it.">
+<!ENTITY ColumnsWizard.AddCc.label "Cc">
