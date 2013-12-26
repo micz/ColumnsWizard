@@ -5,11 +5,17 @@ miczColumnsWizard = {
   showLocation: true,
   showAccount: false,
   showAttachment: false,
+  AddCc: false,
 
 	initDelayed: function(){
     //Adding custom columns
-    var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-    ObserverService.addObserver(miczColumnsWizard.CreateDbObserver, "MsgCreateDBView", false);
+    let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+    prefs = prefs.getBranch("extensions.ColumnsWizard.");
+    this.AddCc = prefs.getBoolPref("AddCc");
+    if(this.AddCc){
+      var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+      ObserverService.addObserver(miczColumnsWizard.CreateDbObserver, "MsgCreateDBView", false);
+    }
 
     //Conversation Tab add columns - delayed
   	setTimeout(function() { miczColumnsWizard.init(); }, 750);
@@ -83,7 +89,7 @@ miczColumnsWizard = {
   },
   
   addCustomColumnHandler: function() {
-     gDBView.addColumnHandler("ccCol_cw", this.columnHandler_Cc);
+     if(this.AddCc) gDBView.addColumnHandler("ccCol_cw", this.columnHandler_Cc);
   },
   //Cc - END
   
