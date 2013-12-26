@@ -14,7 +14,7 @@ miczColumnsWizard = {
     this.AddCc = prefs.getBoolPref("AddCc");
     if(this.AddCc){
       //Add cc custom column
-      this.addCustomColumn("cc");
+      miczColumnsWizard.addCustomColumn("cc");
       var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
       ObserverService.addObserver(miczColumnsWizard.CreateDbObserver, "MsgCreateDBView", false);
     }
@@ -107,8 +107,8 @@ miczColumnsWizard = {
           ccCol.setAttribute("flex","4");
           ccCol.setAttribute("label",labelString);
           ccCol.setAttribute("tooltiptext",tooltipString);
-          let element = document.getElementById("receivedCol");
-          element.parentNode.insertBefore(newColumn, element.nextSibiling);
+          let element = document.getElementById("dateCol");
+          element.parentNode.insertBefore(ccCol, element.nextSibiling);
         break;
       default: break;
     }    
