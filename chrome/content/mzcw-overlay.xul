@@ -16,8 +16,7 @@
 <script type="application/x-javascript" src="chrome://ColumnsWizard/content/mzcw-overlay.js" />
 
 <stringbundleset id="stringbundleset">
-  <stringbundle id="ColumnsWizard-string-bundle"
-    src="chrome://ColumnsWizard/locale/overlay.properties" />
+  <stringbundle id="ColumnsWizard-string-bundle" src="chrome://ColumnsWizard/locale/overlay.properties" />
 </stringbundleset>
 
 </overlay>

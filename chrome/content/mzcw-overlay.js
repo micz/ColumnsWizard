@@ -14,7 +14,7 @@ miczColumnsWizard = {
     this.AddCc = prefs.getBoolPref("AddCc");
     if(this.AddCc){
       //Add cc custom column
-      this.addCustomColumn('cc');
+      this.addCustomColumn("cc");
       var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
       ObserverService.addObserver(miczColumnsWizard.CreateDbObserver, "MsgCreateDBView", false);
     }
@@ -96,9 +96,18 @@ miczColumnsWizard = {
   
   addCustomColumn: function(coltype){
     switch(coltype){
-      case 'cc':
-          let ccCol = document.createElement('ccCol_cw');
-          let element = document.getElementById('receivedCol');
+      case "cc":
+          let stringsBundle = document.getElementById("ColumnsWizard-string-bundle");
+          let labelString = stringsBundle.getString('ColumnsWizardCc.label');
+          let tooltipString = stringsBundle.getString('ColumnsWizardCcDesc.label');
+          let ccCol = document.createElement("treecol");
+          ccCol.setAttribute("id","ccCol_cw");
+          ccCol.setAttribute("persist","hidden ordinal width");
+          ccCol.setAttribute("hidden","true");
+          ccCol.setAttribute("flex","4");
+          ccCol.setAttribute("label",labelString);
+          ccCol.setAttribute("tooltiptext",tooltipString);
+          let element = document.getElementById("receivedCol");
           element.parentNode.insertBefore(newColumn, element.nextSibiling);
         break;
       default: break;
