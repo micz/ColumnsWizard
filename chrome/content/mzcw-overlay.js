@@ -13,6 +13,8 @@ miczColumnsWizard = {
     prefs = prefs.getBranch("extensions.ColumnsWizard.");
     this.AddCc = prefs.getBoolPref("AddCc");
     if(this.AddCc){
+      //Add cc custom column
+      this.addCustomColumn('cc');
       var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
       ObserverService.addObserver(miczColumnsWizard.CreateDbObserver, "MsgCreateDBView", false);
     }
@@ -64,7 +66,6 @@ miczColumnsWizard = {
 	
 	
 	//Custom columns
-
   CreateDbObserver: {
     // Components.interfaces.nsIObserver
     observe: function(aMsgFolder, aTopic, aData)
@@ -93,6 +94,16 @@ miczColumnsWizard = {
   },
   //Cc - END
   
+  addCustomColumn: function(coltype){
+    switch(coltype){
+      case 'cc':
+          let ccCol = document.createElement('ccCol_cw');
+          let element = document.getElementById('receivedCol');
+          element.parentNode.insertBefore(newColumn, element.nextSibiling);
+        break;
+      default: break;
+    }    
+  },  
   //Custom columns - END
 	
 };
