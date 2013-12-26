@@ -5,13 +5,13 @@
 <overlay id="ColumnsWizard-browser-overlay"
  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-  <tree id="threadTree">
+ <!-- <tree id="threadTree">
     <treecols id="threadCols">
     <splitter class="tree-splitter" />
     <treecol id="ccCol_cw" persist="hidden ordinal width" hidden="true" flex="4"
            label="&ColumnsWizardCc.label;" tooltiptext="&ColumnsWizardCcDesc.label;" insertafter="recipientCol" />
     </treecols>
-  </tree>
+  </tree>-->
 
 <script type="application/x-javascript" src="chrome://ColumnsWizard/content/mzcw-overlay.js" />
 
