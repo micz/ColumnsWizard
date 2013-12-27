@@ -43,9 +43,10 @@
           <label control="symbol" class="mzcw-warn" value="&ColumnsWizard.WarnDescCustCols;"/>
           <label control="symbol" value=" "/>
           <checkbox id="ColumnsWizard.AddCc_checkbox" label="&ColumnsWizard.AddCc.label;"
-            preference="ColumnsWizard.AddCc" />
+            preference="ColumnsWizard.AddCc" oncommand="miczColumnsWizardPref.AddCc_toggle();"/>
         </tabpanel>
       </tabpanels>
     </tabbox>
   </prefpane>
+  <script type="application/x-javascript" src="chrome://ColumnsWizard/content/mzcw-settings.js" />
 </prefwindow>

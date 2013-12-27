@@ -63,6 +63,7 @@ var miczColumnsWizard = {
 	
 	
 	//Custom columns
+	//Cc
   CreateDbObserver_Cc: {
     // Components.interfaces.nsIObserver
     observe: function(aMsgFolder, aTopic, aData)
@@ -71,7 +72,6 @@ var miczColumnsWizard = {
                 }
   },
 
-	//Cc
   columnHandler_Cc: {
      getCellText:         function(row, col) {
         //get the message's header so that we can extract the cc to field
@@ -109,7 +109,17 @@ var miczColumnsWizard = {
         break;
       default: break;
     }    
-  },  
+  },
+  
+    removeCustomColumn: function(coltype){
+    switch(coltype){
+      case "cc":
+          let element = document.getElementById("ccCol_cw");
+          element.parentNode.removeChild(element);
+        break;
+      default: break;
+    }    
+  }, 
   //Custom columns - END
 	
 };
