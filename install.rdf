@@ -14,7 +14,7 @@
       <Description>
         <em:locale>de</em:locale>
         <em:name>ColumnsWizard</em:name>
-        <em:description>Eine Thunderbird Erweiterung die versteckte Spalten in der Konversations-Ansicht anzeigt.</em:description>
+        <em:description>Eine Thunderbird Erweiterung die versteckte Spalten in der Themenbaum Ansicht anzeigt.</em:description>
         <em:creator>m@micz.it</em:creator>
         <em:contributor></em:contributor>
         <em:translator>Axel Grude</em:translator>
