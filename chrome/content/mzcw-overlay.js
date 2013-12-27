@@ -19,7 +19,7 @@ var miczColumnsWizard = {
 
 		this.initialized = true;
     //Conversation Tab add columns - delayed
-  	setTimeout(function() { this.initDelayed(); }, 750);
+  	setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
 	},
 
 	initDelayed: function() {
