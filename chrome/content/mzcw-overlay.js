@@ -14,7 +14,7 @@ var miczColumnsWizard = {
       //Add cc custom column
       miczColumnsWizard.addCustomColumn("cc");
       var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-      ObserverService.addObserver(miczColumnsWizard.CreateDbObserver, "MsgCreateDBView", false);
+      ObserverService.addObserver(miczColumnsWizard.CreateDbObserver_Cc, "MsgCreateDBView", false);
     }
 
 		this.initialized = true;
@@ -63,7 +63,7 @@ var miczColumnsWizard = {
 	
 	
 	//Custom columns
-  CreateDbObserver: {
+  CreateDbObserver_Cc: {
     // Components.interfaces.nsIObserver
     observe: function(aMsgFolder, aTopic, aData)
                 {
