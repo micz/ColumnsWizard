@@ -2,5 +2,6 @@ content   ColumnsWizard                 chrome/content/
 locale    ColumnsWizard   en-US         chrome/locale/en-US/
 locale    ColumnsWizard   it            chrome/locale/it/
 locale    ColumnsWizard   de            chrome/locale/de/
+locale    ColumnsWizard   fr            chrome/locale/fr/
 
 overlay chrome://messenger/content/messenger.xul chrome://ColumnsWizard/content/mzcw-overlay.xul
