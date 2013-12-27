@@ -105,7 +105,7 @@ var miczColumnsWizard = {
           ccCol.setAttribute("label",labelString);
           ccCol.setAttribute("tooltiptext",tooltipString);
           let element = document.getElementById("dateCol");
-          element.parentNode.insertBefore(ccCol, element.nextSibiling);
+          element.parentNode.insertBefore(ccCol, element.nextSibling);
         break;
       default: break;
     }    
