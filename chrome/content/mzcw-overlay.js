@@ -8,7 +8,7 @@ var miczColumnsWizard = {
 	init: function(){
     //Adding custom columns
     let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-    prefs = prefs.getBranch("extensions.ColumnsWizard.");
+    prefs = prefs.getBranch("extensions.ColumnsWizardCustCols.");
     this.AddCc = prefs.getBoolPref("AddCc");
     if(this.AddCc){
       //Add cc custom column

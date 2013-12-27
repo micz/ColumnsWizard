@@ -18,8 +18,8 @@
         name="extensions.ColumnsWizard.ShowAttachment"
         type="bool" />
     <!-- Custom Columns -->
-      <preference id="ColumnsWizard.AddCc"
-        name="extensions.ColumnsWizard.AddCc"
+      <preference id="ColumnsWizardCustCols.AddCc"
+        name="extensions.ColumnsWizardCustCols.AddCc"
         type="bool" />
     </preferences>
     <tabbox>
@@ -44,7 +44,7 @@
           <label control="symbol" class="mzcw-warn" value="&ColumnsWizard.WarnDescCustCols2;"/>
           <label control="symbol" value=" "/>
           <checkbox id="ColumnsWizard.AddCc_checkbox" label="&ColumnsWizard.AddCc.label;"
-            preference="ColumnsWizard.AddCc"/>
+            preference="ColumnsWizardCustCols.AddCc"/>
         </tabpanel>
       </tabpanels>
     </tabbox>
