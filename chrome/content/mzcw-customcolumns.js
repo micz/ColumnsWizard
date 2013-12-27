@@ -44,7 +44,7 @@ var miczColumnsWizardCustCols={
           ccCol.setAttribute("label",labelString);
           ccCol.setAttribute("tooltiptext",tooltipString);
           let element = document.getElementById("dateCol");
-          element.parentNode.insertBefore(ccCol, element.nextSibling);
+          element.parentNode.appendChild(ccCol);
         break;
       default: break;
     }    
