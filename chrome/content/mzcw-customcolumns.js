@@ -28,11 +28,14 @@ var miczColumnsWizardCustCols={
   //Cc - END
   
   addCustomColumn: function(coltype){
+    let strBundle = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+    let _bundle = strBundle.createBundle("chrome://ColumnsWizard/locale/overlay.properties");
+
     switch(coltype){
       case "cc":
-          let stringsBundle = document.getElementById("ColumnsWizard-string-bundle");
-          let labelString = stringsBundle.getString('ColumnsWizardCc.label');
-          let tooltipString = stringsBundle.getString('ColumnsWizardCcDesc.label');
+          if(document.getElementById("ccCol_cw"))break;
+          let labelString = _bundle.GetStringFromName('ColumnsWizardCc.label');
+          let tooltipString = _bundle.GetStringFromName('ColumnsWizardCcDesc.label');
           let ccCol = document.createElement("treecol");
           ccCol.setAttribute("id","ccCol_cw");
           ccCol.setAttribute("persist","hidden ordinal width");
@@ -51,7 +54,7 @@ var miczColumnsWizardCustCols={
     switch(coltype){
       case "cc":
           let element = document.getElementById("ccCol_cw");
-          element.parentNode.removeChild(element);
+          if(element) element.parentNode.removeChild(element);
         break;
       default: break;
     }    
