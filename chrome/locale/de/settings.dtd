@@ -1,5 +1,11 @@
 <!ENTITY ColumnsWizard.SettingsTitle "ColumnsWizard Einstellungen">
-<!ENTITY ColumnsWizard.GlobalDesc "Entscheiden Sie hier welche zusätzlichen Spalten in der Konversations-Ansicht dargestellt werden sollen.">
-<!ENTITY ShowLocation.label "Ablageort">
-<!ENTITY ShowAccount.label "Konto">
-<!ENTITY ShowAttachment.label "Anhang">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Entscheiden Sie hier welche zusätzlichen Spalten in der Konversations-Ansicht dargestellt werden sollen.">
+<!ENTITY ColumnsWizard.ShowLocation.label "Ablageort">
+<!ENTITY ColumnsWizard.ShowAccount.label "Konto">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Anhang">
+<!ENTITY ColumnsWizard.TabConversation.label "Conversation Tab">
+<!ENTITY ColumnsWizard.TabCustomCols.label "Custom Columns">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Choose here which custom columns you want to add.">
+<!ENTITY ColumnsWizard.WarnDescCustCols1 "Once selected, you need to show the column in the folder view where you need it.">
+<!ENTITY ColumnsWizard.WarnDescCustCols2 "You'll have to do this again if you delesect and reselect a previously selected option.">
+<!ENTITY ColumnsWizard.AddCc.label "Cc">

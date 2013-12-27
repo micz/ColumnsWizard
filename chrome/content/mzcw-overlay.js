@@ -1,14 +1,30 @@
-var miczColumnsWizard={};
-
-miczColumnsWizard = {
+var miczColumnsWizard = {
 
   showLocation: true,
   showAccount: false,
   showAttachment: false,
+  AddCc: false,
 
-	init: function() {
+	init: function(){
+    //Adding custom columns
+    let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+    prefs = prefs.getBranch("extensions.ColumnsWizardCustCols.");
+    this.AddCc = prefs.getBoolPref("AddCc");
+    if(this.AddCc){
+      //Add cc custom column
+      miczColumnsWizardCustCols.addCustomColumn("cc");
+      var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+      ObserverService.addObserver(miczColumnsWizardCustCols.CreateDbObserver_Cc, "MsgCreateDBView", false);
+    }
+
+		this.initialized = true;
+    //Conversation Tab add columns - delayed
+  	setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
+	},
+
+	initDelayed: function() {
 	try{
-		// initialization code
+		//Conversation Tab add columns
     let tabmail = document.getElementById("tabmail");
     let monitor = {
       onTabTitleChanged:function(tab){},
@@ -20,7 +36,6 @@ miczColumnsWizard = {
     }catch(e){
       alert("No tabContainer available! " + e);
     }
-		this.initialized = true;
 	},
 	
 	showColumns: function(tab){
@@ -46,9 +61,6 @@ miczColumnsWizard = {
     }
   },
 	
-	initDelayed: function(){
-  	setTimeout(function() { miczColumnsWizard.init(); }, 750);
-	},
 };
 
-window.addEventListener("load", miczColumnsWizard.initDelayed, false);
+window.addEventListener("load", miczColumnsWizard.init, false);

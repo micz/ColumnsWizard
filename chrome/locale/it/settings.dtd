@@ -1,5 +1,11 @@
 <!ENTITY ColumnsWizard.SettingsTitle "Opzioni ColumnsWizard">
-<!ENTITY ColumnsWizard.GlobalDesc "Scegli qui quali colonne aggiuntive mostrare nel tab di visualizzazione a Conversazione.">
-<!ENTITY ShowLocation.label "Posizione">
-<!ENTITY ShowAccount.label "Account">
-<!ENTITY ShowAttachment.label "Allegato">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Scegli qui quali colonne aggiuntive mostrare nel tab di visualizzazione a Conversazione.">
+<!ENTITY ColumnsWizard.ShowLocation.label "Posizione">
+<!ENTITY ColumnsWizard.ShowAccount.label "Account">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Allegato">
+<!ENTITY ColumnsWizard.TabConversation.label "Tab Conversazione">
+<!ENTITY ColumnsWizard.TabCustomCols.label "Colonne Personalizzate">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Scegli qui quale colonna personalizzata vuoi aggiungere.">
+<!ENTITY ColumnsWizard.WarnDescCustCols1 "Una volta selezionata, devi visualizzare la colonna nella cartella in cui vuoi che sia visibile.">
+<!ENTITY ColumnsWizard.WarnDescCustCols2 "Questa operazione deve essere eseguita nuovamente se deselezioni e riselezioni un'opzione.">
+<!ENTITY ColumnsWizard.AddCc.label "Cc">

@@ -1,11 +1,13 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
+<?xml-stylesheet href="mzcw-settings.css" type="text/css"?>
 <!DOCTYPE overlay SYSTEM "chrome://ColumnsWizard/locale/settings.dtd">
 <prefwindow id="ColumnsWizard_Settings"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   title="&ColumnsWizard.SettingsTitle;">
   <prefpane id="ColumnsWizard_PrefPane">
     <preferences>
+    <!-- Columns in Conversation Tab -->
       <preference id="ColumnsWizard.ShowLocation"
         name="extensions.ColumnsWizard.ShowLocation"
         type="bool" />
@@ -15,14 +17,36 @@
       <preference id="ColumnsWizard.ShowAttachment"
         name="extensions.ColumnsWizard.ShowAttachment"
         type="bool" />
+    <!-- Custom Columns -->
+      <preference id="ColumnsWizardCustCols.AddCc"
+        name="extensions.ColumnsWizardCustCols.AddCc"
+        type="bool" />
     </preferences>
-    <label control="symbol" value="&ColumnsWizard.GlobalDesc;"/>
-    <label control="symbol" value=" "/>
-    <checkbox id="ColumnsWizard.ShowLocation_checkbox" label="&ShowLocation.label;"
-      preference="ColumnsWizard.ShowLocation" />
-    <checkbox id="ColumnsWizard.ShowAccount_checkbox" label="&ShowAccount.label;"
-      preference="ColumnsWizard.ShowAccount" />
-    <checkbox id="ColumnsWizard.ShowAttachment_checkbox" label="&ShowAttachment.label;"
-      preference="ColumnsWizard.ShowAttachment" />
+    <tabbox>
+      <tabs>
+        <tab label="&ColumnsWizard.TabConversation.label;"/>
+        <tab label="&ColumnsWizard.TabCustomCols.label;"/>
+      </tabs>
+      <tabpanels>
+        <tabpanel id="convtab" orient="vertical">
+          <label control="symbol" value="&ColumnsWizard.GlobalDescConvTab;"/>
+          <label control="symbol" value=" "/>
+          <checkbox id="ColumnsWizard.ShowLocation_checkbox" label="&ColumnsWizard.ShowLocation.label;"
+            preference="ColumnsWizard.ShowLocation" />
+          <checkbox id="ColumnsWizard.ShowAccount_checkbox" label="&ColumnsWizard.ShowAccount.label;"
+            preference="ColumnsWizard.ShowAccount" />
+          <checkbox id="ColumnsWizard.ShowAttachment_checkbox" label="&ColumnsWizard.ShowAttachment.label;"
+            preference="ColumnsWizard.ShowAttachment" />
+        </tabpanel>
+        <tabpanel id="custcols" orient="vertical">
+          <label control="symbol" value="&ColumnsWizard.GlobalDescCustCols;"/>
+          <label control="symbol" class="mzcw-warn" value="&ColumnsWizard.WarnDescCustCols1;"/>
+          <label control="symbol" class="mzcw-warn" value="&ColumnsWizard.WarnDescCustCols2;"/>
+          <label control="symbol" value=" "/>
+          <checkbox id="ColumnsWizard.AddCc_checkbox" label="&ColumnsWizard.AddCc.label;"
+            preference="ColumnsWizardCustCols.AddCc"/>
+        </tabpanel>
+      </tabpanels>
+    </tabbox>
   </prefpane>
 </prefwindow>
