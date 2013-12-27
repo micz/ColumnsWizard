@@ -12,9 +12,9 @@ var miczColumnsWizard = {
     this.AddCc = prefs.getBoolPref("AddCc");
     if(this.AddCc){
       //Add cc custom column
-     // miczColumnsWizard.addCustomColumn("cc");
-      //var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-    //  ObserverService.addObserver(miczColumnsWizard.CreateDbObserver_Cc, "MsgCreateDBView", false);
+      miczColumnsWizard.addCustomColumn("cc");
+      var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+      ObserverService.addObserver(miczColumnsWizard.CreateDbObserver, "MsgCreateDBView", false);
     }
 
 		this.initialized = true;
@@ -63,11 +63,11 @@ var miczColumnsWizard = {
 	
 	
 	//Custom columns
-  CreateDbObserver_Cc: {
+  CreateDbObserver: {
     // Components.interfaces.nsIObserver
     observe: function(aMsgFolder, aTopic, aData)
                 {
-                 gDBView.addColumnHandler("ccCol_cw", this.columnHandler_Cc);
+                 miczColumnsWizard.addCustomColumnHandler_Cc();
                 }
   },
 
@@ -86,6 +86,9 @@ var miczColumnsWizard = {
      getSortLongForRow:   function(hdr) {return 0;}
   },
   
+  addCustomColumnHandler_Cc: function() {
+     gDBView.addColumnHandler("ccCol_cw", this.columnHandler_Cc);
+  },
   //Cc - END
   
   addCustomColumn: function(coltype){
