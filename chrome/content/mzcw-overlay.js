@@ -1,29 +1,28 @@
-var miczColumnsWizard={};
-
-miczColumnsWizard = {
+var miczColumnsWizard = {
 
   showLocation: true,
   showAccount: false,
   showAttachment: false,
   AddCc: false,
 
-	initDelayed: function(){
+	init: function(){
     //Adding custom columns
     let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
     prefs = prefs.getBranch("extensions.ColumnsWizard.");
     this.AddCc = prefs.getBoolPref("AddCc");
     if(this.AddCc){
       //Add cc custom column
-      miczColumnsWizard.addCustomColumn("cc");
-      var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-      ObserverService.addObserver(miczColumnsWizard.CreateDbObserver, "MsgCreateDBView", false);
+     // miczColumnsWizard.addCustomColumn("cc");
+      //var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+    //  ObserverService.addObserver(miczColumnsWizard.CreateDbObserver_Cc, "MsgCreateDBView", false);
     }
 
+		this.initialized = true;
     //Conversation Tab add columns - delayed
-  	setTimeout(function() { miczColumnsWizard.init(); }, 750);
+  	setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
 	},
 
-	init: function() {
+	initDelayed: function() {
 	try{
 		//Conversation Tab add columns
     let tabmail = document.getElementById("tabmail");
@@ -37,8 +36,6 @@ miczColumnsWizard = {
     }catch(e){
       alert("No tabContainer available! " + e);
     }
-    
-		this.initialized = true;
 	},
 	
 	showColumns: function(tab){
@@ -66,11 +63,11 @@ miczColumnsWizard = {
 	
 	
 	//Custom columns
-  CreateDbObserver: {
+  CreateDbObserver_Cc: {
     // Components.interfaces.nsIObserver
     observe: function(aMsgFolder, aTopic, aData)
                 {
-                   miczColumnsWizard.addCustomColumnHandler();
+                 gDBView.addColumnHandler("ccCol_cw", this.columnHandler_Cc);
                 }
   },
 
@@ -78,7 +75,7 @@ miczColumnsWizard = {
   columnHandler_Cc: {
      getCellText:         function(row, col) {
         //get the message's header so that we can extract the cc to field
-        var hdr = gDBView.getMsgHdrAt(row);
+        let hdr = gDBView.getMsgHdrAt(row);
         return hdr.getStringProperty("ccList");
      },
      getSortStringForRow: function(hdr) {return hdr.getStringProperty("ccList");},
@@ -89,9 +86,6 @@ miczColumnsWizard = {
      getSortLongForRow:   function(hdr) {return 0;}
   },
   
-  addCustomColumnHandler: function() {
-     if(this.AddCc) gDBView.addColumnHandler("ccCol_cw", this.columnHandler_Cc);
-  },
   //Cc - END
   
   addCustomColumn: function(coltype){
@@ -117,4 +111,4 @@ miczColumnsWizard = {
 	
 };
 
-window.addEventListener("load", miczColumnsWizard.initDelayed, false);
+window.addEventListener("load", miczColumnsWizard.init, false);
