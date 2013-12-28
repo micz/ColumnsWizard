@@ -44,8 +44,8 @@ miczColumnsWizard.CustCols={
           ccCol.setAttribute("flex","4");
           ccCol.setAttribute("label",labelString);
           ccCol.setAttribute("tooltiptext",tooltipString);
-          let element = document.getElementById("dateCol");
-          element.parentNode.appendChild(ccCol);
+          let element = document.getElementById("threadCols");
+          element.appendChild(ccCol);
         break;
       default: break;
     }    
