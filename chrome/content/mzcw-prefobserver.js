@@ -43,7 +43,7 @@ miczColumnsWizard.PrefListener.prototype.unregister = function() {
 
 //Adding preferences listener
 miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
-  "extensions.ColumnsWizardCustCols.",
+  "extensions.ColumnsWizard.CustCols.",
   function(branch, name) {//dump("PrefListener call: "+name+"= "+branch.getBoolPref(name)+"\n\r");
     switch (name) {
       case "AddCc": //Cc Listener
