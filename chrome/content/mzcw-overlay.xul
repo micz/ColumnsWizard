@@ -1,16 +1,16 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
-<!DOCTYPE overlay SYSTEM "chrome://ColumnsWizard/locale/overlay.dtd">
+<!DOCTYPE overlay SYSTEM "chrome://columnswizard/locale/overlay.dtd">
 
 <overlay id="ColumnsWizard-browser-overlay"
  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
-<script type="application/x-javascript" src="chrome://ColumnsWizard/content/mzcw-overlay.js" />
-<script type="application/x-javascript" src="chrome://ColumnsWizard/content/mzcw-customcolumns.js" />
-<script type="application/x-javascript" src="chrome://ColumnsWizard/content/mzcw-prefobserver.js" />
+<script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-overlay.js" />
+<script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-customcolumns.js" />
+<script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-prefobserver.js" />
 
 <stringbundleset id="stringbundleset">
-  <stringbundle id="ColumnsWizard-string-bundle" src="chrome://ColumnsWizard/locale/overlay.properties" />
+  <stringbundle id="ColumnsWizard-string-bundle" src="chrome://columnswizard/locale/overlay.properties" />
 </stringbundleset>
 
 </overlay>
