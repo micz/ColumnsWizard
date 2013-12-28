@@ -35,20 +35,20 @@ miczColumnsWizard.CustCols={
     switch(coltype){
       case "cc":
           if(document.getElementById("ccCol_cw"))break;
-          let labelString = _bundleCW.GetStringFromName('ColumnsWizardCc.label');
-          let tooltipString = _bundleCW.GetStringFromName('ColumnsWizardCcDesc.label');
-          let ccCol = document.createElement("treecol");
-          ccCol.setAttribute("id","ccCol_cw");
-          ccCol.setAttribute("persist","hidden ordinal width");
-          ccCol.setAttribute("hidden","true");
-          ccCol.setAttribute("flex","4");
-          ccCol.setAttribute("label",labelString);
-          ccCol.setAttribute("tooltiptext",tooltipString);
-          let ccSplitter = document.createElement("splitter");
-          ccSplitter.setAttribute("class","tree-splitter");
+          let labelString = _bundleCW.GetStringFromName("ColumnsWizardCc.label");
+          let tooltipString = _bundleCW.GetStringFromName("ColumnsWizardCcDesc.label");
+          let ccCol_cw = document.createElement("treecol");
+          ccCol_cw.setAttribute("id","ccCol_cw");
+          ccCol_cw.setAttribute("persist","hidden ordinal width");
+          ccCol_cw.setAttribute("hidden","true");
+          ccCol_cw.setAttribute("flex","4");
+          ccCol_cw.setAttribute("label",labelString);
+          ccCol_cw.setAttribute("tooltiptext",tooltipString);
+          let ccSplitter_cw = document.createElement("splitter");
+          ccSplitter_cw.setAttribute("class","tree-splitter");
           let element = document.getElementById("threadCols");
-          element.appendChild(ccSplitter);
-          element.appendChild(ccCol);
+          element.appendChild(ccSplitter_cw);
+          element.appendChild(ccCol_cw);
         break;
       default: break;
     }
