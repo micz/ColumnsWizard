@@ -1,4 +1,4 @@
 pref("extensions.ColumnsWizard.ShowLocation", true);
 pref("extensions.ColumnsWizard.ShowAccount", false);
 pref("extensions.ColumnsWizard.ShowAttachment", false);
-pref("extensions.ColumnsWizard.AddCc", false);
+pref("extensions.ColumnsWizardCustCols.AddCc", false);
