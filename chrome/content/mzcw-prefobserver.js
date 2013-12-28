@@ -1,3 +1,4 @@
+if (!miczColumnsWizard) var miczColumnsWizard={};
 /**
  * @constructor
  *
@@ -5,7 +6,7 @@
  * @param {Function} callback must have the following arguments:
  *   branch, pref_leaf_name
  */
-function PrefListener(branch_name, callback) {
+miczColumnsWizard.PrefListener = function (branch_name, callback) {
   // Keeping a reference to the observed preference branch or it will get
   // garbage collected.
   var prefService = Components.classes["@mozilla.org/preferences-service;1"]
@@ -15,7 +16,7 @@ function PrefListener(branch_name, callback) {
   this._callback = callback;
 }
 
-PrefListener.prototype.observe = function(subject, topic, data) {
+miczColumnsWizard.PrefListener.prototype.observe = function(subject, topic, data) {
   if (topic == 'nsPref:changed')
     this._callback(this._branch, data);
 };
@@ -24,7 +25,7 @@ PrefListener.prototype.observe = function(subject, topic, data) {
  * @param {boolean=} trigger if true triggers the registered function
  *   on registration, that is, when this method is called.
  */
-PrefListener.prototype.register = function(trigger) {
+miczColumnsWizard.PrefListener.prototype.register = function(trigger) {
   this._branch.addObserver('', this, false);
   if (trigger) {
     let that = this;
@@ -34,31 +35,31 @@ PrefListener.prototype.register = function(trigger) {
   }
 };
 
-PrefListener.prototype.unregister = function() {
+miczColumnsWizard.PrefListener.prototype.unregister = function() {
   if (this._branch)
     this._branch.removeObserver('', this);
 };
 
 
 //Adding preferences listener
-var CWListener = new PrefListener(
+miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
   "extensions.ColumnsWizardCustCols.",
   function(branch, name) {//dump("PrefListener call: "+name+"= "+branch.getBoolPref(name)+"\n\r");
     switch (name) {
       case "AddCc": //Cc Listener
           if(branch.getBoolPref(name)){
             //checbox checked
-            miczColumnsWizardCustCols.addCustomColumn("cc");
+            miczColumnsWizard.CustCols.addCustomColumn("cc");
             var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-            ObserverService.addObserver(miczColumnsWizardCustCols.CreateDbObserver_Cc, "MsgCreateDBView", false);
+            ObserverService.addObserver(miczColumnsWizard.CustCols.CreateDbObserver_Cc, "MsgCreateDBView", false);
           }else{
             //checbox not checked
-            miczColumnsWizardCustCols.removeCustomColumn("cc");
+            miczColumnsWizard.CustCols.removeCustomColumn("cc");
             var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-            ObserverService.removeObserver(miczColumnsWizardCustCols.CreateDbObserver_Cc, "MsgCreateDBView");
+            ObserverService.removeObserver(miczColumnsWizard.CustCols.CreateDbObserver_Cc, "MsgCreateDBView");
           }
       break; //Cc Listener - END
     }
   }
 );
-CWListener.register(true);
+miczColumnsWizard.CWListener.register(true);

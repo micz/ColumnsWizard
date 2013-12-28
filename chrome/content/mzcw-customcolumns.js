@@ -1,10 +1,11 @@
-var miczColumnsWizardCustCols={
+if (!miczColumnsWizard) var miczColumnsWizard={};
+miczColumnsWizard.CustCols={
 	//Cc
   CreateDbObserver_Cc: {
     // Components.interfaces.nsIObserver
     observe: function(aMsgFolder, aTopic, aData)
                 {
-                 miczColumnsWizardCustCols.addCustomColumnHandler_Cc();
+                 miczColumnsWizard.CustCols.addCustomColumnHandler_Cc();
                 }
   },
 

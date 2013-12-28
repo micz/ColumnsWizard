@@ -12,9 +12,9 @@ var miczColumnsWizard = {
     this.AddCc = prefs.getBoolPref("AddCc");
     if(this.AddCc){
       //Add cc custom column
-      miczColumnsWizardCustCols.addCustomColumn("cc");
+      miczColumnsWizard.CustCols.addCustomColumn("cc");
       var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-      ObserverService.addObserver(miczColumnsWizardCustCols.CreateDbObserver_Cc, "MsgCreateDBView", false);
+      ObserverService.addObserver(miczColumnsWizard.CustCols.CreateDbObserver_Cc, "MsgCreateDBView", false);
     }
 
 		this.initialized = true;
