@@ -44,7 +44,10 @@ miczColumnsWizard.CustCols={
           ccCol.setAttribute("flex","4");
           ccCol.setAttribute("label",labelString);
           ccCol.setAttribute("tooltiptext",tooltipString);
+          let ccSplitter = document.createElement("splitter");
+          ccSplitter.setAttribute("class","tree-splitter");
           let element = document.getElementById("threadCols");
+          element.appendChild(ccSplitter);
           element.appendChild(ccCol);
         break;
       default: break;
