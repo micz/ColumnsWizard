@@ -9,7 +9,7 @@
     <em:description>A Thunderbird extension that shows hidden columns in the Conversation Tab.</em:description>
     <em:creator>m@micz.it</em:creator>
     <em:contributor></em:contributor>
-    <em:optionsURL>chrome://ColumnsWizard/content/mzcw-settings.xul</em:optionsURL>
+    <em:optionsURL>chrome://columnswizard/content/mzcw-settings.xul</em:optionsURL>
     <em:localized>
       <Description>
         <em:locale>de</em:locale>
@@ -26,6 +26,22 @@
         <em:creator>m@micz.it</em:creator>
         <em:contributor></em:contributor>
         <em:translator>m@micz.it</em:translator>
+      </Description>
+      <Description>
+        <em:locale>fr</em:locale>
+        <em:name>ColumnsWizard</em:name>
+        <em:description>Une extension pour Thunderbird qui permet d'afficher les colonnes masquées dans l'onglet Conversation.</em:description>
+        <em:creator>m@micz.it</em:creator>
+        <em:contributor></em:contributor>
+        <em:translator>Goofy</em:translator>
+      </Description>
+      <Description>
+        <em:locale>ru</em:locale>
+        <em:name>ColumnsWizard</em:name>
+        <em:description>Приложение для Thunderbird, которое позволяет увидеть скрытые столбцы во Вкладке Разговоров.</em:description>
+        <em:creator>m@micz.it</em:creator>
+        <em:contributor></em:contributor>
+        <em:translator>Salted</em:translator>
       </Description>
     </em:localized>
     <em:targetApplication>

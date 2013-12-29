@@ -1,0 +1,11 @@
+<!ENTITY ColumnsWizard.SettingsTitle "Настройки ColumnsWizard">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Выберите, какие дополнительные столбцы Вы хотите увидеть во Вкладке Разговоров.">
+<!ENTITY ColumnsWizard.ShowLocation.label "Расположение">
+<!ENTITY ColumnsWizard.ShowAccount.label "Учетная запись">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Прикрепление">
+<!ENTITY ColumnsWizard.TabConversation.label "Вкладка Разговоров">
+<!ENTITY ColumnsWizard.TabCustomCols.label "Пользовательские Столбцы">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Выберите, какие пользовательские столбцы Вы хотите добавить.">
+<!ENTITY ColumnsWizard.WarnDescCustCols1 "После выбора, в обзоре папок, Вы должны поместить столбец куда Вам нужно.">
+<!ENTITY ColumnsWizard.WarnDescCustCols2 "Вы должны будете сделать это заного, если Вы отмените и повторно выберите уже ранее выбранную опцию.">
+<!ENTITY ColumnsWizard.AddCc.label "Копия (сс)">
