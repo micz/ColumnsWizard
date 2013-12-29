@@ -29,8 +29,8 @@ miczColumnsWizard.CustCols={
   //Cc - END
   
   addCustomColumn: function(coltype){
-    var strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
-    var _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
+    let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+    let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
 
     switch(coltype){
       case "cc":
