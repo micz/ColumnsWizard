@@ -7,7 +7,7 @@
     <em:version>3.0alpha5</em:version>
     <em:name>ColumnsWizard</em:name>
     <em:description>A Thunderbird extension that shows hidden columns in the Conversation Tab.</em:description>
-    <em:creator>m@micz.it</em:creator>
+    <em:creator>Mic (m@micz.it)</em:creator>
     <em:contributor></em:contributor>
     <em:optionsURL>chrome://columnswizard/content/mzcw-settings.xul</em:optionsURL>
     <em:localized>
@@ -15,7 +15,7 @@
         <em:locale>de</em:locale>
         <em:name>ColumnsWizard</em:name>
         <em:description>Eine Thunderbird Erweiterung die versteckte Spalten in der Themenbaum Ansicht anzeigt.</em:description>
-        <em:creator>m@micz.it</em:creator>
+        <em:creator>Mic (m@micz.it)</em:creator>
         <em:contributor></em:contributor>
         <em:translator>Axel Grude</em:translator>
       </Description>
@@ -23,15 +23,15 @@
         <em:locale>it</em:locale>
         <em:name>ColumnsWizard</em:name>
         <em:description>Un'estensione di Thunderbird che permette di mostrare le colonne nascoste nel tab di visualizzazione a "Conversazione".</em:description>
-        <em:creator>m@micz.it</em:creator>
+        <em:creator>Mic (m@micz.it)</em:creator>
         <em:contributor></em:contributor>
-        <em:translator>m@micz.it</em:translator>
+        <em:translator>Mic (m@micz.it)</em:translator>
       </Description>
       <Description>
         <em:locale>fr</em:locale>
         <em:name>ColumnsWizard</em:name>
         <em:description>Une extension pour Thunderbird qui permet d'afficher les colonnes masquées dans l'onglet Conversation.</em:description>
-        <em:creator>m@micz.it</em:creator>
+        <em:creator>Mic (m@micz.it)</em:creator>
         <em:contributor></em:contributor>
         <em:translator>Goofy</em:translator>
       </Description>
@@ -39,7 +39,7 @@
         <em:locale>ru</em:locale>
         <em:name>ColumnsWizard</em:name>
         <em:description>Приложение для Thunderbird, которое позволяет увидеть скрытые столбцы во Вкладке Разговоров.</em:description>
-        <em:creator>m@micz.it</em:creator>
+        <em:creator>Mic (m@micz.it)</em:creator>
         <em:contributor></em:contributor>
         <em:translator>Salted</em:translator>
       </Description>
