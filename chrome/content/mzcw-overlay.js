@@ -10,6 +10,7 @@ var miczColumnsWizard = {
     let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
     prefs = prefs.getBranch("extensions.ColumnsWizard.CustCols.");
     this.AddCc = prefs.getBoolPref("AddCc");
+    prefs.setBoolPref("Init",false);
     if(this.AddCc){
       //Add cc custom column
       miczColumnsWizard.CustCols.addCustomColumn("cc");
@@ -18,6 +19,7 @@ var miczColumnsWizard = {
     }
 
 		this.initialized = true;
+    prefs.setBoolPref("Init",true);
     //Conversation Tab add columns - delayed
   	setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
 	},

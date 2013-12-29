@@ -45,6 +45,7 @@ miczColumnsWizard.PrefListener.prototype.unregister = function() {
 miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
   "extensions.ColumnsWizard.CustCols.",
   function(branch, name) {//dump("PrefListener call: "+name+"= "+branch.getBoolPref(name)+"\n\r");
+  if(!branch.getBoolPref("Init"))return;
     switch (name) {
       case "AddCc": //Cc Listener
           var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
