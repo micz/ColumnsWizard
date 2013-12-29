@@ -1,4 +1,4 @@
-if (!miczColumnsWizard) var miczColumnsWizard={};
+"use strict";
 miczColumnsWizard.CustCols={
 	//Cc
   CreateDbObserver_Cc: {
