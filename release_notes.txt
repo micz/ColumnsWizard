@@ -1,0 +1,32 @@
+-= ColumnsWizard Thunderbird Addon Release Notes =-
+
+==========
+Version 3.0 - 30/12/2013
+- It's now possible to show custom columns. The first one shows the mail cc header.
+- Added french translation (fr), thanks Goofy (from BabelZilla.org).
+- Added russian translation (ru), thanks Salted (from BabelZilla.org).
+==========
+Version 2.1.4 - 22/12/2013
+- If a column is removed from one conversation tab, it's not more added if switched again to that tab.
+==========
+Version 2.1.3 - 22/12/2013
+- Internal release.
+==========
+Version 2.1.2 - 21/12/2013
+- Minor bug fixing.
+==========
+Version 2.1.1 - 21/12/2013
+- Internal release.
+==========
+Version 2.1 - 21/12/2013
+- Internal release.
+- Changed name to "ColumnsWizard" (previous was ColumnCV).
+- Added german translation (de), thanks Axel Grude.
+==========
+Version 2.0 (as ColumnCV) - 18/12/2013
+- Added a preferences panel.
+- Now is possibile to choose which column to show between Location, Account and Attachment.
+==========
+Version 1.0 (as ColumnCV) - 17/12/2013
+- First release.
+==========
