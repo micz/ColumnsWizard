@@ -1,8 +1,8 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
-Version 3.1 - ??/??/201?
-- 
+Version 3.0.1 - 01/01/2014
+- Added background color and border to the Custom Columns tab warning message.
 ==========
 Version 3.0 - 30/12/2013
 - It's now possible to show custom columns. The first one shows the mail cc header.
