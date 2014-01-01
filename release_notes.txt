@@ -1,6 +1,9 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
+Version 3.1 - ??/??/2014
+- 
+==========
 Version 3.0.1 - 01/01/2014
 - Added background color and border to the Custom Columns tab warning message.
 ==========
