@@ -2,6 +2,7 @@
 
 ==========
 Version 3.1 - ??/??/2014
+- Added the option to show the "Recipient" column in the conversation tab.
 - 
 ==========
 Version 3.0.1 - 01/01/2014
