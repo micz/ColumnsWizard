@@ -1,9 +1,12 @@
 "use strict";
 var miczColumnsWizard = {
 
+  //Conversation Tab Columns
   showLocation: true,
   showAccount: false,
   showAttachment: false,
+  showRecipient: false,
+  //Custom Columns
   AddCc: false,
 
 	init: function(){
@@ -45,6 +48,7 @@ var miczColumnsWizard = {
     this.showLocation = prefs.getBoolPref("ShowLocation");
     this.showAccount = prefs.getBoolPref("ShowAccount");
     this.showAttachment = prefs.getBoolPref("ShowAttachment");
+    this.showRecipient = prefs.getBoolPref("ShowRecipient");
 
 	  if(tab.mode.name=='glodaList'){
 	  if(this.showLocation){ //show location column
@@ -58,6 +62,10 @@ var miczColumnsWizard = {
      if(this.showAttachment){ //show attachment column
       let attachcv = document.getElementById("attachmentCol");
       if(attachcv) attachcv.setAttribute("hidden", "false");
+     }
+     if(this.showRecipient){ //show recipient column
+      let recipientcv = document.getElementById("recipientCol");
+      if(recipientcv) recipientcv.setAttribute("hidden", "false");
      }
     }
   },

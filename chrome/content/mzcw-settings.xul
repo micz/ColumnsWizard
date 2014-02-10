@@ -17,6 +17,9 @@
       <preference id="ColumnsWizard.ShowAttachment"
         name="extensions.ColumnsWizard.ShowAttachment"
         type="bool" />
+      <preference id="ColumnsWizard.ShowRecipient"
+        name="extensions.ColumnsWizard.ShowRecipient"
+        type="bool" />
     <!-- Custom Columns -->
       <preference id="ColumnsWizard.CustCols.AddCc"
         name="extensions.ColumnsWizard.CustCols.AddCc"
@@ -37,6 +40,8 @@
             preference="ColumnsWizard.ShowAccount" />
           <checkbox id="ColumnsWizard.ShowAttachment_checkbox" label="&ColumnsWizard.ShowAttachment.label;"
             preference="ColumnsWizard.ShowAttachment" />
+          <checkbox id="ColumnsWizard.ShowRecipient_checkbox" label="&ColumnsWizard.ShowRecipient.label;"
+            preference="ColumnsWizard.ShowRecipient" />
         </tabpanel>
         <tabpanel id="custcols" orient="vertical">
           <label control="symbol" value="&ColumnsWizard.GlobalDescCustCols;"/>

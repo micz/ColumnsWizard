@@ -3,6 +3,7 @@
 <!ENTITY ColumnsWizard.ShowLocation.label "Location">
 <!ENTITY ColumnsWizard.ShowAccount.label "Account">
 <!ENTITY ColumnsWizard.ShowAttachment.label "Attachment">
+<!ENTITY ColumnsWizard.ShowRecipient.label "Recipient">
 <!ENTITY ColumnsWizard.TabConversation.label "Conversation Tab">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Custom Columns">
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Choose here which custom columns you want to add.">
