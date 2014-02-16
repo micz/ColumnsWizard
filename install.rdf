@@ -4,7 +4,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>columnswizard@micz.it</em:id>
     <em:type>2</em:type>
-    <em:version>3.1alpha</em:version>
+    <em:version>3.1alpha2</em:version>
     <em:name>ColumnsWizard</em:name>
     <em:description>A Thunderbird extension that shows hidden columns in the Conversation Tab.</em:description>
     <em:creator>Mic (m@micz.it)</em:creator>
