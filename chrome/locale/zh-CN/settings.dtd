@@ -1,0 +1,12 @@
+<!ENTITY ColumnsWizard.SettingsTitle "ColumnsWizard 设置">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "选择您想要在对话标签页中查看的额外的列。">
+<!ENTITY ColumnsWizard.ShowLocation.label "位置">
+<!ENTITY ColumnsWizard.ShowAccount.label "账户">
+<!ENTITY ColumnsWizard.ShowAttachment.label "附件">
+<!ENTITY ColumnsWizard.ShowRecipient.label "接收者">
+<!ENTITY ColumnsWizard.TabConversation.label "对话标签页">
+<!ENTITY ColumnsWizard.TabCustomCols.label "自定义列">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "选择您想添加的自定义列。">
+<!ENTITY ColumnsWizard.WarnDescCustCols1 "选定之后，您需要显示的列就会在您需要时的文件夹视图中出现。">
+<!ENTITY ColumnsWizard.WarnDescCustCols2 "如果您删除并重新选择一个以前选择的选项，您必须再次这样做。">
+<!ENTITY ColumnsWizard.AddCc.label "抄送">
