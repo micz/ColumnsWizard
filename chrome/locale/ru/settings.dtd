@@ -3,6 +3,7 @@
 <!ENTITY ColumnsWizard.ShowLocation.label "Расположение">
 <!ENTITY ColumnsWizard.ShowAccount.label "Учетная запись">
 <!ENTITY ColumnsWizard.ShowAttachment.label "Прикрепление">
+<!ENTITY ColumnsWizard.ShowRecipient.label "Получатель">
 <!ENTITY ColumnsWizard.TabConversation.label "Вкладка Разговоров">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Пользовательские Столбцы">
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Выберите, какие пользовательские столбцы Вы хотите добавить.">

@@ -3,6 +3,7 @@
 <!ENTITY ColumnsWizard.ShowLocation.label "Ablageort">
 <!ENTITY ColumnsWizard.ShowAccount.label "Konto">
 <!ENTITY ColumnsWizard.ShowAttachment.label "Anhang">
+<!ENTITY ColumnsWizard.ShowRecipient.label "Empfänger">
 <!ENTITY ColumnsWizard.TabConversation.label "Ansicht im Themenbaum">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Spezial Spalten">
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Wählen sie hier welche Spalten Sie hinzufügen wollen.">

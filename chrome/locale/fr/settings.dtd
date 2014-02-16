@@ -3,6 +3,7 @@
 <!ENTITY ColumnsWizard.ShowLocation.label "Emplacement">
 <!ENTITY ColumnsWizard.ShowAccount.label "Compte">
 <!ENTITY ColumnsWizard.ShowAttachment.label "Pièce jointe">
+<!ENTITY ColumnsWizard.ShowRecipient.label "Destinataire">
 <!ENTITY ColumnsWizard.TabConversation.label "Onglet Conversation">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Colonnes personnalisées">
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Choisissez ici quelles colonnes personnalisées vous désirez ajouter">
