@@ -4,5 +4,8 @@ locale    columnswizard   it            chrome/locale/it/
 locale    columnswizard   de            chrome/locale/de/
 locale    columnswizard   fr            chrome/locale/fr/
 locale    columnswizard   ru            chrome/locale/ru/
+locale    columnswizard   nl            chrome/locale/nl/
+locale    columnswizard   sr            chrome/locale/sr/
+locale    columnswizard   zh-CN         chrome/locale/zh-CN/
 
 overlay chrome://messenger/content/messenger.xul chrome://columnswizard/content/mzcw-overlay.xul
