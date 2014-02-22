@@ -1,0 +1,12 @@
+<!ENTITY ColumnsWizard.SettingsTitle "ColumnsWizard подешавања">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Изаберите које додатне колоне желите видети у језичку Разговор.">
+<!ENTITY ColumnsWizard.ShowLocation.label "Локација">
+<!ENTITY ColumnsWizard.ShowAccount.label "Налог">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Прилог">
+<!ENTITY ColumnsWizard.ShowRecipient.label "Прималац">
+<!ENTITY ColumnsWizard.TabConversation.label "Језичак Разговор">
+<!ENTITY ColumnsWizard.TabCustomCols.label "Прилагођене колоне">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Овде изаберите које прилагођене колоне желите додати.">
+<!ENTITY ColumnsWizard.WarnDescCustCols1 "Када је означите, треб да прикажете колону у приказу фасцикли, када вам затреба.">
+<!ENTITY ColumnsWizard.WarnDescCustCols2 "Ово ћете морати да урадите поново, ако поново изаберете претходно одабрану опцију.">
+<!ENTITY ColumnsWizard.AddCc.label "Прималац">

@@ -4,6 +4,7 @@
 Version 3.1 - ??/??/2014
 - Added the option to show the "Recipient" column in the conversation tab.
 - Added chinese translation (zh-CN), thanks yfdyh000 (from BabelZilla.org).
+- Added serbian translation (sr), thanks DakSrbija (from BabelZilla.org).
 - 
 ==========
 Version 3.0.1 - 01/01/2014
