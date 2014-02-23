@@ -1,6 +1,9 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
+Version 3.2 - ??/??/2014
+- 
+==========
 Version 3.1 - 22/02/2014
 - Added the option to show the "Recipient" column in the conversation tab.
 - Added chinese translation (zh-CN), thanks yfdyh000 (from BabelZilla.org).
