@@ -7,6 +7,5 @@
 <!ENTITY ColumnsWizard.TabConversation.label "Conversatietabblad">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Aangepaste kolommen">
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Kies hier welke aangepaste kolommen u wilt toevoegen.">
-<!ENTITY ColumnsWizard.WarnDescCustCols1 "Na selectie dient u de kolom in de mapweergave waar u deze nodig hebt weer te geven.">
-<!ENTITY ColumnsWizard.WarnDescCustCols2 "U dient dit opnieuw te doen als u een eerder geselecteerde optie deselecteert en opnieuw selecteert.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Na selectie dient u de kolom in de mapweergave waar u deze nodig hebt weer te geven. U dient dit opnieuw te doen als u een eerder geselecteerde optie deselecteert en opnieuw selecteert.">
 <!ENTITY ColumnsWizard.AddCc.label "Cc">

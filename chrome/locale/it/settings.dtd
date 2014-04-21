@@ -7,6 +7,5 @@
 <!ENTITY ColumnsWizard.TabConversation.label "Tab Conversazione">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Colonne Personalizzate">
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Scegli qui quale colonna personalizzata vuoi aggiungere.">
-<!ENTITY ColumnsWizard.WarnDescCustCols1 "Una volta selezionata, devi visualizzare la colonna nella cartella in cui vuoi che sia visibile.">
-<!ENTITY ColumnsWizard.WarnDescCustCols2 "Questa operazione deve essere eseguita nuovamente se deselezioni e riselezioni un'opzione.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Una volta selezionata, devi visualizzare la colonna nella cartella in cui vuoi che sia visibile. Questa operazione deve essere eseguita nuovamente se deselezioni e riselezioni un'opzione.">
 <!ENTITY ColumnsWizard.AddCc.label "Cc">

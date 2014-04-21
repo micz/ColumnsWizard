@@ -7,6 +7,5 @@
 <!ENTITY ColumnsWizard.TabConversation.label "Onglet Conversation">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Colonnes personnalisées">
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Choisissez ici quelles colonnes personnalisées vous désirez ajouter">
-<!ENTITY ColumnsWizard.WarnDescCustCols1 "Une fois effectué votre choix, vous devez afficher la colonne dans le dossier où vous en avez besoin.">
-<!ENTITY ColumnsWizard.WarnDescCustCols2 "Vous devrez recommencer si vous désélectionnez et re-sélectionnez une option choisie auparavant.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Une fois effectué votre choix, vous devez afficher la colonne dans le dossier où vous en avez besoin. Vous devrez recommencer si vous désélectionnez et re-sélectionnez une option choisie auparavant.">
 <!ENTITY ColumnsWizard.AddCc.label "Copie à">

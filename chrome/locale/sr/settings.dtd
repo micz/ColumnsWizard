@@ -7,6 +7,5 @@
 <!ENTITY ColumnsWizard.TabConversation.label "Језичак Разговор">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Прилагођене колоне">
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Овде изаберите које прилагођене колоне желите додати.">
-<!ENTITY ColumnsWizard.WarnDescCustCols1 "Када је означите, треб да прикажете колону у приказу фасцикли, када вам затреба.">
-<!ENTITY ColumnsWizard.WarnDescCustCols2 "Ово ћете морати да урадите поново, ако поново изаберете претходно одабрану опцију.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Када је означите, треб да прикажете колону у приказу фасцикли, када вам затреба. Ово ћете морати да урадите поново, ако поново изаберете претходно одабрану опцију.">
 <!ENTITY ColumnsWizard.AddCc.label "Прималац">

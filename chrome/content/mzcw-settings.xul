@@ -47,8 +47,7 @@
         <tabpanel id="custcols" orient="vertical">
           <label control="symbol" value="&ColumnsWizard.GlobalDescCustCols;"/>
           <vbox class="mzcw-warn">
-            <label control="symbol" value="&ColumnsWizard.WarnDescCustCols1;"/>
-            <label control="symbol" value="&ColumnsWizard.WarnDescCustCols2;"/>
+	    <description style="word-wrap:normal;max-width:500px;">&ColumnsWizard.WarnDescCustCols;</description>
           </vbox>
           <label control="symbol" value=" "/>
           <checkbox id="ColumnsWizard.AddCc_checkbox" label="&ColumnsWizard.AddCc.label;"

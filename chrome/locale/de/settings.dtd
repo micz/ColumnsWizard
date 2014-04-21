@@ -7,6 +7,5 @@
 <!ENTITY ColumnsWizard.TabConversation.label "Ansicht im Themenbaum">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Spezial Spalten">
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Wählen sie hier welche Spalten Sie hinzufügen wollen.">
-<!ENTITY ColumnsWizard.WarnDescCustCols1 "Die hier ausgewählten Spalten müssen in der jeweiligen Ordneransicht (anzuzeigende Spalten) sichtbar gemacht werden.">
-<!ENTITY ColumnsWizard.WarnDescCustCols2 "Falls Sie eine Spalte entfernen und wieder hinzufügen muss diese erneut sichtbar gemacht werden.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Die hier ausgewählten Spalten müssen in der jeweiligen Ordneransicht (anzuzeigende Spalten) sichtbar gemacht werden. Falls Sie eine Spalte entfernen und wieder hinzufügen muss diese erneut sichtbar gemacht werden.">
 <!ENTITY ColumnsWizard.AddCc.label "Kopie (CC)">
