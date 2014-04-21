@@ -29,6 +29,7 @@
       <tabs>
         <tab label="&ColumnsWizard.TabConversation.label;"/>
         <tab label="&ColumnsWizard.TabCustomCols.label;"/>
+        <tab label="&ColumnsWizard.TabInfo.label;"/>
       </tabs>
       <tabpanels>
         <tabpanel id="convtab" orient="vertical">
@@ -52,6 +53,11 @@
           <label control="symbol" value=" "/>
           <checkbox id="ColumnsWizard.AddCc_checkbox" label="&ColumnsWizard.AddCc.label;"
             preference="ColumnsWizard.CustCols.AddCc"/>
+        </tabpanel>
+        <tabpanel id="tab_info" orient="vertical">
+	  <description style="word-wrap:normal;max-width:500px;">&ColumnsWizard.InfoMainDesc;</description>
+          <label control="symbol" value=" "/>
+	  <label value="&ColumnsWizard.DonateLink;" class="text-link mzcw-donate" href="http://micz.it/thunderdbird-addon-columnswizard/donate/"/>
         </tabpanel>
       </tabpanels>
     </tabbox>
