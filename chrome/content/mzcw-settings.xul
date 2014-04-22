@@ -47,16 +47,18 @@
         <tabpanel id="custcols" orient="vertical">
           <label control="symbol" value="&ColumnsWizard.GlobalDescCustCols;"/>
           <vbox class="mzcw-warn">
-	    <description style="word-wrap:normal;max-width:500px;">&ColumnsWizard.WarnDescCustCols;</description>
+	    <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.WarnDescCustCols;</description>
           </vbox>
           <label control="symbol" value=" "/>
           <checkbox id="ColumnsWizard.AddCc_checkbox" label="&ColumnsWizard.AddCc.label;"
             preference="ColumnsWizard.CustCols.AddCc"/>
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
-	  <description style="word-wrap:normal;max-width:500px;">&ColumnsWizard.InfoMainDesc;</description>
+	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>
           <label control="symbol" value=" "/>
-	  <label value="&ColumnsWizard.DonateLink;" class="text-link mzcw-donate" href="http://micz.it/thunderdbird-addon-columnswizard/donate/"/>
+	        <label value="&ColumnsWizard.DonateLink;" class="text-link mzcw-donate" href="http://micz.it/thunderdbird-addon-columnswizard/donate/"/>
+          <label control="symbol" value=" "/>
+          <label control="symbol" style="font-size:0.8em;text-align:right;" value="&ColumnsWizard.TranslateCredits;"/>
         </tabpanel>
       </tabpanels>
     </tabbox>
