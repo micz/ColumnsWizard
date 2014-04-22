@@ -6,10 +6,10 @@
 <!ENTITY ColumnsWizard.ShowRecipient.label "Recipient">
 <!ENTITY ColumnsWizard.TabConversation.label "Conversation Tab">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Custom Columns">
-<!ENTITY ColumnsWizard.TabInfo.label "Info">
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Choose here which custom columns you want to add.">
 <!ENTITY ColumnsWizard.WarnDescCustCols "Once selected, you need to show the column in the folder view where you need it. You'll have to do this again if you delesect and reselect a previously selected option.">
 <!ENTITY ColumnsWizard.AddCc.label "Cc">
+<!ENTITY ColumnsWizard.TabInfo.label "Info">
 <!ENTITY ColumnsWizard.InfoMainDesc "This addon is free and developed in my spare time. If you're using it in your every day routine, feel free to support it with a little donation clicking on the link below. Thanks!!">
 <!ENTITY ColumnsWizard.DonateLink "Make a donation!">
 <!ENTITY ColumnsWizard.TranslateCredits "Translation thanks to Babelzilla.org">
