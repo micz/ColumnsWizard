@@ -9,3 +9,7 @@
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Scegli qui quale colonna personalizzata vuoi aggiungere.">
 <!ENTITY ColumnsWizard.WarnDescCustCols "Una volta selezionata, devi visualizzare la colonna nella cartella in cui vuoi che sia visibile. Questa operazione deve essere eseguita nuovamente se deselezioni e riselezioni un'opzione.">
 <!ENTITY ColumnsWizard.AddCc.label "Cc">
+<!ENTITY ColumnsWizard.TabInfo.label "Informazioni">
+<!ENTITY ColumnsWizard.InfoMainDesc "Questo componente aggiuntivo è gratuito e sviluppato nel mio tempo libero. Se lo usi tutti i giorni, sentiti libero di supportarlo con una piccola donazione cliccando sul link sottostante. Grazie!!">
+<!ENTITY ColumnsWizard.DonateLink "Fai una donazione!">
+<!ENTITY ColumnsWizard.TranslateCredits "Per la traduzione di ringrazia Babelzilla.org">
