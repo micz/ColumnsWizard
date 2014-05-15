@@ -8,4 +8,6 @@ locale    columnswizard   nl            chrome/locale/nl/
 locale    columnswizard   sr            chrome/locale/sr/
 locale    columnswizard   zh-CN         chrome/locale/zh-CN/
 
+skin columnswizard default chrome/skin/
+
 overlay chrome://messenger/content/messenger.xul chrome://columnswizard/content/mzcw-overlay.xul

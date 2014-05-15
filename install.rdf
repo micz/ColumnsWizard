@@ -7,6 +7,8 @@
     <em:version>3.2alpha</em:version>
     <em:name>ColumnsWizard</em:name>
     <em:description>A Thunderbird extension that shows hidden columns in the Conversation Tab.</em:description>
+    <em:iconURL>chrome://columnswizard/skin/mzcw-icon.png</em:iconURL>
+    <em:icon64URL>chrome://columnswizard/skin/mzcw-icon64.png</em:icon64URL>
     <em:creator>Mic (m@micz.it)</em:creator>
     <em:contributor></em:contributor>
     <em:optionsURL>chrome://columnswizard/content/mzcw-settings.xul</em:optionsURL>

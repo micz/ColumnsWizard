@@ -3,7 +3,8 @@
 ==========
 Version 3.2 - ??/??/2014
 - Added the "Info" tab.
--  
+- Icon embedded.
+- 
 ==========
 Version 3.1 - 22/02/2014
 - Added the option to show the "Recipient" column in the conversation tab.
