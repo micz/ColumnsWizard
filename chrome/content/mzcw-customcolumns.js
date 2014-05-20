@@ -7,7 +7,7 @@ miczColumnsWizard.CustCols={
                 {
                  miczColumnsWizard.CustCols.addCustomColumnHandler("cc");
                 }
-  },
+    },
 
   addCustomColumnHandler: function(coltype) {
      gDBView.addColumnHandler(coltype+"Col_cw", this["columnHandler_"+coltype]);
