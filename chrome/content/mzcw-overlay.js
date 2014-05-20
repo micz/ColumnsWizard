@@ -6,20 +6,19 @@ var miczColumnsWizard = {
   showAccount: false,
   showAttachment: false,
   showRecipient: false,
+
   //Custom Columns
-  AddCc: false,
+  //AddCc: false,
+  CustColPref:{},
+  CustColDef:{},
 
 	init: function(){
     //Adding custom columns
-    let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-    prefs = prefs.getBranch("extensions.ColumnsWizard.CustCols.");
-    this.AddCc = prefs.getBoolPref("AddCc");
-    if(this.AddCc){
-      //Add cc custom column
-      var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-      miczColumnsWizard.CustCols.addCustomColumn("cc",ObserverService);
-    }
+    this.loadCustCols();
+    var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
 
+    CustColPref.forEach(miczColumnsWizard.custColsActivation);
+    
 		this.initialized = true;
     //Conversation Tab add columns - delayed
   	setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
@@ -40,6 +39,19 @@ var miczColumnsWizard = {
       alert("No tabContainer available! " + e);
     }
 	},
+
+  loadCustCols:function(){
+    let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+    prefs = prefs.getBranch("extensions.ColumnsWizard.CustCols.");
+    this.CustColPref["cc"] = prefs.getBoolPref("AddCc");
+    this.CustColDef["cc"]="cc";
+  },
+  
+  custColsActivation:function(element,index,array){
+    if(element===true){
+      miczColumnsWizard.CustCols.addCustomColumn(index,ObserverService);
+    }
+  },
 	
 	showColumns: function(tab){
     let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
