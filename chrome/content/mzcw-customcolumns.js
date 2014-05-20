@@ -1,13 +1,5 @@
 "use strict";
 miczColumnsWizard.CustCols={
-	//Cc
-  CreateDbObserver_Cc: {
-    // Components.interfaces.nsIObserver
-    observe: function(aMsgFolder, aTopic, aData)
-                {
-                 miczColumnsWizard.CustCols.addCustomColumnHandler("cc");
-                }
-    },
 
   addCustomColumnHandler: function(coltype) {
      gDBView.addColumnHandler(coltype+"Col_cw", this["columnHandler_"+coltype]);
@@ -42,6 +34,7 @@ miczColumnsWizard.CustCols={
     }, 
 };
 
+
 //cc
 miczColumnsWizard.CustCols["columnHandler_cc"]={
    getCellText:         function(row, col) {
@@ -55,5 +48,13 @@ miczColumnsWizard.CustCols["columnHandler_cc"]={
    getRowProperties:    function(row, props){},
    getImageSrc:         function(row, col) {return null;},
    getSortLongForRow:   function(hdr) {return 0;}
+};
+
+miczColumnsWizard.CustCols["CreateDbObserver_cc"]={
+  // Components.interfaces.nsIObserver
+  observe: function(aMsgFolder, aTopic, aData)
+              {
+               miczColumnsWizard.CustCols.addCustomColumnHandler("cc");
+              }
 };
 //cc - END
