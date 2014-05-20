@@ -5,13 +5,14 @@ miczColumnsWizard.CustCols={
      gDBView.addColumnHandler(coltype+"Col_cw", this["columnHandler_"+coltype]);
   },
   
-  addCustomColumn: function(coltype){
+  addCustomColumn: function(coltype,ObserverService){
     let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
     let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
 
     if(document.getElementById(coltype+"Col_cw")){
       return;
     }
+    
     let labelString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+".label");
     let tooltipString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+"Desc.label");
     let cwCol = document.createElement("treecol");
@@ -26,11 +27,17 @@ miczColumnsWizard.CustCols={
     let element = document.getElementById("threadCols");
     element.appendChild(cwSplitter);
     element.appendChild(cwCol);
+    
+    //DbObserver Managing
+    ObserverService.addObserver(miczColumnsWizard.CustCols["CreateDbObserver_"+coltype], "MsgCreateDBView", false);
   },
   
-    removeCustomColumn: function(coltype){
+    removeCustomColumn: function(coltype,ObserverService){
       let element = document.getElementById(coltype+"Col_cw");
       if(element) element.parentNode.removeChild(element);
+      
+      //DbObserver Managing
+      ObserverService.removeObserver(miczColumnsWizard.CustCols["CreateDbObserver_"+coltype], "MsgCreateDBView");
     }, 
 };
 

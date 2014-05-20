@@ -50,12 +50,10 @@ miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
           var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
           if(branch.getBoolPref(name)){
             //checbox checked
-            miczColumnsWizard.CustCols.addCustomColumn("cc");
-            ObserverService.addObserver(miczColumnsWizard.CustCols.CreateDbObserver_Cc, "MsgCreateDBView", false);
+            miczColumnsWizard.CustCols.addCustomColumn("cc",ObserverService);
           }else{
             //checbox not checked
-            miczColumnsWizard.CustCols.removeCustomColumn("cc");
-            ObserverService.removeObserver(miczColumnsWizard.CustCols.CreateDbObserver_Cc, "MsgCreateDBView");
+            miczColumnsWizard.CustCols.removeCustomColumn("cc",ObserverService);
           }
       break; //Cc Listener - END
     }

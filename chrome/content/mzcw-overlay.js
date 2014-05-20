@@ -16,9 +16,8 @@ var miczColumnsWizard = {
     this.AddCc = prefs.getBoolPref("AddCc");
     if(this.AddCc){
       //Add cc custom column
-      miczColumnsWizard.CustCols.addCustomColumn("cc");
       var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-      ObserverService.addObserver(miczColumnsWizard.CustCols.CreateDbObserver_cc, "MsgCreateDBView", false);
+      miczColumnsWizard.CustCols.addCustomColumn("cc",ObserverService);
     }
 
 		this.initialized = true;
