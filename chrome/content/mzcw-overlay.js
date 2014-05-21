@@ -15,7 +15,7 @@ var miczColumnsWizard = {
     var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
 
     miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
-    //dump(">>>>>>>>>>>>> miczColumnsWizard: "+miczColumnsWizard.CustColPref["cc"]+"\r\n");
+
     for (let index in miczColumnsWizard.CustColPref) {
       miczColumnsWizard.custColsActivation(miczColumnsWizard.CustColPref[index],index,ObserverService);
     }
@@ -46,7 +46,8 @@ var miczColumnsWizard = {
     prefs = prefs.getBranch("extensions.ColumnsWizard.CustCols.");
     let loadedCustColPref=new Array();
     loadedCustColPref["cc"] = prefs.getBoolPref("AddCc");
-    return loadedCustColPref; 
+    loadedCustColPref["cc"].Def = "AddCc";
+    return loadedCustColPref;
   },
   
   custColsActivation:function(element,index,ObserverService){
