@@ -45,17 +45,16 @@ miczColumnsWizard.PrefListener.prototype.unregister = function() {
 miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
   "extensions.ColumnsWizard.CustCols.",
   function(branch, name) {//dump("PrefListener call: "+name+"= "+branch.getBoolPref(name)+"\n\r");
-    switch (name) {
-      case "AddCc": //Cc Listener
-          var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-          if(branch.getBoolPref(name)){
-            //checbox checked
-            miczColumnsWizard.CustCols.addCustomColumn("cc",ObserverService);
-          }else{
-            //checbox not checked
-            miczColumnsWizard.CustCols.removeCustomColumn("cc",ObserverService);
-          }
-      break; //Cc Listener - END
+    var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+    //with the pref name AddCOLNAME, get the COLNAME all lowercase!!
+    let cwColName=name.substr(3).toLowerCase();
+    dump(">>>>>>>>>>>>> miczColumnsWizard.PrefListener: [PrefName|cwColName] "+name+"|"+cwColName+"\r\n");
+    if(branch.getBoolPref(name)){
+      //checbox checked
+      miczColumnsWizard.CustCols.addCustomColumn(cwColName,ObserverService);
+    }else{
+      //checbox not checked
+      miczColumnsWizard.CustCols.removeCustomColumn(cwColName,ObserverService);
     }
   }
 );
