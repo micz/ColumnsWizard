@@ -52,6 +52,23 @@
           <label control="symbol" value=" "/>
           <checkbox id="ColumnsWizard.AddCc_checkbox" label="&ColumnsWizard.AddCc.label;"
             preference="ColumnsWizard.CustCols.AddCc"/>
+         
+         <tree flex="1" rows="2" editable="true" hidecolumnpicker="true">
+        <treecols>
+          <treecol id="prefstate" label="#" type="checkbox" fixed="true" editable="true"/>
+          <treecol id="colname" label="Custom column name" flex="4" editable="false"/>
+        </treecols>
+
+        <treechildren>
+          <treeitem>
+            <treerow>
+              <treecell preference-editable="true" preference="ColumnsWizard.CustCols.AddCc"/>
+              <treecell label="&ColumnsWizard.AddCc.label;" editable="false"/>
+            </treerow>
+          </treeitem>
+        </treechildren>
+      </tree>
+            
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
 	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>
