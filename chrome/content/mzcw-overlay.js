@@ -8,16 +8,17 @@ var miczColumnsWizard = {
   showRecipient: false,
 
   //Custom Columns
-  //AddCc: false,
   CustColPref:{},
-  CustColDef:{},
 
 	init: function(){
     //Adding custom columns
-    this.loadCustCols();
     var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
 
-    CustColPref.forEach(miczColumnsWizard.custColsActivation);
+    miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
+    //dump(">>>>>>>>>>>>> miczColumnsWizard: "+miczColumnsWizard.CustColPref["cc"]+"\r\n");
+    for (let index in miczColumnsWizard.CustColPref) {
+      miczColumnsWizard.custColsActivation(miczColumnsWizard.CustColPref[index],index,ObserverService);
+    }
     
 		this.initialized = true;
     //Conversation Tab add columns - delayed
@@ -43,11 +44,13 @@ var miczColumnsWizard = {
   loadCustCols:function(){
     let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
     prefs = prefs.getBranch("extensions.ColumnsWizard.CustCols.");
-    this.CustColPref["cc"] = prefs.getBoolPref("AddCc");
-    this.CustColDef["cc"]="cc";
+    let loadedCustColPref=new Array();
+    loadedCustColPref["cc"] = prefs.getBoolPref("AddCc");
+    return loadedCustColPref; 
   },
   
-  custColsActivation:function(element,index,array){
+  custColsActivation:function(element,index,ObserverService){
+  dump(">>>>>>>>>>>>> miczColumnsWizard: [element|index] "+element+"|"+index+"\r\n");
     if(element===true){
       miczColumnsWizard.CustCols.addCustomColumn(index,ObserverService);
     }
