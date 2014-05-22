@@ -1,3 +1,4 @@
 .mzcw-warn{color:red;font-weight:normal;font-style:italic;background-color:white;border:2px solid #110baa;border-radius:4px;margin-top:5px;}
 .mzcw-donate{text-align:center;font-size:1.2em;}
-treechildren::-moz-tree-checkbox(checked){list-style-image: url("chrome://global/skin/checkbox/cbox-check.gif");}
+treechildren::-moz-tree-checkbox{list-style-image: url("chrome://columnswizard/skin/mzcw-cbox-unchk.png");}
+treechildren::-moz-tree-checkbox(checked){list-style-image: url("chrome://columnswizard/skin/mzcw-cbox-chk.png");}
