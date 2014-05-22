@@ -45,13 +45,8 @@ miczColumnsWizard.CustCols={
 miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
 for (let index in miczColumnsWizard.CustColPref) {
   dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+index+"\r\n");
-  miczColumnsWizard.CustCols["CreateDbObserver_"+index]={
-    // Components.interfaces.nsIObserver
-    observe: function(aMsgFolder, aTopic, aData)
-                {
-                 miczColumnsWizard.CustCols.addCustomColumnHandler(index);
-                }
-  };
+  //It's needed to to this, to avoid writing each miczColumnsWizard.CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function deifnition.
+  eval("miczColumnsWizard.CustCols.CreateDbObserver_"+index+"={observe: function(aMsgFolder, aTopic, aData){miczColumnsWizard.CustCols.addCustomColumnHandler('"+index+"');}};");
 }
 //Create all the needed DbObserver - END
 
@@ -61,6 +56,7 @@ miczColumnsWizard.CustCols["columnHandler_cc"]={
    getCellText:         function(row, col) {
       //get the message's header so that we can extract the cc to field
       let hdr = gDBView.getMsgHdrAt(row);
+      dump(">>>>>>>>>>>>> miczColumnsWizard->columnHandler_cc: [value] "+hdr.getStringProperty("ccList")+"\r\n");
       return hdr.getStringProperty("ccList");
    },
    getSortStringForRow: function(hdr) {return hdr.getStringProperty("ccList");},
@@ -71,3 +67,20 @@ miczColumnsWizard.CustCols["columnHandler_cc"]={
    getSortLongForRow:   function(hdr) {return 0;}
 };
 //cc - END
+
+//bcc
+miczColumnsWizard.CustCols["columnHandler_bcc"]={
+   getCellText:         function(row, col) {
+      //get the message's header so that we can extract the cc to field
+      let hdr = gDBView.getMsgHdrAt(row);
+      dump(">>>>>>>>>>>>> miczColumnsWizard->columnHandler_bcc: [value] "+hdr.getStringProperty("bccList")+"\r\n");
+      return hdr.getStringProperty("bccList");
+   },
+   getSortStringForRow: function(hdr) {return hdr.getStringProperty("bccList");},
+   isString:            function() {return true;},
+   getCellProperties:   function(row, col, props){},
+   getRowProperties:    function(row, props){},
+   getImageSrc:         function(row, col) {return null;},
+   getSortLongForRow:   function(hdr) {return 0;}
+};
+//bcc - END

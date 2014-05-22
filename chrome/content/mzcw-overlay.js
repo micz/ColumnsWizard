@@ -47,6 +47,8 @@ var miczColumnsWizard = {
     let loadedCustColPref=new Array();
     loadedCustColPref["cc"] = prefs.getBoolPref("AddCc");
     loadedCustColPref["cc"].Def = "AddCc";
+    loadedCustColPref["bcc"] = prefs.getBoolPref("Addbcc");
+    loadedCustColPref["bcc"].Def = "Addbcc";
     return loadedCustColPref;
   },
   
