@@ -14,3 +14,4 @@
 <!ENTITY ColumnsWizard.DonateLink "Make a donation!">
 <!ENTITY ColumnsWizard.TranslateCredits "Translation thanks to Babelzilla.org">
 <!ENTITY ColumnsWizard.Addbcc.label "Bcc">
+<!ENTITY ColumnsWizard.Addreplyto.label "Reply-to">

@@ -49,6 +49,8 @@ var miczColumnsWizard = {
     loadedCustColPref["cc"].Def = "AddCc";
     loadedCustColPref["bcc"] = prefs.getBoolPref("Addbcc");
     loadedCustColPref["bcc"].Def = "Addbcc";
+    loadedCustColPref["replyto"] = prefs.getBoolPref("Addreplyto");
+    loadedCustColPref["replyto"].Def = "Addreplyto";
     return loadedCustColPref;
   },
   

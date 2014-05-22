@@ -27,6 +27,9 @@
       <preference id="ColumnsWizard.CustCols.Addbcc"
         name="extensions.ColumnsWizard.CustCols.Addbcc"
         type="bool" />
+      <preference id="ColumnsWizard.CustCols.Addreplyto"
+        name="extensions.ColumnsWizard.CustCols.Addreplyto"
+        type="bool" />
     </preferences>
     <tabbox>
       <tabs>
@@ -57,6 +60,8 @@
             preference="ColumnsWizard.CustCols.AddCc"/>
           <checkbox id="ColumnsWizard.Addbcc_checkbox" label="&ColumnsWizard.Addbcc.label;"
             preference="ColumnsWizard.CustCols.Addbcc"/>
+          <checkbox id="ColumnsWizard.Addreplyto_checkbox" label="&ColumnsWizard.Addreplyto.label;"
+            preference="ColumnsWizard.CustCols.Addreplyto"/>
 
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
