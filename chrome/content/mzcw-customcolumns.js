@@ -41,7 +41,21 @@ miczColumnsWizard.CustCols={
     }, 
 };
 
+//Create all the needed DbObservers
+miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
+for (let index in miczColumnsWizard.CustColPref) {
+  dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+index+"\r\n");
+  miczColumnsWizard.CustCols["CreateDbObserver_"+index]={
+    // Components.interfaces.nsIObserver
+    observe: function(aMsgFolder, aTopic, aData)
+                {
+                 miczColumnsWizard.CustCols.addCustomColumnHandler(index);
+                }
+  };
+}
+//Create all the needed DbObserver - END
 
+//Implement the ColumnHandlers
 //cc
 miczColumnsWizard.CustCols["columnHandler_cc"]={
    getCellText:         function(row, col) {
@@ -55,13 +69,5 @@ miczColumnsWizard.CustCols["columnHandler_cc"]={
    getRowProperties:    function(row, props){},
    getImageSrc:         function(row, col) {return null;},
    getSortLongForRow:   function(hdr) {return 0;}
-};
-
-miczColumnsWizard.CustCols["CreateDbObserver_cc"]={
-  // Components.interfaces.nsIObserver
-  observe: function(aMsgFolder, aTopic, aData)
-              {
-               miczColumnsWizard.CustCols.addCustomColumnHandler("cc");
-              }
 };
 //cc - END
