@@ -53,7 +53,7 @@ miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
     if(branch.getBoolPref(name)){
       //checbox checked
       miczColumnsWizard.CustCols.addCustomColumn(cwColName,ObserverService);
-      if(element.customDBHeader!=false){
+      if(cwCustColPref[cwColName].customDBHeader!=false){
         miczColumnsWizard.activateCustomDBHeader(cwCustColPref[cwColName].customDBHeader);
       }
     }else{
