@@ -30,6 +30,9 @@
       <preference id="ColumnsWizard.CustCols.Addreplyto"
         name="extensions.ColumnsWizard.CustCols.Addreplyto"
         type="bool" />
+      <preference id="ColumnsWizard.CustCols.Addxoriginalfrom"
+        name="extensions.ColumnsWizard.CustCols.Addxoriginalfrom"
+        type="bool" />
     </preferences>
     <tabbox>
       <tabs>
@@ -62,6 +65,8 @@
             preference="ColumnsWizard.CustCols.Addbcc"/>
           <checkbox id="ColumnsWizard.Addreplyto_checkbox" label="&ColumnsWizard.Addreplyto.label;"
             preference="ColumnsWizard.CustCols.Addreplyto"/>
+          <checkbox id="ColumnsWizard.Addxoriginalfrom_checkbox" label="&ColumnsWizard.Addxoriginalfrom.label;"
+            preference="ColumnsWizard.CustCols.Addxoriginalfrom"/>
 
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">

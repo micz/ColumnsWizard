@@ -101,3 +101,20 @@ miczColumnsWizard.CustCols["columnHandler_replyto"]={
    getSortLongForRow:   function(hdr) {return 0;}
 };
 //replyto - END
+
+//xoriginalfrom
+miczColumnsWizard.CustCols["columnHandler_xoriginalfrom"]={
+   getCellText:         function(row, col) {
+      //get the message's header so that we can extract the x-original-from to field
+      let hdr = gDBView.getMsgHdrAt(row);
+      //dump(">>>>>>>>>>>>> miczColumnsWizard->columnHandler_x-original-from: [value] "+hdr.getStringProperty("x-original-from")+"\r\n");
+      return hdr.getStringProperty("x-original-from");
+   },
+   getSortStringForRow: function(hdr) {return hdr.getStringProperty("x-original-from");},
+   isString:            function() {return true;},
+   getCellProperties:   function(row, col, props){},
+   getRowProperties:    function(row, props){},
+   getImageSrc:         function(row, col) {return null;},
+   getSortLongForRow:   function(hdr) {return 0;}
+};
+//xoriginalfrom - END

@@ -48,13 +48,13 @@ miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
     var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
     //with the pref name AddCOLNAME, get the COLNAME all lowercase!!
     let cwColName=name.substr(3).toLowerCase();
-    miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
+    let cwCustColPref=miczColumnsWizard.loadCustCols();
     dump(">>>>>>>>>>>>> miczColumnsWizard.PrefListener: [PrefName|cwColName] "+name+"|"+cwColName+"\r\n");
     if(branch.getBoolPref(name)){
       //checbox checked
       miczColumnsWizard.CustCols.addCustomColumn(cwColName,ObserverService);
-      if(element.customDBHeader!==false){
-        miczColumnsWizard.activateCustomDBHeader(miczColumnsWizard.CustColPref[cwColName].customDBHeader);
+      if(element.customDBHeader!=false){
+        miczColumnsWizard.activateCustomDBHeader(cwCustColPref[cwColName].customDBHeader);
       }
     }else{
       //checbox not checked

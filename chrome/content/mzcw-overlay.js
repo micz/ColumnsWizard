@@ -45,36 +45,44 @@ var miczColumnsWizard = {
     let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
     prefs = prefs.getBranch("extensions.ColumnsWizard.CustCols.");
     let loadedCustColPref=new Array();
-    loadedCustColPref["cc"] = prefs.getBoolPref("AddCc");
+    loadedCustColPref["cc"]={};
+    loadedCustColPref["cc"].Pref = prefs.getBoolPref("AddCc");
     loadedCustColPref["cc"].Def = "AddCc";
     loadedCustColPref["cc"].customDBHeader = false;
-    loadedCustColPref["bcc"] = prefs.getBoolPref("Addbcc");
+    loadedCustColPref["bcc"]={};
+    loadedCustColPref["bcc"].Pref = prefs.getBoolPref("Addbcc");
     loadedCustColPref["bcc"].Def = "Addbcc";
     loadedCustColPref["bcc"].customDBHeader = false;
-    loadedCustColPref["replyto"] = prefs.getBoolPref("Addreplyto");
+    loadedCustColPref["replyto"]={};
+    loadedCustColPref["replyto"].Pref = prefs.getBoolPref("Addreplyto");
     loadedCustColPref["replyto"].Def = "Addreplyto";
     loadedCustColPref["replyto"].customDBHeader = false;
+    loadedCustColPref["xoriginalfrom"]={};
+    loadedCustColPref["xoriginalfrom"].Pref = prefs.getBoolPref("Addxoriginalfrom");
+    loadedCustColPref["xoriginalfrom"].Def = "Addxoriginalfrom";
+    loadedCustColPref["xoriginalfrom"].customDBHeader = "x-original-from";
     return loadedCustColPref;
   },
   
   custColsActivation:function(element,index,ObserverService){
-  dump(">>>>>>>>>>>>> miczColumnsWizard: [element|index] "+element+"|"+index+"\r\n");
-    if(element===true){
+  dump(">>>>>>>>>>>>> miczColumnsWizard: [element|index] "+element.Pref+"|"+index+"\r\n");
+    if(element.Pref===true){
       miczColumnsWizard.CustCols.addCustomColumn(index,ObserverService);
-      if(element.customDBHeader!==false){
+      if(element.customDBHeader!=false){
         miczColumnsWizard.activateCustomDBHeader(element.customDBHeader);
       }
     }
   },
   
   activateCustomDBHeader:function(newHeader){
+    dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders] "+newHeader+"\r\n");
     let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
     let currentHeaders = prefService.getCharPref("mailnews.customDBHeaders");
     let re = new RegExp("(^| )"+newHeader+"( |$)","i");
     if (currentHeaders.search(re) < 0) {
       currentHeaders = currentHeaders + " "+newHeader;
       prefService.setCharPref("mailnews.customDBHeaders", currentHeaders);
-      dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders] "+newHeader+"\r\n");
+      dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders->Updating] "+newHeader+"\r\n");
     }
   },
 	

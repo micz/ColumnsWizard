@@ -5,3 +5,4 @@ pref("extensions.ColumnsWizard.ShowRecipient", false);
 pref("extensions.ColumnsWizard.CustCols.AddCc", false);
 pref("extensions.ColumnsWizard.CustCols.Addbcc", false);
 pref("extensions.ColumnsWizard.CustCols.Addreplyto", false);
+pref("extensions.ColumnsWizard.CustCols.Addxoriginalfrom", false);

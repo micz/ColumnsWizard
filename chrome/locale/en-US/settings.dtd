@@ -15,3 +15,4 @@
 <!ENTITY ColumnsWizard.TranslateCredits "Translation thanks to Babelzilla.org">
 <!ENTITY ColumnsWizard.Addbcc.label "Bcc">
 <!ENTITY ColumnsWizard.Addreplyto.label "Reply-to">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
