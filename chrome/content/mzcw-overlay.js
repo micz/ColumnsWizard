@@ -60,6 +60,16 @@ var miczColumnsWizard = {
       miczColumnsWizard.CustCols.addCustomColumn(index,ObserverService);
     }
   },
+  
+  activateCustomDBHeader:function(newHeader){
+    let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+    let currentHeaders = prefService.getCharPref("mailnews.customDBHeaders");
+    let re = new RegExp("(^| )"+newHeader+"( |$)","i");
+    if (currentHeaders.search(re) < 0) {
+      currentHeaders = currentHeaders + " "+newHeader;
+      prefService.setCharPref("mailnews.customDBHeaders", currentHeaders);
+    }
+  },
 	
 	showColumns: function(tab){
     let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
