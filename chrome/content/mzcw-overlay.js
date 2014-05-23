@@ -61,6 +61,10 @@ var miczColumnsWizard = {
     loadedCustColPref["xoriginalfrom"].Pref = prefs.getBoolPref("Addxoriginalfrom");
     loadedCustColPref["xoriginalfrom"].Def = "Addxoriginalfrom";
     loadedCustColPref["xoriginalfrom"].customDBHeader = "x-original-from";
+    loadedCustColPref["contentbase"]={};
+    loadedCustColPref["contentbase"].Pref = prefs.getBoolPref("Addcontentbase");
+    loadedCustColPref["contentbase"].Def = "Addcontentbase";
+    loadedCustColPref["contentbase"].customDBHeader = "content-base";
     return loadedCustColPref;
   },
   

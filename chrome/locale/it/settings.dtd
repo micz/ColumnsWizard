@@ -16,3 +16,4 @@
 <!ENTITY ColumnsWizard.Addbcc.label "Ccn">
 <!ENTITY ColumnsWizard.Addreplyto.label "Reply-to">
 <!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
+<!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
