@@ -56,7 +56,7 @@ miczColumnsWizard.CustCols["columnHandler_cc"]={
    getCellText:         function(row, col) {
       //get the message's header so that we can extract the cc to field
       let hdr = gDBView.getMsgHdrAt(row);
-      dump(">>>>>>>>>>>>> miczColumnsWizard->columnHandler_cc: [value] "+hdr.getStringProperty("ccList")+"\r\n");
+      //dump(">>>>>>>>>>>>> miczColumnsWizard->columnHandler_cc: [value] "+hdr.getStringProperty("ccList")+"\r\n");
       return hdr.getStringProperty("ccList");
    },
    getSortStringForRow: function(hdr) {return hdr.getStringProperty("ccList");},
@@ -73,7 +73,7 @@ miczColumnsWizard.CustCols["columnHandler_bcc"]={
    getCellText:         function(row, col) {
       //get the message's header so that we can extract the bcc to field
       let hdr = gDBView.getMsgHdrAt(row);
-      dump(">>>>>>>>>>>>> miczColumnsWizard->columnHandler_bcc: [value] "+hdr.getStringProperty("bccList")+"\r\n");
+      //dump(">>>>>>>>>>>>> miczColumnsWizard->columnHandler_bcc: [value] "+hdr.getStringProperty("bccList")+"\r\n");
       return hdr.getStringProperty("bccList");
    },
    getSortStringForRow: function(hdr) {return hdr.getStringProperty("bccList");},
@@ -90,7 +90,7 @@ miczColumnsWizard.CustCols["columnHandler_replyto"]={
    getCellText:         function(row, col) {
       //get the message's header so that we can extract the replyTo to field
       let hdr = gDBView.getMsgHdrAt(row);
-      dump(">>>>>>>>>>>>> miczColumnsWizard->columnHandler_bcc: [value] "+hdr.getStringProperty("replyTo")+"\r\n");
+      //dump(">>>>>>>>>>>>> miczColumnsWizard->columnHandler_bcc: [value] "+hdr.getStringProperty("replyTo")+"\r\n");
       return hdr.getStringProperty("replyTo");
    },
    getSortStringForRow: function(hdr) {return hdr.getStringProperty("replyTo");},
