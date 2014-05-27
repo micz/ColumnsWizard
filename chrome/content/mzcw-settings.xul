@@ -68,10 +68,10 @@
             preference="ColumnsWizard.CustCols.Addbcc"/>
           <checkbox id="ColumnsWizard.Addreplyto_checkbox" label="&ColumnsWizard.Addreplyto.label;"
             preference="ColumnsWizard.CustCols.Addreplyto"/>
-          <checkbox id="ColumnsWizard.Addxoriginalfrom_checkbox" label="&ColumnsWizard.Addxoriginalfrom.label;"
-            preference="ColumnsWizard.CustCols.Addxoriginalfrom"/>
-          <checkbox id="ColumnsWizard.Addcontentbase_checkbox" label="&ColumnsWizard.Addcontentbase.label;"
-            preference="ColumnsWizard.CustCols.Addcontentbase"/>
+          <hbox><checkbox id="ColumnsWizard.Addxoriginalfrom_checkbox" label="&ColumnsWizard.Addxoriginalfrom.label;"
+            preference="ColumnsWizard.CustCols.Addxoriginalfrom"/> <label control="symbol" value="*"/></hbox>
+          <hbox><checkbox id="ColumnsWizard.Addcontentbase_checkbox" label="&ColumnsWizard.Addcontentbase.label;"
+            preference="ColumnsWizard.CustCols.Addcontentbase"/> <label control="symbol" value="*"/></hbox>
           <label control="symbol" value=" "/>
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
