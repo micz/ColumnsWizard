@@ -120,7 +120,7 @@ miczColumnsWizard.CustCols["columnHandler_xoriginalfrom"]={
 //xoriginalfrom - END
 
 //contentbase
-miczColumnsWizard.CustCols["columnHandler_xoriginalfrom"]={
+miczColumnsWizard.CustCols["columnHandler_contentbase"]={
    getCellText:         function(row, col) {
       //get the message's header so that we can extract the content-base to field
       let hdr = gDBView.getMsgHdrAt(row);
