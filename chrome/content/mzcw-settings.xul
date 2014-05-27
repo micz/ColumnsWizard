@@ -73,6 +73,8 @@
           <hbox><checkbox id="ColumnsWizard.Addcontentbase_checkbox" label="&ColumnsWizard.Addcontentbase.label;"
             preference="ColumnsWizard.CustCols.Addcontentbase"/> <label control="symbol" value="*"/></hbox>
           <label control="symbol" value=" "/>
+          <description style="word-wrap:normal;max-width:550px;margin-bottom:10px;">&ColumnsWizard.CustomHeadersDescCustCols;</description>
+          <label control="symbol" value=" "/>
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
 	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>
