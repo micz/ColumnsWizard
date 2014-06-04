@@ -91,13 +91,13 @@ var miczColumnsWizard = {
   },
 
   deactivateCustomDBHeader:function(newHeader){
-    dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate customDBHeaders] "+newHeader+"\r\n");
+    //dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate customDBHeaders] "+newHeader+"\r\n");
     let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
     let currentHeaders = prefService.getCharPref("mailnews.customDBHeaders");
     let re = new RegExp("(^| )"+newHeader+"( |$)","i");
     currentHeaders=currentHeaders.replace(re," ");
     prefService.setCharPref("mailnews.customDBHeaders", currentHeaders);
-    dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate customDBHeaders->Updating] "+newHeader+"\r\n");
+    //dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate customDBHeaders->Updating] "+newHeader+"\r\n");
   },
 
 	showColumns: function(tab){
