@@ -89,7 +89,17 @@ var miczColumnsWizard = {
       //dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders->Updating] "+newHeader+"\r\n");
     }
   },
-	
+
+  deactivateCustomDBHeader:function(newHeader){
+    dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate customDBHeaders] "+newHeader+"\r\n");
+    let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+    let currentHeaders = prefService.getCharPref("mailnews.customDBHeaders");
+    let re = new RegExp("(^| )"+newHeader+"( |$)","i");
+    currentHeaders=currentHeaders.replace(re," ");
+    prefService.setCharPref("mailnews.customDBHeaders", currentHeaders);
+    dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate customDBHeaders->Updating] "+newHeader+"\r\n");
+  },
+
 	showColumns: function(tab){
     let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
     prefs = prefs.getBranch("extensions.ColumnsWizard.");

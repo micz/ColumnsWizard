@@ -59,6 +59,9 @@ miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
     }else{
       //checbox not checked
       miczColumnsWizard.CustCols.removeCustomColumn(cwColName,ObserverService);
+      if(cwCustColPref[cwColName].customDBHeader!=false){
+        miczColumnsWizard.deactivateCustomDBHeader(cwCustColPref[cwColName].customDBHeader);
+      }
     }
   }
 );
