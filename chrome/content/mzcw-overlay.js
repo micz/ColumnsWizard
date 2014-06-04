@@ -69,7 +69,7 @@ var miczColumnsWizard = {
   },
   
   custColsActivation:function(element,index,ObserverService){
-  dump(">>>>>>>>>>>>> miczColumnsWizard: [element|index] "+element.Pref+"|"+index+"\r\n");
+  //dump(">>>>>>>>>>>>> miczColumnsWizard: [element|index] "+element.Pref+"|"+index+"\r\n");
     if(element.Pref===true){
       miczColumnsWizard.CustCols.addCustomColumn(index,ObserverService);
       if(element.customDBHeader!=false){
@@ -79,14 +79,14 @@ var miczColumnsWizard = {
   },
   
   activateCustomDBHeader:function(newHeader){
-    dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders] "+newHeader+"\r\n");
+    //dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders] "+newHeader+"\r\n");
     let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
     let currentHeaders = prefService.getCharPref("mailnews.customDBHeaders");
     let re = new RegExp("(^| )"+newHeader+"( |$)","i");
     if (currentHeaders.search(re) < 0) {
       currentHeaders = currentHeaders + " "+newHeader;
       prefService.setCharPref("mailnews.customDBHeaders", currentHeaders);
-      dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders->Updating] "+newHeader+"\r\n");
+      //dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders->Updating] "+newHeader+"\r\n");
     }
   },
 	
