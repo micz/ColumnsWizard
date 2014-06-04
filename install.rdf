@@ -24,7 +24,7 @@
       <Description>
         <em:locale>it</em:locale>
         <em:name>ColumnsWizard</em:name>
-        <em:description>Un'estensione di Thunderbird che permette di mostrare le colonne nascoste nel tab di visualizzazione a "Conversazione".</em:description>
+        <em:description>Un'estensione di Thunderbird che aggiunge un po' di magia alle colonne visualizzate nella lista delle mail. Mostra le colonne nascoste nel tab di visualizzazione a "Conversazione" e permette di aggiungere nuove colonne a qualunque lista di visualizzazione delle mail.</em:description>
         <em:creator>Mic (m@micz.it)</em:creator>
         <em:contributor></em:contributor>
         <em:translator>Mic (m@micz.it)</em:translator>
