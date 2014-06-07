@@ -9,3 +9,12 @@
 <!ENTITY ColumnsWizard.GlobalDescCustCols "选择您想添加的自定义列。">
 <!ENTITY ColumnsWizard.WarnDescCustCols "选定之后，您需要显示的列就会在您需要时的文件夹视图中出现。 如果您删除并重新选择一个以前选择的选项，您必须再次这样做。">
 <!ENTITY ColumnsWizard.AddCc.label "抄送">
+<!ENTITY ColumnsWizard.TabInfo.label "信息">
+<!ENTITY ColumnsWizard.InfoMainDesc "本附加组件是在我的业余时间下免费开发的。如果你每天都在使用它，希望您能随心做一点点捐款支持它，只需点击下面的链接。十分感谢！">
+<!ENTITY ColumnsWizard.DonateLink "我要捐款！">
+<!ENTITY ColumnsWizard.TranslateCredits "感谢 Babelzilla.org 志愿者提供翻译">
+<!ENTITY ColumnsWizard.Addbcc.label "密送">
+<!ENTITY ColumnsWizard.Addreplyto.label "回复给">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
+<!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* 此列仅适用在自定义列激活后被接收的邮件。">
