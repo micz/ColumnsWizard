@@ -9,3 +9,12 @@
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Wählen sie hier welche Spalten Sie hinzufügen wollen.">
 <!ENTITY ColumnsWizard.WarnDescCustCols "Die hier ausgewählten Spalten müssen in der jeweiligen Ordneransicht (anzuzeigende Spalten) sichtbar gemacht werden. Falls Sie eine Spalte entfernen und wieder hinzufügen muss diese erneut sichtbar gemacht werden.">
 <!ENTITY ColumnsWizard.AddCc.label "Kopie (CC)">
+<!ENTITY ColumnsWizard.TabInfo.label "Info">
+<!ENTITY ColumnsWizard.InfoMainDesc "Ich entwickle diese Erweiterung in meiner Freizeit. Falls Sie sie täglich benutzen, ziehen Sie eine Spende in Betracht: Klicken Sie bitte hierzu den nachfolgenden link. Vielen Dank!">
+<!ENTITY ColumnsWizard.DonateLink "Spenden Sie!">
+<!ENTITY ColumnsWizard.TranslateCredits "Übersetzungen dank Babelzilla.org">
+<!ENTITY ColumnsWizard.Addbcc.label "Blindkopie (Bcc)">
+<!ENTITY ColumnsWizard.Addreplyto.label "Antwortadresse">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
+<!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Diese Spalte wird nur mit neu empfangenen Mails mit Daten bestückt.">
