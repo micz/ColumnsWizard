@@ -24,7 +24,11 @@ miczColumnsWizard.CustCols={
     cwCol.setAttribute("tooltiptext",tooltipString);
     let cwSplitter = document.createElement("splitter");
     cwSplitter.setAttribute("class","tree-splitter");
+    cwSplitter.setAttribute("resizeafter","farthest");
     let element = document.getElementById("threadCols");
+    let lastordinal=element.children.length;
+    //dump('>>>>>>>>> columns [js children: '+lastordinal+"] [real: "+(lastordinal-1)/2+"]\r\n");
+    cwSplitter.setAttribute("ordinal",lastordinal+1);
     element.appendChild(cwSplitter);
     element.appendChild(cwCol);
     
