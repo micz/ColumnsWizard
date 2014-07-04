@@ -9,3 +9,12 @@
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Kies hier welke aangepaste kolommen u wilt toevoegen.">
 <!ENTITY ColumnsWizard.WarnDescCustCols "Na selectie dient u de kolom in de mapweergave waar u deze nodig hebt weer te geven. U dient dit opnieuw te doen als u een eerder geselecteerde optie deselecteert en opnieuw selecteert.">
 <!ENTITY ColumnsWizard.AddCc.label "Cc">
+<!ENTITY ColumnsWizard.TabInfo.label "Info">
+<!ENTITY ColumnsWizard.InfoMainDesc "Deze add-on is gratis en ontwikkeld in mijn vrije tijd. Als u hem dagelijks gebruikt, steun hem dan middels een kleine donatie via onderstaande koppeling. Bedankt!">
+<!ENTITY ColumnsWizard.DonateLink "Donatie doen!">
+<!ENTITY ColumnsWizard.TranslateCredits "Vertaling dankzij BabelZilla.org">
+<!ENTITY ColumnsWizard.Addbcc.label "Bcc">
+<!ENTITY ColumnsWizard.Addreplyto.label "Antwoord-aan">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
+<!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Deze kolom wordt alleen gevuld voor de e-mailberichten die na activeren van de aangepaste kolom worden ontvangen.">
