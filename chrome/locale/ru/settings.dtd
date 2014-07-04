@@ -9,3 +9,12 @@
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Выберите, какие пользовательские столбцы Вы хотите добавить.">
 <!ENTITY ColumnsWizard.WarnDescCustCols "После выбора, в обзоре папок, Вы должны поместить столбец куда Вам нужно. Вы должны будете сделать это заного, если Вы отмените и повторно выберите уже ранее выбранную опцию.">
 <!ENTITY ColumnsWizard.AddCc.label "Копия (сс)">
+<!ENTITY ColumnsWizard.TabInfo.label "Info">
+<!ENTITY ColumnsWizard.InfoMainDesc "This addon is free and developed in my spare time. If you're using it in your every day routine, feel free to support it with a little donation clicking on the link below. Thanks!!">
+<!ENTITY ColumnsWizard.DonateLink "Make a donation!">
+<!ENTITY ColumnsWizard.TranslateCredits "Translation thanks to Babelzilla.org">
+<!ENTITY ColumnsWizard.Addbcc.label "Bcc">
+<!ENTITY ColumnsWizard.Addreplyto.label "Reply-to">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
+<!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* This column will be populated only for the mails that will be received after the Custom Column activation.">
