@@ -1,6 +1,9 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
+Version 4.1 - ??/??/2014
+- 
+==========
 Version 4.0 - 04/07/2014
 - Added the "Info" tab.
 - Embedded addon icon.
