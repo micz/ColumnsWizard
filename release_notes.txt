@@ -1,7 +1,7 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
-Version 4.0 - ??/??/2014
+Version 4.0 - 04/07/2014
 - Added the "Info" tab.
 - Embedded addon icon.
 - Added bcc custom column.
@@ -9,7 +9,6 @@ Version 4.0 - ??/??/2014
 - Added the x-original-from custom column (See DMARC specification http://www.dmarc.org/).
 - Added the content-base custom column.
 - Fixed a bug in resizing custom columns.
-- 
 ==========
 Version 3.1 - 22/02/2014
 - Added the option to show the "Recipient" column in the conversation tab.
