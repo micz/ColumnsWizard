@@ -12,9 +12,3 @@
 <!ENTITY ColumnsWizard.TabInfo.label "Informations">
 <!ENTITY ColumnsWizard.InfoMainDesc "Cette extension est gratuite, je la développe sur mon temps libre. Si vous l'utilisez régulièrement avec satisfaction, envisagez de faire un petit don en cliquant sur le bouton ci-dessous. Merci !">
 <!ENTITY ColumnsWizard.DonateLink "Faites un don !">
-<!ENTITY ColumnsWizard.TranslateCredits "Translation thanks to Babelzilla.org">
-<!ENTITY ColumnsWizard.Addbcc.label "Bcc">
-<!ENTITY ColumnsWizard.Addreplyto.label "Reply-to">
-<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
-<!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
-<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* This column will be populated only for the mails that will be received after the Custom Column activation.">
