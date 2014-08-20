@@ -17,4 +17,6 @@
 <!ENTITY ColumnsWizard.Addreplyto.label "Reply-to">
 <!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
 <!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
+<!ENTITY ColumnsWizard.Addcustom.label "Custom">
+<!ENTITY ColumnsWizard.CustomHdr.label "Custom">
 <!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* This column will be populated only for the mails that will be received after the Custom Column activation.">

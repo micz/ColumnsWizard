@@ -65,6 +65,10 @@ var miczColumnsWizard = {
     loadedCustColPref["contentbase"].Pref = prefs.getBoolPref("Addcontentbase");
     loadedCustColPref["contentbase"].Def = "Addcontentbase";
     loadedCustColPref["contentbase"].customDBHeader = "content-base";
+    loadedCustColPref["custom"]={};
+    loadedCustColPref["custom"].Pref = prefs.getBoolPref("Addcustom");
+    loadedCustColPref["custom"].Def = "Addcustom";
+    loadedCustColPref["custom"].customDBHeader = prefs.getCharPref("CustomHdr").toLowerCase();
     return loadedCustColPref;
   },
   

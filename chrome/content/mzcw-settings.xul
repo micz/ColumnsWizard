@@ -36,6 +36,12 @@
       <preference id="ColumnsWizard.CustCols.Addcontentbase"
         name="extensions.ColumnsWizard.CustCols.Addcontentbase"
         type="bool" />
+      <preference id="ColumnsWizard.CustCols.Addcustom"
+        name="extensions.ColumnsWizard.CustCols.Addcustom"
+        type="bool" />
+      <preference id="ColumnsWizard.CustCols.CustomHdr"
+        name="extensions.ColumnsWizard.CustCols.CustomHdr"
+        type="string" />
     </preferences>
     <tabbox>
       <tabs>
@@ -72,6 +78,10 @@
             preference="ColumnsWizard.CustCols.Addxoriginalfrom"/> <label control="symbol" value="*"/></hbox>
           <hbox><checkbox id="ColumnsWizard.Addcontentbase_checkbox" label="&ColumnsWizard.Addcontentbase.label;"
             preference="ColumnsWizard.CustCols.Addcontentbase"/> <label control="symbol" value="*"/></hbox>
+          <hbox><checkbox id="ColumnsWizard.Addcustom_checkbox" label="&ColumnsWizard.Addcustom.label;"
+            preference="ColumnsWizard.CustCols.Addcustom"/> <label control="symbol" value="*"/>
+            <textbox id="ColumnsWizard.CustomHdr_textbox" label="&ColumnsWizard.CustomHdr.label;"
+            preference="ColumnsWizard.CustCols.CustomHdr"/></hbox>
           <label control="symbol" value=" "/>
           <description style="word-wrap:normal;max-width:550px;margin-bottom:10px;">&ColumnsWizard.CustomHeadersDescCustCols;</description>
           <label control="symbol" value=" "/>
