@@ -155,7 +155,7 @@ miczColumnsWizard.CustCols["columnHandler_custom"]={
       let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
       prefs = prefs.getBranch("extensions.ColumnsWizard.CustCols.");
       let customHdr = prefs.getCharPref("CustomHdr").toLowerCase();
-      return hdr.getStringProperty("content-base");
+      return hdr.getStringProperty("CustomHdr");
    },
    isString:            function() {return true;},
    getCellProperties:   function(row, col, props){},
