@@ -33,7 +33,7 @@ miczColumnsWizard.CustCols={
     element.appendChild(cwCol);
     
     //DbObserver Managing
-    ObserverService.addObserver(miczColumnsWizard.CustCols["CreateDbObserver_"+coltype], "MsgCreateDBView", false);
+    ObserverService.addObserver(miczColumnsWizard.CustCols.CreateDbObserver[coltype], "MsgCreateDBView", false);
   },
   
     removeCustomColumn: function(coltype,ObserverService){
@@ -41,16 +41,18 @@ miczColumnsWizard.CustCols={
       if(element) element.parentNode.removeChild(element);
       
       //DbObserver Managing
-      ObserverService.removeObserver(miczColumnsWizard.CustCols["CreateDbObserver_"+coltype], "MsgCreateDBView");
+      ObserverService.removeObserver(miczColumnsWizard.CustCols.CreateDbObserver[coltype], "MsgCreateDBView");
     }, 
 };
 
 //Create all the needed DbObservers
 miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
+miczColumnsWizard.CustCols.CreateDbObserver=Array();
 for (let index in miczColumnsWizard.CustColPref) {
-  //dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+index+"\r\n");
-  //It's needed to to this, to avoid writing each miczColumnsWizard.CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function deifnition.
-  eval("miczColumnsWizard.CustCols.CreateDbObserver_"+index+"={observe: function(aMsgFolder, aTopic, aData){miczColumnsWizard.CustCols.addCustomColumnHandler('"+index+"');}};");
+  dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+index+"\r\n");
+  //It's needed to to this, to avoid writing each miczColumnsWizard.CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function definition.
+  let obfunction=new Function('aMsgFolder', 'aTopic', 'aData',"miczColumnsWizard.CustCols.addCustomColumnHandler('"+index+"');");
+  miczColumnsWizard.CustCols.CreateDbObserver[index]={observe: obfunction};
 }
 //Create all the needed DbObserver - END
 
