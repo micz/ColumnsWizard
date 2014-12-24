@@ -49,7 +49,7 @@ miczColumnsWizard.CustCols={
 miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
 miczColumnsWizard.CustCols.CreateDbObserver=Array();
 for (let index in miczColumnsWizard.CustColPref) {
-  dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+index+"\r\n");
+  //dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+index+"\r\n");
   //It's needed to to this, to avoid writing each miczColumnsWizard.CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function definition.
   let obfunction=new Function('aMsgFolder', 'aTopic', 'aData',"miczColumnsWizard.CustCols.addCustomColumnHandler('"+index+"');");
   miczColumnsWizard.CustCols.CreateDbObserver[index]={observe: obfunction};
