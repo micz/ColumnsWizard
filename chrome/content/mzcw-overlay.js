@@ -20,6 +20,8 @@ var miczColumnsWizard = {
       miczColumnsWizard.custColsActivation(miczColumnsWizard.CustColPref[index],index,ObserverService);
     }
     
+    miczColumnsWizard.watchFolders();
+    
 		this.initialized = true;
     //Conversation Tab add columns - delayed
   	setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
@@ -39,7 +41,6 @@ var miczColumnsWizard = {
     }catch(e){
       alert("No tabContainer available! " + e);
     }
-    this.watchFolders();
 	},
 
   loadCustCols:function(){
@@ -137,6 +138,7 @@ var miczColumnsWizard = {
         // The following are already handled internally
         //mailSessionService.AddFolderListener(FolderListener, Ci.nsIFolderListener.removed);
         //mailSessionService.AddFolderListener(FolderListener, Ci.nsIFolderListener.event);
+        dump(">>>>>>>>>>>>> miczColumnsWizard: [watchFolders] \r\n");
     },
 
     unwatchFolders: function()
