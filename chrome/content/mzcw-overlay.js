@@ -39,6 +39,7 @@ var miczColumnsWizard = {
     }catch(e){
       alert("No tabContainer available! " + e);
     }
+    this.watchFolders();
 	},
 
   loadCustCols:function(){
@@ -126,8 +127,24 @@ var miczColumnsWizard = {
       if(recipientcv) recipientcv.setAttribute("hidden", "false");
      }
     }
+    //dump(">>>>>>>>>>>>> miczColumnsWizard: [tab folder mode] "+tab.mode.name+" \r\n");
   },
-	
+
+    watchFolders: function()
+    {
+		let mailSessionService = Components.classes["@mozilla.org/messenger/services/session;1"].getService(Components.interfaces.nsIMsgMailSession);
+        mailSessionService.AddFolderListener(miczColumnsWizard.FolderListener, Components.interfaces.nsIFolderListener.added);
+        // The following are already handled internally
+        //mailSessionService.AddFolderListener(FolderListener, Ci.nsIFolderListener.removed);
+        //mailSessionService.AddFolderListener(FolderListener, Ci.nsIFolderListener.event);
+    },
+
+    unwatchFolders: function()
+    {
+		let mailSessionService = Components.classes["@mozilla.org/messenger/services/session;1"].getService(Components.interfaces.nsIMsgMailSession);
+        mailSessionService.RemoveFolderListener(miczColumnsWizard.FolderListener);
+    },
+
 };
 
 window.addEventListener("load", miczColumnsWizard.init, false);

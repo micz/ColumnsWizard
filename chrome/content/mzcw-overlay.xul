@@ -8,6 +8,7 @@
 <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-overlay.js" />
 <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-customcolumns.js" />
 <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-prefobserver.js" />
+<script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-folderlistener.js" />
 
 <stringbundleset id="stringbundleset">
   <stringbundle id="ColumnsWizard-string-bundle" src="chrome://columnswizard/locale/overlay.properties" />
