@@ -40,17 +40,21 @@ miczColumnsWizard.FolderListener={
          //let msgDatabase = item.msgDatabase;
          let cwcolumnStatesString = dbFolderInfo.getCharProperty(propName);
          dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded columnsStateString] "+cwcolumnStatesString+"...\r\n");
-         if(cwcolumnStatesString!==false){
-			 let cwcolumnStates = JSON.parse(cwcolumnStatesString);
+         let cwcolumnStates=Array();
+         if(cwcolumnStatesString!=''){
+			 cwcolumnStates = JSON.parse(cwcolumnStatesString);
 			 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded columnsStateString parsed]\r\n");
 		 }else{
-			 let cwcolumnStates=Array();
 			 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded columnsStateString empty Array]\r\n");
 		 }
-		 cwcolumnStates['ccCol_cw']={visible:true,ordinal:cwcolumnStates['ccCol_cw'].ordinal==0?cwcolumnState.length+1:columnsState['ccCol_cw'].ordinal};
+		 if(!('ccCol_cw' in cwcolumnStates)){
+			 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded cwcolumnStates['ccCol_cw'] is false]\r\n");
+			cwcolumnStates['ccCol_cw']={visible:true,ordinal:0};
+		 }
+		 cwcolumnStates['ccCol_cw']={visible:true,ordinal:cwcolumnStates['ccCol_cw'].ordinal==0?cwcolumnStates.length+1:cwcolumnStates['ccCol_cw'].ordinal};
 		 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded columnsStateString NEW] "+JSON.stringify(cwcolumnStates)+"\r\n");
 		 dbFolderInfo.setCharProperty(propName,JSON.stringify(cwcolumnStates));
-		 item.msgDatabasemsgDatabase.Commit(Components.interfaces.nsMsgDBCommitType.kLargeCommit);
+		 item.msgDatabase.Commit(Components.interfaces.nsMsgDBCommitType.kLargeCommit);
 		 
 		        /* let cwcolumnStates = item.getColumnStates();
          dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded do it on] "+cwcolumnStatese+"\r\n");
