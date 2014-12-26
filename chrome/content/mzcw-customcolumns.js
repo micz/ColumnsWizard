@@ -1,4 +1,6 @@
 "use strict";
+const {classes: Cc, interfaces: Ci, utils: Cu, results : Cr} = Components;
+
 miczColumnsWizard.CustCols={
 
   addCustomColumnHandler: function(coltype) {
@@ -6,7 +8,7 @@ miczColumnsWizard.CustCols={
   },
   
   addCustomColumn: function(coltype,ObserverService){
-    let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+    let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
     let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
 
     if(document.getElementById(coltype+"Col_cw")){
