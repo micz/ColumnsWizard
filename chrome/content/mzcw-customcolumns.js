@@ -1,6 +1,4 @@
 "use strict";
-const {classes: Cc, interfaces: Ci, utils: Cu, results : Cr} = Components;
-
 miczColumnsWizard.CustCols={
 
   addCustomColumnHandler: function(coltype) {
