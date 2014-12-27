@@ -4,7 +4,8 @@
 <!DOCTYPE overlay SYSTEM "chrome://columnswizard/locale/settings.dtd">
 <prefwindow id="ColumnsWizard_Settings"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-  title="&ColumnsWizard.SettingsTitle;">
+  title="&ColumnsWizard.SettingsTitle;"
+  onload="miczColumnsWizardPref.onLoad(window);">
   <prefpane id="ColumnsWizard_PrefPane">
     <preferences>
     <!-- Columns in Conversation Tab -->
@@ -45,6 +46,7 @@
       </tabs>
       <tabpanels>
         <tabpanel id="convtab" orient="vertical">
+			 <!-- Columns in Conversation Tab -->
           <label control="symbol" value="&ColumnsWizard.GlobalDescConvTab;"/>
           <label control="symbol" value=" "/>
           <checkbox id="ColumnsWizard.ShowLocation_checkbox" label="&ColumnsWizard.ShowLocation.label;"
@@ -57,11 +59,19 @@
             preference="ColumnsWizard.ShowRecipient" />
         </tabpanel>
         <tabpanel id="custcols" orient="vertical">
+			<!-- Custom Columns -->
           <label control="symbol" value="&ColumnsWizard.GlobalDescCustCols;"/>
           <vbox class="mzcw-warn">
 	    <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.WarnDescCustCols;</description>
           </vbox>
           <label control="symbol" value=" "/>
+		   <grid>
+			  <columns>
+				<column/><column/><column flex="1"/><column/><column flex="1"/><column flex="1"/><column flex="1"/><column/><column/><column/><column/>
+			  </columns> 
+			  <rows id='ColumnsWizard.ColsGrid' preference='ColumnsWizard.ColsList' preference-editable="true" onsyncfrompreference='return autoArchivePrefDialog.syncFromPerf(window);'>
+			  </rows>
+			</grid>
           <checkbox id="ColumnsWizard.AddCc_checkbox" label="&ColumnsWizard.AddCc.label;"
             preference="ColumnsWizard.CustCols.AddCc"/>
           <checkbox id="ColumnsWizard.Addbcc_checkbox" label="&ColumnsWizard.Addbcc.label;"
@@ -86,4 +96,5 @@
       </tabpanels>
     </tabbox>
   </prefpane>
+  <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-settings.js" />
 </prefwindow>
