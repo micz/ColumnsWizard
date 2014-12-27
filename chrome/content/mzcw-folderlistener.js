@@ -23,7 +23,6 @@ miczColumnsWizard.FolderListener={
 			dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded no parent] "+item.name+"\r\n");
             return;
         }
-        //if (this.isTrash(item) || this.isVirtual(item) || this.isJunk(item)) {
         if (miczColumnsWizard.FolderListener.isTrash(item) || miczColumnsWizard.FolderListener.isJunk(item)) {
 			dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded special folder] "+item.name+"\r\n");
             return;
@@ -38,12 +37,10 @@ miczColumnsWizard.FolderListener={
         if (!(item instanceof Components.interfaces.nsIMsgFolder)) {
             return;
         }
-        //if (this.isTrash(item) || this.isVirtual(item) || this.isJunk(item)) {
         if (miczColumnsWizard.FolderListener.isTrash(item) || miczColumnsWizard.FolderListener.isJunk(item)) {
             return;
         }
         if (event.toString() == "RenameCompleted") {
-            //TODO
             miczColumnsWizard.FolderListener.cw_showColumns(item);
         }
     },
@@ -53,11 +50,10 @@ miczColumnsWizard.FolderListener={
         if (!(item instanceof Components.interfaces.nsIMsgFolder)) {
             return;
         }
-        //if (miczColumnsWizard.FolderListener.isTrash(item) || miczColumnsWizard.FolderListener.isVirtual(item) || miczColumnsWizard.FolderListener.isJunk(item)) {
 		if (miczColumnsWizard.FolderListener.isTrash(item) || miczColumnsWizard.FolderListener.isJunk(item)) {
             return;
         }
-		//Nothing to do
+		//Nothing to do here...
     },
     
     isInbox: function(folder)
@@ -97,11 +93,7 @@ miczColumnsWizard.FolderListener={
     {
 		 let propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
 		 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded propName] "+propName+"\r\n");
-		 /*if(!item)dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded no item]\r\n");
-		 if(!item.msgDatabase)dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded no item.msgDatabase]\r\n");
-		 if(!item.msgDatabase.dBFolderInfo)dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded no item.msgDatabase.dBFolderInfo]\r\n");*/
          let dbFolderInfo = item.msgDatabase.dBFolderInfo;
-         //let msgDatabase = item.msgDatabase;
          let cwcolumnStatesString = dbFolderInfo.getCharProperty(propName);
          dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded columnsStateString] "+cwcolumnStatesString+"...\r\n");
          let cwcolumnStates=Array();
@@ -110,8 +102,6 @@ miczColumnsWizard.FolderListener={
 			 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded columnsStateString parsed]\r\n");
 		 }else{
 			 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded columnsStateString empty Array]\r\n");
-			 //TODO: If not current folder, set current to inbox
-			 //cwcolumnStates=gFolderDisplay._getDefaultColumnsForCurrentFolder();
 			 cwcolumnStates=gFolderDisplay.getColumnStates();
 		 }
 		 if(!('ccCol_cw' in cwcolumnStates)){
@@ -119,6 +109,7 @@ miczColumnsWizard.FolderListener={
 			cwcolumnStates['ccCol_cw']={visible:true,ordinal:''};
 		 }
 		 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded cwcolumnStates['ccCol_cw'].ordinal] "+cwcolumnStates['ccCol_cw'].ordinal+"\r\n");
+		 //There is no need to set an ordinal...
 		 //let lastordinal=(cwcolumnStates['ccCol_cw'].ordinal=='0')||(cwcolumnStates['ccCol_cw'].ordinal=='null')?(Object.keys(cwcolumnStates).length)+1:cwcolumnStates['ccCol_cw'].ordinal;
 		 //dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded lastordinal] "+lastordinal+" | "+typeof lastordinal+"\r\n");
 		 let lastordinalstr='';//lastordinal.toString();
