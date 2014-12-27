@@ -1,9 +1,9 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
-Version 5.0 - ??/??/2014
+Version 5.0alan - 27/12/2014
 - No more use of javascript eval function.
-- 
+- Any selected custom column is always shown in a new folder.
 ==========
 Version 4.0 - 04/07/2014
 - Added the "Info" tab.
