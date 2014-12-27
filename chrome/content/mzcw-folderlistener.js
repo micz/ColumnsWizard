@@ -90,7 +90,7 @@ miczColumnsWizard.FolderListener={
         return !hasSubFolders && !hasMessages;
     },
     
-    cw_showColumns: function(item)
+    cw_showColumns_cc_only: function(item)
     {
 		 let propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
 		 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded propName] "+propName+"\r\n");
@@ -115,6 +115,42 @@ miczColumnsWizard.FolderListener={
 		 //dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded lastordinal] "+lastordinal+" | "+typeof lastordinal+"\r\n");
 		 let lastordinalstr='';//lastordinal.toString();
 		 cwcolumnStates['ccCol_cw']={visible:true,ordinal:lastordinalstr};
+		 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded columnsStateString NEW] "+JSON.stringify(cwcolumnStates)+"\r\n");
+		 dbFolderInfo.setCharProperty(propName,JSON.stringify(cwcolumnStates));
+		 item.msgDatabase.Commit(Components.interfaces.nsMsgDBCommitType.kLargeCommit);
+	},
+	
+	cw_showColumns: function(item){
+		 let propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
+		 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded propName] "+propName+"\r\n");
+         let dbFolderInfo = item.msgDatabase.dBFolderInfo;
+         let cwcolumnStatesString = dbFolderInfo.getCharProperty(propName);
+         dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded columnsStateString] "+cwcolumnStatesString+"...\r\n");
+         let cwcolumnStates=Array();
+         if(cwcolumnStatesString!=''){
+			 cwcolumnStates = JSON.parse(cwcolumnStatesString);
+			 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded columnsStateString parsed]\r\n");
+		 }else{
+			 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded columnsStateString empty Array]\r\n");
+			 cwcolumnStates=gFolderDisplay.getColumnStates();
+		 }
+		 //Choose which columns we need to always show...
+		 //For the moment we always show the active custom columns.
+		 let cwCustColPref=miczColumnsWizard.loadCustCols();
+		 for (let index in cwCustColPref) {
+			 if(cwCustColPref[index].Pref){
+				 if(!(index+'Col_cw' in cwcolumnStates)){
+					 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded cwcolumnStates['"+index+"Col_cw'] is false]\r\n");
+					cwcolumnStates[index+'Col_cw']={visible:true,ordinal:''};
+				 }
+				 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded cwcolumnStates['"+index+"Col_cw'].ordinal] "+cwcolumnStates[index+'Col_cw'].ordinal+"\r\n");
+				 //There is no need to set an ordinal...
+				 //let lastordinal=(cwcolumnStates['ccCol_cw'].ordinal=='0')||(cwcolumnStates['ccCol_cw'].ordinal=='null')?(Object.keys(cwcolumnStates).length)+1:cwcolumnStates['ccCol_cw'].ordinal;
+				 //dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded lastordinal] "+lastordinal+" | "+typeof lastordinal+"\r\n");
+				 let lastordinalstr='';//lastordinal.toString();
+				 cwcolumnStates[index+'Col_cw']={visible:true,ordinal:lastordinalstr};
+			 }
+		 }
 		 dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded columnsStateString NEW] "+JSON.stringify(cwcolumnStates)+"\r\n");
 		 dbFolderInfo.setCharProperty(propName,JSON.stringify(cwcolumnStates));
 		 item.msgDatabase.Commit(Components.interfaces.nsMsgDBCommitType.kLargeCommit);
