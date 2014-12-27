@@ -1,7 +1,8 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
-Version 4.1 - ??/??/2014
+Version 5.0 - ??/??/2014
+- No more use of javascript eval function.
 - 
 ==========
 Version 4.0 - 04/07/2014
