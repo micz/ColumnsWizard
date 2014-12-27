@@ -49,7 +49,7 @@ var miczColumnsWizardPref = {
 		  let row = doc.createElementNS(XUL, "row");
 
 		  let col_enable = doc.createElementNS(XUL, "checkbox");
-		  col_enable.setAttribute("checked", custcol.Pref);
+		  col_enable.setAttribute("checked", custcol.Enabled);
 		  //col_enable.setAttribute("rule", 'col_enable');
 		  
 		  let col_show = doc.createElementNS(XUL, "checkbox");

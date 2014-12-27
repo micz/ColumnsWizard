@@ -5,16 +5,25 @@ miczColumnsWizard.CustCols={
      gDBView.addColumnHandler(coltype+"Col_cw", this["columnHandler_"+coltype]);
   },
   
-  addCustomColumn: function(coltype,ObserverService){
-    let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
+  addCustomColumn: function(element,ObserverService){
+    let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
     let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
-
+	
+	let coltype=element.index;
+	
     if(document.getElementById(coltype+"Col_cw")){
       return;
     }
     
-    let labelString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+".label");
-    let tooltipString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+"Desc.label");
+    let labelString = '';
+    let tooltipString = '';
+    if(element.isbundled){
+		labelString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+".label");
+		tooltipString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+"Desc.label");
+	}else{
+		labelString = element.labelString;
+		tooltipString = element.tooltipString;
+	}
     let cwCol = document.createElement("treecol");
     cwCol.setAttribute("id",coltype+"Col_cw");
     cwCol.setAttribute("persist","hidden ordinal width");
@@ -45,17 +54,35 @@ miczColumnsWizard.CustCols={
     }, 
 };
 
-//Create all the needed DbObservers
+
 miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
 miczColumnsWizard.CustCols.CreateDbObserver=Array();
 for (let index in miczColumnsWizard.CustColPref) {
+  //Create all the needed DbObservers
   //dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+index+"\r\n");
   //It's needed to to this, to avoid writing each miczColumnsWizard.CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function definition.
   let obfunction=new Function('aMsgFolder', 'aTopic', 'aData',"miczColumnsWizard.CustCols.addCustomColumnHandler('"+index+"');");
   miczColumnsWizard.CustCols.CreateDbObserver[index]={observe: obfunction};
-}
-//Create all the needed DbObserver - END
+  //Create all the needed DbObserver - END
 
+ //Implement all the needed ColumnHandlers
+ let sortfunc=new Function('hdr','return hdr.getStringProperty("'+miczColumnsWizard.CustColPref[index].DBHeader+'");');
+ let celltextfunc=new Function('row','col','let hdr = gDBView.getMsgHdrAt(row);return hdr.getStringProperty("'+miczColumnsWizard.CustColPref[index].DBHeader+'");');
+ 
+  miczColumnsWizard.CustCols["columnHandler_"+index]={
+    getCellText:         celltextfunc,
+    getSortStringForRow: sortfunc,
+    isString:            function() {return true;},
+    getCellProperties:   function(row, col, props){},
+    getRowProperties:    function(row, props){},
+    getImageSrc:         function(row, col) {return null;},
+    getSortLongForRow:   function(hdr) {return 0;}
+  };
+ //Implement all the needed ColumnHandlers - END
+}
+
+
+/*
 //Implement the ColumnHandlers
 //cc
 miczColumnsWizard.CustCols["columnHandler_cc"]={
@@ -141,3 +168,4 @@ miczColumnsWizard.CustCols["columnHandler_contentbase"]={
    getSortLongForRow:   function(hdr) {return 0;}
 };
 //contentbase - END
+*/

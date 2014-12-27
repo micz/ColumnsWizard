@@ -40,6 +40,7 @@ miczColumnsWizard.PrefListener.prototype.unregister = function() {
     this._branch.removeObserver('', this);
 };
 
+//TODO
 
 //Adding preferences listener
 miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
@@ -52,16 +53,16 @@ miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
     //dump(">>>>>>>>>>>>> miczColumnsWizard.PrefListener: [PrefName|cwColName] "+name+"|"+cwColName+"\r\n");
     if(branch.getBoolPref(name)){
       //checbox checked
-      miczColumnsWizard.CustCols.addCustomColumn(cwColName,ObserverService);
-      if(cwCustColPref[cwColName].customDBHeader!=false){
-        miczColumnsWizard.activateCustomDBHeader(cwCustColPref[cwColName].customDBHeader);
+      miczColumnsWizard.CustCols.addCustomColumn(cwCustColPref[cwColName],ObserverService);
+      if(cwCustColPref[cwColName].iscustom!=false){
+        miczColumnsWizard.activateCustomDBHeader(cwCustColPref[cwColName].DBHeader);
       }
     }else{
       //checbox not checked
       miczColumnsWizard.CustCols.removeCustomColumn(cwColName,ObserverService);
-      if(cwCustColPref[cwColName].customDBHeader!=false){
-        miczColumnsWizard.deactivateCustomDBHeader(cwCustColPref[cwColName].customDBHeader);
-      }
+      /*if(cwCustColPref[cwColName].iscustom!=false){
+        miczColumnsWizard.deactivateCustomDBHeader(cwCustColPref[cwColName].DBHeader);
+      }*/
     }
   }
 );
