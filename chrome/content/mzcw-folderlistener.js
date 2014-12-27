@@ -41,7 +41,8 @@ miczColumnsWizard.FolderListener={
             return;
         }
         if (event.toString() == "RenameCompleted") {
-            miczColumnsWizard.FolderListener.cw_showColumns(item);
+            //Nothing to do here...
+            //miczColumnsWizard.FolderListener.cw_showColumns(item);
         }
     },
 
