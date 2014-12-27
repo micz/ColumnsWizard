@@ -56,12 +56,19 @@ var miczColumnsWizardPref = {
 		  col_show.setAttribute("checked", custcol.ShowNewFolder);
 		  //col_show.setAttribute("rule", 'col_show');
 		  
-		  let labelString = _bundleCW.GetStringFromName("ColumnsWizard"+custcol.key+".label");
-		  let tooltipString = _bundleCW.GetStringFromName("ColumnsWizard"+custcol.key+"Desc.label");
+		let labelString = '';
+		let tooltipString = '';
+		if(custcol.isbundled){
+			labelString = _bundleCW.GetStringFromName("ColumnsWizard"+custcol.index+".label");
+			tooltipString = _bundleCW.GetStringFromName("ColumnsWizard"+custcol.index+"Desc.label");
+		}else{
+			labelString = custcol.labelString;
+			tooltipString = custcol.tooltipString;
+		}
 		  
 		  let [mail_header, column_title, column_tooltip] = [
 			// value, size          
-			[custcol.Def, "10"],
+			[custcol.DBHeader, "10"],
 			[labelString, "10"],
 			[tooltipString, "10"]].map( function(attributes) {
 			  let element = doc.createElementNS(XUL, "textbox");
@@ -71,7 +78,7 @@ var miczColumnsWizardPref = {
 			  return element;
 			} );
 		  //TODO: FROM HERE
-		  let [col_save,col_delete] = [
+		  /*let [col_save,col_delete] = [
 			['\u2191', function(aEvent) { self.upDownRule(row, true); }, ''],
 			['\u2193', function(aEvent) { self.upDownRule(row, false); }, ''],
 			['x', function(aEvent) { self.removeRule(row); }, 'awsome_auto_archive-delete-rule'] ].map( function(attributes) {
@@ -94,7 +101,7 @@ var miczColumnsWizardPref = {
 		  menulistAction.addEventListener('command', function(aEvent) { self.checkAction(menulistAction, menulistDest, menulistSub); }, false );
 		  enable.addEventListener('command', function(aEvent) { self.checkEnable(enable, row); }, false );
 		  row.addEventListener('focus', function(aEvent) { self.checkFocus(row); }, true );
-		  row.addEventListener('click', function(aEvent) { self.checkFocus(row); }, true );
+		  row.addEventListener('click', function(aEvent) { self.checkFocus(row); }, true );*/
 		  return row;
 		} catch(err) {
 		  dump(">>>>>>>>>>>>> miczColumnsWizard: [settings createOneColRow] "+err+"\r\n");
@@ -102,7 +109,10 @@ var miczColumnsWizardPref = {
 	},
 	
 	loadCustColRows:function(win){
-		
+		if(!miczColumnsWizard.CustColPref)miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
+		for (let index in miczColumnsWizard.CustColPref) {
+				createOneColRow:function(win,miczColumnsWizard.CustColPref[index]);
+		}
 	},
 
 };

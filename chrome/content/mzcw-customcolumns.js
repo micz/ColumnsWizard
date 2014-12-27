@@ -55,7 +55,7 @@ miczColumnsWizard.CustCols={
 };
 
 
-miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
+if(!miczColumnsWizard.CustColPref)miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
 miczColumnsWizard.CustCols.CreateDbObserver=Array();
 for (let index in miczColumnsWizard.CustColPref) {
   //Create all the needed DbObservers
