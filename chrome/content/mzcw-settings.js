@@ -1,4 +1,5 @@
 "use strict";
+var miczColumnsWizard={};
 var miczColumnsWizardPref = {
 
 	onLoad: function(win){
@@ -109,7 +110,7 @@ var miczColumnsWizardPref = {
 	},
 	
 	loadCustColRows:function(win){
-		let miczColumnsWizard_CustColPref=miczColumnsWizard.loadCustCols();
+		let miczColumnsWizard_CustColPref=miczColumnsWizard.CustCols.loadCustCols();
 		for (let index in miczColumnsWizard_CustColPref) {
 				this.createOneColRow(win,miczColumnsWizard_CustColPref[index]);
 		}

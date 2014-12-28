@@ -8,14 +8,13 @@ var miczColumnsWizard = {
   showRecipient: false,
 
   //Custom Columns
-  CustColDefaultIndex:["cc","bcc","replyto","xoriginalfrom","contentbase"],
   CustColPref:{},
 
 	init: function(){
     //Adding custom columns
     var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
 
-    miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
+    miczColumnsWizard.CustColPref=miczColumnsWizard.CustCols.loadCustCols();
 
     for (let index in miczColumnsWizard.CustColPref) {
       miczColumnsWizard.custColsActivation(miczColumnsWizard.CustColPref[index],ObserverService);
@@ -23,7 +22,7 @@ var miczColumnsWizard = {
     
     miczColumnsWizard.watchFolders();
     
-		this.initialized = true;
+	this.initialized = true;
     //Conversation Tab add columns - delayed
   	setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
 	},
@@ -43,48 +42,6 @@ var miczColumnsWizard = {
       alert("No tabContainer available! " + e);
     }
 	},
-
-  loadCustCols:function(){
-    let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-    let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
-    let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");
-    let CustColIndexStr=prefs.getCharPref("index");
-    let CustColIndex=new Array();
-    if(CustColIndexStr==''){
-		//Set default CustColIndex
-		CustColIndex=miczColumnsWizard.CustColDefaultIndex;
-	}else{
-		CustColIndex=JSON.parse(CustColIndexStr);
-	}
-    let loadedCustColPref=new Array();
-    miczColumnsWizard.checkDefaultCustomColumnPrefs();
-    for (let singlecolidx in CustColIndex) {
-		loadedCustColPref[CustColIndex[singlecolidx]]=JSON.parse(prefs_def.getCharPref(CustColIndex[singlecolidx]));
-	}
-    
- 
-    /*loadedCustColPref["cc"]={};
-    loadedCustColPref["cc"].Pref = prefs.getBoolPref("AddCc");
-    loadedCustColPref["cc"].Def = "AddCc";
-    loadedCustColPref["cc"].customDBHeader = false;
-    loadedCustColPref["bcc"]={};
-    loadedCustColPref["bcc"].Pref = prefs.getBoolPref("Addbcc");
-    loadedCustColPref["bcc"].Def = "Addbcc";
-    loadedCustColPref["bcc"].customDBHeader = false;
-    loadedCustColPref["replyto"]={};
-    loadedCustColPref["replyto"].Pref = prefs.getBoolPref("Addreplyto");
-    loadedCustColPref["replyto"].Def = "Addreplyto";
-    loadedCustColPref["replyto"].customDBHeader = false;
-    loadedCustColPref["xoriginalfrom"]={};
-    loadedCustColPref["xoriginalfrom"].Pref = prefs.getBoolPref("Addxoriginalfrom");
-    loadedCustColPref["xoriginalfrom"].Def = "Addxoriginalfrom";
-    loadedCustColPref["xoriginalfrom"].customDBHeader = "x-original-from";
-    loadedCustColPref["contentbase"]={};
-    loadedCustColPref["contentbase"].Pref = prefs.getBoolPref("Addcontentbase");
-    loadedCustColPref["contentbase"].Def = "Addcontentbase";
-    loadedCustColPref["contentbase"].customDBHeader = "content-base";*/
-    return loadedCustColPref;
-  },
   
   custColsActivation:function(element,ObserverService){
   //dump(">>>>>>>>>>>>> miczColumnsWizard: [element|index] "+element.Pref+"|"+index+"\r\n");
@@ -160,62 +117,6 @@ var miczColumnsWizard = {
 		let mailSessionService = Components.classes["@mozilla.org/messenger/services/session;1"].getService(Components.interfaces.nsIMsgMailSession);
         mailSessionService.RemoveFolderListener(miczColumnsWizard.FolderListener);
     },
-    
-    checkDefaultCustomColumnPrefs: function(){
-		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
-		let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");
-		
-		for (let singlecolidx in miczColumnsWizard.CustColDefaultIndex) {
-			dump(">>>>>>>>>>>>> miczColumnsWizard: [checkDefaultCustomColumnPrefs singlecolidx] "+miczColumnsWizard.CustColDefaultIndex[singlecolidx]+" \r\n");
-			let currcol=prefs_def.getCharPref(miczColumnsWizard.CustColDefaultIndex[singlecolidx]);
-			if(currcol==''){//Default custom column pref not present
-				let dcurrcol={}
-				switch(miczColumnsWizard.CustColDefaultIndex[singlecolidx]){
-					case 'cc':
-						dcurrcol.Enabled = prefs.getBoolPref("AddCc");
-						dcurrcol.ShowNewFolder=false;
-						dcurrcol.Def = "AddCc";
-						dcurrcol.DBHeader = "ccList";
-						dcurrcol.iscustom=false;
-						break;
-					case 'bcc':
-						dcurrcol.Enabled = prefs.getBoolPref("Addbcc");
-						dcurrcol.ShowNewFolder=false;
-						dcurrcol.Def = "Addbcc";
-						dcurrcol.DBHeader = "bccList";
-						dcurrcol.iscustom=false;
-						break;
-					case 'replyto':
-						dcurrcol.Enabled = prefs.getBoolPref("Addreplyto");
-						dcurrcol.ShowNewFolder=false;
-						dcurrcol.Def = "Addreplyto";
-						dcurrcol.DBHeader = "replyTo";
-						dcurrcol.iscustom=false;
-						break;
-					case 'xoriginalfrom':
-						dcurrcol.Enabled = prefs.getBoolPref("Addxoriginalfrom");
-						dcurrcol.ShowNewFolder=false;
-						dcurrcol.Def = "Addxoriginalfrom";
-						dcurrcol.DBHeader = "x-original-from";
-						dcurrcol.iscustom=true;
-						break;
-					case 'contentbase':
-						dcurrcol.Enabled = prefs.getBoolPref("Addcontentbase");
-						dcurrcol.ShowNewFolder=false;
-						dcurrcol.Def = "Addcontentbase";
-						dcurrcol.DBHeader = "content-base";
-						dcurrcol.iscustom=true;
-						break;
-				}
-				dcurrcol.index=miczColumnsWizard.CustColDefaultIndex[singlecolidx];
-				dcurrcol.isbundled=true;
-				dcurrcol.labelString='';
-				dcurrcol.tooltipString='';
-				prefs_def.setCharPref(miczColumnsWizard.CustColDefaultIndex[singlecolidx],JSON.stringify(dcurrcol));
-			}
-		}
-	},
 
 };
 
