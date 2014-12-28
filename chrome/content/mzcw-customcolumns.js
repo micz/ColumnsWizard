@@ -5,11 +5,11 @@ miczColumnsWizard.CustCols={
      gDBView.addColumnHandler(coltype+"Col_cw", this["columnHandler_"+coltype]);
   },
   
-  addCustomColumn: function(element,ObserverService){
+  addCustomColumn: function(elementc,ObserverService){
     let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
     let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
 	
-	let coltype=element.index;
+	let coltype=elementc.index;
 	
     if(document.getElementById(coltype+"Col_cw")){
       return;
@@ -17,12 +17,12 @@ miczColumnsWizard.CustCols={
     
     let labelString = '';
     let tooltipString = '';
-    if(element.isbundled){
+    if(elementc.isbundled){
 		labelString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+".label");
 		tooltipString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+"Desc.label");
 	}else{
-		labelString = element.labelString;
-		tooltipString = element.tooltipString;
+		labelString = elementc.labelString;
+		tooltipString = elementc.tooltipString;
 	}
     let cwCol = document.createElement("treecol");
     cwCol.setAttribute("id",coltype+"Col_cw");
@@ -41,6 +41,7 @@ miczColumnsWizard.CustCols={
     element.appendChild(cwSplitter);
     element.appendChild(cwCol);
     
+    //dump(">>>>>>>>>>>>> miczColumnsWizard->addCustomColumn: [coltype] "+coltype+"\r\n");
     //DbObserver Managing
     ObserverService.addObserver(miczColumnsWizard.CustCols.CreateDbObserver[coltype], "MsgCreateDBView", false);
   },
@@ -49,13 +50,14 @@ miczColumnsWizard.CustCols={
       let element = document.getElementById(coltype+"Col_cw");
       if(element) element.parentNode.removeChild(element);
       
+      //dump(">>>>>>>>>>>>> miczColumnsWizard->removeCustomColumn: [coltype] "+coltype+"\r\n");
       //DbObserver Managing
       ObserverService.removeObserver(miczColumnsWizard.CustCols.CreateDbObserver[coltype], "MsgCreateDBView");
     }, 
 };
 
 
-if(!miczColumnsWizard.CustColPref)miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
+miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
 miczColumnsWizard.CustCols.CreateDbObserver=Array();
 for (let index in miczColumnsWizard.CustColPref) {
   //Create all the needed DbObservers

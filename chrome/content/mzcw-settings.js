@@ -109,9 +109,9 @@ var miczColumnsWizardPref = {
 	},
 	
 	loadCustColRows:function(win){
-		if(!miczColumnsWizard.CustColPref)miczColumnsWizard.CustColPref=miczColumnsWizard.loadCustCols();
-		for (let index in miczColumnsWizard.CustColPref) {
-				createOneColRow:function(win,miczColumnsWizard.CustColPref[index]);
+		let miczColumnsWizard_CustColPref=miczColumnsWizard.loadCustCols();
+		for (let index in miczColumnsWizard_CustColPref) {
+				this.createOneColRow(win,miczColumnsWizard_CustColPref[index]);
 		}
 	},
 

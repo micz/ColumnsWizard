@@ -69,7 +69,7 @@
 			  <columns>
 				<column/><column/><column flex="1"/><column/><column flex="1"/><column flex="1"/><column flex="1"/><column/><column/><column/><column/>
 			  </columns> 
-			  <rows id='ColumnsWizard.ColsGrid' preference='ColumnsWizard.ColsList' preference-editable="true" onsyncfrompreference='return autoArchivePrefDialog.syncFromPerf(window);'>
+			  <rows id='ColumnsWizard.ColsGrid' preference='extensions.ColumnsWizard.CustCols.ColsList' preference-editable="true" onsyncfrompreference='return autoArchivePrefDialog.syncFromPerf(window);'>
 			  </rows>
 			</grid>
           <checkbox id="ColumnsWizard.AddCc_checkbox" label="&ColumnsWizard.AddCc.label;"
@@ -97,4 +97,6 @@
     </tabbox>
   </prefpane>
   <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-settings.js" />
+  <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-overlay.js" />
+  <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-customcolumns.js" />
 </prefwindow>

@@ -7,6 +7,7 @@ pref("extensions.ColumnsWizard.CustCols.Addbcc", false);
 pref("extensions.ColumnsWizard.CustCols.Addreplyto", false);
 pref("extensions.ColumnsWizard.CustCols.Addxoriginalfrom", false);
 pref("extensions.ColumnsWizard.CustCols.Addcontentbase", false);
+pref("extensions.ColumnsWizard.CustCols.ColsList", "");
 pref("extensions.ColumnsWizard.CustCols.index", "");
 pref("extensions.ColumnsWizard.CustCols.def.cc", "");
 pref("extensions.ColumnsWizard.CustCols.def.bcc", "");
