@@ -53,8 +53,8 @@ var miczColumnsWizardPref = {
 		  col_enable.setAttribute("checked", custcol.Enabled);
 		  //col_enable.setAttribute("rule", 'col_enable');
 		  
-		  let col_show = doc.createElementNS(XUL, "checkbox");
-		  col_show.setAttribute("checked", custcol.ShowNewFolder);
+		  //let col_show = doc.createElementNS(XUL, "checkbox");
+		  //col_show.setAttribute("checked", custcol.ShowNewFolder);
 		  //col_show.setAttribute("rule", 'col_show');
 		  
 		let labelString = '';
@@ -67,8 +67,9 @@ var miczColumnsWizardPref = {
 			tooltipString = custcol.tooltipString;
 		}
 		  
-		  let [mail_header, column_title, column_tooltip] = [
-			// value, size          
+		  let [col_idx, mail_header, column_title, column_tooltip] = [
+			// value, size
+			[custcol.index, "10"],       
 			[custcol.DBHeader, "10"],
 			[labelString, "10"],
 			[tooltipString, "10"]].map( function(attributes) {
@@ -79,7 +80,7 @@ var miczColumnsWizardPref = {
 			  return element;
 			} );
 		  //TODO: FROM HERE
-		  /*let [col_save,col_delete] = [
+		  let [col_save,col_delete] = [
 			['\u2191', function(aEvent) { self.upDownRule(row, true); }, ''],
 			['\u2193', function(aEvent) { self.upDownRule(row, false); }, ''],
 			['x', function(aEvent) { self.removeRule(row); }, 'awsome_auto_archive-delete-rule'] ].map( function(attributes) {
@@ -90,12 +91,14 @@ var miczColumnsWizardPref = {
 			  return element;
 			} );
 		  
-		  row.classList.add(ruleClass);
-		  [enable, menulistAction, menulistSrc, menulistSub, menulistDest, from, recipient, subject, size, tags, age, up, down, remove].forEach( function(item) {
+		  //row.classList.add(ruleClass);
+		  [col_enable, col_idx, mail_header, column_title, column_tooltip, col_save, col_delete].forEach( function(item) {
 			row.insertBefore(item, null);
 		  } );
-		  container.insertBefore(row, ref);
-		  self.initFolderPick(menulistSrc, menupopupSrc, true);
+		  container.insertBefore(row, null);
+		  dump(">>>>>>>>>>>>> miczColumnsWizard: [settings createOneColRow] "+custcol.index+"\r\n");
+		  //container.appendChild(row);
+		  /*self.initFolderPick(menulistSrc, menupopupSrc, true);
 		  self.initFolderPick(menulistDest, menupopupDest, false);
 		  self.checkAction(menulistAction, menulistDest, menulistSub);
 		  self.checkEnable(enable, row);

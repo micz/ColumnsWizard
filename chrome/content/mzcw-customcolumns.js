@@ -106,7 +106,7 @@ miczColumnsWizard.CustCols={
 		let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");
 		
 		for (let singlecolidx in miczColumnsWizard.CustCols.CustColDefaultIndex) {
-			dump(">>>>>>>>>>>>> miczColumnsWizard: [checkDefaultCustomColumnPrefs singlecolidx] "+miczColumnsWizard.CustCols.CustColDefaultIndex[singlecolidx]+" \r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard: [checkDefaultCustomColumnPrefs singlecolidx] "+miczColumnsWizard.CustCols.CustColDefaultIndex[singlecolidx]+" \r\n");
 			let currcol=prefs_def.getCharPref(miczColumnsWizard.CustCols.CustColDefaultIndex[singlecolidx]);
 			if(currcol==''){//Default custom column pref not present
 				let dcurrcol={}
