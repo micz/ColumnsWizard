@@ -68,12 +68,14 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  let row = doc.createElementNS(XUL, "row");
 
 		  let col_enable = doc.createElementNS(XUL, "checkbox");
-		  col_enable.setAttribute("checked", currcol.hidden);
+		  col_enable.setAttribute("checked", !currcol.hidden);
 
-		  let [col_title, col_flex] = [
+		  let col_title=doc.createElementNS(XUL, "label");
+		  col_title.setAttribute("value", currindex);
+
+		  let [col_flex] = [
 			// value, size
-			[currindex, "20"],
-			[currcol.flex, "10"]].map( function(attributes) {
+			[currcol.flex!=undefined?currcol.flex:0, "10"]].map( function(attributes) {
 			  let element = doc.createElementNS(XUL, "textbox");
 			  let [value,size] = attributes;
 			  if ( size ) element.setAttribute("size", size);
@@ -96,16 +98,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			row.insertBefore(item, null);
 		  } );
 		  container.insertBefore(row, null);
-		  dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow] "+currindex+"\r\n");
-		  //container.appendChild(row);
-		  /*self.initFolderPick(menulistSrc, menupopupSrc, true);
-		  self.initFolderPick(menulistDest, menupopupDest, false);
-		  self.checkAction(menulistAction, menulistDest, menulistSub);
-		  self.checkEnable(enable, row);
-		  menulistAction.addEventListener('command', function(aEvent) { self.checkAction(menulistAction, menulistDest, menulistSub); }, false );
-		  enable.addEventListener('command', function(aEvent) { self.checkEnable(enable, row); }, false );
-		  row.addEventListener('focus', function(aEvent) { self.checkFocus(row); }, true );
-		  row.addEventListener('click', function(aEvent) { self.checkFocus(row); }, true );*/
+		  //dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow] "+currindex+"\r\n");
 		  return row;
 		} catch(err) {
 		  dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow error] "+err+"\r\n");
