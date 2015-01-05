@@ -13,7 +13,12 @@ var miczColumnsWizardPref = {
 		let container = doc.getElementById('ColumnsWizard.DefaultColsGrid');
 		miczColumnsWizardPref_DefaultColsGrid.createDefaultColsGridHeader(doc,container);
 		miczColumnsWizardPref_DefaultColsGrid.createDefaultColsGridRows(doc,container);
-		//miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
+	},
+
+	saveDefaultColRows:function(win){
+		let doc = win.document;
+		let container = doc.getElementById('ColumnsWizard.DefaultColsGrid');
+		miczColumnsWizardPref_DefaultColsGrid.saveDefaultColsGridRows(doc,container);
 	},
 
 };

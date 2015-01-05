@@ -88,7 +88,7 @@
 		  <columns>
 			<column/><column flex="2"/><column flex="1"/><column/><column/>
 		  </columns>
-		  <rows id='ColumnsWizard.DefaultColsGrid' preference='extensions.ColumnsWizard.DefaultColsList' preference-editable="true" onsyncfrompreference='return autoArchivePrefDialog.syncFromPerf(window);'>
+		  <rows id='ColumnsWizard.DefaultColsGrid' preference='extensions.ColumnsWizard.DefaultColsList' preference-editable="true" onsynctopreference='return miczColumnsWizardPref.saveDefaultColRows(window);'>
 		  </rows>
 		 </grid>
 		 </vbox>

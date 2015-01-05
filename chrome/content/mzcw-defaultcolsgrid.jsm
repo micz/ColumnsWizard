@@ -11,6 +11,8 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		if(DefaultColIndexStr==''){
 			//Set default cols if none set at the moment
 			loadedDefaultColIndex=this.getOriginalColIndex();
+			dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] default loaded and saved pref\r\n");
+			prefs.setCharPref("DefaultColsList",JSON.stringify(loadedDefaultColIndex));
 		}else{
 			loadedDefaultColIndex=JSON.parse(DefaultColIndexStr);
 		}
@@ -55,6 +57,13 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 	},
 
 	createDefaultColsGridRows: function(doc,container) {
+		let DefColRows=this.loadDefaultColRows_Pref();
+		for (let index in DefColRows) {
+				this.createOneDefaultColRow(doc,container,index,DefColRows[index]);
+		}
+	},
+
+	saveDefaultColsGridRows: function(doc,container) {
 		let DefColRows=this.loadDefaultColRows_Pref();
 		for (let index in DefColRows) {
 				this.createOneDefaultColRow(doc,container,index,DefColRows[index]);
