@@ -77,7 +77,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  let row = doc.createElementNS(XUL, "row");
 
 		  let col_enable = doc.createElementNS(XUL, "checkbox");
-		  col_enable.setAttribute("checked", !currcol.hidden);
+		  col_enable.setAttribute("checked", currcol.visible);
 
 		  let col_title=doc.createElementNS(XUL, "label");
 		  col_title.setAttribute("value", currindex);
