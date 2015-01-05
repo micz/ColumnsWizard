@@ -4,7 +4,8 @@
 <!DOCTYPE overlay SYSTEM "chrome://columnswizard/locale/settings.dtd">
 <prefwindow id="ColumnsWizard_Settings"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-  title="&ColumnsWizard.SettingsTitle;">
+  title="&ColumnsWizard.SettingsTitle;"
+  onload="miczColumnsWizardPref.onLoad(window);">
   <prefpane id="ColumnsWizard_PrefPane">
     <preferences>
     <!-- Columns in Conversation Tab -->
@@ -77,6 +78,18 @@
           <description style="word-wrap:normal;max-width:550px;margin-bottom:10px;">&ColumnsWizard.CustomHeadersDescCustCols;</description>
           <label control="symbol" value=" "/>
         </tabpanel>
+        <tabpanel id="tab_newfoldercols" orient="vertical">
+	        <!--<description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.NewFolderColsMainDesc;</description>
+          <label control="symbol" value=" "/>-->
+          <label control="symbol" value="Test"/>
+          <grid>
+		  <columns>
+			<column/><column flex="2"/><column flex="1"/><column/><column/>
+		  </columns>
+		  <rows id='ColumnsWizard.DefaultColsGrid' preference='extensions.ColumnsWizard.DefaultColsList' preference-editable="true" onsyncfrompreference='return autoArchivePrefDialog.syncFromPerf(window);'>
+		  </rows>
+		 </grid>
+        </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
 	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>
           <label control="symbol" value=" "/>
@@ -87,4 +100,5 @@
       </tabpanels>
     </tabbox>
   </prefpane>
+  <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-settings.js" />
 </prefwindow>
