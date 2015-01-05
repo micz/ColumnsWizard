@@ -41,6 +41,7 @@
       <tabs>
         <tab label="&ColumnsWizard.TabConversation.label;"/>
         <tab label="&ColumnsWizard.TabCustomCols.label;"/>
+        <tab label="&ColumnsWizard.TabNewFolderDefault.label;"/>
         <tab label="&ColumnsWizard.TabInfo.label;"/>
       </tabs>
       <tabpanels>
