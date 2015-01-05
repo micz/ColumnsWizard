@@ -64,10 +64,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 	},
 
 	saveDefaultColsGridRows: function(doc,container) {
-		let DefColRows=this.loadDefaultColRows_Pref();
-		for (let index in DefColRows) {
-				this.createOneDefaultColRow(doc,container,index,DefColRows[index]);
-		}
+		//TODO
 	},
 
 	createOneDefaultColRow:function(doc,container,currindex,currcol){
@@ -92,7 +89,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			  return element;
 			} );
 
-		  let [up, down] = [
+		  let [up, down] = [ //TODO HERE
 			['\u2191', function(aEvent) { self.upDownRule(row, true); }, ''],
 			['\u2193', function(aEvent) { self.upDownRule(row, false); }, ''] ].map( function(attributes) {
 			  let element = doc.createElementNS(XUL, "toolbarbutton");
