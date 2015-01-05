@@ -5,7 +5,8 @@
 <prefwindow id="ColumnsWizard_Settings"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   title="&ColumnsWizard.SettingsTitle;"
-  onload="miczColumnsWizardPref.onLoad(window);">
+  onload="miczColumnsWizardPref.onLoad(window);"
+   maxheight="400px">
   <prefpane id="ColumnsWizard_PrefPane">
     <preferences>
     <!-- Columns in Conversation Tab -->
@@ -38,14 +39,14 @@
         name="extensions.ColumnsWizard.CustCols.Addcontentbase"
         type="bool" />
     </preferences>
-    <tabbox>
+    <tabbox maxheight="300px">
       <tabs>
         <tab label="&ColumnsWizard.TabConversation.label;"/>
         <tab label="&ColumnsWizard.TabCustomCols.label;"/>
         <tab label="&ColumnsWizard.TabNewFolderDefault.label;"/>
         <tab label="&ColumnsWizard.TabInfo.label;"/>
       </tabs>
-      <tabpanels>
+      <tabpanels maxheight="300px">
         <tabpanel id="convtab" orient="vertical">
           <label control="symbol" value="&ColumnsWizard.GlobalDescConvTab;"/>
           <label control="symbol" value=" "/>
@@ -82,6 +83,7 @@
 	        <!--<description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.NewFolderColsMainDesc;</description>
           <label control="symbol" value=" "/>-->
           <label control="symbol" value="Test"/>
+		<vbox style="overflow:auto" maxheight="250px">
           <grid>
 		  <columns>
 			<column/><column flex="2"/><column flex="1"/><column/><column/>
@@ -89,6 +91,7 @@
 		  <rows id='ColumnsWizard.DefaultColsGrid' preference='extensions.ColumnsWizard.DefaultColsList' preference-editable="true" onsyncfrompreference='return autoArchivePrefDialog.syncFromPerf(window);'>
 		  </rows>
 		 </grid>
+		 </vbox>
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
 	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>

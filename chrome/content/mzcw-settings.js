@@ -12,11 +12,8 @@ var miczColumnsWizardPref = {
 		let doc = win.document;
 		let container = doc.getElementById('ColumnsWizard.DefaultColsGrid');
 		miczColumnsWizardPref_DefaultColsGrid.createDefaultColsGridHeader(doc,container);
-		miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
-
-		/*for (let index in miczColumnsWizard_CustColPref) {
-				this.createOneColRow(win,miczColumnsWizard_CustColPref[index]);
-		}*/
+		miczColumnsWizardPref_DefaultColsGrid.createDefaultColsGridRows(doc,container);
+		//miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
 	},
 
 };

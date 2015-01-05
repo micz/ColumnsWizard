@@ -3,7 +3,7 @@ var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_DefaultColsGrid"];
 
 var miczColumnsWizardPref_DefaultColsGrid = {
 
-	loadDefaultColRows_Pref:function(win){
+	loadDefaultColRows_Pref:function(){
 		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
 		let DefaultColIndexStr=prefs.getCharPref("DefaultColsList");
@@ -54,51 +54,36 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		}
 	},
 
-	createOneDeafultColRow:function(win,custcol){
+	createDefaultColsGridRows: function(doc,container) {
+		let DefColRows=this.loadDefaultColRows_Pref();
+		for (let index in DefColRows) {
+				this.createOneDefaultColRow(doc,container,index,DefColRows[index]);
+		}
+	},
+
+	createOneDefaultColRow:function(doc,container,currindex,currcol){
 		const XUL = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
-		let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
-		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
 		try {
-		  let doc = win.document;
-		  let container = doc.getElementById('ColumnsWizard.ColsGrid');
 		  if ( !container ) return;
 		  let row = doc.createElementNS(XUL, "row");
 
 		  let col_enable = doc.createElementNS(XUL, "checkbox");
-		  col_enable.setAttribute("checked", custcol.Enabled);
-		  //col_enable.setAttribute("rule", 'col_enable');
+		  col_enable.setAttribute("checked", currcol.hidden);
 
-		  //let col_show = doc.createElementNS(XUL, "checkbox");
-		  //col_show.setAttribute("checked", custcol.ShowNewFolder);
-		  //col_show.setAttribute("rule", 'col_show');
-
-		let labelString = '';
-		let tooltipString = '';
-		if(custcol.isbundled){
-			labelString = _bundleCW.GetStringFromName("ColumnsWizard"+custcol.index+".label");
-			tooltipString = _bundleCW.GetStringFromName("ColumnsWizard"+custcol.index+"Desc.label");
-		}else{
-			labelString = custcol.labelString;
-			tooltipString = custcol.tooltipString;
-		}
-
-		  let [col_idx, mail_header, column_title, column_tooltip] = [
+		  let [col_title, col_flex] = [
 			// value, size
-			[custcol.index, "10"],
-			[custcol.DBHeader, "10"],
-			[labelString, "10"],
-			[tooltipString, "10"]].map( function(attributes) {
+			[currindex, "20"],
+			[currcol.flex, "10"]].map( function(attributes) {
 			  let element = doc.createElementNS(XUL, "textbox");
 			  let [value,size] = attributes;
 			  if ( size ) element.setAttribute("size", size);
 			  element.setAttribute("value", value);
 			  return element;
 			} );
-		  //TODO: FROM HERE
-		  let [col_save,col_delete] = [
+
+		  let [up, down] = [
 			['\u2191', function(aEvent) { self.upDownRule(row, true); }, ''],
-			['\u2193', function(aEvent) { self.upDownRule(row, false); }, ''],
-			['x', function(aEvent) { self.removeRule(row); }, 'awsome_auto_archive-delete-rule'] ].map( function(attributes) {
+			['\u2193', function(aEvent) { self.upDownRule(row, false); }, ''] ].map( function(attributes) {
 			  let element = doc.createElementNS(XUL, "toolbarbutton");
 			  element.setAttribute("label", attributes[0]);
 			  element.addEventListener("command", attributes[1], false );
@@ -107,11 +92,11 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			} );
 
 		  //row.classList.add(ruleClass);
-		  [col_enable, col_idx, mail_header, column_title, column_tooltip, col_save, col_delete].forEach( function(item) {
+		  [col_enable, col_title, col_flex, up, down].forEach( function(item) {
 			row.insertBefore(item, null);
 		  } );
 		  container.insertBefore(row, null);
-		  dump(">>>>>>>>>>>>> miczColumnsWizard: [settings createOneColRow] "+custcol.index+"\r\n");
+		  dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow] "+currindex+"\r\n");
 		  //container.appendChild(row);
 		  /*self.initFolderPick(menulistSrc, menupopupSrc, true);
 		  self.initFolderPick(menulistDest, menupopupDest, false);
@@ -123,7 +108,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  row.addEventListener('click', function(aEvent) { self.checkFocus(row); }, true );*/
 		  return row;
 		} catch(err) {
-		  dump(">>>>>>>>>>>>> miczColumnsWizard: [settings createOneColRow] "+err+"\r\n");
+		  dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow error] "+err+"\r\n");
 		}
 	},
 
