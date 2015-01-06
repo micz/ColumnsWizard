@@ -1,4 +1,6 @@
 "use strict";
+Components.utils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
+
 miczColumnsWizard.FolderListener={
 
 
@@ -29,7 +31,8 @@ miczColumnsWizard.FolderListener={
         }
 		dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded do it on] "+item.name+"\r\n");
 		
-		miczColumnsWizard.FolderListener.cw_showColumns(item);
+		//miczColumnsWizard.FolderListener.cw_showColumns(item);
+		miczColumnsWizard.FolderListener.cw_showColumns_Pref(item);
     },
 
     OnItemEvent: function(item, event)
@@ -155,4 +158,14 @@ miczColumnsWizard.FolderListener={
 		 dbFolderInfo.setCharProperty(propName,JSON.stringify(cwcolumnStates));
 		 item.msgDatabase.Commit(Components.interfaces.nsMsgDBCommitType.kLargeCommit);
 	},
+
+cw_showColumns_Pref: function(item){
+		 let propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
+		 let dbFolderInfo = item.msgDatabase.dBFolderInfo;
+         let cwcolumnStates=miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
+		 dump(">>>>>>>>>>>>> miczColumnsWizard: [cw_showColumns_Pref] "+JSON.stringify(cwcolumnStates)+"\r\n");
+		 dbFolderInfo.setCharProperty(propName,JSON.stringify(cwcolumnStates));
+		 item.msgDatabase.Commit(Components.interfaces.nsMsgDBCommitType.kLargeCommit);
+	},
+
 };
