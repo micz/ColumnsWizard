@@ -19,9 +19,9 @@ var miczColumnsWizard = {
     for (let index in miczColumnsWizard.CustColPref) {
       miczColumnsWizard.custColsActivation(miczColumnsWizard.CustColPref[index],index,ObserverService);
     }
-    
+
     miczColumnsWizard.watchFolders();
-    
+
 		this.initialized = true;
     //Conversation Tab add columns - delayed
   	setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
@@ -69,7 +69,7 @@ var miczColumnsWizard = {
     loadedCustColPref["contentbase"].customDBHeader = "content-base";
     return loadedCustColPref;
   },
-  
+
   custColsActivation:function(element,index,ObserverService){
   //dump(">>>>>>>>>>>>> miczColumnsWizard: [element|index] "+element.Pref+"|"+index+"\r\n");
     if(element.Pref===true){
@@ -79,7 +79,7 @@ var miczColumnsWizard = {
       }
     }
   },
-  
+
   activateCustomDBHeader:function(newHeader){
     //dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders] "+newHeader+"\r\n");
     let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
@@ -138,7 +138,7 @@ var miczColumnsWizard = {
         // The following are already handled internally
         //mailSessionService.AddFolderListener(FolderListener, Ci.nsIFolderListener.removed);
         //mailSessionService.AddFolderListener(FolderListener, Ci.nsIFolderListener.event);
-        dump(">>>>>>>>>>>>> miczColumnsWizard: [watchFolders] \r\n");
+        //dump(">>>>>>>>>>>>> miczColumnsWizard: [watchFolders] \r\n");
     },
 
     unwatchFolders: function()
