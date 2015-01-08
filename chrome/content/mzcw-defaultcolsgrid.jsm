@@ -77,7 +77,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  col_enable.setAttribute("checked", currcol.visible);
 
 		  let col_title=doc.createElementNS(XUL, "label");
-		  col_title.setAttribute("value", currindex);
+		  col_title.setAttribute("value", this.getColLocalizedString(currindex));
 
 		  let [col_flex] = [
 			// value, size
@@ -109,6 +109,77 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		} catch(err) {
 		  dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow error] "+err+"\r\n");
 		}
+	},
+
+	getColLocalizedString:function(col){
+		let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/settings.properties");
+		let strOut=col;
+
+		switch (col) {
+    	 	case "threadCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.threadColumn.label");
+       		break;
+       		case "senderCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.fromColumn.label");
+       		break;
+       		case "recipientCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.recipientColumn.label");
+       		break;
+       		case "subjectCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.subjectColumn.label");
+       		break;
+       		case "dateCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.dateColumn.label");
+       		break;
+       		case "priorityCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.priorityColumn.label");
+       		break;
+       		case "tagsCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.tagsColumn.label");
+       		break;
+       		case "accountCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.accountColumn.label");
+       		break;
+       		case "statusCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.statusColumn.label");
+       		break;
+       		case "sizeCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.sizeColumn.label");
+       		break;
+       		case "junkStatusCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.junkStatusColumn.label");
+       		break;
+       		case "unreadCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.unreadColumn.label");
+       		break;
+       		case "totalCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.totalColumn.label");
+       		break;
+       		case "unreadButtonColHeader":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.readColumn.label");
+       		break;
+       		case "receivedCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.receivedColumn.label");
+       		break;
+       		case "flaggedCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.starredColumn.label");
+       		break;
+       		case "locationCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.locationColumn.label");
+       		break;
+       		case "idCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.idColumn.label");
+       		break;
+       		case "attachmentCol":
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.attachmentColumn.label");
+       		break;
+       		default:
+       		   // TODO after the merge with newprefpanel branch
+       		break;
+	   }
+
+	   return strOut;
 	},
 
 };
