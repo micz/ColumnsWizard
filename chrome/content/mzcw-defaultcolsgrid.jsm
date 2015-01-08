@@ -1,6 +1,8 @@
 "use strict";
 var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_DefaultColsGrid"];
 
+const colClass = 'cw-col-class';
+
 var miczColumnsWizardPref_DefaultColsGrid = {
 
 	loadDefaultColRows_Pref:function(){
@@ -33,7 +35,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		try {
 			if ( !container ) return;
 			while (container.firstChild) container.removeChild(container.firstChild);
-			let row = doc.createElementNS(XUL, "row");
+			let row = doc.createElementNS(XUL, "row"); // header does not have class colClass
 			["A", "col_title", "col_flex", "up", "down"].forEach( function(label) {
 			let item;
 			if ( label == 'picker' ) {
@@ -59,7 +61,8 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 	createDefaultColsGridRows: function(doc,container) {
 		let DefColRows=this.loadDefaultColRows_Pref();
 		for (let index in DefColRows) {
-				this.createOneDefaultColRow(doc,container,index,DefColRows[index]);
+				DefColRows[index]['currindex']=index;
+				this.createOneDefaultColRow(doc,container,DefColRows[index]);
 		}
 	},
 
@@ -67,17 +70,19 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		//TODO
 	},
 
-	createOneDefaultColRow:function(doc,container,currindex,currcol){
+	createOneDefaultColRow:function(doc,container,currcol,ref){
 		const XUL = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
-		try {
+		//try {
 		  if ( !container ) return;
 		  let row = doc.createElementNS(XUL, "row");
 
 		  let col_enable = doc.createElementNS(XUL, "checkbox");
 		  col_enable.setAttribute("checked", currcol.visible);
+		  col_enable.setAttribute("cwcol", 'visible');
 
 		  let col_title=doc.createElementNS(XUL, "label");
-		  col_title.setAttribute("value", this.getColLocalizedString(currindex));
+		  col_title.setAttribute("value", this.getColLocalizedString(currcol.currindex));
+		  col_title.setAttribute("cwcol", 'currindex');
 
 		  let [col_flex] = [
 			// value, size
@@ -86,12 +91,13 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			  let [value,size] = attributes;
 			  if ( size ) element.setAttribute("size", size);
 			  element.setAttribute("value", value);
+			  if(col_flex) element.setAttribute("cwcol", 'flex');
 			  return element;
 			} );
 
 		  let [up, down] = [ //TODO HERE
-			['\u2191', function(aEvent) { self.upDownRule(row, true); }, ''],
-			['\u2193', function(aEvent) { self.upDownRule(row, false); }, ''] ].map( function(attributes) {
+			['\u2191', function(aEvent) { miczColumnsWizardPref_DefaultColsGrid.upDownCol(row, true); }, ''],
+			['\u2193', function(aEvent) { miczColumnsWizardPref_DefaultColsGrid.upDownCol(row, false); }, ''] ].map( function(attributes) {
 			  let element = doc.createElementNS(XUL, "toolbarbutton");
 			  element.setAttribute("label", attributes[0]);
 			  element.addEventListener("command", attributes[1], false );
@@ -99,17 +105,49 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			  return element;
 			} );
 
-		  //row.classList.add(ruleClass);
+		  row.classList.add(colClass);
 		  [col_enable, col_title, col_flex, up, down].forEach( function(item) {
 			row.insertBefore(item, null);
 		  } );
-		  container.insertBefore(row, null);
+		  container.insertBefore(row, ref);
 		  //dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow] "+currindex+"\r\n");
 		  return row;
-		} catch(err) {
+		/*} catch(err) {
 		  dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow error] "+err+"\r\n");
-		}
+		}*/
 	},
+
+	getOneDefaultCol: function(row) {
+		let cwcol= {};
+		for ( let item of row.childNodes ) {
+		  let key = item.getAttribute('cwcol');
+		  if ( key ) {
+			let value = item.value || item.checked;
+			if ( item.getAttribute("type") == 'number' ) value = item.valueNumber;
+			cwcol[key] = value;
+		  }
+		}
+		return cwcol;
+	  },
+
+  upDownCol: function(row, isUp) {
+	  let doc = row.ownerDocument;
+	  let container = doc.getElementById('ColumnsWizard.DefaultColsGrid');
+    try {
+      let ref = isUp ? row.previousSibling : row;
+      let remove = isUp ? row : row.nextSibling;
+      if ( ref && remove && ref.classList.contains(colClass) && remove.classList.contains(colClass) ) {
+        let cwcol = this.getOneDefaultCol(remove);
+        remove.parentNode.removeChild(remove);
+        // remove.parentNode.insertBefore(remove, ref); // lost all unsaved values
+        let newBox = this.createOneDefaultColRow(doc,container,cwcol,ref);
+        //this.checkFocus( isUp ? newBox : row );
+        //this.syncToPerf(true);
+      }
+    } catch(err) {
+      dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid upDownCol error] "+err+"\r\n");
+    }
+  },
 
 	getColLocalizedString:function(col){
 		let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
