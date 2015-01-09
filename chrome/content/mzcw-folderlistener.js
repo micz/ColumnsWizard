@@ -135,6 +135,15 @@ cw_showColumns_Pref: function(item){
          let cwcolumnStates=miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
 		 //dump(">>>>>>>>>>>>> miczColumnsWizard: [cw_showColumns_Pref] "+JSON.stringify(cwcolumnStates)+"\r\n");
 		 dbFolderInfo.setCharProperty(propName,JSON.stringify(cwcolumnStates));
+		 /*let nsMsgViewSortType = Components.interfaces.nsMsgViewSortType;
+		 let nsMsgViewSortOrder = Components.interfaces.nsMsgViewSortOrder;
+		 //dbFolderInfo.SortType=SortType.byCustom;
+		 //dbFolderInfo.curCustomColumn='cc';
+		 dbFolderInfo.sortType=nsMsgViewSortType.bySubject;
+		 //dbFolderInfo.sortOrder=nsMsgViewSortOrder.ascending;
+		 dbFolderInfo.sortOrder=nsMsgViewSortOrder.descending;
+		 UpdateSortIndicators(dbFolderInfo.sortType, dbFolderInfo.sortOrder);*/
+
 		 item.msgDatabase.Commit(Components.interfaces.nsMsgDBCommitType.kLargeCommit);
 	},
 
