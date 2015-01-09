@@ -66,8 +66,33 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		}
 	},
 
-	saveDefaultColsGridRows: function(doc,container) {
-		//TODO
+	saveDefaultColsGridRows: function(doc,container,save_pref) {
+		let value = JSON.stringify(this.getDefaultCols(container));
+	  	if(save_pref){
+		  let preference = doc.getElementById("ColumnsWizard.DefaultColsList");
+		  preference.value = value;
+    	}
+    	return value;
+	},
+
+	getDefaultCols:function(container){
+	    let cw_cols = new Array();
+		//try {
+		  if (!container){
+			dump(">>>>>>>>>>>>> miczColumnsWizard: [getDefaultCols] no container\r\n");
+		  	return cw_cols;
+	  	  }
+		  for(let row of container.childNodes){
+			if(row.classList.contains(colClass)){
+			  let cw_col = this.getOneDefaultCol(row);
+			  if(Object.keys(cw_col).length>0){
+				  cw_cols[cw_col.currindex]=cw_col;
+				  dump(">>>>>>>>>>>>> miczColumnsWizard: [getDefaultCols] added cw_col {"+JSON.stringify(cw_col)+"}\r\n");
+			  }
+			}
+		  }
+		//} catch (err) { throw err; } // throw the error out so syncToPerf won't get an empty rules
+		return cw_cols;
 	},
 
 	createOneDefaultColRow:function(doc,container,currcol,ref){
@@ -76,13 +101,21 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  if ( !container ) return;
 		  let row = doc.createElementNS(XUL, "row");
 
+		  //we found no valid preference
+		  if(currcol.visible===undefined)return;
+
+  		  let col_id=doc.createElementNS(XUL, "label");
+		  col_id.setAttribute("value", currcol.currindex);
+		  col_id.setAttribute("cwcol", 'currindex');
+		  col_id.setAttribute("hidden", 'true');
+
 		  let col_enable = doc.createElementNS(XUL, "checkbox");
 		  col_enable.setAttribute("checked", currcol.visible);
 		  col_enable.setAttribute("cwcol", 'visible');
 
 		  let col_title=doc.createElementNS(XUL, "label");
 		  col_title.setAttribute("value", this.getColLocalizedString(currcol.currindex));
-		  col_title.setAttribute("cwcol", 'currindex');
+		  col_title.setAttribute("cwcol", 'col_title');
 
 		  let [col_flex] = [
 			// value, size
@@ -106,7 +139,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			} );
 
 		  row.classList.add(colClass);
-		  [col_enable, col_title, col_flex, up, down].forEach( function(item) {
+		  [col_id, col_enable, col_title, col_flex, up, down].forEach( function(item) {
 			row.insertBefore(item, null);
 		  } );
 		  container.insertBefore(row, ref);
@@ -118,22 +151,40 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 	},
 
 	getOneDefaultCol: function(row) {
-		let cwcol= {};
-		for ( let item of row.childNodes ) {
+		let cwcol2= [];
+	  	//let currindex='';
+	    let ii=1;
+		for(let item of row.childNodes){
 		  let key = item.getAttribute('cwcol');
-		  if ( key ) {
+		  if (key){
+			/*if(key=='currindex'){
+				currindex = item.value
+				cwcol[currindex]=[];
+				dump(">>>>>>>>>>>>> miczColumnsWizard: "+ii+" [getOneDefaultCol currindex] "+currindex+"\r\n");
+				dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] getting cwcol {"+JSON.stringify(cwcol)+"}\r\n");
+			}else{
+				let value = item.value || item.checked;
+				if (item.getAttribute("type") == 'number') value = item.valueNumber;
+				cwcol[currindex][key] = value;
+				dump(">>>>>>>>>>>>> miczColumnsWizard: "+ii+" [getOneDefaultCol currindex:key|value] "+currindex+":"+key+"|"+value+"\r\n");
+				dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] getting cwcol {"+JSON.stringify(cwcol)+"}\r\n");
+			}*/
 			let value = item.value || item.checked;
-			if ( item.getAttribute("type") == 'number' ) value = item.valueNumber;
-			cwcol[key] = value;
+			if (item.getAttribute("type") == 'number') value = item.valueNumber;
+			cwcol2[key] = value;
+			dump(">>>>>>>>>>>>> miczColumnsWizard: "+ii+" [getOneDefaultCol key|value] "+key+"|"+value+"\r\n");
+			dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] getting cwcol {"+JSON.stringify(cwcol2)+"}\r\n");
+			ii++;
 		  }
 		}
-		return cwcol;
+		 dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] get cwcol {"+JSON.stringify(cwcol)+"}\r\n");
+		return cwcol2;
 	  },
 
   upDownCol: function(row, isUp) {
 	  let doc = row.ownerDocument;
 	  let container = doc.getElementById('ColumnsWizard.DefaultColsGrid');
-    try {
+    //try {
       let ref = isUp ? row.previousSibling : row;
       let remove = isUp ? row : row.nextSibling;
       if ( ref && remove && ref.classList.contains(colClass) && remove.classList.contains(colClass) ) {
@@ -143,10 +194,11 @@ var miczColumnsWizardPref_DefaultColsGrid = {
         let newBox = this.createOneDefaultColRow(doc,container,cwcol,ref);
         //this.checkFocus( isUp ? newBox : row );
         //this.syncToPerf(true);
+        this.saveDefaultColsGridRows(doc,container,true);
       }
-    } catch(err) {
+    /*} catch(err) {
       dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid upDownCol error] "+err+"\r\n");
-    }
+    }*/
   },
 
 	getColLocalizedString:function(col){

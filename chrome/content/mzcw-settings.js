@@ -18,8 +18,8 @@ var miczColumnsWizardPref = {
 	saveDefaultColRows:function(win){
 		let doc = win.document;
 		let container = doc.getElementById('ColumnsWizard.DefaultColsGrid');
-		miczColumnsWizardPref_DefaultColsGrid.saveDefaultColsGridRows(doc,container);
 		dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref] saveDefaultColRows called\r\n");
+		return miczColumnsWizardPref_DefaultColsGrid.saveDefaultColsGridRows(doc,container,false);
 	},
 
 };

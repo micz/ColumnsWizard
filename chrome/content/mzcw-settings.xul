@@ -38,6 +38,10 @@
       <preference id="ColumnsWizard.CustCols.Addcontentbase"
         name="extensions.ColumnsWizard.CustCols.Addcontentbase"
         type="bool" />
+	<!-- Default Columns for New Folder -->
+      <preference id="ColumnsWizard.DefaultColsList"
+        name="extensions.ColumnsWizard.DefaultColsList"
+        type="string" />
     </preferences>
     <tabbox maxheight="300px">
       <tabs>
@@ -88,7 +92,7 @@
 		  <columns>
 			<column/><column flex="2"/><column flex="1"/><column/><column/>
 		  </columns>
-		  <rows id='ColumnsWizard.DefaultColsGrid' preference='extensions.ColumnsWizard.DefaultColsList' preference-editable="true" onsynctopreference='return miczColumnsWizardPref.saveDefaultColRows(window);'>
+		  <rows id='ColumnsWizard.DefaultColsGrid' preference='ColumnsWizard.DefaultColsList' preference-editable="true" onsynctopreference='return miczColumnsWizardPref.saveDefaultColRows(window);'>
 		  </rows>
 		 </grid>
 		 </vbox>
