@@ -79,8 +79,6 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  
 		  let col_orderby = doc.createElementNS(XUL, "radio");
 		  col_orderby.setAttribute("group", "cw_orderby");
-		  //col_orderby.setAttribute("id", "cw_orderby_"+currcol.currindex);
-		  
 
 		  let col_title=doc.createElementNS(XUL, "label");
 		  col_title.setAttribute("value", this.getColLocalizedString(currcol.currindex));
@@ -98,7 +96,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			  return element;
 			} );
 
-		  let [up, down] = [ //TODO HERE
+		  let [up, down] = [
 			['\u2191', function(aEvent) { miczColumnsWizardPref_DefaultColsGrid.upDownCol(row, true); }, ''],
 			['\u2193', function(aEvent) { miczColumnsWizardPref_DefaultColsGrid.upDownCol(row, false); }, ''] ].map( function(attributes) {
 			  let element = doc.createElementNS(XUL, "toolbarbutton");
