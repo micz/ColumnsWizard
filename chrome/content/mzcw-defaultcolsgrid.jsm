@@ -262,7 +262,88 @@ var miczColumnsWizardPref_DefaultColsGrid = {
        		   // TODO after the merge with newprefpanel branch
        		break;
 	   }
+	   return strOut;
+	},
 
+	getSortOrder:function(sort_order){
+		let nsMsgViewSortOrder = Components.interfaces.nsMsgViewSortOrder;
+
+		switch (sort_order) {
+    	 	case "ASC":
+       		return nsMsgViewSortOrder.ascending;
+       		break;
+       		case "DESC":
+       		return nsMsgViewSortOrder.descending;
+       		break;
+	   }
+	   return nsMsgViewSortOrder.ascending;
+	},
+	
+	getSortType:function(col){
+		let nsMsgViewSortType = Components.interfaces.nsMsgViewSortType;
+
+		switch (col) {
+    	 	case "threadCol":
+       		return nsMsgViewSortType.byThread;
+       		break;
+       		case "senderCol":
+       		return nsMsgViewSortType.byAuthor;
+       		break;
+       		case "recipientCol":
+       		return nsMsgViewSortType.byRecipient;
+       		break;
+       		case "subjectCol":
+       		return nsMsgViewSortType.bySubject;
+       		break;
+       		case "dateCol":
+       		return nsMsgViewSortType.byDate;
+       		break;
+       		case "priorityCol":
+       		return nsMsgViewSortType.byPriority;
+       		break;
+       		case "tagsCol":
+       		return nsMsgViewSortType.byTags;
+       		break;
+       		case "accountCol":
+       		return nsMsgViewSortType.byAccount;
+       		break;
+       		case "statusCol":
+       		return nsMsgViewSortType.byStatus;
+       		break;
+       		case "sizeCol":
+       		return nsMsgViewSortType.bySize;
+       		break;
+       		case "junkStatusCol":
+       		return nsMsgViewSortType.byJunkStatus;
+       		break;
+       		/*case "unreadCol":
+       		return nsMsgViewSortType.;
+       		break;*/
+       		/*case "totalCol":
+       		return nsMsgViewSortType.;
+       		break;*/
+       		case "unreadButtonColHeader":
+       		return nsMsgViewSortType.byUnread;
+       		break;
+       		case "receivedCol":
+       		return nsMsgViewSortType.byReceived;
+       		break;
+       		case "flaggedCol":
+       		return nsMsgViewSortType.byFlagged;
+       		break;
+       		case "locationCol":
+       		return nsMsgViewSortType.byLocation;
+       		break;
+       		case "idCol":
+       		return nsMsgViewSortType.byId;
+       		break;
+       		case "attachmentCol":
+       		return nsMsgViewSortType.byAttachments;
+       		break;
+       		default:
+       		return nsMsgViewSortType.byCustom;
+       		break;
+	   }
 	   return strOut;
 	},
 
@@ -271,16 +352,6 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 
 
 /*
- *
-http://mxr.mozilla.org/comm-central/source/mailnews/base/public/nsIMsgDBView.idl#27
-7 interface nsMsgViewSortOrder
-28 {
-29   const nsMsgViewSortOrderValue none = 0;
-30   const nsMsgViewSortOrderValue ascending = 1;
-31   const nsMsgViewSortOrderValue descending = 2;
-32 };
- *
- *
 59 interface nsMsgViewSortType
 60 {
 61   const nsMsgViewSortTypeValue byNone = 0x11; // not sorted
