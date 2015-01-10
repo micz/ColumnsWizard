@@ -76,7 +76,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 	},
 
 	getDefaultCols:function(container){
-	    let cw_cols = new Array();
+	    let cw_cols = {};
 		//try {
 		  if (!container){
 			dump(">>>>>>>>>>>>> miczColumnsWizard: [getDefaultCols] no container\r\n");
@@ -151,34 +151,21 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 	},
 
 	getOneDefaultCol: function(row) {
-		let cwcol2= [];
-	  	//let currindex='';
+		let cwcol= {};
 	    let ii=1;
 		for(let item of row.childNodes){
 		  let key = item.getAttribute('cwcol');
 		  if (key){
-			/*if(key=='currindex'){
-				currindex = item.value
-				cwcol[currindex]=[];
-				dump(">>>>>>>>>>>>> miczColumnsWizard: "+ii+" [getOneDefaultCol currindex] "+currindex+"\r\n");
-				dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] getting cwcol {"+JSON.stringify(cwcol)+"}\r\n");
-			}else{
-				let value = item.value || item.checked;
-				if (item.getAttribute("type") == 'number') value = item.valueNumber;
-				cwcol[currindex][key] = value;
-				dump(">>>>>>>>>>>>> miczColumnsWizard: "+ii+" [getOneDefaultCol currindex:key|value] "+currindex+":"+key+"|"+value+"\r\n");
-				dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] getting cwcol {"+JSON.stringify(cwcol)+"}\r\n");
-			}*/
 			let value = item.value || item.checked;
 			if (item.getAttribute("type") == 'number') value = item.valueNumber;
-			cwcol2[key] = value;
-			dump(">>>>>>>>>>>>> miczColumnsWizard: "+ii+" [getOneDefaultCol key|value] "+key+"|"+value+"\r\n");
-			dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] getting cwcol {"+JSON.stringify(cwcol2)+"}\r\n");
+			cwcol[key] = value;
+			dump(">>>>>>>>>>>>> miczColumnsWizard: "+ii+" [getOneDefaultCol key|value] "+key+"|"+cwcol[key]+"\r\n");
+			dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] getting cwcol {"+JSON.stringify(cwcol)+"}\r\n");
 			ii++;
 		  }
 		}
 		 dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] get cwcol {"+JSON.stringify(cwcol)+"}\r\n");
-		return cwcol2;
+		return cwcol;
 	  },
 
   upDownCol: function(row, isUp) {
