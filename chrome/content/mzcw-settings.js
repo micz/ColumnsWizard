@@ -18,7 +18,7 @@ var miczColumnsWizardPref = {
 	saveDefaultColRows:function(win){
 		let doc = win.document;
 		let container = doc.getElementById('ColumnsWizard.DefaultColsGrid');
-		dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref] saveDefaultColRows called\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref] saveDefaultColRows called\r\n");
 		return miczColumnsWizardPref_DefaultColsGrid.saveDefaultColsGridRows(doc,container,false);
 	},
 
