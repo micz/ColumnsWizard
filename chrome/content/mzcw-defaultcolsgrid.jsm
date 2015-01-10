@@ -36,7 +36,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			if (!container) return;
 			while (container.firstChild) container.removeChild(container.firstChild);
 			let row = doc.createElementNS(XUL, "row"); // header does not have class colClass
-			["A","order_by", "col_title", "col_flex", "up", "down"].forEach( function(label) {
+			["A","sort_by", "col_title", "col_flex", "up", "down"].forEach( function(label) {
 				let item = doc.createElementNS(XUL, "label");
 				//item.setAttribute('value', label ? _bundleCW.GetStringFromName("perfdialog." + label) : "");
 				item.setAttribute('value', label);
@@ -77,8 +77,8 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  col_enable.setAttribute("checked", currcol.visible);
 		  col_enable.setAttribute("cwcol", 'visible');
 		  
-		  let col_orderby = doc.createElementNS(XUL, "radio");
-		  col_orderby.setAttribute("group", "cw_orderby");
+		  let col_sortby = doc.createElementNS(XUL, "radio");
+		  col_sortby.setAttribute("group", "cw_sortby");
 
 		  let col_title=doc.createElementNS(XUL, "label");
 		  col_title.setAttribute("value", this.getColLocalizedString(currcol.currindex));
@@ -107,7 +107,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			} );
 
 		  row.classList.add(colClass);
-		  [col_id, col_enable, col_orderby, col_title, col_flex, up, down].forEach( function(item) {
+		  [col_id, col_enable, col_sortby, col_title, col_flex, up, down].forEach( function(item) {
 			row.insertBefore(item, null);
 		  } );
 		  container.insertBefore(row, ref);

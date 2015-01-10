@@ -87,8 +87,8 @@
 	        <!--<description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.NewFolderColsMainDesc;</description>
           <label control="symbol" value=" "/>-->
           <label control="symbol" value="Test"/>
-		<vbox style="overflow:auto" maxheight="250px">
-			<radiogroup id="cw_orderby"></radiogroup>
+		<vbox style="overflow:auto;border:1px solid black;" maxheight="250px">
+			<radiogroup id="cw_sortby"></radiogroup>
           <grid>
 		  <columns>
 			<column/><column/><column flex="2"/><column flex="1"/><column/><column/>
@@ -97,6 +97,7 @@
 		  </rows>
 		 </grid>
 		 </vbox>
+		 <hbox><label control="symbol" value="sort_order"/> <radiogroup id="cw_sortorder" orient="horizontal"><radio id="cw_sort_asc" label="ASC"/> <radio id="cw_sort_desc" label="DESC"/></radiogroup></hbox>
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
 	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>
