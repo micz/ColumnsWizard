@@ -137,8 +137,17 @@ miczColumnsWizard.FolderListener={
 		 dbFolderInfo.setCharProperty(propName,JSON.stringify(cwcolumnStates));
 		 let nsMsgViewSortType = Components.interfaces.nsMsgViewSortType;
 		 let nsMsgViewSortOrder = Components.interfaces.nsMsgViewSortOrder;
-		 dbFolderInfo.SortType=nsMsgViewSortType.byCustom;
-		 gDBView.curCustomColumn='cc';
+		 //dbFolderInfo.SortType=nsMsgViewSortType.byCustom;
+		 let wMediator = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
+		let mainWindow = wMediator.getMostRecentWindow("mail:3pane");
+		 let sortedColumn=mainWindow.document.getElementById('ccCol_cw');
+		 let cw_sortOrder=nsMsgViewSortOrder.descending;
+		 if (sortedColumn){
+     sortedColumn.setAttribute("sortDirection",
+                               cw_sortOrder == nsMsgViewSortOrder.ascending ?
+                                 "ascending" : "descending");
+							 }
+		 //gDBView.curCustomColumn='cc';
 		 //dbFolderInfo.sortType=nsMsgViewSortType.bySubject;
 		 //dbFolderInfo.sortOrder=nsMsgViewSortOrder.ascending;
 		 dbFolderInfo.sortOrder=nsMsgViewSortOrder.descending;
