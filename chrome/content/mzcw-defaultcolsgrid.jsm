@@ -118,13 +118,13 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  col_title.setAttribute("cwcol", 'col_title');
 
 		  let [col_flex] = [
-			// value, size
-			[currcol.flex!=undefined?currcol.flex:0, "10"]].map( function(attributes) {
+			// filter, value, size
+			["flex", currcol.flex!==undefined?currcol.flex:0, "10"]].map( function(attributes) {
 			  let element = doc.createElementNS(XUL, "textbox");
-			  let [value,size] = attributes;
-			  if ( size ) element.setAttribute("size", size);
+			  let [filter,value,size] = attributes;
+			  element.setAttribute("cwcol",filter);
+			  if(size) element.setAttribute("size", size);
 			  element.setAttribute("value", value);
-			  if(col_flex) element.setAttribute("cwcol", 'flex');
 			  return element;
 			} );
 
