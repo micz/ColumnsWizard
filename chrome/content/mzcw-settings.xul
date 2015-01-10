@@ -42,6 +42,9 @@
       <preference id="ColumnsWizard.DefaultColsList"
         name="extensions.ColumnsWizard.DefaultColsList"
         type="string" />
+      <preference id="ColumnsWizard.DefaultColsList.SortOrder"
+        name="extensions.ColumnsWizard.DefaultColsList.SortOrder"
+        type="string" />
     </preferences>
     <tabbox maxheight="300px">
       <tabs>
@@ -87,8 +90,8 @@
 	        <!--<description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.NewFolderColsMainDesc;</description>
           <label control="symbol" value=" "/>-->
           <label control="symbol" value="Test"/>
-		<vbox style="overflow:auto;border:1px solid black;" maxheight="250px">
-			<radiogroup id="cw_sortby"></radiogroup>
+		<vbox style="overflow:auto;" maxheight="250px">
+			<radiogroup id="cw_sortby"/>
           <grid>
 		  <columns>
 			<column/><column/><column flex="2"/><column flex="1"/><column/><column/>
@@ -97,7 +100,7 @@
 		  </rows>
 		 </grid>
 		 </vbox>
-		 <hbox><label control="symbol" value="sort_order"/> <radiogroup id="cw_sortorder" orient="horizontal"><radio id="cw_sort_asc" label="ASC"/> <radio id="cw_sort_desc" label="DESC"/></radiogroup></hbox>
+		 <hbox><label control="symbol" value="sort_order"/> <radiogroup id="cw_sortorder" orient="horizontal" preference="ColumnsWizard.DefaultColsList.SortOrder"><radio id="cw_sort_asc" label="ASC"  value="ASC"/> <radio id="cw_sort_desc" label="DESC" value="DESC"/></radiogroup></hbox>
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
 	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>

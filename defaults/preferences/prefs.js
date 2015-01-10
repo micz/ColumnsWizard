@@ -7,4 +7,5 @@ pref("extensions.ColumnsWizard.CustCols.Addbcc", false);
 pref("extensions.ColumnsWizard.CustCols.Addreplyto", false);
 pref("extensions.ColumnsWizard.CustCols.Addxoriginalfrom", false);
 pref("extensions.ColumnsWizard.CustCols.Addcontentbase", false);
-pref("extensions.ColumnsWizard.DefaultColsList", " ");
+pref("extensions.ColumnsWizard.DefaultColsList", "");
+pref("extensions.ColumnsWizard.DefaultColsList.SortOrder", "ASC");
