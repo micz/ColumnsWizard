@@ -13,12 +13,12 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		if(DefaultColIndexStr==''){
 			//Set default cols if none set at the moment
 			loadedDefaultColIndex=this.getOriginalColIndex();
-			dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] default loaded and saved pref\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] default loaded and saved pref\r\n");
 			prefs.setCharPref("DefaultColsList",JSON.stringify(loadedDefaultColIndex));
 		}else{
 			loadedDefaultColIndex=JSON.parse(DefaultColIndexStr);
 		}
-		dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
 		return loadedDefaultColIndex;
 	},
 
@@ -79,7 +79,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 	    let cw_cols = {};
 		//try {
 		  if (!container){
-			dump(">>>>>>>>>>>>> miczColumnsWizard: [getDefaultCols] no container\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard: [getDefaultCols] no container\r\n");
 		  	return cw_cols;
 	  	  }
 		  for(let row of container.childNodes){
@@ -87,7 +87,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			  let cw_col = this.getOneDefaultCol(row);
 			  if(Object.keys(cw_col).length>0){
 				  cw_cols[cw_col.currindex]=cw_col;
-				  dump(">>>>>>>>>>>>> miczColumnsWizard: [getDefaultCols] added cw_col {"+JSON.stringify(cw_col)+"}\r\n");
+				  //dump(">>>>>>>>>>>>> miczColumnsWizard: [getDefaultCols] added cw_col {"+JSON.stringify(cw_col)+"}\r\n");
 			  }
 			}
 		  }
@@ -152,19 +152,19 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 
 	getOneDefaultCol: function(row) {
 		let cwcol= {};
-	    let ii=1;
+	    //let ii=1;
 		for(let item of row.childNodes){
 		  let key = item.getAttribute('cwcol');
 		  if (key){
 			let value = item.value || item.checked;
 			if (item.getAttribute("type") == 'number') value = item.valueNumber;
 			cwcol[key] = value;
-			dump(">>>>>>>>>>>>> miczColumnsWizard: "+ii+" [getOneDefaultCol key|value] "+key+"|"+cwcol[key]+"\r\n");
-			dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] getting cwcol {"+JSON.stringify(cwcol)+"}\r\n");
-			ii++;
+			//dump(">>>>>>>>>>>>> miczColumnsWizard: "+ii+" [getOneDefaultCol key|value] "+key+"|"+cwcol[key]+"\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] getting cwcol {"+JSON.stringify(cwcol)+"}\r\n");
+			//ii++;
 		  }
 		}
-		 dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] get cwcol {"+JSON.stringify(cwcol)+"}\r\n");
+		 //dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] get cwcol {"+JSON.stringify(cwcol)+"}\r\n");
 		return cwcol;
 	  },
 
