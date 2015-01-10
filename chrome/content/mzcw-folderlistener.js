@@ -147,9 +147,12 @@ miczColumnsWizard.FolderListener={
                                cw_sortOrder == nsMsgViewSortOrder.ascending ?
                                  "ascending" : "descending");
 							 }
-		 //gDBView.curCustomColumn='cc';
+		 //gDBView.curCustomColumn='ccCol_cw';
 		 //dbFolderInfo.sortType=nsMsgViewSortType.bySubject;
 		 //dbFolderInfo.sortOrder=nsMsgViewSortOrder.ascending;
+		 
+		 // http://superuser.com/questions/13518/change-the-default-sorting-order-in-thunderbird
+		 
 		 dbFolderInfo.sortOrder=nsMsgViewSortOrder.descending;
 		 UpdateSortIndicators(dbFolderInfo.sortType, dbFolderInfo.sortOrder);
 
