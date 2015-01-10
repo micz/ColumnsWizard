@@ -33,23 +33,16 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
 		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
 		try {
-			if ( !container ) return;
+			if (!container) return;
 			while (container.firstChild) container.removeChild(container.firstChild);
 			let row = doc.createElementNS(XUL, "row"); // header does not have class colClass
-			["A", "col_title", "col_flex", "up", "down"].forEach( function(label) {
-			let item;
-			if ( label == 'picker' ) {
-			  item = doc.createElementNS(XUL, "image");
-			  item.classList.add("tree-columnpicker-icon");
-			  //item.addEventListener('click', function (event) { return doc.getElementById(ruleHeaderContextMenuID).openPopup(item, 'after_start', 0, 0, true, false, event); }, false );
-			  item.setAttribute("tooltiptext", _bundleCW.GetStringFromName("perfdialog.tooltip.picker"));
-			} else {
-			  item = doc.createElementNS(XUL, "label");
-			  //item.setAttribute('value', label ? _bundleCW.GetStringFromName("perfdialog." + label) : "");
-			  item.setAttribute('value', label);
-			  //item.setAttribute('rule', label); // header does not have class ruleClass
-			}
-			row.insertBefore(item, null);
+			["A","order_by", "col_title", "col_flex", "up", "down"].forEach( function(label) {
+				let item = doc.createElementNS(XUL, "label");
+				//item.setAttribute('value', label ? _bundleCW.GetStringFromName("perfdialog." + label) : "");
+				item.setAttribute('value', label);
+				//item.setAttribute('rule', label); // header does not have class ruleClass
+				if(label=="col_flex")item.setAttribute('hidden',true);
+				row.insertBefore(item, null);
 			} );
 			row.id = container.name+"-header";
 			container.insertBefore(row, null);
@@ -66,6 +59,67 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		}
 	},
 
+	createOneDefaultColRow:function(doc,container,currcol,ref){
+		const XUL = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+		//try {
+		  if ( !container ) return;
+		  let row = doc.createElementNS(XUL, "row");
+
+		  //we found no valid preference
+		  if(currcol.visible===undefined)return;
+
+  		  let col_id=doc.createElementNS(XUL, "label");
+		  col_id.setAttribute("value", currcol.currindex);
+		  col_id.setAttribute("cwcol", 'currindex');
+		  col_id.setAttribute("hidden", 'true');
+
+		  let col_enable = doc.createElementNS(XUL, "checkbox");
+		  col_enable.setAttribute("checked", currcol.visible);
+		  col_enable.setAttribute("cwcol", 'visible');
+		  
+		  let col_orderby = doc.createElementNS(XUL, "radio");
+		  col_orderby.setAttribute("group", "cw_orderby");
+		  //col_orderby.setAttribute("id", "cw_orderby_"+currcol.currindex);
+		  
+
+		  let col_title=doc.createElementNS(XUL, "label");
+		  col_title.setAttribute("value", this.getColLocalizedString(currcol.currindex));
+		  col_title.setAttribute("cwcol", 'col_title');
+
+		  let [col_flex] = [
+			// filter, value, size
+			["flex", currcol.flex!==undefined?currcol.flex:0, "10"]].map( function(attributes) {
+			  let element = doc.createElementNS(XUL, "textbox");
+			  let [filter,value,size] = attributes;
+			  element.setAttribute("cwcol",filter);
+			  if(size) element.setAttribute("size", size);
+			  element.setAttribute("value", value);
+			  if(filter=="flex")element.setAttribute('hidden',true);
+			  return element;
+			} );
+
+		  let [up, down] = [ //TODO HERE
+			['\u2191', function(aEvent) { miczColumnsWizardPref_DefaultColsGrid.upDownCol(row, true); }, ''],
+			['\u2193', function(aEvent) { miczColumnsWizardPref_DefaultColsGrid.upDownCol(row, false); }, ''] ].map( function(attributes) {
+			  let element = doc.createElementNS(XUL, "toolbarbutton");
+			  element.setAttribute("label", attributes[0]);
+			  element.addEventListener("command", attributes[1], false );
+			  if (attributes[2]) element.classList.add(attributes[2]);
+			  return element;
+			} );
+
+		  row.classList.add(colClass);
+		  [col_id, col_enable, col_orderby, col_title, col_flex, up, down].forEach( function(item) {
+			row.insertBefore(item, null);
+		  } );
+		  container.insertBefore(row, ref);
+		  //dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow] "+currindex+"\r\n");
+		  return row;
+		/*} catch(err) {
+		  dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow error] "+err+"\r\n");
+		}*/
+	},
+	
 	saveDefaultColsGridRows: function(doc,container,save_pref) {
 		let value = JSON.stringify(this.getDefaultCols(container));
 	  	if(save_pref){
@@ -95,61 +149,6 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  }
 		//} catch (err) { throw err; } // throw the error out so syncToPerf won't get an empty rules
 		return cw_cols;
-	},
-
-	createOneDefaultColRow:function(doc,container,currcol,ref){
-		const XUL = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
-		//try {
-		  if ( !container ) return;
-		  let row = doc.createElementNS(XUL, "row");
-
-		  //we found no valid preference
-		  if(currcol.visible===undefined)return;
-
-  		  let col_id=doc.createElementNS(XUL, "label");
-		  col_id.setAttribute("value", currcol.currindex);
-		  col_id.setAttribute("cwcol", 'currindex');
-		  col_id.setAttribute("hidden", 'true');
-
-		  let col_enable = doc.createElementNS(XUL, "checkbox");
-		  col_enable.setAttribute("checked", currcol.visible);
-		  col_enable.setAttribute("cwcol", 'visible');
-
-		  let col_title=doc.createElementNS(XUL, "label");
-		  col_title.setAttribute("value", this.getColLocalizedString(currcol.currindex));
-		  col_title.setAttribute("cwcol", 'col_title');
-
-		  let [col_flex] = [
-			// filter, value, size
-			["flex", currcol.flex!==undefined?currcol.flex:0, "10"]].map( function(attributes) {
-			  let element = doc.createElementNS(XUL, "textbox");
-			  let [filter,value,size] = attributes;
-			  element.setAttribute("cwcol",filter);
-			  if(size) element.setAttribute("size", size);
-			  element.setAttribute("value", value);
-			  return element;
-			} );
-
-		  let [up, down] = [ //TODO HERE
-			['\u2191', function(aEvent) { miczColumnsWizardPref_DefaultColsGrid.upDownCol(row, true); }, ''],
-			['\u2193', function(aEvent) { miczColumnsWizardPref_DefaultColsGrid.upDownCol(row, false); }, ''] ].map( function(attributes) {
-			  let element = doc.createElementNS(XUL, "toolbarbutton");
-			  element.setAttribute("label", attributes[0]);
-			  element.addEventListener("command", attributes[1], false );
-			  if (attributes[2]) element.classList.add(attributes[2]);
-			  return element;
-			} );
-
-		  row.classList.add(colClass);
-		  [col_id, col_enable, col_title, col_flex, up, down].forEach( function(item) {
-			row.insertBefore(item, null);
-		  } );
-		  container.insertBefore(row, ref);
-		  //dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow] "+currindex+"\r\n");
-		  return row;
-		/*} catch(err) {
-		  dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow error] "+err+"\r\n");
-		}*/
 	},
 
 	getOneDefaultCol: function(row,ordinal) {

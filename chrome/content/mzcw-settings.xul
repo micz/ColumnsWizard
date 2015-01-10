@@ -88,9 +88,10 @@
           <label control="symbol" value=" "/>-->
           <label control="symbol" value="Test"/>
 		<vbox style="overflow:auto" maxheight="250px">
+			<radiogroup id="cw_orderby"></radiogroup>
           <grid>
 		  <columns>
-			<column/><column flex="2"/><column flex="1"/><column/><column/>
+			<column/><column/><column flex="2"/><column flex="1"/><column/><column/>
 		  </columns>
 		  <rows id='ColumnsWizard.DefaultColsGrid' preference='ColumnsWizard.DefaultColsList' preference-editable="true" onsynctopreference='return miczColumnsWizardPref.saveDefaultColRows(window);'>
 		  </rows>
