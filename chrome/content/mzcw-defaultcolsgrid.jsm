@@ -77,6 +77,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 
 	getDefaultCols:function(container){
 	    let cw_cols = {};
+	    let ordinal=1;
 		//try {
 		  if (!container){
 			//dump(">>>>>>>>>>>>> miczColumnsWizard: [getDefaultCols] no container\r\n");
@@ -84,11 +85,12 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 	  	  }
 		  for(let row of container.childNodes){
 			if(row.classList.contains(colClass)){
-			  let cw_col = this.getOneDefaultCol(row);
+			  let cw_col = this.getOneDefaultCol(row,ordinal);
 			  if(Object.keys(cw_col).length>0){
 				  cw_cols[cw_col.currindex]=cw_col;
-				  //dump(">>>>>>>>>>>>> miczColumnsWizard: [getDefaultCols] added cw_col {"+JSON.stringify(cw_col)+"}\r\n");
+				  dump(">>>>>>>>>>>>> miczColumnsWizard: [getDefaultCols] added cw_col {"+JSON.stringify(cw_col)+"}\r\n");
 			  }
+			  ordinal++;
 			}
 		  }
 		//} catch (err) { throw err; } // throw the error out so syncToPerf won't get an empty rules
@@ -150,8 +152,9 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		}*/
 	},
 
-	getOneDefaultCol: function(row) {
+	getOneDefaultCol: function(row,ordinal) {
 		let cwcol= {};
+		if(!ordinal)ordinal="0";
 	    //let ii=1;
 		for(let item of row.childNodes){
 		  let key = item.getAttribute('cwcol');
@@ -164,6 +167,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			//ii++;
 		  }
 		}
+		cwcol['ordinal']=ordinal;
 		 //dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] get cwcol {"+JSON.stringify(cwcol)+"}\r\n");
 		return cwcol;
 	  },
