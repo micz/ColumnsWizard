@@ -129,20 +129,20 @@ miczColumnsWizard.FolderListener={
 		 item.msgDatabase.Commit(Components.interfaces.nsMsgDBCommitType.kLargeCommit);
 	},
 
-cw_showColumns_Pref: function(item){
+	cw_showColumns_Pref: function(item){
 		 let propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
 		 let dbFolderInfo = item.msgDatabase.dBFolderInfo;
          let cwcolumnStates=miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
 		 //dump(">>>>>>>>>>>>> miczColumnsWizard: [cw_showColumns_Pref] "+JSON.stringify(cwcolumnStates)+"\r\n");
 		 dbFolderInfo.setCharProperty(propName,JSON.stringify(cwcolumnStates));
-		 /*let nsMsgViewSortType = Components.interfaces.nsMsgViewSortType;
+		 let nsMsgViewSortType = Components.interfaces.nsMsgViewSortType;
 		 let nsMsgViewSortOrder = Components.interfaces.nsMsgViewSortOrder;
-		 //dbFolderInfo.SortType=SortType.byCustom;
-		 //dbFolderInfo.curCustomColumn='cc';
-		 dbFolderInfo.sortType=nsMsgViewSortType.bySubject;
+		 dbFolderInfo.SortType=nsMsgViewSortType.byCustom;
+		 gDBView.curCustomColumn='cc';
+		 //dbFolderInfo.sortType=nsMsgViewSortType.bySubject;
 		 //dbFolderInfo.sortOrder=nsMsgViewSortOrder.ascending;
 		 dbFolderInfo.sortOrder=nsMsgViewSortOrder.descending;
-		 UpdateSortIndicators(dbFolderInfo.sortType, dbFolderInfo.sortOrder);*/
+		 UpdateSortIndicators(dbFolderInfo.sortType, dbFolderInfo.sortOrder);
 
 		 item.msgDatabase.Commit(Components.interfaces.nsMsgDBCommitType.kLargeCommit);
 	},
