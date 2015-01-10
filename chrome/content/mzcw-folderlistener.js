@@ -137,7 +137,7 @@ miczColumnsWizard.FolderListener={
 		 dbFolderInfo.setCharProperty(propName,JSON.stringify(cwcolumnStates));
 		 let nsMsgViewSortType = Components.interfaces.nsMsgViewSortType;
 		 let nsMsgViewSortOrder = Components.interfaces.nsMsgViewSortOrder;
-		 //dbFolderInfo.SortType=nsMsgViewSortType.byCustom;
+		 dbFolderInfo.sortType=nsMsgViewSortType.byCustom;
 		 let wMediator = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
 		let mainWindow = wMediator.getMostRecentWindow("mail:3pane");
 		 let sortedColumn=mainWindow.document.getElementById('ccCol_cw');
