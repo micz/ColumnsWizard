@@ -88,7 +88,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			  let cw_col = this.getOneDefaultCol(row,ordinal);
 			  if(Object.keys(cw_col).length>0){
 				  cw_cols[cw_col.currindex]=cw_col;
-				  dump(">>>>>>>>>>>>> miczColumnsWizard: [getDefaultCols] added cw_col {"+JSON.stringify(cw_col)+"}\r\n");
+				  //dump(">>>>>>>>>>>>> miczColumnsWizard: [getDefaultCols] added cw_col {"+JSON.stringify(cw_col)+"}\r\n");
 			  }
 			  ordinal++;
 			}
