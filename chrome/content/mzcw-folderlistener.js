@@ -156,6 +156,11 @@ miczColumnsWizard.FolderListener={
 		 //dbFolderInfo.sortOrder=nsMsgViewSortOrder.descending;
 		 //UpdateSortIndicators(dbFolderInfo.sortType, dbFolderInfo.sortOrder);
 
+		 /*let wMediator = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
+		 let mainWindow = wMediator.getMostRecentWindow("mail:3pane");
+		 let sortedColumn=mainWindow.document.getElementById('ccCol_cw');
+		 sortedColumn.setAttribute("width","30px");*/
+
 		 item.msgDatabase.Commit(Components.interfaces.nsMsgDBCommitType.kLargeCommit);
 	},
 
