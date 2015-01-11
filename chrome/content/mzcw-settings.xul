@@ -43,8 +43,8 @@
         name="extensions.ColumnsWizard.DefaultColsList"
         type="string" />
       <preference id="ColumnsWizard.DefaultColsList.SortOrder"
-        name="extensions.ColumnsWizard.DefaultColsList.SortOrder"
-        type="string" />
+        name="mailnews.default_sort_order"
+        type="int" />
     </preferences>
     <tabbox maxheight="300px">
       <tabs>
@@ -100,7 +100,7 @@
 		  </rows>
 		 </grid>
 		 </vbox>
-		 <hbox><label control="symbol" value="sort_order"/> <radiogroup id="cw_sortorder" orient="horizontal" preference="ColumnsWizard.DefaultColsList.SortOrder"><radio id="cw_sort_asc" label="ASC"  value="ASC"/> <radio id="cw_sort_desc" label="DESC" value="DESC"/></radiogroup></hbox>
+		 <hbox><label control="symbol" value="sort_order"/> <radiogroup id="cw_sortorder" orient="horizontal" preference="ColumnsWizard.DefaultColsList.SortOrder"><radio id="cw_sort_asc" label="ASC"  value="1"/> <radio id="cw_sort_desc" label="DESC" value="2"/></radiogroup></hbox>
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
 	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>

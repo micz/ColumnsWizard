@@ -82,8 +82,12 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  col_sortby.setAttribute("value", currcol.currindex);
 		  col_sortby.setAttribute("cwcol", 'sortby');
 		  col_sortby.setAttribute("type", 'radio');
-		  if(currcol.sortby===undefined)currcol.sortby=false;
-		  if(currcol.sortby)col_sortby.setAttribute("selected", true);
+		  //if(currcol.sortby===undefined)currcol.sortby=false;
+		  //if(currcol.sortby)col_sortby.setAttribute("selected", true);
+		  let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		  let prefs = prefsc.getBranch("mailnews.");
+		  let sortcolindex=prefs.getIntPref("default_sort_type");
+		  if(sortcolindex==miczColumnsWizardPref_DefaultColsGrid.getSortType(currcol.currindex))col_sortby.setAttribute("selected", true);
 
 		  let col_title=doc.createElementNS(XUL, "label");
 		  col_title.setAttribute("value", this.getColLocalizedString(currcol.currindex));
@@ -163,8 +167,16 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  if (key){
 			let value = item.value || item.checked;
 			if (item.getAttribute("type") == 'number') value = item.valueNumber;
-			if (item.getAttribute("type") == 'radio') value = item.selected;
-			cwcol[key] = value;
+			if (item.getAttribute("type") == 'radio'){
+				 if(item.selected){
+					 let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+					 let prefs = prefsc.getBranch("mailnews.");
+					 let sortcolindex=prefs.setIntPref("default_sort_type",miczColumnsWizardPref_DefaultColsGrid.getSortType(cwcol['currindex']));
+					 dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol col_id] "+cwcol['currindex']+"\r\n");
+				 }
+			 }else{
+				cwcol[key] = value;
+			 }
 			//dump(">>>>>>>>>>>>> miczColumnsWizard: "+ii+" [getOneDefaultCol key|value] "+key+"|"+cwcol[key]+"\r\n");
 			//dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol] getting cwcol {"+JSON.stringify(cwcol)+"}\r\n");
 			//ii++;
