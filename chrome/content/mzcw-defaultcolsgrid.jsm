@@ -77,18 +77,27 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  col_enable.setAttribute("checked", currcol.visible);
 		  col_enable.setAttribute("cwcol", 'visible');
 		  
-		  let col_sortby = doc.createElementNS(XUL, "radio");
-		  col_sortby.setAttribute("group", "cw_sortby");
-		  col_sortby.setAttribute("value", currcol.currindex);
-		  col_sortby.setAttribute("cwcol", 'sortby');
-		  col_sortby.setAttribute("type", 'radio');
-		  //if(currcol.sortby===undefined)currcol.sortby=false;
-		  //if(currcol.sortby)col_sortby.setAttribute("selected", true);
-		  let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-		  let prefs = prefsc.getBranch("mailnews.");
-		  let sortcolindex=prefs.getIntPref("default_sort_type");
-		  if(sortcolindex==miczColumnsWizardPref_DefaultColsGrid.getSortType(currcol.currindex))col_sortby.setAttribute("selected", true);
-
+		  let col_sortby;
+		  if(miczColumnsWizardPref_DefaultColsGrid.getSortType(currcol.currindex)!=-1){//SORT BY only if a standard col. No way to save a customcol for sorting
+			  col_sortby = doc.createElementNS(XUL, "radio");
+			  col_sortby.setAttribute("group", "cw_sortby");
+			  col_sortby.setAttribute("value", currcol.currindex);
+			  col_sortby.setAttribute("cwcol", 'sortby');
+			  col_sortby.setAttribute("type", 'radio');
+			  //if(currcol.sortby===undefined)currcol.sortby=false;
+			  //if(currcol.sortby)col_sortby.setAttribute("selected", true);
+			  let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+			  let prefs = prefsc.getBranch("mailnews.");
+			  let sortcolindex=prefs.getIntPref("default_sort_type");
+			  if(sortcolindex==miczColumnsWizardPref_DefaultColsGrid.getSortType(currcol.currindex))col_sortby.setAttribute("selected", true);
+		  }else{
+			  col_sortby = doc.createElementNS(XUL, "label");
+			  //col_sortby.setAttribute("hidden", 'true');
+			  col_sortby.setAttribute("value", ' ');
+		  }
+		  
+		  
+		  
 		  let col_title=doc.createElementNS(XUL, "label");
 		  col_title.setAttribute("value", this.getColLocalizedString(currcol.currindex));
 		  col_title.setAttribute("cwcol", 'col_title');
@@ -172,7 +181,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 					 let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 					 let prefs = prefsc.getBranch("mailnews.");
 					 let sortcolindex=prefs.setIntPref("default_sort_type",miczColumnsWizardPref_DefaultColsGrid.getSortType(cwcol['currindex']));
-					 dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol col_id] "+cwcol['currindex']+"\r\n");
+					 //dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol col_id] "+cwcol['currindex']+"\r\n");
 				 }
 			 }else{
 				cwcol[key] = value;
@@ -353,7 +362,9 @@ var miczColumnsWizardPref_DefaultColsGrid = {
        		return nsMsgViewSortType.byAttachments;
        		break;
        		default:
-       		return nsMsgViewSortType.byCustom;
+       		//return nsMsgViewSortType.byCustom;
+       		//No sorting bycustom at the moment
+       		return -1;
        		break;
 	   }
 	   return strOut;
