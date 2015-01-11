@@ -17,6 +17,18 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			prefs.setCharPref("DefaultColsList",JSON.stringify(loadedDefaultColIndex));
 		}else{
 			loadedDefaultColIndex=JSON.parse(DefaultColIndexStr);
+			dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] pref loaded\r\n");
+			//check if there are new columns to add
+			let baseColumnStates=this.getOriginalColIndex();
+			if(Object.keys(baseColumnStates).length!=Object.keys(loadedDefaultColIndex).length){ // if the length are different so check the column to add
+			dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] different lengths\r\n");
+				for (let key in baseColumnStates) {
+				  if (!loadedDefaultColIndex.hasOwnProperty(key)){
+					loadedDefaultColIndex[key]=baseColumnStates[key];
+					dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] key not found "+key+"\r\n");
+				  }
+				}
+			}
 		}
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
 		return loadedDefaultColIndex;
