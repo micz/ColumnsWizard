@@ -3,17 +3,20 @@ Components.utils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm
 
 miczColumnsWizard.FolderListener={
 
-
     /**
      * Watch for newly created folders. Implements nsIFolderListener.
      *
      * @param nsIMsgFolder parent_folder
      * @param nsISupports  item
      *
-     * Thanks to https://github.com/ju1ius
+     * Thanks to https://github.com/ju1ius for the initial code
      **/
     OnItemAdded: function(parent_item, item)
     {
+		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
+		let cw_active=prefs.getBoolPref("active");
+		
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded triggered] "+item.name+"\r\n");
         // Not a Folder...
         if (!(item instanceof Components.interfaces.nsIMsgFolder)) {
@@ -32,7 +35,7 @@ miczColumnsWizard.FolderListener={
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded do it on] "+item.name+"\r\n");
 
 		//miczColumnsWizard.FolderListener.cw_showColumns(item);
-		miczColumnsWizard.FolderListener.cw_showColumns_Pref(item);
+		if(cw_active) miczColumnsWizard.FolderListener.cw_showColumns_Pref(item);
     },
 
     OnItemEvent: function(item, event)

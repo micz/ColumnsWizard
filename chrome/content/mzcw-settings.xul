@@ -39,6 +39,9 @@
         name="extensions.ColumnsWizard.CustCols.Addcontentbase"
         type="bool" />
 	<!-- Default Columns for New Folder -->
+      <preference id="ColumnsWizard.DefaultColsList.active"
+        name="extensions.ColumnsWizard.DefaultColsList.active"
+        type="bool" />
       <preference id="ColumnsWizard.DefaultColsList"
         name="extensions.ColumnsWizard.DefaultColsList"
         type="string" />
@@ -89,10 +92,11 @@
         <tabpanel id="tab_newfoldercols" orient="vertical">
 	        <!--<description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.NewFolderColsMainDesc;</description>
           <label control="symbol" value=" "/>-->
-          <label control="symbol" value="Test"/>
+          <checkbox id="ColumnsWizard.DefaultColsList.active_checkbox" label="Use your default columns setup for new folders."
+            preference="ColumnsWizard.DefaultColsList.active"/>
 		<vbox style="overflow:auto;" maxheight="250px">
 			<radiogroup id="cw_sortby"/>
-          <grid>
+          <grid id="ColumnsWizard.GridUI">
 		  <columns>
 			<column/><column/><column flex="2"/><column flex="1"/><column/><column/>
 		  </columns>
@@ -100,7 +104,7 @@
 		  </rows>
 		 </grid>
 		 </vbox>
-		 <hbox><label control="symbol" value="sort_order"/> <radiogroup id="cw_sortorder" orient="horizontal" preference="ColumnsWizard.DefaultColsList.SortOrder"><radio id="cw_sort_asc" label="ASC"  value="1"/> <radio id="cw_sort_desc" label="DESC" value="2"/></radiogroup></hbox>
+		 <hbox id="ColumnsWizard.SortOrderUI"><label control="symbol" value="sort_order"/> <radiogroup id="cw_sortorder" orient="horizontal" preference="ColumnsWizard.DefaultColsList.SortOrder"><radio id="cw_sort_asc" label="ASC"  value="1"/> <radio id="cw_sort_desc" label="DESC" value="2"/></radiogroup></hbox>
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
 	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>

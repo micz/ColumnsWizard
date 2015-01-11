@@ -21,5 +21,5 @@ var miczColumnsWizardPref = {
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref] saveDefaultColRows called\r\n");
 		return miczColumnsWizardPref_DefaultColsGrid.saveDefaultColsGridRows(doc,container,false);
 	},
-
+	
 };

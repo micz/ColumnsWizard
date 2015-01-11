@@ -95,9 +95,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			  //col_sortby.setAttribute("hidden", 'true');
 			  col_sortby.setAttribute("value", ' ');
 		  }
-		  
-		  
-		  
+
 		  let col_title=doc.createElementNS(XUL, "label");
 		  col_title.setAttribute("value", this.getColLocalizedString(currcol.currindex));
 		  col_title.setAttribute("cwcol", 'col_title');
