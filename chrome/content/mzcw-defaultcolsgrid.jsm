@@ -48,11 +48,10 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			if (!container) return;
 			while (container.firstChild) container.removeChild(container.firstChild);
 			let row = doc.createElementNS(XUL, "row"); // header does not have class colClass
-			["A","sort_by", "col_title", "col_flex", "up", "down"].forEach( function(label) {
+			["","sort_by", "col_title", "col_flex", "up", "down"].forEach( function(label) {
 				let item = doc.createElementNS(XUL, "label");
-				//item.setAttribute('value', label ? _bundleCW.GetStringFromName("perfdialog." + label) : "");
-				item.setAttribute('value', label);
-				//item.setAttribute('rule', label); // header does not have class ruleClass
+				item.setAttribute('value', label ? _bundleCW.GetStringFromName("ColumnsWizardNFCols." + label) : "");
+				//item.setAttribute('value', label);
 				if(label=="col_flex")item.setAttribute('hidden',true);
 				row.insertBefore(item, null);
 			} );
