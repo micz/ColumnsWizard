@@ -19,3 +19,4 @@
 <!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
 <!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* This column will be populated only for the mails that will be received after the Custom Column activation.">
 <!ENTITY ColumnsWizard.TabNewFolderDefault.label "New folder Columns">
+<!ENTITY ColumnsWizard.NewFolderCols.label "Use your default columns setup for new folders.">

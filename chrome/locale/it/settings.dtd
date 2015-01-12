@@ -19,3 +19,4 @@
 <!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
 <!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Questa colonna sarà popolata solo per le mail che saranno ricevute successivamente all'attivazione dell'opzione.">
 <!ENTITY ColumnsWizard.TabNewFolderDefault.label "Colonne predefinite">
+<!ENTITY ColumnsWizard.NewFolderCols.label "Utilizza queste impostazione per le colonne delle nuove cartelle.">
