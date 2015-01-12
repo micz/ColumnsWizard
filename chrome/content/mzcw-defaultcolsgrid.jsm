@@ -44,22 +44,25 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		const XUL = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
 		let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
 		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
-		try {
+		//try {
 			if (!container) return;
 			while (container.firstChild) container.removeChild(container.firstChild);
 			let row = doc.createElementNS(XUL, "row"); // header does not have class colClass
-			["","sort_by", "col_title", "col_flex", "up", "down"].forEach( function(label) {
+			["show","sort_by", "col_title", "col_flex", "up", "down"].forEach( function(label) {
 				let item = doc.createElementNS(XUL, "label");
-				item.setAttribute('value', label ? _bundleCW.GetStringFromName("ColumnsWizardNFCols." + label) : "");
+				item.setAttribute('value', label!=" " ? _bundleCW.GetStringFromName("ColumnsWizardNFCols." + label) : "");
 				//item.setAttribute('value', label);
 				if(label=="col_flex")item.setAttribute('hidden',true);
+				if((label=="up")||(label=="down")){
+					item.setAttribute('class','mzcw-grid_hdr_cnt');
+				}
 				row.insertBefore(item, null);
 			} );
 			row.id = container.name+"-header";
 			container.insertBefore(row, null);
-		}catch(err) {
+		/*}catch(err) {
 		  dump(">>>>>>>>>>>>> miczColumnsWizard: [settings createDefaultColsGridHeader] "+err+"\r\n");
-		}
+		}*/
 	},
 
 	createDefaultColsGridRows: function(doc,container) {
