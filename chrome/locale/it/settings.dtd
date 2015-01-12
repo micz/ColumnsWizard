@@ -20,3 +20,6 @@
 <!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Questa colonna sarà popolata solo per le mail che saranno ricevute successivamente all'attivazione dell'opzione.">
 <!ENTITY ColumnsWizard.TabNewFolderDefault.label "Colonne predefinite">
 <!ENTITY ColumnsWizard.NewFolderCols.label "Utilizza queste impostazione per le colonne delle nuove cartelle.">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "Ordinamento:">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "Ascendente">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "Discendente">

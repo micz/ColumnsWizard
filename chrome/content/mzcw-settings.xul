@@ -103,7 +103,7 @@
 		  </rows>
 		 </grid>
 		 </vbox>
-		 <hbox id="ColumnsWizard.SortOrderUI"><label control="symbol" value="sort_order"/> <radiogroup id="cw_sortorder" orient="horizontal" preference="ColumnsWizard.DefaultColsList.SortOrder"><radio id="cw_sort_asc" label="ASC"  value="1"/> <radio id="cw_sort_desc" label="DESC" value="2"/></radiogroup></hbox>
+		 <hbox id="ColumnsWizard.SortOrderUI"><label control="symbol" value="&ColumnsWizard.NewFolderColsSortOrder.label;"/> <radiogroup id="cw_sortorder" orient="horizontal" preference="ColumnsWizard.DefaultColsList.SortOrder"><radio id="cw_sort_asc" label="&ColumnsWizard.NewFolderColsSortOrder.ASC.label;"  value="1"/> <radio id="cw_sort_desc" label="&ColumnsWizard.NewFolderColsSortOrder.DESC.label;" value="2"/></radiogroup></hbox>
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
 	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>
