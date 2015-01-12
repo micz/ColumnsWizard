@@ -21,11 +21,11 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			//check if there are new columns to add
 			let baseColumnStates=this.getOriginalColIndex();
 			if(Object.keys(baseColumnStates).length!=Object.keys(loadedDefaultColIndex).length){ // if the length are different so check the column to add
-			dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] different lengths\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] different lengths\r\n");
 				for (let key in baseColumnStates) {
 				  if (!loadedDefaultColIndex.hasOwnProperty(key)){
 					loadedDefaultColIndex[key]=baseColumnStates[key];
-					dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] key not found "+key+"\r\n");
+					//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] key not found "+key+"\r\n");
 				  }
 				}
 			}
@@ -88,7 +88,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  let col_enable = doc.createElementNS(XUL, "checkbox");
 		  col_enable.setAttribute("checked", currcol.visible);
 		  col_enable.setAttribute("cwcol", 'visible');
-		  
+
 		  let col_sortby;
 		  if(miczColumnsWizardPref_DefaultColsGrid.getSortType(currcol.currindex)!=-1){//SORT BY only if a standard col. No way to save a customcol for sorting
 			  col_sortby = doc.createElementNS(XUL, "radio");
@@ -145,7 +145,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		  dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow error] "+err+"\r\n");
 		}*/
 	},
-	
+
 	saveDefaultColsGridRows: function(doc,container,save_pref) {
 		let value = JSON.stringify(this.getDefaultCols(container));
 	  	if(save_pref){
@@ -309,7 +309,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 	   }
 	   return nsMsgViewSortOrder.ascending;
 	},
-	
+
 	getSortType:function(col){
 		let nsMsgViewSortType = Components.interfaces.nsMsgViewSortType;
 
