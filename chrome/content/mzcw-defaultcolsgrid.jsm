@@ -76,6 +76,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		//try {
 		  if ( !container ) return;
 		  let row = doc.createElementNS(XUL, "row");
+		  row.setAttribute("class", "mzcw-col_grid_rows");
 
 		  //we found no valid preference
 		  if(currcol.visible===undefined)return;

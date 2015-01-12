@@ -6,7 +6,7 @@
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   title="&ColumnsWizard.SettingsTitle;"
   onload="miczColumnsWizardPref.onLoad(window);"
-   maxheight="400px">
+   maxheight="420px">
   <prefpane id="ColumnsWizard_PrefPane">
     <preferences>
     <!-- Columns in Conversation Tab -->
@@ -94,6 +94,7 @@
           <label control="symbol" value=" "/>-->
           <checkbox id="ColumnsWizard.DefaultColsList.active_checkbox" label="Use your default columns setup for new folders."
             preference="ColumnsWizard.DefaultColsList.active"/>
+            <label control="symbol" value=" "/>
 		<vbox style="overflow:auto;" maxheight="250px">
 			<radiogroup id="cw_sortby"/>
           <grid id="ColumnsWizard.GridUI">
