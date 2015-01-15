@@ -34,7 +34,7 @@ var miczColumnsWizard = {
     let monitor = {
       onTabTitleChanged:function(tab){},
       onTabSwitched: miczColumnsWizard.addCWResetMenu, //this.showColumns,
-      //onTabRestored: this.showColumns,
+      //onTabRestored:function(tab){},
       onTabOpened: this.showColumns,
     };
     tabmail.registerTabMonitor(monitor);
