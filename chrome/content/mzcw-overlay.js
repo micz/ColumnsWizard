@@ -33,7 +33,7 @@ var miczColumnsWizard = {
     let tabmail = document.getElementById("tabmail");
     let monitor = {
       onTabTitleChanged:function(tab){},
-      onTabSwitched: function(tab){}, //this.showColumns,
+      onTabSwitched: miczColumnsWizard.addCWResetMenu, //this.showColumns,
       //onTabRestored: this.showColumns,
       onTabOpened: this.showColumns,
     };
@@ -139,14 +139,25 @@ var miczColumnsWizard = {
     	miczColumnsWizard.addCWColumnsResetMenu(threadCols);
 	}*/
 	if(tab.mode.name=='folder'){
-		var cw_colmenubind=document.getAnonymousElementByAttribute(document.getElementById('threadCols'),'class','treecol-image');
-		cw_colmenubind.cw_original_buildPopup=cw_colmenubind.buildPopup;
-		cw_colmenubind.buildPopup=function(aPopup){
-			dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] "+this.parentNode.parentNode.id+"\r\n");
-			cw_colmenubind.cw_original_buildPopup(aPopup);
-
-		}	// buildPopup wrapper function
-
+			var cw_colmenubind=document.getAnonymousElementByAttribute(document.getElementById('threadCols'),'class','treecol-image');
+		if (!cw_colmenubind.cw_original_buildPopup){
+			cw_colmenubind.cw_original_buildPopup=cw_colmenubind.buildPopup;
+			dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] tab.cw_colmenubind.buildPopup "+cw_colmenubind.buildPopup+"\r\n");
+			dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] FIRST TIME\r\n");
+			cw_colmenubind.buildPopup=function(aPopup){ // buildPopup wrapper function START
+				dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] "+this.parentNode.parentNode.id+"\r\n");
+				//Remove the resetMenuCw id present... the popupmenu is built again every time from the original function...
+				/*let old_resetMenuCW = document.getElementById("resetCW");
+				aPopup.removeChild(old_resetMenuCW);*/
+				cw_colmenubind.cw_original_buildPopup(aPopup);
+				let resetMenuCW = document.createElement("menuitem"); //TODO...
+				resetMenuCW.setAttribute('label','Reset columns to CW default');
+				resetMenuCW.setAttribute("id", "resetCW");
+				resetMenuCW.onclick=function(){dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] onclick!\r\n");};
+				//resetMenuCW.setAttribute('onclick','dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] onclick!\r\n");');
+				aPopup.insertBefore(resetMenuCW,aPopup.lastChild);
+			}	// buildPopup wrapper function END
+		}
 	}
   },
 
