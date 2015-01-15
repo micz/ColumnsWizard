@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+
+<!DOCTYPE window SYSTEM
+  "chrome://columnswizard/locale/mzcw-foldercols_reset.dtd">
+
+<bindings xmlns="http://www.mozilla.org/xbl"
+  xmlns:xbl="http://www.mozilla.org/xbl"
+  xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<binding id="threadPaneColumnPickerCW" display="xul:button" role="xul:button" extends="chrome://messenger/content/threadPaneColumnPicker.xml#threadPaneColumnPicker">
+	<content>
+		<children/>
+		<xul:menuitem anonid="resetCW" label="&ColumnsWizard.NFColsResetMenu.label;"/>
+	</content>

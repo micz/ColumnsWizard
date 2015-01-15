@@ -22,7 +22,7 @@ var miczColumnsWizard = {
 
     miczColumnsWizard.watchFolders();
 
-		this.initialized = true;
+	this.initialized = true;
     //Conversation Tab add columns - delayed
   	setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
 	},
@@ -131,8 +131,7 @@ var miczColumnsWizard = {
     //dump(">>>>>>>>>>>>> miczColumnsWizard: [tab folder mode] "+tab.mode.name+" \r\n");
   },
 
-    watchFolders: function()
-    {
+    watchFolders: function(){
 		let mailSessionService = Components.classes["@mozilla.org/messenger/services/session;1"].getService(Components.interfaces.nsIMsgMailSession);
         mailSessionService.AddFolderListener(miczColumnsWizard.FolderListener, Components.interfaces.nsIFolderListener.added);
         // The following are already handled internally
@@ -141,11 +140,23 @@ var miczColumnsWizard = {
         //dump(">>>>>>>>>>>>> miczColumnsWizard: [watchFolders] \r\n");
     },
 
-    unwatchFolders: function()
-    {
+    unwatchFolders: function(){
 		let mailSessionService = Components.classes["@mozilla.org/messenger/services/session;1"].getService(Components.interfaces.nsIMsgMailSession);
         mailSessionService.RemoveFolderListener(miczColumnsWizard.FolderListener);
     },
+
+    addCWColumnsResetMenu:function(base_element){
+		const XUL = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
+		let doc=base_element.ownerDocument;
+		//if (doc instanceof Ci.nsIDOMDocumentXBL)dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWColumnsResetMenu] ok anon \r\n");
+		//let resetMenu = doc.getAnonymousElementByAttribute(base_element, "anonid", "reset");
+		let resetMenu = doc.getElementsByAttribute("anonid", "reset");
+		dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWColumnsResetMenu] resetMenu "+JSON.stringify(resetMenu)+" \r\n");
+		/*let CWColumnsResetMenu=doc.createElementNS(XUL, "menuitem");
+		CWColumnsResetMenu.setAttribute("hidden","false");
+		CWColumnsResetMenu.setAttribute("label","CW test");
+        resetMenu.parent.insertBefore(popupChild,resetMenu);*/
+	}
 
 };
 
