@@ -129,6 +129,25 @@ var miczColumnsWizard = {
      }
     }
     //dump(">>>>>>>>>>>>> miczColumnsWizard: [tab folder mode] "+tab.mode.name+" \r\n");
+    miczColumnsWizard.addCWResetMenu(tab);
+  },
+
+  addCWResetMenu:function(tab){
+	/*if(tab.mode.name=='folder'){
+		dump(">>>>>>>>>>>>> miczColumnsWizard: [CWColReset tab folder mode] "+tab.mode.name+" \r\n");
+		let threadCols=document.getElementById("threadCols");
+    	miczColumnsWizard.addCWColumnsResetMenu(threadCols);
+	}*/
+	if(tab.mode.name=='folder'){
+		var cw_colmenubind=document.getAnonymousElementByAttribute(document.getElementById('threadCols'),'class','treecol-image');
+		cw_colmenubind.cw_original_buildPopup=cw_colmenubind.buildPopup;
+		cw_colmenubind.buildPopup=function(aPopup){
+			dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] "+this.parentNode.parentNode.id+"\r\n");
+			cw_colmenubind.cw_original_buildPopup(aPopup);
+
+		}	// buildPopup wrapper function
+
+	}
   },
 
     watchFolders: function(){

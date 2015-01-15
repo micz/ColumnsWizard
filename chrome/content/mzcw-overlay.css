@@ -1,3 +1,0 @@
-#threadCols > treecolpicker {
- -moz-binding: url("chrome://columnswizard/content/mzcw-foldercols_reset.xml#threadPaneColumnPickerCW");
-}
