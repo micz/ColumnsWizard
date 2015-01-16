@@ -138,32 +138,10 @@ miczColumnsWizard.FolderListener={
          let cwcolumnStates=miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
 		 //dump(">>>>>>>>>>>>> miczColumnsWizard: [cw_showColumns_Pref] "+JSON.stringify(cwcolumnStates)+"\r\n");
 		 dbFolderInfo.setCharProperty(propName,JSON.stringify(cwcolumnStates));
-		 //let nsMsgViewSortType = Components.interfaces.nsMsgViewSortType;
-		 //let nsMsgViewSortOrder = Components.interfaces.nsMsgViewSortOrder;
-		 //dbFolderInfo.sortType=nsMsgViewSortType.byCustom;
-		 //let wMediator = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
-		 //let mainWindow = wMediator.getMostRecentWindow("mail:3pane");
-		 //let sortedColumn=mainWindow.document.getElementById('ccCol_cw');
-		 //let cw_sortOrder=nsMsgViewSortOrder.descending;
-		 /*if (sortedColumn){
-     sortedColumn.setAttribute("sortDirection",
-                               cw_sortOrder == nsMsgViewSortOrder.ascending ?
-                                 "ascending" : "descending");
-							 }*/
-		 //gDBView.curCustomColumn='ccCol_cw';
-		 //dbFolderInfo.sortType=nsMsgViewSortType.bySubject;
-		 //dbFolderInfo.sortOrder=nsMsgViewSortOrder.ascending;
-		 
-		 // http://superuser.com/questions/13518/change-the-default-sorting-order-in-thunderbird
-		 
-		 //dbFolderInfo.sortOrder=nsMsgViewSortOrder.descending;
-		 //UpdateSortIndicators(dbFolderInfo.sortType, dbFolderInfo.sortOrder);
-
 		 /*let wMediator = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
 		 let mainWindow = wMediator.getMostRecentWindow("mail:3pane");
 		 let sortedColumn=mainWindow.document.getElementById('ccCol_cw');
 		 sortedColumn.setAttribute("width","30px");*/
-
 		 item.msgDatabase.Commit(Components.interfaces.nsMsgDBCommitType.kLargeCommit);
 	},
 
