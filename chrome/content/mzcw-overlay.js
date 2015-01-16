@@ -172,7 +172,7 @@ var miczColumnsWizard = {
   },
   
     addCWResetMenu_OnClick:function(event){
-		dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
 		let columnStates = miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
 		gFolderDisplay.setColumnStates(columnStates, true);
 		return;
