@@ -151,7 +151,7 @@ var miczColumnsWizard = {
 					while (aPopup.childNodes.length > 4){
 						aPopup.firstChild.remove();
 					}
-					//... now remove the resetMenuCw id present...
+					//... now remove the resetMenuCW item...
 					aPopup.removeChild(aPopup.childNodes[2]);
 				}
 				cw_colmenubind.cw_original_buildPopup(aPopup);
