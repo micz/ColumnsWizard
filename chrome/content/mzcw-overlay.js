@@ -158,13 +158,21 @@ var miczColumnsWizard = {
 					//... now remove the resetMenuCW item...
 					aPopup.removeChild(aPopup.childNodes[2]);
 				}
+				//check if we're using the colcw default for new folders
+				let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+				let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
+				let cw_active=prefs.getBoolPref("active");
+				aPopup.childNodes[1].setAttribute('hidden',cw_active?'true':'false');
+				
 				cw_colmenubind.cw_original_buildPopup(aPopup);
 				let resetMenuCW = document.createElement("menuitem"); //TODO...
 				resetMenuCW.setAttribute('label','Reset columns to CW default');
+				resetMenuCW.setAttribute('hidden',cw_active?'false':'true');
 				//we do this to escape the command xbl event handler
 				resetMenuCW.setAttribute("colindex", "-1");
-				//resetMenuCW.onclick=function(){dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] onclick!\r\n");};
 				resetMenuCW.onclick=miczColumnsWizard.addCWResetMenu_OnClick;
+
+				
 				aPopup.insertBefore(resetMenuCW,aPopup.lastChild);
 			}	// buildPopup wrapper function END
 		}
