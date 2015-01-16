@@ -1,6 +1,10 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
+Version 5.0alan2 - 16/01/2015
+- Added the default column handling for new folders.
+- Added the reset to CW default option (accessible from the folder columns picker menu)
+==========
 Version 5.0alan - 27/12/2014
 - No more use of javascript eval function.
 - Any selected custom column is always shown in a new folder.
