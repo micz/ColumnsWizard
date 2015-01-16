@@ -162,11 +162,15 @@ var miczColumnsWizard = {
 				let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 				let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
 				let cw_active=prefs.getBoolPref("active");
+				
+				let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+				let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
+				
 				aPopup.childNodes[1].setAttribute('hidden',cw_active?'true':'false');
 				
 				cw_colmenubind.cw_original_buildPopup(aPopup);
 				let resetMenuCW = document.createElement("menuitem"); //TODO...
-				resetMenuCW.setAttribute('label','Reset columns to CW default');
+				resetMenuCW.setAttribute('label',_bundleCW.GetStringFromName("ColumnsWizardNFCols.resetMenu"));
 				resetMenuCW.setAttribute('hidden',cw_active?'false':'true');
 				//we do this to escape the command xbl event handler
 				resetMenuCW.setAttribute("colindex", "-1");
