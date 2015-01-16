@@ -146,9 +146,14 @@ var miczColumnsWizard = {
 			dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] FIRST TIME\r\n");
 			cw_colmenubind.buildPopup=function(aPopup){ // buildPopup wrapper function START
 				dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] "+this.parentNode.parentNode.id+"\r\n");
-				//Remove the resetMenuCw id present... the popupmenu is built again every time from the original function...
-				/*let old_resetMenuCW = document.getElementById("resetCW");
-				aPopup.removeChild(old_resetMenuCW);*/
+				//Remove the columns' line... the popupmenu is built again every time from the original function...
+				if(aPopup.childNodes.length>4){
+					while (aPopup.childNodes.length > 4){
+						aPopup.firstChild.remove();
+					}
+					//... now remove the resetMenuCw id present...
+					aPopup.removeChild(aPopup.childNodes[2]);
+				}
 				cw_colmenubind.cw_original_buildPopup(aPopup);
 				let resetMenuCW = document.createElement("menuitem"); //TODO...
 				resetMenuCW.setAttribute('label','Reset columns to CW default');
