@@ -161,7 +161,8 @@ var miczColumnsWizard = {
 				cw_colmenubind.cw_original_buildPopup(aPopup);
 				let resetMenuCW = document.createElement("menuitem"); //TODO...
 				resetMenuCW.setAttribute('label','Reset columns to CW default');
-				resetMenuCW.setAttribute("id", "resetCW");
+				//we do this to escape the command xbl event handler
+				resetMenuCW.setAttribute("colindex", "-1");
 				//resetMenuCW.onclick=function(){dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] onclick!\r\n");};
 				resetMenuCW.onclick=miczColumnsWizard.addCWResetMenu_OnClick;
 				aPopup.insertBefore(resetMenuCW,aPopup.lastChild);
@@ -171,9 +172,8 @@ var miczColumnsWizard = {
   },
   
     addCWResetMenu_OnClick:function(event){
-		event.target.parentNode.command=null;
+		dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
 		let columnStates = miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
-		dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu_OnClick] columnStates "+columnStates+"\r\n");
 		gFolderDisplay.setColumnStates(columnStates, true);
 		return;
 	},
