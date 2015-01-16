@@ -21,6 +21,9 @@ var miczColumnsWizard = {
     }
 
     miczColumnsWizard.watchFolders();
+    
+    let current_tab = document.getElementById("tabmail").currentTabInfo;
+    miczColumnsWizard.addCWResetMenu(current_tab);
 
 	this.initialized = true;
     //Conversation Tab add columns - delayed
@@ -139,13 +142,14 @@ var miczColumnsWizard = {
     	miczColumnsWizard.addCWColumnsResetMenu(threadCols);
 	}*/
 	if(tab.mode.name=='folder'){
-			var cw_colmenubind=document.getAnonymousElementByAttribute(document.getElementById('threadCols'),'class','treecol-image');
+		var cw_colmenubind=document.getAnonymousElementByAttribute(document.getElementById('threadCols'),'class','treecol-image');
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] tab.cw_colmenubind.command "+cw_colmenubind.command+"\r\n");
 		if (!cw_colmenubind.cw_original_buildPopup){
 			cw_colmenubind.cw_original_buildPopup=cw_colmenubind.buildPopup;
-			dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] tab.cw_colmenubind.buildPopup "+cw_colmenubind.buildPopup+"\r\n");
-			dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] FIRST TIME\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] tab.cw_colmenubind.buildPopup "+cw_colmenubind.buildPopup+"\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] FIRST TIME\r\n");
 			cw_colmenubind.buildPopup=function(aPopup){ // buildPopup wrapper function START
-				dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] "+this.parentNode.parentNode.id+"\r\n");
+				//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] "+this.parentNode.parentNode.id+"\r\n");
 				//Remove the columns' line... the popupmenu is built again every time from the original function...
 				if(aPopup.childNodes.length>4){
 					while (aPopup.childNodes.length > 4){
