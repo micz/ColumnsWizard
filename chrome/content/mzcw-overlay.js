@@ -143,7 +143,7 @@ var miczColumnsWizard = {
 	}*/
 	if(tab.mode.name=='folder'){
 		var cw_colmenubind=document.getAnonymousElementByAttribute(document.getElementById('threadCols'),'class','treecol-image');
-		//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] tab.cw_colmenubind.command "+cw_colmenubind.command+"\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] tab.cw_colmenubind.command "+cw_colmenubind.oncommand+"\r\n");
 		if (!cw_colmenubind.cw_original_buildPopup){
 			cw_colmenubind.cw_original_buildPopup=cw_colmenubind.buildPopup;
 			//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] tab.cw_colmenubind.buildPopup "+cw_colmenubind.buildPopup+"\r\n");
@@ -162,13 +162,21 @@ var miczColumnsWizard = {
 				let resetMenuCW = document.createElement("menuitem"); //TODO...
 				resetMenuCW.setAttribute('label','Reset columns to CW default');
 				resetMenuCW.setAttribute("id", "resetCW");
-				resetMenuCW.onclick=function(){dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] onclick!\r\n");};
-				//resetMenuCW.setAttribute('onclick','dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] onclick!\r\n");');
+				//resetMenuCW.onclick=function(){dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] onclick!\r\n");};
+				resetMenuCW.onclick=miczColumnsWizard.addCWResetMenu_OnClick;
 				aPopup.insertBefore(resetMenuCW,aPopup.lastChild);
 			}	// buildPopup wrapper function END
 		}
 	}
   },
+  
+    addCWResetMenu_OnClick:function(event){
+		event.target.parentNode.command=null;
+		let columnStates = miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
+		dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu_OnClick] columnStates "+columnStates+"\r\n");
+		gFolderDisplay.setColumnStates(columnStates, true);
+		return;
+	},
 
     watchFolders: function(){
 		let mailSessionService = Components.classes["@mozilla.org/messenger/services/session;1"].getService(Components.interfaces.nsIMsgMailSession);
