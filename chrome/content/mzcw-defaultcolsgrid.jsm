@@ -37,7 +37,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 	getOriginalColIndex:function(){
 		var wMediator = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
 		var mainWindow = wMediator.getMostRecentWindow("mail:3pane");
-		return mainWindow.gFolderDisplay.getColumnStates();
+		return mainWindow.gFolderDisplay._getDefaultColumnsForCurrentFolder();
 	},
 
 	createDefaultColsGridHeader: function(doc,container) {
@@ -67,9 +67,17 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 
 	createDefaultColsGridRows: function(doc,container) {
 		let DefColRows=this.loadDefaultColRows_Pref();
-		for (let index in DefColRows) {
-				DefColRows[index]['currindex']=index;
-				this.createOneDefaultColRow(doc,container,DefColRows[index]);
+		//Sort the columns, by the ordinal value...
+		let sorted_cols = [];
+		for (let cwcol in DefColRows){
+			  sorted_cols.push([cwcol, DefColRows[cwcol].ordinal]);
+		  }
+		sorted_cols.sort(function(a, b) {return a[1] - b[1]})
+		
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [createDefaultColsGridRows] sorted_cols "+JSON.stringify(sorted_cols)+"\r\n");
+		for (let index in sorted_cols) {
+				DefColRows[sorted_cols[index][0]]['currindex']=sorted_cols[index][0];
+				this.createOneDefaultColRow(doc,container,DefColRows[sorted_cols[index][0]]);
 		}
 	},
 
