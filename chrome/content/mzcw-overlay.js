@@ -136,11 +136,6 @@ var miczColumnsWizard = {
   },
 
   addCWResetMenu:function(tab){
-	/*if(tab.mode.name=='folder'){
-		dump(">>>>>>>>>>>>> miczColumnsWizard: [CWColReset tab folder mode] "+tab.mode.name+" \r\n");
-		let threadCols=document.getElementById("threadCols");
-    	miczColumnsWizard.addCWColumnsResetMenu(threadCols);
-	}*/
 	if(tab.mode.name=='folder'){
 		var cw_colmenubind=document.getAnonymousElementByAttribute(document.getElementById('threadCols'),'class','treecol-image');
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] tab.cw_colmenubind.command "+cw_colmenubind.oncommand+"\r\n");
@@ -151,11 +146,12 @@ var miczColumnsWizard = {
 			cw_colmenubind.buildPopup=function(aPopup){ // buildPopup wrapper function START
 				//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] "+this.parentNode.parentNode.id+"\r\n");
 				//Remove the columns' line... the popupmenu is built again every time from the original function...
-				if(aPopup.childNodes.length>4){
-					while (aPopup.childNodes.length > 4){
+				if(aPopup.childNodes.length >= 5){
+					while (aPopup.childNodes.length > 5){
 						aPopup.firstChild.remove();
 					}
-					//... now remove the resetMenuCW item...
+					//... now remove the resetMenuCW and saveDefaultMenuCW items...
+					aPopup.removeChild(aPopup.childNodes[2]);
 					aPopup.removeChild(aPopup.childNodes[2]);
 				}
 				//check if we're using the colcw default for new folders
@@ -169,22 +165,41 @@ var miczColumnsWizard = {
 				aPopup.childNodes[1].setAttribute('hidden',cw_active?'true':'false');
 				
 				cw_colmenubind.cw_original_buildPopup(aPopup);
-				let resetMenuCW = document.createElement("menuitem"); //TODO...
+				
+				//Add saveDefaultMenuCW element
+				let saveDefaultMenuCW = document.createElement("menuitem");
+				saveDefaultMenuCW.setAttribute('label',_bundleCW.GetStringFromName("ColumnsWizardNFCols.saveDefault"));
+				saveDefaultMenuCW.setAttribute('hidden',cw_active?'false':'true');
+				//we do this to escape the command xbl event handler
+				saveDefaultMenuCW.setAttribute("colindex", "-1");
+				saveDefaultMenuCW.onclick=miczColumnsWizard.addCWSaveDefaultMenu_OnClick;
+				aPopup.insertBefore(saveDefaultMenuCW,aPopup.lastChild);
+
+				//Add resetMenuCw element
+				let resetMenuCW = document.createElement("menuitem");
 				resetMenuCW.setAttribute('label',_bundleCW.GetStringFromName("ColumnsWizardNFCols.resetMenu"));
 				resetMenuCW.setAttribute('hidden',cw_active?'false':'true');
 				//we do this to escape the command xbl event handler
 				resetMenuCW.setAttribute("colindex", "-1");
 				resetMenuCW.onclick=miczColumnsWizard.addCWResetMenu_OnClick;
-
-				
 				aPopup.insertBefore(resetMenuCW,aPopup.lastChild);
+				
 			}	// buildPopup wrapper function END
 		}
 	}
   },
   
-    addCWResetMenu_OnClick:function(event){
+    addCWSaveDefaultMenu_OnClick:function(event){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
+		let columnStates = gFolderDisplay.getColumnStates();
+		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
+		prefs.setCharPref("DefaultColsList",JSON.stringify(columnStates));
+		return;
+	},
+
+    addCWResetMenu_OnClick:function(event){
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWSaveDefaultMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
 		let columnStates = miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
 		gFolderDisplay.setColumnStates(columnStates, true);
 		return;
@@ -203,19 +218,6 @@ var miczColumnsWizard = {
 		let mailSessionService = Components.classes["@mozilla.org/messenger/services/session;1"].getService(Components.interfaces.nsIMsgMailSession);
         mailSessionService.RemoveFolderListener(miczColumnsWizard.FolderListener);
     },
-
-    addCWColumnsResetMenu:function(base_element){
-		const XUL = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
-		let doc=base_element.ownerDocument;
-		//if (doc instanceof Ci.nsIDOMDocumentXBL)dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWColumnsResetMenu] ok anon \r\n");
-		//let resetMenu = doc.getAnonymousElementByAttribute(base_element, "anonid", "reset");
-		let resetMenu = doc.getElementsByAttribute("anonid", "reset");
-		dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWColumnsResetMenu] resetMenu "+JSON.stringify(resetMenu)+" \r\n");
-		/*let CWColumnsResetMenu=doc.createElementNS(XUL, "menuitem");
-		CWColumnsResetMenu.setAttribute("hidden","false");
-		CWColumnsResetMenu.setAttribute("label","CW test");
-        resetMenu.parent.insertBefore(popupChild,resetMenu);*/
-	}
 
 };
 
