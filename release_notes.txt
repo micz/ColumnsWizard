@@ -4,7 +4,8 @@
 Version 5.0 - ??/??/2015
 - No more use of javascript eval function.
 - Added the default column handling show for new folders.
-- Added the reset to CW default option (accessible from the folder columns picker menu)
+- Added the reset to CW default option (accessible from the folder columns picker menu).
+- Added the save current folder columns as CW default option (accessible from the folder columns picker menu).
 - 
 ==========
 Version 4.0 - 04/07/2014
