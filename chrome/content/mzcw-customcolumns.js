@@ -112,43 +112,38 @@ miczColumnsWizard.CustCols={
 				let dcurrcol={}
 				switch(miczColumnsWizard.CustCols.CustColDefaultIndex[singlecolidx]){
 					case 'cc':
-						dcurrcol.Enabled = prefs.getBoolPref("AddCc");
-						dcurrcol.ShowNewFolder=false;
-						dcurrcol.Def = "AddCc";
-						dcurrcol.DBHeader = "ccList";
-						dcurrcol.iscustom=false;
+						dcurrcol.enabled = prefs.getBoolPref("AddCc");
+						dcurrcol.def = "AddCc";
+						dcurrcol.dbHeader = "ccList";
+						dcurrcol.isCustom=false;
 						break;
 					case 'bcc':
-						dcurrcol.Enabled = prefs.getBoolPref("Addbcc");
-						dcurrcol.ShowNewFolder=false;
-						dcurrcol.Def = "Addbcc";
-						dcurrcol.DBHeader = "bccList";
-						dcurrcol.iscustom=false;
+						dcurrcol.enabled = prefs.getBoolPref("Addbcc");
+						dcurrcol.def = "Addbcc";
+						dcurrcol.dbHeader = "bccList";
+						dcurrcol.isCustom=false;
 						break;
 					case 'replyto':
-						dcurrcol.Enabled = prefs.getBoolPref("Addreplyto");
-						dcurrcol.ShowNewFolder=false;
-						dcurrcol.Def = "Addreplyto";
-						dcurrcol.DBHeader = "replyTo";
-						dcurrcol.iscustom=false;
+						dcurrcol.enabled = prefs.getBoolPref("Addreplyto");
+						dcurrcol.def = "Addreplyto";
+						dcurrcol.dbHeader = "replyTo";
+						dcurrcol.isCustom=false;
 						break;
 					case 'xoriginalfrom':
-						dcurrcol.Enabled = prefs.getBoolPref("Addxoriginalfrom");
-						dcurrcol.ShowNewFolder=false;
-						dcurrcol.Def = "Addxoriginalfrom";
-						dcurrcol.DBHeader = "x-original-from";
-						dcurrcol.iscustom=true;
+						dcurrcol.enabled = prefs.getBoolPref("Addxoriginalfrom");
+						dcurrcol.def = "Addxoriginalfrom";
+						dcurrcol.dbHeader = "x-original-from";
+						dcurrcol.isCustom=true;
 						break;
 					case 'contentbase':
-						dcurrcol.Enabled = prefs.getBoolPref("Addcontentbase");
-						dcurrcol.ShowNewFolder=false;
-						dcurrcol.Def = "Addcontentbase";
-						dcurrcol.DBHeader = "content-base";
-						dcurrcol.iscustom=true;
+						dcurrcol.enabled = prefs.getBoolPref("Addcontentbase");
+						dcurrcol.def = "Addcontentbase";
+						dcurrcol.dbHeader = "content-base";
+						dcurrcol.isCustom=true;
 						break;
 				}
 				dcurrcol.index=miczColumnsWizard.CustCols.CustColDefaultIndex[singlecolidx];
-				dcurrcol.isbundled=true;
+				dcurrcol.isBundled=true;
 				dcurrcol.labelString='';
 				dcurrcol.tooltipString='';
 				prefs_def.setCharPref(miczColumnsWizard.CustCols.CustColDefaultIndex[singlecolidx],JSON.stringify(dcurrcol));
@@ -169,8 +164,8 @@ for (let index in miczColumnsWizard.CustColPref) {
   //Create all the needed DbObserver - END
 
  //Implement all the needed ColumnHandlers
- let sortfunc=new Function('hdr','return hdr.getStringProperty("'+miczColumnsWizard.CustColPref[index].DBHeader+'");');
- let celltextfunc=new Function('row','col','let hdr = gDBView.getMsgHdrAt(row);return hdr.getStringProperty("'+miczColumnsWizard.CustColPref[index].DBHeader+'");');
+ let sortfunc=new Function('hdr','return hdr.getStringProperty("'+miczColumnsWizard.CustColPref[index].dbHeader+'");');
+ let celltextfunc=new Function('row','col','let hdr = gDBView.getMsgHdrAt(row);return hdr.getStringProperty("'+miczColumnsWizard.CustColPref[index].dbHeader+'");');
  
   miczColumnsWizard.CustCols["columnHandler_"+index]={
     getCellText:         celltextfunc,

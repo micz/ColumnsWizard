@@ -60,18 +60,61 @@
         </tabpanel>
         <tabpanel id="custcols" orient="vertical">
 			<!-- Custom Columns -->
-          <label control="symbol" value="&ColumnsWizard.GlobalDescCustCols;"/>
           <vbox class="mzcw-warn">
 	    <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.WarnDescCustCols;</description>
           </vbox>
-          <label control="symbol" value=" "/>
-		   <grid>
+  <grid flex="1">
+    <columns>
+      <column flex="1"/>
+      <column/>
+    </columns>
+    <rows>
+      <row>
+        <separator class="thin"/>
+      </row>
+      <row>
+        <hbox>
+          <label control="symbol" value="&ColumnsWizard.GlobalDescCustCols;"/>
+        </hbox>
+      </row>
+      <row flex="1">
+        <hbox>
+          <listbox id="ColumnsWizard.CustColsList" flex="1" onselect="updateButtons();"
+                   seltype="single"
+                   onkeypress="onFilterListKeyPress(event);">
+            <listhead>
+              <listheader id="activeColumn" label=" " flex="1" minwidth="16px"/>
+              <listheader id="mailheaderColumn" label="mailheader" flex="2"/>
+              <listheader id="titleColumn" label="title" flex="2"/>
+              <listheader id="tooltipColumn" label="tooltip" flex="3"/>
+            </listhead>
+          </listbox>
+        </hbox>
+        </row>
+		<row>
+        <hbox>
+          <button id="newButton"
+                  label="&ColumnsWizard.newButton.label;"
+                  oncommand="onNewFilter(null);"/>
+          <button id="editButton" label="&ColumnsWizard.editButton.label;"
+                  oncommand="onEditFilter();"/>
+          <button id="deleteButton"
+                  label="&ColumnsWizard.deleteButton.label;"
+                  oncommand="onDeleteFilter();"/>
+        </hbox>
+      </row>
+    </rows>
+  </grid>
+
+
+
+<!--		   <grid>
 			  <columns>
 				<column/><column/><column flex="1"/><column/><column flex="1"/><column flex="1"/><column flex="1"/><column/><column/><column/><column/>
 			  </columns> 
 			  <rows id='ColumnsWizard.ColsGrid' preference='extensions.ColumnsWizard.CustCols.ColsList' preference-editable="true" onsyncfrompreference='return autoArchivePrefDialog.syncFromPerf(window);'>
 			  </rows>
-			</grid>
+			</grid>-->
           <checkbox id="ColumnsWizard.AddCc_checkbox" label="&ColumnsWizard.AddCc.label;"
             preference="ColumnsWizard.CustCols.AddCc"/>
           <checkbox id="ColumnsWizard.Addbcc_checkbox" label="&ColumnsWizard.Addbcc.label;"

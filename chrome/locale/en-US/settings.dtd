@@ -18,3 +18,6 @@
 <!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
 <!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
 <!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* This column will be populated only for the mails that will be received after the Custom Column activation.">
+<!ENTITY ColumnsWizard.newButton.label "New…">
+<!ENTITY ColumnsWizard.editButton.label "Edit…">
+<!ENTITY ColumnsWizard.deleteButton.label "Delete">
