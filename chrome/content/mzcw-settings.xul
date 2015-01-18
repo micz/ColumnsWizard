@@ -83,10 +83,10 @@
                    seltype="single"
                    onkeypress="onFilterListKeyPress(event);">
             <listhead>
-              <listheader id="activeColumn" label=" " flex="1" minwidth="16px"/>
-              <listheader id="mailheaderColumn" label="mailheader" flex="2"/>
-              <listheader id="titleColumn" label="title" flex="2"/>
-              <listheader id="tooltipColumn" label="tooltip" flex="3"/>
+              <listheader id="activeColumn" label=" " maxwidth="32px"/>
+              <listheader id="mailheaderColumn" label="mailheader" flex="1"/>
+              <listheader id="titleColumn" label="title" flex="1"/>
+              <listheader id="tooltipColumn" label="tooltip" flex="1"/>
             </listhead>
           </listbox>
         </hbox>

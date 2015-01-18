@@ -45,11 +45,12 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		if (!container) return;
 		let listitem = doc.createElement("listitem");
 
-		dump(">>>>>>>>>>>>> miczColumnsWizard: [createOneCustomColRow] currcol {"+JSON.stringify(currcol)+"}\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [createOneCustomColRow] currcol {"+JSON.stringify(currcol)+"}\r\n");
 
 		let activeCell = doc.createElement("listcell");
 		activeCell.setAttribute("class", "listcell-iconic");
 		activeCell.setAttribute("enabled",currcol.enabled);
+		activeCell.setAttribute("maxwidth","32px");
 		if(currcol.isCustom){
 			activeCell.setAttribute("label"," *");
 		}
