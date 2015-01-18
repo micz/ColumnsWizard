@@ -172,6 +172,8 @@ var miczColumnsWizard = {
 				saveDefaultMenuCW.setAttribute('hidden',cw_active?'false':'true');
 				//we do this to escape the command xbl event handler
 				saveDefaultMenuCW.setAttribute("colindex", "-1");
+				saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
+				saveDefaultMenuCW.image="chrome://columnswizard/skin/ico/saveDefaultMenuCW.png";
 				saveDefaultMenuCW.onclick=miczColumnsWizard.addCWSaveDefaultMenu_OnClick;
 				aPopup.insertBefore(saveDefaultMenuCW,aPopup.lastChild);
 
