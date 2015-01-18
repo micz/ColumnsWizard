@@ -183,6 +183,8 @@ var miczColumnsWizard = {
 				resetMenuCW.setAttribute('hidden',cw_active?'false':'true');
 				//we do this to escape the command xbl event handler
 				resetMenuCW.setAttribute("colindex", "-1");
+				resetMenuCW.setAttribute("class", "menuitem-iconic");
+				resetMenuCW.setAttribute("image","chrome://columnswizard/skin/ico/resetMenuCW.png");
 				resetMenuCW.onclick=miczColumnsWizard.addCWResetMenu_OnClick;
 				aPopup.insertBefore(resetMenuCW,aPopup.lastChild);
 				
