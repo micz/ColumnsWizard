@@ -20,7 +20,7 @@ miczColumnsWizard.CustCols={
     
     let labelString = '';
     let tooltipString = '';
-    if(elementc.isbundled){
+    if(elementc.isBundled){
 		labelString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+".label");
 		tooltipString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+"Desc.label");
 	}else{
