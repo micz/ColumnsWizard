@@ -63,12 +63,20 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		return listitem;
 	},
 
-	saveDefaultColsGridRows: function(doc,container,save_pref) {
-		let value = JSON.stringify(this.getDefaultCols(container));
-	  	if(save_pref){
-		  let preference = doc.getElementById("ColumnsWizard.DefaultColsList");
-		  preference.value = value;
-    	}
+	saveCustomColItem: function(currcol) {
+		let value = JSON.stringify(currcol);
+		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		//Saving custom columns item to prefs
+		let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");
+		prefs_def.setCharPref(currcol.index,value);
+		
+		//Saving enabled status to prefs (for bundled custom columns)
+		if((currcol.isBundled)&&(currcol.def !== undefined)){
+			let prefs=prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+			prefs.setBoolPref(currcol.def,currcol.enabled);
+		}
+		
+		
     	return value;
 	},
 
@@ -102,11 +110,10 @@ var miczColumnsWizardPref_CustomColsGrid = {
 	  currcol.enabled = !currcol.enabled;
 	  //dump(">>>>>>>>>>>>> miczColumnsWizard: [currcol] "+JSON.stringify(currcol)+"\r\n");
 
-	  //TODO
-	  //SAVE THE PREF HERE!!! (implement a function!!!)
+	  miczColumnsWizardPref_CustomColsGrid.saveCustomColItem(currcol);
 
 	  // Now update the checkbox
 	  aCustColItem.childNodes[0].setAttribute("enabled", currcol.enabled);
-	}
+	},
 
 };
