@@ -67,6 +67,7 @@ miczColumnsWizard.CustCols={
     if(CustColIndexStr==''){
 		//Set default CustColIndex
 		CustColIndex=miczColumnsWizard.CustCols.CustColDefaultIndex;
+		prefs.setCharPref("index",JSON.stringify(CustColIndex));
 	}else{
 		CustColIndex=JSON.parse(CustColIndexStr);
 	}
