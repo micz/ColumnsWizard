@@ -105,15 +105,6 @@
     </rows>
   </grid>
 
-
-
-<!--		   <grid>
-			  <columns>
-				<column/><column/><column flex="1"/><column/><column flex="1"/><column flex="1"/><column flex="1"/><column/><column/><column/><column/>
-			  </columns>
-			  <rows id='ColumnsWizard.ColsGrid' preference='extensions.ColumnsWizard.CustCols.ColsList' preference-editable="true" onsyncfrompreference='return autoArchivePrefDialog.syncFromPerf(window);'>
-			  </rows>
-			</grid>-->
           <checkbox id="ColumnsWizard.AddCc_checkbox" label="&ColumnsWizard.AddCc.label;"
             preference="ColumnsWizard.CustCols.AddCc"/>
           <checkbox id="ColumnsWizard.Addbcc_checkbox" label="&ColumnsWizard.Addbcc.label;"
