@@ -19,9 +19,9 @@ var miczColumnsWizard = {
     for (let index in miczColumnsWizard.CustColPref) {
       miczColumnsWizard.custColsActivation(miczColumnsWizard.CustColPref[index],ObserverService);
     }
-    
+
     miczColumnsWizard.watchFolders();
-    
+
 	this.initialized = true;
     //Conversation Tab add columns - delayed
   	setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
@@ -42,17 +42,17 @@ var miczColumnsWizard = {
       alert("No tabContainer available! " + e);
     }
 	},
-  
+
   custColsActivation:function(element,ObserverService){
   //dump(">>>>>>>>>>>>> miczColumnsWizard: [element|index] "+element.Pref+"|"+index+"\r\n");
-    if(element.Enabled===true){
+    if(element.enabled===true){
       miczColumnsWizard.CustCols.addCustomColumn(element,ObserverService);
-      if(element.iscustom!=false){
-        miczColumnsWizard.activateCustomDBHeader(element.DBHeader);
+      if(element.isCustom!=false){
+        miczColumnsWizard.activateCustomDBHeader(element.dbHeader);
       }
     }
   },
-  
+
   activateCustomDBHeader:function(newHeader){
     //dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders] "+newHeader+"\r\n");
     let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
