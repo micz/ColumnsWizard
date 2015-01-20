@@ -21,7 +21,6 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		let activeCell = doc.createElement("listcell");
 		activeCell.setAttribute("class", "listcell-iconic");
 		activeCell.setAttribute("enabled",currcol.enabled);
-		activeCell.setAttribute("maxwidth","32px");
 		if(currcol.isCustom){
 			activeCell.setAttribute("label"," *");
 		}
@@ -29,7 +28,6 @@ var miczColumnsWizardPref_CustomColsGrid = {
 
 		let mailheaderCell = doc.createElement("listcell");
 		mailheaderCell.setAttribute("label",currcol.dbHeader);
-		mailheaderCell.setAttribute("flex","1");
 		listitem.appendChild(mailheaderCell);
 
 		let labelString = '';
@@ -44,12 +42,10 @@ var miczColumnsWizardPref_CustomColsGrid = {
 
 		let titleCell = doc.createElement("listcell");
 		titleCell.setAttribute("label",labelString);
-		titleCell.setAttribute("flex","1");
 		listitem.appendChild(titleCell);
 
 		let tooltipCell = doc.createElement("listcell");
 		tooltipCell.setAttribute("label",tooltipString);
-		tooltipCell.setAttribute("flex","1");
 		listitem.appendChild(tooltipCell);
 
 		listitem._customcol=currcol;

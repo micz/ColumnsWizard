@@ -81,11 +81,17 @@
         <hbox>
           <listbox id="ColumnsWizard.CustColsList" flex="1" onselect="miczColumnsWizardPref.updateButtons(window);"
                    seltype="single">
+			 <listcols>
+				<listcol maxwidth="32px"/>
+				<listcol flex="1"/>
+				<listcol flex="1"/>
+				<listcol flex="1"/>
+			</listcols>
             <listhead>
-              <listheader id="activeColumn" label=" " maxwidth="32px"/>
-              <listheader id="mailheaderColumn" label="mailheader" flex="1"/>
-              <listheader id="titleColumn" label="title" flex="1"/>
-              <listheader id="tooltipColumn" label="tooltip" flex="1"/>
+              <listheader id="activeColumn" label=" "/>
+              <listheader id="mailheaderColumn" label="mailheader"/>
+              <listheader id="titleColumn" label="title"/>
+              <listheader id="tooltipColumn" label="tooltip"/>
             </listhead>
           </listbox>
         </hbox>
