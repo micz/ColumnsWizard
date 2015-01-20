@@ -29,7 +29,7 @@ var miczColumnsWizardPref = {
 			doc.getElementById("editButton").disabled=btnDisabled;
 			doc.getElementById("deleteButton").disabled=btnDisabled;
 		}
-		dump(">>>>>>>>>>>>> miczColumnsWizard: [updateButtons] currlist num selected {"+numSelected+"}\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [updateButtons] currlist num selected {"+numSelected+"}\r\n");
 	},
 
 };
