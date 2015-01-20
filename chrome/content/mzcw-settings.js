@@ -31,5 +31,18 @@ var miczColumnsWizardPref = {
 		}
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [updateButtons] currlist num selected {"+numSelected+"}\r\n");
 	},
+	
+	onNewCustomCol: function(win){
+		let doc = win.document;
+		let currlist=doc.getElementById('ColumnsWizard.CustColsList');
+		let args = {CustColsList:currlist};
+
+		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xul", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
+
+		if ("refresh" in args && args.refresh) {
+			// Select the new custcols, it is at the end of the list.
+			currlist.selectIndex=currlist.itemCount-1;
+		}
+	},
 
 };

@@ -100,12 +100,12 @@
         <hbox>
           <button id="newButton"
                   label="&ColumnsWizard.newButton.label;"
-                  oncommand="onNewFilter(null);"/>
+                  oncommand="miczColumnsWizardPref.onNewCustomCol(window);"/>
           <button id="editButton" label="&ColumnsWizard.editButton.label;"
-                  oncommand="onEditFilter();" disabled="true"/>
+                  oncommand="miczColumnsWizardPref.onEditCustomCol(window);" disabled="true"/>
           <button id="deleteButton"
                   label="&ColumnsWizard.deleteButton.label;"
-                  oncommand="onDeleteFilter();" disabled="true"/>
+                  oncommand="miczColumnsWizardPref.onDeleteCustomCol(window);" disabled="true"/>
         </hbox>
       </row>
     </rows>
