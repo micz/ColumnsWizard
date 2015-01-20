@@ -141,3 +141,28 @@ miczColumnsWizard.CustCols["columnHandler_contentbase"]={
    getSortLongForRow:   function(hdr) {return 0;}
 };
 //contentbase - END
+
+//custom
+miczColumnsWizard.CustCols["columnHandler_custom"]={
+   getCellText:         function(row, col) {
+      let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+      prefs = prefs.getBranch("extensions.ColumnsWizard.CustCols.");
+      let customHdr = prefs.getCharPref("CustomHdr").toLowerCase();
+      //get the message's header so that we can extract the content-base to field
+      let hdr = gDBView.getMsgHdrAt(row);
+      //dump(">>>>>>>>>>>>> miczColumnsWizard->columnHandler_content-base: [value] "+hdr.getStringProperty("content-base")+"\r\n");
+      return hdr.getStringProperty(customHdr);
+   },
+   getSortStringForRow: function(hdr) {
+      let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+      prefs = prefs.getBranch("extensions.ColumnsWizard.CustCols.");
+      let customHdr = prefs.getCharPref("CustomHdr").toLowerCase();
+      return hdr.getStringProperty("CustomHdr");
+   },
+   isString:            function() {return true;},
+   getCellProperties:   function(row, col, props){},
+   getRowProperties:    function(row, props){},
+   getImageSrc:         function(row, col) {return null;},
+   getSortLongForRow:   function(hdr) {return 0;}
+};
+//custom - END
