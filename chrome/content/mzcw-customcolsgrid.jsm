@@ -3,6 +3,9 @@ var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_CustomColsGrid"];
 
 var miczColumnsWizardPref_CustomColsGrid = {
 
+	//Bundled Custom Columns
+  	CustColDefaultIndex:["cc","bcc","replyto","xoriginalfrom","contentbase"],
+
 	loadDefaultColRows_Pref:function(){
 		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
@@ -58,6 +61,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 
 		let mailheaderCell = doc.createElement("listcell");
 		mailheaderCell.setAttribute("label",currcol.dbHeader);
+		mailheaderCell.setAttribute("flex","1");
 		listitem.appendChild(mailheaderCell);
 
 		let labelString = '';
@@ -72,11 +76,15 @@ var miczColumnsWizardPref_CustomColsGrid = {
 
 		let titleCell = doc.createElement("listcell");
 		titleCell.setAttribute("label",labelString);
+		titleCell.setAttribute("flex","1");
 		listitem.appendChild(titleCell);
 
 		let tooltipCell = doc.createElement("listcell");
 		tooltipCell.setAttribute("label",tooltipString);
+		tooltipCell.setAttribute("flex","1");
 		listitem.appendChild(tooltipCell);
+
+		listitem._customcol=currcol;
 
 		container.appendChild(listitem);
 		// We have to attach this listener to the listitem, even though we only care
@@ -95,5 +103,11 @@ var miczColumnsWizardPref_CustomColsGrid = {
     	}
     	return value;
 	},
+
+	currentCustomCol: function(currlist)
+	{
+	  let currentItem = currlist.selectedItem;
+	  return currentItem ? currentItem._customcol : null;
+	}
 
 };

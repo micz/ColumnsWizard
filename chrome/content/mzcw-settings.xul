@@ -79,9 +79,8 @@
       </row>
       <row flex="1">
         <hbox>
-          <listbox id="ColumnsWizard.CustColsList" flex="1" onselect="updateButtons();"
-                   seltype="single"
-                   onkeypress="onFilterListKeyPress(event);">
+          <listbox id="ColumnsWizard.CustColsList" flex="1" onselect="miczColumnsWizardPref.updateButtons(window);"
+                   seltype="single">
             <listhead>
               <listheader id="activeColumn" label=" " maxwidth="32px"/>
               <listheader id="mailheaderColumn" label="mailheader" flex="1"/>
@@ -111,7 +110,7 @@
 <!--		   <grid>
 			  <columns>
 				<column/><column/><column flex="1"/><column/><column flex="1"/><column flex="1"/><column flex="1"/><column/><column/><column/><column/>
-			  </columns> 
+			  </columns>
 			  <rows id='ColumnsWizard.ColsGrid' preference='extensions.ColumnsWizard.CustCols.ColsList' preference-editable="true" onsyncfrompreference='return autoArchivePrefDialog.syncFromPerf(window);'>
 			  </rows>
 			</grid>-->
