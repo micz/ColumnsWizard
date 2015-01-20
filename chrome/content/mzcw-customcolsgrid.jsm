@@ -22,7 +22,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		activeCell.setAttribute("class", "listcell-iconic");
 		activeCell.setAttribute("enabled",currcol.enabled);
 		if(currcol.isCustom){
-			activeCell.setAttribute("label"," *");
+			activeCell.setAttribute("label","*");
 		}
 		listitem.appendChild(activeCell);
 
