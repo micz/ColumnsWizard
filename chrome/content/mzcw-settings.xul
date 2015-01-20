@@ -102,10 +102,10 @@
                   label="&ColumnsWizard.newButton.label;"
                   oncommand="onNewFilter(null);"/>
           <button id="editButton" label="&ColumnsWizard.editButton.label;"
-                  oncommand="onEditFilter();"/>
+                  oncommand="onEditFilter();" disabled="true"/>
           <button id="deleteButton"
                   label="&ColumnsWizard.deleteButton.label;"
-                  oncommand="onDeleteFilter();"/>
+                  oncommand="onDeleteFilter();" disabled="true"/>
         </hbox>
       </row>
     </rows>
