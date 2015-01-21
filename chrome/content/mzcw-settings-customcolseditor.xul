@@ -1,0 +1,57 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://columnswizard/locale/mzcw-settings-customcolseditor.dtd">
+
+<dialog id="CWCustomColEditor"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  title="&ColumnsWizard.window.title;"
+  style=""
+  windowtype="mailnews:cwcustomcoleditor"
+  persist="width height screenX screenY"
+  buttons="accept,cancel"
+  onload="filterEditorOnLoad();"
+  onunload="filterEditorOnUnload();"
+  ondialogaccept="return onAccept();">
+
+<stringbundleset id="stringbundleset">
+  <stringbundle id="ColumnsWizard-string-bundle" src="chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties" />
+</stringbundleset>
+
+  <script type="application/javascript" src="chrome://columnswizard/content/mzcw-settings.js"/>
+
+  <separator class="thin"/>
+  <vbox flex="1">
+    <groupbox>
+      <caption label="&ColumnsWizard.Desc.label;"/>
+      <grid>
+        <columns>
+          <column flex="1"/>
+          <column/>
+        </columns>
+        <rows>
+          <row>
+			<hbox align="left">
+				<label value="&ColumnsWizard.id.label;"/>
+				<textbox flex="1" id="ColumnsWizard.id"/>
+			</hbox>
+          </row>
+          <row>
+			<hbox align="left">
+				<label value="&ColumnsWizard.dbHeader.label;"/>
+				<textbox flex="1" id="ColumnsWizard.dbHeader"/>
+				<spacer flex="1"/>
+			</hbox>
+          </row>
+          <row>
+			<hbox align="left">
+				<label value="&ColumnsWizard.ColName.label;"/>
+				<textbox flex="1" id="ColumnsWizard.ColName"/>
+				<spacer flex="1"/>
+			</hbox>
+          </row>
+        </rows>
+      </grid>
+    </groupbox>
+  </vbox>
+</dialog>
