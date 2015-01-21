@@ -65,14 +65,13 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		//Saving custom columns item to prefs
 		let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");
 		prefs_def.setCharPref(currcol.index,value);
-		
+
 		//Saving enabled status to prefs (for bundled custom columns)
 		if((currcol.isBundled)&&(currcol.def !== undefined)){
 			let prefs=prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
 			prefs.setBoolPref(currcol.def,currcol.enabled);
 		}
-		
-		
+
     	return value;
 	},
 
