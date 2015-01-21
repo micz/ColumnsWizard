@@ -31,24 +31,28 @@
         </columns>
         <rows>
           <row>
-			<hbox align="left">
-				<label value="&ColumnsWizard.id.label;"/>
-				<textbox flex="1" id="ColumnsWizard.id"/>
-			</hbox>
+			<label value="&ColumnsWizard.id.label;"/>
+			<textbox flex="1" id="ColumnsWizard.id"/>
           </row>
           <row>
-			<hbox align="left">
-				<label value="&ColumnsWizard.dbHeader.label;"/>
-				<textbox flex="1" id="ColumnsWizard.dbHeader"/>
-				<spacer flex="1"/>
-			</hbox>
+			<label value="&ColumnsWizard.dbHeader.label;"/>
+			<textbox flex="1" id="ColumnsWizard.dbHeader"/>
           </row>
           <row>
-			<hbox align="left">
-				<label value="&ColumnsWizard.ColName.label;"/>
-				<textbox flex="1" id="ColumnsWizard.ColName"/>
-				<spacer flex="1"/>
-			</hbox>
+			<label value="&ColumnsWizard.ColName.label;"/>
+			<textbox flex="1" id="ColumnsWizard.ColName"/>
+			</row>
+			<row>
+			<label value="&ColumnsWizard.labelString.label;"/>
+			<textbox flex="1" id="ColumnsWizard.labelString"/>
+          </row>
+          <row>
+			<label value="&ColumnsWizard.tooltipString.label;"/>
+			<textbox flex="1" id="ColumnsWizard.tooltipString"/>
+          </row>
+          <row>
+			<label value="&ColumnsWizard.enabled.label;"/>
+			<checkbox id="ColumnsWizard.Addreplyto_checkbox"/>
           </row>
         </rows>
       </grid>

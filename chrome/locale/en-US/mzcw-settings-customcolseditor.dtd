@@ -3,3 +3,6 @@
 <!ENTITY ColumnsWizard.id.label "ID">
 <!ENTITY ColumnsWizard.dbHeader.label "dbHeader">
 <!ENTITY ColumnsWizard.ColName.label "Column Name">
+<!ENTITY ColumnsWizard.labelString.label "labelString">
+<!ENTITY ColumnsWizard.tooltipString.label "tooltipString">
+<!ENTITY ColumnsWizard.enabled.label "enabled">
