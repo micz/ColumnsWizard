@@ -10,17 +10,16 @@
   windowtype="mailnews:cwcustomcoleditor"
   persist="width height screenX screenY"
   buttons="accept,cancel"
-  onload="filterEditorOnLoad();"
-  onunload="filterEditorOnUnload();"
-  ondialogaccept="return onAccept();">
+  onload="miczColumnsWizardPref_CustColEditor.onLoad();"
+  onunload=""
+  ondialogaccept="return miczColumnsWizardPref_CustColEditor.onAccept();">
 
 <stringbundleset id="stringbundleset">
   <stringbundle id="ColumnsWizard-string-bundle" src="chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties" />
 </stringbundleset>
 
-  <script type="application/javascript" src="chrome://columnswizard/content/mzcw-settings.js"/>
+  <script type="application/javascript" src="chrome://columnswizard/content/mzcw-settings-customcolseditor.js"/>
 
-  <separator class="thin"/>
   <vbox flex="1">
     <groupbox>
       <caption label="&ColumnsWizard.Desc.label;"/>

@@ -31,11 +31,11 @@ var miczColumnsWizardPref = {
 		}
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [updateButtons] currlist num selected {"+numSelected+"}\r\n");
 	},
-	
+
 	onNewCustomCol: function(win){
 		let doc = win.document;
 		let currlist=doc.getElementById('ColumnsWizard.CustColsList');
-		let args = {CustColsList:currlist};
+		let args = {"CustColsList":currlist,"action":"new"};
 
 		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xul", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
 
