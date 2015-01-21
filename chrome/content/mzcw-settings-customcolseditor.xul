@@ -31,27 +31,45 @@
         <rows>
           <row>
 			<label value="&ColumnsWizard.id.label;"/>
-			<textbox flex="1" id="ColumnsWizard.id"/>
+			<vbox>
+				<textbox flex="1" id="ColumnsWizard.id"/>
+				<label value="&ColumnsWizard.id.desc;"/>
+			</vbox>
           </row>
           <row>
 			<label value="&ColumnsWizard.dbHeader.label;"/>
-			<textbox flex="1" id="ColumnsWizard.dbHeader"/>
+			<vbox>
+				<textbox flex="1" id="ColumnsWizard.dbHeader"/>
+				<label value="&ColumnsWizard.dbHeader.desc;"/>
+			</vbox>
           </row>
           <row>
 			<label value="&ColumnsWizard.ColName.label;"/>
-			<textbox flex="1" id="ColumnsWizard.ColName"/>
+			<vbox>
+				<textbox flex="1" id="ColumnsWizard.ColName"/>
+				<label value="&ColumnsWizard.ColName.desc;"/>
+			</vbox>
 			</row>
 			<row>
 			<label value="&ColumnsWizard.labelString.label;"/>
-			<textbox flex="1" id="ColumnsWizard.labelString"/>
+			<vbox>
+				<textbox flex="1" id="ColumnsWizard.labelString"/>
+				<label value="&ColumnsWizard.labelString.desc;"/>
+			</vbox>
           </row>
           <row>
 			<label value="&ColumnsWizard.tooltipString.label;"/>
-			<textbox flex="1" id="ColumnsWizard.tooltipString"/>
+			<vbox>
+				<textbox flex="1" id="ColumnsWizard.tooltipString"/>
+				<label value="&ColumnsWizard.tooltipString.desc;"/>
+			</vbox>
           </row>
           <row>
 			<label value="&ColumnsWizard.enabled.label;"/>
-			<checkbox id="ColumnsWizard.Addreplyto_checkbox"/>
+			<vbox>
+				<checkbox id="ColumnsWizard.Addreplyto_checkbox"/>
+				<label value="&ColumnsWizard.enabled.desc;"/>
+			</vbox>
           </row>
         </rows>
       </grid>
