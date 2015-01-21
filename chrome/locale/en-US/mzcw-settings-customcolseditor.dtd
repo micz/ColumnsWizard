@@ -8,7 +8,7 @@
 <!ENTITY ColumnsWizard.enabled.label "enabled">
 <!ENTITY ColumnsWizard.id.desc "ID description">
 <!ENTITY ColumnsWizard.dbHeader.desc "dbHeader description">
-<!ENTITY ColumnsWizard.ColName.desc "Column Name descriptio">
+<!ENTITY ColumnsWizard.ColName.desc "Column Name description">
 <!ENTITY ColumnsWizard.labelString.desc "labelString description">
 <!ENTITY ColumnsWizard.tooltipString.desc "tooltipString description">
 <!ENTITY ColumnsWizard.enabled.desc "enabled description">

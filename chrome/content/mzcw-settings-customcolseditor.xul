@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
 <!DOCTYPE dialog SYSTEM "chrome://columnswizard/locale/mzcw-settings-customcolseditor.dtd">
+<?xml-stylesheet href="mzcw-settings-customcolseditor.css" type="text/css"?>
 
 <dialog id="CWCustomColEditor"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
@@ -23,6 +24,7 @@
   <vbox flex="1">
     <groupbox>
       <caption label="&ColumnsWizard.Desc.label;"/>
+      <separator class="thin"/>
       <grid>
         <columns>
           <column flex="1"/>
