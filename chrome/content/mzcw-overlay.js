@@ -19,27 +19,7 @@ var miczColumnsWizard = {
     miczColumnsWizard.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
 
     for (let index in miczColumnsWizard.CustColPref) {
-	  //Create all the needed DbObservers
-	  //dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+index+"\r\n");
-	  //It's needed to to this, to avoid writing each miczColumnsWizard_CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function definition.
-	  let obfunction=new Function('aMsgFolder', 'aTopic', 'aData',"miczColumnsWizard_CustCols.addCustomColumnHandler('"+index+"');");
-	  miczColumnsWizard_CustCols.CreateDbObserver[index]={observe: obfunction};
-	  //Create all the needed DbObserver - END
-
-	 //Implement all the needed ColumnHandlers
-	 let sortfunc=new Function('hdr','return hdr.getStringProperty("'+miczColumnsWizard.CustColPref[index].dbHeader+'");');
-	 let celltextfunc=new Function('row','col','let hdr = gDBView.getMsgHdrAt(row);return hdr.getStringProperty("'+miczColumnsWizard.CustColPref[index].dbHeader+'");');
-
-	  miczColumnsWizard_CustCols["columnHandler_"+index]={
-		getCellText:         celltextfunc,
-		getSortStringForRow: sortfunc,
-		isString:            function() {return true;},
-		getCellProperties:   function(row, col, props){},
-		getRowProperties:    function(row, props){},
-		getImageSrc:         function(row, col) {return null;},
-		getSortLongForRow:   function(hdr) {return 0;}
-	  };
-	 //Implement all the needed ColumnHandlers - END
+		miczColumnsWizard_CustCols.addDbObserver(index,miczColumnsWizard.CustColPref);
 	}
 
     for (let index in miczColumnsWizard.CustColPref) {
