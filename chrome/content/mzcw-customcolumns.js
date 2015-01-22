@@ -1,5 +1,5 @@
 "use strict";
-var EXPORTED_SYMBOLS = ["miczColumnsWizard_CustCols"];
+//var EXPORTED_SYMBOLS = ["miczColumnsWizard_CustCols"];
 
 var miczColumnsWizard_CustCols={
 
@@ -7,7 +7,7 @@ var miczColumnsWizard_CustCols={
   CustColDefaultIndex:["cc","bcc","replyto","xoriginalfrom","contentbase"],
   CreateDbObserver:{},
 
-  addCustomColumnHandler: function(coltype) {
+/*  addCustomColumnHandler: function(coltype) {
      gDBView.addColumnHandler(coltype+"Col_cw", this["columnHandler_"+coltype]);
   },
 
@@ -63,7 +63,7 @@ var miczColumnsWizard_CustCols={
       }catch(ex){
 		//No observer found
 	  }
-    },
+    },*/
 
    loadCustCols:function(){
     let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
@@ -224,7 +224,7 @@ var miczColumnsWizard_CustCols={
 		//Create all the needed DbObservers
 		  dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+currcol.index+"\r\n");
 		  //It's needed to to this, to avoid writing each miczColumnsWizard_CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function definition.
-		  let obfunction=new Function('aMsgFolder', 'aTopic', 'aData',"miczColumnsWizard_CustCols.addCustomColumnHandler('"+currcol.index+"');");
+		  let obfunction=new Function('aMsgFolder', 'aTopic', 'aData',"miczColumnsWizard.addCustomColumnHandler('"+currcol.index+"');");
 		  this.CreateDbObserver[currcol.index]={observe: obfunction};
 		  //Create all the needed DbObserver - END
 

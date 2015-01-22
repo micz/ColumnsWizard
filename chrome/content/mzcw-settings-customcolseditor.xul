@@ -19,7 +19,7 @@
   <stringbundle id="ColumnsWizard-string-bundle" src="chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties" />
 </stringbundleset>
 
-  <script type="application/javascript" src="chrome://columnswizard/content/mzcw-customcolumns.js" />
+  <script type="application/javascript" src="chrome://columnswizard/content/mzcw-customcolumns.jsm" />
   <script type="application/javascript" src="chrome://columnswizard/content/mzcw-settings-customcolseditor.js"/>
 
   <vbox id="cw_vbox" flex="1">

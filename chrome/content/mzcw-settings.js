@@ -1,6 +1,6 @@
 "use strict";
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
-Components.utils.import("chrome://columnswizard/content/mzcw-customcolumns.jsm");
+//Components.utils.import("chrome://columnswizard/content/mzcw-customcolumns.jsm");
 
 var miczColumnsWizard={};
 var miczColumnsWizardPref = {

@@ -1,5 +1,5 @@
 "use strict";
-Components.utils.import("chrome://columnswizard/content/mzcw-customcolumns.jsm");
+//Components.utils.import("chrome://columnswizard/content/mzcw-customcolumns.jsm");
 /**
  * @constructor
  *
@@ -52,13 +52,13 @@ miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
     //dump(">>>>>>>>>>>>> miczColumnsWizard.PrefListener: [PrefName|cwColName] "+name+"|"+cwColName+"\r\n");
     if(cwCustColPref[cwColName].enabled){
       //checbox checked
-      miczColumnsWizard_CustCols.addCustomColumn(cwCustColPref[cwColName],ObserverService);
+      miczColumnsWizard.addCustomColumn(cwCustColPref[cwColName],ObserverService);
       if(cwCustColPref[cwColName].isCustom!=false){
         miczColumnsWizard.activateCustomDBHeader(cwCustColPref[cwColName].dbHeader);
       }
     }else{
       //checbox not checked
-      miczColumnsWizard_CustCols.removeCustomColumn(cwColName,ObserverService);
+      miczColumnsWizard.removeCustomColumn(cwColName,ObserverService);
       //Don't do this, the customDBHeader could have been set by another extension
       /*if(cwCustColPref[cwColName].iscustom!=false){
         miczColumnsWizard.deactivateCustomDBHeader(cwCustColPref[cwColName].DBHeader);

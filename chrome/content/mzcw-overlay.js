@@ -1,5 +1,5 @@
 "use strict";
-Components.utils.import("chrome://columnswizard/content/mzcw-customcolumns.jsm");
+//Components.utils.import("chrome://columnswizard/content/mzcw-customcolumns.jsm");
 
 var miczColumnsWizard = {
 
@@ -19,7 +19,7 @@ var miczColumnsWizard = {
 		miczColumnsWizard.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
 
 		for (let index in miczColumnsWizard.CustColPref) {
-			miczColumnsWizard_CustCols.addDbObserver(index,miczColumnsWizard.CustColPref);
+			miczColumnsWizard_CustCols.addDbObserver(miczColumnsWizard.CustColPref[index]);
 		}
 
 		for (let index in miczColumnsWizard.CustColPref) {
@@ -34,25 +34,84 @@ var miczColumnsWizard = {
 	},
 
 	initDelayed: function() {
-	try{
-		//Conversation Tab add columns
-    let tabmail = document.getElementById("tabmail");
-    let monitor = {
-      onTabTitleChanged:function(tab){},
-      onTabSwitched: function(tab){}, //this.showColumns,
-      //onTabRestored: this.showColumns,
-      onTabOpened: this.showColumns,
-    };
-    tabmail.registerTabMonitor(monitor);
-    }catch(e){
-      alert("No tabContainer available! " + e);
-    }
+		try{
+			//Conversation Tab add columns
+		let tabmail = document.getElementById("tabmail");
+		let monitor = {
+		  onTabTitleChanged:function(tab){},
+		  onTabSwitched: function(tab){}, //this.showColumns,
+		  //onTabRestored: this.showColumns,
+		  onTabOpened: this.showColumns,
+		};
+		tabmail.registerTabMonitor(monitor);
+		}catch(e){
+		  alert("No tabContainer available! " + e);
+		}
 	},
+
+
+  addCustomColumnHandler: function(coltype) {
+     gDBView.addColumnHandler(coltype+"Col_cw", miczColumnsWizard_CustCols["columnHandler_"+coltype]);
+  },
+
+  addCustomColumn: function(elementc,ObserverService){
+    let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+    let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
+
+	let coltype=elementc.index;
+
+    if(document.getElementById(coltype+"Col_cw")){
+      return;
+    }
+
+    let labelString = '';
+    let tooltipString = '';
+    if(elementc.isBundled){
+		labelString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+".label");
+		tooltipString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+"Desc.label");
+	}else{
+		labelString = elementc.labelString;
+		tooltipString = elementc.tooltipString;
+	}
+    let cwCol = document.createElement("treecol");
+    cwCol.setAttribute("id",coltype+"Col_cw");
+    cwCol.setAttribute("persist","hidden ordinal width");
+    cwCol.setAttribute("hidden","true");
+    cwCol.setAttribute("flex","4");
+    cwCol.setAttribute("label",labelString);
+    cwCol.setAttribute("tooltiptext",tooltipString);
+    let cwSplitter = document.createElement("splitter");
+    cwSplitter.setAttribute("class","tree-splitter");
+    cwSplitter.setAttribute("resizeafter","farthest");
+    let element = document.getElementById("threadCols");
+    let lastordinal=element.children.length;
+    //dump('>>>>>>>>> columns [js children: '+lastordinal+"] [real: "+(lastordinal-1)/2+"]\r\n");
+    cwSplitter.setAttribute("ordinal",lastordinal+1);
+    element.appendChild(cwSplitter);
+    element.appendChild(cwCol);
+
+    //dump(">>>>>>>>>>>>> miczColumnsWizard->addCustomColumn: [coltype] "+coltype+"\r\n");
+    //DbObserver Managing
+    ObserverService.addObserver(miczColumnsWizard_CustCols.CreateDbObserver[coltype], "MsgCreateDBView", false);
+  },
+
+    removeCustomColumn: function(coltype,ObserverService){
+      let element = document.getElementById(coltype+"Col_cw");
+      if(element) element.parentNode.removeChild(element);
+
+      dump(">>>>>>>>>>>>> miczColumnsWizard->removeCustomColumn: [coltype] "+coltype+"\r\n");
+      //DbObserver Managing
+      try{
+      	ObserverService.removeObserver(miczColumnsWizard_CustCols.CreateDbObserver[coltype], "MsgCreateDBView");
+      }catch(ex){
+		//No observer found
+	  }
+    },
 
   custColsActivation:function(element,ObserverService){
   //dump(">>>>>>>>>>>>> miczColumnsWizard: [element|index] "+element.Pref+"|"+index+"\r\n");
     if(element.enabled===true){
-      miczColumnsWizard_CustCols.addCustomColumn(element,ObserverService);
+      miczColumnsWizard.addCustomColumn(element,ObserverService);
       if(element.isCustom!=false){
         miczColumnsWizard.activateCustomDBHeader(element.dbHeader);
       }
