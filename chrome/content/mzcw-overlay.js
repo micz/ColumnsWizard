@@ -1,5 +1,5 @@
 "use strict";
-Components.utils.import("chrome://columnswizard/content/mzcw-customcolumns.js");
+Components.utils.import("chrome://columnswizard/content/mzcw-customcolumns.jsm");
 
 var miczColumnsWizard = {
 

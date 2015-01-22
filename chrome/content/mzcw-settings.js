@@ -1,5 +1,6 @@
 "use strict";
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
+Components.utils.import("chrome://columnswizard/content/mzcw-customcolumns.jsm");
 
 var miczColumnsWizard={};
 var miczColumnsWizardPref = {
@@ -17,7 +18,7 @@ var miczColumnsWizardPref = {
 	loadCustColRows:function(win){
 		let doc = win.document;
 		let container = doc.getElementById('ColumnsWizard.CustColsList');
-		miczColumnsWizardPref_CustomColsGrid.createCustomColsListRows(doc,container,miczColumnsWizard.CustCols.loadCustCols());
+		miczColumnsWizardPref_CustomColsGrid.createCustomColsListRows(doc,container,miczColumnsWizard_CustCols.loadCustCols());
 	},
 
 	updateButtons: function(win){

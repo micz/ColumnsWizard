@@ -19,6 +19,7 @@
   <stringbundle id="ColumnsWizard-string-bundle" src="chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties" />
 </stringbundleset>
 
+  <script type="application/javascript" src="chrome://columnswizard/content/mzcw-customcolumns.js" />
   <script type="application/javascript" src="chrome://columnswizard/content/mzcw-settings-customcolseditor.js"/>
 
   <vbox id="cw_vbox" flex="1">
@@ -62,7 +63,7 @@
           <row>
 			<label value="&ColumnsWizard.enabled.label;"/>
 			<vbox>
-				<checkbox id="ColumnsWizard.Addreplyto_checkbox"/>
+				<checkbox id="ColumnsWizard.enabled"/>
 				<description class="cw_field_label">&ColumnsWizard.enabled.desc;</description>
 			</vbox>
           </row>

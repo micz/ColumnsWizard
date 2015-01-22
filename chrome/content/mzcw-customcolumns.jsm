@@ -47,7 +47,7 @@ var miczColumnsWizard_CustCols={
     element.appendChild(cwSplitter);
     element.appendChild(cwCol);
 
-    dump(">>>>>>>>>>>>> miczColumnsWizard->addCustomColumn: [coltype] "+coltype+"\r\n");
+    //dump(">>>>>>>>>>>>> miczColumnsWizard->addCustomColumn: [coltype] "+coltype+"\r\n");
     //DbObserver Managing
     ObserverService.addObserver(this.CreateDbObserver[coltype], "MsgCreateDBView", false);
   },

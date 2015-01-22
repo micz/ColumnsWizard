@@ -1,4 +1,6 @@
 "use strict";
+Components.utils.import("chrome://columnswizard/content/mzcw-customcolumns.jsm");
+
 var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_CustomColsGrid"];
 
 var miczColumnsWizardPref_CustomColsGrid = {
@@ -36,8 +38,8 @@ var miczColumnsWizardPref_CustomColsGrid = {
 			labelString = _bundleCW.GetStringFromName("ColumnsWizard"+currcol.index+".label");
 			tooltipString = _bundleCW.GetStringFromName("ColumnsWizard"+currcol.index+"Desc.label");
 		}else{
-			labelString = custcol.labelString;
-			tooltipString = custcol.tooltipString;
+			labelString = currcol.labelString;
+			tooltipString = currcol.tooltipString;
 		}
 
 		let titleCell = doc.createElement("listcell");
@@ -59,7 +61,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		return listitem;
 	},
 
-	saveCustomColItem: function(currcol) {
+	/*saveCustomColItem: function(currcol) {
 		let value = JSON.stringify(currcol);
 		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		//Saving custom columns item to prefs
@@ -67,13 +69,13 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		prefs_def.setCharPref(currcol.index,value);
 
 		//Saving enabled status to prefs (for bundled custom columns)
-		if((currcol.isBundled)&&(currcol.def !== undefined)){
+		if((currcol.isBundled)&&(currcol.def !== undefined)&&(currcol.def != "")){
 			let prefs=prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
 			prefs.setBoolPref(currcol.def,currcol.enabled);
 		}
 
     	return value;
-	},
+	},*/
 
 	currentCustomCol: function(currlist)
 	{
@@ -105,7 +107,8 @@ var miczColumnsWizardPref_CustomColsGrid = {
 	  currcol.enabled = !currcol.enabled;
 	  //dump(">>>>>>>>>>>>> miczColumnsWizard: [currcol] "+JSON.stringify(currcol)+"\r\n");
 
-	  miczColumnsWizardPref_CustomColsGrid.saveCustomColItem(currcol);
+	  //miczColumnsWizardPref_CustomColsGrid.saveCustomColItem(currcol);
+	  miczColumnsWizard_CustCols.saveCustCol(currcol);
 
 	  // Now update the checkbox
 	  aCustColItem.childNodes[0].setAttribute("enabled", currcol.enabled);
