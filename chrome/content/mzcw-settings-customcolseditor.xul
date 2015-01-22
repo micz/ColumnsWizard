@@ -9,7 +9,7 @@
   title="&ColumnsWizard.window.title;"
   style=""
   windowtype="mailnews:cwcustomcoleditor"
-  persist="width height screenX screenY"
+  persist="screenX screenY"
   buttons="accept,cancel"
   onload="miczColumnsWizardPref_CustColEditor.onLoad();"
   onunload=""
@@ -21,49 +21,49 @@
 
   <script type="application/javascript" src="chrome://columnswizard/content/mzcw-settings-customcolseditor.js"/>
 
-  <vbox flex="1">
+  <vbox id="cw_vbox" flex="1">
     <groupbox>
       <caption label="&ColumnsWizard.Desc.label;"/>
       <separator class="thin"/>
       <grid>
         <columns>
-          <column flex="1"/>
+          <column/>
           <column/>
         </columns>
         <rows>
           <row>
 			<label value="&ColumnsWizard.id.label;"/>
 			<vbox>
-				<textbox flex="1" id="ColumnsWizard.id"/>
-				<label value="&ColumnsWizard.id.desc;"/>
+				<textbox id="ColumnsWizard.id"/>
+				<description class="cw_field_label">&ColumnsWizard.id.desc;</description>
 			</vbox>
           </row>
           <row>
 			<label value="&ColumnsWizard.dbHeader.label;"/>
 			<vbox>
-				<textbox flex="1" id="ColumnsWizard.dbHeader"/>
-				<label value="&ColumnsWizard.dbHeader.desc;"/>
+				<textbox id="ColumnsWizard.dbHeader"/>
+				<description class="cw_field_label">&ColumnsWizard.dbHeader.desc;</description>
 			</vbox>
           </row>
 			<row>
 			<label value="&ColumnsWizard.labelString.label;"/>
 			<vbox>
-				<textbox flex="1" id="ColumnsWizard.labelString"/>
-				<label value="&ColumnsWizard.labelString.desc;"/>
+				<textbox id="ColumnsWizard.labelString"/>
+				<description class="cw_field_label">&ColumnsWizard.labelString.desc;</description>
 			</vbox>
           </row>
           <row>
 			<label value="&ColumnsWizard.tooltipString.label;"/>
 			<vbox>
-				<textbox flex="1" id="ColumnsWizard.tooltipString"/>
-				<label value="&ColumnsWizard.tooltipString.desc;"/>
+				<textbox id="ColumnsWizard.tooltipString"/>
+				<description class="cw_field_label">&ColumnsWizard.tooltipString.desc;</description>
 			</vbox>
           </row>
           <row>
 			<label value="&ColumnsWizard.enabled.label;"/>
 			<vbox>
 				<checkbox id="ColumnsWizard.Addreplyto_checkbox"/>
-				<label value="&ColumnsWizard.enabled.desc;"/>
+				<description class="cw_field_label">&ColumnsWizard.enabled.desc;</description>
 			</vbox>
           </row>
         </rows>

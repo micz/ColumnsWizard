@@ -5,6 +5,13 @@ var miczColumnsWizard={};
 var miczColumnsWizardPref_CustColEditor = {
 
 	onLoad: function(){
+
+		//Fixing window height
+		sizeToContent();
+		var vbox = document.getElementById('cw_vbox');
+		vbox.height = vbox.boxObject.height;
+		sizeToContent();
+
 		if ("arguments" in window && window.arguments[0]){
 			let args = window.arguments[0];
 
@@ -26,7 +33,7 @@ var miczColumnsWizardPref_CustColEditor = {
 		return true;
 	},
 
-	checkFileds:function(){
+	checkFields:function(){
 		//TODO... also message prompts on error...
 		/* example   Services.prompt.alert(window,
                           gFilterBundle.getString("cannotHaveDuplicateFilterTitle"),
