@@ -1,23 +1,26 @@
 "use strict";
-miczColumnsWizard.CustCols={
-	
+var EXPORTED_SYMBOLS = ["miczColumnsWizard_CustCols"];
+
+var miczColumnsWizard_CustCols={
+
   //Bundled Custom Columns
   CustColDefaultIndex:["cc","bcc","replyto","xoriginalfrom","contentbase"],
+  CreateDbObserver:{},
 
   addCustomColumnHandler: function(coltype) {
      gDBView.addColumnHandler(coltype+"Col_cw", this["columnHandler_"+coltype]);
   },
-  
+
   addCustomColumn: function(elementc,ObserverService){
     let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
     let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
-	
+
 	let coltype=elementc.index;
-	
+
     if(document.getElementById(coltype+"Col_cw")){
       return;
     }
-    
+
     let labelString = '';
     let tooltipString = '';
     if(elementc.isBundled){
@@ -43,21 +46,21 @@ miczColumnsWizard.CustCols={
     cwSplitter.setAttribute("ordinal",lastordinal+1);
     element.appendChild(cwSplitter);
     element.appendChild(cwCol);
-    
-    //dump(">>>>>>>>>>>>> miczColumnsWizard->addCustomColumn: [coltype] "+coltype+"\r\n");
+
+    dump(">>>>>>>>>>>>> miczColumnsWizard->addCustomColumn: [coltype] "+coltype+"\r\n");
     //DbObserver Managing
-    ObserverService.addObserver(miczColumnsWizard.CustCols.CreateDbObserver[coltype], "MsgCreateDBView", false);
+    ObserverService.addObserver(this.CreateDbObserver[coltype], "MsgCreateDBView", false);
   },
-  
+
     removeCustomColumn: function(coltype,ObserverService){
       let element = document.getElementById(coltype+"Col_cw");
       if(element) element.parentNode.removeChild(element);
-      
+
       //dump(">>>>>>>>>>>>> miczColumnsWizard->removeCustomColumn: [coltype] "+coltype+"\r\n");
       //DbObserver Managing
-      ObserverService.removeObserver(miczColumnsWizard.CustCols.CreateDbObserver[coltype], "MsgCreateDBView");
+      ObserverService.removeObserver(this.CreateDbObserver[coltype], "MsgCreateDBView");
     },
-    
+
    loadCustCols:function(){
     let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
     let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
@@ -66,18 +69,18 @@ miczColumnsWizard.CustCols={
     let CustColIndex=new Array();
     if(CustColIndexStr==''){
 		//Set default CustColIndex
-		CustColIndex=miczColumnsWizard.CustCols.CustColDefaultIndex;
+		CustColIndex=this.CustColDefaultIndex;
 		prefs.setCharPref("index",JSON.stringify(CustColIndex));
 	}else{
 		CustColIndex=JSON.parse(CustColIndexStr);
 	}
     let loadedCustColPref=new Array();
-    miczColumnsWizard.CustCols.checkDefaultCustomColumnPrefs();
+    this.checkDefaultCustomColumnPrefs();
     for (let singlecolidx in CustColIndex) {
 		loadedCustColPref[CustColIndex[singlecolidx]]=JSON.parse(prefs_def.getCharPref(CustColIndex[singlecolidx]));
 	}
-    
- 
+
+
     /*loadedCustColPref["cc"]={};
     loadedCustColPref["cc"].Pref = prefs.getBoolPref("AddCc");
     loadedCustColPref["cc"].Def = "AddCc";
@@ -100,18 +103,18 @@ miczColumnsWizard.CustCols={
     loadedCustColPref["contentbase"].customDBHeader = "content-base";*/
     return loadedCustColPref;
   },
-  
+
   checkDefaultCustomColumnPrefs: function(){
 		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
 		let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");
-		
-		for (let singlecolidx in miczColumnsWizard.CustCols.CustColDefaultIndex) {
-			//dump(">>>>>>>>>>>>> miczColumnsWizard: [checkDefaultCustomColumnPrefs singlecolidx] "+miczColumnsWizard.CustCols.CustColDefaultIndex[singlecolidx]+" \r\n");
-			let currcol=prefs_def.getCharPref(miczColumnsWizard.CustCols.CustColDefaultIndex[singlecolidx]);
+
+		for (let singlecolidx in this.CustColDefaultIndex) {
+			//dump(">>>>>>>>>>>>> miczColumnsWizard: [checkDefaultCustomColumnPrefs singlecolidx] "+miczColumnsWizard_CustCols.CustColDefaultIndex[singlecolidx]+" \r\n");
+			let currcol=prefs_def.getCharPref(this.CustColDefaultIndex[singlecolidx]);
 			if(currcol==''){//Default custom column pref not present
 				let dcurrcol={}
-				switch(miczColumnsWizard.CustCols.CustColDefaultIndex[singlecolidx]){
+				switch(this.CustColDefaultIndex[singlecolidx]){
 					case 'cc':
 						dcurrcol.enabled = prefs.getBoolPref("AddCc");
 						dcurrcol.def = "AddCc";
@@ -143,32 +146,69 @@ miczColumnsWizard.CustCols={
 						dcurrcol.isCustom=true;
 						break;
 				}
-				dcurrcol.index=miczColumnsWizard.CustCols.CustColDefaultIndex[singlecolidx];
+				dcurrcol.index=this.CustColDefaultIndex[singlecolidx];
 				dcurrcol.isBundled=true;
 				dcurrcol.labelString='';
 				dcurrcol.tooltipString='';
-				prefs_def.setCharPref(miczColumnsWizard.CustCols.CustColDefaultIndex[singlecolidx],JSON.stringify(dcurrcol));
+				prefs_def.setCharPref(this.CustColDefaultIndex[singlecolidx],JSON.stringify(dcurrcol));
 			}
 		}
 	},
+
+	saveNewCustCol:function(newcol){
+		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+		let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");
+		let CustColIndexStr=prefs.getCharPref("index");
+		let CustColIndex=new Array();
+		if(CustColIndexStr==''){
+			//Set default CustColIndex
+			CustColIndex=this.CustColDefaultIndex;
+			prefs.setCharPref("index",JSON.stringify(CustColIndex));
+		}else{
+			CustColIndex=JSON.parse(CustColIndexStr);
+		}
+		//Add new element to index and save it
+		CustColIndex.push(newcol.index);
+		prefs.setCharPref("index",JSON.stringify(CustColIndex));
+
+		//Save the new element
+		this.saveCustCol(newcol);
+	},
+
+	saveCustCol: function(currcol) {
+		let value = JSON.stringify(currcol);
+		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		//Saving custom columns item to prefs
+		let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");
+		prefs_def.setCharPref(currcol.index,value);
+
+		//Saving enabled status to prefs (for bundled custom columns)
+		if((currcol.isBundled)&&(currcol.def !== undefined)&&(currcol.def != "")){
+			let prefs=prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+			prefs.setBoolPref(currcol.def,currcol.enabled);
+		}
+
+    	return value;
+	},
 };
 
-
-miczColumnsWizard.CustColPref=miczColumnsWizard.CustCols.loadCustCols();
-miczColumnsWizard.CustCols.CreateDbObserver=Array();
+/*
+miczColumnsWizard.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
+miczColumnsWizard_CustCols.CreateDbObserver=Array();
 for (let index in miczColumnsWizard.CustColPref) {
   //Create all the needed DbObservers
   //dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+index+"\r\n");
-  //It's needed to to this, to avoid writing each miczColumnsWizard.CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function definition.
-  let obfunction=new Function('aMsgFolder', 'aTopic', 'aData',"miczColumnsWizard.CustCols.addCustomColumnHandler('"+index+"');");
-  miczColumnsWizard.CustCols.CreateDbObserver[index]={observe: obfunction};
+  //It's needed to to this, to avoid writing each miczColumnsWizard_CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function definition.
+  let obfunction=new Function('aMsgFolder', 'aTopic', 'aData',"miczColumnsWizard_CustCols.addCustomColumnHandler('"+index+"');");
+  miczColumnsWizard_CustCols.CreateDbObserver[index]={observe: obfunction};
   //Create all the needed DbObserver - END
 
  //Implement all the needed ColumnHandlers
  let sortfunc=new Function('hdr','return hdr.getStringProperty("'+miczColumnsWizard.CustColPref[index].dbHeader+'");');
  let celltextfunc=new Function('row','col','let hdr = gDBView.getMsgHdrAt(row);return hdr.getStringProperty("'+miczColumnsWizard.CustColPref[index].dbHeader+'");');
- 
-  miczColumnsWizard.CustCols["columnHandler_"+index]={
+
+  miczColumnsWizard_CustCols["columnHandler_"+index]={
     getCellText:         celltextfunc,
     getSortStringForRow: sortfunc,
     isString:            function() {return true;},
@@ -184,7 +224,7 @@ for (let index in miczColumnsWizard.CustColPref) {
 /*
 //Implement the ColumnHandlers
 //cc
-miczColumnsWizard.CustCols["columnHandler_cc"]={
+miczColumnsWizard_CustCols["columnHandler_cc"]={
    getCellText:         function(row, col) {
       //get the message's header so that we can extract the cc to field
       let hdr = gDBView.getMsgHdrAt(row);
@@ -201,7 +241,7 @@ miczColumnsWizard.CustCols["columnHandler_cc"]={
 //cc - END
 
 //bcc
-miczColumnsWizard.CustCols["columnHandler_bcc"]={
+miczColumnsWizard_CustCols["columnHandler_bcc"]={
    getCellText:         function(row, col) {
       //get the message's header so that we can extract the bcc to field
       let hdr = gDBView.getMsgHdrAt(row);
@@ -218,7 +258,7 @@ miczColumnsWizard.CustCols["columnHandler_bcc"]={
 //bcc - END
 
 //replyto
-miczColumnsWizard.CustCols["columnHandler_replyto"]={
+miczColumnsWizard_CustCols["columnHandler_replyto"]={
    getCellText:         function(row, col) {
       //get the message's header so that we can extract the replyTo to field
       let hdr = gDBView.getMsgHdrAt(row);
@@ -235,7 +275,7 @@ miczColumnsWizard.CustCols["columnHandler_replyto"]={
 //replyto - END
 
 //xoriginalfrom
-miczColumnsWizard.CustCols["columnHandler_xoriginalfrom"]={
+miczColumnsWizard_CustCols["columnHandler_xoriginalfrom"]={
    getCellText:         function(row, col) {
       //get the message's header so that we can extract the x-original-from to field
       let hdr = gDBView.getMsgHdrAt(row);
@@ -252,7 +292,7 @@ miczColumnsWizard.CustCols["columnHandler_xoriginalfrom"]={
 //xoriginalfrom - END
 
 //contentbase
-miczColumnsWizard.CustCols["columnHandler_contentbase"]={
+miczColumnsWizard_CustCols["columnHandler_contentbase"]={
    getCellText:         function(row, col) {
       //get the message's header so that we can extract the content-base to field
       let hdr = gDBView.getMsgHdrAt(row);

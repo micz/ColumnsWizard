@@ -47,17 +47,17 @@ miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
     var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
     //with the pref name AddCOLNAME, get the COLNAME all lowercase!!
     let cwColName=name;//.substr(3).toLowerCase();
-    let cwCustColPref=miczColumnsWizard.CustCols.loadCustCols();
+    let cwCustColPref=miczColumnsWizard_CustCols.loadCustCols();
     //dump(">>>>>>>>>>>>> miczColumnsWizard.PrefListener: [PrefName|cwColName] "+name+"|"+cwColName+"\r\n");
     if(cwCustColPref[cwColName].enabled){
       //checbox checked
-      miczColumnsWizard.CustCols.addCustomColumn(cwCustColPref[cwColName],ObserverService);
+      miczColumnsWizard_CustCols.addCustomColumn(cwCustColPref[cwColName],ObserverService);
       if(cwCustColPref[cwColName].isCustom!=false){
         miczColumnsWizard.activateCustomDBHeader(cwCustColPref[cwColName].dbHeader);
       }
     }else{
       //checbox not checked
-      miczColumnsWizard.CustCols.removeCustomColumn(cwColName,ObserverService);
+      miczColumnsWizard_CustCols.removeCustomColumn(cwColName,ObserverService);
       //Don't do this, the customDBHeader could have been set by another extension
       /*if(cwCustColPref[cwColName].iscustom!=false){
         miczColumnsWizard.deactivateCustomDBHeader(cwCustColPref[cwColName].DBHeader);
