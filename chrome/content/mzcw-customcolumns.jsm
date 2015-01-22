@@ -1,6 +1,4 @@
 "use strict";
-Components.utils.import("resource://gre/modules/Services.jsm");
-
 var EXPORTED_SYMBOLS = ["miczColumnsWizard_CustCols"];
 
 var miczColumnsWizard_CustCols={
