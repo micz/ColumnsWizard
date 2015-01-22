@@ -45,13 +45,6 @@
 				<label value="&ColumnsWizard.dbHeader.desc;"/>
 			</vbox>
           </row>
-          <row>
-			<label value="&ColumnsWizard.ColName.label;"/>
-			<vbox>
-				<textbox flex="1" id="ColumnsWizard.ColName"/>
-				<label value="&ColumnsWizard.ColName.desc;"/>
-			</vbox>
-			</row>
 			<row>
 			<label value="&ColumnsWizard.labelString.label;"/>
 			<vbox>

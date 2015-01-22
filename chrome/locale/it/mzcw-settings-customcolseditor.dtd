@@ -1,0 +1,13 @@
+<!ENTITY ColumnsWizard.window.title "Editor Colonna Aggiuntiva">
+<!ENTITY ColumnsWizard.Desc.label "Inserisci le informazioni della nuova colonna aggiuntiva.">
+<!ENTITY ColumnsWizard.DescEdit.label "Modifica le informazioni della colonna aggiuntiva. Non è possibile modificare il campo ID dopo il primo salvataggio.">
+<!ENTITY ColumnsWizard.id.label "ID">
+<!ENTITY ColumnsWizard.id.desc "L'ID serve per identificare univocamente la colonna aggiuntiva. Non può essere modificato dopo il primo salvataggio.">
+<!ENTITY ColumnsWizard.dbHeader.label "dbHeader">
+<!ENTITY ColumnsWizard.dbHeader.desc "Questo è il campo presente nei messaggi di posta elettronica che si vuole mostrare nella lista dei messaggi.">
+<!ENTITY ColumnsWizard.labelString.label "Nome della Colonna">
+<!ENTITY ColumnsWizard.labelString.desc "Scrivi qui il nome che vuoi sia mostrato nell'intestazione di colonna nella lista dei messaggi.">
+<!ENTITY ColumnsWizard.tooltipString.label "Tooltip">
+<!ENTITY ColumnsWizard.tooltipString.desc "Scrivi qui il testo del tooltip dell'intestazione di colonna nella lista dei messaggi. Solitamente questo campo riporta scritto \"Ordina per\" seguito dal nome della colonna.">
+<!ENTITY ColumnsWizard.enabled.label "Attivato">
+<!ENTITY ColumnsWizard.enabled.desc "Seleziona questo chekbox per attivare subito la colonna aggiuntiva.">
