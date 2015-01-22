@@ -38,7 +38,7 @@
         name="extensions.ColumnsWizard.CustCols.Addcontentbase"
         type="bool" />
     </preferences>
-    <tabbox>
+    <tabbox id="cw_tabbox">
       <tabs>
         <tab label="&ColumnsWizard.TabConversation.label;"/>
         <tab label="&ColumnsWizard.TabCustomCols.label;"/>

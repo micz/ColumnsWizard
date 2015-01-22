@@ -5,6 +5,12 @@ var miczColumnsWizard={};
 var miczColumnsWizardPref = {
 
 	onLoad: function(win){
+		//Fixing window height
+		sizeToContent();
+		var vbox = document.getElementById('cw_tabbox');
+		vbox.height = vbox.boxObject.height;
+		sizeToContent();
+
 		this.loadCustColRows(win);
 	},
 
