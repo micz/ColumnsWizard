@@ -1,4 +1,5 @@
 "use strict";
+Components.utils.import("chrome://columnswizard/content/mzcw-customcolumns.jsm");
 /**
  * @constructor
  *
@@ -45,7 +46,7 @@ miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
   "extensions.ColumnsWizard.CustCols.def.",
   function(branch, name) {//dump("PrefListener call: "+name+"\n\r");
     var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-    //with the pref name AddCOLNAME, get the COLNAME all lowercase!!
+    //-- comment deprecated -- with the pref name AddCOLNAME, get the COLNAME all lowercase!!
     let cwColName=name;//.substr(3).toLowerCase();
     let cwCustColPref=miczColumnsWizard_CustCols.loadCustCols();
     //dump(">>>>>>>>>>>>> miczColumnsWizard.PrefListener: [PrefName|cwColName] "+name+"|"+cwColName+"\r\n");

@@ -1,4 +1,6 @@
 "use strict";
+Components.utils.import("resource://gre/modules/Services.jsm");
+
 var EXPORTED_SYMBOLS = ["miczColumnsWizard_CustCols"];
 
 var miczColumnsWizard_CustCols={
@@ -56,9 +58,13 @@ var miczColumnsWizard_CustCols={
       let element = document.getElementById(coltype+"Col_cw");
       if(element) element.parentNode.removeChild(element);
 
-      //dump(">>>>>>>>>>>>> miczColumnsWizard->removeCustomColumn: [coltype] "+coltype+"\r\n");
+      dump(">>>>>>>>>>>>> miczColumnsWizard->removeCustomColumn: [coltype] "+coltype+"\r\n");
       //DbObserver Managing
-      ObserverService.removeObserver(this.CreateDbObserver[coltype], "MsgCreateDBView");
+      try{
+      	ObserverService.removeObserver(this.CreateDbObserver[coltype], "MsgCreateDBView");
+      }catch(ex){
+		//No observer found
+	  }
     },
 
    loadCustCols:function(){
@@ -77,7 +83,13 @@ var miczColumnsWizard_CustCols={
     let loadedCustColPref=new Array();
     this.checkDefaultCustomColumnPrefs();
     for (let singlecolidx in CustColIndex) {
-		loadedCustColPref[CustColIndex[singlecolidx]]=JSON.parse(prefs_def.getCharPref(CustColIndex[singlecolidx]));
+		dump(">>>>>>>>>>>>> miczColumnsWizard->loadCustCols: [CustColIndex[singlecolidx]] "+CustColIndex[singlecolidx]+"\r\n");
+		try{
+			loadedCustColPref[CustColIndex[singlecolidx]]=JSON.parse(prefs_def.getCharPref(CustColIndex[singlecolidx]));
+		}catch(ex){
+			//We have and index, but no preference for it, so we remove it...
+			this.removeCustColIndex(CustColIndex[singlecolidx]);
+		}
 	}
 
 
@@ -155,10 +167,15 @@ var miczColumnsWizard_CustCols={
 		}
 	},
 
-	saveNewCustCol:function(newcol){
+	addNewCustCol:function(newcol){
+		this.addCustColIndex(newcol.index);
+		this.addDbObserver(newcol);
+		this.saveCustCol(newcol);
+	},
+
+	addCustColIndex:function(index){
 		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
-		let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");
 		let CustColIndexStr=prefs.getCharPref("index");
 		let CustColIndex=new Array();
 		if(CustColIndexStr==''){
@@ -169,11 +186,24 @@ var miczColumnsWizard_CustCols={
 			CustColIndex=JSON.parse(CustColIndexStr);
 		}
 		//Add new element to index and save it
-		CustColIndex.push(newcol.index);
+		CustColIndex.push(index);
 		prefs.setCharPref("index",JSON.stringify(CustColIndex));
+	},
 
-		//Save the new element
-		this.saveCustCol(newcol);
+	removeCustColIndex:function(index){
+		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+		let CustColIndexStr=prefs.getCharPref("index");
+		let CustColIndex=new Array();
+		if(CustColIndexStr==''){
+			return;
+		}else{
+			CustColIndex=JSON.parse(CustColIndexStr);
+		}
+		//Remove the element to index and save it
+		let el_idx=CustColIndex.indexOf(index);
+		CustColIndex.splice(el_idx,1);
+		prefs.setCharPref("index",JSON.stringify(CustColIndex));
 	},
 
 	saveCustCol: function(currcol) {
@@ -189,23 +219,22 @@ var miczColumnsWizard_CustCols={
 			prefs.setBoolPref(currcol.def,currcol.enabled);
 		}
 
-
     	return value;
 	},
 
-	addDbObserver:function(index,CustColPref){
+	addDbObserver:function(currcol){
 		//Create all the needed DbObservers
-		  //dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+index+"\r\n");
+		  dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+currcol.index+"\r\n");
 		  //It's needed to to this, to avoid writing each miczColumnsWizard_CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function definition.
-		  let obfunction=new Function('aMsgFolder', 'aTopic', 'aData',"miczColumnsWizard_CustCols.addCustomColumnHandler('"+index+"');");
-		  this.CreateDbObserver[index]={observe: obfunction};
+		  let obfunction=new Function('aMsgFolder', 'aTopic', 'aData',"miczColumnsWizard_CustCols.addCustomColumnHandler('"+currcol.index+"');");
+		  this.CreateDbObserver[currcol.index]={observe: obfunction};
 		  //Create all the needed DbObserver - END
 
 		 //Implement all the needed ColumnHandlers
-		 let sortfunc=new Function('hdr','return hdr.getStringProperty("'+CustColPref[index].dbHeader+'");');
-		 let celltextfunc=new Function('row','col','let hdr = gDBView.getMsgHdrAt(row);return hdr.getStringProperty("'+CustColPref[index].dbHeader+'");');
+		 let sortfunc=new Function('hdr','return hdr.getStringProperty("'+currcol.dbHeader+'");');
+		 let celltextfunc=new Function('row','col','let hdr = gDBView.getMsgHdrAt(row);return hdr.getStringProperty("'+currcol.dbHeader+'");');
 
-		  this["columnHandler_"+index]={
+		  this["columnHandler_"+currcol.index]={
 			getCellText:         celltextfunc,
 			getSortStringForRow: sortfunc,
 			isString:            function() {return true;},

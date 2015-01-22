@@ -49,8 +49,8 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.labelString=document.getElementById("ColumnsWizard.labelString").value;
 						newcol.tooltipString=document.getElementById("ColumnsWizard.tooltipString").value;
 						newcol.enabled=document.getElementById("ColumnsWizard.enabled").checked;
-						dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
-						miczColumnsWizard_CustCols.saveNewCustCol(newcol);
+						//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
+						miczColumnsWizard_CustCols.addNewCustCol(newcol);
 					break;
 					case "edit": //TODO
 					break;

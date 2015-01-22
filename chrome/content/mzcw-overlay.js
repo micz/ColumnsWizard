@@ -13,24 +13,24 @@ var miczColumnsWizard = {
   CustColPref:{},
 
 	init: function(){
-    //Adding custom columns
-    var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+		//Adding custom columns
+		var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
 
-    miczColumnsWizard.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
+		miczColumnsWizard.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
 
-    for (let index in miczColumnsWizard.CustColPref) {
-		miczColumnsWizard_CustCols.addDbObserver(index,miczColumnsWizard.CustColPref);
-	}
+		for (let index in miczColumnsWizard.CustColPref) {
+			miczColumnsWizard_CustCols.addDbObserver(index,miczColumnsWizard.CustColPref);
+		}
 
-    for (let index in miczColumnsWizard.CustColPref) {
-      miczColumnsWizard.custColsActivation(miczColumnsWizard.CustColPref[index],ObserverService);
-    }
+		for (let index in miczColumnsWizard.CustColPref) {
+		  miczColumnsWizard.custColsActivation(miczColumnsWizard.CustColPref[index],ObserverService);
+		}
 
-    miczColumnsWizard.watchFolders();
+		miczColumnsWizard.watchFolders();
 
-	this.initialized = true;
-    //Conversation Tab add columns - delayed
-  	setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
+		this.initialized = true;
+		//Conversation Tab add columns - delayed
+		setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
 	},
 
 	initDelayed: function() {
