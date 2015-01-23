@@ -6,7 +6,7 @@
  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
 
 <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-overlay.js" />
-<script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-customcolumns.jsm" />
+<script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-customcolumns.js" />
 <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-prefobserver.js" />
 <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-folderlistener.js" />
 

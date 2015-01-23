@@ -50,7 +50,9 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.tooltipString=document.getElementById("ColumnsWizard.tooltipString").value;
 						newcol.enabled=document.getElementById("ColumnsWizard.enabled").checked;
 						//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
-						miczColumnsWizard_CustCols.addNewCustCol(newcol);
+						//miczColumnsWizard_CustCols.addNewCustCol(newcol);
+						window.arguments[0].save=true;
+						window.arguments[0].newcol=newcol;
 					break;
 					case "edit": //TODO
 					break;

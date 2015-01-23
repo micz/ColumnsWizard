@@ -13,13 +13,15 @@ var miczColumnsWizard = {
   CustColPref:{},
 
 	init: function(){
-		//Adding custom columns
-		var ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
 
+		miczColumnsWizard.addNewCustColObserver(ObserverService);
+
+		//Adding custom columns
 		miczColumnsWizard.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
 
 		for (let index in miczColumnsWizard.CustColPref) {
-			miczColumnsWizard_CustCols.addDbObserver(miczColumnsWizard.CustColPref[index]);
+			miczColumnsWizard.addDbObserver(miczColumnsWizard.CustColPref[index]);
 		}
 
 		for (let index in miczColumnsWizard.CustColPref) {
@@ -49,8 +51,41 @@ var miczColumnsWizard = {
 		}
 	},
 
+	addNewCustColObserver:function(ObserverService){
+		let CustColObserver = {
+			observe: function(aSubject,aTopic,aData){
+				//dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
+    			miczColumnsWizard.addDbObserver(JSON.parse(aData));
+  			}
+		}
+		ObserverService.addObserver(CustColObserver,"CW-newCustomColumn",false);
+	},
 
-  addCustomColumnHandler: function(coltype) {
+	addDbObserver:function(currcol){
+		//Create all the needed DbObservers
+		  //dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+currcol.index+"\r\n");
+		  //It's needed to to this, to avoid writing each miczColumnsWizard_CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function definition.
+		  let obfunction=new Function('aMsgFolder', 'aTopic', 'aData',"miczColumnsWizard_CustCols.addCustomColumnHandler('"+currcol.index+"');");
+		  miczColumnsWizard_CustCols.CreateDbObserver[currcol.index]={observe: obfunction};
+		  //Create all the needed DbObserver - END
+
+		 //Implement all the needed ColumnHandlers
+		 let sortfunc=new Function('hdr','return hdr.getStringProperty("'+currcol.dbHeader+'");');
+		 let celltextfunc=new Function('row','col','let hdr = gDBView.getMsgHdrAt(row);return hdr.getStringProperty("'+currcol.dbHeader+'");');
+
+		  miczColumnsWizard_CustCols["columnHandler_"+currcol.index]={
+			getCellText:         celltextfunc,
+			getSortStringForRow: sortfunc,
+			isString:            function() {return true;},
+			getCellProperties:   function(row, col, props){},
+			getRowProperties:    function(row, props){},
+			getImageSrc:         function(row, col) {return null;},
+			getSortLongForRow:   function(hdr) {return 0;}
+		  };
+		 //Implement all the needed ColumnHandlers - END
+	},
+
+/*  addCustomColumnHandler: function(coltype) {
      gDBView.addColumnHandler(coltype+"Col_cw", miczColumnsWizard_CustCols["columnHandler_"+coltype]);
   },
 
@@ -93,7 +128,7 @@ var miczColumnsWizard = {
     //dump(">>>>>>>>>>>>> miczColumnsWizard->addCustomColumn: [coltype] "+coltype+"\r\n");
     //DbObserver Managing
     ObserverService.addObserver(miczColumnsWizard_CustCols.CreateDbObserver[coltype], "MsgCreateDBView", false);
-  },
+  },*/
 
     removeCustomColumn: function(coltype,ObserverService){
       let element = document.getElementById(coltype+"Col_cw");
@@ -111,7 +146,7 @@ var miczColumnsWizard = {
   custColsActivation:function(element,ObserverService){
   //dump(">>>>>>>>>>>>> miczColumnsWizard: [element|index] "+element.Pref+"|"+index+"\r\n");
     if(element.enabled===true){
-      miczColumnsWizard.addCustomColumn(element,ObserverService);
+      miczColumnsWizard_CustCols.addCustomColumn(element,ObserverService);
       if(element.isCustom!=false){
         miczColumnsWizard.activateCustomDBHeader(element.dbHeader);
       }

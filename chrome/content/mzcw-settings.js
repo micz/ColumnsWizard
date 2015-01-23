@@ -2,7 +2,7 @@
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
 //Components.utils.import("chrome://columnswizard/content/mzcw-customcolumns.jsm");
 
-var miczColumnsWizard={};
+var miczColumnsWizard=window.opener.miczColumnsWizard;
 var miczColumnsWizardPref = {
 
 	onLoad: function(win){
@@ -46,10 +46,12 @@ var miczColumnsWizardPref = {
 
 		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xul", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
 
-		if ("refresh" in args && args.refresh) {
+		if (("save" in args && args.save)&& ("newcol" in args && args.newcol)){
+			miczColumnsWizard_CustCols.addNewCustCol(args.newcol);
 			// Select the new custcols, it is at the end of the list.
-			currlist.selectIndex=currlist.itemCount-1;
+			//currlist.selectIndex=currlist.itemCount-1;
 		}
+
 	},
 
 };
