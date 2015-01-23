@@ -41,15 +41,17 @@ var miczColumnsWizardPref = {
 
 	onNewCustomCol: function(win){
 		let doc = win.document;
-		let currlist=doc.getElementById('ColumnsWizard.CustColsList');
-		let args = {"CustColsList":currlist,"action":"new"};
+		let container = doc.getElementById('ColumnsWizard.CustColsList');
+		let args = {"action":"new"};
 
 		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xul", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
 
 		if (("save" in args && args.save)&& ("newcol" in args && args.newcol)){
 			miczColumnsWizard_CustCols.addNewCustCol(args.newcol);
+			miczColumnsWizardPref_CustomColsGrid.createOneCustomColRow(doc,container,args.newcol);
 			// Select the new custcols, it is at the end of the list.
-			//currlist.selectIndex=currlist.itemCount-1;
+			container.selectedIndex=container.itemCount-1;
+			container.ensureIndexIsVisible(container.selectedIndex);
 		}
 
 	},
