@@ -49,7 +49,7 @@ miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
     //-- comment deprecated -- with the pref name AddCOLNAME, get the COLNAME all lowercase!!
     let cwColName=name;//.substr(3).toLowerCase();
     let cwCustColPref=miczColumnsWizard_CustCols.loadCustCols();
-    dump(">>>>>>>>>>>>> miczColumnsWizard.PrefListener: [PrefName|cwColName] "+name+"|"+cwColName+"\r\n");
+    //dump(">>>>>>>>>>>>> miczColumnsWizard.PrefListener: [PrefName|cwColName] "+name+"|"+cwColName+"\r\n");
     if(cwCustColPref[cwColName].enabled){
       //checbox checked
       miczColumnsWizard_CustCols.addCustomColumn(cwCustColPref[cwColName],ObserverService);
