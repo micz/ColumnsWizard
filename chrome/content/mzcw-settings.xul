@@ -86,9 +86,11 @@
 				<listcol flex="1"/>
 				<listcol flex="1"/>
 				<listcol flex="1"/>
+				<listcol flex="1"/>
 			</listcols>
             <listhead>
               <listheader id="activeColumn" label=" "/>
+              <listheader id="idColumn" label="ID"/>
               <listheader id="mailheaderColumn" label="mailheader"/>
               <listheader id="titleColumn" label="title"/>
               <listheader id="tooltipColumn" label="tooltip"/>

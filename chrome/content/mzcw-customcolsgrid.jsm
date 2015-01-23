@@ -28,6 +28,10 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		}
 		listitem.appendChild(activeCell);
 
+		let idCell = doc.createElement("listcell");
+		idCell.setAttribute("label",currcol.index);
+		listitem.appendChild(idCell);
+
 		let mailheaderCell = doc.createElement("listcell");
 		mailheaderCell.setAttribute("label",currcol.dbHeader);
 		listitem.appendChild(mailheaderCell);
