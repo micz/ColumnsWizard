@@ -85,51 +85,6 @@ var miczColumnsWizard = {
 		 //Implement all the needed ColumnHandlers - END
 	},
 
-/*  addCustomColumnHandler: function(coltype) {
-     gDBView.addColumnHandler(coltype+"Col_cw", miczColumnsWizard_CustCols["columnHandler_"+coltype]);
-  },
-
-  addCustomColumn: function(elementc,ObserverService){
-    let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
-    let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
-
-	let coltype=elementc.index;
-
-    if(document.getElementById(coltype+"Col_cw")){
-      return;
-    }
-
-    let labelString = '';
-    let tooltipString = '';
-    if(elementc.isBundled){
-		labelString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+".label");
-		tooltipString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+"Desc.label");
-	}else{
-		labelString = elementc.labelString;
-		tooltipString = elementc.tooltipString;
-	}
-    let cwCol = document.createElement("treecol");
-    cwCol.setAttribute("id",coltype+"Col_cw");
-    cwCol.setAttribute("persist","hidden ordinal width");
-    cwCol.setAttribute("hidden","true");
-    cwCol.setAttribute("flex","4");
-    cwCol.setAttribute("label",labelString);
-    cwCol.setAttribute("tooltiptext",tooltipString);
-    let cwSplitter = document.createElement("splitter");
-    cwSplitter.setAttribute("class","tree-splitter");
-    cwSplitter.setAttribute("resizeafter","farthest");
-    let element = document.getElementById("threadCols");
-    let lastordinal=element.children.length;
-    //dump('>>>>>>>>> columns [js children: '+lastordinal+"] [real: "+(lastordinal-1)/2+"]\r\n");
-    cwSplitter.setAttribute("ordinal",lastordinal+1);
-    element.appendChild(cwSplitter);
-    element.appendChild(cwCol);
-
-    //dump(">>>>>>>>>>>>> miczColumnsWizard->addCustomColumn: [coltype] "+coltype+"\r\n");
-    //DbObserver Managing
-    ObserverService.addObserver(miczColumnsWizard_CustCols.CreateDbObserver[coltype], "MsgCreateDBView", false);
-  },*/
-
     removeCustomColumn: function(coltype,ObserverService){
       let element = document.getElementById(coltype+"Col_cw");
       if(element) element.parentNode.removeChild(element);
@@ -221,32 +176,3 @@ var miczColumnsWizard = {
 };
 
 window.addEventListener("load", miczColumnsWizard.init, false);
-
-
-/*
-miczColumnsWizard.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
-//miczColumnsWizard_CustCols.CreateDbObserver=Array();
-for (let index in miczColumnsWizard.CustColPref) {
-  //Create all the needed DbObservers
-  //dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+index+"\r\n");
-  //It's needed to to this, to avoid writing each miczColumnsWizard_CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function definition.
-  let obfunction=new Function('aMsgFolder', 'aTopic', 'aData',"miczColumnsWizard_CustCols.addCustomColumnHandler('"+index+"');");
-  miczColumnsWizard_CustCols.CreateDbObserver[index]={observe: obfunction};
-  //Create all the needed DbObserver - END
-
- //Implement all the needed ColumnHandlers
- let sortfunc=new Function('hdr','return hdr.getStringProperty("'+miczColumnsWizard.CustColPref[index].dbHeader+'");');
- let celltextfunc=new Function('row','col','let hdr = gDBView.getMsgHdrAt(row);return hdr.getStringProperty("'+miczColumnsWizard.CustColPref[index].dbHeader+'");');
-
-  miczColumnsWizard_CustCols["columnHandler_"+index]={
-    getCellText:         celltextfunc,
-    getSortStringForRow: sortfunc,
-    isString:            function() {return true;},
-    getCellProperties:   function(row, col, props){},
-    getRowProperties:    function(row, props){},
-    getImageSrc:         function(row, col) {return null;},
-    getSortLongForRow:   function(hdr) {return 0;}
-  };
- //Implement all the needed ColumnHandlers - END
-}
-*/
