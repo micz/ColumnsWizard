@@ -56,4 +56,22 @@ var miczColumnsWizardPref = {
 
 	},
 
+	onDeleteCustomCol: function(win){
+		let doc = win.document;
+		let container = doc.getElementById('ColumnsWizard.CustColsList');
+
+		if(container.selectedIndex==-1) return;
+
+		//get the col id
+		let col_idx=container.selectedItem._customcol.index;
+		dump(">>>>>>>>>>>>> miczColumnsWizard: [onDeleteCustomCol] col_idx ["+col_idx+"]\r\n");
+
+		//delete the custom col
+		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+		miczColumnsWizard_CustCols.removeCustomColumn(col_idx,ObserverService)
+		miczColumnsWizard_CustCols.deleteCustCol(col_idx);
+
+		//remove the custom col from the listbox
+		miczColumnsWizardPref_CustomColsGrid.deleteOneCustomColRow(container,container.selectedIndex);
+	},
 };

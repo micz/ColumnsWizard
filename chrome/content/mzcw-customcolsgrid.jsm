@@ -81,6 +81,10 @@ var miczColumnsWizardPref_CustomColsGrid = {
     	return value;
 	},*/
 
+	deleteOneCustomColRow: function(container,col_idx){
+		container.removeItemAt(col_idx);
+	},
+
 	currentCustomCol: function(currlist)
 	{
 	  let currentItem = currlist.selectedItem;

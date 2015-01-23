@@ -201,4 +201,8 @@ var miczColumnsWizard_CustCols={
 
     	return value;
 	},
+
+	deleteCustCol: function(col_idx){
+		miczColumnsWizard_CustCols.removeCustColIndex(col_idx);
+	},
 };
