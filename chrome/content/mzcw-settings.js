@@ -6,6 +6,8 @@ var miczColumnsWizard=window.opener.miczColumnsWizard;
 var miczColumnsWizardPref = {
 
 	onLoad: function(win){
+		this.loadCustColRows(win);
+
 		//Fixing window height
 		sizeToContent();
 		var vbox = document.getElementById('cw_tabbox');
@@ -14,7 +16,6 @@ var miczColumnsWizardPref = {
 
 		this.loadDefaultColRows(win);
 
-		this.loadCustColRows(win);
 		miczColumnsWizardPref_CustomColsGrid.miczColumnsWizard_CustCols=miczColumnsWizard_CustCols;
 		miczColumnsWizardPref_CustomColsGrid.win=win;
 		miczColumnsWizardPref_CustomColsGrid.onEditCustomCol=miczColumnsWizardPref.onEditCustomCol;
@@ -74,11 +75,11 @@ var miczColumnsWizardPref = {
 		}
 
 	},
-	
+
 	onEditCustomCol: function(win){
 		let doc = win.document;
 		let container = doc.getElementById('ColumnsWizard.CustColsList');
-		
+
 		if(container.selectedIndex==-1) return;
 		if(doc.getElementById("editButton").disabled) return;
 
@@ -103,7 +104,7 @@ var miczColumnsWizardPref = {
 
 		if(container.selectedIndex==-1) return;
 		if(doc.getElementById("deleteButton").disabled) return;
-		
+
 		//Are you sure?
 		let prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
 		let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
