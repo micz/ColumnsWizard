@@ -1,6 +1,6 @@
 "use strict";
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
-//Components.utils.import("chrome://columnswizard/content/mzcw-customcolumns.jsm");
+Components.utils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
 
 var miczColumnsWizard=window.opener.miczColumnsWizard;
 var miczColumnsWizardPref = {
@@ -12,10 +12,26 @@ var miczColumnsWizardPref = {
 		vbox.height = vbox.boxObject.height;
 		sizeToContent();
 
+		this.loadDefaultColRows(win);
+
 		this.loadCustColRows(win);
 		miczColumnsWizardPref_CustomColsGrid.miczColumnsWizard_CustCols=miczColumnsWizard_CustCols;
 		miczColumnsWizardPref_CustomColsGrid.win=win;
 		miczColumnsWizardPref_CustomColsGrid.onEditCustomCol=miczColumnsWizardPref.onEditCustomCol;
+	},
+
+	loadDefaultColRows:function(win){
+		let doc = win.document;
+		let container = doc.getElementById('ColumnsWizard.DefaultColsGrid');
+		miczColumnsWizardPref_DefaultColsGrid.createDefaultColsGridHeader(doc,container);
+		miczColumnsWizardPref_DefaultColsGrid.createDefaultColsGridRows(doc,container);
+	},
+
+	saveDefaultColRows:function(win){
+		let doc = win.document;
+		let container = doc.getElementById('ColumnsWizard.DefaultColsGrid');
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref] saveDefaultColRows called\r\n");
+		return miczColumnsWizardPref_DefaultColsGrid.saveDefaultColsGridRows(doc,container,false);
 	},
 
 	loadCustColRows:function(win){

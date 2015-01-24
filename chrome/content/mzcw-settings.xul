@@ -5,7 +5,8 @@
 <prefwindow id="ColumnsWizard_Settings"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   title="&ColumnsWizard.SettingsTitle;"
-  onload="miczColumnsWizardPref.onLoad(window);">
+  onload="miczColumnsWizardPref.onLoad(window);"
+   maxheight="420px">
   <prefpane id="ColumnsWizard_PrefPane">
     <preferences>
     <!-- Columns in Conversation Tab -->
@@ -23,13 +24,14 @@
         type="bool" />
     <!-- Custom Columns no pref needed here, all is managed directly by javascript code -->
     </preferences>
-    <tabbox id="cw_tabbox">
+    <tabbox id="cw_tabbox" maxheight="300px">
       <tabs>
         <tab label="&ColumnsWizard.TabConversation.label;"/>
         <tab label="&ColumnsWizard.TabCustomCols.label;"/>
+        <tab label="&ColumnsWizard.TabNewFolderDefault.label;"/>
         <tab label="&ColumnsWizard.TabInfo.label;"/>
       </tabs>
-      <tabpanels>
+      <tabpanels maxheight="300px">
         <tabpanel id="convtab" orient="vertical">
 			 <!-- Columns in Conversation Tab -->
           <label control="symbol" value="&ColumnsWizard.GlobalDescConvTab;"/>
@@ -100,6 +102,22 @@
     </rows>
   </grid>
           <description style="word-wrap:normal;max-width:550px;margin-bottom:10px;">&ColumnsWizard.CustomHeadersDescCustCols;</description>
+         </tabpanel>
+        <tabpanel id="tab_newfoldercols" orient="vertical">
+          <checkbox id="ColumnsWizard.DefaultColsList.active_checkbox" label="&ColumnsWizard.NewFolderCols.label;"
+            preference="ColumnsWizard.DefaultColsList.active"/>
+            <label control="symbol" value=" "/>
+		<vbox style="overflow:auto;" maxheight="250px">
+			<radiogroup id="cw_sortby"/>
+          <grid id="ColumnsWizard.GridUI">
+		  <columns>
+			<column/><column/><column flex="2"/><column flex="1"/><column/><column/>
+		  </columns>
+		  <rows id='ColumnsWizard.DefaultColsGrid' preference='ColumnsWizard.DefaultColsList' preference-editable="true" onsynctopreference='return miczColumnsWizardPref.saveDefaultColRows(window);'>
+		  </rows>
+		 </grid>
+		 </vbox>
+		 <hbox id="ColumnsWizard.SortOrderUI"><label control="symbol" value="&ColumnsWizard.NewFolderColsSortOrder.label;"/> <radiogroup id="cw_sortorder" orient="horizontal" preference="ColumnsWizard.DefaultColsList.SortOrder"><radio id="cw_sort_asc" label="&ColumnsWizard.NewFolderColsSortOrder.ASC.label;"  value="1"/> <radio id="cw_sort_desc" label="&ColumnsWizard.NewFolderColsSortOrder.DESC.label;" value="2"/></radiogroup></hbox>
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
 	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>
