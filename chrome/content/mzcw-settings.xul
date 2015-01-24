@@ -64,8 +64,7 @@
       </row>
       <row flex="1">
         <hbox>
-          <listbox id="ColumnsWizard.CustColsList" flex="1" onselect="miczColumnsWizardPref.updateButtons(window);"
-                   seltype="single">
+          <listbox id="ColumnsWizard.CustColsList" flex="1" height="201px" onselect="miczColumnsWizardPref.updateButtons(window);" seltype="single">
 			 <listcols>
 				<listcol maxwidth="32px"/>
 				<listcol flex="1"/>
