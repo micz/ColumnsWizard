@@ -13,6 +13,7 @@ var miczColumnsWizardPref = {
 		sizeToContent();
 
 		this.loadCustColRows(win);
+		miczColumnsWizardPref_CustomColsGrid.miczColumnsWizard_CustCols=miczColumnsWizard_CustCols;
 	},
 
 	loadCustColRows:function(win){

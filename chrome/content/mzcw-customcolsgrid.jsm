@@ -4,6 +4,8 @@
 var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_CustomColsGrid"];
 
 var miczColumnsWizardPref_CustomColsGrid = {
+	
+	miczColumnsWizard_CustCols:{},
 
 	createCustomColsListRows: function(doc,container,CustColRows){
 		for (let index in CustColRows) {
@@ -60,8 +62,8 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		// We have to attach this listener to the listitem, even though we only care
 		// about clicks on the enabledCell. However, attaching to that item doesn't
 		// result in any events actually getting received.
-		listitem.addEventListener("click", this.onFilterClick, true);
-		//listitem.addEventListener("dblclick", onFilterDoubleClick, true);
+		listitem.addEventListener("click", this.onItemClick, true);
+		//listitem.addEventListener("dblclick", onItemDoubleClick, true);
 		return listitem;
 	},
 
@@ -134,7 +136,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 	  return currentItem ? currentItem._customcol : null;
 	},
 
-	onFilterClick: function(event)
+	onItemClick: function(event)
 	{
 		// we only care about button 0 (left click) events
 		if (event.button != 0)
@@ -159,7 +161,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 	  //dump(">>>>>>>>>>>>> miczColumnsWizard: [currcol] "+JSON.stringify(currcol)+"\r\n");
 
 	  //miczColumnsWizardPref_CustomColsGrid.saveCustomColItem(currcol);
-	  miczColumnsWizard_CustCols.saveCustCol(currcol);
+	  this.miczColumnsWizard_CustCols.saveCustCol(currcol);
 
 	  // Now update the checkbox
 	  aCustColItem.childNodes[0].setAttribute("enabled", currcol.enabled);

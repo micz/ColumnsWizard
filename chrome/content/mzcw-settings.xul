@@ -137,6 +137,6 @@
       </tabpanels>
     </tabbox>
   </prefpane>
-  <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-settings.js" />
   <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-customcolumns.js" />
+  <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-settings.js" />
 </prefwindow>
