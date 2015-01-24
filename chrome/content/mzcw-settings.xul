@@ -21,22 +21,7 @@
       <preference id="ColumnsWizard.ShowRecipient"
         name="extensions.ColumnsWizard.ShowRecipient"
         type="bool" />
-    <!-- Custom Columns -->
-      <preference id="ColumnsWizard.CustCols.AddCc"
-        name="extensions.ColumnsWizard.CustCols.AddCc"
-        type="bool" />
-      <preference id="ColumnsWizard.CustCols.Addbcc"
-        name="extensions.ColumnsWizard.CustCols.Addbcc"
-        type="bool" />
-      <preference id="ColumnsWizard.CustCols.Addreplyto"
-        name="extensions.ColumnsWizard.CustCols.Addreplyto"
-        type="bool" />
-      <preference id="ColumnsWizard.CustCols.Addxoriginalfrom"
-        name="extensions.ColumnsWizard.CustCols.Addxoriginalfrom"
-        type="bool" />
-      <preference id="ColumnsWizard.CustCols.Addcontentbase"
-        name="extensions.ColumnsWizard.CustCols.Addcontentbase"
-        type="bool" />
+    <!-- Custom Columns no pref needed here, all is managed directly by javascript code -->
     </preferences>
     <tabbox id="cw_tabbox">
       <tabs>
@@ -112,17 +97,6 @@
       </row>
     </rows>
   </grid>
-
-          <checkbox id="ColumnsWizard.AddCc_checkbox" label="&ColumnsWizard.AddCc.label;"
-            preference="ColumnsWizard.CustCols.AddCc"/>
-          <checkbox id="ColumnsWizard.Addbcc_checkbox" label="&ColumnsWizard.Addbcc.label;"
-            preference="ColumnsWizard.CustCols.Addbcc"/>
-          <checkbox id="ColumnsWizard.Addreplyto_checkbox" label="&ColumnsWizard.Addreplyto.label;"
-            preference="ColumnsWizard.CustCols.Addreplyto"/>
-          <hbox><checkbox id="ColumnsWizard.Addxoriginalfrom_checkbox" label="&ColumnsWizard.Addxoriginalfrom.label;"
-            preference="ColumnsWizard.CustCols.Addxoriginalfrom"/> <label control="symbol" value="*"/></hbox>
-          <hbox><checkbox id="ColumnsWizard.Addcontentbase_checkbox" label="&ColumnsWizard.Addcontentbase.label;"
-            preference="ColumnsWizard.CustCols.Addcontentbase"/> <label control="symbol" value="*"/></hbox>
           <label control="symbol" value=" "/>
           <description style="word-wrap:normal;max-width:550px;margin-bottom:10px;">&ColumnsWizard.CustomHeadersDescCustCols;</description>
           <label control="symbol" value=" "/>
