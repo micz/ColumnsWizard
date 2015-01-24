@@ -16,6 +16,7 @@ var miczColumnsWizard = {
 		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
 
 		miczColumnsWizard.addNewCustColObserver(ObserverService);
+		miczColumnsWizard.deleteCustColObserver(ObserverService);
 
 		//Adding custom columns
 		miczColumnsWizard.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
@@ -59,6 +60,18 @@ var miczColumnsWizard = {
   			}
 		}
 		ObserverService.addObserver(CustColObserver,"CW-newCustomColumn",false);
+	},
+
+	deleteCustColObserver:function(ObserverService){
+		let CustColObserver = {
+			observe: function(aSubject,aTopic,aData){
+				//dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
+				let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+    			miczColumnsWizard_CustCols.removeCustomColumn(aData,ObserverService)
+				miczColumnsWizard_CustCols.deleteCustCol(aData);
+  			}
+		}
+		ObserverService.addObserver(CustColObserver,"CW-deleteCustomColumn",false);
 	},
 
 	addDbObserver:function(currcol){

@@ -75,8 +75,9 @@ var miczColumnsWizardPref = {
 
 		//delete the custom col
 		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-		miczColumnsWizard_CustCols.removeCustomColumn(col_idx,ObserverService)
-		miczColumnsWizard_CustCols.deleteCustCol(col_idx);
+		//miczColumnsWizard_CustCols.removeCustomColumn(col_idx,ObserverService)
+		//miczColumnsWizard_CustCols.deleteCustCol(col_idx);
+		ObserverService.notifyObservers(null,"CW-deleteCustomColumn",col_idx);
 
 		//remove the custom col from the listbox
 		miczColumnsWizardPref_CustomColsGrid.deleteOneCustomColRow(container,container.selectedIndex);
