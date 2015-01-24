@@ -3,7 +3,7 @@
 <!ENTITY ColumnsWizard.id.label "ID">
 <!ENTITY ColumnsWizard.id.desc "The ID is the unique identifier of the custom column. It can't be modified after the first save.">
 <!ENTITY ColumnsWizard.dbHeader.label "dbHeader">
-<!ENTITY ColumnsWizard.dbHeader.desc "The dbHeader is the mail messages' field that has to be shown on the message list in the Custom Column.">
+<!ENTITY ColumnsWizard.dbHeader.desc "The dbHeader is the mail messages' field that has to be shown on the message list in the Custom Column. It can't be modified after the first save.">
 <!ENTITY ColumnsWizard.labelString.label "Column Name">
 <!ENTITY ColumnsWizard.labelString.desc "Write here the name to be shown on the column header in the message list.">
 <!ENTITY ColumnsWizard.tooltipString.label "Tooltip">
