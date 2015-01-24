@@ -61,6 +61,13 @@ var miczColumnsWizardPref = {
 		let container = doc.getElementById('ColumnsWizard.CustColsList');
 
 		if(container.selectedIndex==-1) return;
+		
+		//Are you sure?
+		let prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
+		let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/settings.properties");
+
+		if(!prompts.confirm(null,_bundleCW.GetStringFromName("ColumnsWizard.deletePrompt.title"),_bundleCW.GetStringFromName("ColumnsWizard.deletePrompt.text"))) return;
 
 		//get the col id
 		let col_idx=container.selectedItem._customcol.index;
