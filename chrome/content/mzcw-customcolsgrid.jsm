@@ -65,6 +65,49 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		return listitem;
 	},
 
+	editOneCustomColRow:function(doc,container,currcol,idx_col){
+		let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
+
+		if (!container) return;
+		let listitem = container.getItemAtIndex(idx_col);
+		if(!listitem) return;
+		
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [editOneCustomColRow] listitem "+JSON.stringify(listitem)+"\r\n");
+		
+		let activeCell = listitem.childNodes[0];
+		activeCell.setAttribute("enabled",currcol.enabled);
+		if(currcol.isCustom){
+			activeCell.setAttribute("label","*");
+		}
+
+		let idCell = listitem.childNodes[1];
+		idCell.setAttribute("label",currcol.index);
+
+		let mailheaderCell = listitem.childNodes[2];
+		mailheaderCell.setAttribute("label",currcol.dbHeader);
+
+		let labelString = '';
+		let tooltipString = '';
+		if(currcol.isBundled){
+			labelString = _bundleCW.GetStringFromName("ColumnsWizard"+currcol.index+".label");
+			tooltipString = _bundleCW.GetStringFromName("ColumnsWizard"+currcol.index+"Desc.label");
+		}else{
+			labelString = currcol.labelString;
+			tooltipString = currcol.tooltipString;
+		}
+
+		let titleCell = listitem.childNodes[3];
+		titleCell.setAttribute("label",labelString);
+
+		let tooltipCell = listitem.childNodes[4];
+		tooltipCell.setAttribute("label",tooltipString);
+
+		listitem._customcol=currcol;
+
+		return listitem;
+	},
+
 	/*saveCustomColItem: function(currcol) {
 		let value = JSON.stringify(currcol);
 		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);

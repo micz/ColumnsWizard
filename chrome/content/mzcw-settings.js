@@ -66,13 +66,12 @@ var miczColumnsWizardPref = {
 
 		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xul", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
 
-		/*if (("save" in args && args.save)&& ("newcol" in args && args.newcol)){
-			miczColumnsWizard_CustCols.addNewCustCol(args.newcol);
-			miczColumnsWizardPref_CustomColsGrid.createOneCustomColRow(doc,container,args.newcol);
-			// Select the new custcols, it is at the end of the list.
-			container.selectedIndex=container.itemCount-1;
+		if (("save" in args && args.save)&& ("newcol" in args && args.newcol)){
+			miczColumnsWizard_CustCols.saveCustCol(args.newcol);
+			miczColumnsWizardPref_CustomColsGrid.editOneCustomColRow(doc,container,args.newcol,container.selectedIndex);
+			// Select the editedcustcols
 			container.ensureIndexIsVisible(container.selectedIndex);
-		}*/
+		}
 
 	},
 

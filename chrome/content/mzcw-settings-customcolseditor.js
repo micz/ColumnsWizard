@@ -48,11 +48,11 @@ var miczColumnsWizardPref_CustColEditor = {
 
 		if ("arguments" in window && window.arguments[0]){
 			let args = window.arguments[0];
+			let newcol={};
 
 			if ("action" in args){
 				switch (args.action){
 					case "new":  //Save new custom column
-						let newcol={};
 						//fixed val
 						newcol.isBundled=false;
 						newcol.isCustom=true;
@@ -68,7 +68,22 @@ var miczColumnsWizardPref_CustColEditor = {
 						window.arguments[0].save=true;
 						window.arguments[0].newcol=newcol;
 					break;
-					case "edit": //TODO
+					case "edit":	//Modify the custom column
+						let currcol=JSON.parse(args.currcol);
+						//fixed val
+						newcol.isBundled=false;
+						newcol.isCustom=true;
+						newcol.def="";
+						//get userinput val
+						newcol.index=currcol.index;
+						newcol.dbHeader=document.getElementById("ColumnsWizard.dbHeader").value;
+						newcol.labelString=document.getElementById("ColumnsWizard.labelString").value;
+						newcol.tooltipString=document.getElementById("ColumnsWizard.tooltipString").value;
+						newcol.enabled=document.getElementById("ColumnsWizard.enabled").checked;
+						//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
+						//miczColumnsWizard_CustCols.addNewCustCol(newcol);
+						window.arguments[0].save=true;
+						window.arguments[0].newcol=newcol;
 					break;
 				}
 			}
