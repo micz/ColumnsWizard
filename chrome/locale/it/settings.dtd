@@ -26,3 +26,4 @@
 <!ENTITY ColumnsWizard.newButton.label "Nuovo…">
 <!ENTITY ColumnsWizard.editButton.label "Modifica…">
 <!ENTITY ColumnsWizard.deleteButton.label "Elimina">
+<!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">

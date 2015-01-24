@@ -9,6 +9,7 @@ Version 5.0 - ??/??/2015
 - Added the save current folder columns as CW default option (accessible from the folder columns picker menu).
 - Added the settings panel to set the default columns for new folder.
 - Added the settings panel to add/delete/edit custom columns.
+- Added the x-spam-score bundled custom column (Used by SpamAssassin http://spamassassin.apache.org/).
 -
 ==========
 Version 4.0 - 04/07/2014

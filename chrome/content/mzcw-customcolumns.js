@@ -4,7 +4,7 @@
 var miczColumnsWizard_CustCols={
 
   //Bundled Custom Columns
-  CustColDefaultIndex:["cc","bcc","replyto","xoriginalfrom","contentbase"],
+  CustColDefaultIndex:["cc","bcc","replyto","xoriginalfrom","contentbase","xspamscore"],
   CreateDbObserver:new Array(),
 
   addCustomColumnHandler: function(coltype){
@@ -65,7 +65,7 @@ var miczColumnsWizard_CustCols={
     if(!cwCol){
       return;
     }
-    
+
     let labelString = '';
     let tooltipString = '';
     if(elementc.isBundled){
@@ -103,7 +103,7 @@ var miczColumnsWizard_CustCols={
 		CustColIndex=miczColumnsWizard_CustCols.CustColDefaultIndex;
 		prefs.setCharPref("index",JSON.stringify(CustColIndex));
 	}else{
-		CustColIndex=JSON.parse(CustColIndexStr);
+		CustColIndex=miczColumnsWizard_CustCols.checkCustColDefaultIndex(JSON.parse(CustColIndexStr));
 	}
     let loadedCustColPref=new Array();
     miczColumnsWizard_CustCols.checkDefaultCustomColumnPrefs();
@@ -117,6 +117,16 @@ var miczColumnsWizard_CustCols={
 		}
 	}
     return loadedCustColPref;
+  },
+
+  checkCustColDefaultIndex:function(curr_idx){
+		for (let idx in miczColumnsWizard_CustCols.CustColDefaultIndex){
+			if(curr_idx.indexOf(miczColumnsWizard_CustCols.CustColDefaultIndex[idx])==-1){
+				curr_idx.push(miczColumnsWizard_CustCols.CustColDefaultIndex[idx]);
+			}
+		}
+		//dump(">>>>>>>>>>>>> miczColumnsWizard->checkCustColDefaultIndex: curr_idx "+JSON.stringify(curr_idx)+"\r\n");
+		return curr_idx;
   },
 
   checkDefaultCustomColumnPrefs: function(){
@@ -160,6 +170,12 @@ var miczColumnsWizard_CustCols={
 						dcurrcol.dbHeader = "content-base";
 						dcurrcol.isCustom=true;
 						break;
+					case 'xspamscore':
+						dcurrcol.enabled = false;
+						dcurrcol.def = "";
+						dcurrcol.dbHeader = "x-spam-score";
+						dcurrcol.isCustom=true;
+						break;
 				}
 				dcurrcol.index=miczColumnsWizard_CustCols.CustColDefaultIndex[singlecolidx];
 				dcurrcol.isBundled=true;
@@ -193,7 +209,7 @@ var miczColumnsWizard_CustCols={
 			CustColIndex=miczColumnsWizard_CustCols.CustColDefaultIndex;
 			prefs.setCharPref("index",JSON.stringify(CustColIndex));
 		}else{
-			CustColIndex=JSON.parse(CustColIndexStr);
+			CustColIndex=miczColumnsWizard_CustCols.checkCustColDefaultIndex(JSON.parse(CustColIndexStr));
 		}
 		//Add new element to index and save it
 		CustColIndex.push(index);

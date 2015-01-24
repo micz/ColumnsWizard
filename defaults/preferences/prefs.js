@@ -14,5 +14,6 @@ pref("extensions.ColumnsWizard.CustCols.def.bcc", "");
 pref("extensions.ColumnsWizard.CustCols.def.replyto", "");
 pref("extensions.ColumnsWizard.CustCols.def.xoriginalfrom", "");
 pref("extensions.ColumnsWizard.CustCols.def.contentbase", "");
+pref("extensions.ColumnsWizard.CustCols.def.xspamscore", "");
 pref("extensions.ColumnsWizard.DefaultColsList", "");
 pref("extensions.ColumnsWizard.DefaultColsList.active", true);
