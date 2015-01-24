@@ -1,6 +1,5 @@
 <!ENTITY ColumnsWizard.window.title "Custom Column Editor">
 <!ENTITY ColumnsWizard.Desc.label "Insert the new custom column information.">
-<!ENTITY ColumnsWizard.DescEdit.label "Modify the custom column information. You can't modify the ID.">
 <!ENTITY ColumnsWizard.id.label "ID">
 <!ENTITY ColumnsWizard.id.desc "The ID is the unique identifier of the custom column. It can't be modified after the first save.">
 <!ENTITY ColumnsWizard.dbHeader.label "dbHeader">

@@ -24,7 +24,7 @@
 
   <vbox id="cw_vbox" flex="1">
     <groupbox>
-      <caption label="&ColumnsWizard.Desc.label;"/>
+      <caption id="cw_desc.label" label="&ColumnsWizard.Desc.label;"/>
       <separator class="thin"/>
       <grid>
         <columns>

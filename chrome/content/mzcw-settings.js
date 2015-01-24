@@ -55,6 +55,26 @@ var miczColumnsWizardPref = {
 		}
 
 	},
+	
+	onEditCustomCol: function(win){
+		let doc = win.document;
+		let container = doc.getElementById('ColumnsWizard.CustColsList');
+		
+		if(container.selectedIndex==-1) return;
+
+		let args = {"action":"edit","currcol":JSON.stringify(container.selectedItem._customcol)};
+
+		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xul", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
+
+		/*if (("save" in args && args.save)&& ("newcol" in args && args.newcol)){
+			miczColumnsWizard_CustCols.addNewCustCol(args.newcol);
+			miczColumnsWizardPref_CustomColsGrid.createOneCustomColRow(doc,container,args.newcol);
+			// Select the new custcols, it is at the end of the list.
+			container.selectedIndex=container.itemCount-1;
+			container.ensureIndexIsVisible(container.selectedIndex);
+		}*/
+
+	},
 
 	onDeleteCustomCol: function(win){
 		let doc = win.document;

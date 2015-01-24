@@ -18,9 +18,23 @@ var miczColumnsWizardPref_CustColEditor = {
 
 			if ("action" in args){
 				switch (args.action){
-					case "new": //window.document.getElementById("ColumnsWizard.dbHeader").setAttribute("value","ok");
-					break;
-					case "edit": //TODO
+					//case "new": //window.document.getElementById("ColumnsWizard.dbHeader").setAttribute("value","ok");
+					//break;
+					case "edit":
+						let currcol=JSON.parse(args.currcol);
+						let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+						let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
+						document.getElementById("cw_desc.label").label=_bundleCW.GetStringFromName("ColumnsWizard.DescEdit.label");
+
+						//fill the fields
+						document.getElementById("ColumnsWizard.id").setAttribute("value",currcol.index);
+						document.getElementById("ColumnsWizard.dbHeader").setAttribute("value",currcol.dbHeader);
+						document.getElementById("ColumnsWizard.labelString").setAttribute("value",currcol.labelString);
+						document.getElementById("ColumnsWizard.tooltipString").setAttribute("value",currcol.tooltipString);
+						document.getElementById("ColumnsWizard.enabled").setAttribute("checked",currcol.enabled);
+						
+						//disable the ID field
+						document.getElementById("ColumnsWizard.id").disabled=true;				
 					break;
 				}
 			}
