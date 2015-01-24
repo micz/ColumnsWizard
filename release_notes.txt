@@ -6,7 +6,9 @@ Version 5.0 - ??/??/2015
 - Added the default column handling show for new folders.
 - Added the reset to CW default option (accessible from the folder columns picker menu).
 - Added the save current folder columns as CW default option (accessible from the folder columns picker menu).
-- 
+- Added the settings panel to set the default columns for new folder.
+- Added the settings panel to add/delete/edit custom columns.
+-
 ==========
 Version 4.0 - 04/07/2014
 - Added the "Info" tab.
