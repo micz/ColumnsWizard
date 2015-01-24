@@ -14,6 +14,8 @@ var miczColumnsWizardPref = {
 
 		this.loadCustColRows(win);
 		miczColumnsWizardPref_CustomColsGrid.miczColumnsWizard_CustCols=miczColumnsWizard_CustCols;
+		miczColumnsWizardPref_CustomColsGrid.win=win;
+		miczColumnsWizardPref_CustomColsGrid.onEditCustomCol=miczColumnsWizardPref.onEditCustomCol;
 	},
 
 	loadCustColRows:function(win){
@@ -62,6 +64,7 @@ var miczColumnsWizardPref = {
 		let container = doc.getElementById('ColumnsWizard.CustColsList');
 		
 		if(container.selectedIndex==-1) return;
+		if(doc.getElementById("editButton").disabled) return;
 
 		let args = {"action":"edit","currcol":JSON.stringify(container.selectedItem._customcol)};
 
@@ -81,6 +84,7 @@ var miczColumnsWizardPref = {
 		let container = doc.getElementById('ColumnsWizard.CustColsList');
 
 		if(container.selectedIndex==-1) return;
+		if(doc.getElementById("deleteButton").disabled) return;
 		
 		//Are you sure?
 		let prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
