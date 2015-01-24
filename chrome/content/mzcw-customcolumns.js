@@ -55,6 +55,30 @@ var miczColumnsWizard_CustCols={
    	ObserverService.addObserver(miczColumnsWizard_CustCols.CreateDbObserver[coltype], "MsgCreateDBView", false);
   },
 
+  updateCustomColumn: function(elementc){
+    let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+    let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
+
+	let coltype=elementc.index;
+	let cwCol=document.getElementById(coltype+"Col_cw")
+
+    if(!cwCol){
+      return;
+    }
+    
+    let labelString = '';
+    let tooltipString = '';
+    if(elementc.isBundled){
+		labelString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+".label");
+		tooltipString = _bundleCW.GetStringFromName("ColumnsWizard"+coltype+"Desc.label");
+	}else{
+		labelString = elementc.labelString;
+		tooltipString = elementc.tooltipString;
+	}
+    cwCol.setAttribute("label",labelString);
+    cwCol.setAttribute("tooltiptext",tooltipString);
+  },
+
     removeCustomColumn: function(coltype,ObserverService){
       let element = document.getElementById(coltype+"Col_cw");
       if(element) element.parentNode.removeChild(element);
@@ -150,6 +174,12 @@ var miczColumnsWizard_CustCols={
 		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
 		miczColumnsWizard_CustCols.addCustColIndex(newcol.index);
 		ObserverService.notifyObservers(null,"CW-newCustomColumn",JSON.stringify(newcol));
+		miczColumnsWizard_CustCols.saveCustCol(newcol);
+	},
+
+	updateCustCol:function(newcol){
+		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+		ObserverService.notifyObservers(null,"CW-updateCustomColumn",JSON.stringify(newcol));
 		miczColumnsWizard_CustCols.saveCustCol(newcol);
 	},
 

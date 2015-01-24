@@ -71,7 +71,9 @@ var miczColumnsWizardPref = {
 		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xul", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
 
 		if (("save" in args && args.save)&& ("newcol" in args && args.newcol)){
-			miczColumnsWizard_CustCols.saveCustCol(args.newcol);
+			//save the cust col in the pref
+			miczColumnsWizard_CustCols.updateCustCol(args.newcol);
+			//update the cust col in the listbox
 			miczColumnsWizardPref_CustomColsGrid.editOneCustomColRow(doc,container,args.newcol,container.selectedIndex);
 			// Select the editedcustcols
 			container.ensureIndexIsVisible(container.selectedIndex);
