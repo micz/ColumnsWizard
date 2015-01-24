@@ -35,14 +35,14 @@
           <row>
 			<label value="&ColumnsWizard.id.label;"/>
 			<vbox>
-				<textbox id="ColumnsWizard.id" onblur="miczColumnsWizardPref_CustColEditor.sanitize_ID();"/>
+				<textbox id="ColumnsWizard.id" onblur="miczColumnsWizardPref_CustColEditor.onBlur_sanitize_ID();"/>
 				<description class="cw_field_label">&ColumnsWizard.id.desc;</description>
 			</vbox>
           </row>
           <row>
 			<label value="&ColumnsWizard.dbHeader.label;"/>
 			<vbox>
-				<textbox id="ColumnsWizard.dbHeader" onblur="miczColumnsWizardPref_CustColEditor.sanitize_dbHeader();"/>
+				<textbox id="ColumnsWizard.dbHeader" onblur="miczColumnsWizardPref_CustColEditor.onBlur_sanitize_dbHeader();"/>
 				<description class="cw_field_label">&ColumnsWizard.dbHeader.desc;</description>
 			</vbox>
           </row>

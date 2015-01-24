@@ -4,6 +4,9 @@ Components.utils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm"
 
 var miczColumnsWizard={};
 var miczColumnsWizardPref_CustColEditor = {
+	
+	_sanitize_ID_regex:"([A-Za-z0-9\-\_]+)",
+	_sanitize_dbHeader_regex:"([\x21-\x7E2]+)",
 
 	onLoad: function(){
 
@@ -102,16 +105,16 @@ var miczColumnsWizardPref_CustColEditor = {
 		return true;
 	},
 	
-	sanitize_ID:function(){
-		let re=new RegExp("([A-Za-z0-9\-\_]+)",'ig');
+	onBlur_sanitize_ID:function(){
+		let re=new RegExp(miczColumnsWizardPref_CustColEditor._sanitize_ID_regex,'ig');
 		let el=document.getElementById('ColumnsWizard.id');
 		if(el.value.match(re)!=null){
 			el.value=el.value.match(re).join('');
 		}
 	},
 	
-	sanitize_dbHeader:function(){
-		let re=new RegExp("([\x21-\x7E2]+)",'g');
+	onBlur_sanitize_dbHeader:function(){
+		let re=new RegExp(miczColumnsWizardPref_CustColEditor._sanitize_dbHeader_regex,'g');
 		let el=document.getElementById('ColumnsWizard.dbHeader');
 		if(el.value.match(re)!=null){
 			el.value=el.value.match(re).join('').replace(':','');
