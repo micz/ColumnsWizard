@@ -94,11 +94,12 @@
                   oncommand="miczColumnsWizardPref.onDeleteCustomCol(window);" disabled="true"/>
         </hbox>
       </row>
+      <row>
+        <separator class="thin"/>
+      </row>
     </rows>
   </grid>
-          <label control="symbol" value=" "/>
           <description style="word-wrap:normal;max-width:550px;margin-bottom:10px;">&ColumnsWizard.CustomHeadersDescCustCols;</description>
-          <label control="symbol" value=" "/>
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
 	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>
