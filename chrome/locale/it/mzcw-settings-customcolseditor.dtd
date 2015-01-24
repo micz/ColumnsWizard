@@ -1,5 +1,5 @@
 <!ENTITY ColumnsWizard.window.title "Editor Colonna Aggiuntiva">
-<!ENTITY ColumnsWizard.Desc.label "Inserisci le informazioni della nuova colonna aggiuntiva.">
+<!ENTITY ColumnsWizard.Desc.label "Inserisci le informazioni della nuova colonna aggiuntiva. Tutti i campi sono obbligatori.">
 <!ENTITY ColumnsWizard.id.label "ID">
 <!ENTITY ColumnsWizard.id.desc "L'ID serve per identificare univocamente la colonna aggiuntiva. Non può essere modificato dopo il primo salvataggio.">
 <!ENTITY ColumnsWizard.dbHeader.label "dbHeader">

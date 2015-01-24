@@ -108,11 +108,17 @@ var miczColumnsWizardPref_CustColEditor = {
 	},
 
 	checkFields:function(){
-		//TODO... also message prompts on error...
-		/* example   Services.prompt.alert(window,
-                          gFilterBundle.getString("cannotHaveDuplicateFilterTitle"),
-                          gFilterBundle.getString("cannotHaveDuplicateFilterMessage"));
-		 */
+		//The fields must be filled!!
+		//The input are already sanitized elsewhere...
+		if((document.getElementById("ColumnsWizard.id").value=="")||(document.getElementById("ColumnsWizard.dbHeader").value=="")||(document.getElementById("ColumnsWizard.labelString").value=="")||(document.getElementById("ColumnsWizard.tooltipString").value=="")){
+			let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+			let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
+			let prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
+			prompts.alert(window,
+                          _bundleCW.GetStringFromName("ColumnsWizard.emptyFields.title"),
+                          _bundleCW.GetStringFromName("ColumnsWizard.emptyFields.text"));
+			return false;
+		}
 		return true;
 	},
 	
