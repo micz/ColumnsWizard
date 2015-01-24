@@ -101,5 +101,21 @@ var miczColumnsWizardPref_CustColEditor = {
 		 */
 		return true;
 	},
+	
+	sanitize_ID:function(){
+		let re=new RegExp("([A-Za-z0-9\-\_]+)",'ig');
+		let el=document.getElementById('ColumnsWizard.id');
+		if(el.value.match(re)!=null){
+			el.value=el.value.match(re).join('');
+		}
+	},
+	
+	sanitize_dbHeader:function(){
+		let re=new RegExp("([\x21-\x7E2]+)",'g');
+		let el=document.getElementById('ColumnsWizard.dbHeader');
+		if(el.value.match(re)!=null){
+			el.value=el.value.match(re).join('').replace(':','');
+		}
+	},
 
 };
