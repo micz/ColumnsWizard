@@ -6,7 +6,6 @@
 <!ENTITY ColumnsWizard.ShowRecipient.label "Empfänger">
 <!ENTITY ColumnsWizard.TabConversation.label "Ansicht im Themenbaum">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Spezial Spalten">
-<!ENTITY ColumnsWizard.GlobalDescCustCols "Wählen sie hier welche Spalten Sie hinzufügen wollen.">
 <!ENTITY ColumnsWizard.WarnDescCustCols "Die hier ausgewählten Spalten müssen in der jeweiligen Ordneransicht (anzuzeigende Spalten) sichtbar gemacht werden. Falls Sie eine Spalte entfernen und wieder hinzufügen muss diese erneut sichtbar gemacht werden.">
 <!ENTITY ColumnsWizard.AddCc.label "Kopie (CC)">
 <!ENTITY ColumnsWizard.TabInfo.label "Info">
