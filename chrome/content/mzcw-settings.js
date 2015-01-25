@@ -24,6 +24,7 @@ var miczColumnsWizardPref = {
 	loadDefaultColRows:function(win){
 		let doc = win.document;
 		let container = doc.getElementById('ColumnsWizard.DefaultColsGrid');
+		miczColumnsWizardPref_DefaultColsGrid.loadedCustCols=miczColumnsWizard_CustCols.loadCustCols();
 		miczColumnsWizardPref_DefaultColsGrid.createDefaultColsGridHeader(doc,container);
 		miczColumnsWizardPref_DefaultColsGrid.createDefaultColsGridRows(doc,container);
 	},
@@ -114,7 +115,7 @@ var miczColumnsWizardPref = {
 
 		//get the col id
 		let col_idx=container.selectedItem._customcol.index;
-		dump(">>>>>>>>>>>>> miczColumnsWizard: [onDeleteCustomCol] col_idx ["+col_idx+"]\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [onDeleteCustomCol] col_idx ["+col_idx+"]\r\n");
 
 		//delete the custom col
 		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);

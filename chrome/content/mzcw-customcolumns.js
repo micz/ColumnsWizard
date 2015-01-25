@@ -106,6 +106,7 @@ var miczColumnsWizard_CustCols={
 		CustColIndex=miczColumnsWizard_CustCols.checkCustColDefaultIndex(JSON.parse(CustColIndexStr));
 	}
     let loadedCustColPref=new Array();
+	//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizard_CustCols] CustColIndex: "+JSON.stringify(CustColIndex)+"\r\n");
     miczColumnsWizard_CustCols.checkDefaultCustomColumnPrefs();
     for (let singlecolidx in CustColIndex) {
 		//dump(">>>>>>>>>>>>> miczColumnsWizard->loadCustCols: [CustColIndex[singlecolidx]] "+CustColIndex[singlecolidx]+"\r\n");
@@ -116,6 +117,7 @@ var miczColumnsWizard_CustCols={
 			miczColumnsWizard_CustCols.removeCustColIndex(CustColIndex[singlecolidx]);
 		}
 	}
+	//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizard_CustCols] loadedCustColPref: "+JSON.stringify(loadedCustColPref)+"\r\n");
     return loadedCustColPref;
   },
 

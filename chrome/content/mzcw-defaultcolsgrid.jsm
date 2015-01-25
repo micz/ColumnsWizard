@@ -4,6 +4,8 @@ var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_DefaultColsGrid"];
 const colClass = 'cw-col-class';
 
 var miczColumnsWizardPref_DefaultColsGrid = {
+	
+	loadedCustCols:{},
 
 	loadDefaultColRows_Pref:function(){
 		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
@@ -304,7 +306,17 @@ var miczColumnsWizardPref_DefaultColsGrid = {
        		strOut = _bundleCW.GetStringFromName("ColumnsWizard.attachmentColumn.label");
        		break;
        		default:
-       		   // TODO after the merge with newprefpanel branch
+				let col_idx=col.replace('Col_cw','');
+				let col_el=this.loadedCustCols[col_idx];
+				//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid] col_idx "+col_idx+"\r\n");
+				let _bundleCW_overlay = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
+			    if(this.loadedCustCols[col_idx]){
+					if(col_el.isBundled){
+						strOut=_bundleCW_overlay.GetStringFromName("ColumnsWizard"+col_el.index+".label");
+					}else{
+						strOut=col_el.labelString;
+					}
+				}
        		break;
 	   }
 	   return strOut;
