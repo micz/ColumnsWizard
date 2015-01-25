@@ -31,7 +31,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			}
 		}
 		prefs.setCharPref("DefaultColsList",JSON.stringify(loadedDefaultColIndex));
-		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
+		dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
 		return loadedDefaultColIndex;
 	},
 
@@ -72,7 +72,8 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		//Sort the columns, by the ordinal value...
 		let sorted_cols = [];
 		for (let cwcol in DefColRows){
-			  sorted_cols.push([cwcol, DefColRows[cwcol].ordinal]);
+			  let col_ordinal=DefColRows[cwcol].ordinal==0?99:DefColRows[cwcol].ordinal;
+			  sorted_cols.push([cwcol, col_ordinal]);
 		  }
 		sorted_cols.sort(function(a, b) {return a[1] - b[1]})
 		
