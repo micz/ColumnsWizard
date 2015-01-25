@@ -12,32 +12,34 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		let loadedDefaultColIndex=new Array();
 		if(DefaultColIndexStr==''){
 			//Set default cols if none set at the moment
-			loadedDefaultColIndex=this.getOriginalColIndex();
-			//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] default loaded and saved pref\r\n");
-			prefs.setCharPref("DefaultColsList",JSON.stringify(loadedDefaultColIndex));
+			loadedDefaultColIndex=miczColumnsWizardPref_DefaultColsGrid.getOriginalColIndex();
+			dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] default loaded and saved pref\r\n");
 		}else{
 			loadedDefaultColIndex=JSON.parse(DefaultColIndexStr);
-			//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] pref loaded\r\n");
-			//check if there are new columns to add
-			let baseColumnStates=this.getOriginalColIndex();
-			if(Object.keys(baseColumnStates).length!=Object.keys(loadedDefaultColIndex).length){ // if the length are different so check the column to add
-			//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] different lengths\r\n");
-				for (let key in baseColumnStates) {
-				  if (!loadedDefaultColIndex.hasOwnProperty(key)){
-					loadedDefaultColIndex[key]=baseColumnStates[key];
-					//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] key not found "+key+"\r\n");
-				  }
-				}
+			dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] pref loaded\r\n");
+		}
+		//check if there are new columns to add
+		let baseColumnStates=miczColumnsWizardPref_DefaultColsGrid.getOriginalColIndex();
+		dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid] baseColumnState "+JSON.stringify(baseColumnStates)+"\r\n");
+		if(Object.keys(baseColumnStates).length!=Object.keys(loadedDefaultColIndex).length){ // if the length are different so check the column to add
+		dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] different lengths\r\n");
+			for (let key in baseColumnStates) {
+			  if (!loadedDefaultColIndex.hasOwnProperty(key)){
+				loadedDefaultColIndex[key]=baseColumnStates[key];
+				//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] key not found "+key+"\r\n");
+			  }
 			}
 		}
-		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
+		prefs.setCharPref("DefaultColsList",JSON.stringify(loadedDefaultColIndex));
+		dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
 		return loadedDefaultColIndex;
 	},
 
 	getOriginalColIndex:function(){
 		var wMediator = Components.classes["@mozilla.org/appshell/window-mediator;1"].getService(Components.interfaces.nsIWindowMediator);
 		var mainWindow = wMediator.getMostRecentWindow("mail:3pane");
-		return mainWindow.gFolderDisplay._getDefaultColumnsForCurrentFolder();
+		//return mainWindow.gFolderDisplay._getDefaultColumnsForCurrentFolder(); //this version doesn't get custom columns
+		return mainWindow.gFolderDisplay.getColumnStates();
 	},
 
 	createDefaultColsGridHeader: function(doc,container) {
