@@ -143,7 +143,7 @@
         </tabpanel>
         <tabpanel id="convtab" orient="vertical">
 			 <!-- Columns in Conversation Tab -->
-          <label control="symbol" value="&ColumnsWizard.GlobalDescConvTab;"/>
+          <label control="symbol" class="mzcw-desc" value="&ColumnsWizard.GlobalDescConvTab;"/>
           <label control="symbol" value=" "/>
           <checkbox id="ColumnsWizard.ShowLocation_checkbox" label="&ColumnsWizard.ShowLocation.label;"
             preference="ColumnsWizard.ShowLocation" />
@@ -156,11 +156,31 @@
         </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
 	         <!-- Info Tab -->
-	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>
-          <label control="symbol" value=" "/>
-	        <label value="&ColumnsWizard.DonateLink;" class="text-link mzcw-donate" href="http://micz.it/thunderdbird-addon-columnswizard/donate/"/>
-          <label control="symbol" value=" "/>
-          <label control="symbol" style="font-size:0.8em;text-align:right;" value="&ColumnsWizard.TranslateCredits;"/>
+ 	  <grid>
+		<columns>
+		  <column flex="1"/>
+		</columns>
+		<rows>
+	    <row>
+           <separator class="thin"/>
+        </row>
+      <row>
+		  <description class="mzcw-desc-big">&ColumnsWizard.InfoMainDesc;</description>
+	  </row>
+	    <row>
+           <separator class="thin"/>
+        </row>
+		<row>
+           <label value="&ColumnsWizard.DonateLink;" class="text-link mzcw-donate" href="http://micz.it/thunderdbird-addon-columnswizard/donate/"/>
+        </row>
+         <row>
+           <separator class="thin"/>
+        </row>
+         <row>
+           <label control="symbol" class="mzcw-credits" value="&ColumnsWizard.TranslateCredits;"/>
+        </row>
+        </rows>
+        </grid>
         </tabpanel>
       </tabpanels>
     </tabbox>
