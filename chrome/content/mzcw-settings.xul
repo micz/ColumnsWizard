@@ -118,11 +118,14 @@
          </tabpanel>
         <tabpanel id="tab_newfoldercols" orient="vertical">
 			<!-- New Folder Columns -->
-	  <grid height="300px">
+	  <grid height="280px">
 		<columns>
 		  <column flex="1"/>
 		</columns>
 		<rows>
+      <row>
+		  <description class="mzcw-desc">&ColumnsWizard.NewFolderCols.Desc;</description>
+	  </row>
 		  <row>
           <checkbox id="ColumnsWizard.DefaultColsList.active_checkbox" label="&ColumnsWizard.NewFolderCols.label;"
             preference="ColumnsWizard.DefaultColsList.active"/>
@@ -130,8 +133,8 @@
           <row>
             <separator class="thin"/>
            </row>
-         <row height="295px">
-		<vbox style="overflow:auto;" height="295px">
+         <row height="260px">
+		<vbox style="overflow:auto;" height="260px">
 			<radiogroup id="cw_sortby"/>
           <grid id="ColumnsWizard.GridUI">
 		  <columns>
