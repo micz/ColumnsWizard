@@ -35,25 +35,12 @@
     </preferences>
     <tabbox id="cw_tabbox">
       <tabs>
-        <tab label="&ColumnsWizard.TabConversation.label;"/>
         <tab label="&ColumnsWizard.TabCustomCols.label;"/>
         <tab label="&ColumnsWizard.TabNewFolderDefault.label;"/>
+        <tab label="&ColumnsWizard.TabConversation.label;"/>
         <tab label="&ColumnsWizard.TabInfo.label;"/>
       </tabs>
       <tabpanels>
-        <tabpanel id="convtab" orient="vertical">
-			 <!-- Columns in Conversation Tab -->
-          <label control="symbol" value="&ColumnsWizard.GlobalDescConvTab;"/>
-          <label control="symbol" value=" "/>
-          <checkbox id="ColumnsWizard.ShowLocation_checkbox" label="&ColumnsWizard.ShowLocation.label;"
-            preference="ColumnsWizard.ShowLocation" />
-          <checkbox id="ColumnsWizard.ShowAccount_checkbox" label="&ColumnsWizard.ShowAccount.label;"
-            preference="ColumnsWizard.ShowAccount" />
-          <checkbox id="ColumnsWizard.ShowAttachment_checkbox" label="&ColumnsWizard.ShowAttachment.label;"
-            preference="ColumnsWizard.ShowAttachment" />
-          <checkbox id="ColumnsWizard.ShowRecipient_checkbox" label="&ColumnsWizard.ShowRecipient.label;"
-            preference="ColumnsWizard.ShowRecipient" />
-        </tabpanel>
         <tabpanel id="custcols" orient="vertical">
 			<!-- Custom Columns -->
   <grid height="300px">
@@ -154,7 +141,21 @@
 		 </rows>
 		 </grid>
         </tabpanel>
+        <tabpanel id="convtab" orient="vertical">
+			 <!-- Columns in Conversation Tab -->
+          <label control="symbol" value="&ColumnsWizard.GlobalDescConvTab;"/>
+          <label control="symbol" value=" "/>
+          <checkbox id="ColumnsWizard.ShowLocation_checkbox" label="&ColumnsWizard.ShowLocation.label;"
+            preference="ColumnsWizard.ShowLocation" />
+          <checkbox id="ColumnsWizard.ShowAccount_checkbox" label="&ColumnsWizard.ShowAccount.label;"
+            preference="ColumnsWizard.ShowAccount" />
+          <checkbox id="ColumnsWizard.ShowAttachment_checkbox" label="&ColumnsWizard.ShowAttachment.label;"
+            preference="ColumnsWizard.ShowAttachment" />
+          <checkbox id="ColumnsWizard.ShowRecipient_checkbox" label="&ColumnsWizard.ShowRecipient.label;"
+            preference="ColumnsWizard.ShowRecipient" />
+        </tabpanel>
         <tabpanel id="tab_info" orient="vertical">
+	         <!-- Info Tab -->
 	        <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.InfoMainDesc;</description>
           <label control="symbol" value=" "/>
 	        <label value="&ColumnsWizard.DonateLink;" class="text-link mzcw-donate" href="http://micz.it/thunderdbird-addon-columnswizard/donate/"/>
