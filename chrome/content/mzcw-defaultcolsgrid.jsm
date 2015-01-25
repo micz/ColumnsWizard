@@ -13,16 +13,16 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		if(DefaultColIndexStr==''){
 			//Set default cols if none set at the moment
 			loadedDefaultColIndex=miczColumnsWizardPref_DefaultColsGrid.getOriginalColIndex();
-			dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] default loaded and saved pref\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] default loaded and saved pref\r\n");
 		}else{
 			loadedDefaultColIndex=JSON.parse(DefaultColIndexStr);
-			dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] pref loaded\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] pref loaded\r\n");
 		}
 		//check if there are new columns to add
 		let baseColumnStates=miczColumnsWizardPref_DefaultColsGrid.getOriginalColIndex();
-		dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid] baseColumnState "+JSON.stringify(baseColumnStates)+"\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid] baseColumnState "+JSON.stringify(baseColumnStates)+"\r\n");
 		if(Object.keys(baseColumnStates).length!=Object.keys(loadedDefaultColIndex).length){ // if the length are different so check the column to add
-		dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] different lengths\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] different lengths\r\n");
 			for (let key in baseColumnStates) {
 			  if (!loadedDefaultColIndex.hasOwnProperty(key)){
 				loadedDefaultColIndex[key]=baseColumnStates[key];
@@ -31,7 +31,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			}
 		}
 		prefs.setCharPref("DefaultColsList",JSON.stringify(loadedDefaultColIndex));
-		dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
 		return loadedDefaultColIndex;
 	},
 
