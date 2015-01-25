@@ -4,7 +4,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>columnswizard@micz.it</em:id>
     <em:type>2</em:type>
-    <em:version>5.0alpha</em:version>
+    <em:version>5.0alpha2</em:version>
     <em:name>ColumnsWizard</em:name>
     <em:description>This is a Thunderbird addon that adds some magic to the folder list columns. It shows hidden columns in the Conversation Tab, and makes possible to add custom columns to any folder.</em:description>
     <em:iconURL>chrome://columnswizard/skin/mzcw-icon.png</em:iconURL>
