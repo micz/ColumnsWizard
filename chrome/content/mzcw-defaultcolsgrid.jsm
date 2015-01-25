@@ -31,7 +31,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			}
 		}
 		prefs.setCharPref("DefaultColsList",JSON.stringify(loadedDefaultColIndex));
-		dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
 		return loadedDefaultColIndex;
 	},
 
@@ -235,9 +235,9 @@ var miczColumnsWizardPref_DefaultColsGrid = {
         //this.syncToPerf(true);
         this.saveDefaultColsGridRows(doc,container,true);
       }
-    /*} catch(err) {
-      dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid upDownCol error] "+err+"\r\n");
-    }*/
+    //} catch(err) {
+      //dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid upDownCol error] "+err+"\r\n");
+    //}
   },
 
 	getColLocalizedString:function(col){
@@ -395,38 +395,3 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 	},
 
 };
-
-
-
-/*
-59 interface nsMsgViewSortType
-60 {
-61   const nsMsgViewSortTypeValue byNone = 0x11; // not sorted
-62   const nsMsgViewSortTypeValue byDate = 0x12;
-63   const nsMsgViewSortTypeValue bySubject = 0x13;
-64   const nsMsgViewSortTypeValue byAuthor = 0x14;
-65   const nsMsgViewSortTypeValue byId = 0x15;
-66   const nsMsgViewSortTypeValue byThread = 0x16;
-67   const nsMsgViewSortTypeValue byPriority = 0x17;
-68   const nsMsgViewSortTypeValue byStatus = 0x18;
-69   const nsMsgViewSortTypeValue bySize = 0x19;
-70   const nsMsgViewSortTypeValue byFlagged = 0x1a;
-71   const nsMsgViewSortTypeValue byUnread = 0x1b;
-72   const nsMsgViewSortTypeValue byRecipient = 0x1c;
-73   const nsMsgViewSortTypeValue byLocation = 0x1d;
-74   const nsMsgViewSortTypeValue byTags = 0x1e;
-75   const nsMsgViewSortTypeValue byJunkStatus = 0x1f;
-76   const nsMsgViewSortTypeValue byAttachments = 0x20;
-77   const nsMsgViewSortTypeValue byAccount = 0x21;
-78   const nsMsgViewSortTypeValue byCustom = 0x22;
-79   const nsMsgViewSortTypeValue byReceived = 0x23;
-80 };
-*
-*
-* 469   /**
-470    * The custom column to use for sorting purposes (when sort type is
-471    *  nsMsgViewSortType.byCustom.)
-472
-473   attribute AString curCustomColumn;
- *
- * */
