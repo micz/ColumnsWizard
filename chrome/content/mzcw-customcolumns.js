@@ -112,7 +112,7 @@ var miczColumnsWizard_CustCols={
 		try{
 			loadedCustColPref[CustColIndex[singlecolidx]]=JSON.parse(prefs_def.getCharPref(CustColIndex[singlecolidx]));
 		}catch(ex){
-			//We have and index, but no preference for it, so we remove it...
+			//We have an index, but no preference for it, so we remove it...
 			miczColumnsWizard_CustCols.removeCustColIndex(CustColIndex[singlecolidx]);
 		}
 	}
