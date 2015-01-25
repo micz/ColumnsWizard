@@ -56,22 +56,16 @@
         </tabpanel>
         <tabpanel id="custcols" orient="vertical">
 			<!-- Custom Columns -->
-          <vbox class="mzcw-warn">
-	    <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.WarnDescCustCols;</description>
-          </vbox>
   <grid height="300px">
     <columns>
       <column flex="1"/>
-      <column/>
     </columns>
     <rows>
       <row>
         <separator class="thin"/>
       </row>
       <row>
-        <hbox>
           <label control="symbol" value="&ColumnsWizard.GlobalDescCustCols;"/>
-        </hbox>
       </row>
       <row height="200px">
         <hbox>
@@ -109,8 +103,16 @@
         <separator class="thin"/>
       </row>
       <row>
-		  <description style="word-wrap:normal;max-width:550px;margin-bottom:10px;">&ColumnsWizard.CustomHeadersDescCustCols;</description>
+		  <description class="mzcw-desc">&ColumnsWizard.CustomHeadersDescCustCols;</description>
 	  </row>
+      <row>
+        <separator class="thin"/>
+      </row>
+	  <row>
+      <vbox class="mzcw-warn">
+	    <description style="word-wrap:normal;max-width:550px;">&ColumnsWizard.WarnDescCustCols;</description>
+          </vbox>
+      </row>
     </rows>
   </grid>
          </tabpanel>
