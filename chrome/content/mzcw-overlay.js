@@ -116,7 +116,7 @@ var miczColumnsWizard = {
       let element = document.getElementById(coltype+"Col_cw");
       if(element) element.parentNode.removeChild(element);
 
-      dump(">>>>>>>>>>>>> miczColumnsWizard->removeCustomColumn: [coltype] "+coltype+"\r\n");
+      //dump(">>>>>>>>>>>>> miczColumnsWizard->removeCustomColumn: [coltype] "+coltype+"\r\n");
       //DbObserver Managing
       try{
       	ObserverService.removeObserver(miczColumnsWizard_CustCols.CreateDbObserver[coltype], "MsgCreateDBView");
