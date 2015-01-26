@@ -2,15 +2,14 @@
 
 ==========
 Version 5.0 - ??/??/2015
-- No more use of javascript eval function.
-- Added the default column handling show for new folders.
-- Added the save as CW default columns (accessible from the folder columns picker menu).
-- Added the reset to CW default columns (accessible from the folder columns picker menu).
-- Added the save current folder columns as CW default option (accessible from the folder columns picker menu).
+- Now it's possible to define the default column settings for new folders.
+- Added the save as CW default columns menu item (accessible from the folder columns picker menu).
+- Added the reset to CW default columns menu item (accessible from the folder columns picker menu).
 - Added the settings panel to set the default columns for new folder.
-- Added the settings panel to add/delete/edit custom columns.
+- Added the settings panel to add/delete/edit any custom columns.
 - Added the x-spam-score bundled custom column (Used by SpamAssassin http://spamassassin.apache.org/).
--
+- No more use of javascript eval function.
+- 
 ==========
 Version 4.0 - 04/07/2014
 - Added the "Info" tab.
