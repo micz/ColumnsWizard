@@ -1,3 +1,7 @@
-This is a Thunderbird addon that adds some magic to the folder list columns. It shows hidden columns in the Conversation Tab, and makes possible to add custom columns to any folder.
+This is a Thunderbird addon that adds some magic to the folder list columns.
+With this addon you can:
+  * Add a custom column directly from the addon preference window to show any mail header you want.
+  * Define the default columns settings for any new folder.
+  * Show hidden columns in the Conversation Tab and in the search window.
 
 More info on the homepage: http://micz.it/thunderdbird-addon-columnswizard/
