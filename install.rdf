@@ -6,7 +6,7 @@
     <em:type>2</em:type>
     <em:version>5.0alpha2</em:version>
     <em:name>ColumnsWizard</em:name>
-    <em:description>This is a Thunderbird addon that adds some magic to the folder list columns. It shows hidden columns in the Conversation Tab, and makes possible to add custom columns to any folder.</em:description>
+    <em:description>Adds some magic to the folder list columns! You can add a custom column directly from the addon preference window to show any mail header you want, define the default columns settings for any new folder and show hidden columns in the Conversation Tab and in the search window.</em:description>
     <em:iconURL>chrome://columnswizard/skin/mzcw-icon.png</em:iconURL>
     <em:icon64URL>chrome://columnswizard/skin/mzcw-icon64.png</em:icon64URL>
     <em:creator>Mic (m@micz.it)</em:creator>
@@ -24,7 +24,7 @@
       <Description>
         <em:locale>it</em:locale>
         <em:name>ColumnsWizard</em:name>
-        <em:description>Un'estensione di Thunderbird che aggiunge un po' di magia alle colonne visualizzate nella lista delle mail. Mostra le colonne nascoste nel tab di visualizzazione a "Conversazione" e permette di aggiungere nuove colonne a qualunque lista di visualizzazione delle mail.</em:description>
+        <em:description>Aggiungi un po' di magia alle colonne visualizzate nella lista dei messaggi! Puoi creare nuove colonne aggiuntive direttamente dal pannello delle preferenze di questa estensione, definisci le impostazioni di base della configurazione delle colonne della lista dei messaggi e mostra le colonne nascoste nel tab delle visualizzazione in conversazione e della finestra di ricerca.</em:description>
         <em:creator>Mic (m@micz.it)</em:creator>
         <em:contributor></em:contributor>
         <em:translator>Mic (m@micz.it)</em:translator>
