@@ -48,7 +48,7 @@
       <Description>
         <em:locale>zh-CN</em:locale>
         <em:name>ColumnsWizard</em:name>
-        <em:description>在对话标签页中显示隐藏的列的 Thunderbird 扩展。</em:description>
+        <em:description>给文件夹列表的列增加一点魔力。您可以直接在本扩展的首选项窗口中添加自定义的列来显示任何您需要的邮件头。您还可以自定义新文件夹的默认列设置，以及显示在对话标签页和搜索窗口中被隐藏的列。</em:description>
         <em:creator>Mic (m@micz.it)</em:creator>
         <em:contributor></em:contributor>
         <em:translator>yfdyh000</em:translator>

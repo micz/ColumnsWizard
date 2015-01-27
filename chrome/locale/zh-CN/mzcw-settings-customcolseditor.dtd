@@ -1,0 +1,12 @@
+<!ENTITY ColumnsWizard.window.title "自定义列编辑器">
+<!ENTITY ColumnsWizard.Desc.label "插入新的自定义列的信息。所有字段都是必填项。">
+<!ENTITY ColumnsWizard.id.label "ID">
+<!ENTITY ColumnsWizard.id.desc "ID 是自定义列的唯一标识符。它在第一次保存后不可修改。">
+<!ENTITY ColumnsWizard.dbHeader.label "邮件头">
+<!ENTITY ColumnsWizard.dbHeader.desc "邮件头是属于邮件消息的字段，它将被显示在消息列表的自定义列中。它在第一次保存后不可修改。">
+<!ENTITY ColumnsWizard.labelString.label "列名称">
+<!ENTITY ColumnsWizard.labelString.desc "写下将显示在邮件列表列头处的名称。">
+<!ENTITY ColumnsWizard.tooltipString.label "工具提示">
+<!ENTITY ColumnsWizard.tooltipString.desc "请在这里输入该列在消息列表列头处的工具提示。通常这是“排序方式”的第一要素，其次是列名。">
+<!ENTITY ColumnsWizard.enabled.label "启用">
+<!ENTITY ColumnsWizard.enabled.desc "立即启用此自定义的列。">

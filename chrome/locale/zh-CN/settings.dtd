@@ -6,7 +6,8 @@
 <!ENTITY ColumnsWizard.ShowRecipient.label "接收者">
 <!ENTITY ColumnsWizard.TabConversation.label "对话标签页">
 <!ENTITY ColumnsWizard.TabCustomCols.label "自定义列">
-<!ENTITY ColumnsWizard.WarnDescCustCols "选定之后，您需要显示的列就会在您需要时的文件夹视图中出现。 如果您删除并重新选择一个以前选择的选项，您必须再次这样做。">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "请选择您想添加到消息列表的自定义列。">
+<!ENTITY ColumnsWizard.WarnDescCustCols "选定之后，您需要显示的列就会在您需要它时在文件夹视图中出现。如果您取消又重新选中一个以前选择的选项，您必须再次这样做。">
 <!ENTITY ColumnsWizard.AddCc.label "抄送">
 <!ENTITY ColumnsWizard.TabInfo.label "信息">
 <!ENTITY ColumnsWizard.InfoMainDesc "本附加组件是在我的业余时间下免费开发的。如果你每天都在使用它，希望您能随心做一点点捐款支持它，只需点击下面的链接。十分感谢！">
@@ -17,3 +18,17 @@
 <!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
 <!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
 <!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* 此列仅适用在自定义列激活后被接收的邮件。">
+<!ENTITY ColumnsWizard.TabNewFolderDefault.label "新文件夹的列">
+<!ENTITY ColumnsWizard.NewFolderCols.label "对新的文件夹使用您的默认列设置。">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "排序：">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "升序">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "降序">
+<!ENTITY ColumnsWizard.newButton.label "新建…">
+<!ENTITY ColumnsWizard.editButton.label "编辑…">
+<!ENTITY ColumnsWizard.deleteButton.label "删除">
+<!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "这是新文件夹的默认列配置。您可以在这里修改，或者使用消息列表的列选择器菜单修改它。">
+<!ENTITY ColumnsWizard.CustColsList.ID "ID">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "邮件头">
+<!ENTITY ColumnsWizard.CustColsList.title "列名">
+<!ENTITY ColumnsWizard.CustColsList.tooltip "工具提示">
