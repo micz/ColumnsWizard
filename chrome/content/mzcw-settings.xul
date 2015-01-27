@@ -66,10 +66,10 @@
 			</listcols>
             <listhead>
               <listheader id="activeColumn" label=" "/>
-              <listheader id="idColumn" label="ID"/>
-              <listheader id="mailheaderColumn" label="mailheader"/>
-              <listheader id="titleColumn" label="title"/>
-              <listheader id="tooltipColumn" label="tooltip"/>
+              <listheader id="idColumn" label="&ColumnsWizard.CustColsList.ID;"/>
+              <listheader id="mailheaderColumn" label="&ColumnsWizard.CustColsList.mailheader;"/>
+              <listheader id="titleColumn" label="&ColumnsWizard.CustColsList.title;"/>
+              <listheader id="tooltipColumn" label="&ColumnsWizard.CustColsList.tooltip;"/>
             </listhead>
           </listbox>
         </hbox>
