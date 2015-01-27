@@ -28,3 +28,7 @@
 <!ENTITY ColumnsWizard.deleteButton.label "Delete">
 <!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
 <!ENTITY ColumnsWizard.NewFolderCols.Desc "This is the columns' default configuration for the new folders. You can modify it here or use the menu in the column picker of the message list.">
+<!ENTITY ColumnsWizard.CustColsList.ID "ID">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "Mail Header">
+<!ENTITY ColumnsWizard.CustColsList.title "Column Name">
+<!ENTITY ColumnsWizard.CustColsList.tooltip "Tooltip">
