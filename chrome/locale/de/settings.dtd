@@ -10,14 +10,14 @@
 <!ENTITY ColumnsWizard.WarnDescCustCols "Die hier ausgewählten Spalten müssen in der jeweiligen Ordneransicht (anzuzeigende Spalten) sichtbar gemacht werden. Falls Sie eine Spalte entfernen und wieder hinzufügen muss diese erneut sichtbar gemacht werden.">
 <!ENTITY ColumnsWizard.AddCc.label "Kopie (CC)">
 <!ENTITY ColumnsWizard.TabInfo.label "Info">
-<!ENTITY ColumnsWizard.InfoMainDesc "Ich entwickle diese Erweiterung in meiner Freizeit. Falls Sie sie täglich benutzen, ziehen Sie eine Spende in Betracht: Klicken Sie bitte hierzu den nachfolgenden link. Vielen Dank!">
-<!ENTITY ColumnsWizard.DonateLink "Spenden Sie!">
+<!ENTITY ColumnsWizard.InfoMainDesc "Ich entwickle diese Erweiterung in meiner Freizeit. Falls Sie sie täglich benutzen, ziehen Sie eine Spende in Betracht. Vielen Dank!">
+<!ENTITY ColumnsWizard.DonateLink "Hier Spenden!">
 <!ENTITY ColumnsWizard.TranslateCredits "Übersetzungen dank Babelzilla.org">
 <!ENTITY ColumnsWizard.Addbcc.label "Blindkopie (Bcc)">
 <!ENTITY ColumnsWizard.Addreplyto.label "Antwortadresse">
 <!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
 <!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
-<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Diese Spalte wird nur mit neu empfangenen Mails mit Daten bestückt.">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Daten von bereits existierenden Mails werden nicht berücksichtigt">
 <!ENTITY ColumnsWizard.TabNewFolderDefault.label "Spalten für neue Ordner">
 <!ENTITY ColumnsWizard.NewFolderCols.label "In neuen Verzeichnissen Standard-Spaltenansicht anwenden.">
 <!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "Sortierung:">
@@ -27,4 +27,4 @@
 <!ENTITY ColumnsWizard.editButton.label "Editieren…">
 <!ENTITY ColumnsWizard.deleteButton.label "Löschen">
 <!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
-<!ENTITY ColumnsWizard.NewFolderCols.Desc "Dies ist die Standardkonfiguration für die Spaltenansicht neuer Verzeichnisse. Sie kann hier angepasst werden, oder über Menü der Spalten-Widget rechts über der Liste der Mails.">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "Dies ist die Standardkonfiguration für die Spaltenansicht neuer Verzeichnisse. Sie kann hier angepasst werden, oder über das Menü in der Kopfzeile über den Mails.">
