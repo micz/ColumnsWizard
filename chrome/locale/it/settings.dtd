@@ -28,3 +28,7 @@
 <!ENTITY ColumnsWizard.deleteButton.label "Elimina">
 <!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
 <!ENTITY ColumnsWizard.NewFolderCols.Desc "Questa è la configurazione standard delle colonne per le nuove cartelle. Puoi modificarla qui o nel menu di scelta delle colonne della lista dei messaggi.">
+<!ENTITY ColumnsWizard.CustColsList.ID "ID">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "Mail Header">
+<!ENTITY ColumnsWizard.CustColsList.title "Nome Colonna">
+<!ENTITY ColumnsWizard.CustColsList.tooltip "Tooltip">
