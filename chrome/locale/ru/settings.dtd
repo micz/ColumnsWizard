@@ -6,25 +6,5 @@
 <!ENTITY ColumnsWizard.ShowRecipient.label "Получатель">
 <!ENTITY ColumnsWizard.TabConversation.label "Вкладка Разговоров">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Пользовательские Столбцы">
-<!ENTITY ColumnsWizard.GlobalDescCustCols "Выберите, какие пользовательские столбцы Вы хотите добавить.">
 <!ENTITY ColumnsWizard.WarnDescCustCols "После выбора, в обзоре папок, Вы должны поместить столбец куда Вам нужно. Вы должны будете сделать это заного, если Вы отмените и повторно выберите уже ранее выбранную опцию.">
 <!ENTITY ColumnsWizard.AddCc.label "Копия (сс)">
-<!ENTITY ColumnsWizard.TabInfo.label "">
-<!ENTITY ColumnsWizard.InfoMainDesc "">
-<!ENTITY ColumnsWizard.DonateLink "">
-<!ENTITY ColumnsWizard.TranslateCredits "">
-<!ENTITY ColumnsWizard.Addbcc.label "">
-<!ENTITY ColumnsWizard.Addreplyto.label "">
-<!ENTITY ColumnsWizard.Addxoriginalfrom.label "">
-<!ENTITY ColumnsWizard.Addcontentbase.label "">
-<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "">
-<!ENTITY ColumnsWizard.TabNewFolderDefault.label "">
-<!ENTITY ColumnsWizard.NewFolderCols.label "">
-<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "">
-<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "">
-<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "">
-<!ENTITY ColumnsWizard.newButton.label "">
-<!ENTITY ColumnsWizard.editButton.label "">
-<!ENTITY ColumnsWizard.deleteButton.label "">
-<!ENTITY ColumnsWizard.Addxspamscore.label "">
-<!ENTITY ColumnsWizard.NewFolderCols.Desc "">

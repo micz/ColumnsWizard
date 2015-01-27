@@ -6,7 +6,6 @@
 <!ENTITY ColumnsWizard.ShowRecipient.label "接收者">
 <!ENTITY ColumnsWizard.TabConversation.label "对话标签页">
 <!ENTITY ColumnsWizard.TabCustomCols.label "自定义列">
-<!ENTITY ColumnsWizard.GlobalDescCustCols "选择您想添加的自定义列。">
 <!ENTITY ColumnsWizard.WarnDescCustCols "选定之后，您需要显示的列就会在您需要时的文件夹视图中出现。 如果您删除并重新选择一个以前选择的选项，您必须再次这样做。">
 <!ENTITY ColumnsWizard.AddCc.label "抄送">
 <!ENTITY ColumnsWizard.TabInfo.label "信息">
@@ -18,13 +17,3 @@
 <!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
 <!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
 <!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* 此列仅适用在自定义列激活后被接收的邮件。">
-<!ENTITY ColumnsWizard.TabNewFolderDefault.label "">
-<!ENTITY ColumnsWizard.NewFolderCols.label "">
-<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "">
-<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "">
-<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "">
-<!ENTITY ColumnsWizard.newButton.label "">
-<!ENTITY ColumnsWizard.editButton.label "">
-<!ENTITY ColumnsWizard.deleteButton.label "">
-<!ENTITY ColumnsWizard.Addxspamscore.label "">
-<!ENTITY ColumnsWizard.NewFolderCols.Desc "">
