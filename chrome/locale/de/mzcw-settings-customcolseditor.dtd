@@ -1,0 +1,12 @@
+<!ENTITY ColumnsWizard.window.title "Spezialspalten Editieren">
+<!ENTITY ColumnsWizard.Desc.label "Formular für die neue Spalte. Alle Felder müssen ausgefüllt werden.">
+<!ENTITY ColumnsWizard.id.label "Id">
+<!ENTITY ColumnsWizard.id.desc "Der Id ist ein eindeutiger Identifikator für die neue Spalte. Er kann nach dem Eintrag nicht mehr modifiziert werden.">
+<!ENTITY ColumnsWizard.dbHeader.label "dbHeader">
+<!ENTITY ColumnsWizard.dbHeader.desc "Der dbHeader ist der Feldname der Spalte welcher in the Mailliste zu sehen ist. Er kann nach dem Erzeugen nicht modifiziert werden.">
+<!ENTITY ColumnsWizard.labelString.label "Spaltenname">
+<!ENTITY ColumnsWizard.labelString.desc "Die Spaltenüberschrift in der Mailliste.">
+<!ENTITY ColumnsWizard.tooltipString.label "Tooltip">
+<!ENTITY ColumnsWizard.tooltipString.desc "Tooltip für die Spaltenüberschrift. Üblicherweise ist dies 'Nach (Spaltenname) sortieren'.">
+<!ENTITY ColumnsWizard.enabled.label "Aktiv">
+<!ENTITY ColumnsWizard.enabled.desc "Spezialspalte sofort verwenden">

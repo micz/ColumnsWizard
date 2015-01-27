@@ -6,8 +6,25 @@
 <!ENTITY ColumnsWizard.ShowRecipient.label "Destinataire">
 <!ENTITY ColumnsWizard.TabConversation.label "Onglet Conversation">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Colonnes personnalisées">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Choisissez ici quelles colonnes personnalisées vous désirez ajouter">
 <!ENTITY ColumnsWizard.WarnDescCustCols "Une fois effectué votre choix, vous devez afficher la colonne dans le dossier où vous en avez besoin. Vous devrez recommencer si vous désélectionnez et re-sélectionnez une option choisie auparavant.">
 <!ENTITY ColumnsWizard.AddCc.label "Copie à">
 <!ENTITY ColumnsWizard.TabInfo.label "Informations">
 <!ENTITY ColumnsWizard.InfoMainDesc "Cette extension est gratuite, je la développe sur mon temps libre. Si vous l'utilisez régulièrement avec satisfaction, envisagez de faire un petit don en cliquant sur le bouton ci-dessous. Merci !">
 <!ENTITY ColumnsWizard.DonateLink "Faites un don !">
+<!ENTITY ColumnsWizard.TranslateCredits "">
+<!ENTITY ColumnsWizard.Addbcc.label "">
+<!ENTITY ColumnsWizard.Addreplyto.label "">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "">
+<!ENTITY ColumnsWizard.Addcontentbase.label "">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "">
+<!ENTITY ColumnsWizard.TabNewFolderDefault.label "">
+<!ENTITY ColumnsWizard.NewFolderCols.label "">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "">
+<!ENTITY ColumnsWizard.newButton.label "">
+<!ENTITY ColumnsWizard.editButton.label "">
+<!ENTITY ColumnsWizard.deleteButton.label "">
+<!ENTITY ColumnsWizard.Addxspamscore.label "">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "">

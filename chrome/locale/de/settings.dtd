@@ -6,6 +6,7 @@
 <!ENTITY ColumnsWizard.ShowRecipient.label "Empfänger">
 <!ENTITY ColumnsWizard.TabConversation.label "Ansicht im Themenbaum">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Spezial Spalten">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Wählen sie hier welche Spalten Sie hinzufügen wollen.">
 <!ENTITY ColumnsWizard.WarnDescCustCols "Die hier ausgewählten Spalten müssen in der jeweiligen Ordneransicht (anzuzeigende Spalten) sichtbar gemacht werden. Falls Sie eine Spalte entfernen und wieder hinzufügen muss diese erneut sichtbar gemacht werden.">
 <!ENTITY ColumnsWizard.AddCc.label "Kopie (CC)">
 <!ENTITY ColumnsWizard.TabInfo.label "Info">
@@ -17,3 +18,13 @@
 <!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
 <!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
 <!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Diese Spalte wird nur mit neu empfangenen Mails mit Daten bestückt.">
+<!ENTITY ColumnsWizard.TabNewFolderDefault.label "Spalten für neue Ordner">
+<!ENTITY ColumnsWizard.NewFolderCols.label "In neuen Verzeichnissen Standard-Spaltenansicht anwenden.">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "Sortierung:">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "Aufsteigend">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "Absteigend">
+<!ENTITY ColumnsWizard.newButton.label "Neu…">
+<!ENTITY ColumnsWizard.editButton.label "Editieren…">
+<!ENTITY ColumnsWizard.deleteButton.label "Löschen">
+<!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "Dies ist die Standardkonfiguration für die Spaltenansicht neuer Verzeichnisse. Sie kann hier angepasst werden, oder über Menü der Spalten-Widget rechts über der Liste der Mails.">

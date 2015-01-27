@@ -6,6 +6,7 @@
 <!ENTITY ColumnsWizard.ShowRecipient.label "Ontvanger">
 <!ENTITY ColumnsWizard.TabConversation.label "Conversatietabblad">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Aangepaste kolommen">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Kies hier welke aangepaste kolommen u wilt toevoegen.">
 <!ENTITY ColumnsWizard.WarnDescCustCols "Na selectie dient u de kolom in de mapweergave waar u deze nodig hebt weer te geven. U dient dit opnieuw te doen als u een eerder geselecteerde optie deselecteert en opnieuw selecteert.">
 <!ENTITY ColumnsWizard.AddCc.label "Cc">
 <!ENTITY ColumnsWizard.TabInfo.label "Info">
@@ -17,3 +18,13 @@
 <!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
 <!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
 <!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Deze kolom wordt alleen gevuld voor de e-mailberichten die na activeren van de aangepaste kolom worden ontvangen.">
+<!ENTITY ColumnsWizard.TabNewFolderDefault.label "">
+<!ENTITY ColumnsWizard.NewFolderCols.label "">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "">
+<!ENTITY ColumnsWizard.newButton.label "">
+<!ENTITY ColumnsWizard.editButton.label "">
+<!ENTITY ColumnsWizard.deleteButton.label "">
+<!ENTITY ColumnsWizard.Addxspamscore.label "">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "">
