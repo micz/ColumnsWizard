@@ -65,14 +65,36 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.def="";
 						//get userinput val
 						if(document.getElementById("ColumnsWizard.id").value.match(re_id)!=null){
-							newcol.index=document.getElementById("ColumnsWizard.id").value.match(re_id).join('');
+							newcol.index=document.getElementById("ColumnsWizard.id").value.match(re_id).join('').toLowerCase();
 						}else{
-							newcol.index=document.getElementById("ColumnsWizard.id").value;
+							newcol.index=document.getElementById("ColumnsWizard.id").value.toLowerCase();
 						}
+						//Check if the custom column is already present
+						let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+						let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+						let CustColIndexStr=prefs.getCharPref("index");
+						let CustColIndex=new Array();
+						if(CustColIndexStr!=''){
+							CustColIndex=JSON.parse(CustColIndexStr);
+							//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol.index] "+JSON.stringify(newcol.index)+"\r\n");
+							if(CustColIndex.indexOf(newcol.index)!=-1){
+								//custom column already present
+								//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [CustColIndex] "+JSON.stringify(CustColIndex)+"\r\n");
+								let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+								let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
+								let prompts = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
+								prompts.alert(window,
+											  _bundleCW.GetStringFromName("ColumnsWizard.emptyFields.title"),
+											  _bundleCW.GetStringFromName("ColumnsWizard.duplicatedID.text"));
+								return false;
+							}
+						}
+						return false;
+						
 						if(document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh)!=null){
-							newcol.dbHeader=document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh).join('').replace(':','');
+							newcol.dbHeader=document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh).join('').replace(':','').toLowerCase();
 						}else{
-							newcol.dbHeader=document.getElementById("ColumnsWizard.dbHeader").value;
+							newcol.dbHeader=document.getElementById("ColumnsWizard.dbHeader").value.toLowerCase();
 						}
 						newcol.labelString=document.getElementById("ColumnsWizard.labelString").value;
 						newcol.tooltipString=document.getElementById("ColumnsWizard.tooltipString").value;
