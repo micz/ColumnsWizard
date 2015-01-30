@@ -28,3 +28,7 @@
 <!ENTITY ColumnsWizard.deleteButton.label "Löschen">
 <!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
 <!ENTITY ColumnsWizard.NewFolderCols.Desc "Dies ist die Standardkonfiguration für die Spaltenansicht neuer Verzeichnisse. Sie kann hier angepasst werden, oder über das Menü in der Kopfzeile über den Mails.">
+<!ENTITY ColumnsWizard.CustColsList.ID "Id">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "Mail Header">
+<!ENTITY ColumnsWizard.CustColsList.title "Spaltenname">
+<!ENTITY ColumnsWizard.CustColsList.tooltip "Tooltip">
