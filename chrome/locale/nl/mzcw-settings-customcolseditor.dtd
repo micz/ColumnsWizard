@@ -1,0 +1,12 @@
+<!ENTITY ColumnsWizard.window.title "Aangepaste kolombewerking">
+<!ENTITY ColumnsWizard.Desc.label "De nieuwe aangepaste kolominformatie invoegen. Alle velden zijn verplicht.">
+<!ENTITY ColumnsWizard.id.label "Kenmerk">
+<!ENTITY ColumnsWizard.id.desc "Het kenmerk is de unieke identificatie van de aangepaste kolom. Het kan niet worden gewijzigd na de eerste keer opslaan.">
+<!ENTITY ColumnsWizard.dbHeader.label "Berichtheader">
+<!ENTITY ColumnsWizard.dbHeader.desc "De berichtheader is het veld van e-mailberichten dat moet worden weergegeven in de berichtenlijst in de Aangepaste kolom. Deze kan niet worden gewijzigd na de eerste keer opslaan.">
+<!ENTITY ColumnsWizard.labelString.label "Kolomnaam">
+<!ENTITY ColumnsWizard.labelString.desc "Schrijf hier de naam die bovenaan de kolom in de berichtenlijst moet worden weergegeven.">
+<!ENTITY ColumnsWizard.tooltipString.label "Tooltip">
+<!ENTITY ColumnsWizard.tooltipString.desc "Voer hier de tooltip van de kolomtekst in de berichtenlijst in. Dit is gewoonlijk “Sorteren op”, gevolgd door de kolomnaam.">
+<!ENTITY ColumnsWizard.enabled.label "Ingeschakeld">
+<!ENTITY ColumnsWizard.enabled.desc "Deze aangepaste kolom direct inschakelen.">
