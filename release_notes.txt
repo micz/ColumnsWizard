@@ -1,6 +1,9 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
+Version 5.1 - ??/??/2015
+-
+==========
 Version 5.0 - 04/02/2015
 - Now it's possible to define the default column settings for new folders.
 - Added the save as CW default columns menu item (accessible from the folder columns picker menu).
