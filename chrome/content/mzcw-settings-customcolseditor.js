@@ -3,7 +3,7 @@ Components.utils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm"
 
 var miczColumnsWizard={};
 var miczColumnsWizardPref_CustColEditor = {
-	
+
 	_sanitize_ID_regex:"([A-Za-z0-9\-\_]+)",
 	_sanitize_dbHeader_regex:"([\x21-\x7E2]+)",
 
@@ -34,7 +34,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						document.getElementById("ColumnsWizard.labelString").setAttribute("value",currcol.labelString);
 						document.getElementById("ColumnsWizard.tooltipString").setAttribute("value",currcol.tooltipString);
 						document.getElementById("ColumnsWizard.enabled").setAttribute("checked",currcol.enabled);
-						
+
 						//disable the ID and dbheader field
 						document.getElementById("ColumnsWizard.id").disabled=true;
 						document.getElementById("ColumnsWizard.dbHeader").disabled=true;
@@ -52,7 +52,7 @@ var miczColumnsWizardPref_CustColEditor = {
 		if ("arguments" in window && window.arguments[0]){
 			let args = window.arguments[0];
 			let newcol={};
-			
+
 			let re_id=new RegExp(miczColumnsWizardPref_CustColEditor._sanitize_ID_regex,'ig');
 			let re_dbh=new RegExp(miczColumnsWizardPref_CustColEditor._sanitize_dbHeader_regex,'g');
 
@@ -89,8 +89,7 @@ var miczColumnsWizardPref_CustColEditor = {
 								return false;
 							}
 						}
-						return false;
-						
+
 						if(document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh)!=null){
 							newcol.dbHeader=document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh).join('').replace(':','').toLowerCase();
 						}else{
@@ -142,7 +141,7 @@ var miczColumnsWizardPref_CustColEditor = {
 		}
 		return true;
 	},
-	
+
 	onBlur_sanitize_ID:function(){
 		let re=new RegExp(miczColumnsWizardPref_CustColEditor._sanitize_ID_regex,'ig');
 		let el=document.getElementById('ColumnsWizard.id');
@@ -150,7 +149,7 @@ var miczColumnsWizardPref_CustColEditor = {
 			el.value=el.value.match(re).join('');
 		}
 	},
-	
+
 	onBlur_sanitize_dbHeader:function(){
 		let re=new RegExp(miczColumnsWizardPref_CustColEditor._sanitize_dbHeader_regex,'g');
 		let el=document.getElementById('ColumnsWizard.dbHeader');
