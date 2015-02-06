@@ -1,6 +1,9 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
+Version 5.1 - ??/??/2015
+- 
+==========
 Version 5.0.1 - 06/02/2015
 - Fixed a bug in adding a new custom column.
 ==========
