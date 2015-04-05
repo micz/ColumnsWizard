@@ -75,7 +75,7 @@ var miczColumnsWizard = {
 		}
 		ObserverService.addObserver(CustColObserver,"CW-deleteCustomColumn",false);
 	},
-	
+
 	updateCustColObserver:function(ObserverService){
 		let CustColObserver = {
 			observe: function(aSubject,aTopic,aData){
@@ -210,14 +210,14 @@ var miczColumnsWizard = {
 				let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 				let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
 				let cw_active=prefs.getBoolPref("active");
-				
+
 				let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
 				let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
-				
+
 				aPopup.childNodes[1].setAttribute('hidden',cw_active?'true':'false');
-				
+
 				cw_colmenubind.cw_original_buildPopup(aPopup);
-				
+
 				//Add saveDefaultMenuCW element
 				let saveDefaultMenuCW = document.createElement("menuitem");
 				saveDefaultMenuCW.setAttribute('label',_bundleCW.GetStringFromName("ColumnsWizardNFCols.saveDefault"));
@@ -239,14 +239,20 @@ var miczColumnsWizard = {
 				resetMenuCW.setAttribute("image","chrome://columnswizard/skin/ico/resetMenuCW.png");
 				resetMenuCW.onclick=miczColumnsWizard.addCWResetMenu_OnClick;
 				aPopup.insertBefore(resetMenuCW,aPopup.lastChild);
-				
+
 			}	// buildPopup wrapper function END
 		}
 	}
   },
-  
+
     addCWSaveDefaultMenu_OnClick:function(event){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
+		let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
+		let promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
+		let title_msg=_bundleCW.GetStringFromName("ColumnsWizardNFCols.saveDefault");
+		let text_msg=_bundleCW.GetStringFromName("ColumnsWizard.saveDefault_OnClick_text");
+		if(!promptService.confirm(null,title_msg,text_msg))return;
 		let columnStates = gFolderDisplay.getColumnStates();
 		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
@@ -256,6 +262,12 @@ var miczColumnsWizard = {
 
     addCWResetMenu_OnClick:function(event){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWSaveDefaultMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
+		let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
+		let promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
+		let title_msg=_bundleCW.GetStringFromName("ColumnsWizardNFCols.resetMenu");
+		let text_msg=_bundleCW.GetStringFromName("ColumnsWizard.resetDefault_OnClick_text");
+		if(!promptService.confirm(null,title_msg,text_msg))return;
 		let columnStates = miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
 		gFolderDisplay.setColumnStates(columnStates, true);
 		return;
