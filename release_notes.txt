@@ -1,6 +1,9 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
+Version 5.1 - ??/??/2015
+- 
+==========
 Version 5.0.2 - 11/04/2015
 - Added confirm messages before saving / resetting the folder columns
 ==========
