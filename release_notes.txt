@@ -2,7 +2,7 @@
 
 ==========
 Version 5.0.2 - ??/??/2015
-- 
+- Added confirm messages before saving / resetting the folder columns
 ==========
 Version 5.0.1 - 06/02/2015
 - Fixed a bug in adding a new custom column.
