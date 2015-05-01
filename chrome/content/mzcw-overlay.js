@@ -92,13 +92,13 @@ var miczColumnsWizard = {
 		//Create all the needed DbObservers
 		  //dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+currcol.index+"\r\n");
 		  //It's needed to to this, to avoid writing each miczColumnsWizard_CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function definition.
-		  let obfunction=new Function('aMsgFolder', 'aTopic', 'aData',"miczColumnsWizard_CustCols.addCustomColumnHandler('"+currcol.index+"');");
+		  let obfunction = function(aMsgFolder,aTopic,aData){miczColumnsWizard_CustCols.addCustomColumnHandler(currcol.index);};
 		  miczColumnsWizard_CustCols.CreateDbObserver[currcol.index]={observe: obfunction};
 		  //Create all the needed DbObserver - END
 
 		 //Implement all the needed ColumnHandlers
-		 let sortfunc=new Function('hdr','return hdr.getStringProperty("'+currcol.dbHeader+'");');
-		 let celltextfunc=new Function('row','col','let hdr = gDBView.getMsgHdrAt(row);return hdr.getStringProperty("'+currcol.dbHeader+'");');
+		 let sortfunc = function(hdr) { return hdr.getStringProperty(currcol.dbHeader);};
+		 let celltextfunc = function(row,col){let hdr = gDBView.getMsgHdrAt(row);return hdr.getStringProperty(currcol.dbHeader);};
 
 		  miczColumnsWizard_CustCols["columnHandler_"+currcol.index]={
 			getCellText:         celltextfunc,
