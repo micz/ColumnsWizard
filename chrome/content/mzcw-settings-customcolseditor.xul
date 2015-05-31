@@ -61,10 +61,10 @@
 			</vbox>
           </row>
           <row>
-			<label value="&ColumnsWizard.sortString.label;"/>
+			<label value="&ColumnsWizard.sortnumber.label;"/>
 			<vbox>
-				<checkbox id="ColumnsWizard.sortString"/>
-				<description class="cw_field_label">&ColumnsWizard.sortString.desc;</description>
+				<checkbox id="ColumnsWizard.sortnumber"/>
+				<description class="cw_field_label">&ColumnsWizard.sortnumber.desc;</description>
 			</vbox>
           </row>
           <row>

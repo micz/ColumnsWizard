@@ -10,5 +10,5 @@
 <!ENTITY ColumnsWizard.tooltipString.desc "Enter here the tooltip of the column header in the message list. Usually this is &quot;Sort by&quot; followed by the column name.">
 <!ENTITY ColumnsWizard.enabled.label "Enabled">
 <!ENTITY ColumnsWizard.enabled.desc "Enable this custom column immediately.">
-<!ENTITY ColumnsWizard.sortString.label "Sorting">
-<!ENTITY ColumnsWizard.sortString.desc "Sort this custom column as a number.">
+<!ENTITY ColumnsWizard.sortnumber.label "Sorting">
+<!ENTITY ColumnsWizard.sortnumber.desc "Sort this custom column as a number.">
