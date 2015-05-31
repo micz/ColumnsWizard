@@ -146,36 +146,42 @@ var miczColumnsWizard_CustCols={
 						dcurrcol.enabled = prefs.getBoolPref("AddCc");
 						dcurrcol.def = "AddCc";
 						dcurrcol.dbHeader = "ccList";
+						dcurrcol.sortnumber=false;
 						dcurrcol.isCustom=false;
 						break;
 					case 'bcc':
 						dcurrcol.enabled = prefs.getBoolPref("Addbcc");
 						dcurrcol.def = "Addbcc";
 						dcurrcol.dbHeader = "bccList";
+						dcurrcol.sortnumber=false;
 						dcurrcol.isCustom=false;
 						break;
 					case 'replyto':
 						dcurrcol.enabled = prefs.getBoolPref("Addreplyto");
 						dcurrcol.def = "Addreplyto";
 						dcurrcol.dbHeader = "replyTo";
+						dcurrcol.sortnumber=false;
 						dcurrcol.isCustom=false;
 						break;
 					case 'xoriginalfrom':
 						dcurrcol.enabled = prefs.getBoolPref("Addxoriginalfrom");
 						dcurrcol.def = "Addxoriginalfrom";
 						dcurrcol.dbHeader = "x-original-from";
+						dcurrcol.sortnumber=false;
 						dcurrcol.isCustom=true;
 						break;
 					case 'contentbase':
 						dcurrcol.enabled = prefs.getBoolPref("Addcontentbase");
 						dcurrcol.def = "Addcontentbase";
 						dcurrcol.dbHeader = "content-base";
+						dcurrcol.sortnumber=false;
 						dcurrcol.isCustom=true;
 						break;
 					case 'xspamscore':
 						dcurrcol.enabled = false;
 						dcurrcol.def = "";
 						dcurrcol.dbHeader = "x-spam-score";
+						dcurrcol.sortnumber=true;
 						dcurrcol.isCustom=true;
 						break;
 				}
