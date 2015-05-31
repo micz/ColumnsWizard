@@ -97,7 +97,7 @@ var miczColumnsWizard = {
 		  //Create all the needed DbObserver - END
 
 		 //Implement all the needed ColumnHandlers
-		 let sortfunc = function(hdr) { return hdr.getStringProperty(currcol.dbHeader);};
+		 let sortfunc = function(hdr) { return currcol.sortnumber?hdr.getSortLongForRow(currcol.dbHeader):hdr.getStringProperty(currcol.dbHeader);};
 		 let celltextfunc = function(row,col){let hdr = gDBView.getMsgHdrAt(row);return hdr.getStringProperty(currcol.dbHeader);};
 
 		  miczColumnsWizard_CustCols["columnHandler_"+currcol.index]={
