@@ -98,10 +98,16 @@ var miczColumnsWizard = {
 
 		 //Implement all the needed ColumnHandlers
 		 let sortfunc = function(hdr) { return hdr.getStringProperty(currcol.dbHeader);};
-		 let sortfunc_number = function(hdr) { return hdr.getStringProperty(currcol.dbHeader);};
-		 let is_stringfunc = function(hdr) { return currcol.sortnumber;};
+		 let sortfunc_number = function(hdr) {
+									let output=hdr.getStringProperty(currcol.dbHeader)*100;
+									output+=1000000000000;
+									dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [output original] "+hdr.getStringProperty(currcol.dbHeader)+"\r\n");
+									dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [output] "+JSON.stringify(output)+"\r\n");
+									return output;
+			 					};
+		 let is_stringfunc = function(hdr) { return !currcol.sortnumber;};
 		 let celltextfunc = function(row,col){let hdr = gDBView.getMsgHdrAt(row);return hdr.getStringProperty(currcol.dbHeader);};
-dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [currcol] "+JSON.stringify(currcol)+"\r\n");
+//dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [currcol] "+JSON.stringify(currcol)+"\r\n");
 		  miczColumnsWizard_CustCols["columnHandler_"+currcol.index]={
 			getCellText:         celltextfunc,
 			getSortStringForRow: sortfunc,
