@@ -10,3 +10,6 @@
 <!ENTITY ColumnsWizard.tooltipString.desc "Inserisci qui il testo del tooltip dell'intestazione di colonna nella lista dei messaggi. Solitamente questo campo riporta scritto &quot;Ordina per&quot; seguito dal nome della colonna.">
 <!ENTITY ColumnsWizard.enabled.label "Attivato">
 <!ENTITY ColumnsWizard.enabled.desc "Attiva subito la colonna aggiuntiva.">
+<!ENTITY ColumnsWizard.sortnumber.label "Ordinamento">
+<!ENTITY ColumnsWizard.sortnumber.desc "Ordina il contenuto di questa colonna aggiuntiva come numero.">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "Questa colonna aggiuntiva può solo ordinare numeri con non più di tre cifre decimali e un valore tra -1.000.000 e 3.294.967.">
