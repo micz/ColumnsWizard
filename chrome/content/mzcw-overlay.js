@@ -98,11 +98,11 @@ var miczColumnsWizard = {
 
 		 //Implement all the needed ColumnHandlers
 		 let sortfunc = function(hdr) { return hdr.getStringProperty(currcol.dbHeader);};
-		 let sortfunc_number = function(hdr) {
-									let output=hdr.getStringProperty(currcol.dbHeader)*100;
-									output+=1000000000000;
-									dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [output original] "+hdr.getStringProperty(currcol.dbHeader)+"\r\n");
-									dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [output] "+JSON.stringify(output)+"\r\n");
+		 let sortfunc_number = function(hdr) {	//max unsigned long 4294967296-1
+									let output=hdr.getStringProperty(currcol.dbHeader)*1000;
+									output+=1000000000;
+									//dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [output original] "+hdr.getStringProperty(currcol.dbHeader)+"\r\n");
+									//dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [output] "+JSON.stringify(output)+"\r\n");
 									return output;
 			 					};
 		 let is_stringfunc = function(hdr) { return !currcol.sortnumber;};

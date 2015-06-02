@@ -65,6 +65,7 @@
 			<vbox>
 				<checkbox id="ColumnsWizard.sortnumber"/>
 				<description class="cw_field_label">&ColumnsWizard.sortnumber.desc;</description>
+				<description class="cw_field_label">&ColumnsWizard.sortnumber.desc_limit;</description>
 			</vbox>
           </row>
           <row>
