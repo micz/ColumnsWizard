@@ -6,29 +6,8 @@
 <!ENTITY ColumnsWizard.ShowRecipient.label "Destinataire">
 <!ENTITY ColumnsWizard.TabConversation.label "Onglet Conversation">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Colonnes personnalisées">
-<!ENTITY ColumnsWizard.GlobalDescCustCols "Choose here which custom columns you want to add to the messages list.">
 <!ENTITY ColumnsWizard.WarnDescCustCols "Une fois effectué votre choix, vous devez afficher la colonne dans le dossier où vous en avez besoin. Vous devrez recommencer si vous désélectionnez et re-sélectionnez une option choisie auparavant.">
 <!ENTITY ColumnsWizard.AddCc.label "Copie à">
 <!ENTITY ColumnsWizard.TabInfo.label "Informations">
 <!ENTITY ColumnsWizard.InfoMainDesc "Cette extension est gratuite, je la développe sur mon temps libre. Si vous l'utilisez régulièrement avec satisfaction, envisagez de faire un petit don en cliquant sur le bouton ci-dessous. Merci !">
 <!ENTITY ColumnsWizard.DonateLink "Faites un don !">
-<!ENTITY ColumnsWizard.TranslateCredits "Translation thanks to Babelzilla.org">
-<!ENTITY ColumnsWizard.Addbcc.label "Bcc">
-<!ENTITY ColumnsWizard.Addreplyto.label "Reply-to">
-<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
-<!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
-<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* This column will be populated only for mails that will be received after the Custom Column activation.">
-<!ENTITY ColumnsWizard.TabNewFolderDefault.label "New Folder Columns">
-<!ENTITY ColumnsWizard.NewFolderCols.label "Use your default columns setup for new folders.">
-<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "Sort order:">
-<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "Ascending">
-<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "Descending">
-<!ENTITY ColumnsWizard.newButton.label "New…">
-<!ENTITY ColumnsWizard.editButton.label "Edit…">
-<!ENTITY ColumnsWizard.deleteButton.label "Delete">
-<!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
-<!ENTITY ColumnsWizard.NewFolderCols.Desc "This is the columns' default configuration for the new folders. You can modify it here or use the menu in the column picker of the message list.">
-<!ENTITY ColumnsWizard.CustColsList.ID "ID">
-<!ENTITY ColumnsWizard.CustColsList.mailheader "Mail Header">
-<!ENTITY ColumnsWizard.CustColsList.title "Column Name">
-<!ENTITY ColumnsWizard.CustColsList.tooltip "Tooltip">
