@@ -1,6 +1,9 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
+Version 5.1 - ??/??/2015
+-
+==========
 Version 5.0.3 - 07/06/2015
 - Custom column with numbers are now correctly sorted.
 ==========
