@@ -10,3 +10,6 @@
 <!ENTITY ColumnsWizard.tooltipString.desc "Voer hier de tooltip van de kolomtekst in de berichtenlijst in. Dit is gewoonlijk “Sorteren op”, gevolgd door de kolomnaam.">
 <!ENTITY ColumnsWizard.enabled.label "Ingeschakeld">
 <!ENTITY ColumnsWizard.enabled.desc "Deze aangepaste kolom direct inschakelen.">
+<!ENTITY ColumnsWizard.sortnumber.label "Sorteren">
+<!ENTITY ColumnsWizard.sortnumber.desc "Deze aangepaste kolom als een getal sorteren.">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "De aangepaste kolom kan alleen getallen met maximaal 3 decimalen en een waarde tussen -1.000.000 en 3.294.967 sorteren.">

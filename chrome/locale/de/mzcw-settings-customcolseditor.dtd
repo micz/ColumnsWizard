@@ -10,3 +10,6 @@
 <!ENTITY ColumnsWizard.tooltipString.desc "Tooltip für die Spaltenüberschrift. Üblicherweise ist dies 'Nach (Spaltenname) sortieren'.">
 <!ENTITY ColumnsWizard.enabled.label "Aktiv">
 <!ENTITY ColumnsWizard.enabled.desc "Spezialspalte sofort verwenden">
+<!ENTITY ColumnsWizard.sortnumber.label "Sortierung">
+<!ENTITY ColumnsWizard.sortnumber.desc "Diese Spalte numerisch sortieren.">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "Spezialspalte kann nur Nummern mit höchstens drei Dezimalstellen im Bereich von -1.000.000 bis 3.294.967 sortieren.">
