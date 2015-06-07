@@ -6,6 +6,7 @@ Version 5.1 - ??/??/2015
 ==========
 Version 5.0.3 - 07/06/2015
 - Custom column with numbers are now correctly sorted.
+- The x-spam-score bundled custom column is now sorted as a number.
 ==========
 Version 5.0.2 - 11/04/2015
 - Added confirm messages before saving / resetting the folder columns
