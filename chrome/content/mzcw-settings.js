@@ -8,6 +8,21 @@ var miczColumnsWizardPref = {
 	onLoad: function(win){
 		this.loadCustColRows(win);
 
+		//Load release notes
+		let url = "chrome://cwrl/content/release_notes.txt";
+		let request = Components.classes["@mozilla.org/xmlextras/xmlhttprequest;1"]
+					  .createInstance(Components.interfaces.nsIXMLHttpRequest);
+		request.onload = function(aEvent) {
+			let relnotes = document.getElementById('mzcw-release-notes');
+			relnotes.value= aEvent.target.responseText;
+		};
+		request.onerror = function(aEvent) {
+		   //
+		};
+		request.open("GET", url, true);
+		request.responseType = "text";
+		request.send(null);
+
 		//Fixing window height
 		sizeToContent();
 		var vbox = document.getElementById('cw_tabbox');

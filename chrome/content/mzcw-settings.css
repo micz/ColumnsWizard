@@ -7,3 +7,4 @@
 .mzcw-grid_hdr_cnt{text-align:center;}
 listcell[enabled="false"]{list-style-image:url("chrome://messenger/skin/icons/notchecked.gif");}
 listcell[enabled="true"]{list-style-image:url("chrome://messenger/skin/icons/check.gif");}
+.release-notes-text{font-family:"courier new";}
