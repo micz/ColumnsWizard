@@ -3,14 +3,21 @@
 var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_CustomColsGrid"];
 
 var miczColumnsWizardPref_CustomColsGrid = {
-	
+
 	miczColumnsWizard_CustCols:{},
 	win:{},
 	onEditCustomCol:{},
 
 	createCustomColsListRows: function(doc,container,CustColRows){
+		//sort cust cols by dbHeader
+		let tmp_array=[];
 		for (let index in CustColRows) {
-				this.createOneCustomColRow(doc,container,CustColRows[index]);
+			tmp_array.push(index);
+		}
+		tmp_array.sort(function(a, b){return a < b ? -1 : (a > b ? 1 : 0);});
+
+		for (let index in tmp_array) {
+			this.createOneCustomColRow(doc,container,CustColRows[tmp_array[index]]);
 		}
 	},
 
@@ -75,9 +82,9 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		if (!container) return;
 		let listitem = container.getItemAtIndex(idx_col);
 		if(!listitem) return;
-		
+
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [editOneCustomColRow] listitem "+JSON.stringify(listitem)+"\r\n");
-		
+
 		let activeCell = listitem.childNodes[0];
 		activeCell.setAttribute("enabled",currcol.enabled);
 		if(currcol.isCustom){
@@ -166,7 +173,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 	  // Now update the checkbox
 	  aCustColItem.childNodes[0].setAttribute("enabled", currcol.enabled);
 	},
-	
+
 	onItemDoubleClick:function(event){
 		// we only care about button 0 (left click) events
 		if (event.button != 0)
