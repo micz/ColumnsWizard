@@ -167,19 +167,16 @@ var miczColumnsWizardPref_CustColEditor = {
 		fp.init(window, "Select an icon file", Components.interfaces.nsIFilePicker.modeOpen);
     	fp.appendFilters(Components.interfaces.nsIFilePicker.filterImages);
 
-    	let destPath = OS.Path.join(OS.Constants.Path.profileDir,"columnswizardmiczit");
-		OS.File.makeDir(destPath, {ignoreExisting: true});
-		let destPathFile = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
-		destPathFile.initWithPath(destPath);
-
     	let fpCallback = function fpCallback_done(aResult) {
 		dump(">>>>>>>>>>>>> miczColumnsWizard->chooseIcon: [aResult] "+JSON.stringify(aResult)+"\r\n");
 		if (aResult == Components.interfaces.nsIFilePicker.returnOK) {
 			try {
 			  if (fp.file) {
-				  //let file = fp.file.parent.QueryInterface(Components.interfaces.nsILocalFile);
-				  dump(">>>>>>>>>>>>> miczColumnsWizard->chooseIcon: [file.path] "+JSON.stringify(fp.file.path)+"\r\n");
-				  fp.file.copyToFollowingLinks(destPathFile,'');
+				dump(">>>>>>>>>>>>> miczColumnsWizard->chooseIcon: [file.path] "+JSON.stringify(fp.file.path)+"\r\n");
+				//fp.file.copyToFollowingLinks(destPathFile,'');	//file copied in the user profile folder
+				document.getElementById("ColumnsWizard.labelString").setAttribute("value",fp.file.path);
+				document.getElementById("ColumnsWizard.labelString_btn").setAttribute("image","file://"+fp.file.path);
+				miczColumnsWizardPref_CustColEditor.saveIcon(fp.file.path,'test');
 			  }
 			} catch (ex) {
 				dump(">>>>>>>>>>>>> miczColumnsWizard->chooseIcon: [ex.message] "+JSON.stringify(ex.message)+"\r\n");
@@ -188,15 +185,27 @@ var miczColumnsWizardPref_CustColEditor = {
 		};
 
 		let localFile = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
-		//let lastPath = OS.Path.join(OS.Constants.Path.profileDir,"columnswizardmiczit");
-		//OS.File.makeDir(lastPath, {ignoreExisting: true});
-		/*if (lastPath){
-			localFile.initWithPath(lastPath);
-		}*/
-
-		fp.displayDirectory = localFile; // gLastOpenDirectory.path
+		fp.displayDirectory = localFile;
 		fp.open(fpCallback);
+	},
 
+	saveIcon:function(filepath,newname){
+		//save the choosen icon in the user profile folder
+		let file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
+		file.initWithPath(filepath);
+		try {
+			if(file){
+				let destPath = OS.Path.join(OS.Constants.Path.profileDir,"columnswizardmiczit");
+				OS.File.makeDir(destPath, {ignoreExisting: true});
+				let destPathFile = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
+				destPathFile.initWithPath(destPath);
+				//remove an existing file before copying the new one
+				OS.File.remove(OS.Path.join(destPathFile,newname));
+				file.copyToFollowingLinks(destPathFile,newname);
+			}
+		}catch(ex){
+			dump(">>>>>>>>>>>>> miczColumnsWizard->saveIcon: [ex.message] "+JSON.stringify(ex.message)+"\r\n");
+		}
 	},
 
 };
