@@ -41,7 +41,7 @@ var miczColumnsWizard_CustCols={
 
 	if((elementc.labelImagePath)&&(elementc.labelImagePath!="")){	//we have an image to use!!
 		cwCol.setAttribute("src","file://"+elementc.labelImagePath);
-		cwCol.setAttribute("class", "treecol-image");
+		cwCol.setAttribute("class", "treecol-image cw_col_image");
 	}
 
     cwCol.setAttribute("tooltiptext",tooltipString);
