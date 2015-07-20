@@ -32,10 +32,9 @@ var miczColumnsWizardPref_CustColEditor = {
 						//fill the fields
 						document.getElementById("ColumnsWizard.id").setAttribute("value",currcol.index);
 						document.getElementById("ColumnsWizard.dbHeader").setAttribute("value",currcol.dbHeader);
+						document.getElementById("ColumnsWizard.labelString").setAttribute("value",currcol.labelString);
 
-						if((!currcol.labelImagePath)||(currcol.labelImagePath=="")){	//no image for this cust col
-							document.getElementById("ColumnsWizard.labelString").setAttribute("value",currcol.labelString);
-						}else{
+						if((currcol.labelImagePath)&&(currcol.labelImagePath!="")){
 							this.setIconUI(currcol.labelImagePath);
 						}
 
@@ -103,17 +102,12 @@ var miczColumnsWizardPref_CustColEditor = {
 						}else{
 							newcol.dbHeader=document.getElementById("ColumnsWizard.dbHeader").value.toLowerCase();
 						}
-						if(document.getElementById("ColumnsWizard.labelString").getAttribute("readonly")){	//we are saving an image!
-							newcol.labelString="";
-							newcol.labelImagePath=miczColumnsWizardPref_CustColEditor.saveIcon(document.getElementById("ColumnsWizard.labelString").value,newcol.dbHeader);
-						}else{
-							newcol.labelString=document.getElementById("ColumnsWizard.labelString").value;
-							newcol.labelImagePath="";
-						}
+						newcol.labelImagePath=miczColumnsWizardPref_CustColEditor.saveIcon(document.getElementById("ColumnsWizard.iconString").value,newcol.dbHeader);
+						newcol.labelString=document.getElementById("ColumnsWizard.labelString").value;
 						newcol.tooltipString=document.getElementById("ColumnsWizard.tooltipString").value;
 						newcol.sortnumber=document.getElementById("ColumnsWizard.sortnumber").checked;
 						newcol.enabled=document.getElementById("ColumnsWizard.enabled").checked;
-						dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
+						//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
 						//miczColumnsWizard_CustCols.addNewCustCol(newcol);
 						window.arguments[0].save=true;
 						window.arguments[0].newcol=newcol;
@@ -127,14 +121,8 @@ var miczColumnsWizardPref_CustColEditor = {
 						//get userinput val
 						newcol.index=currcol.index;
 						newcol.dbHeader=currcol.dbHeader;
-						if(document.getElementById("ColumnsWizard.labelString").getAttribute("readonly")){	//we are saving an image!
-							newcol.labelString="";
-							newcol.labelImagePath=miczColumnsWizardPref_CustColEditor.saveIcon(document.getElementById("ColumnsWizard.labelString").value,newcol.dbHeader);
-
-						}else{
-							newcol.labelString=document.getElementById("ColumnsWizard.labelString").value;
-							newcol.labelImagePath="";
-						}
+						newcol.labelImagePath=miczColumnsWizardPref_CustColEditor.saveIcon(document.getElementById("ColumnsWizard.iconString").value,newcol.dbHeader);
+						newcol.labelString=document.getElementById("ColumnsWizard.labelString").value;
 						newcol.tooltipString=document.getElementById("ColumnsWizard.tooltipString").value;
 						newcol.sortnumber=document.getElementById("ColumnsWizard.sortnumber").checked;
 						newcol.enabled=document.getElementById("ColumnsWizard.enabled").checked;
@@ -182,15 +170,13 @@ var miczColumnsWizardPref_CustColEditor = {
 	},
 
 	setIconUI:function(iconpath){
-		document.getElementById("ColumnsWizard.labelString").setAttribute("value",iconpath);
-		document.getElementById("ColumnsWizard.labelString").setAttribute("readonly",true);
+		document.getElementById("ColumnsWizard.iconString").setAttribute("value",iconpath);
 		document.getElementById("ColumnsWizard.setIcon_btn").setAttribute("image","file://"+iconpath);
 		document.getElementById("ColumnsWizard.removeIcon_btn").setAttribute("disabled",false);
 	},
 
 	removeIconUI:function(){
-		document.getElementById("ColumnsWizard.labelString").setAttribute("value","");
-		document.getElementById("ColumnsWizard.labelString").removeAttribute("readonly");
+		document.getElementById("ColumnsWizard.iconString").setAttribute("value","");
 		document.getElementById("ColumnsWizard.setIcon_btn").setAttribute("image","");
 		document.getElementById("ColumnsWizard.removeIcon_btn").setAttribute("disabled",true);
 	},
@@ -201,11 +187,11 @@ var miczColumnsWizardPref_CustColEditor = {
     	fp.appendFilters(Components.interfaces.nsIFilePicker.filterImages);
 
     	let fpCallback = function fpCallback_done(aResult) {
-		dump(">>>>>>>>>>>>> miczColumnsWizard->chooseIcon: [aResult] "+JSON.stringify(aResult)+"\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard->chooseIcon: [aResult] "+JSON.stringify(aResult)+"\r\n");
 		if (aResult == Components.interfaces.nsIFilePicker.returnOK) {
 			try {
 			  if (fp.file) {
-				dump(">>>>>>>>>>>>> miczColumnsWizard->chooseIcon: [file.path] "+JSON.stringify(fp.file.path)+"\r\n");
+				//dump(">>>>>>>>>>>>> miczColumnsWizard->chooseIcon: [file.path] "+JSON.stringify(fp.file.path)+"\r\n");
 				miczColumnsWizardPref_CustColEditor.setIconUI(fp.file.path)
 			  }
 			} catch (ex) {
@@ -220,6 +206,7 @@ var miczColumnsWizardPref_CustColEditor = {
 	},
 
 	saveIcon:function(filepath,newname){
+		if(filepath=="") return "";
 		//save the choosen icon in the user profile folder
 		let file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
 		file.initWithPath(filepath);

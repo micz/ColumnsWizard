@@ -57,11 +57,10 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		}
 
 		let titleCell = doc.createElement("listcell");
+		titleCell.setAttribute("label",labelString);
 		if((!currcol.labelImagePath)||(currcol.labelImagePath=="")){	//no image for this cust col
-			titleCell.setAttribute("label",labelString);
 			titleCell.setAttribute("image","");
 		}else{
-			titleCell.setAttribute("label","");
 			titleCell.setAttribute("image","file://"+currcol.labelImagePath);
 			titleCell.setAttribute("class", "listcell-iconic cw_col_icon");
 		}
