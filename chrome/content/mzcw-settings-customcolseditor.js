@@ -101,7 +101,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						}else{
 							newcol.dbHeader=document.getElementById("ColumnsWizard.dbHeader").value.toLowerCase();
 						}
-						newcol.labelImagePath=miczColumnsWizardPref_CustColEditor.saveIcon(document.getElementById("ColumnsWizard.iconString").value,newcol.dbHeader);
+						newcol.labelImagePath=miczColumnsWizardPref_CustColEditor.saveIcon(document.getElementById("ColumnsWizard.iconString").value,newcol.index);
 						newcol.labelString=document.getElementById("ColumnsWizard.labelString").value;
 						newcol.tooltipString=document.getElementById("ColumnsWizard.tooltipString").value;
 						newcol.sortnumber=document.getElementById("ColumnsWizard.sortnumber").checked;
@@ -120,7 +120,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						//get userinput val
 						newcol.index=currcol.index;
 						newcol.dbHeader=currcol.dbHeader;
-						newcol.labelImagePath=miczColumnsWizardPref_CustColEditor.saveIcon(document.getElementById("ColumnsWizard.iconString").value,newcol.dbHeader);
+						newcol.labelImagePath=miczColumnsWizardPref_CustColEditor.saveIcon(document.getElementById("ColumnsWizard.iconString").value,newcol.index);
 						if(newcol.labelImagePath==""){	//no image, try to delete it, maybe we are modifying and removing an image
 							this.deleteIcon(newcol.dbHeader);
 						}
