@@ -9,7 +9,6 @@ var miczColumnsWizardPref_CustColEditor = {
 	_sanitize_dbHeader_regex:"([\x21-\x7E2]+)",
 
 	onLoad: function(){
-
 		//Fixing window height
 		sizeToContent();
 		var vbox = document.getElementById('cw_vbox');
@@ -122,6 +121,9 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.index=currcol.index;
 						newcol.dbHeader=currcol.dbHeader;
 						newcol.labelImagePath=miczColumnsWizardPref_CustColEditor.saveIcon(document.getElementById("ColumnsWizard.iconString").value,newcol.dbHeader);
+						if(newcol.labelImagePath==""){	//no image, try to delete it, maybe we are modifying and removing an image
+							this.deleteIcon(newcol.dbHeader);
+						}
 						newcol.labelString=document.getElementById("ColumnsWizard.labelString").value;
 						newcol.tooltipString=document.getElementById("ColumnsWizard.tooltipString").value;
 						newcol.sortnumber=document.getElementById("ColumnsWizard.sortnumber").checked;
@@ -225,6 +227,12 @@ var miczColumnsWizardPref_CustColEditor = {
 		}catch(ex){
 			dump(">>>>>>>>>>>>> miczColumnsWizard->saveIcon: [ex.message] "+JSON.stringify(ex.message)+"\r\n");
 		}
+	},
+
+	deleteIcon:function(filename){
+		let destPath = OS.Path.join(OS.Constants.Path.profileDir,"columnswizardmiczit");
+		let filepath = OS.Path.join(destPath,filename);
+		OS.File.remove(filepath);
 	},
 
 };
