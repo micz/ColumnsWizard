@@ -28,7 +28,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		if (!container) return;
 		let listitem = doc.createElement("listitem");
 
-		//dump(">>>>>>>>>>>>> miczColumnsWizard: [createOneCustomColRow] currcol {"+JSON.stringify(currcol)+"}\r\n");
+		dump(">>>>>>>>>>>>> miczColumnsWizard: [createOneCustomColRow] currcol {"+JSON.stringify(currcol)+"}\r\n");
 
 		let activeCell = doc.createElement("listcell");
 		activeCell.setAttribute("class", "listcell-iconic");
@@ -57,7 +57,14 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		}
 
 		let titleCell = doc.createElement("listcell");
-		titleCell.setAttribute("label",labelString);
+		if((!currcol.labelImagePath)||(currcol.labelImagePath=="")){	//no image for this cust col
+			titleCell.setAttribute("label",labelString);
+			titleCell.setAttribute("image","");
+		}else{
+			titleCell.setAttribute("label","");
+			titleCell.setAttribute("image",currcol.labelImagePath);
+			titleCell.setAttribute("class", "listcell-iconic");
+		}
 		listitem.appendChild(titleCell);
 
 		let tooltipCell = doc.createElement("listcell");

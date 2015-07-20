@@ -176,7 +176,7 @@ var miczColumnsWizardPref_CustColEditor = {
 	},
 
 	setIconUI:function(iconpath){
-		document.getElementById("ColumnsWizard.labelString").setAttribute("value",iconpath);
+		document.getElementById("ColumnsWizard.labelString").setAttribute("value","file://"+iconpath);
 		document.getElementById("ColumnsWizard.labelString").setAttribute("readonly",true);
 		document.getElementById("ColumnsWizard.setIcon_btn").setAttribute("image","file://"+iconpath);
 		document.getElementById("ColumnsWizard.removeIcon_btn").setAttribute("disabled",false);
