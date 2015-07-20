@@ -32,7 +32,13 @@ var miczColumnsWizardPref_CustColEditor = {
 						//fill the fields
 						document.getElementById("ColumnsWizard.id").setAttribute("value",currcol.index);
 						document.getElementById("ColumnsWizard.dbHeader").setAttribute("value",currcol.dbHeader);
-						document.getElementById("ColumnsWizard.labelString").setAttribute("value",currcol.labelString);
+
+						if((!currcol.labelImagePath)||(currcol.labelImagePath=="")){	//no image for this cust col
+							document.getElementById("ColumnsWizard.labelString").setAttribute("value",currcol.labelString);
+						}else{
+							this.setIconUI(currcol.labelImagePath);
+						}
+
 						document.getElementById("ColumnsWizard.tooltipString").setAttribute("value",currcol.tooltipString);
 						document.getElementById("ColumnsWizard.sortnumber").setAttribute("checked",currcol.sortnumber);
 						document.getElementById("ColumnsWizard.enabled").setAttribute("checked",currcol.enabled);
@@ -97,7 +103,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						}else{
 							newcol.dbHeader=document.getElementById("ColumnsWizard.dbHeader").value.toLowerCase();
 						}
-						if(document.getElementById("ColumnsWizard.labelString").readonly){	//we are saving an image!
+						if(document.getElementById("ColumnsWizard.labelString").getAttribute("readonly")){	//we are saving an image!
 							newcol.labelString="";
 							newcol.labelImagePath=miczColumnsWizardPref_CustColEditor.saveIcon(document.getElementById("ColumnsWizard.labelString").value,newcol.dbHeader);
 						}else{
@@ -121,7 +127,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						//get userinput val
 						newcol.index=currcol.index;
 						newcol.dbHeader=currcol.dbHeader;
-						if(document.getElementById("ColumnsWizard.labelString").readonly){	//we are saving an image!
+						if(document.getElementById("ColumnsWizard.labelString").getAttribute("readonly")){	//we are saving an image!
 							newcol.labelString="";
 							newcol.labelImagePath=miczColumnsWizardPref_CustColEditor.saveIcon(document.getElementById("ColumnsWizard.labelString").value,newcol.dbHeader);
 
@@ -176,7 +182,7 @@ var miczColumnsWizardPref_CustColEditor = {
 	},
 
 	setIconUI:function(iconpath){
-		document.getElementById("ColumnsWizard.labelString").setAttribute("value","file://"+iconpath);
+		document.getElementById("ColumnsWizard.labelString").setAttribute("value",iconpath);
 		document.getElementById("ColumnsWizard.labelString").setAttribute("readonly",true);
 		document.getElementById("ColumnsWizard.setIcon_btn").setAttribute("image","file://"+iconpath);
 		document.getElementById("ColumnsWizard.removeIcon_btn").setAttribute("disabled",false);
@@ -184,7 +190,7 @@ var miczColumnsWizardPref_CustColEditor = {
 
 	removeIconUI:function(){
 		document.getElementById("ColumnsWizard.labelString").setAttribute("value","");
-		document.getElementById("ColumnsWizard.labelString").setAttribute("readonly",false);
+		document.getElementById("ColumnsWizard.labelString").removeAttribute("readonly");
 		document.getElementById("ColumnsWizard.setIcon_btn").setAttribute("image","");
 		document.getElementById("ColumnsWizard.removeIcon_btn").setAttribute("disabled",true);
 	},
@@ -221,12 +227,12 @@ var miczColumnsWizardPref_CustColEditor = {
 			if(file){
 				let destPath = OS.Path.join(OS.Constants.Path.profileDir,"columnswizardmiczit");
 				OS.File.makeDir(destPath, {ignoreExisting: true});
-				let destPathFile = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
-				destPathFile.initWithPath(destPath);
-				//remove an existing file before copying the new one
-				let destFullPath=OS.Path.join(destPathFile,newname);
-				OS.File.remove(destFullPath);
-				file.copyToFollowingLinks(destPathFile,newname);
+				let destFullPath=OS.Path.join(destPath,newname);
+				//dump(">>>>>>>>>>>>> miczColumnsWizard->saveIcon: [file.path] "+JSON.stringify(file.path)+"\r\n");
+				//dump(">>>>>>>>>>>>> miczColumnsWizard->saveIcon: [destPath] "+JSON.stringify(destPath)+"\r\n");
+				if(file.path.indexOf(destPath)==-1){	//if the icon is already in the dest folder (we're modifying a cust col), do nothing!
+					OS.File.copy(file.path,destFullPath);
+				}
 				return destFullPath;
 			}
 		}catch(ex){

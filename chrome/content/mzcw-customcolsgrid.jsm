@@ -62,8 +62,8 @@ var miczColumnsWizardPref_CustomColsGrid = {
 			titleCell.setAttribute("image","");
 		}else{
 			titleCell.setAttribute("label","");
-			titleCell.setAttribute("image",currcol.labelImagePath);
-			titleCell.setAttribute("class", "listcell-iconic");
+			titleCell.setAttribute("image","file://"+currcol.labelImagePath);
+			titleCell.setAttribute("class", "listcell-iconic cw_col_icon");
 		}
 		listitem.appendChild(titleCell);
 
