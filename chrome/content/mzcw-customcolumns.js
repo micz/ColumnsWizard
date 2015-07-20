@@ -37,7 +37,14 @@ var miczColumnsWizard_CustCols={
     cwCol.setAttribute("persist","hidden ordinal width");
     cwCol.setAttribute("hidden","true");
     cwCol.setAttribute("flex","4");
-    cwCol.setAttribute("label",labelString);
+
+	if((!elementc.labelImagePath)||(elementc.labelImagePath=="")){	//no image for this cust col
+		cwCol.setAttribute("label",labelString);
+	}else{
+		cwCol.setAttribute("src","file://"+elementc.labelImagePath);
+		cwCol.setAttribute("class", "treecol-image");
+	}
+
     cwCol.setAttribute("tooltiptext",tooltipString);
     let cwSplitter = document.createElement("splitter");
     cwSplitter.setAttribute("class","tree-splitter");
