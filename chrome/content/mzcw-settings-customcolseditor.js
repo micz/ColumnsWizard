@@ -10,10 +10,7 @@ var miczColumnsWizardPref_CustColEditor = {
 
 	onLoad: function(){
 		//Fixing window height
-		sizeToContent();
-		var vbox = document.getElementById('cw_vbox');
-		vbox.height = vbox.boxObject.height;
-		sizeToContent();
+		this.fixWinHeight();
 
 		if ("arguments" in window && window.arguments[0]){
 			let args = window.arguments[0];
@@ -173,14 +170,18 @@ var miczColumnsWizardPref_CustColEditor = {
 
 	setIconUI:function(iconpath){
 		document.getElementById("ColumnsWizard.iconString").setAttribute("value",iconpath);
+		document.getElementById("ColumnsWizard.iconString").setAttribute("hidden",false);
 		document.getElementById("ColumnsWizard.setIcon_btn").setAttribute("image","file://"+iconpath);
 		document.getElementById("ColumnsWizard.removeIcon_btn").setAttribute("disabled",false);
+		this.fixWinHeight();
 	},
 
 	removeIconUI:function(){
 		document.getElementById("ColumnsWizard.iconString").setAttribute("value","");
+		document.getElementById("ColumnsWizard.iconString").setAttribute("hidden",true);
 		document.getElementById("ColumnsWizard.setIcon_btn").setAttribute("image","");
 		document.getElementById("ColumnsWizard.removeIcon_btn").setAttribute("disabled",true);
+		this.fixWinHeight();
 	},
 
 	chooseIcon:function(){
@@ -233,6 +234,13 @@ var miczColumnsWizardPref_CustColEditor = {
 		let destPath = OS.Path.join(OS.Constants.Path.profileDir,"columnswizardmiczit");
 		let filepath = OS.Path.join(destPath,filename);
 		OS.File.remove(filepath);
+	},
+
+	fixWinHeight:function(){
+		sizeToContent();
+		var vbox = document.getElementById('cw_vbox');
+		vbox.height = vbox.boxObject.height;
+		sizeToContent();
 	},
 
 };
