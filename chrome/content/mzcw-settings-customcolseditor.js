@@ -41,6 +41,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						//disable the ID and dbheader field
 						document.getElementById("ColumnsWizard.id").setAttribute("readonly",true);
 						document.getElementById("ColumnsWizard.dbHeader").setAttribute("readonly",true);
+						document.getElementById("ColumnsWizard.labelString").focus();
 					break;
 				}
 			}
