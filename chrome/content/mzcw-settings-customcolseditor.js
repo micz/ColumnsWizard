@@ -39,8 +39,8 @@ var miczColumnsWizardPref_CustColEditor = {
 						document.getElementById("ColumnsWizard.enabled").setAttribute("checked",currcol.enabled);
 
 						//disable the ID and dbheader field
-						document.getElementById("ColumnsWizard.id").disabled=true;
-						document.getElementById("ColumnsWizard.dbHeader").disabled=true;
+						document.getElementById("ColumnsWizard.id").setAttribute("readonly",true);
+						document.getElementById("ColumnsWizard.dbHeader").setAttribute("readonly",true);
 					break;
 				}
 			}
