@@ -171,7 +171,7 @@ var miczColumnsWizardPref_CustColEditor = {
 
 	setIconUI:function(iconpath){
 		document.getElementById("ColumnsWizard.iconString").setAttribute("value",iconpath);
-		document.getElementById("ColumnsWizard.iconString").setAttribute("hidden",false);
+		//document.getElementById("ColumnsWizard.iconString").setAttribute("hidden",false);
 		document.getElementById("ColumnsWizard.setIcon_btn").setAttribute("image","file://"+iconpath);
 		document.getElementById("ColumnsWizard.removeIcon_btn").setAttribute("disabled",false);
 		this.fixWinHeight();
@@ -179,7 +179,7 @@ var miczColumnsWizardPref_CustColEditor = {
 
 	removeIconUI:function(){
 		document.getElementById("ColumnsWizard.iconString").setAttribute("value","");
-		document.getElementById("ColumnsWizard.iconString").setAttribute("hidden",true);
+		//document.getElementById("ColumnsWizard.iconString").setAttribute("hidden",true);
 		document.getElementById("ColumnsWizard.setIcon_btn").setAttribute("image","");
 		document.getElementById("ColumnsWizard.removeIcon_btn").setAttribute("disabled",true);
 		this.fixWinHeight();
