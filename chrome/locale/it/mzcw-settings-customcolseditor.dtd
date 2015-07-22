@@ -5,6 +5,10 @@
 <!ENTITY ColumnsWizard.dbHeader.label "Mail Header">
 <!ENTITY ColumnsWizard.dbHeader.desc "Questo è il campo presente nell'instazione dei messaggi di posta elettronica che si vuole mostrare nella lista dei messaggi. Non può essere modificato dopo il primo salvataggio.">
 <!ENTITY ColumnsWizard.labelString.label "Nome della Colonna">
+<!ENTITY ColumnsWizard.btn.setIcon_label "Imposta icona">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Clicca qui per impostare un'icona come titolo della colonna.">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "Rimuovi l'icona">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Clicca qui per rimuovere l'icona.">
 <!ENTITY ColumnsWizard.labelString.desc "Scrivi qui il nome che vuoi sia mostrato nell'intestazione di colonna nella lista dei messaggi.">
 <!ENTITY ColumnsWizard.tooltipString.label "Tooltip">
 <!ENTITY ColumnsWizard.tooltipString.desc "Inserisci qui il testo del tooltip dell'intestazione di colonna nella lista dei messaggi. Solitamente questo campo riporta scritto &quot;Ordina per&quot; seguito dal nome della colonna.">
