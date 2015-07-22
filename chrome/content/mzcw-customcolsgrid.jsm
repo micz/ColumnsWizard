@@ -115,6 +115,12 @@ var miczColumnsWizardPref_CustomColsGrid = {
 
 		let titleCell = listitem.childNodes[3];
 		titleCell.setAttribute("label",labelString);
+		if((!currcol.labelImagePath)||(currcol.labelImagePath=="")){	//no image for this cust col
+			titleCell.setAttribute("image","");
+		}else{
+			titleCell.setAttribute("image","file://"+currcol.labelImagePath);
+			titleCell.setAttribute("class", "listcell-iconic cw_col_icon");
+		}
 
 		let tooltipCell = listitem.childNodes[4];
 		tooltipCell.setAttribute("label",tooltipString);
