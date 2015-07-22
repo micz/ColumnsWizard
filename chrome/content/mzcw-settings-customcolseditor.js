@@ -186,8 +186,10 @@ var miczColumnsWizardPref_CustColEditor = {
 	},
 
 	chooseIcon:function(){
+		let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
 		let fp = Components.classes["@mozilla.org/filepicker;1"].createInstance(Components.interfaces.nsIFilePicker);
-		fp.init(window, "Select an icon file", Components.interfaces.nsIFilePicker.modeOpen);
+		fp.init(window, _bundleCW.GetStringFromName("ColumnsWizard.chooseIcon.title")+"...", Components.interfaces.nsIFilePicker.modeOpen);
     	fp.appendFilters(Components.interfaces.nsIFilePicker.filterImages);
 
     	let fpCallback = function fpCallback_done(aResult) {
