@@ -3,8 +3,9 @@
 ==========
 Version 5.1 - ??/??/2015
 - Release notes added in the preference info tab.
-- The Custom Columns in the preference tab are now sorted alphabetically. New Custom Columns are added at the end of the list and then sorted at the next preference window reopening.
+- The custom columns in the preference tab are now sorted alphabetically. New Custom Columns are added at the end of the list and then sorted at the next preference window reopening.
 - License file added.
+- A custom column now could have an image as the column name.
 -
 ==========
 Version 5.0.3 - 07/06/2015
