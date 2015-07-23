@@ -5,8 +5,15 @@
 <!ENTITY ColumnsWizard.dbHeader.label "邮件头">
 <!ENTITY ColumnsWizard.dbHeader.desc "邮件头是属于邮件消息的字段，它将被显示在消息列表的自定义列中。它在第一次保存后不可修改。">
 <!ENTITY ColumnsWizard.labelString.label "列名称">
+<!ENTITY ColumnsWizard.btn.setIcon_label "设置图标">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "点击这里设置一个图标作为列名称。">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "移除图标">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "点击这里移除此图标。">
 <!ENTITY ColumnsWizard.labelString.desc "写下将显示在邮件列表列头处的名称。">
 <!ENTITY ColumnsWizard.tooltipString.label "工具提示">
 <!ENTITY ColumnsWizard.tooltipString.desc "请在这里输入该列在消息列表列头处的工具提示。通常这是“排序方式”的第一要素，其次是列名。">
 <!ENTITY ColumnsWizard.enabled.label "启用">
 <!ENTITY ColumnsWizard.enabled.desc "立即启用此自定义的列。">
+<!ENTITY ColumnsWizard.sortnumber.label "设置">
+<!ENTITY ColumnsWizard.sortnumber.desc "设置此自定义列为一个数字。">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "这个自定义列可以设置为一个不超过3位小数，值在 -1.000.000 至 3.294.967 之间的一个数字，供排序使用。">

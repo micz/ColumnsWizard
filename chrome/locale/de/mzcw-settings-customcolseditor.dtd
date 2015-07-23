@@ -5,6 +5,10 @@
 <!ENTITY ColumnsWizard.dbHeader.label "Mail Header">
 <!ENTITY ColumnsWizard.dbHeader.desc "Der Mail Header ist der Feldname der Spalte welcher in the Mailliste zu sehen ist. Er kann nach dem Erzeugen nicht modifiziert werden.">
 <!ENTITY ColumnsWizard.labelString.label "Spaltenname">
+<!ENTITY ColumnsWizard.btn.setIcon_label "Icon auswählen">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Klicken um ein Icon als Spaltenname anzuzeigen.">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "Icon entfernen">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Anklicken um das Icon zu entfernen.">
 <!ENTITY ColumnsWizard.labelString.desc "Die Spaltenüberschrift in der Mailliste.">
 <!ENTITY ColumnsWizard.tooltipString.label "Tooltip">
 <!ENTITY ColumnsWizard.tooltipString.desc "Tooltip für die Spaltenüberschrift. Üblicherweise ist dies 'Nach (Spaltenname) sortieren'.">
