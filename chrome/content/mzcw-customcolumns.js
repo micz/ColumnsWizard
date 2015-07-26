@@ -40,8 +40,12 @@ var miczColumnsWizard_CustCols={
     cwCol.setAttribute("label",labelString);
 
 	if((elementc.labelImagePath)&&(elementc.labelImagePath!="")){	//we have an image to use!!
-		cwCol.setAttribute("src","file://"+elementc.labelImagePath);
-		cwCol.setAttribute("class", "treecol-image cw_col_image");
+		let file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
+		file.initWithPath(elementc.labelImagePath)
+		if((file)&&(file.exists())){
+			cwCol.setAttribute("src","file://"+elementc.labelImagePath);
+			cwCol.setAttribute("class", "treecol-image cw_col_image");
+		}
 	}
 
     cwCol.setAttribute("tooltiptext",tooltipString);
