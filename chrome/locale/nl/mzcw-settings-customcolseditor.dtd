@@ -5,6 +5,10 @@
 <!ENTITY ColumnsWizard.dbHeader.label "Berichtheader">
 <!ENTITY ColumnsWizard.dbHeader.desc "De berichtheader is het veld van e-mailberichten dat moet worden weergegeven in de berichtenlijst in de Aangepaste kolom. Deze kan niet worden gewijzigd na de eerste keer opslaan.">
 <!ENTITY ColumnsWizard.labelString.label "Kolomnaam">
+<!ENTITY ColumnsWizard.btn.setIcon_label "Set icon">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Click here to set an icon as the column name.">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "Remove icon">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Click here to remove the icon.">
 <!ENTITY ColumnsWizard.labelString.desc "Schrijf hier de naam die bovenaan de kolom in de berichtenlijst moet worden weergegeven.">
 <!ENTITY ColumnsWizard.tooltipString.label "Tooltip">
 <!ENTITY ColumnsWizard.tooltipString.desc "Voer hier de tooltip van de kolomtekst in de berichtenlijst in. Dit is gewoonlijk “Sorteren op”, gevolgd door de kolomnaam.">
