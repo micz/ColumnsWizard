@@ -9,19 +9,7 @@ var miczColumnsWizardPref = {
 		this.loadCustColRows(win);
 
 		//Load release notes
-		let url = "chrome://cwrl/content/release_notes.txt";
-		let request = Components.classes["@mozilla.org/xmlextras/xmlhttprequest;1"]
-					  .createInstance(Components.interfaces.nsIXMLHttpRequest);
-		request.onload = function(aEvent) {
-			let relnotes = document.getElementById('mzcw-release-notes');
-			relnotes.value= aEvent.target.responseText;
-		};
-		request.onerror = function(aEvent) {
-		   //
-		};
-		request.open("GET", url, true);
-		request.responseType = "text";
-		request.send(null);
+		this.loadInfoFile('release_notes');
 
 		//Fixing window height
 		sizeToContent();
@@ -140,5 +128,29 @@ var miczColumnsWizardPref = {
 
 		//remove the custom col from the listbox
 		miczColumnsWizardPref_CustomColsGrid.deleteOneCustomColRow(container,container.selectedIndex);
+	},
+
+	loadInfoFile:function(filetype){
+		let url = '';
+		switch(filetype){
+			case 'release_notes':
+				url ="chrome://cwrl/content/release_notes.txt";
+				break;
+			case 'license':
+				url ="chrome://cwrl/content/license.txt";
+				break;
+		 }
+		let request = Components.classes["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance(Components.interfaces.nsIXMLHttpRequest);
+		request.onload = function(aEvent) {
+			let relnotes = document.getElementById('mzcw-release-notes');
+			relnotes.value= aEvent.target.responseText;
+		};
+		request.onerror = function(aEvent) {
+		   //
+		};
+
+		request.open("GET", url, true);
+		request.responseType = "text";
+		request.send(null);
 	},
 };

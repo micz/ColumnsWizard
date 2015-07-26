@@ -12,7 +12,6 @@
 <!ENTITY ColumnsWizard.TabInfo.label "Info">
 <!ENTITY ColumnsWizard.InfoMainDesc "This addon is free and developed in my spare time. If you're using it in your every day routine, feel free to support it with a little donation clicking on the link below. Thanks!!">
 <!ENTITY ColumnsWizard.DonateLink "Make a donation!">
-<!ENTITY ColumnsWizard.TranslateCredits "Translation thanks to Babelzilla.org">
 <!ENTITY ColumnsWizard.Addbcc.label "Bcc">
 <!ENTITY ColumnsWizard.Addreplyto.label "Reply-to">
 <!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
