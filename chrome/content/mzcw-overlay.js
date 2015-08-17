@@ -150,7 +150,7 @@ var miczColumnsWizard = {
     let re = new RegExp("(^| )"+newHeader+"( |$)","i");
     if (currentHeaders.search(re) < 0) {
       currentHeaders = currentHeaders + " "+newHeader;
-      prefService.setCharPref("mailnews.customDBHeaders", currentHeaders);
+      prefService.setCharPref("mailnews.customDBHeaders", currentHeaders.trim());
       //dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders->Updating] "+newHeader+"\r\n");
     }
   },
