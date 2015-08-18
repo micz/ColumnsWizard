@@ -158,6 +158,7 @@ var miczColumnsWizard_CustCols={
 						dcurrcol.dbHeader = "ccList";
 						dcurrcol.sortnumber=false;
 						dcurrcol.isCustom=false;
+						dcurrcol.isSearchable=false;
 						break;
 					case 'bcc':
 						dcurrcol.enabled = prefs.getBoolPref("Addbcc");
@@ -165,6 +166,7 @@ var miczColumnsWizard_CustCols={
 						dcurrcol.dbHeader = "bccList";
 						dcurrcol.sortnumber=false;
 						dcurrcol.isCustom=false;
+						dcurrcol.isSearchable=false;
 						break;
 					case 'replyto':
 						dcurrcol.enabled = prefs.getBoolPref("Addreplyto");
@@ -172,6 +174,7 @@ var miczColumnsWizard_CustCols={
 						dcurrcol.dbHeader = "replyTo";
 						dcurrcol.sortnumber=false;
 						dcurrcol.isCustom=false;
+						dcurrcol.isSearchable=true;
 						break;
 					case 'xoriginalfrom':
 						dcurrcol.enabled = prefs.getBoolPref("Addxoriginalfrom");
@@ -179,6 +182,7 @@ var miczColumnsWizard_CustCols={
 						dcurrcol.dbHeader = "x-original-from";
 						dcurrcol.sortnumber=false;
 						dcurrcol.isCustom=true;
+						dcurrcol.isSearchable=true;
 						break;
 					case 'contentbase':
 						dcurrcol.enabled = prefs.getBoolPref("Addcontentbase");
@@ -186,6 +190,7 @@ var miczColumnsWizard_CustCols={
 						dcurrcol.dbHeader = "content-base";
 						dcurrcol.sortnumber=false;
 						dcurrcol.isCustom=true;
+						dcurrcol.isSearchable=true;
 						break;
 					case 'xspamscore':
 						dcurrcol.enabled = false;
@@ -193,6 +198,7 @@ var miczColumnsWizard_CustCols={
 						dcurrcol.dbHeader = "x-spam-score";
 						dcurrcol.sortnumber=true;
 						dcurrcol.isCustom=true;
+						dcurrcol.isSearchable=true;
 						break;
 				}
 				dcurrcol.index=miczColumnsWizard_CustCols.CustColDefaultIndex[singlecolidx];
