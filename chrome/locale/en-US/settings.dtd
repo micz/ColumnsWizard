@@ -31,3 +31,5 @@
 <!ENTITY ColumnsWizard.CustColsList.mailheader "Mail Header">
 <!ENTITY ColumnsWizard.CustColsList.title "Column Name">
 <!ENTITY ColumnsWizard.CustColsList.tooltip "Tooltip">
+<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Enabled">
+<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Searchable">

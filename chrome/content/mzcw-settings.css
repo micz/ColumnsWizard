@@ -7,5 +7,9 @@
 .mzcw-grid_hdr_cnt{text-align:center;}
 listcell[enabled="false"]{list-style-image:url("chrome://messenger/skin/icons/notchecked.gif");}
 listcell[enabled="true"]{list-style-image:url("chrome://messenger/skin/icons/check.gif");}
+listcell.searchable{margin-left:8px;}
+listheader.icon_enabled{list-style-image:url("chrome://columnswizard/skin/ico/mzcw-custcol_enabled.png");}
+listheader.icon_searchable{list-style-image:url("chrome://columnswizard/skin/ico/mzcw-custcol_searchable.png");}
+listheader.icon_searchable .listheader-icon{position:relative;left:-10px;}
 .release-notes-text{font-family:"courier new";}
 .cw_col_icon image{max-height:16px;}

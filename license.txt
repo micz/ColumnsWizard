@@ -29,3 +29,4 @@ Italian (it) thanks to Mic [http://micz.it].
 
 -= Graphics =-
 Addon icon thanks to http://www.oxygen-icons.org
+Custom columns preferences list header icons thanks to http://ampeross.deviantart.com/

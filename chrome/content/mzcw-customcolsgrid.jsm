@@ -39,7 +39,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		listitem.appendChild(activeCell);
 		
 		let searchableCell = doc.createElement("listcell");
-		searchableCell.setAttribute("class", "listcell-iconic");
+		searchableCell.setAttribute("class", "listcell-iconic searchable");
 		searchableCell.setAttribute("enabled",currcol.isSearchable);
 		listitem.appendChild(searchableCell);
 
