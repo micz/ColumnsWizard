@@ -111,9 +111,9 @@
 			<caption label="&ColumnsWizard.mod_type.label;"/>
 				<label value="&ColumnsWizard.mod_type.desc;" id="ColumnsWizard.mod_type.desc"/>
 				<radiogroup class="mod_type_radiogroup" id="ColumnsWizard.mod_type_group" oncommand="miczColumnsWizardPref_CustColEditor.enableHeaderFixedList();">
-				  <radio id="ColumnsWizard.mod_type_freetext" label="&ColumnsWizard.mod_type_freetext.label;" selected="true"/>
-				  <radio id="ColumnsWizard.mod_type_number" label="&ColumnsWizard.mod_type_number.label;"/>
-				  <radio id="ColumnsWizard.mod_type_fixedlist" label="&ColumnsWizard.mod_type_fixedlist.label;"/>
+				  <radio value="tx" id="ColumnsWizard.mod_type_freetext" label="&ColumnsWizard.mod_type_freetext.label;" selected="true"/>
+				  <radio value="nb" id="ColumnsWizard.mod_type_number" label="&ColumnsWizard.mod_type_number.label;"/>
+				  <radio value="fl" id="ColumnsWizard.mod_type_fixedlist" label="&ColumnsWizard.mod_type_fixedlist.label;"/>
 				</radiogroup>
 				<vbox class="cw_modtype_fixedlist_textbox">
 				<textbox id="ColumnsWizard.mod_type_fixedlist.list" value="" multiline="true" rows="5" disabled="true"/>
