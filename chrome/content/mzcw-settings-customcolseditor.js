@@ -36,6 +36,7 @@ var miczColumnsWizardPref_CustColEditor = {
 
 						document.getElementById("ColumnsWizard.tooltipString").setAttribute("value",currcol.tooltipString);
 						document.getElementById("ColumnsWizard.sortnumber").setAttribute("checked",currcol.sortnumber);
+						document.getElementById("ColumnsWizard.searchable").setAttribute("checked",currcol.isSearchable);
 						document.getElementById("ColumnsWizard.enabled").setAttribute("checked",currcol.enabled);
 
 						//disable the ID and dbheader field
@@ -103,6 +104,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.labelString=document.getElementById("ColumnsWizard.labelString").value;
 						newcol.tooltipString=document.getElementById("ColumnsWizard.tooltipString").value;
 						newcol.sortnumber=document.getElementById("ColumnsWizard.sortnumber").checked;
+						newcol.isSearchable=document.getElementById("ColumnsWizard.searchable").checked;
 						newcol.enabled=document.getElementById("ColumnsWizard.enabled").checked;
 						//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
 						//miczColumnsWizard_CustCols.addNewCustCol(newcol);
@@ -125,6 +127,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.labelString=document.getElementById("ColumnsWizard.labelString").value;
 						newcol.tooltipString=document.getElementById("ColumnsWizard.tooltipString").value;
 						newcol.sortnumber=document.getElementById("ColumnsWizard.sortnumber").checked;
+						newcol.isSearchable=document.getElementById("ColumnsWizard.searchable").checked;
 						newcol.enabled=document.getElementById("ColumnsWizard.enabled").checked;
 						//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
 						//miczColumnsWizard_CustCols.addNewCustCol(newcol);

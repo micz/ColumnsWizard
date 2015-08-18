@@ -137,9 +137,6 @@ var miczColumnsWizard = {
 	//dump(">>>>>>>>>>>>> miczColumnsWizard: [element|index] "+element.Pref+"|"+index+"\r\n");
 		if(element.enabled===true){
 			miczColumnsWizard_CustCols.addCustomColumn(element,ObserverService);
-			if(element.isSearchable){
-				miczColumnsWizard.activateCustomHeaderSearchable(element.dbHeader);
-			}
 			if(element.isCustom!=false){
 				miczColumnsWizard.activateCustomDBHeader(element.dbHeader);
 			}
@@ -166,33 +163,6 @@ var miczColumnsWizard = {
     currentHeaders=currentHeaders.replace(re," ");
     prefService.setCharPref("mailnews.customDBHeaders", currentHeaders);
     //dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate customDBHeaders->Updating] "+newHeader+"\r\n");
-  },
-  
-  activateCustomHeaderSearchable:function(newHeader){
-    //dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable] "+newHeader+"\r\n");
-    let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-    let currentHeaders = prefService.getCharPref("mailnews.customHeaders");
-    let headers_array=currentHeaders.split(': ');
-    if(headers_array.indexOf(newHeader)==-1){
-      headers_array.push(newHeader);
-      currentHeaders=headers_array.join(': ');
-      prefService.setCharPref("mailnews.customHeaders", currentHeaders.trim());
-      //dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable->Updating] "+newHeader+"\r\n");
-    }
-  },
-  
-  deactivateCustomHeaderSearchable:function(newHeader){
-    //dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate CustomHeaderSearchable] "+newHeader+"\r\n");
-    let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-    let currentHeaders = prefService.getCharPref("mailnews.customHeaders");
-    let headers_array=currentHeaders.split(': ');
-    let h_idx=headers_array.indexOf(newHeader);
-    if(h_idx>-1){
-      headers_array.splice(h_idx,1);
-      currentHeaders=headers_array.join(': ');
-      prefService.setCharPref("mailnews.customHeaders", currentHeaders.trim());
-      //dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate CustomHeaderSearchable->Updating] "+newHeader+"\r\n");
-    }
   },
 
   showColumns: function(tab){

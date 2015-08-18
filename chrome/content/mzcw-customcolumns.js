@@ -122,6 +122,9 @@ var miczColumnsWizard_CustCols={
 		//dump(">>>>>>>>>>>>> miczColumnsWizard->loadCustCols: [CustColIndex[singlecolidx]] "+CustColIndex[singlecolidx]+"\r\n");
 		try{
 			loadedCustColPref[CustColIndex[singlecolidx]]=JSON.parse(prefs_def.getCharPref(CustColIndex[singlecolidx]));
+			if(loadedCustColPref[CustColIndex[singlecolidx]].isSearchable===undefined){
+				loadedCustColPref[CustColIndex[singlecolidx]].isSearchable=false;
+			}
 		}catch(ex){
 			//We have an index, but no preference for it, so we remove it...
 			miczColumnsWizard_CustCols.removeCustColIndex(CustColIndex[singlecolidx]);
@@ -268,6 +271,13 @@ var miczColumnsWizard_CustCols={
 			let prefs=prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
 			prefs.setBoolPref(currcol.def,currcol.enabled);
 		}
+		
+		//Adding the cust col as searchable
+		if(currcol.isSearchable){
+			miczColumnsWizard_CustCols.activateCustomHeaderSearchable(currcol.dbHeader);
+		}else{
+			miczColumnsWizard_CustCols.deactivateCustomHeaderSearchable(currcol.dbHeader);
+		}
 
     	return value;
 	},
@@ -275,4 +285,32 @@ var miczColumnsWizard_CustCols={
 	deleteCustCol: function(col_idx){
 		miczColumnsWizard_CustCols.removeCustColIndex(col_idx);
 	},
+	
+	activateCustomHeaderSearchable:function(newHeader){
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable] "+newHeader+"\r\n");
+		let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let currentHeaders = prefService.getCharPref("mailnews.customHeaders");
+		let headers_array=currentHeaders.split(': ');
+		if(headers_array.indexOf(newHeader)==-1){
+			headers_array.push(newHeader);
+			currentHeaders=headers_array.join(': ');
+			prefService.setCharPref("mailnews.customHeaders", currentHeaders.trim());
+			//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable->Updating] "+newHeader+"\r\n");
+		}
+	},
+  
+	deactivateCustomHeaderSearchable:function(newHeader){
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate CustomHeaderSearchable] "+newHeader+"\r\n");
+		let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let currentHeaders = prefService.getCharPref("mailnews.customHeaders");
+		let headers_array=currentHeaders.split(': ');
+		let h_idx=headers_array.indexOf(newHeader);
+		if(h_idx>-1){
+			headers_array.splice(h_idx,1);
+			currentHeaders=headers_array.join(': ');
+			prefService.setCharPref("mailnews.customHeaders", currentHeaders.trim());
+			//dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate CustomHeaderSearchable->Updating] "+newHeader+"\r\n");
+		}
+	},
+
 };

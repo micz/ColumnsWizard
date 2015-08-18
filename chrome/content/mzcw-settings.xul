@@ -59,13 +59,15 @@
           <listbox id="ColumnsWizard.CustColsList" flex="1" height="201px" onselect="miczColumnsWizardPref.updateButtons(window);" seltype="single">
 			 <listcols>
 				<listcol maxwidth="32px"/>
+				<listcol maxwidth="16px"/>
 				<listcol flex="1"/>
 				<listcol flex="1"/>
 				<listcol flex="1"/>
 				<listcol flex="1"/>
 			</listcols>
             <listhead>
-              <listheader id="activeColumn" label=" "/>
+              <listheader id="activeColumn" label="A"/>
+              <listheader id="searchableColumn" label="S"/>
               <listheader id="idColumn" label="&ColumnsWizard.CustColsList.ID;"/>
               <listheader id="mailheaderColumn" label="&ColumnsWizard.CustColsList.mailheader;"/>
               <listheader id="titleColumn" label="&ColumnsWizard.CustColsList.title;"/>

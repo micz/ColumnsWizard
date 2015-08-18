@@ -37,6 +37,11 @@ var miczColumnsWizardPref_CustomColsGrid = {
 			activeCell.setAttribute("label","*");
 		}
 		listitem.appendChild(activeCell);
+		
+		let searchableCell = doc.createElement("listcell");
+		searchableCell.setAttribute("class", "listcell-iconic");
+		searchableCell.setAttribute("enabled",currcol.isSearchable);
+		listitem.appendChild(searchableCell);
 
 		let idCell = doc.createElement("listcell");
 		idCell.setAttribute("label",currcol.index);
@@ -96,11 +101,14 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		if(currcol.isCustom){
 			activeCell.setAttribute("label","*");
 		}
+		
+		let searchableCell = listitem.childNodes[1];
+		searchableCell.setAttribute("enabled",currcol.isSearchable);
 
-		let idCell = listitem.childNodes[1];
+		let idCell = listitem.childNodes[2];
 		idCell.setAttribute("label",currcol.index);
 
-		let mailheaderCell = listitem.childNodes[2];
+		let mailheaderCell = listitem.childNodes[3];
 		mailheaderCell.setAttribute("label",currcol.dbHeader);
 
 		let labelString = '';
@@ -113,7 +121,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 			tooltipString = currcol.tooltipString;
 		}
 
-		let titleCell = listitem.childNodes[3];
+		let titleCell = listitem.childNodes[4];
 		titleCell.setAttribute("label",labelString);
 		if((!currcol.labelImagePath)||(currcol.labelImagePath=="")){	//no image for this cust col
 			titleCell.setAttribute("image","");
@@ -122,7 +130,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 			titleCell.setAttribute("class", "listcell-iconic cw_col_icon");
 		}
 
-		let tooltipCell = listitem.childNodes[4];
+		let tooltipCell = listitem.childNodes[5];
 		tooltipCell.setAttribute("label",tooltipString);
 
 		listitem._customcol=currcol;
@@ -164,12 +172,21 @@ var miczColumnsWizardPref_CustomColsGrid = {
 
 		// Remember, we had to attach the click-listener to the whole listitem, so
 		// now we need to see if the clicked the enable-column
-		let toggle = event.target.childNodes[0];
+		let toggle_enable = event.target.childNodes[0];	//enable
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [onFilterClick] toggle range: from "+toggle.boxObject.x+" to "+(toggle.boxObject.x + toggle.boxObject.width)+"\r\n");
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [onFilterClick] event.clientX "+event.clientX+"\r\n");
-		if ((event.clientX < toggle.boxObject.x + toggle.boxObject.width) &&
-			(event.clientX > toggle.boxObject.x)) {
+		if ((event.clientX < toggle_enable.boxObject.x + toggle_enable.boxObject.width) &&
+			(event.clientX > toggle_enable.boxObject.x)) {
 		  miczColumnsWizardPref_CustomColsGrid.toggleEnable(event.target);
+		  event.stopPropagation();
+		}
+		
+		let toggle_searchable = event.target.childNodes[1];	//is searchable
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [onFilterClick] toggle range: from "+toggle.boxObject.x+" to "+(toggle.boxObject.x + toggle.boxObject.width)+"\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [onFilterClick] event.clientX "+event.clientX+"\r\n");
+		if ((event.clientX < toggle_searchable.boxObject.x + toggle_searchable.boxObject.width) &&
+			(event.clientX > toggle_searchable.boxObject.x)) {
+		  miczColumnsWizardPref_CustomColsGrid.toggleSearchable(event.target);
 		  event.stopPropagation();
 		}
 	},
@@ -184,6 +201,18 @@ var miczColumnsWizardPref_CustomColsGrid = {
 
 	  // Now update the checkbox
 	  aCustColItem.childNodes[0].setAttribute("enabled", currcol.enabled);
+	},
+
+	toggleSearchable: function(aCustColItem){
+	  let currcol = aCustColItem._customcol;
+	  currcol.isSearchable = !currcol.isSearchable;
+	  //dump(">>>>>>>>>>>>> miczColumnsWizard: [currcol] "+JSON.stringify(currcol)+"\r\n");
+
+	  //miczColumnsWizardPref_CustomColsGrid.saveCustomColItem(currcol);
+	  this.miczColumnsWizard_CustCols.saveCustCol(currcol);
+
+	  // Now update the checkbox
+	  aCustColItem.childNodes[1].setAttribute("enabled", currcol.isSearchable);
 	},
 
 	onItemDoubleClick:function(event){
