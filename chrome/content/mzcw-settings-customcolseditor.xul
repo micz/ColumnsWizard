@@ -21,7 +21,14 @@
 
   <script type="application/javascript" src="chrome://columnswizard/content/mzcw-settings-customcolseditor.js"/>
   <script type="application/javascript" src="chrome://columnswizard/content/mzcw-customcolumns.js" />
-
+<tabbox id="cw_tabbox">
+  <tabs>
+	<tab label="&ColumnsWizard.CustColEditorTab.General.label;"/>
+	<tab label="&ColumnsWizard.CustColEditorTab.Advanced.label;"/>
+  </tabs>
+  <tabpanels>
+	<tabpanel id="custcolseditor_general" orient="vertical">
+<!-- General -->
   <vbox id="cw_vbox" flex="1">
     <groupbox>
       <caption id="cw_desc.label" label="&ColumnsWizard.Desc.label;"/>
@@ -87,4 +94,10 @@
       </grid>
     </groupbox>
   </vbox>
+</tabpanel>
+	<tabpanel id="custcolseditor_advanced" orient="vertical">
+<!-- Advanced -->
+</tabpanel>
+</tabpanels>
+</tabbox>
 </dialog>
