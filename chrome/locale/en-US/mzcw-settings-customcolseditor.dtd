@@ -21,3 +21,10 @@
 <!ENTITY ColumnsWizard.searchable.desc "Make this custom column searchable in the advance search window.">
 <!ENTITY ColumnsWizard.CustColEditorTab.General.label "General">
 <!ENTITY ColumnsWizard.CustColEditorTab.Advanced.label "Advanced">
+<!ENTITY ColumnsWizard.mod.label "Editable">
+<!ENTITY ColumnsWizard.mod.desc "This custom column header can be modified.">
+<!ENTITY ColumnsWizard.mod_type.label "Header type">
+<!ENTITY ColumnsWizard.mod_type.desc "Choose here the header type.">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "Free text">
+<!ENTITY ColumnsWizard.mod_type_number.label "Number">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "Fixed list">
