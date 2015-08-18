@@ -239,7 +239,9 @@ var miczColumnsWizard_CustCols={
 			CustColIndex=miczColumnsWizard_CustCols.checkCustColDefaultIndex(JSON.parse(CustColIndexStr));
 		}
 		//Add new element to index and save it
-		CustColIndex.push(index);
+		if(CustColIndex.indexOf(index)==-1){
+			CustColIndex.push(index);
+		}
 		prefs.setCharPref("index",JSON.stringify(CustColIndex));
 	},
 
@@ -255,8 +257,12 @@ var miczColumnsWizard_CustCols={
 		}
 		//Remove the element to index and save it
 		let el_idx=CustColIndex.indexOf(index);
-		CustColIndex.splice(el_idx,1);
+		if(el_idx>-1){
+			CustColIndex.splice(el_idx,1);
+		}
 		prefs.setCharPref("index",JSON.stringify(CustColIndex));
+		//remove it also from index_mod
+		miczColumnsWizard_CustCols.removeCustColIndexMod(index);
 	},
 
 	saveCustCol: function(currcol) {
@@ -271,7 +277,7 @@ var miczColumnsWizard_CustCols={
 			let prefs=prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
 			prefs.setBoolPref(currcol.def,currcol.enabled);
 		}
-		
+
 		//Adding the cust col as searchable
 		if(currcol.isSearchable){
 			miczColumnsWizard_CustCols.activateCustomHeaderSearchable(currcol.dbHeader);
@@ -285,7 +291,7 @@ var miczColumnsWizard_CustCols={
 	deleteCustCol: function(col_idx){
 		miczColumnsWizard_CustCols.removeCustColIndex(col_idx);
 	},
-	
+
 	activateCustomHeaderSearchable:function(newHeader){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable] "+newHeader+"\r\n");
 		let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
@@ -298,7 +304,7 @@ var miczColumnsWizard_CustCols={
 			//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable->Updating] "+newHeader+"\r\n");
 		}
 	},
-  
+
 	deactivateCustomHeaderSearchable:function(newHeader){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate CustomHeaderSearchable] "+newHeader+"\r\n");
 		let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
@@ -311,6 +317,39 @@ var miczColumnsWizard_CustCols={
 			prefService.setCharPref("mailnews.customHeaders", currentHeaders.trim());
 			//dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate CustomHeaderSearchable->Updating] "+newHeader+"\r\n");
 		}
+	},
+
+	addCustColIndexMod:function(index){
+		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+		let CustColIndexStr=prefs.getCharPref("index_mod");
+		let CustColIndex=new Array();
+		if(CustColIndexStr!=''){
+			CustColIndex=JSON.parse(CustColIndexStr);
+		}
+		//Add new element to index and save it
+		if(CustColIndex.indexOf(index)==-1){
+			CustColIndex.push(index);
+		}
+		prefs.setCharPref("index_mod",JSON.stringify(CustColIndex));
+	},
+
+	removeCustColIndexMod:function(index){
+		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+		let CustColIndexStr=prefs.getCharPref("index_mod");
+		let CustColIndex=new Array();
+		if(CustColIndexStr==''){
+			return;
+		}else{
+			CustColIndex=JSON.parse(CustColIndexStr);
+		}
+		//Remove the element to index and save it
+		let el_idx=CustColIndex.indexOf(index);
+		if(el_idx>-1){
+			CustColIndex.splice(el_idx,1);
+		}
+		prefs.setCharPref("index_mod",JSON.stringify(CustColIndex));
 	},
 
 };
