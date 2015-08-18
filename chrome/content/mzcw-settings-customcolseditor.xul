@@ -72,14 +72,14 @@
           <row>
 			<label value="&ColumnsWizard.searchable.label;"/>
 			<vbox>
-				<checkbox id="ColumnsWizard.searchable"/>
+				<checkbox id="ColumnsWizard.searchable" checked="true"/>
 				<description class="cw_field_label">&ColumnsWizard.searchable.desc;</description>
 			</vbox>
           </row>
           <row>
 			<label value="&ColumnsWizard.enabled.label;"/>
 			<vbox>
-				<checkbox id="ColumnsWizard.enabled"/>
+				<checkbox id="ColumnsWizard.enabled" checked="true"/>
 				<description class="cw_field_label">&ColumnsWizard.enabled.desc;</description>
 			</vbox>
           </row>
