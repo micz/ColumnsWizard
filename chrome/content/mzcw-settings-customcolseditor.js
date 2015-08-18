@@ -47,6 +47,7 @@ var miczColumnsWizardPref_CustColEditor = {
 				}
 			}
 		}
+		this.enableAdvancedTabContent();
 	},
 
 	onAccept:function(){
@@ -240,6 +241,19 @@ var miczColumnsWizardPref_CustColEditor = {
 		let destPath = OS.Path.join(OS.Constants.Path.profileDir,"columnswizardmiczit");
 		let filepath = OS.Path.join(destPath,filename);
 		OS.File.remove(filepath);
+	},
+
+	enableAdvancedTabContent:function(){
+		let disabled=!document.getElementById('ColumnsWizard.mod').checked;
+		document.getElementById('ColumnsWizard.mod_type.desc').disabled=disabled;
+		document.getElementById('ColumnsWizard.mod_type_group').disabled=disabled;
+		this.enableHeaderFixedList();
+	},
+
+	enableHeaderFixedList:function(){
+		let disable=!document.getElementById('ColumnsWizard.mod_type_fixedlist').selected;
+		document.getElementById('ColumnsWizard.mod_type_fixedlist.list').disabled=disable;
+		document.getElementById('ColumnsWizard.mod_type_fixedlist.list.desc').disabled=disable;
 	},
 
 	fixWinHeight:function(){

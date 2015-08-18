@@ -38,7 +38,7 @@
           <column/>
           <column/>
         </columns>
-        <rows>
+        <rows class="general">
           <row>
 			<label value="&ColumnsWizard.id.label;"/>
 			<vbox>
@@ -99,25 +99,27 @@
 		<grid>
         <columns>
           <column/>
-          <column/>
         </columns>
         <rows>
           <row>
-			<label value="&ColumnsWizard.mod.label;"/>
 			<hbox>
-				<checkbox id="ColumnsWizard.mod" label="&ColumnsWizard.mod.desc;"/>
+				<checkbox id="ColumnsWizard.mod" label="&ColumnsWizard.mod.desc;" oncommand="miczColumnsWizardPref_CustColEditor.enableAdvancedTabContent();"/>
 			</hbox>
           </row>
           <row>
-			<label value="&ColumnsWizard.mod_type.label;"/>
-			<vbox>
-				<label value="&ColumnsWizard.mod_type.desc;"/>
-				<radiogroup>
+			<groupbox>
+			<caption label="&ColumnsWizard.mod_type.label;"/>
+				<label value="&ColumnsWizard.mod_type.desc;" id="ColumnsWizard.mod_type.desc"/>
+				<radiogroup class="mod_type_radiogroup" id="ColumnsWizard.mod_type_group" oncommand="miczColumnsWizardPref_CustColEditor.enableHeaderFixedList();">
 				  <radio id="ColumnsWizard.mod_type_freetext" label="&ColumnsWizard.mod_type_freetext.label;" selected="true"/>
 				  <radio id="ColumnsWizard.mod_type_number" label="&ColumnsWizard.mod_type_number.label;"/>
 				  <radio id="ColumnsWizard.mod_type_fixedlist" label="&ColumnsWizard.mod_type_fixedlist.label;"/>
 				</radiogroup>
-			</vbox>
+				<vbox class="cw_modtype_fixedlist_textbox">
+				<textbox id="ColumnsWizard.mod_type_fixedlist.list" value="" multiline="true" rows="5" disabled="true"/>
+				<label value="&ColumnsWizard.mod_type_fixedlist.list.desc;" id="ColumnsWizard.mod_type_fixedlist.list.desc"/>
+				</vbox>
+			</groupbox>
           </row>
         </rows>
       </grid>
