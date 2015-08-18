@@ -18,4 +18,4 @@
 <!ENTITY ColumnsWizard.sortnumber.desc "Sort this custom column as a number.">
 <!ENTITY ColumnsWizard.sortnumber.desc_limit "The custom column can sort only numbers with no more than 3 decimals and a value between -1.000.000 and 3.294.967.">
 <!ENTITY ColumnsWizard.searchable.label "Is Searchable">
-<!ENTITY ColumnsWizard.searchable.desc "Make this custom column searchable in the advance search window.">
+<!ENTITY ColumnsWizard.searchable.desc "Make this custom column searchable in the advanced search window.">
