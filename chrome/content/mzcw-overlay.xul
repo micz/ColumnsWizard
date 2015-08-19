@@ -15,4 +15,26 @@
   <stringbundle id="ColumnsWizard-string-bundle" src="chrome://columnswizard/locale/overlay.properties" />
 </stringbundleset>
 
+<!-- Menu entry for single mail tab / single mail window main menu -->
+<menupopup id="messageMenuPopup">
+	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_main_menu">
+		 <observes element="button_mark" attribute="disabled" />
+		<menupopup>
+		<menuitem id="cw_test1" label="CW Test MenuItem">
+	    </menuitem>
+	    </menupopup>
+	</menu>
+</menupopup>
+
+<!-- Menu entry for the message list context popup menu -->
+<menupopup id="mailContext">
+	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_context_menu">
+		 <observes element="button_mark" attribute="disabled" />
+		<menupopup>
+		<menuitem id="cw_test2" label="CW Test MenuItem">
+	    </menuitem>
+	    </menupopup>
+	</menu>
+</menupopup>
+
 </overlay>

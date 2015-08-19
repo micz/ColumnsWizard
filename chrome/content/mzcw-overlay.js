@@ -1,4 +1,6 @@
 "use strict";
+Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+
 var miczColumnsWizard = {
 
   //Conversation Tab Columns
@@ -29,29 +31,30 @@ var miczColumnsWizard = {
 		}
 
 		miczColumnsWizard.watchFolders();
+		miczColumnsWizard.initHeadersEditingMenu();
 
- let current_tab = document.getElementById("tabmail").currentTabInfo;
-    miczColumnsWizard.addCWResetMenu(current_tab);
+		let current_tab = document.getElementById("tabmail").currentTabInfo;
+		miczColumnsWizard.addCWResetMenu(current_tab);
 
-	this.initialized = true;
-    //Conversation Tab add columns - delayed
-  	setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
+		this.initialized = true;
+		//Conversation Tab add columns - delayed
+		setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
 	},
 
-	initDelayed: function() {
-	try{
-		//Conversation Tab add columns
-    let tabmail = document.getElementById("tabmail");
-    let monitor = {
-      onTabTitleChanged:function(tab){},
-      onTabSwitched: miczColumnsWizard.addCWResetMenu, //this.showColumns,
-      //onTabRestored:function(tab){},
-      onTabOpened: this.showColumns,
-    };
-    tabmail.registerTabMonitor(monitor);
-    }catch(e){
-      alert("No tabContainer available! " + e);
-    }
+	initDelayed:function(){
+		try{
+			//Conversation Tab add columns
+		let tabmail = document.getElementById("tabmail");
+		let monitor = {
+		  onTabTitleChanged:function(tab){},
+		  onTabSwitched: miczColumnsWizard.addCWResetMenu, //this.showColumns,
+		  //onTabRestored:function(tab){},
+		  onTabOpened: this.showColumns,
+		};
+		tabmail.registerTabMonitor(monitor);
+		}catch(e){
+		  alert("No tabContainer available! " + e);
+		}
 	},
 
 	addNewCustColObserver:function(ObserverService){
@@ -294,6 +297,16 @@ var miczColumnsWizard = {
 		let mailSessionService = Components.classes["@mozilla.org/messenger/services/session;1"].getService(Components.interfaces.nsIMsgMailSession);
         mailSessionService.RemoveFolderListener(miczColumnsWizard.FolderListener);
     },
+
+    initHeadersEditingMenu:function(){
+		if(miczColumnsWizardPrefsUtils.headersEditingActive){
+			document.getElementById("cw_edit_main_menu").setAttribute("hidden",false);
+			document.getElementById("cw_edit_context_menu").setAttribute("hidden",false);
+		}else{
+			document.getElementById("cw_edit_main_menu").setAttribute("hidden",true);
+			document.getElementById("cw_edit_context_menu").setAttribute("hidden",true);
+		}
+	},
 
 };
 
