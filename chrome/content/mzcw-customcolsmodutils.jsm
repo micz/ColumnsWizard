@@ -11,7 +11,7 @@ var miczColumnsWizard_CustomColsModUtils = {
 		return fl_string.split('|');
 	},
 
-	addContextMenu:function(container){
+	addContextMenu:function(doc,container,CustCols){
 
 	},
 };
