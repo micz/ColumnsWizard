@@ -27,4 +27,4 @@
 <!ENTITY ColumnsWizard.mod_type_freetext.label "Free text">
 <!ENTITY ColumnsWizard.mod_type_number.label "Numbers">
 <!ENTITY ColumnsWizard.mod_type_fixedlist.label "Fixed list">
-<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "Enter one value per line.">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "Enter one value per line. Do not use the pipe &quot;|&quot; character.">
