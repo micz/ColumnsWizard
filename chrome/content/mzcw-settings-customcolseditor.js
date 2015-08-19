@@ -39,11 +39,16 @@ var miczColumnsWizardPref_CustColEditor = {
 						document.getElementById("ColumnsWizard.sortnumber").setAttribute("checked",currcol.sortnumber);
 						document.getElementById("ColumnsWizard.searchable").setAttribute("checked",currcol.isSearchable);
 						document.getElementById("ColumnsWizard.enabled").setAttribute("checked",currcol.enabled);
-
+						
 						//disable the ID and dbheader field
 						document.getElementById("ColumnsWizard.id").setAttribute("readonly",true);
 						document.getElementById("ColumnsWizard.dbHeader").setAttribute("readonly",true);
 						document.getElementById("ColumnsWizard.labelString").focus();
+						
+						//mod data
+						if(currcol.isEditable!==undefined)document.getElementById("ColumnsWizard.mod").setAttribute("checked",currcol.isEditable);
+						if(currcol.editType!==undefined)document.getElementById("ColumnsWizard.mod_type_group").setAttribute("value",currcol.editType);
+						if(currcol.editFixedList!==undefined)document.getElementById("ColumnsWizard.mod_type_fixedlist.list").setAttribute("value",(currcol.editFixedList).join("\r\n"));
 					break;
 				}
 			}

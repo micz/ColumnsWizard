@@ -329,7 +329,11 @@ var miczColumnsWizard_CustCols={
 	addCustColIndexMod:function(index){
 		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
-		let CustColIndexStr=prefs.getCharPref("index_mod");
+		let CustColIndexStr='';
+		try{
+			CustColIndexStr=prefs.getCharPref("index_mod");
+		}
+		catch(e){}
 		let CustColIndex=new Array();
 		if(CustColIndexStr!=''){
 			CustColIndex=JSON.parse(CustColIndexStr);
