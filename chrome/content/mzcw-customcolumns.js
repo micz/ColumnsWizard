@@ -343,6 +343,7 @@ var miczColumnsWizard_CustCols={
 			CustColIndex.push(index);
 		}
 		prefs.setCharPref("index_mod",JSON.stringify(CustColIndex));
+		prefs.setBoolPref("mod_active",true);
 	},
 
 	removeCustColIndexMod:function(index){
@@ -360,7 +361,11 @@ var miczColumnsWizard_CustCols={
 		if(el_idx>-1){
 			CustColIndex.splice(el_idx,1);
 		}
-		prefs.setCharPref("index_mod",JSON.stringify(CustColIndex));
+		CustColIndexStr=JSON.stringify(CustColIndex).trim();
+		prefs.setCharPref("index_mod",CustColIndexStr);
+		if(CustColIndex.length==0){ //no mod cust cols? set the option to false
+			prefs.setBoolPref("mod_active",false);
+		}
 	},
 
 };
