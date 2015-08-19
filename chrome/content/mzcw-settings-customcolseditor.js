@@ -1,5 +1,6 @@
 "use strict";
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
+Components.utils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
 Components.utils.import("resource://gre/modules/osfile.jsm");
 
 var miczColumnsWizard={};
@@ -107,6 +108,12 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.sortnumber=document.getElementById("ColumnsWizard.sortnumber").checked;
 						newcol.isSearchable=document.getElementById("ColumnsWizard.searchable").checked;
 						newcol.enabled=document.getElementById("ColumnsWizard.enabled").checked;
+						
+						//mod data
+						newcol.isEditable=document.getElementById("ColumnsWizard.mod").checked;
+						newcol.editType=document.getElementById("ColumnsWizard.mod_type_group").value;
+						newcol.editFixedList=miczColumnsWizard_CustomColsModUtils.getFixedListArray(document.getElementById("ColumnsWizard.mod_type_fixedlist.list").value);
+						
 						//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
 						//miczColumnsWizard_CustCols.addNewCustCol(newcol);
 						window.arguments[0].save=true;
@@ -130,6 +137,12 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.sortnumber=document.getElementById("ColumnsWizard.sortnumber").checked;
 						newcol.isSearchable=document.getElementById("ColumnsWizard.searchable").checked;
 						newcol.enabled=document.getElementById("ColumnsWizard.enabled").checked;
+						
+						//mod data
+						newcol.isEditable=document.getElementById("ColumnsWizard.mod").checked;
+						newcol.editType=document.getElementById("ColumnsWizard.mod_type_group").value;
+						newcol.editFixedList=miczColumnsWizard_CustomColsModUtils.getFixedListArray(document.getElementById("ColumnsWizard.mod_type_fixedlist.list").value);
+						
 						//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
 						//miczColumnsWizard_CustCols.addNewCustCol(newcol);
 						window.arguments[0].save=true;

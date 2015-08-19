@@ -284,6 +284,13 @@ var miczColumnsWizard_CustCols={
 		}else{
 			miczColumnsWizard_CustCols.deactivateCustomHeaderSearchable(currcol.dbHeader);
 		}
+		
+		//mod index
+		if(currcol.isEditable){
+			miczColumnsWizard_CustCols.addCustColIndexMod(currcol.index);
+		}else{
+			miczColumnsWizard_CustCols.removeCustColIndexMod(currcol.index);
+		}
 
     	return value;
 	},
