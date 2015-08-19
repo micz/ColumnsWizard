@@ -33,3 +33,5 @@
 <!ENTITY ColumnsWizard.CustColsList.tooltip "Tooltip">
 <!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Enabled">
 <!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Searchable">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "Enable mail headers editing.">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.tooltiptext "This option will be automatically checked if a custom column with editing enabled is saved.">

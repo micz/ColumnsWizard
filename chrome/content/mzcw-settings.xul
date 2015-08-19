@@ -31,6 +31,10 @@
       <preference id="ColumnsWizard.DefaultColsList.SortOrder"
         name="mailnews.default_sort_order"
         type="int" />
+    <!-- Global switch for Headers Editing -->
+	  <preference id="ColumnsWizard.CustCols.mod_active"
+        name="extensions.ColumnsWizard.CustCols.mod_active"
+        type="bool" />
     <!-- Custom Columns no pref needed here, all is managed directly by javascript code -->
     </preferences>
     <tabbox id="cw_tabbox">
@@ -86,6 +90,8 @@
           <button id="deleteButton"
                   label="&ColumnsWizard.deleteButton.label;"
                   oncommand="miczColumnsWizardPref.onDeleteCustomCol(window);" disabled="true"/>
+          <checkbox id="ColumnsWizard.CustCols.mod_active_checkbox" label="&ColumnsWizard.CustCols.mod_active_checkbox.label;" tooltiptext="&ColumnsWizard.CustCols.mod_active_checkbox.tooltiptext;"
+            preference="ColumnsWizard.CustCols.mod_active" />
         </hbox>
       </row>
       <row>
