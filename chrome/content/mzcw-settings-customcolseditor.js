@@ -39,12 +39,12 @@ var miczColumnsWizardPref_CustColEditor = {
 						document.getElementById("ColumnsWizard.sortnumber").setAttribute("checked",currcol.sortnumber);
 						document.getElementById("ColumnsWizard.searchable").setAttribute("checked",currcol.isSearchable);
 						document.getElementById("ColumnsWizard.enabled").setAttribute("checked",currcol.enabled);
-						
+
 						//disable the ID and dbheader field
 						document.getElementById("ColumnsWizard.id").setAttribute("readonly",true);
 						document.getElementById("ColumnsWizard.dbHeader").setAttribute("readonly",true);
 						document.getElementById("ColumnsWizard.labelString").focus();
-						
+
 						//mod data
 						if(currcol.isEditable!==undefined)document.getElementById("ColumnsWizard.mod").setAttribute("checked",currcol.isEditable);
 						if(currcol.editType!==undefined)document.getElementById("ColumnsWizard.mod_type_group").setAttribute("value",currcol.editType);
@@ -113,12 +113,12 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.sortnumber=document.getElementById("ColumnsWizard.sortnumber").checked;
 						newcol.isSearchable=document.getElementById("ColumnsWizard.searchable").checked;
 						newcol.enabled=document.getElementById("ColumnsWizard.enabled").checked;
-						
+
 						//mod data
 						newcol.isEditable=document.getElementById("ColumnsWizard.mod").checked;
 						newcol.editType=document.getElementById("ColumnsWizard.mod_type_group").value;
 						newcol.editFixedList=miczColumnsWizard_CustomColsModUtils.getFixedListArray(document.getElementById("ColumnsWizard.mod_type_fixedlist.list").value);
-						
+
 						//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
 						//miczColumnsWizard_CustCols.addNewCustCol(newcol);
 						window.arguments[0].save=true;
@@ -142,12 +142,12 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.sortnumber=document.getElementById("ColumnsWizard.sortnumber").checked;
 						newcol.isSearchable=document.getElementById("ColumnsWizard.searchable").checked;
 						newcol.enabled=document.getElementById("ColumnsWizard.enabled").checked;
-						
+
 						//mod data
 						newcol.isEditable=document.getElementById("ColumnsWizard.mod").checked;
 						newcol.editType=document.getElementById("ColumnsWizard.mod_type_group").value;
 						newcol.editFixedList=miczColumnsWizard_CustomColsModUtils.getFixedListArray(document.getElementById("ColumnsWizard.mod_type_fixedlist.list").value);
-						
+
 						//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
 						//miczColumnsWizard_CustCols.addNewCustCol(newcol);
 						window.arguments[0].save=true;
@@ -272,6 +272,10 @@ var miczColumnsWizardPref_CustColEditor = {
 		let disable=!document.getElementById('ColumnsWizard.mod_type_fixedlist').selected;
 		document.getElementById('ColumnsWizard.mod_type_fixedlist.list').disabled=disable;
 		document.getElementById('ColumnsWizard.mod_type_fixedlist.list.desc').disabled=disable;
+	},
+
+	sanitizeFixedListInput:function(){
+		document.getElementById("ColumnsWizard.mod_type_fixedlist.list").value=document.getElementById("ColumnsWizard.mod_type_fixedlist.list").value.replace("|"," ");
 	},
 
 	fixWinHeight:function(){

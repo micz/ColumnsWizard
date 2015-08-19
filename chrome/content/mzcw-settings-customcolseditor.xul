@@ -116,7 +116,7 @@
 				  <radio value="fl" id="ColumnsWizard.mod_type_fixedlist" label="&ColumnsWizard.mod_type_fixedlist.label;"/>
 				</radiogroup>
 				<vbox class="cw_modtype_fixedlist_textbox">
-				<textbox id="ColumnsWizard.mod_type_fixedlist.list" value="" multiline="true" rows="5" disabled="true"/>
+				<textbox id="ColumnsWizard.mod_type_fixedlist.list" value="" multiline="true" rows="5" disabled="true" onblur="miczColumnsWizardPref_CustColEditor.sanitizeFixedListInput();"/>
 				<label value="&ColumnsWizard.mod_type_fixedlist.list.desc;" id="ColumnsWizard.mod_type_fixedlist.list.desc"/>
 				</vbox>
 			</groupbox>
