@@ -271,7 +271,7 @@ var miczColumnsWizard_CustCols={
 			let prefs=prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
 			prefs.setBoolPref(currcol.def,currcol.enabled);
 		}
-		
+
 		//Adding the cust col as searchable
 		if(currcol.isSearchable){
 			miczColumnsWizard_CustCols.activateCustomHeaderSearchable(currcol.dbHeader);
@@ -285,12 +285,17 @@ var miczColumnsWizard_CustCols={
 	deleteCustCol: function(col_idx){
 		miczColumnsWizard_CustCols.removeCustColIndex(col_idx);
 	},
-	
+
 	activateCustomHeaderSearchable:function(newHeader){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable] "+newHeader+"\r\n");
 		let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		let currentHeaders = prefService.getCharPref("mailnews.customHeaders");
-		let headers_array=currentHeaders.split(': ');
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable]: currentHeaders: "+currentHeaders+"\r\n");
+		let headers_array=new Array();
+		if(currentHeaders!=''){
+			headers_array=currentHeaders.split(': ');
+		}
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable]: headers_array: "+JSON.stringify(headers_array)+"\r\n");
 		if(headers_array.indexOf(newHeader)==-1){
 			headers_array.push(newHeader);
 			currentHeaders=headers_array.join(': ');
@@ -298,7 +303,7 @@ var miczColumnsWizard_CustCols={
 			//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable->Updating] "+newHeader+"\r\n");
 		}
 	},
-  
+
 	deactivateCustomHeaderSearchable:function(newHeader){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate CustomHeaderSearchable] "+newHeader+"\r\n");
 		let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
