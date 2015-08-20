@@ -317,6 +317,7 @@ var miczColumnsWizard = {
 		let colidx=event.target.getAttribute("colidx")
 		let mail_haeder=event.target.getAttribute("mail_header");
 		let edit_type=event.target.getAttribute("edit_type");
+		//TO DO: get the actual value from message
 		//TO DO: open value editor
 		//let header_value=;
 		//TO DO: Save new value
