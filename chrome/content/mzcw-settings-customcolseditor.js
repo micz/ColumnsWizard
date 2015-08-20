@@ -49,6 +49,9 @@ var miczColumnsWizardPref_CustColEditor = {
 						if(currcol.isEditable!==undefined)document.getElementById("ColumnsWizard.mod").setAttribute("checked",currcol.isEditable);
 						if(currcol.editType!==undefined)document.getElementById("ColumnsWizard.mod_type_group").setAttribute("value",currcol.editType);
 						if(currcol.editFixedList!==undefined)document.getElementById("ColumnsWizard.mod_type_fixedlist.list").setAttribute("value",(currcol.editFixedList).join("\r\n"));
+
+						//set the value on the label in the advanced tab
+						document.getElementById('cw_adv_msg_header').setAttribute("value",currcol.dbHeader);
 					break;
 				}
 			}
@@ -189,6 +192,8 @@ var miczColumnsWizardPref_CustColEditor = {
 		if(el.value.match(re)!=null){
 			el.value=el.value.match(re).join('').replace(':','');
 		}
+		//set the value on the label in the advanced tab
+		document.getElementById('cw_adv_msg_header').value=el.value;
 	},
 
 	setIconUI:function(iconpath){

@@ -101,6 +101,12 @@
           <column/>
         </columns>
         <rows>
+			<row>
+				<hbox>
+					<label value="&ColumnsWizard.dbHeader.label;: "/>
+					<label value="" id="cw_adv_msg_header"/>
+				</hbox>
+			</row>
           <row>
 			<hbox>
 				<checkbox id="ColumnsWizard.mod" label="&ColumnsWizard.mod.desc;" oncommand="miczColumnsWizardPref_CustColEditor.enableAdvancedTabContent();"/>
