@@ -17,7 +17,9 @@
 
 <!-- Menu entry for single mail tab / single mail window main menu -->
 <menupopup id="messageMenuPopup">
-	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_main_menu" class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png">
+	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_main_menu"
+	class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png"
+	insertafter="menu_editMsgAsNew">
 		 <observes element="button_mark" attribute="disabled" />
 		<menupopup id="cw_edit_main_menu_popup">
 	    </menupopup>
@@ -26,7 +28,9 @@
 
 <!-- Menu entry for the message list context popup menu -->
 <menupopup id="mailContext">
-	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_context_menu" class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png">
+	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_context_menu"
+	 class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png"
+	 insertafter="mailContext-editAsNew">
 		 <observes element="button_mark" attribute="disabled" />
 		<menupopup id="cw_edit_context_menu_popup">
 	    </menupopup>
@@ -35,7 +39,9 @@
 
 <!-- Menu entry for the new app main popup menu -->
 <menupopup id="appmenu_messageMenuPopup">
-	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_newmain_menu" class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png">
+	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_newmain_menu"
+	class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png"
+	insertafter="appmenu_editMsgAsNew">
 		 <observes element="button_mark" attribute="disabled" />
 		<menupopup id="cw_edit_newmain_menu_popup">
 	    </menupopup>
