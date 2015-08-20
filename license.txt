@@ -28,5 +28,6 @@ German (de) thanks to RealRaven [http://quickfolders.mozdev.org/].
 Italian (it) thanks to Mic [http://micz.it].
 
 -= Graphics =-
-Addon icon thanks to http://www.oxygen-icons.org
+Main addon icon thanks to http://www.oxygen-icons.org
 Custom columns preferences list header icons thanks to http://ampeross.deviantart.com/
+Header edit menu icon thanks to http://www.famfamfam.com/
