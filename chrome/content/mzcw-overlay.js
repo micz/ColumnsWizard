@@ -1,6 +1,7 @@
 "use strict";
 Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
+Components.utils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
 
 var miczColumnsWizard = {
 
@@ -313,13 +314,15 @@ var miczColumnsWizard = {
 	},
 	
 	editHeaderMenu_OnClick:function(event){
+		miczColumnsWizard_MsgUtils.messenger=messenger;
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderMenu_OnClick]: "+JSON.stringify(event.target.getAttribute("colidx"))+"\r\n");
 		let colidx=event.target.getAttribute("colidx")
-		let mail_haeder=event.target.getAttribute("mail_header");
+		let mail_header=event.target.getAttribute("mail_header");
 		let edit_type=event.target.getAttribute("edit_type");
 		//TO DO: get the actual value from message
+		let msgURI = gFolderDisplay.selectedMessageUris[0];
+		let header_value=miczColumnsWizard_MsgUtils.getMsgHeader(msgURI,mail_header);
 		//TO DO: open value editor
-		//let header_value=;
 		//TO DO: Save new value
 	},
 	
