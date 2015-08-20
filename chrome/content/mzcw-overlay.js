@@ -313,11 +313,21 @@ var miczColumnsWizard = {
 	},
 	
 	editHeaderMenu_OnClick:function(event){
-		
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderMenu_OnClick]: "+JSON.stringify(event.target.getAttribute("colidx"))+"\r\n");
+		let colidx=event.target.getAttribute("colidx")
+		let mail_haeder=event.target.getAttribute("mail_header");
+		let edit_type=event.target.getAttribute("edit_type");
+		//TO DO: open value editor
+		//let header_value=;
+		//TO DO: Save new value
 	},
 	
-	editHeaderSubMenu_OnClick:function(event){
-		
+	editHeaderSubMenu_OnClick:function(event){	//Here editType is always Fixed List
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick]: "+JSON.stringify(event.target.getAttribute("colidx"))+"\r\n");
+		let colidx=event.target.getAttribute("colidx")
+		let mail_haeder=event.target.getAttribute("mail_header");
+		let header_value=event.target.getAttribute("label");
+		//TO DO: Save new value
 	},
 
 };
