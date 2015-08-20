@@ -349,6 +349,7 @@ var miczColumnsWizard_CustCols={
 		if(CustColIndex.indexOf(index)==-1){
 			CustColIndex.push(index);
 		}
+		CustColIndex.sort();
 		prefs.setCharPref("index_mod",JSON.stringify(CustColIndex));
 		prefs.setBoolPref("mod_active",true);
 	},
