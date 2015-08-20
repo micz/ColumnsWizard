@@ -13,7 +13,7 @@ var miczColumnsWizard_CustomColsModUtils = {
 		return fl_string.split('|');
 	},
 
-	addContextMenu:function(doc,container1,container2,container3,CustCols,first_click_callback,submenu_click_callback){
+	addContextMenu:function(doc,container1,container2,container3,CustCols,stringCustColIndexMod,first_click_callback,submenu_click_callback){
 		//clear menu items
 		while (container1.firstChild) {
 			container1.removeChild(container1.firstChild);
@@ -25,7 +25,10 @@ var miczColumnsWizard_CustomColsModUtils = {
 			container3.removeChild(container3.firstChild);
 		}
 		
-		for(let cc in CustCols){
+		let arrayCustColIndexMod=JSON.parse(stringCustColIndexMod);
+		
+		for(let icc in arrayCustColIndexMod){
+			let cc=arrayCustColIndexMod[icc];
 			if(CustCols[cc].isEditable){
 				let new_menu_item;
 				let new_menu_item2;

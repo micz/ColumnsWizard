@@ -13,6 +13,10 @@ var miczColumnsWizardPrefsUtils = {
 	get headersEditingActive() {
 		return this.getBoolPref_CW("CustCols.mod_active");
 	},
+	
+	get stringCustColIndexMod() {
+		return this.getCharPref_CW("CustCols.index_mod");
+	},
 
 	existsCharPref: function existsCharPref(pref) {
 		try {

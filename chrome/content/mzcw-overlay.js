@@ -20,6 +20,7 @@ var miczColumnsWizard = {
 		miczColumnsWizard.addNewCustColObserver(ObserverService);
 		miczColumnsWizard.deleteCustColObserver(ObserverService);
 		miczColumnsWizard.updateCustColObserver(ObserverService);
+		miczColumnsWizard.updateHeaderEditingMenuObserver(ObserverService);
 
 		//Adding custom columns
 		miczColumnsWizard.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
@@ -302,7 +303,7 @@ var miczColumnsWizard = {
 
     initHeadersEditingMenu:function(){
 		if(miczColumnsWizardPrefsUtils.headersEditingActive){
-			miczColumnsWizard_CustomColsModUtils.addContextMenu(document,document.getElementById("cw_edit_main_menu_popup"),document.getElementById("cw_edit_context_menu_popup"),document.getElementById("cw_edit_newmain_menu_popup"),miczColumnsWizard.CustColPref,miczColumnsWizard.editHeaderMenu_OnClick,miczColumnsWizard.editHeaderSubMenu_OnClick);
+			miczColumnsWizard_CustomColsModUtils.addContextMenu(document,document.getElementById("cw_edit_main_menu_popup"),document.getElementById("cw_edit_context_menu_popup"),document.getElementById("cw_edit_newmain_menu_popup"),miczColumnsWizard.CustColPref,miczColumnsWizardPrefsUtils.stringCustColIndexMod,miczColumnsWizard.editHeaderMenu_OnClick,miczColumnsWizard.editHeaderSubMenu_OnClick);
 			document.getElementById("cw_edit_main_menu").setAttribute("hidden",false);
 			document.getElementById("cw_edit_context_menu").setAttribute("hidden",false);
 			document.getElementById("cw_edit_newmain_menu").setAttribute("hidden",false);
@@ -332,6 +333,17 @@ var miczColumnsWizard = {
 		let mail_haeder=event.target.getAttribute("mail_header");
 		let header_value=event.target.getAttribute("label");
 		//TO DO: Save new value
+	},
+	
+	updateHeaderEditingMenuObserver:function(ObserverService){
+		let headerEditingMenuObserver = {
+			observe: function(aSubject,aTopic,aData){
+    			//update header editing menu
+    			miczColumnsWizard.initHeadersEditingMenu();
+    			//dump(">>>>>>>>>>>>> miczColumnsWizard: CW-updateHeaderEditingMenu Observer notified! \r\n");
+  			}
+		}
+		ObserverService.addObserver(headerEditingMenuObserver,"CW-updateHeaderEditingMenu",false);
 	},
 
 };

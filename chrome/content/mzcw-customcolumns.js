@@ -291,12 +291,19 @@ var miczColumnsWizard_CustCols={
 		}else{
 			miczColumnsWizard_CustCols.removeCustColIndexMod(currcol.index);
 		}
+		
+		//update header editing menu
+		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+		ObserverService.notifyObservers(null,"CW-updateHeaderEditingMenu",null);
 
     	return value;
 	},
 
 	deleteCustCol: function(col_idx){
 		miczColumnsWizard_CustCols.removeCustColIndex(col_idx);
+		//update header editing menu
+		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+		ObserverService.notifyObservers(null,"CW-updateHeaderEditingMenu",null);
 	},
 
 	activateCustomHeaderSearchable:function(newHeader){
