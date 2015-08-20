@@ -1,5 +1,6 @@
 "use strict";
 Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+Components.utils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
 
 var miczColumnsWizard = {
 
@@ -300,6 +301,7 @@ var miczColumnsWizard = {
 
     initHeadersEditingMenu:function(){
 		if(miczColumnsWizardPrefsUtils.headersEditingActive){
+			miczColumnsWizard_CustomColsModUtils.addContextMenu(document,document.getElementById("cw_edit_main_menu_popup"),document.getElementById("cw_edit_context_menu_popup"),miczColumnsWizard.CustColPref);
 			document.getElementById("cw_edit_main_menu").setAttribute("hidden",false);
 			document.getElementById("cw_edit_context_menu").setAttribute("hidden",false);
 		}else{

@@ -19,7 +19,7 @@
 <menupopup id="messageMenuPopup">
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_main_menu">
 		 <observes element="button_mark" attribute="disabled" />
-		<menupopup>
+		<menupopup id="cw_edit_main_menu_popup">
 		<menuitem id="cw_test1" label="CW Test MenuItem">
 	    </menuitem>
 	    </menupopup>
@@ -30,7 +30,7 @@
 <menupopup id="mailContext">
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_context_menu">
 		 <observes element="button_mark" attribute="disabled" />
-		<menupopup>
+		<menupopup id="cw_edit_context_menu_popup">
 		<menuitem id="cw_test2" label="CW Test MenuItem">
 	    </menuitem>
 	    </menupopup>
