@@ -64,23 +64,20 @@
           <row>
 			<label value="&ColumnsWizard.sortnumber.label;"/>
 			<vbox>
-				<checkbox id="ColumnsWizard.sortnumber"/>
-				<description class="cw_field_label">&ColumnsWizard.sortnumber.desc;</description>
+				<checkbox id="ColumnsWizard.sortnumber" label="&ColumnsWizard.sortnumber.desc;"/>
 				<description class="cw_field_label">&ColumnsWizard.sortnumber.desc_limit;</description>
 			</vbox>
           </row>
           <row>
 			<label value="&ColumnsWizard.searchable.label;"/>
 			<vbox>
-				<checkbox id="ColumnsWizard.searchable" checked="true"/>
-				<description class="cw_field_label">&ColumnsWizard.searchable.desc;</description>
+				<checkbox id="ColumnsWizard.searchable" label="&ColumnsWizard.searchable.desc;" checked="true"/>
 			</vbox>
           </row>
           <row>
 			<label value="&ColumnsWizard.enabled.label;"/>
 			<vbox>
-				<checkbox id="ColumnsWizard.enabled" checked="true"/>
-				<description class="cw_field_label">&ColumnsWizard.enabled.desc;</description>
+				<checkbox id="ColumnsWizard.enabled" label="&ColumnsWizard.enabled.desc;" checked="true"/>
 			</vbox>
           </row>
         </rows>
