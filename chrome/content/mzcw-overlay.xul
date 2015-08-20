@@ -20,8 +20,6 @@
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_main_menu" class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png">
 		 <observes element="button_mark" attribute="disabled" />
 		<menupopup id="cw_edit_main_menu_popup">
-		<menuitem id="cw_test1" label="CW Test MenuItem">
-	    </menuitem>
 	    </menupopup>
 	</menu>
 </menupopup>
@@ -31,8 +29,15 @@
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_context_menu" class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png">
 		 <observes element="button_mark" attribute="disabled" />
 		<menupopup id="cw_edit_context_menu_popup">
-		<menuitem id="cw_test2" label="CW Test MenuItem">
-	    </menuitem>
+	    </menupopup>
+	</menu>
+</menupopup>
+
+<!-- Menu entry for the new app main popup menu -->
+<menupopup id="appmenu_messageMenuPopup">
+	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_newmain_menu" class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png">
+		 <observes element="button_mark" attribute="disabled" />
+		<menupopup id="cw_edit_newmain_menu_popup">
 	    </menupopup>
 	</menu>
 </menupopup>
