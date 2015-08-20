@@ -301,7 +301,7 @@ var miczColumnsWizard = {
 
     initHeadersEditingMenu:function(){
 		if(miczColumnsWizardPrefsUtils.headersEditingActive){
-			miczColumnsWizard_CustomColsModUtils.addContextMenu(document,document.getElementById("cw_edit_main_menu_popup"),document.getElementById("cw_edit_context_menu_popup"),document.getElementById("cw_edit_newmain_menu_popup"),miczColumnsWizard.CustColPref);
+			miczColumnsWizard_CustomColsModUtils.addContextMenu(document,document.getElementById("cw_edit_main_menu_popup"),document.getElementById("cw_edit_context_menu_popup"),document.getElementById("cw_edit_newmain_menu_popup"),miczColumnsWizard.CustColPref,miczColumnsWizard.editHeaderMenu_OnClick,miczColumnsWizard.editHeaderSubMenu_OnClick);
 			document.getElementById("cw_edit_main_menu").setAttribute("hidden",false);
 			document.getElementById("cw_edit_context_menu").setAttribute("hidden",false);
 			document.getElementById("cw_edit_newmain_menu").setAttribute("hidden",false);
@@ -310,6 +310,14 @@ var miczColumnsWizard = {
 			document.getElementById("cw_edit_context_menu").setAttribute("hidden",true);
 			document.getElementById("cw_edit_newmain_menu").setAttribute("hidden",true);
 		}
+	},
+	
+	editHeaderMenu_OnClick:function(event){
+		
+	},
+	
+	editHeaderSubMenu_OnClick:function(event){
+		
 	},
 
 };
