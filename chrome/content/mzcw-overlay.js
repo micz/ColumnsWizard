@@ -303,17 +303,20 @@ var miczColumnsWizard = {
 
     initHeadersEditingMenu:function(){
 		if(miczColumnsWizardPrefsUtils.headersEditingActive){
+			miczColumnsWizard.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
 			miczColumnsWizard_CustomColsModUtils.addContextMenu(document,document.getElementById("cw_edit_main_menu_popup"),document.getElementById("cw_edit_context_menu_popup"),document.getElementById("cw_edit_newmain_menu_popup"),miczColumnsWizard.CustColPref,miczColumnsWizardPrefsUtils.stringCustColIndexMod,miczColumnsWizard.editHeaderMenu_OnClick,miczColumnsWizard.editHeaderSubMenu_OnClick);
 			document.getElementById("cw_edit_main_menu").setAttribute("hidden",false);
 			document.getElementById("cw_edit_context_menu").setAttribute("hidden",false);
 			document.getElementById("cw_edit_newmain_menu").setAttribute("hidden",false);
+			//dump(">>>>>>>>>>>>> miczColumnsWizard [initHeadersEditingMenu]: Menu UPDATED! \r\n");
 		}else{
 			document.getElementById("cw_edit_main_menu").setAttribute("hidden",true);
 			document.getElementById("cw_edit_context_menu").setAttribute("hidden",true);
 			document.getElementById("cw_edit_newmain_menu").setAttribute("hidden",true);
+			//dump(">>>>>>>>>>>>> miczColumnsWizard [initHeadersEditingMenu]: Menu HIDDEN! \r\n");
 		}
 	},
-	
+
 	editHeaderMenu_OnClick:function(event){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderMenu_OnClick]: "+JSON.stringify(event.target.getAttribute("colidx"))+"\r\n");
 		let colidx=event.target.getAttribute("colidx")
@@ -332,7 +335,7 @@ var miczColumnsWizard = {
 			miczColumnsWizard_MsgUtils.saveMsg(args.value,msgURI,miczColumnsWizard_MsgUtils.listener);
 		}
 	},
-	
+
 	editHeaderSubMenu_OnClick:function(event){	//Here editType is always Fixed List
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick]: "+JSON.stringify(event.target.getAttribute("colidx"))+"\r\n");
 		let colidx=event.target.getAttribute("colidx")
@@ -344,7 +347,7 @@ var miczColumnsWizard = {
 		//Save the message with the new value
 		miczColumnsWizard_MsgUtils.saveMsg(header_value,msgURI,miczColumnsWizard_MsgUtils.listener);
 	},
-	
+
 	updateHeaderEditingMenuObserver:function(ObserverService){
 		let headerEditingMenuObserver = {
 			observe: function(aSubject,aTopic,aData){
