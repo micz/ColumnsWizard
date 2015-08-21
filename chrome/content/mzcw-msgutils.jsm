@@ -249,7 +249,7 @@ miczColumnsWizard_MsgUtils.listener = {
 			getService(Components.interfaces.nsIProperties).  
 			get("TmpD", Components.interfaces.nsIFile);  
 		tempFile.append("HT.eml");
-		tempFile.createUnique(0,0600);
+		tempFile.createUnique(0,parseInt("0600", 8));
 		let foStream = Components.classes["@mozilla.org/network/file-output-stream;1"]
 			.createInstance(Components.interfaces.nsIFileOutputStream);
 		foStream.init(tempFile, 2, 0x200, false); // open as "write only"
