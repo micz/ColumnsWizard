@@ -20,7 +20,7 @@
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_main_menu"
 	class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png"
 	insertafter="menu_editMsgAsNew">
-		 <observes element="button_mark" attribute="disabled" />
+		 <observes element="menu_editMsgAsNew" attribute="disabled" />
 		<menupopup id="cw_edit_main_menu_popup">
 	    </menupopup>
 	</menu>
@@ -31,7 +31,7 @@
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_context_menu"
 	 class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png"
 	 insertafter="mailContext-editAsNew">
-		 <observes element="button_mark" attribute="disabled" />
+		 <observes element="mailContext-editAsNew" attribute="disabled" />
 		<menupopup id="cw_edit_context_menu_popup">
 	    </menupopup>
 	</menu>
@@ -42,7 +42,7 @@
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_newmain_menu"
 	class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png"
 	insertafter="appmenu_editMsgAsNew">
-		 <observes element="button_mark" attribute="disabled" />
+		 <observes element="appmenu_editMsgAsNew" attribute="disabled" />
 		<menupopup id="cw_edit_newmain_menu_popup">
 	    </menupopup>
 	</menu>
