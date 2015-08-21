@@ -47,7 +47,18 @@ var miczColumnsWizardPref_CustColEditor = {
 
 						//mod data
 						if(currcol.isEditable!==undefined)document.getElementById("ColumnsWizard.mod").setAttribute("checked",currcol.isEditable);
-						if(currcol.editType!==undefined)document.getElementById("ColumnsWizard.mod_type_group").setAttribute("value",currcol.editType);
+						if(currcol.editType!==undefined){
+							document.getElementById("ColumnsWizard.mod_type_freetext").setAttribute("selected",currcol.editType==document.getElementById("ColumnsWizard.mod_type_freetext").value);
+							document.getElementById("ColumnsWizard.mod_type_number").setAttribute("selected",currcol.editType==document.getElementById("ColumnsWizard.mod_type_number").value);
+							document.getElementById("ColumnsWizard.mod_type_fixedlist").setAttribute("selected",currcol.editType==document.getElementById("ColumnsWizard.mod_type_fixedlist").value);
+							if(currcol.editType!=document.getElementById("ColumnsWizard.mod_type_fixedlist").value){	//we are doing this because here this.enableHeaderFixedList() is not working!
+								document.getElementById('ColumnsWizard.mod_type_fixedlist.list').disabled=true;
+								document.getElementById('ColumnsWizard.mod_type_fixedlist.list.desc').disabled=true;
+							}else{
+								document.getElementById('ColumnsWizard.mod_type_fixedlist.list').disabled=false;
+								document.getElementById('ColumnsWizard.mod_type_fixedlist.list.desc').disabled=false;
+							}
+						}
 						if(currcol.editFixedList!==undefined)document.getElementById("ColumnsWizard.mod_type_fixedlist.list").setAttribute("value",(currcol.editFixedList).join("\r\n"));
 
 						//set the value on the label in the advanced tab
@@ -270,7 +281,6 @@ var miczColumnsWizardPref_CustColEditor = {
 		let disabled=!document.getElementById('ColumnsWizard.mod').checked;
 		document.getElementById('ColumnsWizard.mod_type.desc').disabled=disabled;
 		document.getElementById('ColumnsWizard.mod_type_group').disabled=disabled;
-		this.enableHeaderFixedList();
 	},
 
 	enableHeaderFixedList:function(){
