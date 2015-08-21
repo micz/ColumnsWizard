@@ -17,6 +17,14 @@ var miczColumnsWizardPrefsUtils = {
 	get stringCustColIndexMod() {
 		return this.getCharPref_CW("CustCols.index_mod");
 	},
+	
+	get useImapFix() {
+		return this.getBoolPref_CW("MailHeader.use_imap_fix");
+	},
+	
+	get putOriginalInTrash() {
+		return this.getBoolPref_CW("MailHeader.put_original_in_trash");
+	},
 
 	existsCharPref: function existsCharPref(pref) {
 		try {

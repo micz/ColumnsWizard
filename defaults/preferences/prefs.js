@@ -18,3 +18,5 @@ pref("extensions.ColumnsWizard.CustCols.def.xspamscore", "");
 pref("extensions.ColumnsWizard.DefaultColsList", "");
 pref("extensions.ColumnsWizard.DefaultColsList.active", true);
 pref("extensions.ColumnsWizard.CustCols.mod_active", false);
+pref("extensions.ColumnsWizard.MailHeader.use_imap_fix", true);
+pref("extensions.ColumnsWizard.MailHeader.put_original_in_trash", true);

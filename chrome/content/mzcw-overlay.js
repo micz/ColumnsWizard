@@ -315,22 +315,22 @@ var miczColumnsWizard = {
 	},
 	
 	editHeaderMenu_OnClick:function(event){
-		miczColumnsWizard_MsgUtils.messenger=messenger;
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderMenu_OnClick]: "+JSON.stringify(event.target.getAttribute("colidx"))+"\r\n");
 		let colidx=event.target.getAttribute("colidx")
 		let mail_header=event.target.getAttribute("mail_header");
 		let edit_type=event.target.getAttribute("edit_type");
-		//TO DO: get the actual value from message
+		//Get the actual value from message
 		let msgURI = gFolderDisplay.selectedMessageUris[0];
-		let header_value=miczColumnsWizard_MsgUtils.getMsgHeaderValue(msgURI,mail_header);
-		//TO DO: open value editor
+		miczColumnsWizard_MsgUtils.init(miczColumnsWizard_MsgUtils.messenger,msgURI,gDBView);
+		miczColumnsWizard_MsgUtils.setCurrentHeader(mail_header);
+		let header_value=miczColumnsWizard_MsgUtils.getMsgHeaderValue(mail_header);
+		//Open value editor
 		let args = {"action":"change","value":header_value,"edit_type":edit_type};
 		window.openDialog("chrome://columnswizard/content/mzcw-mailheader-editor.xul", "MailHeaderEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
-		if (("save" in args && args.save)&& ("value" in args && args.newcol)){
-			//TO DO: Save new value
-			
+		if (("save" in args && args.save)&& ("value" in args && args.value)){
+			//Save the message with the new value
+			miczColumnsWizard_MsgUtils.saveMsg(args.value,msgURI,miczColumnsWizard_MsgUtils.listener);
 		}
-		
 	},
 	
 	editHeaderSubMenu_OnClick:function(event){	//Here editType is always Fixed List
