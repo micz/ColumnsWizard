@@ -37,7 +37,7 @@ var miczColumnsWizard_MsgUtils = {
 	},
 
 	getMsgHeaderValue:function(header){
-		dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [getMsgHeader]: hrd: "+JSON.stringify(miczColumnsWizard_MsgUtils.hdr.getStringProperty(header))+" - header: "+header+"\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [getMsgHeader]: hrd: "+JSON.stringify(miczColumnsWizard_MsgUtils.hdr.getStringProperty(header))+" - header: "+header+"\r\n");
 		return miczColumnsWizard_MsgUtils.hdr.getStringProperty(header);
 	},
 
@@ -134,8 +134,10 @@ miczColumnsWizard_MsgUtils.listener = {
 		let re=new RegExp(currStrHeader+" *.*\r\n",'ig');
 		if (headers.indexOf(currStrHeader) > -1){
 			headers = headers.replace(re, currStrHeader+" "+ newHeaderEnc+"\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: REPLACING HEADER\r\n");
 		}else{ // header is missing
 			headers = headers+("\r"+currStrHeader+" "+newHeaderEnc);
+			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: ADDING HEADER\r\n");
 		}
 
 		headers = headers.substring(1);
