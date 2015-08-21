@@ -22,7 +22,7 @@ var miczColumnsWizard_MsgUtils = {
 	gDBView:null,
 	msgWindow:null,
 
-	init(messenger,msgURI,gDBView,msgWindow){
+	init:function(messenger,msgURI,gDBView,msgWindow){
 		miczColumnsWizard_MsgUtils.messenger=messenger;
 		miczColumnsWizard_MsgUtils.mms = miczColumnsWizard_MsgUtils.messenger.messageServiceFromURI(msgURI).QueryInterface(Components.interfaces.nsIMsgMessageService);
 		miczColumnsWizard_MsgUtils.hdr=miczColumnsWizard_MsgUtils.mms.messageURIToMsgHdr(msgURI);
@@ -32,7 +32,7 @@ var miczColumnsWizard_MsgUtils = {
 		miczColumnsWizard_MsgUtils.msgWindow=msgWindow;
 	},
 
-	setCurrentHeader(header){
+	setCurrentHeader:function(header){
 		miczColumnsWizard_MsgUtils.current_header=header;
 	},
 
@@ -41,7 +41,7 @@ var miczColumnsWizard_MsgUtils = {
 		return miczColumnsWizard_MsgUtils.hdr.getStringProperty(header);
 	},
 
-	saveMsg(value,msgURI,listener){
+	saveMsg:function(value,msgURI,listener){
 		miczColumnsWizard_MsgUtils.new_header_value=value;
 		miczColumnsWizard_MsgUtils.mms.streamMessage(msgURI, listener, null, null, false, null);
 	},
