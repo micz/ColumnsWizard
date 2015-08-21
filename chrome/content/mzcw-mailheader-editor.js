@@ -5,7 +5,7 @@ var miczColumnsWizard={};
 var miczColumnsWizard_MailHeaderEditor = {
 	
 	_only_numbers:false,
-	_sanitize_value_regex:"^[0-9]*$",
+	_sanitize_value_regex:"\\d+",
 
 	onLoad: function(){
 		//Fixing window height
@@ -15,8 +15,8 @@ var miczColumnsWizard_MailHeaderEditor = {
 			let args = window.arguments[0];
 			
 			this._only_numbers=args.edit_type==miczColumnsWizard_CustomColsModUtils.editTypeNumbers;
-			dump(">>>>>>>>>>>>> miczColumnsWizard_MailHeaderEditor: [onLoad]: this._only_numbers: "+JSON.stringify(this._only_numbers)+"\r\n");
-			dump(">>>>>>>>>>>>> miczColumnsWizard_MailHeaderEditor: [onLoad]: args.edit_type: "+JSON.stringify(args.edit_type)+"\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard_MailHeaderEditor: [onLoad]: this._only_numbers: "+JSON.stringify(this._only_numbers)+"\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard_MailHeaderEditor: [onLoad]: args.edit_type: "+JSON.stringify(args.edit_type)+"\r\n");
 			
 			document.getElementById("cw_only_numbers_label").setAttribute("hidden",!this._only_numbers);
 
