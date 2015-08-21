@@ -336,9 +336,13 @@ var miczColumnsWizard = {
 	editHeaderSubMenu_OnClick:function(event){	//Here editType is always Fixed List
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick]: "+JSON.stringify(event.target.getAttribute("colidx"))+"\r\n");
 		let colidx=event.target.getAttribute("colidx")
-		let mail_haeder=event.target.getAttribute("mail_header");
+		let mail_header=event.target.getAttribute("mail_header");
 		let header_value=event.target.getAttribute("label");
-		//TO DO: Save new value
+		let msgURI = gFolderDisplay.selectedMessageUris[0];
+		miczColumnsWizard_MsgUtils.init(messenger,msgURI,gDBView,msgWindow);
+		miczColumnsWizard_MsgUtils.setCurrentHeader(mail_header);
+		//Save the message with the new value
+		miczColumnsWizard_MsgUtils.saveMsg(header_value,msgURI,miczColumnsWizard_MsgUtils.listener);
 	},
 	
 	updateHeaderEditingMenuObserver:function(ObserverService){
