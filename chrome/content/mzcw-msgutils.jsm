@@ -5,6 +5,8 @@
  * made by Paolo "Kaosmos".
  * */
 
+Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+
 var EXPORTED_SYMBOLS = ["miczColumnsWizard_MsgUtils"];
 
 var miczColumnsWizard_MsgUtils = {
@@ -18,13 +20,16 @@ var miczColumnsWizard_MsgUtils = {
 	new_header_value:'',
 	noTrash:false,
 	gDBView:null,
+	msgWindow:null,
 	
-	init(messenger,msgURI,gDBView){
+	init(messenger,msgURI,gDBView,msgWindow){
+		miczColumnsWizard_MsgUtils.messenger=messenger;
 		miczColumnsWizard_MsgUtils.mms = miczColumnsWizard_MsgUtils.messenger.messageServiceFromURI(msgURI).QueryInterface(Components.interfaces.nsIMsgMessageService);
 		miczColumnsWizard_MsgUtils.hdr=miczColumnsWizard_MsgUtils.mms.messageURIToMsgHdr(msgURI);
 		miczColumnsWizard_MsgUtils.msgURI=msgURI;
 		miczColumnsWizard_MsgUtils.folder=miczColumnsWizard_MsgUtils.hdr.folder;
 		miczColumnsWizard_MsgUtils.gDBView=gDBView;
+		miczColumnsWizard_MsgUtils.msgWindow=msgWindow;
 	},
 	
 	setCurrentHeader(header){
@@ -268,7 +273,7 @@ miczColumnsWizard_MsgUtils.listener = {
 		let fileSpec = Components.classes["@mozilla.org/file/local;1"]
 			.createInstance(Components.interfaces.nsILocalFile);
 		fileSpec.initWithPath(tempFile.path);
-		let fol = HeaderToolsLiteObj.hdr.folder;
+		let fol = miczColumnsWizard_MsgUtils.hdr.folder;
 		let extService = Components.classes['@mozilla.org/uriloader/external-helper-app-service;1']
 			.getService(Components.interfaces.nsPIExternalAppLauncher)
 		extService.deleteTemporaryFileOnExit(fileSpec); // function's name says all!!!
@@ -276,7 +281,7 @@ miczColumnsWizard_MsgUtils.listener = {
 		// Moved in copyListener.onStopCopy
 		// miczColumnsWizard_MsgUtils.folder.deleteMessages(miczColumnsWizard_MsgUtils.list,null,miczColumnsWizard_MsgUtils.noTrash,true,null,false);
 		let cs = Components.classes["@mozilla.org/messenger/messagecopyservice;1"].getService(Components.interfaces.nsIMsgCopyService);
-		cs.CopyFileMessage(fileSpec, fol, null, false, flags, keys, miczColumnsWizard_MsgUtils.copyListener, msgWindow);		
+		cs.CopyFileMessage(fileSpec, fol, null, false, flags, keys, miczColumnsWizard_MsgUtils.copyListener, miczColumnsWizard_MsgUtils.msgWindow);		
 	},
 	
 	onDataAvailable:function(aRequest, aContext, aInputStream, aOffset, aCount){
@@ -325,13 +330,14 @@ miczColumnsWizard_MsgUtils.copyListener={
 // used just for remote folders
 miczColumnsWizard_MsgUtils.folderListener={ 
 	OnItemAdded:function(parentItem, item, view){
+		let hdr = null;
 		try{
-			let hdr = item.QueryInterface(Components.interfaces.nsIMsgDBHdr);
+			hdr = item.QueryInterface(Components.interfaces.nsIMsgDBHdr);
 		}catch(e){return;}
 		if (miczColumnsWizard_MsgUtils.folderListener.key == hdr.messageKey && miczColumnsWizard_MsgUtils.folderListener.URI == hdr.folder.URI){
 			miczColumnsWizard_MsgUtils.postActions(miczColumnsWizard_MsgUtils.folderListener.key);
 			// we don't need anymore the folderListener
-			Components.classes["@mozilla.org/messenger/services/session;1"].getService(Components.interfaces.nsIMsgMailSession).RemoveFolderListener(HeaderToolsLiteObj.folderListener);
+			Components.classes["@mozilla.org/messenger/services/session;1"].getService(Components.interfaces.nsIMsgMailSession).RemoveFolderListener(miczColumnsWizard_MsgUtils.folderListener);
 		}            
 	},
 	
