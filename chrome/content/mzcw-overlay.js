@@ -324,7 +324,7 @@ var miczColumnsWizard = {
 		let edit_type=event.target.getAttribute("edit_type");
 		//Get the actual value from message
 		let msgURI = gFolderDisplay.selectedMessageUris[0];
-		miczColumnsWizard_MsgUtils.init(messenger,msgURI,gDBView,msgWindow);
+		miczColumnsWizard_MsgUtils.init(messenger,msgURI,gDBView,msgWindow,window);
 		miczColumnsWizard_MsgUtils.setCurrentHeader(mail_header);
 		let header_value=miczColumnsWizard_MsgUtils.getMsgHeaderValue(mail_header);
 		//Open value editor
@@ -342,7 +342,7 @@ var miczColumnsWizard = {
 		let mail_header=event.target.getAttribute("mail_header");
 		let header_value=event.target.getAttribute("label");
 		let msgURI = gFolderDisplay.selectedMessageUris[0];
-		miczColumnsWizard_MsgUtils.init(messenger,msgURI,gDBView,msgWindow);
+		miczColumnsWizard_MsgUtils.init(messenger,msgURI,gDBView,msgWindow,window);
 		miczColumnsWizard_MsgUtils.setCurrentHeader(mail_header);
 		//Save the message with the new value
 		miczColumnsWizard_MsgUtils.saveMsg(header_value,msgURI,miczColumnsWizard_MsgUtils.listener);

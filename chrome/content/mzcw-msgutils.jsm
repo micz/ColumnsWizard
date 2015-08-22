@@ -11,6 +11,7 @@ var EXPORTED_SYMBOLS = ["miczColumnsWizard_MsgUtils"];
 
 var miczColumnsWizard_MsgUtils = {
 
+	win:null,
 	list:null,
 	messenger:null,
 	mms:null,
@@ -22,7 +23,7 @@ var miczColumnsWizard_MsgUtils = {
 	gDBView:null,
 	msgWindow:null,
 
-	init:function(messenger,msgURI,gDBView,msgWindow){
+	init:function(messenger,msgURI,gDBView,msgWindow,win){
 		miczColumnsWizard_MsgUtils.messenger=messenger;
 		miczColumnsWizard_MsgUtils.mms = miczColumnsWizard_MsgUtils.messenger.messageServiceFromURI(msgURI).QueryInterface(Components.interfaces.nsIMsgMessageService);
 		miczColumnsWizard_MsgUtils.hdr=miczColumnsWizard_MsgUtils.mms.messageURIToMsgHdr(msgURI);
@@ -30,6 +31,7 @@ var miczColumnsWizard_MsgUtils = {
 		miczColumnsWizard_MsgUtils.folder=miczColumnsWizard_MsgUtils.hdr.folder;
 		miczColumnsWizard_MsgUtils.gDBView=gDBView;
 		miczColumnsWizard_MsgUtils.msgWindow=msgWindow;
+		miczColumnsWizard_MsgUtils.win=win;
 	},
 
 	setCurrentHeader:function(header){
@@ -247,7 +249,7 @@ miczColumnsWizard_MsgUtils.copyListener={
 			miczColumnsWizard_MsgUtils.folderListener.URI = miczColumnsWizard_MsgUtils.folder.URI;
 		}
 		else
-			setTimeout(function(){miczColumnsWizard_MsgUtils.postActions(key);},500);
+			miczColumnsWizard_MsgUtils.win.setTimeout(function(){miczColumnsWizard_MsgUtils.postActions(key);},500);
 	}
 };
 
