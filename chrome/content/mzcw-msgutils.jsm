@@ -127,7 +127,7 @@ miczColumnsWizard_MsgUtils.listener = {
 			headers = headers.replace(/(\r\nTo: .*)(\r\n\s+)/, "$1 ");
 
 		// This will be removed after the if-else_if-else series, it will make easier to test headers
-		headers = "\n"+headers;
+		headers = "\n"+headers+"\r\n";
 
 		let currStrHeader="\n"+miczColumnsWizard_MsgUtils.current_header+":";
 		let mimeEncoder = Components.classes["@mozilla.org/messenger/mimeconverter;1"].getService(Components.interfaces.nsIMimeConverter);
@@ -137,10 +137,14 @@ miczColumnsWizard_MsgUtils.listener = {
 		if (headers.indexOf(currStrHeader) > -1){
 			headers = headers.replace(re, currStrHeader+" "+ newHeaderEnc+"\r\n");
 			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: REPLACING HEADER\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: headers: "+headers+"\r\n");
 		}else{ // header is missing
 			headers = headers+("\r"+currStrHeader+" "+newHeaderEnc);
 			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: ADDING HEADER\r\n");
 		}
+		
+		//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: newHeaderEnc: "+newHeaderEnc+"\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: headers: "+headers+"\r\n");
 
 		headers = headers.substring(1);
 		data = headers + data.substring(endHeaders);
@@ -174,6 +178,8 @@ miczColumnsWizard_MsgUtils.listener = {
 				return p1+":"+p2+":"+z});
 			data = data.replace(date,newDate);
 		}
+		
+		//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: data: "+data+"\r\n");
 
 		// creates the temporary file, where the modified message body will be stored
 		let tempFile = Components.classes["@mozilla.org/file/directory_service;1"].
