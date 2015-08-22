@@ -1,7 +1,7 @@
 "use strict";
 /* *
  * Many of the ideas, know how and actual code used in this module
- * are taken from the Header Tools Lite addon (https://addons.mozilla.org/en-US/thunderbird/addon/header-tools-lite/)
+ * are taken from the "Header Tools Lite" addon (https://addons.mozilla.org/en-US/thunderbird/addon/header-tools-lite/)
  * made by Paolo "Kaosmos".
  * */
 
