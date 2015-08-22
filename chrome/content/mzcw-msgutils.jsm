@@ -127,7 +127,7 @@ miczColumnsWizard_MsgUtils.listener = {
 			headers = headers.replace(/(\r\nTo: .*)(\r\n\s+)/, "$1 ");
 
 		// This will be removed after the if-else_if-else series, it will make easier to test headers
-		headers = "\n"+headers+"\r\n";
+		headers = "\n"+headers;
 
 		let currStrHeader="\n"+miczColumnsWizard_MsgUtils.current_header+":";
 		let mimeEncoder = Components.classes["@mozilla.org/messenger/mimeconverter;1"].getService(Components.interfaces.nsIMimeConverter);
@@ -139,7 +139,7 @@ miczColumnsWizard_MsgUtils.listener = {
 			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: REPLACING HEADER\r\n");
 			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: headers: "+headers+"\r\n");
 		}else{ // header is missing
-			headers = headers+("\r"+currStrHeader+" "+newHeaderEnc);
+			headers = headers+("\r"+currStrHeader+" "+newHeaderEnc+"\r\n");
 			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: ADDING HEADER\r\n");
 		}
 		
