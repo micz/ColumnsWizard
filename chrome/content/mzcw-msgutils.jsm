@@ -144,7 +144,7 @@ miczColumnsWizard_MsgUtils.listener = {
 
 		headers = headers.substring(1);
 		data = headers + data.substring(endHeaders);
-		let action = "headerChanged";
+		//let action = "headerChanged";
 
 		// strips off some useless headers
 		/*data = data.replace(/^From - .+\r\n/, "");
