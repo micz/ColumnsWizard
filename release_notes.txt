@@ -3,6 +3,8 @@
 ==========
 Version 5.2 - ??/??/2015
 - The custom columns are now searchable in the Thunderbird advanced search window.
+- Minor bugfixes.
+- Minor user interface improvements in the preferences window.
 ==========
 Version 5.1 - 26/07/2015
 - Release notes added in the preference info tab.
