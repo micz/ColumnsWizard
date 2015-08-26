@@ -1,0 +1,21 @@
+<!ENTITY ColumnsWizard.window.title "Éditeur de colonne personnalisée">
+<!ENTITY ColumnsWizard.Desc.label "indiquez les informations de nouvelle colonne personnalisée. Tous les champs sont nécessaires.">
+<!ENTITY ColumnsWizard.id.label "ID">
+<!ENTITY ColumnsWizard.id.desc "L'ID est l'identifiant unique de votre colonne personnalisée">
+<!ENTITY ColumnsWizard.dbHeader.label "En-tête du courriel">
+<!ENTITY ColumnsWizard.dbHeader.desc "L'en-tête est le champ du message qui doit être affiché dans la colonne personnalisée. Il ne peut être modifié après le premier enregistrement.">
+<!ENTITY ColumnsWizard.labelString.label "Nom de la colonne">
+<!ENTITY ColumnsWizard.btn.setIcon_label "Choisir une icône">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Cliquez ici pour choisir une icône qui corresponde au nom de la colonne.">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "Supprimer l'icône">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Cliquez ici pour supprimer l'icône.">
+<!ENTITY ColumnsWizard.labelString.desc "Écrivez ici le nom qui doit être affiché dans l'en-tête de colonne, dans la liste de message.">
+<!ENTITY ColumnsWizard.tooltipString.label "Infobulle">
+<!ENTITY ColumnsWizard.tooltipString.desc "Saisissez ici l'infobulle de l'en-tête de colonne. Généralement c'est &quot;Trier by&quot; suivi du nom de la colonne.">
+<!ENTITY ColumnsWizard.enabled.label "Activé">
+<!ENTITY ColumnsWizard.enabled.desc "Activer cette colonne personnalisée immédiatement.">
+<!ENTITY ColumnsWizard.sortnumber.label "Tri">
+<!ENTITY ColumnsWizard.sortnumber.desc "Trier cette colonne personnalisée par ordre numérique">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "La colonne personnalisée peut trier seulement les nombres qui ont moins de 3 décimales et dont l avaleur est entre -1.000.000 et 3.294.967.">
+<!ENTITY ColumnsWizard.searchable.label "peut être cherché">
+<!ENTITY ColumnsWizard.searchable.desc "Rendre possible de chercher dans la colonne personnalisée, via la barre de recherche avancée de Thunderbird.">
