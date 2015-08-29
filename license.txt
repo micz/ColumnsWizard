@@ -24,7 +24,7 @@ ATTRIBUTIONS
 -= Translations =-  (Thanks to BabelZilla.org)
 Chinese (Simplified) (zh-CN) thanks to YFdyh000.
 Dutch (nl) thanks to markh van BabelZilla.org.
-French (fr) thanks to  Goofy.
+French (fr) thanks to Goofy.
 German (de) thanks to RealRaven [http://quickfolders.mozdev.org/].
 Italian (it) thanks to Mic [http://micz.it].
 
