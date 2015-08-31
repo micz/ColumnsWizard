@@ -17,3 +17,5 @@
 <!ENTITY ColumnsWizard.sortnumber.label "Ordinamento">
 <!ENTITY ColumnsWizard.sortnumber.desc "Ordina il contenuto di questa colonna aggiuntiva come numero.">
 <!ENTITY ColumnsWizard.sortnumber.desc_limit "Questa colonna aggiuntiva può solo ordinare numeri con non più di tre cifre decimali e un valore tra -1.000.000 e 3.294.967.">
+<!ENTITY ColumnsWizard.searchable.label "Ricercabile">
+<!ENTITY ColumnsWizard.searchable.desc "Rendi questa colonna aggiuntiva ricercabile nella ricerca avanzata di Thunderbird.">

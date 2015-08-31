@@ -310,7 +310,12 @@ var miczColumnsWizard_CustCols={
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable] "+newHeader+"\r\n");
 		let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		let currentHeaders = prefService.getCharPref("mailnews.customHeaders");
-		let headers_array=currentHeaders.split(': ');
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable]: currentHeaders: "+currentHeaders+"\r\n");
+		let headers_array=new Array();
+		if(currentHeaders!=''){
+			headers_array=currentHeaders.split(': ');
+		}
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable]: headers_array: "+JSON.stringify(headers_array)+"\r\n");
 		if(headers_array.indexOf(newHeader)==-1){
 			headers_array.push(newHeader);
 			currentHeaders=headers_array.join(': ');

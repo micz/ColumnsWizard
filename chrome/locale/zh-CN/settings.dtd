@@ -12,7 +12,6 @@
 <!ENTITY ColumnsWizard.TabInfo.label "信息">
 <!ENTITY ColumnsWizard.InfoMainDesc "本附加组件是在我的业余时间下免费开发的。如果你每天都在使用它，希望您能随心做一点点捐款支持它，只需点击下面的链接。十分感谢！">
 <!ENTITY ColumnsWizard.DonateLink "我要捐款！">
-<!ENTITY ColumnsWizard.TranslateCredits "感谢 Babelzilla.org 志愿者提供翻译">
 <!ENTITY ColumnsWizard.Addbcc.label "密送">
 <!ENTITY ColumnsWizard.Addreplyto.label "回复给">
 <!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">

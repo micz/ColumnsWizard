@@ -12,7 +12,6 @@
 <!ENTITY ColumnsWizard.TabInfo.label "Info">
 <!ENTITY ColumnsWizard.InfoMainDesc "Deze add-on is gratis en ontwikkeld in mijn vrije tijd. Als u hem dagelijks gebruikt, steun hem dan middels een kleine donatie via onderstaande koppeling. Bedankt!">
 <!ENTITY ColumnsWizard.DonateLink "Donatie doen!">
-<!ENTITY ColumnsWizard.TranslateCredits "Vertaling dankzij BabelZilla.org">
 <!ENTITY ColumnsWizard.Addbcc.label "Bcc">
 <!ENTITY ColumnsWizard.Addreplyto.label "Antwoord-aan">
 <!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
@@ -32,3 +31,5 @@
 <!ENTITY ColumnsWizard.CustColsList.mailheader "Berichtheader">
 <!ENTITY ColumnsWizard.CustColsList.title "Kolomnaam">
 <!ENTITY ColumnsWizard.CustColsList.tooltip "Tooltip">
+<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Ingeschakeld">
+<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Doorzoekbaar">

@@ -1,9 +1,13 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
-Version 5.2 - ??/??/2015
+Version 6.0 - ??/??/2015
+-
+==========
+Version 5.2 - 31/08/2015
 - The custom columns are now searchable in the Thunderbird advanced search window.
-- 
+- Minor bugfixes.
+- Minor user interface improvements in the preferences window.
 ==========
 Version 5.1 - 26/07/2015
 - Release notes added in the preference info tab.

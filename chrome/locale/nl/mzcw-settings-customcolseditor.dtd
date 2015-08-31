@@ -5,6 +5,10 @@
 <!ENTITY ColumnsWizard.dbHeader.label "Berichtheader">
 <!ENTITY ColumnsWizard.dbHeader.desc "De berichtheader is het veld van e-mailberichten dat moet worden weergegeven in de berichtenlijst in de Aangepaste kolom. Deze kan niet worden gewijzigd na de eerste keer opslaan.">
 <!ENTITY ColumnsWizard.labelString.label "Kolomnaam">
+<!ENTITY ColumnsWizard.btn.setIcon_label "Pictogram instellen">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Klik hier om een pictogram als kolomnaam in te stellen.">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "Pictogram verwijderen">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Klik hier om het pictogram te verwijderen.">
 <!ENTITY ColumnsWizard.labelString.desc "Schrijf hier de naam die bovenaan de kolom in de berichtenlijst moet worden weergegeven.">
 <!ENTITY ColumnsWizard.tooltipString.label "Tooltip">
 <!ENTITY ColumnsWizard.tooltipString.desc "Voer hier de tooltip van de kolomtekst in de berichtenlijst in. Dit is gewoonlijk “Sorteren op”, gevolgd door de kolomnaam.">
@@ -13,3 +17,5 @@
 <!ENTITY ColumnsWizard.sortnumber.label "Sorteren">
 <!ENTITY ColumnsWizard.sortnumber.desc "Deze aangepaste kolom als een getal sorteren.">
 <!ENTITY ColumnsWizard.sortnumber.desc_limit "De aangepaste kolom kan alleen getallen met maximaal 3 decimalen en een waarde tussen -1.000.000 en 3.294.967 sorteren.">
+<!ENTITY ColumnsWizard.searchable.label "Is doorzoekbaar">
+<!ENTITY ColumnsWizard.searchable.desc "Maak deze aangepaste kolom doorzoekbaar in het geavanceerde zoekvenster van Thunderbird.">

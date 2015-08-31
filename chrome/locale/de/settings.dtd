@@ -12,7 +12,6 @@
 <!ENTITY ColumnsWizard.TabInfo.label "Info">
 <!ENTITY ColumnsWizard.InfoMainDesc "Ich entwickle diese Erweiterung in meiner Freizeit. Falls Sie sie täglich benutzen, ziehen Sie eine Spende in Betracht. Vielen Dank!">
 <!ENTITY ColumnsWizard.DonateLink "Hier Spenden!">
-<!ENTITY ColumnsWizard.TranslateCredits "Übersetzungen dank Babelzilla.org">
 <!ENTITY ColumnsWizard.Addbcc.label "Blindkopie (Bcc)">
 <!ENTITY ColumnsWizard.Addreplyto.label "Antwortadresse">
 <!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
@@ -32,3 +31,5 @@
 <!ENTITY ColumnsWizard.CustColsList.mailheader "Mail Header">
 <!ENTITY ColumnsWizard.CustColsList.title "Spaltenname">
 <!ENTITY ColumnsWizard.CustColsList.tooltip "Tooltip">
+<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Aktiv">
+<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Durchsuchbar">
