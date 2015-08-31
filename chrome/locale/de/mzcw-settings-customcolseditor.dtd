@@ -1,4 +1,4 @@
-<!ENTITY ColumnsWizard.window.title "Spezialspalten Editieren">
+<!ENTITY ColumnsWizard.window.title "Spezialspalten Editor">
 <!ENTITY ColumnsWizard.Desc.label "Formular für die neue Spalte. Alle Felder müssen ausgefüllt werden.">
 <!ENTITY ColumnsWizard.id.label "Id">
 <!ENTITY ColumnsWizard.id.desc "Der Id ist ein eindeutiger Identifikator für die neue Spalte. Er kann nach dem Eintrag nicht mehr modifiziert werden.">
@@ -17,3 +17,5 @@
 <!ENTITY ColumnsWizard.sortnumber.label "Sortierung">
 <!ENTITY ColumnsWizard.sortnumber.desc "Diese Spalte numerisch sortieren.">
 <!ENTITY ColumnsWizard.sortnumber.desc_limit "Spezialspalte kann nur Nummern mit höchstens drei Dezimalstellen im Bereich von -1.000.000 bis 3.294.967 sortieren.">
+<!ENTITY ColumnsWizard.searchable.label "Durchsuchbar">
+<!ENTITY ColumnsWizard.searchable.desc "Dieses Feld im Dialog zur Nachrichtensuche einbeziehen.">

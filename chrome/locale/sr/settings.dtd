@@ -12,7 +12,6 @@
 <!ENTITY ColumnsWizard.TabInfo.label "Информације">
 <!ENTITY ColumnsWizard.InfoMainDesc "Овај додатак је бесплатан и направљен је у слободно време. Ако га користите свакодневно, молим вас за малу донацију кликом на везу испод. Хвала!">
 <!ENTITY ColumnsWizard.DonateLink "Донирај!">
-<!ENTITY ColumnsWizard.TranslateCredits "Превод је омогућио Babelzilla.org">
 <!ENTITY ColumnsWizard.Addbcc.label "Додатни примаоци">
 <!ENTITY ColumnsWizard.Addreplyto.label "Одговори на">
 <!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-оригинал-пошиљалац">
@@ -32,3 +31,5 @@
 <!ENTITY ColumnsWizard.CustColsList.mailheader "Заглавље поруке">
 <!ENTITY ColumnsWizard.CustColsList.title "Назив колоне">
 <!ENTITY ColumnsWizard.CustColsList.tooltip "Опис алатке">
+<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Enabled">
+<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Searchable">
