@@ -4,7 +4,7 @@
   <Description about="urn:mozilla:install-manifest">
     <em:id>columnswizard@micz.it</em:id>
     <em:type>2</em:type>
-    <em:version>5.3alpha</em:version>
+    <em:version>6.0alpha</em:version>
     <em:name>ColumnsWizard</em:name>
     <em:description>Adds some magic to the folder list columns! You can add a custom column directly from the addon preference window to show any mail header you want, define the default columns settings for any new folder and show hidden columns in the Conversation Tab and in the search window.</em:description>
     <em:iconURL>chrome://columnswizard/skin/mzcw-icon.png</em:iconURL>

@@ -1,7 +1,7 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
-Version 5.3 - ??/??/2015
+Version 6.0 - ??/??/2015
 -
 ==========
 Version 5.2 - 31/08/2015
