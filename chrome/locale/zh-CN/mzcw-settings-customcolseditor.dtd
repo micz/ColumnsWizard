@@ -17,5 +17,3 @@
 <!ENTITY ColumnsWizard.sortnumber.label "设置">
 <!ENTITY ColumnsWizard.sortnumber.desc "设置此自定义列为一个数字。">
 <!ENTITY ColumnsWizard.sortnumber.desc_limit "这个自定义列可以设置为一个不超过3位小数，值在 -1.000.000 至 3.294.967 之间的一个数字，供排序使用。">
-<!ENTITY ColumnsWizard.searchable.label "Is Searchable">
-<!ENTITY ColumnsWizard.searchable.desc "Make this custom column searchable in the Thunderbird's advanced search window.">

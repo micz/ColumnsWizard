@@ -31,5 +31,3 @@
 <!ENTITY ColumnsWizard.CustColsList.mailheader "邮件头">
 <!ENTITY ColumnsWizard.CustColsList.title "列名">
 <!ENTITY ColumnsWizard.CustColsList.tooltip "工具提示">
-<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Enabled">
-<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Searchable">

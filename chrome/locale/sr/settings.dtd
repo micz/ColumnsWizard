@@ -31,5 +31,3 @@
 <!ENTITY ColumnsWizard.CustColsList.mailheader "Заглавље поруке">
 <!ENTITY ColumnsWizard.CustColsList.title "Назив колоне">
 <!ENTITY ColumnsWizard.CustColsList.tooltip "Опис алатке">
-<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Enabled">
-<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Searchable">
