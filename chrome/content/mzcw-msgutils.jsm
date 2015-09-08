@@ -76,7 +76,7 @@ var miczColumnsWizard_MsgUtils = {
 		2) this will fix some problems with IMAP servers that don't accept mixed newlines
 		3) this will make easier to use regexps
 		*/
-		var newData = data.replace(/\r/g, "");
+		let newData = data.replace(/\r/g, "");
 		newData = newData.replace(/\n/g, "\r\n");
 		return newData;
 	},
@@ -136,15 +136,15 @@ miczColumnsWizard_MsgUtils.listener = {
 		let re=new RegExp(currStrHeader+" *.*\r\n",'ig');
 		if (headers.indexOf(currStrHeader) > -1){
 			headers = headers.replace(re, currStrHeader+" "+ newHeaderEnc+"\r\n");
-			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: REPLACING HEADER\r\n");
-			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: headers: "+headers+"\r\n");
+			dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: REPLACING HEADER\r\n");
+			dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: headers: "+headers+"\r\n");
 		}else{ // header is missing
 			headers = headers+("\r"+currStrHeader+" "+newHeaderEnc+"\r\n");
-			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: ADDING HEADER\r\n");
+			dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: ADDING HEADER\r\n");
 		}
-		
-		//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: newHeaderEnc: "+newHeaderEnc+"\r\n");
-		//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: headers: "+headers+"\r\n");
+
+		dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: newHeaderEnc: "+newHeaderEnc+"\r\n");
+		dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: headers: "+headers+"\r\n");
 
 		headers = headers.substring(1);
 		data = headers + data.substring(endHeaders);
@@ -178,7 +178,7 @@ miczColumnsWizard_MsgUtils.listener = {
 				return p1+":"+p2+":"+z});
 			data = data.replace(date,newDate);
 		}
-		
+
 		//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: data: "+data+"\r\n");
 
 		// creates the temporary file, where the modified message body will be stored
