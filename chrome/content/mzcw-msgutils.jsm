@@ -135,16 +135,18 @@ miczColumnsWizard_MsgUtils.listener = {
 
 		let re=new RegExp(currStrHeader+" *.*\r\n",'ig');
 		if (headers.indexOf(currStrHeader) > -1){
+			headers=headers+"\r\n";
 			headers = headers.replace(re, currStrHeader+" "+ newHeaderEnc+"\r\n");
 			dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: REPLACING HEADER\r\n");
 			dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: headers: "+headers+"\r\n");
+			headers = headers.substring(0,headers.length-2);
 		}else{ // header is missing
-			headers = headers+("\r"+currStrHeader+" "+newHeaderEnc+"\r\n");
+			headers = headers+"\r"+currStrHeader+" "+newHeaderEnc+"\r\n";
 			dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: ADDING HEADER\r\n");
 		}
 
 		dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: newHeaderEnc: "+newHeaderEnc+"\r\n");
-		dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: headers: "+headers+"\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: headers: "+headers+"\r\n");
 
 		headers = headers.substring(1);
 		data = headers + data.substring(endHeaders);
@@ -157,8 +159,8 @@ miczColumnsWizard_MsgUtils.listener = {
 		data = data.replace(/X-Mozilla-Keys.+\r\n/, "");*/
 
 		/*if (HeaderToolsLiteObj.prefs.getBoolPref("extensions.hdrtoolslite.add_htl_header")) {
-			var now = new Date;
-			var HTLhead = "X-HeaderToolsLite: "+action+" - "+now.toString();
+			let now = new Date;
+			let HTLhead = "X-HeaderToolsLite: "+action+" - "+now.toString();
 			HTLhead = HTLhead.replace(/\(.+\)/, "");
 			HTLhead = HTLhead.substring(0,75);
 			if (data.indexOf("\nX-HeaderToolsLite: ") <0)
