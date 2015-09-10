@@ -28,6 +28,9 @@ French (fr) thanks to Goofy.
 German (de) thanks to RealRaven [http://quickfolders.mozdev.org/].
 Italian (it) thanks to Mic [http://micz.it].
 
+-= Thanks to... =-
+Axel Grude, developer of QuickFolders addon, for his help in testing and brainstorming new features.
+
 -= Graphics =-
 Addon icon thanks to http://www.oxygen-icons.org
 Custom columns preferences list header icons thanks to http://ampeross.deviantart.com/
