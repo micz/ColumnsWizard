@@ -2,6 +2,7 @@
 
 ==========
 Version 6.0 - ??/??/2015
+- Custom columns values can now be editable on a per message basis. It will be modified the corrispondent mail message header. Proposed by David Hedlund on an idea from Header Tools Lite addon.
 -
 ==========
 Version 5.2 - 31/08/2015
