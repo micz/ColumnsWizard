@@ -2,6 +2,7 @@
 Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
+Components.utils.import("chrome://columnswizard/content/mzcw-utils.jsm");
 
 var miczColumnsWizard = {
 
@@ -357,6 +358,14 @@ var miczColumnsWizard = {
   			}
 		}
 		ObserverService.addObserver(headerEditingMenuObserver,"CW-updateHeaderEditingMenu",false);
+	},
+
+	toolbarButtonCommand:function(){
+		let features = (miczColumnsWizardUtils.HostSystem == 'linux') ?
+          'chrome,titlebar,centerscreen,resizable,dependent,instantApply' :
+          'chrome,titlebar,centerscreen,resizable,alwaysRaised,instantApply';
+		window.openDialog('chrome://columnswizard/content/mzcw-settings.xul','ColumnsWizard_Settings',features).focus();
+
 	},
 
 };

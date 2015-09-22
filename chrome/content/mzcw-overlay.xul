@@ -1,6 +1,7 @@
 <?xml version="1.0"?>
 <?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
-<?xml-stylesheet href="mzcw-overlay.css" type="text/css"?>
+<?xml-stylesheet href="chrome://columnswizard/content/mzcw-overlay.css" type="text/css"?>
+<?xml-stylesheet href="chrome://columnswizard/content/mzcw-button.css" type="text/css"?>
 <!DOCTYPE overlay SYSTEM "chrome://columnswizard/locale/overlay.dtd">
 
 <overlay id="ColumnsWizard-browser-overlay"
@@ -47,5 +48,19 @@
 	    </menupopup>
 	</menu>
 </menupopup>
+
+  <!-- Thunderbird mail -->
+<toolbarpalette id="MailToolbarPalette">
+  <toolbarbutton id="mzcw-button"/>
+  </toolbarpalette>
+
+<!-- button details -->
+<toolbarpalette id="MailToolbarPalette">
+	<toolbarbutton id="mzcw-button"
+	  label="&ColumnsWizard.button.label;"
+	  tooltiptext="&ColumnsWizard.button.tooltip;"
+	  oncommand="miczColumnsWizard.toolbarButtonCommand();"
+	  class="toolbarbutton-1"/>
+</toolbarpalette>
 
 </overlay>
