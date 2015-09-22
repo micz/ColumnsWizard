@@ -13,17 +13,25 @@ var miczColumnsWizardPrefsUtils = {
 	get headersEditingActive() {
 		return this.getBoolPref_CW("CustCols.mod_active");
 	},
-	
+
 	get stringCustColIndexMod() {
 		return this.getCharPref_CW("CustCols.index_mod");
 	},
-	
+
 	get useImapFix() {
 		return this.getBoolPref_CW("MailHeader.use_imap_fix");
 	},
-	
+
 	get putOriginalInTrash() {
 		return this.getBoolPref_CW("MailHeader.put_original_in_trash");
+	},
+
+	get firstRun() {
+		return this.getBoolPref_CW("firstRun");
+	},
+
+	firstRunDone:function(){
+		this.setBoolPref_CW('firstRun',false);
 	},
 
 	existsCharPref: function existsCharPref(pref) {

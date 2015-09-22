@@ -16,6 +16,12 @@ var miczColumnsWizard = {
   CustColPref:{},
 
 	init: function(){
+
+		if(miczColumnsWizardPrefsUtils.firstRun){		//adding toolbar button at first run
+			miczColumnsWizardPrefsUtils.firstRunDone();
+			miczColumnsWizard.addToolbarButton();
+		}
+
 		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
 
 		miczColumnsWizard.addNewCustColObserver(ObserverService);
@@ -366,6 +372,23 @@ var miczColumnsWizard = {
           'chrome,titlebar,centerscreen,resizable,alwaysRaised,instantApply';
 		window.openDialog('chrome://columnswizard/content/mzcw-settings.xul','ColumnsWizard_Settings',features).focus();
 
+	},
+
+	addToolbarButton:function(){
+			let toolbar = document.getElementById("mail-bar3");
+			let buttonId = "mzcw-button";
+			let before_el = document.getElementById("gloda-search");
+			if(before_el==null){
+				before_el = document.getElementById("button-appmenu");
+			}
+
+			if(!document.getElementById(buttonId)){
+				if(toolbar!=null){
+					toolbar.insertItem(buttonId,before_el);
+					toolbar.setAttribute("currentset", toolbar.currentSet);
+					document.persist(toolbar.id, "currentset");
+				}
+			}
 	},
 
 };
