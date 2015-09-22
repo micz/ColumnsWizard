@@ -2,6 +2,7 @@
 
 ==========
 Version 6.0 - ??/??/2015
+- Added a toolbar button to open the preference panel.
 - Custom columns values can now be editable on a per message basis. It will be modified the corrispondent mail message header. Proposed by David Hedlund on an idea from Header Tools Lite addon.
 -
 ==========
