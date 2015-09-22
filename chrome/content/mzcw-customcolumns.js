@@ -239,7 +239,9 @@ var miczColumnsWizard_CustCols={
 			CustColIndex=miczColumnsWizard_CustCols.checkCustColDefaultIndex(JSON.parse(CustColIndexStr));
 		}
 		//Add new element to index and save it
-		CustColIndex.push(index);
+		if(CustColIndex.indexOf(index)==-1){
+			CustColIndex.push(index);
+		}
 		prefs.setCharPref("index",JSON.stringify(CustColIndex));
 	},
 
@@ -255,8 +257,12 @@ var miczColumnsWizard_CustCols={
 		}
 		//Remove the element to index and save it
 		let el_idx=CustColIndex.indexOf(index);
-		CustColIndex.splice(el_idx,1);
+		if(el_idx>-1){
+			CustColIndex.splice(el_idx,1);
+		}
 		prefs.setCharPref("index",JSON.stringify(CustColIndex));
+		//remove it also from index_mod
+		miczColumnsWizard_CustCols.removeCustColIndexMod(index);
 	},
 
 	saveCustCol: function(currcol) {
@@ -278,12 +284,26 @@ var miczColumnsWizard_CustCols={
 		}else{
 			miczColumnsWizard_CustCols.deactivateCustomHeaderSearchable(currcol.dbHeader);
 		}
+		
+		//mod index
+		if(currcol.isEditable){
+			miczColumnsWizard_CustCols.addCustColIndexMod(currcol.index);
+		}else{
+			miczColumnsWizard_CustCols.removeCustColIndexMod(currcol.index);
+		}
+		
+		//update header editing menu
+		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+		ObserverService.notifyObservers(null,"CW-updateHeaderEditingMenu",null);
 
     	return value;
 	},
 
 	deleteCustCol: function(col_idx){
 		miczColumnsWizard_CustCols.removeCustColIndex(col_idx);
+		//update header editing menu
+		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
+		ObserverService.notifyObservers(null,"CW-updateHeaderEditingMenu",null);
 	},
 
 	activateCustomHeaderSearchable:function(newHeader){
@@ -315,6 +335,49 @@ var miczColumnsWizard_CustCols={
 			currentHeaders=headers_array.join(': ');
 			prefService.setCharPref("mailnews.customHeaders", currentHeaders.trim());
 			//dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate CustomHeaderSearchable->Updating] "+newHeader+"\r\n");
+		}
+	},
+
+	addCustColIndexMod:function(index){
+		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+		let CustColIndexStr='';
+		try{
+			CustColIndexStr=prefs.getCharPref("index_mod");
+		}
+		catch(e){}
+		let CustColIndex=new Array();
+		if(CustColIndexStr!=''){
+			CustColIndex=JSON.parse(CustColIndexStr);
+		}
+		//Add new element to index and save it
+		if(CustColIndex.indexOf(index)==-1){
+			CustColIndex.push(index);
+		}
+		CustColIndex.sort();
+		prefs.setCharPref("index_mod",JSON.stringify(CustColIndex));
+		prefs.setBoolPref("mod_active",true);
+	},
+
+	removeCustColIndexMod:function(index){
+		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+		let CustColIndexStr=prefs.getCharPref("index_mod");
+		let CustColIndex=new Array();
+		if(CustColIndexStr==''){
+			return;
+		}else{
+			CustColIndex=JSON.parse(CustColIndexStr);
+		}
+		//Remove the element to index and save it
+		let el_idx=CustColIndex.indexOf(index);
+		if(el_idx>-1){
+			CustColIndex.splice(el_idx,1);
+		}
+		CustColIndexStr=JSON.stringify(CustColIndex).trim();
+		prefs.setCharPref("index_mod",CustColIndexStr);
+		if(CustColIndex.length==0){ //no mod cust cols? set the option to false
+			prefs.setBoolPref("mod_active",false);
 		}
 	},
 

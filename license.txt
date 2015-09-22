@@ -32,5 +32,6 @@ Italian (it) thanks to Mic [http://micz.it].
 Axel Grude, developer of QuickFolders addon, for his help in testing and brainstorming new features.
 
 -= Graphics =-
-Addon icon thanks to http://www.oxygen-icons.org
+Main addon icon thanks to http://www.oxygen-icons.org
 Custom columns preferences list header icons thanks to http://ampeross.deviantart.com/
+Header edit menu icon thanks to http://www.famfamfam.com/

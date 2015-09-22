@@ -66,3 +66,11 @@ miczColumnsWizard.CWListener = new miczColumnsWizard.PrefListener(
   }
 );
 miczColumnsWizard.CWListener.register(false);
+
+miczColumnsWizard.CWListenerModActive = new miczColumnsWizard.PrefListener(
+  "extensions.ColumnsWizard.CustCols.mod_active",
+  function(branch, name){
+  	miczColumnsWizard.initHeadersEditingMenu();
+  }
+);
+miczColumnsWizard.CWListenerModActive.register(false);

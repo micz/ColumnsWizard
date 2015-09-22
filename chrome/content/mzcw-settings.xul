@@ -31,12 +31,23 @@
       <preference id="ColumnsWizard.DefaultColsList.SortOrder"
         name="mailnews.default_sort_order"
         type="int" />
+    <!-- Headers Editing -->
+	  <preference id="ColumnsWizard.CustCols.mod_active"
+        name="extensions.ColumnsWizard.CustCols.mod_active"
+        type="bool" />
+      <preference id="ColumnsWizard.MailHeader.use_imap_fix"
+        name="extensions.ColumnsWizard.MailHeader.use_imap_fix"
+        type="bool" />
+      <preference id="ColumnsWizard.MailHeader.put_original_in_trash"
+        name="extensions.ColumnsWizard.MailHeader.put_original_in_trash"
+        type="bool" />
     <!-- Custom Columns no pref needed here, all is managed directly by javascript code -->
     </preferences>
     <tabbox id="cw_tabbox">
       <tabs>
         <tab label="&ColumnsWizard.TabCustomCols.label;"/>
         <tab label="&ColumnsWizard.TabNewFolderDefault.label;"/>
+        <tab label="&ColumnsWizard.TabAdvanced.label;"/>
         <tab label="&ColumnsWizard.TabConversation.label;"/>
         <tab label="&ColumnsWizard.TabInfo.label;"/>
       </tabs>
@@ -142,6 +153,23 @@
 		 </row>
 		 </rows>
 		 </grid>
+        </tabpanel>
+        <tabpanel id="advancedtab" orient="vertical">
+			 <!-- Advanced Tab -->
+          <groupbox>
+  			<caption label="&ColumnsWizard.MailHeaderGroupbox.label;"/>
+			<checkbox id="ColumnsWizard.CustCols.mod_active_checkbox" label="&ColumnsWizard.CustCols.mod_active_checkbox.label;"
+				preference="ColumnsWizard.CustCols.mod_active" />
+			<description class="mzcw-desc">&ColumnsWizard.CustCols.mod_active_checkbox.desc;</description>
+			<separator class="thin"/>
+			<checkbox id="ColumnsWizard.MailHeader.use_imap_fix_checkbox" label="&ColumnsWizard.MailHeader.use_imap_fix_checkbox.label;"
+				preference="ColumnsWizard.MailHeader.use_imap_fix" />
+			<description class="mzcw-desc">&ColumnsWizard.CustCols.use_imap_fix_checkbox.desc;</description>
+			<separator class="thin"/>
+			<checkbox id="ColumnsWizard.MailHeader.put_original_in_trash_checkbox" label="&ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label;"
+				preference="ColumnsWizard.MailHeader.put_original_in_trash" />
+			<description class="mzcw-desc">&ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc;</description>
+          </groupbox>
         </tabpanel>
         <tabpanel id="convtab" orient="vertical">
 			 <!-- Columns in Conversation Tab -->

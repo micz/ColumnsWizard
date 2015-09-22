@@ -1,5 +1,6 @@
 "use strict";
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
+Components.utils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
 Components.utils.import("resource://gre/modules/osfile.jsm");
 
 var miczColumnsWizard={};
@@ -43,10 +44,30 @@ var miczColumnsWizardPref_CustColEditor = {
 						document.getElementById("ColumnsWizard.id").setAttribute("readonly",true);
 						document.getElementById("ColumnsWizard.dbHeader").setAttribute("readonly",true);
 						document.getElementById("ColumnsWizard.labelString").focus();
+
+						//mod data
+						if(currcol.isEditable!==undefined)document.getElementById("ColumnsWizard.mod").setAttribute("checked",currcol.isEditable);
+						if(currcol.editType!==undefined){
+							document.getElementById("ColumnsWizard.mod_type_freetext").setAttribute("selected",currcol.editType==document.getElementById("ColumnsWizard.mod_type_freetext").value);
+							document.getElementById("ColumnsWizard.mod_type_number").setAttribute("selected",currcol.editType==document.getElementById("ColumnsWizard.mod_type_number").value);
+							document.getElementById("ColumnsWizard.mod_type_fixedlist").setAttribute("selected",currcol.editType==document.getElementById("ColumnsWizard.mod_type_fixedlist").value);
+							if(currcol.editType!=document.getElementById("ColumnsWizard.mod_type_fixedlist").value){	//we are doing this because here this.enableHeaderFixedList() is not working!
+								document.getElementById('ColumnsWizard.mod_type_fixedlist.list').disabled=true;
+								document.getElementById('ColumnsWizard.mod_type_fixedlist.list.desc').disabled=true;
+							}else{
+								document.getElementById('ColumnsWizard.mod_type_fixedlist.list').disabled=false;
+								document.getElementById('ColumnsWizard.mod_type_fixedlist.list.desc').disabled=false;
+							}
+						}
+						if(currcol.editFixedList!==undefined)document.getElementById("ColumnsWizard.mod_type_fixedlist.list").setAttribute("value",(currcol.editFixedList).join("\r\n"));
+
+						//set the value on the label in the advanced tab
+						document.getElementById('cw_adv_msg_header').setAttribute("value",currcol.dbHeader);
 					break;
 				}
 			}
 		}
+		this.enableAdvancedTabContent();
 	},
 
 	onAccept:function(){
@@ -106,6 +127,12 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.sortnumber=document.getElementById("ColumnsWizard.sortnumber").checked;
 						newcol.isSearchable=document.getElementById("ColumnsWizard.searchable").checked;
 						newcol.enabled=document.getElementById("ColumnsWizard.enabled").checked;
+
+						//mod data
+						newcol.isEditable=document.getElementById("ColumnsWizard.mod").checked;
+						newcol.editType=document.getElementById("ColumnsWizard.mod_type_group").value;
+						newcol.editFixedList=miczColumnsWizard_CustomColsModUtils.getFixedListArray(document.getElementById("ColumnsWizard.mod_type_fixedlist.list").value);
+
 						//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
 						//miczColumnsWizard_CustCols.addNewCustCol(newcol);
 						window.arguments[0].save=true;
@@ -129,6 +156,12 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.sortnumber=document.getElementById("ColumnsWizard.sortnumber").checked;
 						newcol.isSearchable=document.getElementById("ColumnsWizard.searchable").checked;
 						newcol.enabled=document.getElementById("ColumnsWizard.enabled").checked;
+
+						//mod data
+						newcol.isEditable=document.getElementById("ColumnsWizard.mod").checked;
+						newcol.editType=document.getElementById("ColumnsWizard.mod_type_group").value;
+						newcol.editFixedList=miczColumnsWizard_CustomColsModUtils.getFixedListArray(document.getElementById("ColumnsWizard.mod_type_fixedlist.list").value);
+
 						//dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol] "+JSON.stringify(newcol)+"\r\n");
 						//miczColumnsWizard_CustCols.addNewCustCol(newcol);
 						window.arguments[0].save=true;
@@ -170,6 +203,8 @@ var miczColumnsWizardPref_CustColEditor = {
 		if(el.value.match(re)!=null){
 			el.value=el.value.match(re).join('').replace(':','');
 		}
+		//set the value on the label in the advanced tab
+		document.getElementById('cw_adv_msg_header').value=el.value;
 	},
 
 	setIconUI:function(iconpath){
@@ -240,6 +275,22 @@ var miczColumnsWizardPref_CustColEditor = {
 		let destPath = OS.Path.join(OS.Constants.Path.profileDir,"columnswizardmiczit");
 		let filepath = OS.Path.join(destPath,filename);
 		OS.File.remove(filepath);
+	},
+
+	enableAdvancedTabContent:function(){
+		let disabled=!document.getElementById('ColumnsWizard.mod').checked;
+		document.getElementById('ColumnsWizard.mod_type.desc').disabled=disabled;
+		document.getElementById('ColumnsWizard.mod_type_group').disabled=disabled;
+	},
+
+	enableHeaderFixedList:function(){
+		let disable=!document.getElementById('ColumnsWizard.mod_type_fixedlist').selected;
+		document.getElementById('ColumnsWizard.mod_type_fixedlist.list').disabled=disable;
+		document.getElementById('ColumnsWizard.mod_type_fixedlist.list.desc').disabled=disable;
+	},
+
+	sanitizeFixedListInput:function(){
+		document.getElementById("ColumnsWizard.mod_type_fixedlist.list").value=document.getElementById("ColumnsWizard.mod_type_fixedlist.list").value.replace("|"," ");
 	},
 
 	fixWinHeight:function(){

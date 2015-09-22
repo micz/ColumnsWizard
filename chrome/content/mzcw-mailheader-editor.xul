@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
+<!DOCTYPE dialog SYSTEM "chrome://columnswizard/locale/mzcw-mailheader-editor.dtd">
+<?xml-stylesheet href="mzcw-mailheader-editor.css" type="text/css"?>
+
+<dialog id="CWMailHeaderEditor"
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  title="&ColumnsWizard.mailheader-editor.title;"
+  style=""
+  windowtype="mailnews:cwmailheaderditor"
+  persist="screenX screenY"
+  buttons="accept,cancel"
+  onload="miczColumnsWizard_MailHeaderEditor.onLoad();"
+  onunload=""
+  ondialogaccept="return miczColumnsWizard_MailHeaderEditor.onAccept();">
+
+	<script type="application/javascript" src="chrome://columnswizard/content/mzcw-mailheader-editor.js"/>
+	<vbox id="cw_vbox_mhe" flex="1">
+		<vbox>
+			<caption label="&ColumnsWizard.MHE.Desc.label;"/>
+			<caption id="cw_only_numbers_label" class="cw_desc_bold" label="&ColumnsWizard.MHE.OnlyNumber.label;" hidden="true"/>
+		</vbox>
+		<separator class="thin"/>
+		<textbox id="ColumnsWizard.mail_header.value" onblur="miczColumnsWizard_MailHeaderEditor.onBlur_sanitize_value();"/>
+	</vbox>
+</dialog>

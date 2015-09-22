@@ -1,4 +1,8 @@
 "use strict";
+Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+Components.utils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
+Components.utils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
+
 var miczColumnsWizard = {
 
   //Conversation Tab Columns
@@ -16,6 +20,7 @@ var miczColumnsWizard = {
 		miczColumnsWizard.addNewCustColObserver(ObserverService);
 		miczColumnsWizard.deleteCustColObserver(ObserverService);
 		miczColumnsWizard.updateCustColObserver(ObserverService);
+		miczColumnsWizard.updateHeaderEditingMenuObserver(ObserverService);
 
 		//Adding custom columns
 		miczColumnsWizard.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
@@ -29,29 +34,30 @@ var miczColumnsWizard = {
 		}
 
 		miczColumnsWizard.watchFolders();
+		miczColumnsWizard.initHeadersEditingMenu();
 
- let current_tab = document.getElementById("tabmail").currentTabInfo;
-    miczColumnsWizard.addCWResetMenu(current_tab);
+		let current_tab = document.getElementById("tabmail").currentTabInfo;
+		miczColumnsWizard.addCWResetMenu(current_tab);
 
-	this.initialized = true;
-    //Conversation Tab add columns - delayed
-  	setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
+		this.initialized = true;
+		//Conversation Tab add columns - delayed
+		setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
 	},
 
-	initDelayed: function() {
-	try{
-		//Conversation Tab add columns
-    let tabmail = document.getElementById("tabmail");
-    let monitor = {
-      onTabTitleChanged:function(tab){},
-      onTabSwitched: miczColumnsWizard.addCWResetMenu, //this.showColumns,
-      //onTabRestored:function(tab){},
-      onTabOpened: this.showColumns,
-    };
-    tabmail.registerTabMonitor(monitor);
-    }catch(e){
-      alert("No tabContainer available! " + e);
-    }
+	initDelayed:function(){
+		try{
+			//Conversation Tab add columns
+		let tabmail = document.getElementById("tabmail");
+		let monitor = {
+		  onTabTitleChanged:function(tab){},
+		  onTabSwitched: miczColumnsWizard.addCWResetMenu, //this.showColumns,
+		  //onTabRestored:function(tab){},
+		  onTabOpened: this.showColumns,
+		};
+		tabmail.registerTabMonitor(monitor);
+		}catch(e){
+		  alert("No tabContainer available! " + e);
+		}
 	},
 
 	addNewCustColObserver:function(ObserverService){
@@ -294,6 +300,64 @@ var miczColumnsWizard = {
 		let mailSessionService = Components.classes["@mozilla.org/messenger/services/session;1"].getService(Components.interfaces.nsIMsgMailSession);
         mailSessionService.RemoveFolderListener(miczColumnsWizard.FolderListener);
     },
+
+    initHeadersEditingMenu:function(){
+		if(miczColumnsWizardPrefsUtils.headersEditingActive){
+			miczColumnsWizard.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
+			miczColumnsWizard_CustomColsModUtils.addContextMenu(document,document.getElementById("cw_edit_main_menu_popup"),document.getElementById("cw_edit_context_menu_popup"),document.getElementById("cw_edit_newmain_menu_popup"),miczColumnsWizard.CustColPref,miczColumnsWizardPrefsUtils.stringCustColIndexMod,miczColumnsWizard.editHeaderMenu_OnClick,miczColumnsWizard.editHeaderSubMenu_OnClick);
+			document.getElementById("cw_edit_main_menu").setAttribute("hidden",false);
+			document.getElementById("cw_edit_context_menu").setAttribute("hidden",false);
+			document.getElementById("cw_edit_newmain_menu").setAttribute("hidden",false);
+			//dump(">>>>>>>>>>>>> miczColumnsWizard [initHeadersEditingMenu]: Menu UPDATED! \r\n");
+		}else{
+			document.getElementById("cw_edit_main_menu").setAttribute("hidden",true);
+			document.getElementById("cw_edit_context_menu").setAttribute("hidden",true);
+			document.getElementById("cw_edit_newmain_menu").setAttribute("hidden",true);
+			//dump(">>>>>>>>>>>>> miczColumnsWizard [initHeadersEditingMenu]: Menu HIDDEN! \r\n");
+		}
+	},
+
+	editHeaderMenu_OnClick:function(event){
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderMenu_OnClick]: "+JSON.stringify(event.target.getAttribute("colidx"))+"\r\n");
+		let colidx=event.target.getAttribute("colidx")
+		let mail_header=event.target.getAttribute("mail_header");
+		let edit_type=event.target.getAttribute("edit_type");
+		//Get the actual value from message
+		let msgURI = gFolderDisplay.selectedMessageUris[0];
+		miczColumnsWizard_MsgUtils.init(messenger,msgURI,gDBView,msgWindow,window);
+		miczColumnsWizard_MsgUtils.setCurrentHeader(mail_header);
+		let header_value=miczColumnsWizard_MsgUtils.getMsgHeaderValue(mail_header);
+		//Open value editor
+		let args = {"action":"change","value":header_value,"edit_type":edit_type};
+		window.openDialog("chrome://columnswizard/content/mzcw-mailheader-editor.xul", "MailHeaderEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
+		if (("save" in args && args.save)&& ("value" in args && args.value)){
+			//Save the message with the new value
+			miczColumnsWizard_MsgUtils.saveMsg(args.value,msgURI,miczColumnsWizard_MsgUtils.listener);
+		}
+	},
+
+	editHeaderSubMenu_OnClick:function(event){	//Here editType is always Fixed List
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick]: "+JSON.stringify(event.target.getAttribute("colidx"))+"\r\n");
+		let colidx=event.target.getAttribute("colidx")
+		let mail_header=event.target.getAttribute("mail_header");
+		let header_value=event.target.getAttribute("label");
+		let msgURI = gFolderDisplay.selectedMessageUris[0];
+		miczColumnsWizard_MsgUtils.init(messenger,msgURI,gDBView,msgWindow,window);
+		miczColumnsWizard_MsgUtils.setCurrentHeader(mail_header);
+		//Save the message with the new value
+		miczColumnsWizard_MsgUtils.saveMsg(header_value,msgURI,miczColumnsWizard_MsgUtils.listener);
+	},
+
+	updateHeaderEditingMenuObserver:function(ObserverService){
+		let headerEditingMenuObserver = {
+			observe: function(aSubject,aTopic,aData){
+    			//update header editing menu
+    			miczColumnsWizard.initHeadersEditingMenu();
+    			//dump(">>>>>>>>>>>>> miczColumnsWizard: CW-updateHeaderEditingMenu Observer notified! \r\n");
+  			}
+		}
+		ObserverService.addObserver(headerEditingMenuObserver,"CW-updateHeaderEditingMenu",false);
+	},
 
 };
 
