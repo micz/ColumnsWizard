@@ -17,3 +17,14 @@
 <!ENTITY ColumnsWizard.sortnumber.label "设置">
 <!ENTITY ColumnsWizard.sortnumber.desc "设置此自定义列为一个数字。">
 <!ENTITY ColumnsWizard.sortnumber.desc_limit "这个自定义列可以设置为一个不超过3位小数，值在 -1.000.000 至 3.294.967 之间的一个数字，供排序使用。">
+<!ENTITY ColumnsWizard.searchable.label "是否可搜索">
+<!ENTITY ColumnsWizard.searchable.desc "使这个自定义列可以在 Thunderbird 的高级搜索窗口中搜索。">
+<!ENTITY ColumnsWizard.CustColEditorTab.General.label "常规">
+<!ENTITY ColumnsWizard.CustColEditorTab.Advanced.label "高级">
+<!ENTITY ColumnsWizard.mod.desc "此邮件的信息头可以手动修改。">
+<!ENTITY ColumnsWizard.mod_type.label "头类型">
+<!ENTITY ColumnsWizard.mod_type.desc "在这里选择此自定义列的头类型。">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "任何文本">
+<!ENTITY ColumnsWizard.mod_type_number.label "数字">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "固定列表">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "请在每行输入一个值。不要使用管道字符“|”。">
