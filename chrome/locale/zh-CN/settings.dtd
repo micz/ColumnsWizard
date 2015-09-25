@@ -34,7 +34,6 @@
 <!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "启用">
 <!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "可搜索">
 <!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "启用邮件头编辑。">
-<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.desc "ColumnsWizard.CustCols.mod_active_checkbox.desc">
 <!ENTITY ColumnsWizard.TabAdvanced.label "高级">
 <!ENTITY ColumnsWizard.MailHeaderGroupbox.label "邮件头编辑选项">
 <!ENTITY ColumnsWizard.MailHeader.use_imap_fix_checkbox.label "使用 IMAP 账户时强制变更">
