@@ -4,7 +4,7 @@ var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_DefaultColsGrid"];
 const colClass = 'cw-col-class';
 
 var miczColumnsWizardPref_DefaultColsGrid = {
-	
+
 	loadedCustCols:{},
 
 	loadDefaultColRows_Pref:function(){
@@ -78,7 +78,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			  sorted_cols.push([cwcol, col_ordinal]);
 		  }
 		sorted_cols.sort(function(a, b) {return a[1] - b[1]})
-		
+
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [createDefaultColsGridRows] sorted_cols "+JSON.stringify(sorted_cols)+"\r\n");
 		for (let index in sorted_cols) {
 				DefColRows[sorted_cols[index][0]]['currindex']=sorted_cols[index][0];
@@ -186,7 +186,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 				  cw_cols[cw_col.currindex]=cw_col;
 				  //dump(">>>>>>>>>>>>> miczColumnsWizard: [getDefaultCols] added cw_col {"+JSON.stringify(cw_col)+"}\r\n");
 			  }
-			  ordinal++;
+			  ordinal=ordinal+2;
 			}
 		  }
 		//} catch (err) { throw err; } // throw the error out so syncToPerf won't get an empty rules
@@ -195,7 +195,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 
 	getOneDefaultCol: function(row,ordinal) {
 		let cwcol= {};
-		if(!ordinal)ordinal="0";
+		if(!ordinal)ordinal="1";
 	    //let ii=1;
 		for(let item of row.childNodes){
 		  let key = item.getAttribute('cwcol');

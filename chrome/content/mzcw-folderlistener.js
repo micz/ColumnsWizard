@@ -17,7 +17,7 @@ miczColumnsWizard.FolderListener={
 		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
 		let cw_active=prefs.getBoolPref("active");
-		
+
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded triggered] "+item.name+"\r\n");
         // Not a Folder...
         if (!(item instanceof Components.interfaces.nsIMsgFolder)) {
@@ -114,18 +114,20 @@ miczColumnsWizard.FolderListener={
 		 //Choose which columns we need to always show...
 		 //For the moment we always show the active custom columns.
 		 let cwCustColPref=miczColumnsWizard.loadCustCols();
+		 let lastordinal=(cwcolumnStates[index+'ccCol_cw'].ordinal=='0')||(cwcolumnStates['ccCol_cw'].ordinal=='null')?(Object.keys(cwcolumnStates).length)+1:cwcolumnStates['ccCol_cw'].ordinal;
+		 lastordinal=(lastordinal % 2)==0?lastordinal+2:lastordinal+1;
+
 		 for (let index in cwCustColPref) {
 			 if(cwCustColPref[index].Pref){
 				 if(!(index+'Col_cw' in cwcolumnStates)){
 					 //dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded cwcolumnStates['"+index+"Col_cw'] is false]\r\n");
-					cwcolumnStates[index+'Col_cw']={visible:true,ordinal:''};
-				 }
-				 //dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded cwcolumnStates['"+index+"Col_cw'].ordinal] "+cwcolumnStates[index+'Col_cw'].ordinal+"\r\n");
-				 //There is no need to set an ordinal...
-				 //let lastordinal=(cwcolumnStates['ccCol_cw'].ordinal=='0')||(cwcolumnStates['ccCol_cw'].ordinal=='null')?(Object.keys(cwcolumnStates).length)+1:cwcolumnStates['ccCol_cw'].ordinal;
-				 //dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded lastordinal] "+lastordinal+" | "+typeof lastordinal+"\r\n");
-				 let lastordinalstr='';//lastordinal.toString();
-				 cwcolumnStates[index+'Col_cw']={visible:true,ordinal:lastordinalstr};
+					cwcolumnStates[index+'Col_cw']={visible:true,ordinal:lastordinal};
+				 }else{
+					 //dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded cwcolumnStates['"+index+"Col_cw'].ordinal] "+cwcolumnStates[index+'Col_cw'].ordinal+"\r\n");
+					 //dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded lastordinal] "+lastordinal+" | "+typeof lastordinal+"\r\n");
+					 cwcolumnStates[index+'Col_cw']={visible:true,ordinal:lastordinal};
+			 	}
+			 	lastordinal=lastordinal+2;
 			 }
 		 }
 		 //dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded columnsStateString NEW] "+JSON.stringify(cwcolumnStates)+"\r\n");

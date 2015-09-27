@@ -55,7 +55,10 @@ var miczColumnsWizard_CustCols={
     let element = document.getElementById("threadCols");
     let lastordinal=element.children.length;
     //dump('>>>>>>>>> columns [js children: '+lastordinal+"] [real: "+(lastordinal-1)/2+"]\r\n");
-    cwSplitter.setAttribute("ordinal",lastordinal+1);
+    let cwSplitterOrdinal=(lastordinal % 2)==0?lastordinal+2:lastordinal+1;
+    let cwColOrdinal=cwSplitterOrdinal+1;
+    cwSplitter.setAttribute("ordinal",cwSplitterOrdinal);
+    cwCol.setAttribute("ordinal",cwColOrdinal);
     element.appendChild(cwSplitter);
     element.appendChild(cwCol);
 
@@ -284,14 +287,14 @@ var miczColumnsWizard_CustCols={
 		}else{
 			miczColumnsWizard_CustCols.deactivateCustomHeaderSearchable(currcol.dbHeader);
 		}
-		
+
 		//mod index
 		if(currcol.isEditable){
 			miczColumnsWizard_CustCols.addCustColIndexMod(currcol.index);
 		}else{
 			miczColumnsWizard_CustCols.removeCustColIndexMod(currcol.index);
 		}
-		
+
 		//update header editing menu
 		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
 		ObserverService.notifyObservers(null,"CW-updateHeaderEditingMenu",null);
