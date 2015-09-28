@@ -20,6 +20,8 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			loadedDefaultColIndex=JSON.parse(DefaultColIndexStr);
 			//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] pref loaded\r\n");
 		}
+		//fix wrong ordina values: columns must have odd ordinal values, because even values are for splitters (used for columns resizing)
+		loadedDefaultColIndex=miczColumnsWizardPref_DefaultColsGrid.fixOrdinalValues(loadedDefaultColIndex);
 		//check if there are new columns to add
 		let baseColumnStates=miczColumnsWizardPref_DefaultColsGrid.getOriginalColIndex();
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid] baseColumnState "+JSON.stringify(baseColumnStates)+"\r\n");
@@ -35,6 +37,23 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		prefs.setCharPref("DefaultColsList",JSON.stringify(loadedDefaultColIndex));
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
 		return loadedDefaultColIndex;
+	},
+
+	fixOrdinalValues:function(columnStates){
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid fixOrdinalValues start] columnStates: "+JSON.stringify(columnStates)+"\r\n");
+		let last_ordinal=-1;
+		for (let key in columnStates){
+			if((columnStates[key].ordinal==0)||(columnStates[key].ordinal==null)||(columnStates[key].ordinal=='')){
+				if(last_ordinal==-1){
+					columnStates[key].ordinal=1;
+				}else{
+					columnStates[key].ordinal=last_ordinal+2;
+				}
+			}
+			last_ordinal=columnStates[key].ordinal;
+		}
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid fixOrdinalValues end] columnStates: "+JSON.stringify(columnStates)+"\r\n");
+		return columnStates;
 	},
 
 	getOriginalColIndex:function(){
