@@ -38,28 +38,12 @@
         <em:translator>Goofy</em:translator>
       </Description>
       <Description>
-        <em:locale>ru</em:locale>
-        <em:name>ColumnsWizard</em:name>
-        <em:description>Приложение для Thunderbird, которое позволяет увидеть скрытые столбцы во Вкладке Разговоров.</em:description>
-        <em:creator>Mic (m@micz.it)</em:creator>
-        <em:contributor></em:contributor>
-        <em:translator>Salted</em:translator>
-      </Description>
-      <Description>
         <em:locale>zh-CN</em:locale>
         <em:name>ColumnsWizard</em:name>
         <em:description>给文件夹列表的列增加一点魔力。您可以直接在本扩展的首选项窗口中添加自定义的列来显示任何您需要的邮件头。您还可以自定义新文件夹的默认列设置，以及显示在对话标签页和搜索窗口中被隐藏的列。</em:description>
         <em:creator>Mic (m@micz.it)</em:creator>
         <em:contributor></em:contributor>
         <em:translator>yfdyh000</em:translator>
-      </Description>
-      <Description>
-        <em:locale>sr</em:locale>
-        <em:name>ColumnsWizard</em:name>
-        <em:description>Приказује сакривене колоне у језичку Разговор.</em:description>
-        <em:creator>Mic (m@micz.it)</em:creator>
-        <em:contributor></em:contributor>
-        <em:translator>DakSrbija</em:translator>
       </Description>
       <Description>
         <em:locale>nl</em:locale>
