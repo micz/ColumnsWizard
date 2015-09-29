@@ -1,0 +1,3 @@
+<!ENTITY ColumnsWizard.mailheader-editor.title "Bewerking e-mailheader">
+<!ENTITY ColumnsWizard.MHE.Desc.label "Voer hier de e-mailheaderwaarde in voor dit bericht.">
+<!ENTITY ColumnsWizard.MHE.OnlyNumber.label "Alleen getallen zijn toegestaan.">
