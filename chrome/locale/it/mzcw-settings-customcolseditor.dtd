@@ -19,3 +19,12 @@
 <!ENTITY ColumnsWizard.sortnumber.desc_limit "Questa colonna aggiuntiva può solo ordinare numeri con non più di tre cifre decimali e un valore tra -1.000.000 e 3.294.967.">
 <!ENTITY ColumnsWizard.searchable.label "Ricercabile">
 <!ENTITY ColumnsWizard.searchable.desc "Rendi questa colonna aggiuntiva ricercabile nella ricerca avanzata di Thunderbird.">
+<!ENTITY ColumnsWizard.CustColEditorTab.General.label "Generale">
+<!ENTITY ColumnsWizard.CustColEditorTab.Advanced.label "Avanzate">
+<!ENTITY ColumnsWizard.mod.desc "Questa intestazione può essere modificato manualmente.">
+<!ENTITY ColumnsWizard.mod_type.label "Tipo di intestazione">
+<!ENTITY ColumnsWizard.mod_type.desc "Scegli qui il tipo di intestazione per questa colonna personalizzata.">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "Testo libero">
+<!ENTITY ColumnsWizard.mod_type_number.label "Numeri">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "Elenco">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "Inserisci un valore per riga. Non usare il carattere pipe &quot;|&quot;.">

@@ -33,3 +33,11 @@
 <!ENTITY ColumnsWizard.CustColsList.tooltip "Tooltip">
 <!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Attivato">
 <!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Ricercabile">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "Attiva la modifica delle intestazioni dei messaggi.">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.desc "Questa opzione sarà attivata automaticamente se una colonna personalizzata è stata salvata con l'opzione di modifica attivata.">
+<!ENTITY ColumnsWizard.TabAdvanced.label "Avanzate">
+<!ENTITY ColumnsWizard.MailHeaderGroupbox.label "Opzioni di modifica intestazioni mail">
+<!ENTITY ColumnsWizard.MailHeader.use_imap_fix_checkbox.label "Forza la modifica quando si usa un account IMAP.">
+<!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Sposta il messaggio originale nel cestino.">
+<!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Alcuni fornitori di servizi IMAP (come Gmail) non salvano i cambiamenti nelle intestazioni dei messaggi se le intestazioni principali non subiscono modifiche rispetto al messaggio originale. Per superare questo limite, il campo &quot;Data&quot; viene modificando aggiungendo un secondo all'orario del messaggio (o togliendolo se i secondi sono 59).">
+<!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "Dopo aver modificato il valore dell'intestazione selezionata, il messaggio originale viene spostato nel cestino. Questa è una misura di sicurezza contro ogni possibile comportamento anomalo che potrebbe accadere modificando le intestazioni.">
