@@ -7,7 +7,7 @@
 <!ENTITY ColumnsWizard.TabConversation.label "Ansicht im Themenbaum">
 <!ENTITY ColumnsWizard.TabCustomCols.label "Spezial Spalten">
 <!ENTITY ColumnsWizard.GlobalDescCustCols "Wählen sie hier welche Spalten Sie hinzufügen wollen.">
-<!ENTITY ColumnsWizard.WarnDescCustCols "Die hier ausgewählten Spalten müssen in der jeweiligen Ordneransicht (anzuzeigende Spalten) sichtbar gemacht werden. Falls Sie eine Spalte entfernen und wieder hinzufügen muss diese erneut sichtbar gemacht werden.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Die hier ausgewählten Spalten müssen in der je Ordner (anzuzeigende Spalten) gewählt werden. Falls Sie hier eine Spalte löschen und wieder hinzufügen, muss diese im Verzeichnis erneut gewählt werden.">
 <!ENTITY ColumnsWizard.AddCc.label "Kopie (CC)">
 <!ENTITY ColumnsWizard.TabInfo.label "Info">
 <!ENTITY ColumnsWizard.InfoMainDesc "Ich entwickle diese Erweiterung in meiner Freizeit. Falls Sie sie täglich benutzen, ziehen Sie eine Spende in Betracht. Vielen Dank!">
@@ -28,8 +28,16 @@
 <!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
 <!ENTITY ColumnsWizard.NewFolderCols.Desc "Dies ist die Standardkonfiguration für die Spaltenansicht neuer Verzeichnisse. Sie kann hier angepasst werden, oder über das Menü in der Kopfzeile über den Mails.">
 <!ENTITY ColumnsWizard.CustColsList.ID "Id">
-<!ENTITY ColumnsWizard.CustColsList.mailheader "Mail Header">
-<!ENTITY ColumnsWizard.CustColsList.title "Spaltenname">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "Kopfzeile">
+<!ENTITY ColumnsWizard.CustColsList.title "Spaltentitel">
 <!ENTITY ColumnsWizard.CustColsList.tooltip "Tooltip">
 <!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Aktiv">
 <!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Durchsuchbar">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "Unterstütze Kopfzeilen editieren.">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.desc "Diese Option wird automatisch aktiviert wenn eine Spezialspalte mit der Option &quot;mail header kann manuell verändert werden&quot; gespeichert wird.">
+<!ENTITY ColumnsWizard.TabAdvanced.label "Erweitert">
+<!ENTITY ColumnsWizard.MailHeaderGroupbox.label "Kopfzeilen Editor Optionen">
+<!ENTITY ColumnsWizard.MailHeader.use_imap_fix_checkbox.label "Änderungen in IMAP erzwingen.">
+<!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Originale Email löschen.">
+<!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Manche IMAP Mail-hosts (z.B. Gmail) erkennen Änderungen in der Email nicht, wenn die Standardkopfzeilen sich nicht unterscheiden. Um dieses Problem zu umgehen, wird das &quot;Datum&quot; Feld durch Addition einer Sekunde (oder Subtraktion bei 59 Sekunden) verändert.">
+<!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "Nach Verändern der Kopfzeile wird die Original-Mail in den Papierkorb verschoben. Dies ist eine Sicherheitsmassnahme gegen unvorhergesehenes Verhalten beim Modifizieren.">

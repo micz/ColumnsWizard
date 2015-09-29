@@ -1,17 +1,17 @@
 <!ENTITY ColumnsWizard.window.title "Spezialspalten Editor">
-<!ENTITY ColumnsWizard.Desc.label "Formular für die neue Spalte. Alle Felder müssen ausgefüllt werden.">
+<!ENTITY ColumnsWizard.Desc.label "Formular für die neue Kopfzeile. Alle Felder müssen ausgefüllt werden.">
 <!ENTITY ColumnsWizard.id.label "Id">
 <!ENTITY ColumnsWizard.id.desc "Der Id ist ein eindeutiger Identifikator für die neue Spalte. Er kann nach dem Eintrag nicht mehr modifiziert werden.">
-<!ENTITY ColumnsWizard.dbHeader.label "Mail Header">
-<!ENTITY ColumnsWizard.dbHeader.desc "Der Mail Header ist der Feldname der Spalte welcher in the Mailliste zu sehen ist. Er kann nach dem Erzeugen nicht modifiziert werden.">
+<!ENTITY ColumnsWizard.dbHeader.label "Kopfzeile">
+<!ENTITY ColumnsWizard.dbHeader.desc "Die Kopfzeile ist der Feldname der Spalte welcher in the Mailliste zu sehen ist. Er kann nach Erzeugen nicht geändert werden.">
 <!ENTITY ColumnsWizard.labelString.label "Spaltenname">
 <!ENTITY ColumnsWizard.btn.setIcon_label "Icon auswählen">
-<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Klicken um ein Icon als Spaltenname anzuzeigen.">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Klicken um ein Icon im Spaltenkopf anzuzeigen.">
 <!ENTITY ColumnsWizard.btn.removeIcon_label "Icon entfernen">
 <!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Anklicken um das Icon zu entfernen.">
 <!ENTITY ColumnsWizard.labelString.desc "Die Spaltenüberschrift in der Mailliste.">
 <!ENTITY ColumnsWizard.tooltipString.label "Tooltip">
-<!ENTITY ColumnsWizard.tooltipString.desc "Tooltip für die Spaltenüberschrift. Üblicherweise ist dies 'Nach (Spaltenname) sortieren'.">
+<!ENTITY ColumnsWizard.tooltipString.desc "Tooltip für die Spaltenüberschrift. Üblicherweise ist dies &quot;Nach (Spaltenname) sortieren&quot;.">
 <!ENTITY ColumnsWizard.enabled.label "Aktiv">
 <!ENTITY ColumnsWizard.enabled.desc "Spezialspalte sofort verwenden">
 <!ENTITY ColumnsWizard.sortnumber.label "Sortierung">
@@ -19,3 +19,12 @@
 <!ENTITY ColumnsWizard.sortnumber.desc_limit "Spezialspalte kann nur Nummern mit höchstens drei Dezimalstellen im Bereich von -1.000.000 bis 3.294.967 sortieren.">
 <!ENTITY ColumnsWizard.searchable.label "Durchsuchbar">
 <!ENTITY ColumnsWizard.searchable.desc "Dieses Feld im Dialog zur Nachrichtensuche einbeziehen.">
+<!ENTITY ColumnsWizard.CustColEditorTab.General.label "Allgemein">
+<!ENTITY ColumnsWizard.CustColEditorTab.Advanced.label "Erweitert">
+<!ENTITY ColumnsWizard.mod.desc "Dieser mail header kann manuell verändert werden.">
+<!ENTITY ColumnsWizard.mod_type.label "Datentyp">
+<!ENTITY ColumnsWizard.mod_type.desc "Datentyp für Spezialspalte auswählen.">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "Text">
+<!ENTITY ColumnsWizard.mod_type_number.label "Zahlen">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "Werteliste">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "Einen Wert pro Zeile eingeben. Das Pipe Symbol &quot;|&quot; wird nicht unterstützt.">
