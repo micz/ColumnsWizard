@@ -2,6 +2,7 @@
 
 ==========
 Version 6.1 - ??/??/2015
+- Better toolbar button positioning at first run.
 -
 ==========
 Version 6.0 - 29/09/2015
