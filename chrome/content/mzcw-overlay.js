@@ -377,9 +377,9 @@ var miczColumnsWizard = {
 	addToolbarButton:function(){
 			let toolbar = document.getElementById("mail-bar3");
 			let buttonId = "mzcw-button";
-			let before_el = document.getElementById("gloda-search");
+			let before_el = document.getElementById("gloda-search").previousSibling;
 			if(before_el==null){
-				before_el = document.getElementById("button-appmenu");
+				before_el = document.getElementById("button-appmenu").previousSibling;
 			}
 
 			if(!document.getElementById(buttonId)){
