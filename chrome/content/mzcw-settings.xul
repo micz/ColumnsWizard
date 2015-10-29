@@ -45,13 +45,51 @@
     </preferences>
     <tabbox id="cw_tabbox">
       <tabs>
+		<tab label="&ColumnsWizard.TabNewFolderDefault.label;"/>
         <tab label="&ColumnsWizard.TabCustomCols.label;"/>
-        <tab label="&ColumnsWizard.TabNewFolderDefault.label;"/>
-        <tab label="&ColumnsWizard.TabAdvanced.label;"/>
         <tab label="&ColumnsWizard.TabConversation.label;"/>
+        <tab label="&ColumnsWizard.TabAdvanced.label;"/>
         <tab label="&ColumnsWizard.TabInfo.label;"/>
       </tabs>
       <tabpanels>
+        <tabpanel id="tab_newfoldercols" orient="vertical">
+			<!-- New Folder Columns -->
+	  <grid height="280px">
+		<columns>
+		  <column flex="1"/>
+		</columns>
+		<rows>
+      <row>
+		  <description class="mzcw-desc">&ColumnsWizard.NewFolderCols.Desc;</description>
+	  </row>
+		  <row>
+          <checkbox id="ColumnsWizard.DefaultColsList.active_checkbox" label="&ColumnsWizard.NewFolderCols.label;"
+            preference="ColumnsWizard.DefaultColsList.active"/>
+          </row>
+          <row>
+            <separator class="thin"/>
+           </row>
+         <row height="260px">
+		<vbox style="overflow:auto;" height="260px">
+			<radiogroup id="cw_sortby"/>
+          <grid id="ColumnsWizard.GridUI">
+		  <columns>
+			<column/><column/><column flex="2"/><column flex="1"/><column/><column/>
+		  </columns>
+		  <rows id='ColumnsWizard.DefaultColsGrid' preference='ColumnsWizard.DefaultColsList' preference-editable="true" onsynctopreference='return miczColumnsWizardPref.saveDefaultColRows(window);'>
+		  </rows>
+		 </grid>
+		 </vbox>
+		</row>
+	    <row>
+           <separator class="thin"/>
+        </row>
+		<row>
+		 <hbox id="ColumnsWizard.SortOrderUI"><label control="symbol" value="&ColumnsWizard.NewFolderColsSortOrder.label;"/> <radiogroup id="cw_sortorder" orient="horizontal" preference="ColumnsWizard.DefaultColsList.SortOrder"><radio id="cw_sort_asc" label="&ColumnsWizard.NewFolderColsSortOrder.ASC.label;"  value="1"/> <radio id="cw_sort_desc" label="&ColumnsWizard.NewFolderColsSortOrder.DESC.label;" value="2"/></radiogroup></hbox>
+		 </row>
+		 </rows>
+		 </grid>
+        </tabpanel>
         <tabpanel id="custcols" orient="vertical">
 			<!-- Custom Columns -->
   <grid height="300px">
@@ -116,43 +154,18 @@
     </rows>
   </grid>
          </tabpanel>
-        <tabpanel id="tab_newfoldercols" orient="vertical">
-			<!-- New Folder Columns -->
-	  <grid height="280px">
-		<columns>
-		  <column flex="1"/>
-		</columns>
-		<rows>
-      <row>
-		  <description class="mzcw-desc">&ColumnsWizard.NewFolderCols.Desc;</description>
-	  </row>
-		  <row>
-          <checkbox id="ColumnsWizard.DefaultColsList.active_checkbox" label="&ColumnsWizard.NewFolderCols.label;"
-            preference="ColumnsWizard.DefaultColsList.active"/>
-          </row>
-          <row>
-            <separator class="thin"/>
-           </row>
-         <row height="260px">
-		<vbox style="overflow:auto;" height="260px">
-			<radiogroup id="cw_sortby"/>
-          <grid id="ColumnsWizard.GridUI">
-		  <columns>
-			<column/><column/><column flex="2"/><column flex="1"/><column/><column/>
-		  </columns>
-		  <rows id='ColumnsWizard.DefaultColsGrid' preference='ColumnsWizard.DefaultColsList' preference-editable="true" onsynctopreference='return miczColumnsWizardPref.saveDefaultColRows(window);'>
-		  </rows>
-		 </grid>
-		 </vbox>
-		</row>
-	    <row>
-           <separator class="thin"/>
-        </row>
-		<row>
-		 <hbox id="ColumnsWizard.SortOrderUI"><label control="symbol" value="&ColumnsWizard.NewFolderColsSortOrder.label;"/> <radiogroup id="cw_sortorder" orient="horizontal" preference="ColumnsWizard.DefaultColsList.SortOrder"><radio id="cw_sort_asc" label="&ColumnsWizard.NewFolderColsSortOrder.ASC.label;"  value="1"/> <radio id="cw_sort_desc" label="&ColumnsWizard.NewFolderColsSortOrder.DESC.label;" value="2"/></radiogroup></hbox>
-		 </row>
-		 </rows>
-		 </grid>
+        <tabpanel id="convtab" orient="vertical">
+			 <!-- Columns in Conversation Tab -->
+          <label control="symbol" class="mzcw-desc" value="&ColumnsWizard.GlobalDescConvTab;"/>
+          <label control="symbol" value=" "/>
+          <checkbox id="ColumnsWizard.ShowLocation_checkbox" label="&ColumnsWizard.ShowLocation.label;"
+            preference="ColumnsWizard.ShowLocation" />
+          <checkbox id="ColumnsWizard.ShowAccount_checkbox" label="&ColumnsWizard.ShowAccount.label;"
+            preference="ColumnsWizard.ShowAccount" />
+          <checkbox id="ColumnsWizard.ShowAttachment_checkbox" label="&ColumnsWizard.ShowAttachment.label;"
+            preference="ColumnsWizard.ShowAttachment" />
+          <checkbox id="ColumnsWizard.ShowRecipient_checkbox" label="&ColumnsWizard.ShowRecipient.label;"
+            preference="ColumnsWizard.ShowRecipient" />
         </tabpanel>
         <tabpanel id="advancedtab" orient="vertical">
 			 <!-- Advanced Tab -->
@@ -171,19 +184,7 @@
 			<description class="mzcw-desc">&ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc;</description>
           </groupbox>
         </tabpanel>
-        <tabpanel id="convtab" orient="vertical">
-			 <!-- Columns in Conversation Tab -->
-          <label control="symbol" class="mzcw-desc" value="&ColumnsWizard.GlobalDescConvTab;"/>
-          <label control="symbol" value=" "/>
-          <checkbox id="ColumnsWizard.ShowLocation_checkbox" label="&ColumnsWizard.ShowLocation.label;"
-            preference="ColumnsWizard.ShowLocation" />
-          <checkbox id="ColumnsWizard.ShowAccount_checkbox" label="&ColumnsWizard.ShowAccount.label;"
-            preference="ColumnsWizard.ShowAccount" />
-          <checkbox id="ColumnsWizard.ShowAttachment_checkbox" label="&ColumnsWizard.ShowAttachment.label;"
-            preference="ColumnsWizard.ShowAttachment" />
-          <checkbox id="ColumnsWizard.ShowRecipient_checkbox" label="&ColumnsWizard.ShowRecipient.label;"
-            preference="ColumnsWizard.ShowRecipient" />
-        </tabpanel>
+
         <tabpanel id="tab_info" orient="vertical">
 	         <!-- Info Tab -->
  	  <grid>
