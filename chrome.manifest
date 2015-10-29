@@ -11,3 +11,4 @@ skin columnswizard default chrome/skin/
 
 style chrome://global/content/customizeToolbar.xul chrome://columnswizard/content/mzcw-button.css
 overlay chrome://messenger/content/messenger.xul chrome://columnswizard/content/mzcw-overlay.xul
+overlay chrome://messenger/content/SearchDialog.xul chrome://columnswizard/content/mzcw-overlay-searchdialog.xul

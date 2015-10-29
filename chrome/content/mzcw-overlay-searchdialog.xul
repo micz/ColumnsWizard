@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+<?xml-stylesheet href="chrome://columnswizard/content/mzcw-overlay.css" type="text/css"?>
+<!DOCTYPE overlay SYSTEM "chrome://columnswizard/locale/overlay.dtd">
+
+<overlay id="ColumnsWizard-browser-overlay"
+ xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul">
+
+<script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-overlay-searchdialog.js" />
+<script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-customcolumns.js" />
+<script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-prefobserver.js" />
+<script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-folderlistener.js" />
+
+<stringbundleset id="stringbundleset">
+  <stringbundle id="ColumnsWizard-string-bundle" src="chrome://columnswizard/locale/overlay.properties" />
+</stringbundleset>
+
+</overlay>
