@@ -30,8 +30,6 @@ var miczColumnsWizardSearchDialog = {
 		  miczColumnsWizardSearchDialog.custColsActivation(miczColumnsWizardSearchDialog.CustColPref[index],ObserverService);
 		}
 
-		//miczColumnsWizard.initHeadersEditingMenu();
-
 		miczColumnsWizardSearchDialog.addCWResetMenu();
 
 		this.initialized = true;
@@ -103,11 +101,10 @@ var miczColumnsWizardSearchDialog = {
      }
     }
     //dump(">>>>>>>>>>>>> miczColumnsWizard: [tab folder mode] "+tab.mode.name+" \r\n");
-    miczColumnsWizard.addCWResetMenu(tab);
+    miczColumnsWizardSearchDialog.addCWResetMenu(tab);
   },
 
-  addCWResetMenu:function(tab){
-	if(tab.mode.name=='folder'){
+  addCWResetMenu:function(){
 		var cw_colmenubind=document.getAnonymousElementByAttribute(document.getElementById('threadCols'),'class','treecol-image');
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] tab.cw_colmenubind.command "+cw_colmenubind.oncommand+"\r\n");
 		if (!cw_colmenubind.cw_original_buildPopup){
@@ -139,30 +136,44 @@ var miczColumnsWizardSearchDialog = {
 
 				//Add saveDefaultMenuCW element
 				let saveDefaultMenuCW = document.createElement("menuitem");
-				saveDefaultMenuCW.setAttribute('label',_bundleCW.GetStringFromName("ColumnsWizardNFCols.saveDefault"));
+				saveDefaultMenuCW.setAttribute('label',_bundleCW.GetStringFromName("ColumnsWizardNFCols.saveDefault.SearchDialog"));
 				saveDefaultMenuCW.setAttribute('hidden',cw_active?'false':'true');
 				//we do this to escape the command xbl event handler
 				saveDefaultMenuCW.setAttribute("colindex", "-1");
 				saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
 				saveDefaultMenuCW.setAttribute("image","chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
-				saveDefaultMenuCW.onclick=miczColumnsWizard.addCWSaveDefaultMenu_OnClick;
+				saveDefaultMenuCW.onclick=miczColumnsWizardSearchDialog.addCWSaveDefaultMenu_OnClick;
 				aPopup.insertBefore(saveDefaultMenuCW,aPopup.lastChild);
 
 				//Add resetMenuCw element
 				let resetMenuCW = document.createElement("menuitem");
-				resetMenuCW.setAttribute('label',_bundleCW.GetStringFromName("ColumnsWizardNFCols.resetMenu"));
+				resetMenuCW.setAttribute('label',_bundleCW.GetStringFromName("ColumnsWizardNFCols.resetMenu.SearchDialog"));
 				resetMenuCW.setAttribute('hidden',cw_active?'false':'true');
 				//we do this to escape the command xbl event handler
 				resetMenuCW.setAttribute("colindex", "-1");
 				resetMenuCW.setAttribute("class", "menuitem-iconic");
 				resetMenuCW.setAttribute("image","chrome://columnswizard/skin/ico/resetMenuCW.png");
-				resetMenuCW.onclick=miczColumnsWizard.addCWResetMenu_OnClick;
+				resetMenuCW.onclick=miczColumnsWizardSearchDialog.addCWResetMenu_OnClick;
 				aPopup.insertBefore(resetMenuCW,aPopup.lastChild);
 
 			}	// buildPopup wrapper function END
 		}
-	}
   },
+
+    addCWSaveDefaultMenu_OnClick:function(event){
+		//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
+		let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
+		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
+		let promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
+		let title_msg=_bundleCW.GetStringFromName("ColumnsWizardNFCols.saveDefault");
+		let text_msg=_bundleCW.GetStringFromName("ColumnsWizard.saveDefault_OnClick_text");
+		if(!promptService.confirm(null,title_msg,text_msg))return;
+		let columnStates = gFolderDisplay.getColumnStates();
+		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
+		prefs.setCharPref("DefaultColsList",JSON.stringify(columnStates));
+		return;
+	},
 
     addCWResetMenu_OnClick:function(event){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWSaveDefaultMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
