@@ -3,6 +3,7 @@ Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-utils.jsm");
+Components.utils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
 
 var miczColumnsWizardSearchDialog = {
 
@@ -29,6 +30,9 @@ var miczColumnsWizardSearchDialog = {
 		for (let index in miczColumnsWizardSearchDialog.CustColPref) {
 		  miczColumnsWizardSearchDialog.custColsActivation(miczColumnsWizardSearchDialog.CustColPref[index],ObserverService);
 		}
+		
+		let columnStates = miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref('SearchDialogColsList');
+		gFolderDisplay.setColumnStates(columnStates, true)
 
 		miczColumnsWizardSearchDialog.addCWResetMenu();
 
@@ -122,22 +126,15 @@ var miczColumnsWizardSearchDialog = {
 					aPopup.removeChild(aPopup.childNodes[2]);
 					aPopup.removeChild(aPopup.childNodes[2]);
 				}
-				//check if we're using the colcw default for new folders
-				let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-				let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
-				let cw_active=prefs.getBoolPref("active");
-
 				let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
 				let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
-
-				aPopup.childNodes[1].setAttribute('hidden',cw_active?'true':'false');
 
 				cw_colmenubind.cw_original_buildPopup(aPopup);
 
 				//Add saveDefaultMenuCW element
 				let saveDefaultMenuCW = document.createElement("menuitem");
 				saveDefaultMenuCW.setAttribute('label',_bundleCW.GetStringFromName("ColumnsWizardNFCols.saveDefault.SearchDialog"));
-				saveDefaultMenuCW.setAttribute('hidden',cw_active?'false':'true');
+				saveDefaultMenuCW.setAttribute('hidden','false');
 				//we do this to escape the command xbl event handler
 				saveDefaultMenuCW.setAttribute("colindex", "-1");
 				saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
@@ -148,7 +145,7 @@ var miczColumnsWizardSearchDialog = {
 				//Add resetMenuCw element
 				let resetMenuCW = document.createElement("menuitem");
 				resetMenuCW.setAttribute('label',_bundleCW.GetStringFromName("ColumnsWizardNFCols.resetMenu.SearchDialog"));
-				resetMenuCW.setAttribute('hidden',cw_active?'false':'true');
+				resetMenuCW.setAttribute('hidden','false');
 				//we do this to escape the command xbl event handler
 				resetMenuCW.setAttribute("colindex", "-1");
 				resetMenuCW.setAttribute("class", "menuitem-iconic");
@@ -166,12 +163,12 @@ var miczColumnsWizardSearchDialog = {
 		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
 		let promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
 		let title_msg=_bundleCW.GetStringFromName("ColumnsWizardNFCols.saveDefault");
-		let text_msg=_bundleCW.GetStringFromName("ColumnsWizard.saveDefault_OnClick_text");
+		let text_msg=_bundleCW.GetStringFromName("ColumnsWizardSearchDialog.saveDefault_OnClick_text");
 		if(!promptService.confirm(null,title_msg,text_msg))return;
 		let columnStates = gFolderDisplay.getColumnStates();
 		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
-		prefs.setCharPref("DefaultColsList",JSON.stringify(columnStates));
+		prefs.setCharPref("SearchDialogColsList",JSON.stringify(columnStates));
 		return;
 	},
 
@@ -181,9 +178,9 @@ var miczColumnsWizardSearchDialog = {
 		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
 		let promptService = Components.classes["@mozilla.org/embedcomp/prompt-service;1"].getService(Components.interfaces.nsIPromptService);
 		let title_msg=_bundleCW.GetStringFromName("ColumnsWizardNFCols.resetMenu");
-		let text_msg=_bundleCW.GetStringFromName("ColumnsWizard.resetDefault_OnClick_text");
+		let text_msg=_bundleCW.GetStringFromName("ColumnsWizardSearchDialog.resetDefault_OnClick_text");
 		if(!promptService.confirm(null,title_msg,text_msg))return;
-		let columnStates = miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
+		let columnStates = miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref('SearchDialogColsList');
 		gFolderDisplay.setColumnStates(columnStates, true);
 		return;
 	},

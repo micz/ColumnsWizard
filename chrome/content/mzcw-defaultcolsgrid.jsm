@@ -7,10 +7,11 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 
 	loadedCustCols:{},
 
-	loadDefaultColRows_Pref:function(){
+	loadDefaultColRows_Pref:function(col_list_pref){
+		if((col_list_pref=='')||(col_list_pref==undefined)){col_list_pref="DefaultColsList";}
 		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
-		let DefaultColIndexStr=prefs.getCharPref("DefaultColsList");
+		let DefaultColIndexStr=prefs.getCharPref(col_list_pref);
 		let loadedDefaultColIndex=new Array();
 		if(DefaultColIndexStr==''){
 			//Set default cols if none set at the moment
