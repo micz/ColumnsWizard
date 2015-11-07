@@ -12,61 +12,38 @@ var miczColumnsWizardSearchDialog = {
   showAttachment: false,
   showRecipient: false,
 
-  //Custom Columns		TODO
   CustColPref:{},
 
 	init: function(){
 
 		let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
 
-		miczColumnsWizard.addNewCustColObserver(ObserverService);
-		miczColumnsWizard.deleteCustColObserver(ObserverService);
-		miczColumnsWizard.updateCustColObserver(ObserverService);
-		miczColumnsWizard.updateHeaderEditingMenuObserver(ObserverService);
-
 		//Adding custom columns
-		miczColumnsWizard.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
+		miczColumnsWizardSearchDialog.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
 
-		for (let index in miczColumnsWizard.CustColPref) {
-			miczColumnsWizard.addDbObserver(miczColumnsWizard.CustColPref[index]);
+		//At window opening the columns must be set. No need for an observer
+		//TODO
+
+		for (let index in miczColumnsWizardSearchDialog.CustColPref) {
+			miczColumnsWizardSearchDialog.addDbObserver(miczColumnsWizardSearchDialog.CustColPref[index]);
 		}
 
-		for (let index in miczColumnsWizard.CustColPref) {
-		  miczColumnsWizard.custColsActivation(miczColumnsWizard.CustColPref[index],ObserverService);
+		for (let index in miczColumnsWizardSearchDialog.CustColPref) {
+		  miczColumnsWizardSearchDialog.custColsActivation(miczColumnsWizardSearchDialog.CustColPref[index],ObserverService);
 		}
 
-		miczColumnsWizard.watchFolders();
-		miczColumnsWizard.initHeadersEditingMenu();
+		//miczColumnsWizard.initHeadersEditingMenu();
 
-		let current_tab = document.getElementById("tabmail").currentTabInfo;
-		miczColumnsWizard.addCWResetMenu(current_tab);
+		miczColumnsWizardSearchDialog.addCWResetMenu();
 
 		this.initialized = true;
-		//Conversation Tab add columns - delayed
-		setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
-	},
-
-	initDelayed:function(){
-		try{
-			//Conversation Tab add columns
-		let tabmail = document.getElementById("tabmail");
-		let monitor = {
-		  onTabTitleChanged:function(tab){},
-		  onTabSwitched: miczColumnsWizard.addCWResetMenu, //this.showColumns,
-		  //onTabRestored:function(tab){},
-		  onTabOpened: this.showColumns,
-		};
-		tabmail.registerTabMonitor(monitor);
-		}catch(e){
-		  alert("No tabContainer available! " + e);
-		}
 	},
 
 	addNewCustColObserver:function(ObserverService){
 		let CustColObserver = {
 			observe: function(aSubject,aTopic,aData){
 				//dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
-    			miczColumnsWizard.addDbObserver(JSON.parse(aData));
+    			miczColumnsWizardSearchDialog.addDbObserver(JSON.parse(aData));
   			}
 		}
 		ObserverService.addObserver(CustColObserver,"CW-newCustomColumn",false);
