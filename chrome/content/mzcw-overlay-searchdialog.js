@@ -21,9 +21,7 @@ var miczColumnsWizardSearchDialog = {
 		//Adding custom columns
 		miczColumnsWizardSearchDialog.CustColPref=miczColumnsWizard_CustCols.loadCustCols();
 
-		//At window opening the columns must be set. No need for an observer
-		//TODO
-
+		//The columns must be set at window opening. No need for an observer.
 		for (let index in miczColumnsWizardSearchDialog.CustColPref) {
 			miczColumnsWizardSearchDialog.addDbObserver(miczColumnsWizardSearchDialog.CustColPref[index]);
 		}
@@ -38,39 +36,12 @@ var miczColumnsWizardSearchDialog = {
 
 		this.initialized = true;
 	},
-
-	addNewCustColObserver:function(ObserverService){
-		let CustColObserver = {
-			observe: function(aSubject,aTopic,aData){
-				//dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
-    			miczColumnsWizardSearchDialog.addDbObserver(JSON.parse(aData));
-  			}
+	
+	custColsActivation:function(element,ObserverService){
+	//dump(">>>>>>>>>>>>> miczColumnsWizard: [element|index] "+element.Pref+"|"+index+"\r\n");
+		if(element.enabled===true){
+			miczColumnsWizard_CustCols.addCustomColumn(element,ObserverService);
 		}
-		ObserverService.addObserver(CustColObserver,"CW-newCustomColumn",false);
-	},
-
-	deleteCustColObserver:function(ObserverService){
-		let CustColObserver = {
-			observe: function(aSubject,aTopic,aData){
-				//dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
-				let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-    			miczColumnsWizard_CustCols.removeCustomColumn(aData,ObserverService);
-				miczColumnsWizard_CustCols.deleteCustCol(aData);
-  			}
-		}
-		ObserverService.addObserver(CustColObserver,"CW-deleteCustomColumn",false);
-	},
-
-	updateCustColObserver:function(ObserverService){
-		let CustColObserver = {
-			observe: function(aSubject,aTopic,aData){
-				//dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
-				let ObserverService = Components.classes["@mozilla.org/observer-service;1"].getService(Components.interfaces.nsIObserverService);
-    			//update cust col info in the message list
-    			miczColumnsWizard_CustCols.updateCustomColumn(JSON.parse(aData));
-  			}
-		}
-		ObserverService.addObserver(CustColObserver,"CW-updateCustomColumn",false);
 	},
 
 	addDbObserver:function(currcol){
@@ -208,4 +179,4 @@ var miczColumnsWizardSearchDialog = {
 
 };
 
-//window.addEventListener("load", miczColumnsWizardSearchDialog.init, false);
+window.addEventListener("load", miczColumnsWizardSearchDialog.init, false);
