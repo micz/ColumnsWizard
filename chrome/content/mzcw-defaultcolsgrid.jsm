@@ -324,9 +324,9 @@ var miczColumnsWizardPref_DefaultColsGrid = {
        		case "attachmentCol":
        		strOut = _bundleCW.GetStringFromName("ColumnsWizard.attachmentColumn.label");
        		break;
-       		case "correnspondetCol":
-       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.attachmentColumn.label");
-       		break;
+       		/*case "correspondentCol": // NEEDS TO BE TRANSLATED SEE https://github.com/micz/ColumnsWizard/issues/54
+       		strOut = _bundleCW.GetStringFromName("ColumnsWizard.correspondentCol.label");
+       		break;*/
        		default:
 				let col_idx=col.replace('Col_cw','');
 				let col_el=this.loadedCustCols[col_idx];
