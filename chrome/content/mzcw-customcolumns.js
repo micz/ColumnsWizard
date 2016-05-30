@@ -311,7 +311,7 @@ var miczColumnsWizard_CustCols={
 
 	activateCustomHeaderSearchable:function(newHeader){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable] "+newHeader+"\r\n");
-		let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
 		let currentHeaders = prefService.getCharPref("mailnews.customHeaders");
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable]: currentHeaders: "+currentHeaders+"\r\n");
 		let headers_array=new Array();
@@ -329,7 +329,9 @@ var miczColumnsWizard_CustCols={
 
 	deactivateCustomHeaderSearchable:function(newHeader){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate CustomHeaderSearchable] "+newHeader+"\r\n");
-		let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+		//let {Services}=Components.utils.import("resource://gre/modules/Services.jsm");
+		//let currentHeaders = Services.prefs.getCharPref("mailnews.customHeaders");
 		let currentHeaders = prefService.getCharPref("mailnews.customHeaders");
 		let headers_array=currentHeaders.split(': ');
 		let h_idx=headers_array.indexOf(newHeader);

@@ -158,7 +158,9 @@ var miczColumnsWizard = {
 
   activateCustomDBHeader:function(newHeader){
     //dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders] "+newHeader+"\r\n");
-    let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+    //let {Services}=Components.utils.import("resource://gre/modules/Services.jsm");
+    //let currentHeaders = Services.prefs.getCharPref("mailnews.customDBHeaders");
+    let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
     let currentHeaders = prefService.getCharPref("mailnews.customDBHeaders");
     let re = new RegExp("(^| )"+newHeader+"( |$)","i");
     if (currentHeaders.search(re) < 0) {
@@ -170,7 +172,7 @@ var miczColumnsWizard = {
 
   deactivateCustomDBHeader:function(newHeader){
     //dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate customDBHeaders] "+newHeader+"\r\n");
-    let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+    let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
     let currentHeaders = prefService.getCharPref("mailnews.customDBHeaders");
     let re = new RegExp("(^| )"+newHeader+"( |$)","i");
     currentHeaders=currentHeaders.replace(re," ");
