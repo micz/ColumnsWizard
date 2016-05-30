@@ -1,10 +1,11 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
-Version 6.1 - ??/??/2015
+Version 6.1 - ??/??/2016
 - Better toolbar button positioning at first run.
-- Preference window tabs order chnaged.
--
+- Preference window tabs order changed.
+- Fixed a bug in preference handling with Thunderbird version 45.
+- 
 ==========
 Version 6.0 - 29/09/2015
 - Added a toolbar button to open the preference panel.
