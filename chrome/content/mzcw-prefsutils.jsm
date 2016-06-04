@@ -9,6 +9,8 @@ let EXPORTED_SYMBOLS = ["miczColumnsWizardPrefsUtils"];
 var miczColumnsWizardPrefsUtils = {
 	service: Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch),
 	pref_base:'extensions.ColumnsWizard.',
+	pref_custcols: "extensions.ColumnsWizard.CustCols.",
+    pref_custcols_def: "extensions.ColumnsWizard.CustCols.def.",
 
 	get headersEditingActive() {
 		return this.getBoolPref_CW("CustCols.mod_active");
@@ -32,6 +34,46 @@ var miczColumnsWizardPrefsUtils = {
 
 	firstRunDone:function(){
 		this.setBoolPref_CW('firstRun',false);
+	},
+
+	getCustColsIndex:function(){
+		return this.getCharPref(this.pref_custcols+'index');
+	},
+
+	setCustColsIndex:function(index){
+		setCharPref(this.pref_custcols+'index',index);
+	},
+
+	getCustColsIndexMod:function(){
+		return this.getCharPref(this.pref_custcols+'index_mod');
+	},
+
+	setCustColsIndexMod:function(index){
+		setCharPref(this.pref_custcols+'index_mod',index);
+	},
+
+	getCustColsModActive:function(){
+		return this.getBoolPref(this.pref_custcols+'mod_active');
+	},
+
+	setCustColsModActive:function(mod_active){
+		setBoolPref(this.pref_custcols+'mod_active',mod_active);
+	},
+
+	getCustColDef:function(custcol){
+		return this.getCharPref(this.pref_custcols_def+custcol);
+	},
+
+	setCustColDef:function(custcol,value){
+		this.setCharPref(this.pref_custcols_def+custcol,value);
+	},
+
+	getCustColBool:function(custcol){
+		return this.getBoolPref(this.pref_custcols+custcol);
+	},
+
+	setCustColBool:function(custcol,value){
+		this.setBoolPref(this.pref_custcols+custcol,value);
 	},
 
 	existsCharPref: function existsCharPref(pref) {

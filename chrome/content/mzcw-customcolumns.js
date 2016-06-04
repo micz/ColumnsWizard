@@ -1,5 +1,6 @@
 "use strict";
 //var EXPORTED_SYMBOLS = ["miczColumnsWizard_CustCols"];
+Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
 var miczColumnsWizard_CustCols={
 
@@ -106,15 +107,17 @@ var miczColumnsWizard_CustCols={
     },
 
    loadCustCols:function(){
-    let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+    /*let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
     let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
-    let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");
-    let CustColIndexStr=prefs.getCharPref("index");
+    let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");*/
+    //let CustColIndexStr=prefs.getCharPref("index");
+    let CustColIndexStr=miczColumnsWizardPrefsUtils.getCustColsIndex();
     let CustColIndex=new Array();
     if(CustColIndexStr==''){
 		//Set default CustColIndex
 		CustColIndex=miczColumnsWizard_CustCols.CustColDefaultIndex;
-		prefs.setCharPref("index",JSON.stringify(CustColIndex));
+		//prefs.setCharPref("index",JSON.stringify(CustColIndex));
+		miczColumnsWizardPrefsUtils.setCustColsIndex(JSON.stringify(CustColIndex));
 	}else{
 		CustColIndex=miczColumnsWizard_CustCols.checkCustColDefaultIndex(JSON.parse(CustColIndexStr));
 	}
@@ -124,7 +127,7 @@ var miczColumnsWizard_CustCols={
     for (let singlecolidx in CustColIndex) {
 		//dump(">>>>>>>>>>>>> miczColumnsWizard->loadCustCols: [CustColIndex[singlecolidx]] "+CustColIndex[singlecolidx]+"\r\n");
 		try{
-			loadedCustColPref[CustColIndex[singlecolidx]]=JSON.parse(prefs_def.getCharPref(CustColIndex[singlecolidx]));
+			loadedCustColPref[CustColIndex[singlecolidx]]=JSON.parse(miczColumnsWizardPrefsUtils.getCustColDef(CustColIndex[singlecolidx]));
 			if(loadedCustColPref[CustColIndex[singlecolidx]].isSearchable===undefined){
 				loadedCustColPref[CustColIndex[singlecolidx]].isSearchable=false;
 			}
@@ -148,18 +151,18 @@ var miczColumnsWizard_CustCols={
   },
 
   checkDefaultCustomColumnPrefs: function(){
-		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		/*let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
-		let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");
+		let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");*/
 
 		for (let singlecolidx in miczColumnsWizard_CustCols.CustColDefaultIndex) {
 			//dump(">>>>>>>>>>>>> miczColumnsWizard: [checkDefaultCustomColumnPrefs singlecolidx] "+miczColumnsWizard_CustCols.CustColDefaultIndex[singlecolidx]+" \r\n");
-			let currcol=prefs_def.getCharPref(miczColumnsWizard_CustCols.CustColDefaultIndex[singlecolidx]);
+			let currcol=miczColumnsWizardPrefsUtils.getCustColDef(miczColumnsWizard_CustCols.CustColDefaultIndex[singlecolidx]);
 			if(currcol==''){//Default custom column pref not present
 				let dcurrcol={}
 				switch(miczColumnsWizard_CustCols.CustColDefaultIndex[singlecolidx]){
 					case 'cc':
-						dcurrcol.enabled = prefs.getBoolPref("AddCc");
+						dcurrcol.enabled = miczColumnsWizardPrefsUtils.getCustColBool("AddCc");
 						dcurrcol.def = "AddCc";
 						dcurrcol.dbHeader = "ccList";
 						dcurrcol.sortnumber=false;
@@ -167,7 +170,7 @@ var miczColumnsWizard_CustCols={
 						dcurrcol.isSearchable=false;
 						break;
 					case 'bcc':
-						dcurrcol.enabled = prefs.getBoolPref("Addbcc");
+						dcurrcol.enabled = miczColumnsWizardPrefsUtils.getCustColBool("Addbcc");
 						dcurrcol.def = "Addbcc";
 						dcurrcol.dbHeader = "bccList";
 						dcurrcol.sortnumber=false;
@@ -175,7 +178,7 @@ var miczColumnsWizard_CustCols={
 						dcurrcol.isSearchable=false;
 						break;
 					case 'replyto':
-						dcurrcol.enabled = prefs.getBoolPref("Addreplyto");
+						dcurrcol.enabled = miczColumnsWizardPrefsUtils.getCustColBool("Addreplyto");
 						dcurrcol.def = "Addreplyto";
 						dcurrcol.dbHeader = "replyTo";
 						dcurrcol.sortnumber=false;
@@ -183,7 +186,7 @@ var miczColumnsWizard_CustCols={
 						dcurrcol.isSearchable=true;
 						break;
 					case 'xoriginalfrom':
-						dcurrcol.enabled = prefs.getBoolPref("Addxoriginalfrom");
+						dcurrcol.enabled = miczColumnsWizardPrefsUtils.getCustColBool("Addxoriginalfrom");
 						dcurrcol.def = "Addxoriginalfrom";
 						dcurrcol.dbHeader = "x-original-from";
 						dcurrcol.sortnumber=false;
@@ -191,7 +194,7 @@ var miczColumnsWizard_CustCols={
 						dcurrcol.isSearchable=true;
 						break;
 					case 'contentbase':
-						dcurrcol.enabled = prefs.getBoolPref("Addcontentbase");
+						dcurrcol.enabled = miczColumnsWizardPrefsUtils.getCustColBool("Addcontentbase");
 						dcurrcol.def = "Addcontentbase";
 						dcurrcol.dbHeader = "content-base";
 						dcurrcol.sortnumber=false;
@@ -230,14 +233,16 @@ var miczColumnsWizard_CustCols={
 	},
 
 	addCustColIndex:function(index){
-		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
-		let CustColIndexStr=prefs.getCharPref("index");
+		/*let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");*/
+		//let CustColIndexStr=prefs.getCharPref("index");
+		let CustColIndexStr=miczColumnsWizardPrefsUtils.getCustColsIndex();
 		let CustColIndex=new Array();
 		if(CustColIndexStr==''){
 			//Set default CustColIndex
 			CustColIndex=miczColumnsWizard_CustCols.CustColDefaultIndex;
-			prefs.setCharPref("index",JSON.stringify(CustColIndex));
+			//prefs.setCharPref("index",JSON.stringify(CustColIndex));
+			miczColumnsWizardPrefsUtils.setCustColsIndex(JSON.stringify(CustColIndex));
 		}else{
 			CustColIndex=miczColumnsWizard_CustCols.checkCustColDefaultIndex(JSON.parse(CustColIndexStr));
 		}
@@ -245,13 +250,15 @@ var miczColumnsWizard_CustCols={
 		if(CustColIndex.indexOf(index)==-1){
 			CustColIndex.push(index);
 		}
-		prefs.setCharPref("index",JSON.stringify(CustColIndex));
+		//prefs.setCharPref("index",JSON.stringify(CustColIndex));
+		miczColumnsWizardPrefsUtils.setCustColsIndex(JSON.stringify(CustColIndex));
 	},
 
 	removeCustColIndex:function(index){
-		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
-		let CustColIndexStr=prefs.getCharPref("index");
+		/*let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");*/
+		//let CustColIndexStr=prefs.getCharPref("index");
+		let CustColIndexStr=miczColumnsWizardPrefsUtils.getCustColsIndex();
 		let CustColIndex=new Array();
 		if(CustColIndexStr==''){
 			return;
@@ -263,22 +270,25 @@ var miczColumnsWizard_CustCols={
 		if(el_idx>-1){
 			CustColIndex.splice(el_idx,1);
 		}
-		prefs.setCharPref("index",JSON.stringify(CustColIndex));
+		//prefs.setCharPref("index",JSON.stringify(CustColIndex));
+		miczColumnsWizardPrefsUtils.setCustColsIndex(JSON.stringify(CustColIndex));
 		//remove it also from index_mod
 		miczColumnsWizard_CustCols.removeCustColIndexMod(index);
 	},
 
 	saveCustCol: function(currcol) {
 		let value = JSON.stringify(currcol);
-		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		//let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 		//Saving custom columns item to prefs
-		let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");
-		prefs_def.setCharPref(currcol.index,value);
+		//let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");
+		//prefs_def.setCharPref(currcol.index,value);
+		miczColumnsWizardPrefsUtils.setCustColDef(currcol.index,value);
 
 		//Saving enabled status to prefs (for bundled custom columns)
 		if((currcol.isBundled)&&(currcol.def !== undefined)&&(currcol.def != "")){
-			let prefs=prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
-			prefs.setBoolPref(currcol.def,currcol.enabled);
+			//let prefs=prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+			//prefs.setBoolPref(currcol.def,currcol.enabled);
+			miczColumnsWizardPrefsUtils.setCustColBool(currcol.index,value);
 		}
 
 		//Adding the cust col as searchable
@@ -311,8 +321,9 @@ var miczColumnsWizard_CustCols={
 
 	activateCustomHeaderSearchable:function(newHeader){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable] "+newHeader+"\r\n");
-		let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
-		let currentHeaders = prefService.getCharPref("mailnews.customHeaders");
+		//let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+		//let currentHeaders = prefService.getCharPref("mailnews.customHeaders");
+		let currentHeaders = miczColumnsWizardPrefsUtils.getCharPref("mailnews.customHeaders");
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable]: currentHeaders: "+currentHeaders+"\r\n");
 		let headers_array=new Array();
 		if(currentHeaders!=''){
@@ -322,33 +333,37 @@ var miczColumnsWizard_CustCols={
 		if(headers_array.indexOf(newHeader)==-1){
 			headers_array.push(newHeader);
 			currentHeaders=headers_array.join(': ');
-			prefService.setCharPref("mailnews.customHeaders", currentHeaders.trim());
+			//prefService.setCharPref("mailnews.customHeaders", currentHeaders.trim());
+			miczColumnsWizardPrefsUtils.setCharPref("mailnews.customHeaders", currentHeaders.trim());
 			//dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable->Updating] "+newHeader+"\r\n");
 		}
 	},
 
 	deactivateCustomHeaderSearchable:function(newHeader){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate CustomHeaderSearchable] "+newHeader+"\r\n");
-		let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+		//let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
 		//let {Services}=Components.utils.import("resource://gre/modules/Services.jsm");
 		//let currentHeaders = Services.prefs.getCharPref("mailnews.customHeaders");
-		let currentHeaders = prefService.getCharPref("mailnews.customHeaders");
+		//let currentHeaders = prefService.getCharPref("mailnews.customHeaders");
+		let currentHeaders = miczColumnsWizardPrefsUtils.getCharPref("mailnews.customHeaders");
 		let headers_array=currentHeaders.split(': ');
 		let h_idx=headers_array.indexOf(newHeader);
 		if(h_idx>-1){
 			headers_array.splice(h_idx,1);
 			currentHeaders=headers_array.join(': ');
-			prefService.setCharPref("mailnews.customHeaders", currentHeaders.trim());
+			//prefService.setCharPref("mailnews.customHeaders", currentHeaders.trim());
+			miczColumnsWizardPrefsUtils.setCharPref("mailnews.customHeaders", currentHeaders.trim());
 			//dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate CustomHeaderSearchable->Updating] "+newHeader+"\r\n");
 		}
 	},
 
 	addCustColIndexMod:function(index){
-		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+		//let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		//let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
 		let CustColIndexStr='';
 		try{
-			CustColIndexStr=prefs.getCharPref("index_mod");
+			//CustColIndexStr=prefs.getCharPref("index_mod");
+			CustColIndexStr=miczColumnsWizardPrefsUtils.getCustColsIndexMod();
 		}
 		catch(e){}
 		let CustColIndex=new Array();
@@ -360,14 +375,15 @@ var miczColumnsWizard_CustCols={
 			CustColIndex.push(index);
 		}
 		CustColIndex.sort();
-		prefs.setCharPref("index_mod",JSON.stringify(CustColIndex));
-		prefs.setBoolPref("mod_active",true);
+		miczColumnsWizardPrefsUtils.setCustColsIndexMod(JSON.stringify(CustColIndex));
+		miczColumnsWizardPrefsUtils.setCustColsModActive(true);
 	},
 
 	removeCustColIndexMod:function(index){
-		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
-		let CustColIndexStr=prefs.getCharPref("index_mod");
+		//let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		//let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+		//let CustColIndexStr=prefs.getCharPref("index_mod");
+		let CustColIndexStr=miczColumnsWizardPrefsUtils.getCustColsIndexMod();
 		let CustColIndex=new Array();
 		if(CustColIndexStr==''){
 			return;
@@ -380,9 +396,9 @@ var miczColumnsWizard_CustCols={
 			CustColIndex.splice(el_idx,1);
 		}
 		CustColIndexStr=JSON.stringify(CustColIndex).trim();
-		prefs.setCharPref("index_mod",CustColIndexStr);
+		miczColumnsWizardPrefsUtils.setCustColsIndexMod(CustColIndexStr);
 		if(CustColIndex.length==0){ //no mod cust cols? set the option to false
-			prefs.setBoolPref("mod_active",false);
+			miczColumnsWizardPrefsUtils.setCustColsModActive(false);
 		}
 	},
 
