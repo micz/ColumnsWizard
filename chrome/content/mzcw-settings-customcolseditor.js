@@ -1,6 +1,7 @@
 "use strict";
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
+Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 Components.utils.import("resource://gre/modules/osfile.jsm");
 
 var miczColumnsWizard={};
@@ -96,9 +97,10 @@ var miczColumnsWizardPref_CustColEditor = {
 							newcol.index=document.getElementById("ColumnsWizard.id").value.toLowerCase();
 						}
 						//Check if the custom column is already present
-						let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-						let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
-						let CustColIndexStr=prefs.getCharPref("index");
+						//let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+						//let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+						//let CustColIndexStr=prefs.getCharPref("index");
+						let CustColIndexStr=miczColumnsWizardPrefsUtils.getCustColsIndex();
 						let CustColIndex=new Array();
 						if(CustColIndexStr!=''){
 							CustColIndex=JSON.parse(CustColIndexStr);

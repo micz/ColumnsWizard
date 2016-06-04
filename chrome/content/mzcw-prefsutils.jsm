@@ -46,7 +46,7 @@ var miczColumnsWizardPrefsUtils = {
 	},
 
 	setCustColsIndex:function(index){
-		setCharPref(this.pref_custcols+'index',index);
+		this.setCharPref(this.pref_custcols+'index',index);
 	},
 
 	getCustColsActive:function(){
@@ -54,7 +54,7 @@ var miczColumnsWizardPrefsUtils = {
 	},
 
 	setCustColsActive:function(active){
-		setBoolPref(this.pref_custcols+'active',active);
+		this.setBoolPref(this.pref_custcols+'active',active);
 	},
 
 	getCustColsIndexMod:function(){
@@ -62,7 +62,7 @@ var miczColumnsWizardPrefsUtils = {
 	},
 
 	setCustColsIndexMod:function(index){
-		setCharPref(this.pref_custcols+'index_mod',index);
+		this.setCharPref(this.pref_custcols+'index_mod',index);
 	},
 
 	getCustColsModActive:function(){
@@ -70,7 +70,7 @@ var miczColumnsWizardPrefsUtils = {
 	},
 
 	setCustColsModActive:function(mod_active){
-		setBoolPref(this.pref_custcols+'mod_active',mod_active);
+		this.setBoolPref(this.pref_custcols+'mod_active',mod_active);
 	},
 
 	getCustColDef:function(custcol){
