@@ -233,7 +233,7 @@ var miczColumnsWizard = {
 				//let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
 				//let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
 				//let cw_active=prefs.getBoolPref("active");
-				let cw_active=miczColumnsWizardPrefsUtils.getCustColsActive();
+				let cw_active=miczColumnsWizardPrefsUtils.defaultColsListActive;
 
 				let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
 				let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");

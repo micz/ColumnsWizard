@@ -3,11 +3,12 @@
  *
  * */
 "use strict";
+Components.utils.import("resource://gre/modules/Services.jsm");
 
 let EXPORTED_SYMBOLS = ["miczColumnsWizardPrefsUtils"];
 
 var miczColumnsWizardPrefsUtils = {
-	service: Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch),
+	service: Services.prefs,
 	pref_base:'extensions.ColumnsWizard.',
 	pref_custcols: "extensions.ColumnsWizard.CustCols.",
     pref_custcols_def: "extensions.ColumnsWizard.CustCols.def.",
@@ -30,7 +31,7 @@ var miczColumnsWizardPrefsUtils = {
 	},
 
 	get defaultColsListActive(){
-		return this.getBoolPref(pref_defcolslist+'active');
+		return this.getBoolPref(this.pref_defcolslist+'active');
 	},
 
 	get firstRun() {
@@ -130,7 +131,8 @@ var miczColumnsWizardPrefsUtils = {
 		}
 		catch(ex) {
 		  //QuickFolders.Util.logException("getBoolPref("  + p +") failed\n", ex);
-		  throw(ex);
+		  //throw(ex);
+		  return false;
 		}
 		return ans;
 	},
