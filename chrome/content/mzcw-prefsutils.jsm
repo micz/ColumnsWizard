@@ -11,6 +11,7 @@ var miczColumnsWizardPrefsUtils = {
 	pref_base:'extensions.ColumnsWizard.',
 	pref_custcols: "extensions.ColumnsWizard.CustCols.",
     pref_custcols_def: "extensions.ColumnsWizard.CustCols.def.",
+    pref_defcolslist: "extensions.ColumnsWizard.DefaultColsList.",
 
 	get headersEditingActive() {
 		return this.getBoolPref_CW("CustCols.mod_active");
@@ -26,6 +27,10 @@ var miczColumnsWizardPrefsUtils = {
 
 	get putOriginalInTrash() {
 		return this.getBoolPref_CW("MailHeader.put_original_in_trash");
+	},
+
+	get defaultColsListActive(){
+		this.getBoolPref(pref_defcolslist+'active');
 	},
 
 	get firstRun() {

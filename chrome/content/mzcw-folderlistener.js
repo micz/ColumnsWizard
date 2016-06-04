@@ -1,5 +1,6 @@
 "use strict";
 Components.utils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
+Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
 miczColumnsWizard.FolderListener={
 
@@ -14,9 +15,10 @@ miczColumnsWizard.FolderListener={
      **/
     OnItemAdded: function(parent_item, item)
     {
-		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-		let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
-		let cw_active=prefs.getBoolPref("active");
+		//let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		//let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
+		//let cw_active=prefs.getBoolPref("active");
+		let cw_active=miczColumnsWizardPrefsUtils.defaultColsListActive;
 
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded triggered] "+item.name+"\r\n");
         // Not a Folder...
