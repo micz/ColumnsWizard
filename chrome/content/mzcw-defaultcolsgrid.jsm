@@ -1,4 +1,6 @@
 "use strict";
+Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+
 var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_DefaultColsGrid"];
 
 const colClass = 'cw-col-class';
@@ -8,9 +10,10 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 	loadedCustCols:{},
 
 	loadDefaultColRows_Pref:function(){
-		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-		let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
-		let DefaultColIndexStr=prefs.getCharPref("DefaultColsList");
+		//let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		//let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
+		//let DefaultColIndexStr=prefs.getCharPref("DefaultColsList");
+		let DefaultColIndexStr=miczColumnsWizardPrefsUtils.getCharPref_CW("DefaultColsList");
 		let loadedDefaultColIndex=new Array();
 		if(DefaultColIndexStr==''){
 			//Set default cols if none set at the moment
@@ -34,7 +37,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			  }
 			}
 		}
-		prefs.setCharPref("DefaultColsList",JSON.stringify(loadedDefaultColIndex));
+		miczColumnsWizardPrefsUtils.setCharPref_CW("DefaultColsList",JSON.stringify(loadedDefaultColIndex));
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
 		return loadedDefaultColIndex;
 	},
@@ -133,9 +136,10 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			  col_sortby.setAttribute("type", 'radio');
 			  //if(currcol.sortby===undefined)currcol.sortby=false;
 			  //if(currcol.sortby)col_sortby.setAttribute("selected", true);
-			  let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-			  let prefs = prefsc.getBranch("mailnews.");
-			  let sortcolindex=prefs.getIntPref("default_sort_type");
+			  //let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+			  //let prefs = prefsc.getBranch("mailnews.");
+			  //let sortcolindex=prefs.getIntPref("default_sort_type");
+			  let sortcolindex=miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_type");
 			  if(sortcolindex==miczColumnsWizardPref_DefaultColsGrid.getSortType(currcol.currindex))col_sortby.setAttribute("selected", true);
 		  }else{
 			  col_sortby = doc.createElementNS(XUL, "label");
@@ -223,9 +227,10 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			if (item.getAttribute("type") == 'number') value = item.valueNumber;
 			if (item.getAttribute("type") == 'radio'){
 				 if(item.selected){
-					 let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-					 let prefs = prefsc.getBranch("mailnews.");
-					 let sortcolindex=prefs.setIntPref("default_sort_type",miczColumnsWizardPref_DefaultColsGrid.getSortType(cwcol['currindex']));
+					 //let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+					 //let prefs = prefsc.getBranch("mailnews.");
+					 //let sortcolindex=prefs.setIntPref("default_sort_type",miczColumnsWizardPref_DefaultColsGrid.getSortType(cwcol['currindex']));
+					 let sortcolindex=miczColumnsWizardPrefsUtils.setIntPref("mailnews.default_sort_type",miczColumnsWizardPref_DefaultColsGrid.getSortType(cwcol['currindex']));
 					 //dump(">>>>>>>>>>>>> miczColumnsWizard: [getOneDefaultCol col_id] "+cwcol['currindex']+"\r\n");
 				 }
 			 }else{
