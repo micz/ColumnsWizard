@@ -137,15 +137,15 @@ miczColumnsWizard_MsgUtils.listener = {
 		if (headers.indexOf(currStrHeader) > -1){
 			headers=headers+"\r\n";
 			headers = headers.replace(re, currStrHeader+" "+ newHeaderEnc+"\r\n");
-			dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: REPLACING HEADER\r\n");
-			dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: headers: "+headers+"\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: REPLACING HEADER\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: headers: "+headers+"\r\n");
 			headers = headers.substring(0,headers.length-2);
 		}else{ // header is missing
 			headers = headers+"\r"+currStrHeader+" "+newHeaderEnc+"\r\n";
-			dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: ADDING HEADER\r\n");
+			//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: ADDING HEADER\r\n");
 		}
 
-		dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: newHeaderEnc: "+newHeaderEnc+"\r\n");
+		//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: newHeaderEnc: "+newHeaderEnc+"\r\n");
 		//dump(">>>>>>>>>>>>> miczColumnsWizard_MsgUtils [listener]: headers: "+headers+"\r\n");
 
 		headers = headers.substring(1);
