@@ -30,7 +30,7 @@ var miczColumnsWizardPrefsUtils = {
 	},
 
 	get defaultColsListActive(){
-		this.getBoolPref(pref_defcolslist+'active');
+		return this.getBoolPref(pref_defcolslist+'active');
 	},
 
 	get firstRun() {
@@ -47,6 +47,14 @@ var miczColumnsWizardPrefsUtils = {
 
 	setCustColsIndex:function(index){
 		setCharPref(this.pref_custcols+'index',index);
+	},
+
+	getCustColsActive:function(){
+		return this.getBoolPref(this.pref_custcols+'active');
+	},
+
+	setCustColsActive:function(active){
+		setBoolPref(this.pref_custcols+'active',active);
 	},
 
 	getCustColsIndexMod:function(){

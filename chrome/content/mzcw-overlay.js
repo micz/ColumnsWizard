@@ -158,35 +158,35 @@ var miczColumnsWizard = {
 
   activateCustomDBHeader:function(newHeader){
     //dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders] "+newHeader+"\r\n");
-    //let {Services}=Components.utils.import("resource://gre/modules/Services.jsm");
-    //let currentHeaders = Services.prefs.getCharPref("mailnews.customDBHeaders");
-    let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
-    let currentHeaders = prefService.getCharPref("mailnews.customDBHeaders");
+    //let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+    //let currentHeaders = prefService.getCharPref("mailnews.customDBHeaders");
+    let currentHeaders = miczColumnsWizardPrefsUtils.getCharPref("mailnews.customDBHeaders");
     let re = new RegExp("(^| )"+newHeader+"( |$)","i");
     if (currentHeaders.search(re) < 0) {
       currentHeaders = currentHeaders + " "+newHeader;
-      prefService.setCharPref("mailnews.customDBHeaders", currentHeaders.trim());
+      miczColumnsWizardPrefsUtils.setCharPref("mailnews.customDBHeaders", currentHeaders.trim());
       //dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders->Updating] "+newHeader+"\r\n");
     }
   },
 
   deactivateCustomDBHeader:function(newHeader){
     //dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate customDBHeaders] "+newHeader+"\r\n");
-    let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
-    let currentHeaders = prefService.getCharPref("mailnews.customDBHeaders");
+    //let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
+    //let currentHeaders = prefService.getCharPref("mailnews.customDBHeaders");
+    let currentHeaders = miczColumnsWizardPrefsUtils.getCharPref("mailnews.customDBHeaders");
     let re = new RegExp("(^| )"+newHeader+"( |$)","i");
     currentHeaders=currentHeaders.replace(re," ");
-    prefService.setCharPref("mailnews.customDBHeaders", currentHeaders);
+    miczColumnsWizardPrefsUtils.setCharPref("mailnews.customDBHeaders", currentHeaders);
     //dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate customDBHeaders->Updating] "+newHeader+"\r\n");
   },
 
   showColumns: function(tab){
-    let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-    prefs = prefs.getBranch("extensions.ColumnsWizard.");
-    this.showLocation = prefs.getBoolPref("ShowLocation");
-    this.showAccount = prefs.getBoolPref("ShowAccount");
-    this.showAttachment = prefs.getBoolPref("ShowAttachment");
-    this.showRecipient = prefs.getBoolPref("ShowRecipient");
+    //let prefs = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+    //prefs = prefs.getBranch("extensions.ColumnsWizard.");
+    this.showLocation = miczColumnsWizardPrefsUtils.getBoolPref_CW("ShowLocation");
+    this.showAccount = miczColumnsWizardPrefsUtils.getBoolPref_CW("ShowAccount");
+    this.showAttachment = miczColumnsWizardPrefsUtils.getBoolPref_CW("ShowAttachment");
+    this.showRecipient = miczColumnsWizardPrefsUtils.getBoolPref_CW("ShowRecipient");
 
 	  if(tab.mode.name=='glodaList'){
 	  if(this.showLocation){ //show location column
@@ -230,9 +230,10 @@ var miczColumnsWizard = {
 					aPopup.removeChild(aPopup.childNodes[2]);
 				}
 				//check if we're using the colcw default for new folders
-				let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-				let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
-				let cw_active=prefs.getBoolPref("active");
+				//let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+				//let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
+				//let cw_active=prefs.getBoolPref("active");
+				let cw_active=miczColumnsWizardPrefsUtils.getCustColsActive();
 
 				let strBundleCW = Components.classes["@mozilla.org/intl/stringbundle;1"].getService(Components.interfaces.nsIStringBundleService);
 				let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
@@ -277,9 +278,10 @@ var miczColumnsWizard = {
 		let text_msg=_bundleCW.GetStringFromName("ColumnsWizard.saveDefault_OnClick_text");
 		if(!promptService.confirm(null,title_msg,text_msg))return;
 		let columnStates = gFolderDisplay.getColumnStates();
-		let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
-		let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
-		prefs.setCharPref("DefaultColsList",JSON.stringify(columnStates));
+		//let prefsc = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefService);
+		//let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
+		//prefs.setCharPref("DefaultColsList",JSON.stringify(columnStates));
+		miczColumnsWizardPrefsUtils.setCharPref_CW("DefaultColsList",JSON.stringify(columnStates));
 		return;
 	},
 
