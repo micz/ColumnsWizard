@@ -19,3 +19,12 @@
 <!ENTITY ColumnsWizard.sortnumber.desc_limit "La colonne personnalisée peut trier seulement les nombres qui ont moins de 3 décimales et dont l avaleur est entre -1.000.000 et 3.294.967.">
 <!ENTITY ColumnsWizard.searchable.label "peut être cherché">
 <!ENTITY ColumnsWizard.searchable.desc "Rendre possible de chercher dans la colonne personnalisée, via la barre de recherche avancée de Thunderbird.">
+<!ENTITY ColumnsWizard.CustColEditorTab.General.label "General">
+<!ENTITY ColumnsWizard.CustColEditorTab.Advanced.label "Advanced">
+<!ENTITY ColumnsWizard.mod.desc "This mail message header can be manually modified.">
+<!ENTITY ColumnsWizard.mod_type.label "Header type">
+<!ENTITY ColumnsWizard.mod_type.desc "Choose here the header type for this custom column.">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "Free text">
+<!ENTITY ColumnsWizard.mod_type_number.label "Numbers">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "Fixed list">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "Enter one value per line. Do not use the pipe &quot;|&quot; character.">
