@@ -1,8 +1,9 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
-Version 6.0.2 - ??/??/2016
--
+Version 6.0.2 - 07/06/2016
+- Added missing default preference.
+- Improved preference engine.
 ==========
 Version 6.0.1 - 30/05/2016
 - Better toolbar button positioning at first run.
