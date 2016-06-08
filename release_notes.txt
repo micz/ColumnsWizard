@@ -1,9 +1,8 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
-Version 6.0.3 - ??/??/2016
+Version 6.0.3 - 08/06/2016
 - Minor bugs fixed.
--
 ==========
 Version 6.0.2 - 07/06/2016
 - Added missing default preference.
