@@ -214,7 +214,8 @@ var miczColumnsWizard_CustCols={
 				dcurrcol.isBundled=true;
 				dcurrcol.labelString='';
 				dcurrcol.tooltipString='';
-				prefs_def.setCharPref(miczColumnsWizard_CustCols.CustColDefaultIndex[singlecolidx],JSON.stringify(dcurrcol));
+				//prefs_def.setCharPref(miczColumnsWizard_CustCols.CustColDefaultIndex[singlecolidx],JSON.stringify(dcurrcol));
+				miczColumnsWizardPrefsUtils.setCustColDef(miczColumnsWizard_CustCols.CustColDefaultIndex[singlecolidx],JSON.stringify(dcurrcol));
 			}
 		}
 	},
