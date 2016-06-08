@@ -24,9 +24,13 @@ var miczColumnsWizard_CustomColsModUtils = {
 		while (container3.firstChild) {
 			container3.removeChild(container3.firstChild);
 		}
-		
-		let arrayCustColIndexMod=JSON.parse(stringCustColIndexMod);
-		
+
+		let arrayCustColIndexMod=new Array();
+
+		if(stringCustColIndexMod!=''){
+			arrayCustColIndexMod=JSON.parse(stringCustColIndexMod);
+		}
+
 		for(let icc in arrayCustColIndexMod){
 			let cc=arrayCustColIndexMod[icc];
 			if(CustCols[cc].isEditable){
