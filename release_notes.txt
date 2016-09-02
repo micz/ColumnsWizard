@@ -1,6 +1,9 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
+Version 6.1 - ??/??/2016
+-
+==========
 Version 6.0.4 - 02/09/2016
 - License statement fixed. Now only license GPL v3.0 is valid.
 ==========
