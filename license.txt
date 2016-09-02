@@ -1,13 +1,10 @@
 LICENSE
 
-ColumnsWizard is licensed under a Creative Commons Attribution-NonCommercial 4.0 International License.
-To view a copy of this license, visit http://creativecommons.org/licenses/by-nc/4.0/.
-
-Terms:
-The Program - The ColumnsWizard Add-on (distributed as a XPI file) and all files contained within it
+The Program - The ColumnsWizard Add-on (distributed as a XPI file) and all files contained within it.
 
 All contents of The Program are subject to the GNU General Public License Version 3
 (the "License"); you may not use the file except in compliance with the License.
+To view a copy of this license, visit https://www.gnu.org/licenses/gpl-3.0.html
 
 If you plan to use large portions of the code please contact the author Mic at m@micz.it.
 
