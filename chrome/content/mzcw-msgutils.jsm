@@ -205,7 +205,7 @@ miczColumnsWizard_MsgUtils.listener = {
 		// the nsIFile has been already used by foStream (because of Windows lock system?), so we
 		// must initialize another nsIFile object, pointing to the temporary file
 		let fileSpec = Components.classes["@mozilla.org/file/local;1"]
-			.createInstance(Components.interfaces.nsILocalFile);
+			.createInstance(Components.interfaces.nsIFile);
 		fileSpec.initWithPath(tempFile.path);
 		let fol = miczColumnsWizard_MsgUtils.hdr.folder;
 		let extService = Components.classes['@mozilla.org/uriloader/external-helper-app-service;1']

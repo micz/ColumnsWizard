@@ -246,7 +246,7 @@ var miczColumnsWizardPref_CustColEditor = {
 		  }
 		};
 
-		let localFile = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
+		let localFile = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsIFile);
 		fp.displayDirectory = localFile;
 		fp.open(fpCallback);
 	},
@@ -254,7 +254,7 @@ var miczColumnsWizardPref_CustColEditor = {
 	saveIcon:function(filepath,newname){
 		if(filepath=="") return "";
 		//save the choosen icon in the user profile folder
-		let file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
+		let file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsIFile);
 		file.initWithPath(filepath);
 		try {
 			if(file){

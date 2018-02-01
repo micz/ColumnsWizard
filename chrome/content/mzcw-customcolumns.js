@@ -41,7 +41,7 @@ var miczColumnsWizard_CustCols={
     cwCol.setAttribute("label",labelString);
 
 	if((elementc.labelImagePath)&&(elementc.labelImagePath!="")){	//we have an image to use!!
-		let file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsILocalFile);
+		let file = Components.classes["@mozilla.org/file/local;1"].createInstance(Components.interfaces.nsIFile);
 		file.initWithPath(elementc.labelImagePath)
 		if((file)&&(file.exists())){
 			cwCol.setAttribute("src","file://"+elementc.labelImagePath);
