@@ -4,6 +4,7 @@
 Version 6.1 - ??/??/2018
 - Added compatibility with Thunderbird 57+.
 - Italian (it) locale improved.
+- Custom column editor window resizing fixed.
 - 
 ==========
 Version 6.0.4 - 02/09/2016
