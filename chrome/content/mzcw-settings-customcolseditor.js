@@ -118,7 +118,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						}
 
 						if(document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh)!=null){
-							newcol.dbHeader=document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh).join('').replace(':','').toLowerCase();
+							newcol.dbHeader=document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh).join('').replace(':','');//.toLowerCase();
 						}else{
 							newcol.dbHeader=document.getElementById("ColumnsWizard.dbHeader").value.toLowerCase();
 						}
