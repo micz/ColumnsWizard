@@ -1,4 +1,6 @@
 rows.general row{border:1px solid #848484;border-radius:2px;padding:1px;}
+rows.general textbox{height:2em;}
+rows.general button{height:2em;}
 .cw_field_label{word-wrap:normal;max-width:550px;}
 .cw_btn image.button-icon {display:-moz-box;max-height:16px;}
 .mod_type_radiogroup{-moz-padding-start:20px;}
