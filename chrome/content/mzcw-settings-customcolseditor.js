@@ -11,9 +11,6 @@ var miczColumnsWizardPref_CustColEditor = {
 	_sanitize_dbHeader_regex:"([\x21-\x7E2]+)",
 
 	onLoad: function(){
-		//Fixing window height
-		this.fixWinHeight();
-
 		if ("arguments" in window && window.arguments[0]){
 			let args = window.arguments[0];
 
@@ -68,6 +65,8 @@ var miczColumnsWizardPref_CustColEditor = {
 				}
 			}
 		}
+		//Fixing window height
+		this.fixWinHeight();
 		this.enableAdvancedTabContent();
 	},
 
