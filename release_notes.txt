@@ -3,6 +3,7 @@
 ==========
 Version 6.1 - ??/??/2018
 - Added compatibility with Thunderbird 57+.
+- Italian (it) locale improved.
 - 
 ==========
 Version 6.0.4 - 02/09/2016
