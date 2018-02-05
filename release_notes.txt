@@ -6,6 +6,7 @@ Version 6.1 - ??/??/2018
 - Italian (it) locale improved.
 - Custom column editor window resizing fixed.
 - Added a fixed value to custom columns height.
+- The mail header in custom column editor is no more forced to be lowercase.
 - 
 ==========
 Version 6.0.4 - 02/09/2016
