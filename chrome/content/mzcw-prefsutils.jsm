@@ -118,7 +118,6 @@ var miczColumnsWizardPrefsUtils = {
 	    ans = this.service.getBoolPref(this.pref_base + p);
 		}
 		catch(ex) {
-		  //QuickFolders.Util.logException("getBoolPref("  + p +") failed\n", ex);
 		  throw(ex);
 		}
 		return ans;
@@ -130,7 +129,6 @@ var miczColumnsWizardPrefsUtils = {
 	    ans = this.service.getBoolPref(p);
 		}
 		catch(ex) {
-		  //QuickFolders.Util.logException("getBoolPref("  + p +") failed\n", ex);
 		  //throw(ex);
 		  return false;
 		}
