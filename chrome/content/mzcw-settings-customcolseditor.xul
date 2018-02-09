@@ -56,7 +56,8 @@
 			<row>
 			<label value="&ColumnsWizard.labelString.label;"/>
 			<vbox>
-				<hbox><textbox id="ColumnsWizard.labelString" flex="1"/> <button class="cw_btn" id="ColumnsWizard.setIcon_btn" oncommand="miczColumnsWizardPref_CustColEditor.chooseIcon();" label="&ColumnsWizard.btn.setIcon_label;..." tooltiptext="&ColumnsWizard.btn.setIcon_tooltip;"/> <button id="ColumnsWizard.removeIcon_btn" label="&ColumnsWizard.btn.removeIcon_label;" tooltiptext="&ColumnsWizard.btn.setIcon_tooltip;" disabled="true" oncommand="miczColumnsWizardPref_CustColEditor.removeIconUI();"/></hbox>
+				<textbox id="ColumnsWizard.labelString" flex="1"/>
+				<hbox><button class="cw_btn" id="ColumnsWizard.setIcon_btn" oncommand="miczColumnsWizardPref_CustColEditor.chooseIcon();" label="&ColumnsWizard.btn.setIcon_label;..." tooltiptext="&ColumnsWizard.btn.setIcon_tooltip;"/> <button id="ColumnsWizard.removeIcon_btn" label="&ColumnsWizard.btn.removeIcon_label;" tooltiptext="&ColumnsWizard.btn.setIcon_tooltip;" disabled="true" oncommand="miczColumnsWizardPref_CustColEditor.removeIconUI();"/></hbox>
 				<textbox id="ColumnsWizard.iconString" hidden="true" readonly="true"/>
 				<description class="cw_field_label">&ColumnsWizard.labelString.desc;</description>
 			</vbox>
