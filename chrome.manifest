@@ -1,5 +1,6 @@
 content   columnswizard                 chrome/content/
 content   cwrl							./
+resource	columnswizard				chrome/resource/
 locale    columnswizard   en-US         chrome/locale/en-US/
 locale    columnswizard   it            chrome/locale/it/
 locale    columnswizard   de            chrome/locale/de/

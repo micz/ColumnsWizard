@@ -3,6 +3,7 @@ Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-utils.jsm");
+Components.utils.import("resource://thunderstats/miczLogger.jsm");
 
 var miczColumnsWizard = {
 
@@ -16,6 +17,9 @@ var miczColumnsWizard = {
   CustColPref:{},
 
 	init: function(){
+		
+		//miczLogger.setLogger(true,miczThunderStatsPrefs.isDebug);
+		miczLogger.setLogger(true,true);	//always debug at the moment
 
 		if(miczColumnsWizardPrefsUtils.firstRun){		//adding toolbar button at first run
 			miczColumnsWizardPrefsUtils.firstRunDone();
@@ -49,6 +53,7 @@ var miczColumnsWizard = {
 		this.initialized = true;
 		//Conversation Tab add columns - delayed
 		setTimeout(function() { miczColumnsWizard.initDelayed(); }, 750);
+		miczLogger.log("ColumnsWizard loaded...",0);
 	},
 
 	initDelayed:function(){

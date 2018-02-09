@@ -6,6 +6,10 @@
  * */
 
 Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+Components.utils.import("resource://thunderstats/miczLogger.jsm");
+Components.utils.import("resource:///modules/mailServices.js");
+Components.utils.import("resource:///modules/iteratorUtils.jsm"); // for toXPCOMArray
+
 
 var EXPORTED_SYMBOLS = ["miczColumnsWizard_MsgUtils"];
 
@@ -22,6 +26,8 @@ var miczColumnsWizard_MsgUtils = {
 	noTrash:false,
 	gDBView:null,
 	msgWindow:null,
+	mailServices:null,
+	tags:null,
 
 	init:function(messenger,msgURI,gDBView,msgWindow,win){
 		miczColumnsWizard_MsgUtils.messenger=messenger;
@@ -32,6 +38,9 @@ var miczColumnsWizard_MsgUtils = {
 		miczColumnsWizard_MsgUtils.gDBView=gDBView;
 		miczColumnsWizard_MsgUtils.msgWindow=msgWindow;
 		miczColumnsWizard_MsgUtils.win=win;
+		miczColumnsWizard_MsgUtils.mailServices=MailServices;
+		miczColumnsWizard_MsgUtils.tags=miczColumnsWizard_MsgUtils.msgHdrGetTags(miczColumnsWizard_MsgUtils.hdr)
+		miczLogger.log('miczColumnsWizard_MsgUtils.msgHdrGetTags: '+miczColumnsWizard_MsgUtils.msgHdrGetTags(miczColumnsWizard_MsgUtils.hdr));
 	},
 
 	setCurrentHeader:function(header){
@@ -90,7 +99,37 @@ var miczColumnsWizard_MsgUtils = {
 	    if(hdr.flags & 4096){
 			miczColumnsWizard_MsgUtils.folder.addMessageDispositionState(hdr,1); //set fowarded if necessary
 		}
+	    //set labels if needed
+	    //miczColumnsWizard_MsgUtils.msgHdrSetTags(hdr,miczColumnsWizard_MsgUtils.tags);
+	    miczColumnsWizard_MsgUtils.folder.addKeywordsToMessages(toXPCOMArray([hdr], Components.interfaces.nsIMutableArray),miczColumnsWizard_MsgUtils.tags.join(" "));
+	    //miczColumnsWizard_MsgUtils.hdr.setStringProperty("keywords",miczColumnsWizard_MsgUtils.tags.join(" "));
 	},
+	
+	/**
+	 * Given a msgHdr, return a list of tag objects. This function
+	 * just does the messy work of understanding how tags are
+	 * stored in nsIMsgDBHdrs.
+	 */
+	msgHdrGetTags:function(aMsgHdr){
+	  let keywords = aMsgHdr.getStringProperty("keywords");
+	  let keywordList = keywords.split(' ');
+	  miczLogger.log('miczColumnsWizard_MsgUtils.msgHdrGetTags keywords: '+keywords);
+	  miczLogger.log('miczColumnsWizard_MsgUtils.msgHdrGetTags keywordList: '+keywordList);
+	  return keywordList;
+	},
+	
+	/**
+	 * Set the tags for a given msgHdr.
+	 *
+	 * @param {nsIMsgDBHdr} aMsgHdr
+	 * @param {nsIMsgTag array} aTags
+	 */
+	/*msgHdrSetTags:function(aMsgHdr,aTags){
+	  let folder = aMsgHdr.folder;
+	  let msgHdr = toXPCOMArray([aMsgHdr], Components.interfaces.nsIMutableArray);
+	  folder.addKeywordsToMessages(msgHdr, (aTags.join(" ")));
+	  aMsgHdr.folder.msgDatabase = null;
+	}*/
 
 };
 
