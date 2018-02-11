@@ -14,6 +14,10 @@ var miczColumnsWizardPrefsUtils = {
     pref_custcols_def: "extensions.ColumnsWizard.CustCols.def.",
     pref_defcolslist: "extensions.ColumnsWizard.DefaultColsList.",
 
+    get isDebug() {
+    	return this.getBoolPref_CW("debug");
+    },
+    
 	get headersEditingActive() {
 		return this.getBoolPref_CW("CustCols.mod_active");
 	},

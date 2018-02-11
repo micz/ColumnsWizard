@@ -18,8 +18,7 @@ var miczColumnsWizard = {
 
 	init: function(){
 		
-		//miczLogger.setLogger(true,miczThunderStatsPrefs.isDebug);
-		miczLogger.setLogger(true,true);	//always debug at the moment
+		miczLogger.setLogger(true,miczColumnsWizardPrefsUtils.isDebug);
 
 		if(miczColumnsWizardPrefsUtils.firstRun){		//adding toolbar button at first run
 			miczColumnsWizardPrefsUtils.firstRunDone();

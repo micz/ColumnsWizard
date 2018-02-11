@@ -41,6 +41,9 @@
       <preference id="ColumnsWizard.MailHeader.put_original_in_trash"
         name="extensions.ColumnsWizard.MailHeader.put_original_in_trash"
         type="bool" />
+      <preference id="ColumnsWizard.debug"
+        name="extensions.ColumnsWizard.debug"
+        type="bool"/>
     <!-- Custom Columns no pref needed here, all is managed directly by javascript code -->
     </preferences>
     <tabbox id="cw_tabbox">
@@ -183,6 +186,7 @@
 				preference="ColumnsWizard.MailHeader.put_original_in_trash" />
 			<description class="mzcw-desc">&ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc;</description>
           </groupbox>
+          <checkbox id="ColumnsWizard.debug_checkbox" label="&ColumnsWizard.ActivateDebug;" preference="ColumnsWizard.debug" />
         </tabpanel>
 
         <tabpanel id="tab_info" orient="vertical">
