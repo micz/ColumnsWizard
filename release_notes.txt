@@ -9,6 +9,7 @@ Version 6.1 - ??/??/2018
 - The mail header in custom column editor is no more forced to be lowercase.
 - When editing an header the labels are preserved also with IMAP servers that don't save them.
 - Correspondents column added in the default columns settings.
+- Added a debug system.
 - 
 ==========
 Version 6.0.4 - 02/09/2016
