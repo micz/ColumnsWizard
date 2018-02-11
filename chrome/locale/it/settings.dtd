@@ -41,3 +41,4 @@
 <!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Sposta il messaggio originale nel cestino.">
 <!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Alcuni fornitori di servizi IMAP (come Gmail) non salvano i cambiamenti nelle intestazioni dei messaggi se le intestazioni principali non subiscono modifiche rispetto al messaggio originale. Per superare questo limite, il campo &quot;Data&quot; viene modificando aggiungendo un secondo all'orario del messaggio (o togliendolo se i secondi sono 59).">
 <!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "Dopo aver modificato il valore dell'intestazione selezionata, il messaggio originale viene spostato nel cestino. Questa è una misura di sicurezza contro ogni possibile comportamento anomalo che potrebbe accadere modificando le intestazioni.">
+<!ENTITY ColumnsWizard.ActivateDebug "Attiva il sistema di debug">
