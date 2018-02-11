@@ -329,9 +329,9 @@ var miczColumnsWizardPref_DefaultColsGrid = {
        		case "attachmentCol":
        		strOut = _bundleCW.GetStringFromName("ColumnsWizard.attachmentColumn.label");
        		break;
-       		/*case "correspondentCol": // NEEDS TO BE TRANSLATED SEE https://github.com/micz/ColumnsWizard/issues/54
+       		case "correspondentCol":
        		strOut = _bundleCW.GetStringFromName("ColumnsWizard.correspondentCol.label");
-       		break;*/
+       		break;
        		default:
 				let col_idx=col.replace('Col_cw','');
 				let col_el=this.loadedCustCols[col_idx];
@@ -422,8 +422,11 @@ var miczColumnsWizardPref_DefaultColsGrid = {
        		return nsMsgViewSortType.byId;
        		break;
        		case "attachmentCol":
-       		return nsMsgViewSortType.byAttachments;
-       		break;
+           	return nsMsgViewSortType.byAttachments;
+           	break;
+       		case "correspondentCol":
+           	return nsMsgViewSortType.byCorrespondent;
+           	break;
        		default:
        		//return nsMsgViewSortType.byCustom;
        		//No sorting bycustom at the moment
