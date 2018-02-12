@@ -6,7 +6,7 @@
  * */
 
 Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
-Components.utils.import("resource://thunderstats/miczLogger.jsm");
+Components.utils.import("resource://columnswizard/miczLogger.jsm");
 Components.utils.import("resource:///modules/mailServices.js");
 Components.utils.import("resource:///modules/iteratorUtils.jsm"); // for toXPCOMArray
 

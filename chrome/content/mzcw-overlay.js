@@ -3,7 +3,7 @@ Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-utils.jsm");
-Components.utils.import("resource://thunderstats/miczLogger.jsm");
+Components.utils.import("resource://columnswizard/miczLogger.jsm");
 
 var miczColumnsWizard = {
 
@@ -118,13 +118,13 @@ var miczColumnsWizard = {
 		 let sortfunc_number = function(hdr) {	//max unsigned long 4294967296-1
 									let output=hdr.getStringProperty(currcol.dbHeader)*1000;
 									output+=1000000000;
-									miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [output original] "+hdr.getStringProperty(currcol.dbHeader)+"\r\n");
-									miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [output] "+JSON.stringify(output)+"\r\n");
+									//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [output original] "+hdr.getStringProperty(currcol.dbHeader)+"\r\n");
+									//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [output] "+JSON.stringify(output)+"\r\n");
 									return output;
 			 					};
 		 let is_stringfunc = function(hdr) { return !currcol.sortnumber;};
 		 let celltextfunc = function(row,col){let hdr = gDBView.getMsgHdrAt(row);let output=hdr.getStringProperty(currcol.dbHeader);
-		 											miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [celltextfunc] "+JSON.stringify(output)+"\r\n");
+		 											//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [celltextfunc] "+JSON.stringify(output)+"\r\n");
 		 											return output;
 		 										};
 //dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [currcol] "+JSON.stringify(currcol)+"\r\n");
