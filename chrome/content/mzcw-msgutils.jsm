@@ -100,9 +100,7 @@ var miczColumnsWizard_MsgUtils = {
 			miczColumnsWizard_MsgUtils.folder.addMessageDispositionState(hdr,1); //set fowarded if necessary
 		}
 	    //set labels if needed
-	    //miczColumnsWizard_MsgUtils.msgHdrSetTags(hdr,miczColumnsWizard_MsgUtils.tags);
 	    miczColumnsWizard_MsgUtils.folder.addKeywordsToMessages(toXPCOMArray([hdr], Components.interfaces.nsIMutableArray),miczColumnsWizard_MsgUtils.tags.join(" "));
-	    //miczColumnsWizard_MsgUtils.hdr.setStringProperty("keywords",miczColumnsWizard_MsgUtils.tags.join(" "));
 	},
 	
 	/**
@@ -117,20 +115,6 @@ var miczColumnsWizard_MsgUtils = {
 	  miczLogger.log('miczColumnsWizard_MsgUtils.msgHdrGetTags keywordList: '+keywordList);
 	  return keywordList;
 	},
-	
-	/**
-	 * Set the tags for a given msgHdr.
-	 *
-	 * @param {nsIMsgDBHdr} aMsgHdr
-	 * @param {nsIMsgTag array} aTags
-	 */
-	/*msgHdrSetTags:function(aMsgHdr,aTags){
-	  let folder = aMsgHdr.folder;
-	  let msgHdr = toXPCOMArray([aMsgHdr], Components.interfaces.nsIMutableArray);
-	  folder.addKeywordsToMessages(msgHdr, (aTags.join(" ")));
-	  aMsgHdr.folder.msgDatabase = null;
-	}*/
-
 };
 
 miczColumnsWizard_MsgUtils.listener = {
