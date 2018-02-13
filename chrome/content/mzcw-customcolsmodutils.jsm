@@ -58,6 +58,7 @@ var miczColumnsWizard_CustomColsModUtils = {
 					let mpp3=doc.createElement("menupopup");
 					for(let sbi in CustCols[cc].editFixedList){
 						let subm = doc.createElement("menuitem");
+						subm.setAttribute('id',CustCols[cc].dbHeader+'_'+CustCols[cc].editFixedList[sbi]);
 						subm.setAttribute('label',CustCols[cc].editFixedList[sbi]);
 						subm.setAttribute('colidx',CustCols[cc].index);
 						subm.setAttribute('mail_header',CustCols[cc].dbHeader);

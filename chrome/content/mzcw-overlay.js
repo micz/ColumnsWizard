@@ -326,13 +326,21 @@ var miczColumnsWizard = {
 			document.getElementById("cw_edit_main_menu").setAttribute("hidden",false);
 			document.getElementById("cw_edit_context_menu").setAttribute("hidden",false);
 			document.getElementById("cw_edit_newmain_menu").setAttribute("hidden",false);
-			//dump(">>>>>>>>>>>>> miczColumnsWizard [initHeadersEditingMenu]: Menu UPDATED! \r\n");
+			miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [initHeadersEditingMenu]: Menu UPDATED! \r\n");
 		}else{
 			document.getElementById("cw_edit_main_menu").setAttribute("hidden",true);
 			document.getElementById("cw_edit_context_menu").setAttribute("hidden",true);
 			document.getElementById("cw_edit_newmain_menu").setAttribute("hidden",true);
-			//dump(">>>>>>>>>>>>> miczColumnsWizard [initHeadersEditingMenu]: Menu HIDDEN! \r\n");
+			miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [initHeadersEditingMenu]: Menu HIDDEN! \r\n");
 		}
+	},
+	
+	checkHeadersEditingMenuList:function(element){
+		/*let current_header_value=gFolderDisplay.selectedMessage.getStringProperty(CustCols[cc].dbHeader);
+		if(current_header_value==CustCols[cc].editFixedList[sbi]){
+		subm.setAttribute('checked','checked');
+		}*/
+		alert(this.lastChild.value);
 	},
 
 	editHeaderMenu_OnClick:function(event){

@@ -31,7 +31,7 @@
 <menupopup id="mailContext">
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_context_menu"
 	 class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png"
-	 insertafter="mailContext-editAsNew">
+	 insertafter="mailContext-editAsNew" onpopupshowing="miczColumnsWizard.checkHeadersEditingMenuList(this);">
 		 <observes element="mailContext-editAsNew" attribute="disabled" />
 		<menupopup id="cw_edit_context_menu_popup">
 	    </menupopup>
