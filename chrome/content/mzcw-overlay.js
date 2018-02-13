@@ -340,7 +340,9 @@ var miczColumnsWizard = {
 		if(current_header_value==CustCols[cc].editFixedList[sbi]){
 		subm.setAttribute('checked','checked');
 		}*/
-		alert(this.lastChild.value);
+		for(let sub_el of Array.from(element.children)){
+			miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList]: "+sub_el.getAttribute("label")+" \r\n");
+		}
 	},
 
 	editHeaderMenu_OnClick:function(event){
