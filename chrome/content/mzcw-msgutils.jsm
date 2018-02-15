@@ -40,7 +40,7 @@ var miczColumnsWizard_MsgUtils = {
 		miczColumnsWizard_MsgUtils.win=win;
 		miczColumnsWizard_MsgUtils.mailServices=MailServices;
 		miczColumnsWizard_MsgUtils.tags=miczColumnsWizard_MsgUtils.msgHdrGetTags(miczColumnsWizard_MsgUtils.hdr)
-		miczLogger.log('miczColumnsWizard_MsgUtils.msgHdrGetTags: '+miczColumnsWizard_MsgUtils.msgHdrGetTags(miczColumnsWizard_MsgUtils.hdr));
+		miczLogger.log('miczColumnsWizard_MsgUtils.init miczColumnsWizard_MsgUtils.msgHdrGetTags: '+miczColumnsWizard_MsgUtils.msgHdrGetTags(miczColumnsWizard_MsgUtils.hdr));
 	},
 
 	setCurrentHeader:function(header){
@@ -100,6 +100,7 @@ var miczColumnsWizard_MsgUtils = {
 			miczColumnsWizard_MsgUtils.folder.addMessageDispositionState(hdr,1); //set fowarded if necessary
 		}
 	    //set labels if needed
+	    miczLogger.log('miczColumnsWizard_MsgUtils.postActions miczColumnsWizard_MsgUtils.tags: '+miczColumnsWizard_MsgUtils.tags.join(" "));
 	    miczColumnsWizard_MsgUtils.folder.addKeywordsToMessages(toXPCOMArray([hdr], Components.interfaces.nsIMutableArray),miczColumnsWizard_MsgUtils.tags.join(" "));
 	},
 	
