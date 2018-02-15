@@ -336,12 +336,17 @@ var miczColumnsWizard = {
 	},
 	
 	checkHeadersEditingMenuList:function(element){
-		/*let current_header_value=gFolderDisplay.selectedMessage.getStringProperty(CustCols[cc].dbHeader);
-		if(current_header_value==CustCols[cc].editFixedList[sbi]){
-		subm.setAttribute('checked','checked');
-		}*/
+		let current_header=element.parentElement.getAttribute("mail_header");
+		let current_header_value=gFolderDisplay.selectedMessage.getStringProperty(current_header);
+		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList] current_header=current_header_value: "+current_header+"="+current_header_value+" \r\n");
 		for(let sub_el of Array.from(element.children)){
-			miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList]: "+sub_el.getAttribute("label")+" \r\n");
+			if(current_header_value==sub_el.getAttribute("label")){
+				sub_el.setAttribute('checked',true);
+				miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList] sub_el: "+sub_el.getAttribute("label")+" FOUND!!! \r\n");
+			}else{
+				sub_el.setAttribute('checked',false);
+				miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList] sub_el: "+sub_el.getAttribute("label")+" \r\n");
+			}
 		}
 	},
 
