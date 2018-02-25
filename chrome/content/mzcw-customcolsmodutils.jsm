@@ -51,16 +51,24 @@ var miczColumnsWizard_CustomColsModUtils = {
 				}else{	//it's a fixed list, add submenus
 					new_menu_item = doc.createElement("menu");
 					new_menu_item.setAttribute('label',CustCols[cc].labelString);
+					new_menu_item.setAttribute('colidx',CustCols[cc].index);
+					new_menu_item.setAttribute('mail_header',CustCols[cc].dbHeader);
+					new_menu_item.setAttribute('edit_type',CustCols[cc].editType);
 					new_menu_item2=new_menu_item.cloneNode(true);
 					new_menu_item3=new_menu_item.cloneNode(true);
 					let mpp=doc.createElement("menupopup");
 					let mpp2=doc.createElement("menupopup");
 					let mpp3=doc.createElement("menupopup");
+					mpp.setAttribute("onpopupshowing","miczColumnsWizard.checkHeadersEditingMenuList(this);");
+					mpp2.setAttribute("onpopupshowing","miczColumnsWizard.checkHeadersEditingMenuList(this);");
+					mpp3.setAttribute("onpopupshowing","miczColumnsWizard.checkHeadersEditingMenuList(this);");
 					for(let sbi in CustCols[cc].editFixedList){
 						let subm = doc.createElement("menuitem");
+						subm.setAttribute('id',CustCols[cc].dbHeader+'_'+CustCols[cc].editFixedList[sbi]);
 						subm.setAttribute('label',CustCols[cc].editFixedList[sbi]);
 						subm.setAttribute('colidx',CustCols[cc].index);
 						subm.setAttribute('mail_header',CustCols[cc].dbHeader);
+						subm.setAttribute('type','checkbox');
 						subm.onclick=submenu_click_callback;
 						let subm2=subm.cloneNode(true);
 						subm2.onclick=submenu_click_callback;
