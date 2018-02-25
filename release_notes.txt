@@ -10,6 +10,7 @@ Version 6.1 - ??/??/2018
 - When editing an header the labels are preserved also with IMAP servers that don't save them.
 - Correspondents column added in the default columns settings.
 - Added a debug system.
+- In editing a mail header with a fixed list, the current selected value is checked in the menu and, if selected again, it will be emptied.
 - 
 ==========
 Version 6.0.4 - 02/09/2016
