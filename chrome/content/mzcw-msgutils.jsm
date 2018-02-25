@@ -40,7 +40,7 @@ var miczColumnsWizard_MsgUtils = {
 		miczColumnsWizard_MsgUtils.win=win;
 		miczColumnsWizard_MsgUtils.mailServices=MailServices;
 		miczColumnsWizard_MsgUtils.tags=miczColumnsWizard_MsgUtils.msgHdrGetTags(miczColumnsWizard_MsgUtils.hdr)
-		miczLogger.log('miczColumnsWizard_MsgUtils.init miczColumnsWizard_MsgUtils.msgHdrGetTags: '+miczColumnsWizard_MsgUtils.msgHdrGetTags(miczColumnsWizard_MsgUtils.hdr));
+		miczLogger.log('miczColumnsWizard_MsgUtils.init miczColumnsWizard_MsgUtils.msgHdrGetTags: '+miczColumnsWizard_MsgUtils.tags);
 	},
 
 	setCurrentHeader:function(header){
@@ -91,17 +91,23 @@ var miczColumnsWizard_MsgUtils = {
 	},
 
 	postActions:function(key){
+		miczLogger.log('miczColumnsWizard_MsgUtils.postActions START');
 		miczColumnsWizard_MsgUtils.gDBView.selectMsgByKey(key); // select message with modified headers/source
 		let hdr = miczColumnsWizard_MsgUtils.folder.GetMessageHeader(key);
+		miczLogger.log('miczColumnsWizard_MsgUtils.postActions HDR DONE');
 		if(hdr.flags & 2){
 			miczColumnsWizard_MsgUtils.folder.addMessageDispositionState(hdr,0); //set replied if necessary
+			miczLogger.log('miczColumnsWizard_MsgUtils.postActions REPLIED SET');
 		}
 	    if(hdr.flags & 4096){
 			miczColumnsWizard_MsgUtils.folder.addMessageDispositionState(hdr,1); //set fowarded if necessary
+			miczLogger.log('miczColumnsWizard_MsgUtils.postActions FORWARDED SET');
 		}
 	    //set labels if needed
+	    miczLogger.log('miczColumnsWizard_MsgUtils.postActions SETTING LABELS');
 	    miczLogger.log('miczColumnsWizard_MsgUtils.postActions miczColumnsWizard_MsgUtils.tags: '+miczColumnsWizard_MsgUtils.tags.join(" "));
 	    miczColumnsWizard_MsgUtils.folder.addKeywordsToMessages(toXPCOMArray([hdr], Components.interfaces.nsIMutableArray),miczColumnsWizard_MsgUtils.tags.join(" "));
+	    miczLogger.log('miczColumnsWizard_MsgUtils.postActions LABELS SET');
 	},
 	
 	/**
@@ -273,7 +279,9 @@ miczColumnsWizard_MsgUtils.copyListener={
 	SetMessageKey:function(key){
 		// at this point, the message is already stored in local folders, but not yet in remote folders,
 		// so for remote folders we use a folderListener
+		miczLogger.log('miczColumnsWizard_MsgUtils.SetMessageKey START');
 		if (miczColumnsWizard_MsgUtils.folder.server.type == "imap" || miczColumnsWizard_MsgUtils.folder.server.type == "news") {
+			miczLogger.log('miczColumnsWizard_MsgUtils.SetMessageKey IMAP');
 			Components.classes["@mozilla.org/messenger/services/session;1"]
 					.getService(Components.interfaces.nsIMsgMailSession)
 					.AddFolderListener(miczColumnsWizard_MsgUtils.folderListener, Components.interfaces.nsIFolderListener.all);
@@ -281,18 +289,23 @@ miczColumnsWizard_MsgUtils.copyListener={
 			miczColumnsWizard_MsgUtils.folderListener.URI = miczColumnsWizard_MsgUtils.folder.URI;
 		}
 		else
+		{
+			miczLogger.log('miczColumnsWizard_MsgUtils.SetMessageKey NOT IMAP');
 			miczColumnsWizard_MsgUtils.win.setTimeout(function(){miczColumnsWizard_MsgUtils.postActions(key);},500);
+		}
 	}
 };
 
 // used just for remote folders
 miczColumnsWizard_MsgUtils.folderListener={
 	OnItemAdded:function(parentItem, item, view){
+		miczLogger.log('miczColumnsWizard_MsgUtils.folderListener.OnItemAdded START');
 		let hdr = null;
 		try{
 			hdr = item.QueryInterface(Components.interfaces.nsIMsgDBHdr);
 		}catch(e){return;}
 		if (miczColumnsWizard_MsgUtils.folderListener.key == hdr.messageKey && miczColumnsWizard_MsgUtils.folderListener.URI == hdr.folder.URI){
+			miczLogger.log('miczColumnsWizard_MsgUtils.folderListener.OnItemAdded DOING POSTACTION');
 			miczColumnsWizard_MsgUtils.postActions(miczColumnsWizard_MsgUtils.folderListener.key);
 			// we don't need anymore the folderListener
 			Components.classes["@mozilla.org/messenger/services/session;1"].getService(Components.interfaces.nsIMsgMailSession).RemoveFolderListener(miczColumnsWizard_MsgUtils.folderListener);
