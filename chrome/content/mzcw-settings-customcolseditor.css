@@ -3,3 +3,4 @@ rows.general row{border:1px solid #848484;border-radius:2px;padding:1px;}
 .cw_btn image.button-icon {display:-moz-box;max-height:16px;}
 .mod_type_radiogroup{-moz-padding-start:20px;}
 .cw_modtype_fixedlist_textbox{margin-left:40px;}
+#cw_adv_msg_header{font-weight:bold;}
