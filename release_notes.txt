@@ -11,6 +11,7 @@ Version 6.1 - ??/??/2018
 - Correspondents column added in the default columns settings.
 - Added a debug system.
 - In editing a mail header with a fixed list, the current selected value is checked in the menu and, if selected again, it will be emptied.
+- In editing a custom column, the fixed list type is now preserved.
 - 
 ==========
 Version 6.0.4 - 02/09/2016
