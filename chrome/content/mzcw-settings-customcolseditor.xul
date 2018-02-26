@@ -24,7 +24,7 @@
 <tabbox id="cw_tabbox">
   <tabs>
 	<tab label="&ColumnsWizard.CustColEditorTab.General.label;"/>
-	<tab label="&ColumnsWizard.CustColEditorTab.Advanced.label;"/>
+	<tab label="&ColumnsWizard.CustColEditorTab.Editing.label;"/>
   </tabs>
   <tabpanels>
 	<tabpanel id="custcolseditor_general" orient="vertical">
@@ -83,6 +83,12 @@
 			</vbox>
           </row>
           <row>
+          <label value="&ColumnsWizard.editable.label;"/>
+			<vbox>
+				<checkbox id="ColumnsWizard.mod2" label="&ColumnsWizard.mod.desc;" oncommand="miczColumnsWizardPref_CustColEditor.clickColumnsWizard_mod2();"/>
+			</vbox>
+          </row>
+          <row>
 			<label value="&ColumnsWizard.enabled.label;"/>
 			<vbox>
 				<checkbox id="ColumnsWizard.enabled" label="&ColumnsWizard.enabled.desc;" checked="true"/>
@@ -94,6 +100,7 @@
   </vbox>
 </tabpanel>
 	<tabpanel id="custcolseditor_advanced" orient="vertical">
+	<!-- Editing -->
 		<grid>
         <columns>
           <column/>
@@ -107,7 +114,7 @@
 			</row>
           <row>
 			<hbox>
-				<checkbox id="ColumnsWizard.mod" label="&ColumnsWizard.mod.desc;" oncommand="miczColumnsWizardPref_CustColEditor.enableAdvancedTabContent();"/>
+				<checkbox id="ColumnsWizard.mod" label="&ColumnsWizard.mod.desc;" oncommand="miczColumnsWizardPref_CustColEditor.clickColumnsWizard_mod();"/>
 			</hbox>
           </row>
           <row>

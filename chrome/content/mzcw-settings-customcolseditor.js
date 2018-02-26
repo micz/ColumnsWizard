@@ -44,7 +44,10 @@ var miczColumnsWizardPref_CustColEditor = {
 						document.getElementById("ColumnsWizard.labelString").focus();
 
 						//mod data
-						if(currcol.isEditable!==undefined)document.getElementById("ColumnsWizard.mod").setAttribute("checked",currcol.isEditable);
+						if(currcol.isEditable!==undefined){
+							document.getElementById("ColumnsWizard.mod").setAttribute("checked",currcol.isEditable);
+							document.getElementById("ColumnsWizard.mod2").setAttribute("checked",currcol.isEditable);
+						}
 						if(currcol.editType!==undefined){
 							document.getElementById("ColumnsWizard.mod_type_freetext").setAttribute("selected",currcol.editType==document.getElementById("ColumnsWizard.mod_type_freetext").value);
 							document.getElementById("ColumnsWizard.mod_type_number").setAttribute("selected",currcol.editType==document.getElementById("ColumnsWizard.mod_type_number").value);
@@ -283,6 +286,16 @@ var miczColumnsWizardPref_CustColEditor = {
 		let disabled=!document.getElementById('ColumnsWizard.mod').checked;
 		document.getElementById('ColumnsWizard.mod_type.desc').disabled=disabled;
 		document.getElementById('ColumnsWizard.mod_type_group').disabled=disabled;
+	},
+	
+	clickColumnsWizard_mod:function(){
+		document.getElementById('ColumnsWizard.mod2').checked=document.getElementById('ColumnsWizard.mod').checked;
+		miczColumnsWizardPref_CustColEditor.enableAdvancedTabContent();
+	},
+	
+	clickColumnsWizard_mod2:function(){
+		document.getElementById('ColumnsWizard.mod').checked=document.getElementById('ColumnsWizard.mod2').checked;
+		miczColumnsWizardPref_CustColEditor.enableAdvancedTabContent();
 	},
 
 	enableHeaderFixedList:function(){
