@@ -370,7 +370,7 @@ var miczColumnsWizard = {
 	},
 
 	editHeaderSubMenu_OnClick:function(event){	//Here editType is always Fixed List
-		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] colidx: "+JSON.stringify(event.target.getAttribute("colidx"))+"\r\n");
+		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] colidx: "+JSON.stringify(event.target.getAttribute("colidx")));
 		let colidx=event.target.getAttribute("colidx")
 		let mail_header=event.target.getAttribute("mail_header");
 		let header_value=event.target.getAttribute("label");
@@ -379,10 +379,15 @@ var miczColumnsWizard = {
 			header_value='';
 		}
 		let msgURI = gFolderDisplay.selectedMessageUris[0];
+		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] msgURI SELECTED");
 		miczColumnsWizard_MsgUtils.init(messenger,msgURI,gDBView,msgWindow,window);
+		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] miczColumnsWizard_MsgUtils.init DONE");
 		miczColumnsWizard_MsgUtils.setCurrentHeader(mail_header);
+		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] mail_header SET");
 		//Save the message with the new value
+		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] miczColumnsWizard_MsgUtils.saveMsg CALLING");
 		miczColumnsWizard_MsgUtils.saveMsg(header_value,msgURI,miczColumnsWizard_MsgUtils.listener);
+		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] miczColumnsWizard_MsgUtils.saveMsg DONE");
 	},
 
 	updateHeaderEditingMenuObserver:function(ObserverService){
