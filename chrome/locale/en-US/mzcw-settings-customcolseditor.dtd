@@ -20,7 +20,7 @@
 <!ENTITY ColumnsWizard.searchable.label "Is Searchable">
 <!ENTITY ColumnsWizard.searchable.desc "Make this custom column searchable in the Thunderbird's advanced search window.">
 <!ENTITY ColumnsWizard.CustColEditorTab.General.label "General">
-<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "Mail Header Editing">
+<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "Mail Header Editor">
 <!ENTITY ColumnsWizard.editable.label "Is Editable">
 <!ENTITY ColumnsWizard.mod.desc "This mail message header can be manually modified.">
 <!ENTITY ColumnsWizard.mod_type.label "Header type">
