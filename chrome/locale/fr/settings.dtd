@@ -33,3 +33,12 @@
 <!ENTITY ColumnsWizard.CustColsList.tooltip "Infobulle">
 <!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Activé">
 <!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "On peut y chercher">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "Activer l'édition d'en-tête de mail">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.desc "Cette option sera cochée automatiquement">
+<!ENTITY ColumnsWizard.TabAdvanced.label "Avancées">
+<!ENTITY ColumnsWizard.MailHeaderGroupbox.label "Options de l'édition d'en-têtes">
+<!ENTITY ColumnsWizard.MailHeader.use_imap_fix_checkbox.label "Rendre obligatoires les changements quand vous utilisez des comptes IMAP.">
+<!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Mettre le message original dans le dossier corbeille">
+<!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Certains fournisseurs d'IMAP (tels que Gmail) n'enregistrent pas les changements du message source si les principaux en-têtes ne sont pas différents d'un message existant. Pour outrepasser cette limitation, le champ &quot;Date&quot; est modifié en ajoutant une seconde au temps (ou en diminuant d'une seconde si le nombre des secondes est 59).">
+<!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "Après avoir modifié la valeur de l'en-tête sélectionné, le message original est envoyé à la corbeille. Il s'agit d'une mesure de sécurité pour empêcher qu'une comportement bizarre puisse survenir à la modification des en-têtes.">
+<!ENTITY ColumnsWizard.ActivateDebug "Activer le système de débogage.">

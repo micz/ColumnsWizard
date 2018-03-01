@@ -1,0 +1,3 @@
+<!ENTITY ColumnsWizard.mailheader-editor.title "Éditeur d'en-tête de mail">
+<!ENTITY ColumnsWizard.MHE.Desc.label "Saisissez ici la valeur numérique du message pour l'en-tête du mail">
+<!ENTITY ColumnsWizard.MHE.OnlyNumber.label "Seulement une valeur numérique.">
