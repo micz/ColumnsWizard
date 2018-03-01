@@ -363,9 +363,13 @@ var miczColumnsWizard = {
 		//Open value editor
 		let args = {"action":"change","value":header_value,"edit_type":edit_type};
 		window.openDialog("chrome://columnswizard/content/mzcw-mailheader-editor.xul", "MailHeaderEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
-		if (("save" in args && args.save)&& ("value" in args && args.value)){
+		if("save" in args && args.save){
+			let output_value='';
+			if("value" in args && args.value){
+				output_value=args.value;
+			}
 			//Save the message with the new value
-			miczColumnsWizard_MsgUtils.saveMsg(args.value,msgURI,miczColumnsWizard_MsgUtils.listener);
+			miczColumnsWizard_MsgUtils.saveMsg(output_value,msgURI,miczColumnsWizard_MsgUtils.listener);
 		}
 	},
 
