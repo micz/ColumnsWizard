@@ -41,3 +41,4 @@
 <!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Oorspronkelijk bericht verwijderen.">
 <!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Sommige IMAP-mappen (zoals GMail) registreren wijzigingen in de berichtbron niet als de hoofdheaders niet afwijken van een bestaand bericht. Om dit te omzeilen wordt het veld ‘datum’ aangepast door een seconde aan de tijd toe te voegen (of te verlagen als het aantal seconden 59 bedraagt).">
 <!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "Na wijziging van de geselecteerde headerwaarde wordt het oorspronkelijke bericht verwijderd. Dit is een beveiligingsmaatregel tegen vreemd gedrag dat kan optreden bij het wijzigen van headers.">
+<!ENTITY ColumnsWizard.ActivateDebug "Het foutopsporingssysteem activeren.">

@@ -20,7 +20,8 @@
 <!ENTITY ColumnsWizard.searchable.label "Is doorzoekbaar">
 <!ENTITY ColumnsWizard.searchable.desc "Maak deze aangepaste kolom doorzoekbaar in het geavanceerde zoekvenster van Thunderbird.">
 <!ENTITY ColumnsWizard.CustColEditorTab.General.label "Algemeen">
-<!ENTITY ColumnsWizard.CustColEditorTab.Advanced.label "Geavanceerd">
+<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "Bewerking e-mailheader">
+<!ENTITY ColumnsWizard.editable.label "is bewerkbaar">
 <!ENTITY ColumnsWizard.mod.desc "Deze berichtheader kan handmatig worden aangepast.">
 <!ENTITY ColumnsWizard.mod_type.label "Headertype">
 <!ENTITY ColumnsWizard.mod_type.desc "Kies hier het headertype voor deze aangepaste kolom.">
