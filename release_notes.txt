@@ -14,6 +14,7 @@ Version 6.1 - ??/??/2018
 - In editing a custom column, the fixed list type is now preserved.
 - Mail header editing UI improved. 
 - French (fr) locale updated.
+- Dutch (nl) locale updated.
 - 
 ==========
 Version 6.0.4 - 02/09/2016
