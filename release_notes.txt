@@ -15,7 +15,7 @@ Version 6.1 - ??/??/2018
 - Mail header editing UI improved. 
 - French (fr) locale updated.
 - Dutch (nl) locale updated.
-- 
+- German (de) locale updated.
 ==========
 Version 6.0.4 - 02/09/2016
 - License statement fixed. Now only license GPL v3.0 is valid.
