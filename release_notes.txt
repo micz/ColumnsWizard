@@ -1,7 +1,7 @@
 -= ColumnsWizard Thunderbird Addon Release Notes =-
 
 ==========
-Version 6.1 - ??/??/2018
+Version 6.1 - 12/03/2018
 - Added compatibility with Thunderbird 57+.
 - Italian (it) locale improved.
 - Custom column editor window resizing fixed.
