@@ -20,8 +20,6 @@
 <!ENTITY ColumnsWizard.searchable.label "是否可搜索">
 <!ENTITY ColumnsWizard.searchable.desc "使这个自定义列可以在 Thunderbird 的高级搜索窗口中搜索。">
 <!ENTITY ColumnsWizard.CustColEditorTab.General.label "常规">
-<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "Mail Header Editor">
-<!ENTITY ColumnsWizard.editable.label "Is Editable">
 <!ENTITY ColumnsWizard.mod.desc "此邮件的信息头可以手动修改。">
 <!ENTITY ColumnsWizard.mod_type.label "头类型">
 <!ENTITY ColumnsWizard.mod_type.desc "在这里选择此自定义列的头类型。">
