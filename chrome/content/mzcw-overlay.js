@@ -326,32 +326,32 @@ var miczColumnsWizard = {
 			document.getElementById("cw_edit_main_menu").setAttribute("hidden",false);
 			document.getElementById("cw_edit_context_menu").setAttribute("hidden",false);
 			document.getElementById("cw_edit_newmain_menu").setAttribute("hidden",false);
-			miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [initHeadersEditingMenu]: Menu UPDATED! \r\n");
+			//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [initHeadersEditingMenu]: Menu UPDATED! \r\n");
 		}else{
 			document.getElementById("cw_edit_main_menu").setAttribute("hidden",true);
 			document.getElementById("cw_edit_context_menu").setAttribute("hidden",true);
 			document.getElementById("cw_edit_newmain_menu").setAttribute("hidden",true);
-			miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [initHeadersEditingMenu]: Menu HIDDEN! \r\n");
+			//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [initHeadersEditingMenu]: Menu HIDDEN! \r\n");
 		}
 	},
 	
 	checkHeadersEditingMenuList:function(element){
 		let current_header=element.parentElement.getAttribute("mail_header");
 		let current_header_value=gFolderDisplay.selectedMessage.getStringProperty(current_header);
-		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList] current_header=current_header_value: "+current_header+"="+current_header_value+" \r\n");
+		//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList] current_header=current_header_value: "+current_header+"="+current_header_value+" \r\n");
 		for(let sub_el of Array.from(element.children)){
 			if(current_header_value==sub_el.getAttribute("label")){
 				sub_el.setAttribute('checked',true);
-				miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList] sub_el: "+sub_el.getAttribute("label")+" FOUND!!! \r\n");
+				//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList] sub_el: "+sub_el.getAttribute("label")+" FOUND!!! \r\n");
 			}else{
 				sub_el.setAttribute('checked',false);
-				miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList] sub_el: "+sub_el.getAttribute("label")+" \r\n");
+				//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList] sub_el: "+sub_el.getAttribute("label")+" \r\n");
 			}
 		}
 	},
 
 	editHeaderMenu_OnClick:function(event){
-		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderMenu_OnClick] colidx: "+JSON.stringify(event.target.getAttribute("colidx"))+"\r\n");
+		//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderMenu_OnClick] colidx: "+JSON.stringify(event.target.getAttribute("colidx"))+"\r\n");
 		let colidx=event.target.getAttribute("colidx")
 		let mail_header=event.target.getAttribute("mail_header");
 		let edit_type=event.target.getAttribute("edit_type");
@@ -374,7 +374,7 @@ var miczColumnsWizard = {
 	},
 
 	editHeaderSubMenu_OnClick:function(event){	//Here editType is always Fixed List
-		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] colidx: "+JSON.stringify(event.target.getAttribute("colidx")));
+		//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] colidx: "+JSON.stringify(event.target.getAttribute("colidx")));
 		let colidx=event.target.getAttribute("colidx")
 		let mail_header=event.target.getAttribute("mail_header");
 		let header_value=event.target.getAttribute("label");
@@ -383,15 +383,15 @@ var miczColumnsWizard = {
 			header_value='';
 		}
 		let msgURI = gFolderDisplay.selectedMessageUris[0];
-		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] msgURI SELECTED");
+		//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] msgURI SELECTED");
 		miczColumnsWizard_MsgUtils.init(messenger,msgURI,gDBView,msgWindow,window);
-		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] miczColumnsWizard_MsgUtils.init DONE");
+		//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] miczColumnsWizard_MsgUtils.init DONE");
 		miczColumnsWizard_MsgUtils.setCurrentHeader(mail_header);
-		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] mail_header SET");
+		//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] mail_header SET");
 		//Save the message with the new value
-		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] miczColumnsWizard_MsgUtils.saveMsg CALLING");
+		//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] miczColumnsWizard_MsgUtils.saveMsg CALLING");
 		miczColumnsWizard_MsgUtils.saveMsg(header_value,msgURI,miczColumnsWizard_MsgUtils.listener);
-		miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] miczColumnsWizard_MsgUtils.saveMsg DONE");
+		//miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] miczColumnsWizard_MsgUtils.saveMsg DONE");
 	},
 
 	updateHeaderEditingMenuObserver:function(ObserverService){
