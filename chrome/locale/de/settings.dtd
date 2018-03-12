@@ -41,3 +41,4 @@
 <!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Originale Email löschen.">
 <!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Manche IMAP Mail-hosts (z.B. Gmail) erkennen Änderungen in der Email nicht, wenn die Standardkopfzeilen sich nicht unterscheiden. Um dieses Problem zu umgehen, wird das &quot;Datum&quot; Feld durch Addition einer Sekunde (oder Subtraktion bei 59 Sekunden) verändert.">
 <!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "Nach Verändern der Kopfzeile wird die Original-Mail in den Papierkorb verschoben. Dies ist eine Sicherheitsmassnahme gegen unvorhergesehenes Verhalten beim Modifizieren.">
+<!ENTITY ColumnsWizard.ActivateDebug "Debug Modus aktivieren.">

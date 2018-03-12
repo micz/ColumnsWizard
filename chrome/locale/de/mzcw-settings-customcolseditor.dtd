@@ -20,7 +20,8 @@
 <!ENTITY ColumnsWizard.searchable.label "Durchsuchbar">
 <!ENTITY ColumnsWizard.searchable.desc "Dieses Feld im Dialog zur Nachrichtensuche einbeziehen.">
 <!ENTITY ColumnsWizard.CustColEditorTab.General.label "Allgemein">
-<!ENTITY ColumnsWizard.CustColEditorTab.Advanced.label "Erweitert">
+<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "Email Header editieren">
+<!ENTITY ColumnsWizard.editable.label "Kann editiert werden">
 <!ENTITY ColumnsWizard.mod.desc "Dieser mail header kann manuell verändert werden.">
 <!ENTITY ColumnsWizard.mod_type.label "Datentyp">
 <!ENTITY ColumnsWizard.mod_type.desc "Datentyp für Spezialspalte auswählen.">
