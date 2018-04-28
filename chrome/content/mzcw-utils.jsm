@@ -5,7 +5,7 @@ let EXPORTED_SYMBOLS = ["miczColumnsWizardUtils"];
 
 var miczColumnsWizardUtils = {
 
-	Services:Components.utils.import("resource://gre/modules/Services.jsm"),
+	Services:ChromeUtils.import("resource://gre/modules/Services.jsm"),
 	mHost:null,
 
 	get HostSystem(){

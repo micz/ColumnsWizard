@@ -1,9 +1,9 @@
 "use strict";
-Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
-Components.utils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
-Components.utils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
-Components.utils.import("chrome://columnswizard/content/mzcw-utils.jsm");
-Components.utils.import("resource://columnswizard/miczLogger.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-utils.jsm");
+ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
 
 var miczColumnsWizard = {
 

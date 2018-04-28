@@ -1,8 +1,8 @@
 "use strict";
-Components.utils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
-Components.utils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
-Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
-Components.utils.import("resource://gre/modules/osfile.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+ChromeUtils.import("resource://gre/modules/osfile.jsm");
 
 var miczColumnsWizard={};
 var miczColumnsWizardPref_CustColEditor = {

@@ -1,5 +1,5 @@
 "use strict";
-Components.utils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
 
 var miczColumnsWizard={};
 var miczColumnsWizard_MailHeaderEditor = {

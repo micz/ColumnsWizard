@@ -1,6 +1,6 @@
 "use strict";
-Components.utils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
-Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
 miczColumnsWizard.FolderListener={
 

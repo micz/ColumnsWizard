@@ -1,6 +1,6 @@
 "use strict";
 //var EXPORTED_SYMBOLS = ["miczColumnsWizard_CustCols"];
-Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
 var miczColumnsWizard_CustCols={
 
@@ -343,7 +343,7 @@ var miczColumnsWizard_CustCols={
 	deactivateCustomHeaderSearchable:function(newHeader){
 		//dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate CustomHeaderSearchable] "+newHeader+"\r\n");
 		//let prefService = Components.classes["@mozilla.org/preferences-service;1"].getService(Components.interfaces.nsIPrefBranch);
-		//let {Services}=Components.utils.import("resource://gre/modules/Services.jsm");
+		//let {Services}=ChromeUtils.import("resource://gre/modules/Services.jsm");
 		//let currentHeaders = Services.prefs.getCharPref("mailnews.customHeaders");
 		//let currentHeaders = prefService.getCharPref("mailnews.customHeaders");
 		let currentHeaders = miczColumnsWizardPrefsUtils.getCharPref("mailnews.customHeaders");

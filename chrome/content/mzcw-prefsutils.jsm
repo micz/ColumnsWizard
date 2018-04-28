@@ -3,7 +3,7 @@
  *
  * */
 "use strict";
-Components.utils.import("resource://gre/modules/Services.jsm");
+ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 let EXPORTED_SYMBOLS = ["miczColumnsWizardPrefsUtils"];
 

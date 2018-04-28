@@ -1,6 +1,6 @@
 "use strict";
-Components.utils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
-Components.utils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
 Components.utils.importGlobalProperties(["XMLHttpRequest"]);
 
 var miczColumnsWizard=window.opener.miczColumnsWizard;

@@ -1,5 +1,5 @@
 "use strict";
-Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
 var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_DefaultColsGrid"];
 

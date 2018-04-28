@@ -5,10 +5,10 @@
  * made by Paolo "Kaosmos".
  * */
 
-Components.utils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
-Components.utils.import("resource://columnswizard/miczLogger.jsm");
-Components.utils.import("resource:///modules/mailServices.js");
-Components.utils.import("resource:///modules/iteratorUtils.jsm"); // for toXPCOMArray
+ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
+ChromeUtils.import("resource:///modules/mailServices.js");
+ChromeUtils.import("resource:///modules/iteratorUtils.jsm"); // for toXPCOMArray
 
 
 var EXPORTED_SYMBOLS = ["miczColumnsWizard_MsgUtils"];
