@@ -1,6 +1,7 @@
 "use strict";
 Components.utils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
 Components.utils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
+Components.utils.importGlobalProperties(["XMLHttpRequest"]);
 
 var miczColumnsWizard=window.opener.miczColumnsWizard;
 var miczColumnsWizardPref = {
@@ -140,17 +141,13 @@ var miczColumnsWizardPref = {
 				url ="chrome://cwrl/content/license.txt";
 				break;
 		 }
-		let request = Components.classes["@mozilla.org/xmlextras/xmlhttprequest;1"].createInstance(Components.interfaces.nsIXMLHttpRequest);
-		request.onload = function(aEvent) {
+		let request = new XMLHttpRequest();
+		request.responseType="text";
+		request.addEventListener("load", function() {
 			let relnotes = document.getElementById('mzcw-release-notes');
-			relnotes.value= aEvent.target.responseText;
-		};
-		request.onerror = function(aEvent) {
-		   //
-		};
-
-		request.open("GET", url, true);
-		request.responseType = "text";
-		request.send(null);
+			relnotes.value= this.responseText;
+		});
+		request.open("GET", url);
+		request.send();
 	},
 };
