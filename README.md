@@ -40,7 +40,7 @@ Notes :
 - A ``manifest.json`` file is also introduced for testing in TB60+.
 
 ## Issues & Questions
-Post any issues or questions for ColumnsWizard under [Issues](https://github.com/cleidigh/ColumnsWizard/issues)
+Post any issues or questions for ColumnsWizard under [Issues](https://github.com/micz/ColumnsWizard/issues)
 
 ## Changelog
 ColumnsWizard's changes are logged [here](CHANGELOG.md).
