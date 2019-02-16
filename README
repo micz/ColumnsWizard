@@ -1,8 +1,0 @@
-This is a Thunderbird addon that adds some magic to the folder list columns.
-With this addon you can:
-  * Add a custom column directly from the addon preference window to show any mail header you want.
-  * Define the default columns settings for any new folder.
-  * Show hidden columns in the Conversation Tab and in the search window.
-  * Edit a mail header value for a single message.
-
-More info on the homepage: http://micz.it/thunderdbird-addon-columnswizard/
