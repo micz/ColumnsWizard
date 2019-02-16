@@ -1,0 +1,18 @@
+{
+	"manifest_version": 2,
+	"name": "ColumnsWizard",
+	"version": "6.1.1-beta1",
+	"description": "",
+	"author": "Mic (m@micz.it), Christopher Leidigh",
+	"applications": {
+		"gecko": {
+			"id": "columnswizard@micz.it"
+		}
+	},
+	"legacy": {
+		"options": {
+			"page": "chrome://columnswizard/content/mzcw-settings.xul",
+			"open_in_tab": false
+		}
+	}
+}

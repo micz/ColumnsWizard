@@ -6,7 +6,7 @@
 		{
 			"label": "Build TB Extension",
 			"type": "shell",
-			"command": ".\\scripts\\build-60-65-xpi.bat",
+			"command": ".\\scripts\\build-xpi.bat",
 			"group": {
 				"kind": "build",
 				"isDefault": true
