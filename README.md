@@ -16,6 +16,7 @@ Update for TB60 in progress...
 ![ColumnsWizard_tb_version](https://img.shields.io/badge/version-v6.1-blue.png?label=Thunderbird%20Add-On)
 ![Thunderbird_version](https://img.shields.io/badge/version-v38.0_--_58.*-blue.png?label=Thunderbird)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-red.png)](./LICENSE)
+![Release Status](https://img.shields.io/badge/Release%20Status-v6.2%20In%20Progress-brightgreen.png)
 #
 
 ## ColumnsWizard Add-On Installation
@@ -29,14 +30,15 @@ Install XPI directly:
 - Within Thunderbird ``Tools\Add-ons`` click the gear icon and choose ``Install Add-ons From File..``
 - Choose XPI file, install and reload.
 
-## XPI Add-On Package Build instructions
+## XPI Add-On Package Build instructions (WIP)
 
-1. Make sure that you have [jpm](https://developer.mozilla.org/en-US/Add-ons/SDK/Tools/jpm#Installation) tool installed.
+1. Have Node, npm, 7zip-min archiver installed and in PATH (used globally)
 2. Open a terminal in the repository root dir
-3. Run ``./scripts/build-xpi.bat`` to make the xpi
+3. Using root level package.json and npm scripts now
+4. Run ``npm run build-xpi-bat`` to make the xpi
 
 Notes : 
-- ``jpm xpi`` adds ``bootstrap.js`` to the src directory, this is deleted as a post-build step: 
+- ``install.rdf`` is used for TB60.*
 - A ``manifest.json`` file is also introduced for testing in TB60+.
 
 ## Issues & Questions
@@ -46,5 +48,13 @@ Post any issues or questions for ColumnsWizard under [Issues](https://github.com
 ColumnsWizard's changes are logged [here](CHANGELOG.md).
 
 ## Credits
-Original Author: [Micz](https://addons.thunderbird.net/en-US/thunderbird/user/Micz/ "Micz")
+Original Author: [Micz](https://addons.thunderbird.net/en-US/thunderbird/user/Micz/ "Micz")  
+Contributing Author: [cleidigh](https://addons.thunderbird.net/en-US/thunderbird/user/cleidigh/ "Cleidigh")
 
+Locale Translations:
+
+- English (en-US)	: Micz (m@micz.it)
+- Italian (it)		: Micz (m@micz.it)
+- French (fr)		: Goofy
+- German (de)		: Axel Grude
+- Chinese (zh-CN) : yfdyh000
