@@ -16,7 +16,7 @@ Update for TB60 in progress...
 ![ColumnsWizard_tb_version](https://img.shields.io/badge/version-v6.1-blue.png?label=Thunderbird%20Add-On)
 ![Thunderbird_version](https://img.shields.io/badge/version-v38.0_--_58.*-blue.png?label=Thunderbird)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-red.png)](./LICENSE)
-![Release Status](https://img.shields.io/badge/Release%20Status-v6.2%20In%20Progress-brightgreen.png)
+![Release Status](https://img.shields.io/badge/Release%20Status-v6.1.1%20In%20Progress-brightgreen.png)
 #
 
 ## ColumnsWizard Add-On Installation
