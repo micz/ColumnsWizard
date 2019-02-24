@@ -1,0 +1,26 @@
+{
+	"title": "ColumnsWizard",
+	"name": "columnswizard",
+	"version": "6.1.2-beta1",
+	"description": "Adds some magic to the folder list columns! You can add a custom column directly from the addon preference window to show any mail header you want, define the default columns settings for any new folder and show hidden columns in the Conversation Tab and in the search window.",
+	"main": "./chrome/content/mzcw-overlay.js",
+	"author": "Micz, Christopher Leidigh",
+	"engines": {
+		"": ">=38.0a1"
+	},
+	"license": "GPLv3",
+	"config": {
+		"source_dir": "./src",
+		"target_dir": "./xpi",
+		"target_suffix": "-tb",
+		"target_extension": ".xpi",
+		"target_include_manifest": "true"
+	},
+	"scripts": {
+		"build-xpi-bat": ".\\scripts\\build-xpi.bat",
+		"build-xpi": "node ./scripts/build-xpi.js"
+	},
+	"keywords": [
+		"jetpack"
+	]
+}
