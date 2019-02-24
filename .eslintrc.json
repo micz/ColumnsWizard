@@ -1,0 +1,32 @@
+{
+	"env": {
+		"browser": true,
+		"es6": true,
+		"commonjs": true
+	  },
+	
+	"overrides": [
+		{
+			"files": "./src/chrome/content/*.js"
+		}
+	],
+	"plugins": [
+		"deprecate"
+],
+
+
+"rules": {
+"no-unused-vars":"error",
+"spaced-comment": [2,"always"],
+"semi":"error",
+
+"no-restricted-properties": [2, {
+	"property": "nsIStringBundleService"
+}],
+
+"deprecate/function": ["error",
+	{"name": "createBundle",
+	 "use": "Replace with Services.createBundle"}
+	]
+}
+}
