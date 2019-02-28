@@ -3,21 +3,22 @@
  *
  * */
 "use strict";
-ChromeUtils.import("resource://gre/modules/Services.jsm");
+
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 let EXPORTED_SYMBOLS = ["miczColumnsWizardPrefsUtils"];
 
 var miczColumnsWizardPrefsUtils = {
 	service: Services.prefs,
-	pref_base:'extensions.ColumnsWizard.',
+	pref_base: 'extensions.ColumnsWizard.',
 	pref_custcols: "extensions.ColumnsWizard.CustCols.",
-    pref_custcols_def: "extensions.ColumnsWizard.CustCols.def.",
-    pref_defcolslist: "extensions.ColumnsWizard.DefaultColsList.",
+	pref_custcols_def: "extensions.ColumnsWizard.CustCols.def.",
+	pref_defcolslist: "extensions.ColumnsWizard.DefaultColsList.",
 
-    get isDebug() {
-    	return this.getBoolPref_CW("debug");
-    },
-    
+	get isDebug() {
+		return this.getBoolPref_CW("debug");
+	},
+
 	get headersEditingActive() {
 		return this.getBoolPref_CW("CustCols.mod_active");
 	},
@@ -34,107 +35,103 @@ var miczColumnsWizardPrefsUtils = {
 		return this.getBoolPref_CW("MailHeader.put_original_in_trash");
 	},
 
-	get defaultColsListActive(){
-		return this.getBoolPref(this.pref_defcolslist+'active');
+	get defaultColsListActive() {
+		return this.getBoolPref(this.pref_defcolslist + 'active');
 	},
 
 	get firstRun() {
 		return this.getBoolPref_CW("firstRun");
 	},
 
-	firstRunDone:function(){
-		this.setBoolPref_CW('firstRun',false);
+	firstRunDone: function () {
+		this.setBoolPref_CW('firstRun', false);
 	},
 
-	getCustColsIndex:function(){
-		return this.getCharPref(this.pref_custcols+'index');
+	getCustColsIndex: function () {
+		return this.getCharPref(this.pref_custcols + 'index');
 	},
 
-	setCustColsIndex:function(index){
-		this.setCharPref(this.pref_custcols+'index',index);
+	setCustColsIndex: function (index) {
+		this.setCharPref(this.pref_custcols + 'index', index);
 	},
 
-	getCustColsActive:function(){
-		return this.getBoolPref(this.pref_custcols+'active');
+	getCustColsActive: function () {
+		return this.getBoolPref(this.pref_custcols + 'active');
 	},
 
-	setCustColsActive:function(active){
-		this.setBoolPref(this.pref_custcols+'active',active);
+	setCustColsActive: function (active) {
+		this.setBoolPref(this.pref_custcols + 'active', active);
 	},
 
-	getCustColsIndexMod:function(){
-		return this.getCharPref(this.pref_custcols+'index_mod');
+	getCustColsIndexMod: function () {
+		return this.getCharPref(this.pref_custcols + 'index_mod');
 	},
 
-	setCustColsIndexMod:function(index){
-		this.setCharPref(this.pref_custcols+'index_mod',index);
+	setCustColsIndexMod: function (index) {
+		this.setCharPref(this.pref_custcols + 'index_mod', index);
 	},
 
-	getCustColsModActive:function(){
-		return this.getBoolPref(this.pref_custcols+'mod_active');
+	getCustColsModActive: function () {
+		return this.getBoolPref(this.pref_custcols + 'mod_active');
 	},
 
-	setCustColsModActive:function(mod_active){
-		this.setBoolPref(this.pref_custcols+'mod_active',mod_active);
+	setCustColsModActive: function (mod_active) {
+		this.setBoolPref(this.pref_custcols + 'mod_active', mod_active);
 	},
 
-	getCustColDef:function(custcol){
-		return this.getCharPref(this.pref_custcols_def+custcol);
+	getCustColDef: function (custcol) {
+		return this.getCharPref(this.pref_custcols_def + custcol);
 	},
 
-	setCustColDef:function(custcol,value){
-		this.setCharPref(this.pref_custcols_def+custcol,value);
+	setCustColDef: function (custcol, value) {
+		this.setCharPref(this.pref_custcols_def + custcol, value);
 	},
 
-	getCustColBool:function(custcol){
-		return this.getBoolPref(this.pref_custcols+custcol);
+	getCustColBool: function (custcol) {
+		return this.getBoolPref(this.pref_custcols + custcol);
 	},
 
-	setCustColBool:function(custcol,value){
-		this.setBoolPref(this.pref_custcols+custcol,value);
+	setCustColBool: function (custcol, value) {
+		this.setBoolPref(this.pref_custcols + custcol, value);
 	},
 
 	existsCharPref: function existsCharPref(pref) {
 		try {
-			if(this.service.prefHasUserValue(pref))
+			if (this.service.prefHasUserValue(pref))
 				return true;
 			if (this.service.getCharPref(pref))
 				return true;
-		}
-		catch (e) {return false; }
+		} catch (e) { return false; }
 		return false;
 	},
 
 	existsBoolPref: function existsBoolPref(pref) {
 		try {
-			if(this.service.prefHasUserValue(pref))
+			if (this.service.prefHasUserValue(pref))
 				return true;
 			if (this.service.getBoolPref(pref))
 				return true;
-		}
-		catch (e) {return false; }
+		} catch (e) { return false; }
 		return false;
 	},
 
 	getBoolPref_CW: function getBoolPref_CW(p) {
-	  let ans;
-	  try {
-	    ans = this.service.getBoolPref(this.pref_base + p);
-		}
-		catch(ex) {
-		  throw(ex);
+		let ans;
+		try {
+			ans = this.service.getBoolPref(this.pref_base + p);
+		} catch (ex) {
+			throw (ex);
 		}
 		return ans;
 	},
 
 	getBoolPref: function getBoolPref(p) {
-	  let ans;
-	  try {
-	    ans = this.service.getBoolPref(p);
-		}
-		catch(ex) {
-		  //throw(ex);
-		  return false;
+		let ans;
+		try {
+			ans = this.service.getBoolPref(p);
+		} catch (ex) {
+			// throw(ex);
+			return false;
 		}
 		return ans;
 	},
@@ -179,4 +176,4 @@ var miczColumnsWizardPrefsUtils = {
 		return this.service.setIntPref(p, v);
 	},
 
-}
+};
