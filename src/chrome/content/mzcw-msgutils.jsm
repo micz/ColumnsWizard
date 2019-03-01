@@ -106,6 +106,7 @@ var miczColumnsWizard_MsgUtils = {
 		// set labels if needed
 		// miczLogger.log('miczColumnsWizard_MsgUtils.postActions SETTING LABELS');
 		// miczLogger.log('miczColumnsWizard_MsgUtils.postActions miczColumnsWizard_MsgUtils.tags: '+miczColumnsWizard_MsgUtils.tags.join(" "));
+		// Check
 		miczColumnsWizard_MsgUtils.folder.addKeywordsToMessages(toXPCOMArray([hdr], Ci.nsIMutableArray), miczColumnsWizard_MsgUtils.tags.join(" "));
 		// miczLogger.log('miczColumnsWizard_MsgUtils.postActions LABELS SET');
 	},

@@ -97,7 +97,8 @@ var miczColumnsWizard_CustCols = {
 
 	removeCustomColumn: function (coltype, ObserverService) {
 		let element = document.getElementById(coltype + "Col_cw");
-		if (element) element.parentNode.removeChild(element);
+		// Check
+		if (element) element.remove();
 
 		// dump(">>>>>>>>>>>>> miczColumnsWizard->removeCustomColumn: [coltype] "+coltype+"\r\n");
 		// DbObserver Managing
@@ -144,7 +145,7 @@ var miczColumnsWizard_CustCols = {
 
 	checkCustColDefaultIndex: function (curr_idx) {
 		for (let idx in miczColumnsWizard_CustCols.CustColDefaultIndex) {
-			if (curr_idx.indexOf(miczColumnsWizard_CustCols.CustColDefaultIndex[idx]) === -1) {
+			if ( !curr_idx.includes(miczColumnsWizard_CustCols.CustColDefaultIndex[idx])) {
 				curr_idx.push(miczColumnsWizard_CustCols.CustColDefaultIndex[idx]);
 			}
 		}
@@ -250,7 +251,7 @@ var miczColumnsWizard_CustCols = {
 			CustColIndex = miczColumnsWizard_CustCols.checkCustColDefaultIndex(JSON.parse(CustColIndexStr));
 		}
 		// Add new element to index and save it
-		if (CustColIndex.indexOf(index) === -1) {
+		if (!CustColIndex.includes(index)) {
 			CustColIndex.push(index);
 		}
 		// prefs.setCharPref("index",JSON.stringify(CustColIndex));
@@ -333,7 +334,7 @@ var miczColumnsWizard_CustCols = {
 			headers_array = currentHeaders.split(': ');
 		}
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [CustomHeaderSearchable]: headers_array: "+JSON.stringify(headers_array)+"\r\n");
-		if (headers_array.indexOf(newHeader) === -1) {
+		if (!headers_array.includes(newHeader)) {
 			headers_array.push(newHeader);
 			currentHeaders = headers_array.join(': ');
 			// prefService.setCharPref("mailnews.customHeaders", currentHeaders.trim());
@@ -373,7 +374,7 @@ var miczColumnsWizard_CustCols = {
 			CustColIndex = JSON.parse(CustColIndexStr);
 		}
 		// Add new element to index and save it
-		if (CustColIndex.indexOf(index) === -1) {
+		if (!CustColIndex.includes(index)) {
 			CustColIndex.push(index);
 		}
 		CustColIndex.sort();

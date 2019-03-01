@@ -109,6 +109,7 @@ miczColumnsWizard.FolderListener = {
 		// Choose which columns we need to always show...
 		// For the moment we always show the active custom columns.
 		let cwCustColPref = miczColumnsWizard.loadCustCols();
+		// Check
 		let lastordinal = (cwcolumnStates[index + 'ccCol_cw'].ordinal === '0') || (cwcolumnStates['ccCol_cw'].ordinal === 'null') ? (Object.keys(cwcolumnStates).length) + 1 : cwcolumnStates['ccCol_cw'].ordinal;
 		lastordinal = (lastordinal % 2) === 0 ? lastordinal + 2 : lastordinal + 1;
 

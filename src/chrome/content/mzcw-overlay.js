@@ -145,7 +145,7 @@ var miczColumnsWizard = {
 
 	removeCustomColumn: function (coltype, ObserverService) {
 		let element = document.getElementById(coltype + "Col_cw");
-		if (element) element.parentNode.removeChild(element);
+		if (element) element.remove();
 
 		// dump(">>>>>>>>>>>>> miczColumnsWizard->removeCustomColumn: [coltype] "+coltype+"\r\n");
 		// DbObserver Managing

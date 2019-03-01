@@ -73,7 +73,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
 
 		if (!container) return;
-		while (container.firstChild) container.removeChild(container.firstChild);
+		while (container.firstChild) container.firstChild.remove();
 		let row = doc.createElementNS(XUL, "row"); // header does not have class colClass
 		["show", "sort_by", "col_title", "col_flex", "up", "down"].forEach(function (label) {
 			let item = doc.createElementNS(XUL, "label");
@@ -255,7 +255,8 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		let remove = isUp ? row : row.nextSibling;
 		if (ref && remove && ref.classList.contains(colClass) && remove.classList.contains(colClass)) {
 			let cwcol = this.getOneDefaultCol(remove);
-			remove.parentNode.removeChild(remove);
+			// Check
+			remove.remove();
 			// remove.parentNode.insertBefore(remove, ref); // lost all unsaved values
 			let newBox = this.createOneDefaultColRow(doc, container, cwcol, ref);
 			// this.checkFocus( isUp ? newBox : row );

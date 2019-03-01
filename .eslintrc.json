@@ -7,8 +7,8 @@
 	},
 
 	"extends": [
-		"eslint:recommended",
-		"plugin:mozilla/recommended"
+		"eslint:recommended"
+		// "plugin:mozilla/recommended"
 	  ],
 	
 	"overrides": [
@@ -24,6 +24,11 @@
 	"globals": {
 		"EXPORTED_SYMBOLS": "readonly",
 		"ChromeUtils": "readonly",
+		"sizeToContent": "readonly",
+		"Cc": "readonly",
+		"Cu": "readonly",
+		"Ci": "readonly",
+		"Cr": "readonly",
 		"miczLogger": "readonly",
 		"miczColumnsWizardPrefsUtils": "readonly",
 		"Components": "readonly", 
@@ -47,8 +52,8 @@
 	"rules": {
 		"no-irregular-whitespace": "error",
 		"space-in-parens": "error",
-	    "no-unused-vars": [1, {"vars": "all", "args": "none", "varsIgnorePattern": "EXPORTED_SYMBOLS|rest"}],
-
+	    // "no-unused-vars": [1, {"vars": "all", "args": "none", "varsIgnorePattern": "EXPORTED_SYMBOLS|rest"}],
+		"no-unused-vars":"off",
 		"space-before-function-paren":"off",
 		"no-array-constructor": "warn",
 		"eqeqeq":"error",

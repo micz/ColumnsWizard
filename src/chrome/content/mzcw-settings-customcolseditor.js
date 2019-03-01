@@ -109,7 +109,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						if (CustColIndexStr !== '') {
 							CustColIndex = JSON.parse(CustColIndexStr);
 							// dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [newcol.index] "+JSON.stringify(newcol.index)+"\r\n");
-							if (CustColIndex.indexOf(newcol.index) !== -1) {
+							if (CustColIndex.includes(newcol.index)) {
 								// custom column already present
 								// dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [CustColIndex] "+JSON.stringify(CustColIndex)+"\r\n");
 								let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
@@ -264,7 +264,7 @@ var miczColumnsWizardPref_CustColEditor = {
 				let destFullPath = OS.Path.join(destPath, newname);
 				// dump(">>>>>>>>>>>>> miczColumnsWizard->saveIcon: [file.path] "+JSON.stringify(file.path)+"\r\n");
 				// dump(">>>>>>>>>>>>> miczColumnsWizard->saveIcon: [destPath] "+JSON.stringify(destPath)+"\r\n");
-				if (file.path.indexOf(destPath) === -1) {	// if the icon is already in the dest folder (we're modifying a cust col), do nothing!
+				if (!file.path.includes(destPath)) {	// if the icon is already in the dest folder (we're modifying a cust col), do nothing!
 					OS.File.copy(file.path, destFullPath);
 				}
 				return destFullPath;
