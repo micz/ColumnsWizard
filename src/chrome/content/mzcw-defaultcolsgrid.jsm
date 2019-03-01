@@ -1,4 +1,6 @@
 "use strict";
+
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
 var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_DefaultColsGrid"];
@@ -68,9 +70,8 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 
 	createDefaultColsGridHeader: function (doc, container) {
 		const XUL = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
-		let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
-		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
-		// try {
+		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
+
 		if (!container) return;
 		while (container.firstChild) container.removeChild(container.firstChild);
 		let row = doc.createElementNS(XUL, "row"); // header does not have class colClass
@@ -267,8 +268,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 	},
 
 	getColLocalizedString: function (col) {
-		let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
-		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/settings.properties");
+		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/settings.properties");
 		let strOut = col;
 
 		switch (col) {
@@ -336,7 +336,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 				let col_idx = col.replace('Col_cw', '');
 				let col_el = this.loadedCustCols[col_idx];
 				// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid] col_idx "+col_idx+"\r\n");
-				let _bundleCW_overlay = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
+				let _bundleCW_overlay = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
 				if (this.loadedCustCols[col_idx]) {
 					if (col_el.isBundled) {
 						strOut = _bundleCW_overlay.GetStringFromName("ColumnsWizard" + col_el.index + ".label");

@@ -1,5 +1,6 @@
 "use strict";
 
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
 
@@ -115,8 +116,7 @@ var miczColumnsWizardPref = {
 
 		// Are you sure?
 		let prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"].getService(Ci.nsIPromptService);
-		let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
-		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/settings.properties");
+		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/settings.properties");
 
 		if (!prompts.confirm(null, _bundleCW.GetStringFromName("ColumnsWizard.deletePrompt.title"), _bundleCW.GetStringFromName("ColumnsWizard.deletePrompt.text"))) return;
 

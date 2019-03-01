@@ -1,5 +1,6 @@
 "use strict";
 
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
@@ -21,8 +22,7 @@ var miczColumnsWizardPref_CustColEditor = {
 					// break;
 					case "edit":
 						let currcol = JSON.parse(args.currcol);
-						let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
-						let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
+						let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
 						document.getElementById("cw_desc.label").label = _bundleCW.GetStringFromName("ColumnsWizard.DescEdit.label");
 
 						// fill the fields
@@ -112,8 +112,7 @@ var miczColumnsWizardPref_CustColEditor = {
 							if (CustColIndex.indexOf(newcol.index) !== -1) {
 								// custom column already present
 								// dump(">>>>>>>>>>>>> miczColumnsWizard->onAccept: [CustColIndex] "+JSON.stringify(CustColIndex)+"\r\n");
-								let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
-								let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
+								let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
 								let prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"].getService(Ci.nsIPromptService);
 								prompts.alert(window,
 									_bundleCW.GetStringFromName("ColumnsWizard.emptyFields.title"),
@@ -184,8 +183,7 @@ var miczColumnsWizardPref_CustColEditor = {
 		// The fields must be filled!!
 		// The input are already sanitized elsewhere...
 		if ((document.getElementById("ColumnsWizard.id").value === "") || (document.getElementById("ColumnsWizard.dbHeader").value === "") || (document.getElementById("ColumnsWizard.labelString").value === "") || (document.getElementById("ColumnsWizard.tooltipString").value === "")) {
-			let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
-			let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
+			let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
 			let prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"].getService(Ci.nsIPromptService);
 			prompts.alert(window,
 				_bundleCW.GetStringFromName("ColumnsWizard.emptyFields.title"),
@@ -230,8 +228,7 @@ var miczColumnsWizardPref_CustColEditor = {
 	},
 
 	chooseIcon: function () {
-		let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
-		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
+		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
 		let fp = Cc["@mozilla.org/filepicker;1"].createInstance(Ci.nsIFilePicker);
 		fp.init(window, _bundleCW.GetStringFromName("ColumnsWizard.chooseIcon.title") + "...", Ci.nsIFilePicker.modeOpen);
 		fp.appendFilters(Ci.nsIFilePicker.filterImages);

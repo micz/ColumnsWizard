@@ -1,5 +1,7 @@
 "use strict";
 
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+
 var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_CustomColsGrid"];
 
 var miczColumnsWizardPref_CustomColsGrid = {
@@ -22,8 +24,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 	},
 
 	createOneCustomColRow: function (doc, container, currcol) {
-		let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
-		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
+		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
 
 		if (!container) return;
 		let listitem = doc.createElement("listitem");
@@ -87,8 +88,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 	},
 
 	editOneCustomColRow: function (doc, container, currcol, idx_col) {
-		let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Ci.nsIStringBundleService);
-		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
+		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
 
 		if (!container) return;
 		let listitem = container.getItemAtIndex(idx_col);

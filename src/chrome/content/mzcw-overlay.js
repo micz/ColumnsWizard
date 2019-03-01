@@ -1,5 +1,6 @@
 "use strict";
 
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
@@ -26,7 +27,7 @@ var miczColumnsWizard = {
 			miczColumnsWizard.addToolbarButton();
 		}
 
-		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Cc.nsIObserverService);
+		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 
 		miczColumnsWizard.addNewCustColObserver(ObserverService);
 		miczColumnsWizard.deleteCustColObserver(ObserverService);
@@ -86,7 +87,7 @@ var miczColumnsWizard = {
 		let CustColObserver = {
 			observe: function (aSubject, aTopic, aData) {
 				// dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
-				let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Cc.nsIObserverService);
+				let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 				miczColumnsWizard_CustCols.removeCustomColumn(aData, ObserverService);
 				miczColumnsWizard_CustCols.deleteCustCol(aData);
 			},
@@ -98,7 +99,7 @@ var miczColumnsWizard = {
 		let CustColObserver = {
 			observe: function (aSubject, aTopic, aData) {
 				// dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
-				let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Cc.nsIObserverService);
+				let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 				// update cust col info in the message list
 				miczColumnsWizard_CustCols.updateCustomColumn(JSON.parse(aData));
 			},
@@ -167,7 +168,7 @@ var miczColumnsWizard = {
 
 	activateCustomDBHeader: function (newHeader) {
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [customDBHeaders] "+newHeader+"\r\n");
-		// let prefService = Cc["@mozilla.org/preferences-service;1"].getService(Cc.nsIPrefBranch);
+		// let prefService = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch);
 		// let currentHeaders = prefService.getCharPref("mailnews.customDBHeaders");
 		let currentHeaders = miczColumnsWizardPrefsUtils.getCharPref("mailnews.customDBHeaders");
 		let re = new RegExp("(^| )" + newHeader + "( |$)", "i");
@@ -180,7 +181,7 @@ var miczColumnsWizard = {
 
 	deactivateCustomDBHeader: function (newHeader) {
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [deactivate customDBHeaders] "+newHeader+"\r\n");
-		// let prefService = Cc["@mozilla.org/preferences-service;1"].getService(Cc.nsIPrefBranch);
+		// let prefService = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefBranch);
 		// let currentHeaders = prefService.getCharPref("mailnews.customDBHeaders");
 		let currentHeaders = miczColumnsWizardPrefsUtils.getCharPref("mailnews.customDBHeaders");
 		let re = new RegExp("(^| )" + newHeader + "( |$)", "i");
@@ -190,7 +191,7 @@ var miczColumnsWizard = {
 	},
 
 	showColumns: function (tab) {
-		// let prefs = Cc["@mozilla.org/preferences-service;1"].getService(Cc.nsIPrefService);
+		// let prefs = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 		// prefs = prefs.getBranch("extensions.ColumnsWizard.");
 		this.showLocation = miczColumnsWizardPrefsUtils.getBoolPref_CW("ShowLocation");
 		this.showAccount = miczColumnsWizardPrefsUtils.getBoolPref_CW("ShowAccount");
@@ -239,13 +240,12 @@ var miczColumnsWizard = {
 						aPopup.removeChild(aPopup.childNodes[2]);
 					}
 					// check if we're using the colcw default for new folders
-					// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Cc.nsIPrefService);
+					// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 					// let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
 					// let cw_active=prefs.getBoolPref("active");
 					let cw_active = miczColumnsWizardPrefsUtils.defaultColsListActive;
 
-					let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Cc.nsIStringBundleService);
-					let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
+					let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
 
 					aPopup.childNodes[1].setAttribute('hidden', cw_active ? 'true' : 'false');
 
@@ -280,14 +280,13 @@ var miczColumnsWizard = {
 
 	addCWSaveDefaultMenu_OnClick: function (event) {
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
-		let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Cc.nsIStringBundleService);
-		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
-		let promptService = Cc["@mozilla.org/embedcomp/prompt-service;1"].getService(Cc.nsIPromptService);
+		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
+		let promptService = Cc["@mozilla.org/embedcomp/prompt-service;1"].getService(Ci.nsIPromptService);
 		let title_msg = _bundleCW.GetStringFromName("ColumnsWizardNFCols.saveDefault");
 		let text_msg = _bundleCW.GetStringFromName("ColumnsWizard.saveDefault_OnClick_text");
 		if (!promptService.confirm(null, title_msg, text_msg)) return;
 		let columnStates = gFolderDisplay.getColumnStates();
-		// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Cc.nsIPrefService);
+		// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 		// let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
 		// prefs.setCharPref("DefaultColsList",JSON.stringify(columnStates));
 		miczColumnsWizardPrefsUtils.setCharPref_CW("DefaultColsList", JSON.stringify(columnStates));
@@ -296,9 +295,8 @@ var miczColumnsWizard = {
 
 	addCWResetMenu_OnClick: function (event) {
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWSaveDefaultMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
-		let strBundleCW = Cc["@mozilla.org/intl/stringbundle;1"].getService(Cc.nsIStringBundleService);
-		let _bundleCW = strBundleCW.createBundle("chrome://columnswizard/locale/overlay.properties");
-		let promptService = Cc["@mozilla.org/embedcomp/prompt-service;1"].getService(Cc.nsIPromptService);
+		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
+		let promptService = Cc["@mozilla.org/embedcomp/prompt-service;1"].getService(Ci.nsIPromptService);
 		let title_msg = _bundleCW.GetStringFromName("ColumnsWizardNFCols.resetMenu");
 		let text_msg = _bundleCW.GetStringFromName("ColumnsWizard.resetDefault_OnClick_text");
 		if (!promptService.confirm(null, title_msg, text_msg)) return;
@@ -308,8 +306,8 @@ var miczColumnsWizard = {
 	},
 
 	watchFolders: function () {
-		let mailSessionService = Cc["@mozilla.org/messenger/services/session;1"].getService(Cc.nsIMsgMailSession);
-		mailSessionService.AddFolderListener(miczColumnsWizard.FolderListener, Cc.nsIFolderListener.added);
+		let mailSessionService = Cc["@mozilla.org/messenger/services/session;1"].getService(Ci.nsIMsgMailSession);
+		mailSessionService.AddFolderListener(miczColumnsWizard.FolderListener, Ci.nsIFolderListener.added);
 		// The following are already handled internally
 		// mailSessionService.AddFolderListener(FolderListener, Ci.nsIFolderListener.removed);
 		// mailSessionService.AddFolderListener(FolderListener, Ci.nsIFolderListener.event);
@@ -317,7 +315,7 @@ var miczColumnsWizard = {
 	},
 
 	unwatchFolders: function () {
-		let mailSessionService = Cc["@mozilla.org/messenger/services/session;1"].getService(Cc.nsIMsgMailSession);
+		let mailSessionService = Cc["@mozilla.org/messenger/services/session;1"].getService(Ci.nsIMsgMailSession);
 		mailSessionService.RemoveFolderListener(miczColumnsWizard.FolderListener);
 	},
 
