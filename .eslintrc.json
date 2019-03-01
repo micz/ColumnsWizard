@@ -1,9 +1,15 @@
-{
+	{
 	"env": {
 		"browser": true,
 		"es6": true,
+		"mozilla/jsm": true,
 		"commonjs": true
-	  },
+	},
+
+	"extends": [
+		"eslint:recommended"
+		// "plugin:mozilla/recommended"
+	  ],
 	
 	"overrides": [
 		{
@@ -11,22 +17,77 @@
 		}
 	],
 	"plugins": [
-		"deprecate"
-],
+		"deprecate",
+		"mozilla"
+	],
+	
+	"globals": {
+		"EXPORTED_SYMBOLS": "readonly",
+		"ChromeUtils": "readonly",
+		"sizeToContent": "readonly",
+		"Cc": "readonly",
+		"Cu": "readonly",
+		"Ci": "readonly",
+		"Cr": "readonly",
+		"miczLogger": "readonly",
+		"miczColumnsWizardPrefsUtils": "readonly",
+		"Components": "readonly", 
+		"miczColumnsWizard": "readonly",
+		"miczColumnsWizard_CustCols": "readonly",
+		"miczColumnsWizard_MsgUtils": "readonly",
+		"miczColumnsWizardUtils": "readonly",
+		"miczColumnsWizard_CustomColsModUtils": "readonly",
+		"miczColumnsWizardPref_DefaultColsGrid": "readonly",
+		"miczColumnsWizardPref_CustomColsGrid": "readonly",
+
+		"messenger": "readonly",
+		"MailServices": "readonly",
+		"gDBView": "readonly",
+		"OS": "readonly",
+		"window": "readonly",
+		"msgWindow": "readonly",
+		"gFolderDisplay": "readonly"
+		
+	},
+	"rules": {
+		"no-irregular-whitespace": "error",
+		"space-in-parens": "error",
+	    // "no-unused-vars": [1, {"vars": "all", "args": "none", "varsIgnorePattern": "EXPORTED_SYMBOLS|rest"}],
+		"no-unused-vars":"off",
+		"space-before-function-paren":"off",
+		"no-array-constructor": "warn",
+		"eqeqeq":"error",
+
+		"mozilla/import-globals": "off",
+		"no-tabs":"off",
+		"no-useless-return":"off",
+		"object-shorthand":"off",
+		"padded-blocks":"off",
+		"mozilla/use-cc-etc": "error",
+		"mozilla/no-useless-parameters": "off",
+		"mozilla/use-services": "off",
+		"mozilla/use-includes-instead-of-indexOf": "warn",
+		"mozilla/avoid-removeChild": "warn",
 
 
-"rules": {
-"no-unused-vars":"error",
-"spaced-comment": [2,"always"],
-"semi":"error",
-
-"no-restricted-properties": [2, {
-	"property": "nsIStringBundleService"
-}],
-
-"deprecate/function": ["error",
-	{"name": "createBundle",
-	 "use": "Replace with Services.createBundle"}
-	]
-}
+		"quotes":"off",
+		"spaced-comment": [
+			2,
+			"always"
+		],
+		"semi": "error",
+		"no-restricted-properties": [
+			1,
+			{
+				"property": "nsIStringBundleService"
+			}
+		],
+		"deprecate/function": [
+			"error",
+			{
+				"name": "createBundle",
+				"use": "Replace with Services.createBundle"
+			}
+		]
+	}
 }
