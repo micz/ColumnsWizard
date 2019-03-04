@@ -1,0 +1,102 @@
+[
+	{
+		"path": "$ROOTPATH$\\src\\chrome\\content\\mzcw-overlay.js",
+		"bookmarks": [
+			{
+				"line": 58,
+				"column": 34,
+				"label": ""
+			},
+			{
+				"line": 229,
+				"column": 33,
+				"label": ""
+			},
+			{
+				"line": 406,
+				"column": 60,
+				"label": ""
+			}
+		]
+	},
+	{
+		"path": "$ROOTPATH$\\scripts\\dtd-test1.js",
+		"bookmarks": [
+			{
+				"line": 103,
+				"column": 16,
+				"label": ""
+			},
+			{
+				"line": 182,
+				"column": 27,
+				"label": ""
+			},
+			{
+				"line": 247,
+				"column": 32,
+				"label": ""
+			}
+		]
+	},
+	{
+		"path": "$ROOTPATH$\\src\\chrome\\content\\mzcw-defaultcolsgrid.jsm",
+		"bookmarks": [
+			{
+				"line": 339,
+				"column": 44,
+				"label": ""
+			}
+		]
+	},
+	{
+		"path": "$ROOTPATH$\\src\\chrome\\content\\mzcw-folderlistener.js",
+		"bookmarks": [
+			{
+				"line": 96,
+				"column": 1,
+				"label": ""
+			},
+			{
+				"line": 118,
+				"column": 41,
+				"label": ""
+			}
+		]
+	},
+	{
+		"path": "$ROOTPATH$\\src\\chrome\\content\\mzcw-msgutils.jsm",
+		"bookmarks": [
+			{
+				"line": 29,
+				"column": 0,
+				"label": ""
+			},
+			{
+				"line": 277,
+				"column": 22,
+				"label": ""
+			}
+		]
+	},
+	{
+		"path": "Untitled-4",
+		"bookmarks": [
+			{
+				"line": 107,
+				"column": 45,
+				"label": ""
+			}
+		]
+	},
+	{
+		"path": "$ROOTPATH$\\src\\chrome\\content\\mzcw-settings.js",
+		"bookmarks": [
+			{
+				"line": 146,
+				"column": 31,
+				"label": ""
+			}
+		]
+	}
+]

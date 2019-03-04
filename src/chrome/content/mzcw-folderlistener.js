@@ -1,5 +1,6 @@
 "use strict";
 
+// const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
@@ -92,6 +93,7 @@ miczColumnsWizard.FolderListener = {
 		return !hasSubFolders && !hasMessages;
 	},
 
+	/* cleidigh
 	cw_showColumns: function (item) {
 		let propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded propName] "+propName+"\r\n");
@@ -110,6 +112,10 @@ miczColumnsWizard.FolderListener = {
 		// For the moment we always show the active custom columns.
 		let cwCustColPref = miczColumnsWizard.loadCustCols();
 		// Check
+		// var Application = Cc["@mozilla.org/steel/application;1"]
+        // Services.console.log('services log '+index);
+		miczLogger.log("CW "+index);
+
 		let lastordinal = (cwcolumnStates[index + 'ccCol_cw'].ordinal === '0') || (cwcolumnStates['ccCol_cw'].ordinal === 'null') ? (Object.keys(cwcolumnStates).length) + 1 : cwcolumnStates['ccCol_cw'].ordinal;
 		lastordinal = (lastordinal % 2) === 0 ? lastordinal + 2 : lastordinal + 1;
 
@@ -130,7 +136,7 @@ miczColumnsWizard.FolderListener = {
 		dbFolderInfo.setCharProperty(propName, JSON.stringify(cwcolumnStates));
 		item.msgDatabase.Commit(Ci.nsMsgDBCommitType.kLargeCommit);
 	},
-
+ */
 	cw_showColumns_Pref: function (item) {
 		let propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
 		let dbFolderInfo = item.msgDatabase.dBFolderInfo;

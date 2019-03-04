@@ -7,12 +7,27 @@
 
 var EXPORTED_SYMBOLS = ["miczColumnsWizard_MsgUtils"];
 
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
-ChromeUtils.import("resource:///modules/mailServices.js");
-ChromeUtils.import("resource:///modules/iteratorUtils.jsm"); // for toXPCOMArray
 
+
+// cleidigh - Use correct module - avoids deprecation warning
+// mailServices.js => MailServices.jsm in TB63+
+const info = Cc["@mozilla.org/xre/app-info;1"].getService(Ci.nsIXULAppInfo);
+// Services.console.logStringMessage("Thunderbird Version: " + info.version + "\n");
+
+if (parseInt(info.version.split('.')[0],10)  >= 61) {
+	Services.console.logStringMessage('MailServices.jsm - TB61+');
+	ChromeUtils.import("resource:///modules/MailServices.jsm");
+} else {
+	Services.console.logStringMessage('mailServices.js - TB60');
+	ChromeUtils.import("resource:///modules/mailServices.js");
+}
+
+ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
+const { toXPCOMArray } = ChromeUtils.import("resource:///modules/iteratorUtils.jsm"); // for toXPCOMArray
 
 var miczColumnsWizard_MsgUtils = {
 
@@ -75,7 +90,9 @@ var miczColumnsWizard_MsgUtils = {
 				dateOrig = dateOrig.replace(/ +$/, "");
 				dateOrig = dateOrig.replace(/^ +/, "");
 			}
-		} catch (e) { }
+		} catch (e) {
+			// Nothing
+		}
 		return dateOrig;
 	},
 
@@ -129,20 +146,16 @@ miczColumnsWizard_MsgUtils.listener = {
 
 	text: "",
 
-	QueryInterface: function (iid) {
-		if (iid.equals(Ci.nsIStreamListener) || iid.equals(Ci.nsISupports)) {
-			return this;
-		}
-		throw Cr.NS_NOINTERFACE;
-		return 0;
-	},
+	// Manual query => XPCOMUtils => ChromeUtils.generateQI (for TB64+ )
+	QueryInterface: (XPCOMUtils.generateQI && XPCOMUtils.generateQI([Ci.nsIStreamListener, Ci.nsISupports]) ||
+		ChromeUtils.generateQI([Ci.nsIStreamListener, Ci.nsISupports])),
 
 	onStartRequest: function (aRequest, aContext) {
 		miczColumnsWizard_MsgUtils.listener.text = "";
 	},
 
 	onStopRequest: function (aRequest, aContext, aStatusCode) {
-		let isImap = (miczColumnsWizard_MsgUtils.folder.server.type === "imap") ? true : false;
+		let isImap = (miczColumnsWizard_MsgUtils.folder.server.type === "imap");
 		let date = miczColumnsWizard_MsgUtils.getOrigDate();
 
 		let data = miczColumnsWizard_MsgUtils.cleanCRLF(miczColumnsWizard_MsgUtils.listener.text);
@@ -260,13 +273,10 @@ miczColumnsWizard_MsgUtils.listener = {
 
 // copyFileMessage listener
 miczColumnsWizard_MsgUtils.copyListener = {
-	QueryInterface: function (iid) {
-		if (iid.equals(Ci.nsIMsgCopyServiceListener) || iid.equals(Ci.nsISupports)) {
-			return this;
-		}
-		throw Cr.NS_NOINTERFACE;
-		return 0;
-	},
+
+	// Manual query => XPCOMUtils => ChromeUtils.generateQI (for TB64+ )
+	QueryInterface: (XPCOMUtils.generateQI && XPCOMUtils.generateQI([Ci.nsIMsgCopyServiceListener, Ci.nsISupports]) ||
+		ChromeUtils.generateQI([Ci.nsIMsgCopyServiceListener, Ci.nsISupports])),
 
 	GetMessageId: function (messageId) { },
 	OnProgress: function (progress, progressMax) { },

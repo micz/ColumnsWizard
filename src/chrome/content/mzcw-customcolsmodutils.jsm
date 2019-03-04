@@ -1,5 +1,7 @@
 "use strict";
 
+/* global Services */
+
 var EXPORTED_SYMBOLS = ["miczColumnsWizard_CustomColsModUtils"];
 
 var miczColumnsWizard_CustomColsModUtils = {

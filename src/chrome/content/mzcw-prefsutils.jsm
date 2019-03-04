@@ -4,6 +4,8 @@
  * */
 "use strict";
 
+/* global Services */
+
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 let EXPORTED_SYMBOLS = ["miczColumnsWizardPrefsUtils"];

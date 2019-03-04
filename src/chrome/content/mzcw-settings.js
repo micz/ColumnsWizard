@@ -4,9 +4,6 @@ const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
 
-// Check
-// Cu.importGlobalProperties(["XMLHttpRequest"]);
-
 var miczColumnsWizard = window.opener.miczColumnsWizard;
 var miczColumnsWizardPref = {
 

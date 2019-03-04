@@ -9,7 +9,7 @@ ChromeUtils.import("resource://gre/modules/osfile.jsm");
 var miczColumnsWizard = {};
 var miczColumnsWizardPref_CustColEditor = {
 
-	_sanitize_ID_regex: "([A-Za-z0-9\-\_]+)",
+	_sanitize_ID_regex: "([A-Za-z0-9_-]+)",
 	_sanitize_dbHeader_regex: "([\x21-\x7E2]+)",
 
 	onLoad: function () {
@@ -20,7 +20,7 @@ var miczColumnsWizardPref_CustColEditor = {
 				switch (args.action) {
 					// case "new": //window.document.getElementById("ColumnsWizard.dbHeader").setAttribute("value","ok");
 					// break;
-					case "edit":
+					case "edit": {
 						let currcol = JSON.parse(args.currcol);
 						let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
 						document.getElementById("cw_desc.label").label = _bundleCW.GetStringFromName("ColumnsWizard.DescEdit.label");
@@ -67,6 +67,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						// set the value on the label in the advanced tab
 						document.getElementById('cw_adv_msg_header').setAttribute("value", currcol.dbHeader);
 						break;
+					}
 				}
 			}
 		}
@@ -89,7 +90,7 @@ var miczColumnsWizardPref_CustColEditor = {
 
 			if ("action" in args) {
 				switch (args.action) {
-					case "new": // Save new custom column
+					case "new": { // Save new custom column
 						// fixed val
 						newcol.isBundled = false;
 						newcol.isCustom = true;
@@ -143,7 +144,8 @@ var miczColumnsWizardPref_CustColEditor = {
 						window.arguments[0].save = true;
 						window.arguments[0].newcol = newcol;
 						break;
-					case "edit":	// Modify the custom column
+					}
+					case "edit": { // Modify the custom column
 						let currcol = JSON.parse(args.currcol);
 						// fixed val
 						newcol.isBundled = false;
@@ -172,6 +174,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						window.arguments[0].save = true;
 						window.arguments[0].newcol = newcol;
 						break;
+					}
 				}
 			}
 		}

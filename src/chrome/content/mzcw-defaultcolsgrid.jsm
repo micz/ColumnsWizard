@@ -333,7 +333,8 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 			case "correspondentCol":
 				strOut = _bundleCW.GetStringFromName("ColumnsWizard.correspondentCol.label");
 				break;
-			default:
+			default: {
+
 				let col_idx = col.replace('Col_cw', '');
 				let col_el = this.loadedCustCols[col_idx];
 				// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid] col_idx "+col_idx+"\r\n");
@@ -346,6 +347,7 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 					}
 				}
 				break;
+			}
 		}
 		return strOut;
 	},

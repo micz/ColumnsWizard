@@ -1,5 +1,16 @@
 "use strict";
 
+// cleidigh
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+
+// Services appears to be defined globally in TB64+ ?
+// if (!miczColumnsWizard) {
+// 	const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+// 	ChromeUtils.import("chrome://columnswizard/content/mzcw-overlay.jsm");
+// 	Services.logStringMessage('import overlay');
+// }
+
+
 /**
  * @constructor
  *

@@ -1,0 +1,74 @@
+<treecols xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" id="threadCols"
+	pickertooltiptext="Select columns to display" orient="horizontal">
+	<treecol id="threadCol" fixed="true" cycler="true" class="treecol-image threadColumnHeader" currentView="unthreaded"
+		label="Thread" tooltiptext="Display message threads" ordinal="1" />
+	<splitter class="tree-splitter" ordinal="2" resizeafter="farthest" />
+	<treecol id="flaggedCol" fixed="true" cycler="true" class="treecol-image flagColumnHeader" label="Starred"
+		tooltiptext="Sort by star" ordinal="3" />
+	<splitter class="tree-splitter" ordinal="4" resizeafter="farthest" />
+	<treecol id="attachmentCol" fixed="true" class="treecol-image attachmentColumnHeader" label="Attachments"
+		tooltiptext="Sort by attachments" ordinal="5" />
+	<splitter class="tree-splitter" ordinal="6" resizeafter="farthest" />
+	<treecol id="subjectCol" persist="width" flex="7" ignoreincolumnpicker="true" label="Subject"
+		tooltiptext="Sort by subject" ordinal="7" />
+	<splitter class="tree-splitter" ordinal="8" resizeafter="farthest" />
+	<treecol id="unreadButtonColHeader" fixed="true" cycler="true" class="treecol-image readColumnHeader" label="Read"
+		tooltiptext="Sort by read" ordinal="9" />
+	<splitter class="tree-splitter" ordinal="10" resizeafter="farthest" />
+	<treecol id="senderCol" persist="width" flex="4" hidden="false" swappedhidden="true" label="From"
+		tooltiptext="Sort by from" ordinal="11" />
+	<splitter class="tree-splitter" ordinal="12" resizeafter="farthest" />
+	<treecol id="recipientCol" persist="width" flex="4" hidden="true" swappedhidden="false" label="Recipient"
+		tooltiptext="Sort by recipient" ordinal="13" />
+	<splitter class="tree-splitter" ordinal="14" resizeafter="farthest" />
+	<treecol id="correspondentCol" persist="width" flex="4" hidden="true" label="Correspondents"
+		tooltiptext="Sort by correspondents" ordinal="15" />
+	<splitter class="tree-splitter" ordinal="16" resizeafter="farthest" />
+	<treecol id="junkStatusCol" persist="width" fixed="true" cycler="true" class="treecol-image junkStatusHeader"
+		label="Junk Status" tooltiptext="Sort by junk status" ordinal="17" />
+	<splitter class="tree-splitter" ordinal="18" resizeafter="farthest" />
+	<treecol id="receivedCol" persist="width temphidden" flex="2" hidden="true" label="Received"
+		tooltiptext="Sort by date received" ordinal="19" />
+	<splitter class="tree-splitter" ordinal="20" resizeafter="farthest" />
+	<treecol id="dateCol" persist="width" flex="2" label="Date" tooltiptext="Sort by date" ordinal="21" />
+	<splitter class="tree-splitter" ordinal="22" resizeafter="farthest" />
+	<treecol id="statusCol" persist="width" flex="1" hidden="true" label="Status" tooltiptext="Sort by status"
+		ordinal="23" />
+	<splitter class="tree-splitter" ordinal="24" resizeafter="farthest" />
+	<treecol id="sizeCol" persist="width" flex="1" hidden="true" label="Size" tooltiptext="Sort by size" ordinal="25" />
+	<splitter class="tree-splitter" ordinal="26" resizeafter="farthest" />
+	<treecol id="tagsCol" persist="width" flex="1" hidden="true" label="Tag" tooltiptext="Sort by tags" ordinal="27" />
+	<splitter class="tree-splitter" ordinal="28" resizeafter="farthest" />
+	<treecol id="accountCol" persist="width" flex="1" hidden="true" label="Account" tooltiptext="Sort by account"
+		ordinal="29" />
+	<splitter class="tree-splitter" ordinal="30" resizeafter="farthest" />
+	<treecol id="priorityCol" persist="width" flex="1" hidden="true" label="Priority" tooltiptext="Sort by priority"
+		ordinal="31" />
+	<splitter class="tree-splitter" ordinal="32" resizeafter="farthest" />
+	<treecol id="unreadCol" persist="width" flex="1" hidden="true" label="Unread"
+		tooltiptext="Number of unread messages in thread" ordinal="33" />
+	<splitter class="tree-splitter" ordinal="34" resizeafter="farthest" />
+	<treecol id="totalCol" persist="width" flex="1" hidden="true" label="Total"
+		tooltiptext="Total number of messages in thread" ordinal="35" />
+	<splitter class="tree-splitter" ordinal="36" resizeafter="farthest" />
+	<treecol id="locationCol" persist="width" flex="1" hidden="true" label="Location" tooltiptext="Sort by location"
+		ordinal="37" />
+	<splitter class="tree-splitter" ordinal="38" resizeafter="farthest" />
+	<treecol id="idCol" persist="width" flex="1" hidden="true" label="Order Received"
+		tooltiptext="Sort by order received" ordinal="39" />
+	<splitter class="tree-splitter" resizeafter="farthest" ordinal="40" />
+	<treecol id="ccCol_cw" persist="hidden ordinal width" hidden="true" flex="4" label="Cc"
+		tooltiptext="Click to sort by cc" ordinal="41" />
+	<splitter class="tree-splitter" resizeafter="farthest" ordinal="42" />
+	<treecol id="replytoCol_cw" persist="hidden ordinal width" hidden="true" flex="4" label="Reply-to"
+		tooltiptext="Click to sort by reply-to" ordinal="43" />
+	<splitter class="tree-splitter" resizeafter="farthest" ordinal="44" />
+	<treecol id="xspamscoreCol_cw" persist="hidden ordinal width" hidden="true" flex="4" label="X-Spam-Score"
+		tooltiptext="Click to sort by X-Spam-Score" ordinal="45" />
+	<splitter class="tree-splitter" resizeafter="farthest" ordinal="46" />
+	<treecol id="test-ccCol_cw" persist="hidden ordinal width" hidden="true" flex="4" label="Test-C"
+		tooltiptext="test tooltip" ordinal="47" />
+</treecols>
+<xul:treecolpicker xmlns:xul="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul" class="treecol-image"
+	fixed="true" xbl:inherits="tooltiptext=pickertooltiptext" xmlns:xbl="http://www.mozilla.org/xbl"
+	tooltiptext="Select columns to display" />

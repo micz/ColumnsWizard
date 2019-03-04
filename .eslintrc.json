@@ -7,8 +7,8 @@
 	},
 
 	"extends": [
-		"eslint:recommended"
-		// "plugin:mozilla/recommended"
+		"eslint:recommended",
+		"plugin:mozilla/recommended"
 	  ],
 	
 	"overrides": [
@@ -24,6 +24,7 @@
 	"globals": {
 		"EXPORTED_SYMBOLS": "readonly",
 		"ChromeUtils": "readonly",
+		"XPCOMUtils": "readonly",
 		"sizeToContent": "readonly",
 		"Cc": "readonly",
 		"Cu": "readonly",
@@ -68,7 +69,7 @@
 		"mozilla/use-services": "off",
 		"mozilla/use-includes-instead-of-indexOf": "warn",
 		"mozilla/avoid-removeChild": "warn",
-
+		"mozilla/use-chromeutils-generateqi": "off",
 
 		"quotes":"off",
 		"spaced-comment": [
