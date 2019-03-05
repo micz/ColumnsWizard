@@ -135,10 +135,10 @@ var miczColumnsWizardPref = {
 		let url = '';
 		switch (filetype) {
 			case 'release_notes':
-				url = "chrome://cwrl/content/release_notes.txt";
+				url = "chrome://cwrl/content/CHANGELOG.md";
 				break;
 			case 'license':
-				url = "chrome://cwrl/content/license.txt";
+				url = "chrome://cwrl/content/LICENSE";
 				break;
 		}
 		let request = new XMLHttpRequest();

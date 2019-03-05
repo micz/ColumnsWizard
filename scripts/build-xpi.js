@@ -60,6 +60,10 @@ const manifestVersion = loadJsonFile.sync(`${sourceDir}/manifest.json`).version;
 const manifestName = loadJsonFile.sync(`${sourceDir}/manifest.json`).name;
 const ignoreFile = (includeManifest ? null : `-x!${sourceDir}/manifest.json`);
 
+const extraFiles = ['LICENSE', 'CHANGELOG.md'];
+// const extraFiles = ['CHANGELOG.md'];
+// const extraFiles = '-i!./LICENSE';
+
 console.log('\nVersioning:\n  Target:\t\t' + targetVersion + '\n  install.rdf:\t\t' + installRDFVersion + '\n  manifest.json:\t' + manifestVersion);
 
 if (installRDFVersion !== targetVersion) {
@@ -77,10 +81,35 @@ if (includeManifest && (manifestName + targetExtension) !== targetName) {
 	return 1;
 }
 
+
 let _7zCommand = ['a', `${targetDir}/${targetName}`, `${sourceDir}/*`, `-x@./src/.tb-hybrid-ignore`];
+// let _7zCommand = ['a', `${targetDir}/${targetName}`, `LICENSE CHANGELOG.md ${sourceDir}/*`, `-x@./src/.tb-hybrid-ignore`];
+// let ocketed_7zCommand = ['a', `${targetDir}/${targetName}`, `LICENSE`, `-x@./src/.tb-hybrid-ignore`];
 
 if (ignoreFile) {
 	_7zCommand.push(`${ignoreFile}`);
+}
+
+// _7zCommand.push(`${extraFiles}`);
+
+
+
+function addFile(file) {
+	let _7zCommand = ['a', `${targetDir}/${targetName}`, `${file}`];
+	console.error(_7zCommand);
+	let ready = false;
+	_7z.cmd(_7zCommand, err => {
+		ready = true;
+		if (err) {
+			console.log(`\nLicense Archive Error Adding [ ${file} ]: ${err}`);
+			return 1;
+		}
+		
+		console.log(`Adding [ ${file} ]`);
+
+	});
+	console.error('loop '+ ready );
+
 }
 
 // Create xpi archive using exclude file
@@ -89,6 +118,11 @@ _7z.cmd(_7zCommand, err => {
 		console.log('\nArchive Error: ' + err);
 		return 1;
 	}
+
+	extraFiles.forEach( (file, index) => {
+		setTimeout(addFile, (100 * (index + 1)), file);
+	});
+
 	console.log('\nArchive Complete: ' + targetName + ` [ manifest: ${includeManifest} ]`);
 
 });

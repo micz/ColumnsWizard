@@ -230,20 +230,10 @@ var miczColumnsWizard = {
 	addCWResetMenu: function (tab) {
 		if (tab.mode.name === 'folder') {
 
-			// Check
-			let e = document.getElementById('threadCols');
-			// var cw_colmenubind = e;
-
-			// Services.console.logStringMessage(e.outerHTML);
-
-			// let e2 = document.getAnonymousElementByAttribute(e, 'class','treecol-image' );
+			// Must query visible for TB64+
 			// let e2 = e.querySelector('treecolpicker');
 
-			// Services.console.logStringMessage(e2.outerHTML);
 			var cw_colmenubind = document.getAnonymousElementByAttribute(document.getElementById('threadCols'),'class','treecol-image');
-			// var cw_colmenubind=document.getAnonymousElementByAttribute(document.getElementById('threadCols'),'is','thread-pane-treecolpicker');
-			// var cw_colmenubind = Sessione.firstChild;
-			// Services.console.logStringMessage(cw_colmenubind.outerHTML);
 
 			// dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] tab.cw_colmenubind.command "+cw_colmenubind.oncommand+"\r\n");
 			if (!cw_colmenubind.cw_original_buildPopup) {

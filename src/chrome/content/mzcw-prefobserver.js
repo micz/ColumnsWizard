@@ -1,8 +1,8 @@
 "use strict";
 
-// cleidigh
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
+// cleidigh
 // Services appears to be defined globally in TB64+ ?
 // if (!miczColumnsWizard) {
 // 	const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");

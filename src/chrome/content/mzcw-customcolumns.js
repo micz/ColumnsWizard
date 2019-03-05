@@ -2,8 +2,6 @@
 
 var EXPORTED_SYMBOLS = ["miczColumnsWizard_CustCols"];
 
-// Check
-// const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
 var miczColumnsWizard_CustCols = {

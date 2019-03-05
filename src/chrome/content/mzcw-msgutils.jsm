@@ -19,10 +19,10 @@ const info = Cc["@mozilla.org/xre/app-info;1"].getService(Ci.nsIXULAppInfo);
 // Services.console.logStringMessage("Thunderbird Version: " + info.version + "\n");
 
 if (parseInt(info.version.split('.')[0],10)  >= 61) {
-	Services.console.logStringMessage('MailServices.jsm - TB61+');
+	// Services.console.logStringMessage('MailServices.jsm - TB61+');
 	ChromeUtils.import("resource:///modules/MailServices.jsm");
 } else {
-	Services.console.logStringMessage('mailServices.js - TB60');
+	// Services.console.logStringMessage('mailServices.js - TB60');
 	ChromeUtils.import("resource:///modules/mailServices.js");
 }
 
