@@ -1,12 +1,8 @@
 "use strict";
 
 /* global Services */
-/* eslint-env mozilla/jsm */
 
-// if (!Services) {
-	const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
-	// Services.console.logStringMessage("services loaded");
-// }
+const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_CustomColsGrid"];
 

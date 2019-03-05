@@ -1,6 +1,5 @@
 "use strict";
 
-// const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
@@ -93,7 +92,7 @@ miczColumnsWizard.FolderListener = {
 		return !hasSubFolders && !hasMessages;
 	},
 
-	/* cleidigh
+	/* cleidigh - dead code
 	cw_showColumns: function (item) {
 		let propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [folder OnItemAdded propName] "+propName+"\r\n");
