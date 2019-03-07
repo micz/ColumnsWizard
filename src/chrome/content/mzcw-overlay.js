@@ -1,6 +1,11 @@
 "use strict";
 
-const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+// Services appears to be defined globally in TB64+ ?
+if (!Services) {
+	const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+	// Services.console.logStringMessage('Overlay load services');
+}
+
 ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
 ChromeUtils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
@@ -222,7 +227,12 @@ var miczColumnsWizard = {
 
 	addCWResetMenu: function (tab) {
 		if (tab.mode.name === 'folder') {
-			var cw_colmenubind = document.getAnonymousElementByAttribute(document.getElementById('threadCols'), 'class', 'treecol-image');
+
+			// Must query visible for TB64+
+			// let e2 = e.querySelector('treecolpicker');
+
+			var cw_colmenubind = document.getAnonymousElementByAttribute(document.getElementById('threadCols'),'class','treecol-image');
+
 			// dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] tab.cw_colmenubind.command "+cw_colmenubind.oncommand+"\r\n");
 			if (!cw_colmenubind.cw_original_buildPopup) {
 				cw_colmenubind.cw_original_buildPopup = cw_colmenubind.buildPopup;

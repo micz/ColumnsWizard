@@ -1,7 +1,13 @@
-# ![ColumnsWizard icon](rep-resources/images/mzcw-icon.png "ColumnsWizard")  ColumnsWizard Release Notes
+# ![CW] ColumnsWizard Release Notes
 
-### Version 6.1.1 - ??/05/2018
-- Upcoming TB60 compatibility update
+### Version 6.1.1 - 7/03/2019
+- Update for TB60 compatibility
+- Format code to CommonJS
+- Introduce eslint/Mozilla rules
+- Use new syntax Cc, Ci, Cu
+- Use const { Services } import style 
+- Fix style and use warnings
+- Update zh-CN locale
 
 ### Version 6.1 - 12/03/2018
 - Added compatibility with Thunderbird 57+.
@@ -139,3 +145,4 @@
 - First release.
 
 
+[CW]: rep-resources/images/mzcw-icon.png

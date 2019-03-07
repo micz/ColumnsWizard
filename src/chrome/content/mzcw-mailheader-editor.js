@@ -59,7 +59,6 @@ var miczColumnsWizard_MailHeaderEditor = {
 	},
 
 	fixWinHeight: function () {
-		// Check
 		sizeToContent();
 		var vbox = document.getElementById('cw_vbox_mhe');
 		vbox.height = vbox.boxObject.height;

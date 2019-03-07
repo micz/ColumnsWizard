@@ -1,5 +1,7 @@
 "use strict";
 
+/* global Services */
+
 var EXPORTED_SYMBOLS = ["miczColumnsWizard_CustomColsModUtils"];
 
 var miczColumnsWizard_CustomColsModUtils = {
@@ -62,6 +64,13 @@ var miczColumnsWizard_CustomColsModUtils = {
 					mpp.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
 					mpp2.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
 					mpp3.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
+
+					// cleidigh - fix warnings from ANT later
+					// mpp.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
+					// mpp2.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
+					// mpp3.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
+
+
 					for (let sbi in CustCols[cc].editFixedList) {
 						let subm = doc.createElement("menuitem");
 						subm.setAttribute('id', CustCols[cc].dbHeader + '_' + CustCols[cc].editFixedList[sbi]);

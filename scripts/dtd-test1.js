@@ -242,39 +242,42 @@ localeReport = function (referenceLocaleId, compLocaleId, details) {
 		let missingEntitySet = new Object();
 
 		console.log('  Missing Entities:');
+		let refEntity = 'English';
+		
 		compLocale.missingEntities.forEach(entityLine => {
 			entityLineElements = entityLine.split('$');
 
-			if (locale[referenceLocaleId]) {
+			if (locales[referenceLocaleId]) {
 				
 			}
+
 			missingEntitySet[`${entityLineElements[1]}`] = refEntity;
 
 			if (file !== entityLineElements[0]) {
 				file = entityLineElements[0];
-				console.log(`\n   File:  ${entityLineElements[0]}`);	
-				if (file !=='') {
+				console.log(`\n   File:  ${entityLineElements[0]}`);
+				if (file !== '') {
 					writeMissingEntitiesFile(`${file}.missing`, missingEntitySet);
 					missingEntitySet = {};
 				}
 			}
-			console.log(    `          ${entityLineElements[1]}`);
+			console.log(`          ${entityLineElements[1]}`);
 		});
 	}
 };
 
-writeMissingEntitiesFile = function(file, entities) {
+writeMissingEntitiesFile = function (file, entities) {
 	var parser = require("dtd-file");
 	let fileData = '';
 
 	fileData = parser.stringify(entities);
-	console.log('\n'+ fileData );
+	console.log('\n' + fileData);
 
-	fs.writeFile(file, fileData, function(err) {
-		if(err) {
+	fs.writeFile(file, fileData, function (err) {
+		if (err) {
 			return console.log(err);
 		}
-	
+
 		console.log("The file was saved!");
 	})
 };

@@ -41,3 +41,4 @@
 <!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "将原邮件放入垃圾箱。">
 <!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "某些 IMAP 提供方（例如 Gmail）在邮件头与现有消息无差异时不注册邮件源代码变更。为了绕过此限制，“日期”字段会被修改，在时间上添加几秒（或者降低几秒，如果已经是59秒）。">
 <!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "在更改选定的头信息的值之后，原邮件将移入垃圾箱文件夹。这是一种安全保障措施，避免修改头信息后可能发生的任何异常行为。">
+<!ENTITY ColumnsWizard.ActivateDebug "激活调试系统。">
