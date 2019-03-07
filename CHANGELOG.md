@@ -1,6 +1,9 @@
 # ![CW] ColumnsWizard Release Notes
 
-### Version 6.1.1 - 7/03/2019
+### Version 6.1.2 - 7/03/2019 
+- Add manifest.json - WebExtension
+
+### Version 6.1.1 - 7/03/2019 - skipped
 - Update for TB60 compatibility
 - Format code to CommonJS
 - Introduce eslint/Mozilla rules
