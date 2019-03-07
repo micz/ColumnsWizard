@@ -10,13 +10,12 @@ With this addon you can:
 This add-on is the original work of Micz and with his permission I will be updating
 the code for compatibility going forward and possible improvements.
 
-Update for TB60 in progress...
 
-![ColumnsWizard_version](https://img.shields.io/badge/version-v6.1-darkorange.png?label=ColumnsWizard)
-![ColumnsWizard_tb_version](https://img.shields.io/badge/version-v6.1-blue.png?label=Thunderbird%20Add-On)
-![Thunderbird_version](https://img.shields.io/badge/version-v38.0_--_58.*-blue.png?label=Thunderbird)
+![ColumnsWizard_version](https://img.shields.io/badge/version-v6.1.2-darkorange.png?label=ColumnsWizard)
+![ColumnsWizard_tb_version](https://img.shields.io/badge/version-v6.1.2-blue.png?label=Thunderbird%20Add-On)
+![Thunderbird_version](https://img.shields.io/badge/version-v60.0_--_61.*-blue.png?label=Thunderbird)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-red.png)](./LICENSE)
-![Release Status](https://img.shields.io/badge/Release%20Status-v6.1.1%20In%20Progress-brightgreen.png)
+![Release Status](https://img.shields.io/badge/Release%20Status-v6.1.2%20Latest-brightgreen.png)
 #
 
 ## ColumnsWizard Add-On Installation
