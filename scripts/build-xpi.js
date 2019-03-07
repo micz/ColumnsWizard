@@ -1,5 +1,7 @@
 // cleidigh - build Thunderbird add-on - Use package configuration for XUL or hybrid with manifest
+/* global process */
 
+const util = require('util');
 const fs = require('fs');
 const _7z = require('7zip-min');
 const xml_util = require('./xml-util.js');
@@ -11,8 +13,8 @@ let targetName = '';
 
 const targetBaseName = process.env.npm_package_name;
 const targetVersion = process.env.npm_package_version;
-const targetSuffix = process.env.npm_package_config_target_suffix;
-const targetExtension = process.env.npm_package_config_target_extension;
+const targetSuffix = process.env.npm_package_config_target_suffix || '';
+const targetExtension = process.env.npm_package_config_target_extension || '';
 const includeManifest = (process.env.npm_package_config_target_include_manifest === 'true') ? true : false;
 
 const sourceDir = process.env.npm_package_config_source_dir;
@@ -32,12 +34,6 @@ try {
 	}
 	if (typeof targetDir !== 'string') {
 		throw 'No targetDir';
-	}
-	if (typeof targetSuffix !== 'string') {
-		targetSuffix = '';
-	}
-	if (typeof targetExtension !== 'string') {
-		targetExtension = '.xpi';
 	}
 
 	targetName = `${targetBaseName}-${targetVersion}${targetSuffix}${targetExtension}`;
@@ -61,8 +57,6 @@ const manifestName = loadJsonFile.sync(`${sourceDir}/manifest.json`).name;
 const ignoreFile = (includeManifest ? null : `-x!${sourceDir}/manifest.json`);
 
 const extraFiles = ['LICENSE', 'CHANGELOG.md'];
-// const extraFiles = ['CHANGELOG.md'];
-// const extraFiles = '-i!./LICENSE';
 
 console.log('\nVersioning:\n  Target:\t\t' + targetVersion + '\n  install.rdf:\t\t' + installRDFVersion + '\n  manifest.json:\t' + manifestVersion);
 
@@ -76,53 +70,51 @@ if (includeManifest && manifestVersion !== targetVersion) {
 	return 1;
 }
 
-if (includeManifest && (manifestName + targetExtension) !== targetName) {
+if (includeManifest && (manifestName.toLowerCase() + '-' + targetVersion + targetSuffix + targetExtension) !== targetName) {
 	console.log(`\nName Mismatch:\n  manifest.json: ${manifestName} != package.json: ${targetName}`);
 	return 1;
 }
 
 
 let _7zCommand = ['a', `${targetDir}/${targetName}`, `${sourceDir}/*`, `-x@./src/.tb-hybrid-ignore`];
-// let _7zCommand = ['a', `${targetDir}/${targetName}`, `LICENSE CHANGELOG.md ${sourceDir}/*`, `-x@./src/.tb-hybrid-ignore`];
-// let ocketed_7zCommand = ['a', `${targetDir}/${targetName}`, `LICENSE`, `-x@./src/.tb-hybrid-ignore`];
 
 if (ignoreFile) {
 	_7zCommand.push(`${ignoreFile}`);
 }
 
-// _7zCommand.push(`${extraFiles}`);
+function _7CmdSync(_7zCommand) {
+	return new Promise((resolve, reject) => {
 
-
-
-function addFile(file) {
-	let _7zCommand = ['a', `${targetDir}/${targetName}`, `${file}`];
-	console.error(_7zCommand);
-	let ready = false;
-	_7z.cmd(_7zCommand, err => {
-		ready = true;
-		if (err) {
-			console.log(`\nLicense Archive Error Adding [ ${file} ]: ${err}`);
-			return 1;
-		}
-		
-		console.log(`Adding [ ${file} ]`);
+		// console.error(_7zCommand);
+		_7z.cmd(_7zCommand, err => {
+			if (err) reject(err);
+			else resolve();
+		});
 
 	});
-	console.error('loop '+ ready );
-
 }
 
 // Create xpi archive using exclude file
-_7z.cmd(_7zCommand, err => {
-	if (err) {
-		console.log('\nArchive Error: ' + err);
-		return 1;
+
+async function buildArchive() {
+
+	console.log(`\nCreating XPI archive: ${targetName}\n`);
+
+	try {
+		await _7CmdSync(_7zCommand);
+
+		console.log(`Add Extra Files:`);
+		for (const file of extraFiles) {
+			_7zCommand = ['a', `${targetDir}/${targetName}`, `${file}`];
+			await _7CmdSync(_7zCommand);
+			console.log(`  ${file}`);
+		}
+
+		console.log('\nArchive Complete: ' + targetName + ` [ manifest: ${includeManifest} ]`);
+
+	} catch (error) {
+		console.error('Archive Error:\n ' + error);
 	}
+}
 
-	extraFiles.forEach( (file, index) => {
-		setTimeout(addFile, (100 * (index + 1)), file);
-	});
-
-	console.log('\nArchive Complete: ' + targetName + ` [ manifest: ${includeManifest} ]`);
-
-});
+buildArchive();

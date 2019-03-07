@@ -27,8 +27,6 @@ var miczColumnsWizard = {
 
 		miczLogger.setLogger(true, miczColumnsWizardPrefsUtils.isDebug);
 
-		Services.console.logStringMessage('Overlay initialize');
-
 		if (miczColumnsWizardPrefsUtils.firstRun) {		// adding toolbar button at first run
 			miczColumnsWizardPrefsUtils.firstRunDone();
 			miczColumnsWizard.addToolbarButton();
