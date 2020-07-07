@@ -53,10 +53,12 @@ if (fs.existsSync(`${targetDir}/${targetName}`)) {
 
 const installRDFVersion = xml_util.rdfGetValue(`${sourceDir}/install.rdf`, 'Description[\"em:version\"]');
 const manifestVersion = loadJsonFile.sync(`${sourceDir}/manifest.json`).version;
-const manifestName = loadJsonFile.sync(`${sourceDir}/manifest.json`).name;
+const manifestName = loadJsonFile.sync(`${sourceDir}/manifest.json`)["xpi-name"];
 const ignoreFile = (includeManifest ? null : `-x!${sourceDir}/manifest.json`);
 
-const extraFiles = ['LICENSE', 'CHANGELOG.md'];
+// const extraFiles = ['LICENSE', 'CHANGELOG.md'];
+// const extraFiles = ['LICENSE'];
+const extraFiles = [];
 
 console.log('\nVersioning:\n  Target:\t\t' + targetVersion + '\n  install.rdf:\t\t' + installRDFVersion + '\n  manifest.json:\t' + manifestVersion);
 
@@ -85,7 +87,7 @@ if (ignoreFile) {
 function _7CmdSync(_7zCommand) {
 	return new Promise((resolve, reject) => {
 
-		// console.error(_7zCommand);
+		console.error(_7zCommand);
 		_7z.cmd(_7zCommand, err => {
 			if (err) reject(err);
 			else resolve();
@@ -105,9 +107,10 @@ async function buildArchive() {
 
 		console.log(`Add Extra Files:`);
 		for (const file of extraFiles) {
+			console.log(`  ${file}`);
+
 			_7zCommand = ['a', `${targetDir}/${targetName}`, `${file}`];
 			await _7CmdSync(_7zCommand);
-			console.log(`  ${file}`);
 		}
 
 		console.log('\nArchive Complete: ' + targetName + ` [ manifest: ${includeManifest} ]`);
