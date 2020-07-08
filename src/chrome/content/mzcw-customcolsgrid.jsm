@@ -29,11 +29,11 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
 
 		if (!container) return;
-		let listitem = doc.createElement("listitem");
+		let listitem = doc.createXULElement("listitem");
 
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [createOneCustomColRow] currcol {"+JSON.stringify(currcol)+"}\r\n");
 
-		let activeCell = doc.createElement("listcell");
+		let activeCell = doc.createXULElement("listcell");
 		activeCell.setAttribute("class", "listcell-iconic");
 		activeCell.setAttribute("enabled", currcol.enabled);
 		if (currcol.isCustom) {
@@ -41,16 +41,16 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		}
 		listitem.appendChild(activeCell);
 
-		let searchableCell = doc.createElement("listcell");
+		let searchableCell = doc.createXULElement("listcell");
 		searchableCell.setAttribute("class", "listcell-iconic searchable");
 		searchableCell.setAttribute("enabled", currcol.isSearchable);
 		listitem.appendChild(searchableCell);
 
-		let idCell = doc.createElement("listcell");
+		let idCell = doc.createXULElement("listcell");
 		idCell.setAttribute("label", currcol.index);
 		listitem.appendChild(idCell);
 
-		let mailheaderCell = doc.createElement("listcell");
+		let mailheaderCell = doc.createXULElement("listcell");
 		mailheaderCell.setAttribute("label", currcol.dbHeader);
 		listitem.appendChild(mailheaderCell);
 
@@ -64,7 +64,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 			tooltipString = currcol.tooltipString;
 		}
 
-		let titleCell = doc.createElement("listcell");
+		let titleCell = doc.createXULElement("listcell");
 		titleCell.setAttribute("label", labelString);
 		if ((!currcol.labelImagePath) || (currcol.labelImagePath === "")) {	// no image for this cust col
 			titleCell.setAttribute("image", "");
@@ -74,7 +74,7 @@ var miczColumnsWizardPref_CustomColsGrid = {
 		}
 		listitem.appendChild(titleCell);
 
-		let tooltipCell = doc.createElement("listcell");
+		let tooltipCell = doc.createXULElement("listcell");
 		tooltipCell.setAttribute("label", tooltipString);
 		listitem.appendChild(tooltipCell);
 

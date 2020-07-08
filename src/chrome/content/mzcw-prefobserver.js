@@ -1,6 +1,6 @@
 "use strict";
 
-const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+// const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 // cleidigh
 // Services appears to be defined globally in TB64+ ?

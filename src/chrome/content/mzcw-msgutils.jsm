@@ -26,7 +26,7 @@ if (parseInt(info.version.split('.')[0],10)  >= 61) {
 	ChromeUtils.import("resource:///modules/mailServices.js");
 }
 
-ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
+var { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 const { toXPCOMArray } = ChromeUtils.import("resource:///modules/iteratorUtils.jsm"); // for toXPCOMArray
 
 var miczColumnsWizard_MsgUtils = {

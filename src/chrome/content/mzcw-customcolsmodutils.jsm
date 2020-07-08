@@ -40,7 +40,7 @@ var miczColumnsWizard_CustomColsModUtils = {
 				let new_menu_item2;
 				let new_menu_item3;
 				if (CustCols[cc].editType !== miczColumnsWizard_CustomColsModUtils.editTypeFixedList) {	// simple menu
-					new_menu_item = doc.createElement("menuitem");
+					new_menu_item = doc.createXULElement("menuitem");
 					new_menu_item.setAttribute('label', CustCols[cc].labelString);
 					new_menu_item.setAttribute('colidx', CustCols[cc].index);
 					new_menu_item.setAttribute('mail_header', CustCols[cc].dbHeader);
@@ -51,16 +51,16 @@ var miczColumnsWizard_CustomColsModUtils = {
 					new_menu_item3 = new_menu_item.cloneNode(true);
 					new_menu_item3.onclick = first_click_callback;
 				} else {	// it's a fixed list, add submenus
-					new_menu_item = doc.createElement("menu");
+					new_menu_item = doc.createXULElement("menu");
 					new_menu_item.setAttribute('label', CustCols[cc].labelString);
 					new_menu_item.setAttribute('colidx', CustCols[cc].index);
 					new_menu_item.setAttribute('mail_header', CustCols[cc].dbHeader);
 					new_menu_item.setAttribute('edit_type', CustCols[cc].editType);
 					new_menu_item2 = new_menu_item.cloneNode(true);
 					new_menu_item3 = new_menu_item.cloneNode(true);
-					let mpp = doc.createElement("menupopup");
-					let mpp2 = doc.createElement("menupopup");
-					let mpp3 = doc.createElement("menupopup");
+					let mpp = doc.createXULElement("menupopup");
+					let mpp2 = doc.createXULElement("menupopup");
+					let mpp3 = doc.createXULElement("menupopup");
 					mpp.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
 					mpp2.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
 					mpp3.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
@@ -72,7 +72,7 @@ var miczColumnsWizard_CustomColsModUtils = {
 
 
 					for (let sbi in CustCols[cc].editFixedList) {
-						let subm = doc.createElement("menuitem");
+						let subm = doc.createXULElement("menuitem");
 						subm.setAttribute('id', CustCols[cc].dbHeader + '_' + CustCols[cc].editFixedList[sbi]);
 						subm.setAttribute('label', CustCols[cc].editFixedList[sbi]);
 						subm.setAttribute('colidx', CustCols[cc].index);

@@ -34,7 +34,7 @@ var miczColumnsWizard_CustCols = {
 			labelString = elementc.labelString;
 			tooltipString = elementc.tooltipString;
 		}
-		let cwCol = document.createElement("treecol");
+		let cwCol = document.createXUElement("treecol");
 		cwCol.setAttribute("id", coltype + "Col_cw");
 		cwCol.setAttribute("persist", "hidden ordinal width");
 		cwCol.setAttribute("hidden", "true");
