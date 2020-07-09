@@ -1,9 +1,21 @@
 <?xml version="1.0"?>
 <?xml-stylesheet href="chrome://global/skin/" type="text/css"?>
-<?xml-stylesheet type="text/css" href="chrome://messenger/skin/preferences/preferences.css"?>
+<?xml-stylesheet href="chrome://communicator/skin/" type="text/css"?>
+<?xml-stylesheet type="text/css" href="chrome://messenger/skin/messenger.css"?>
+<?xml-stylesheet type="text/css" href="chrome://messenger/skin/input-fields.css"?>
+<!-- <?xml-stylesheet type="text/css" href="chrome://messenger/skin/preferences/preferences.css"?> -->
 <?xml-stylesheet href="mzcw-settings.css" type="text/css"?>
-<!DOCTYPE overlay SYSTEM "chrome://columnswizard/locale/settings.dtd">
-<prefwindow id="ColumnsWizard_Settings"
+
+<!DOCTYPE dialog [ 
+<!ENTITY % mainDTD SYSTEM "chrome://columnswizard/locale/settings.dtd">
+%mainDTD;
+]>
+
+<!-- <!DOCTYPE overlay SYSTEM "chrome://columnswizard/locale/settings.dtd"> -->
+<!-- <prefwindow id="ColumnsWizard_Settings" -->
+
+
+<dialog id="ColumnsWizard_Settings"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   title="&ColumnsWizard.SettingsTitle;"
   onload="miczColumnsWizardPref.onLoad(window);">
@@ -222,4 +234,4 @@
   </prefpane>
   <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-customcolumns.js" />
   <script type="application/x-javascript" src="chrome://columnswizard/content/mzcw-settings.js" />
-</prefwindow>
+</dialog>

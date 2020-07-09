@@ -9,8 +9,8 @@ var EXPORTED_SYMBOLS = ["miczColumnsWizard_MsgUtils"];
 
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
-ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
-ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
+var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+var { miczLogger } = ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
 
 
 // cleidigh - Use correct module - avoids deprecation warning
@@ -20,10 +20,10 @@ const info = Cc["@mozilla.org/xre/app-info;1"].getService(Ci.nsIXULAppInfo);
 
 if (parseInt(info.version.split('.')[0],10)  >= 61) {
 	// Services.console.logStringMessage('MailServices.jsm - TB61+');
-	ChromeUtils.import("resource:///modules/MailServices.jsm");
+	var { MailServices } = ChromeUtils.import("resource:///modules/MailServices.jsm");
 } else {
 	// Services.console.logStringMessage('mailServices.js - TB60');
-	ChromeUtils.import("resource:///modules/mailServices.js");
+	var { MailServices } = ChromeUtils.import("resource:///modules/mailServices.js");
 }
 
 var { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");

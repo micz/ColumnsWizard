@@ -8,6 +8,7 @@ if (!Services) {
 
 var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 var { miczColumnsWizard_CustomColsModUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
+var { miczColumnsWizardPref_DefaultColsGrid } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
 var { miczColumnsWizard_MsgUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
 var { miczColumnsWizardUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-utils.jsm");
 var { miczLogger } = ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
@@ -54,10 +55,10 @@ var miczColumnsWizard = {
 		miczColumnsWizard.initHeadersEditingMenu();
 
 		let current_tab = document.getElementById("tabmail").currentTabInfo;
-		console.debug('Init before Menu');
 		miczColumnsWizard.addCWResetMenu(current_tab);
 
-		this.initialized = true;
+		// cleidigh not used?
+		// this.initialized = true;
 		// Conversation Tab add columns - delayed
 		setTimeout(function () { miczColumnsWizard.initDelayed(); }, 750);
 		miczLogger.log("ColumnsWizard loaded...", 0);
@@ -237,22 +238,19 @@ var miczColumnsWizard = {
 			let e2 = document.querySelector('treecolpicker');
 			// console.debug(cw_colmenubind.outerHTML);
 			cw_colmenubind = e2;
-			console.debug(cw_colmenubind.outerHTML);
-			console.debug(cw_colmenubind.buildPopup.toString());
+			// console.debug(cw_colmenubind.outerHTML);
+			// console.debug(cw_colmenubind.buildPopup.toString());
 
 			dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] tab.cw_colmenubind.command "+cw_colmenubind.oncommand+"\r\n");
-			if (!cw_colmenubind.cw_original_buildPopup) {
-				Services.console.logStringMessage("Within if function");
+			// if (!cw_colmenubind.cw_original_buildPopup) {
+				if(0) {
 				cw_colmenubind.cw_original_buildPopup = cw_colmenubind.buildPopup;
-				console.debug(cw_colmenubind.buildPopup.toString());
 				// dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] tab.cw_colmenubind.buildPopup "+cw_colmenubind.buildPopup+"\r\n");
 				// dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] FIRST TIME\r\n");
 				
 					cw_colmenubind.buildPopup.prototype = function (aPopup) { // buildPopup wrapper function START
 					// dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] "+this.parentNode.parentNode.id+"\r\n");
 					// Remove the columns' line... the popupmenu is built again every time from the original function...
-					console.debug('Pop-upSolution');
-					Services.console.logStringMessage("pop-up function");
 
 					if (aPopup.childNodes.length >= 5) {
 						while (aPopup.childNodes.length > 5) {
@@ -299,13 +297,12 @@ var miczColumnsWizard = {
 
 				};	// buildPopup wrapper function END
 			}
-			console.debug('Finished');
-			let popup = cw_colmenubind.querySelector(`menupopup[anonid="popup"]`);
-			miczColumnsWizard.bpop(popup, cw_colmenubind);
-    	// treeColPicker.buildPopup(popup);
-    		// popup.openPopup(target, "after_start", 0, 0, true);
+			let tc = document.querySelector("treecolpicker[is=thread-pane-treecolpicker]");
+
+			let tc_menu = tc.querySelector("menupopup");
+
+			miczColumnsWizard.bpop(tc_menu, tc);
     
-			// console.debug(cw_colmenubind.buildPopup.toString());
 
 		}
 	},
@@ -313,18 +310,7 @@ var miczColumnsWizard = {
 	bpop: function (aPopup, tc) { // buildPopup wrapper function START
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu] "+this.parentNode.parentNode.id+"\r\n");
 		// Remove the columns' line... the popupmenu is built again every time from the original function...
-		console.debug('Pop-upSolution');
-		Services.console.logStringMessage("pop-up function");
-
-		if (aPopup.childNodes.length >= 5) {
-			while (aPopup.childNodes.length > 5) {
-				aPopup.firstChild.remove();
-			}
-			// ... now remove the resetMenuCW and saveDefaultMenuCW items...
-			aPopup.removeChild(aPopup.childNodes[2]);
-			aPopup.removeChild(aPopup.childNodes[2]);
-		}
-		console.debug('have to remove children');
+		
 		// check if we're using the colcw default for new folders
 		// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 		// let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
@@ -335,65 +321,42 @@ var miczColumnsWizard = {
 
 		// aPopup.childNodes[1].setAttribute('hidden', cw_active ? 'true' : 'false');
 
-		// cw_colmenubind.cw_original_buildPopup(aPopup);
-		tc.buildPopup(aPopup);
 
-		console.debug('after pop-up');
-		console.debug(aPopup.outerHTML);
+		try {
+			let element = document.getElementById("columnswizard-defaultmenu");
+			element.remove();
+			element = document.getElementById("columnswizard-resetmenu");
+			element.remove();
+		} catch (error) {
+			// no menus to remove
+		}
+
+		let insertPoint = tc.querySelector("menuseparator").nextSibling;
 		// Add saveDefaultMenuCW element
 		let saveDefaultMenuCW = document.createXULElement("menuitem");
 		saveDefaultMenuCW.setAttribute('label', _bundleCW.GetStringFromName("ColumnsWizardNFCols.saveDefault"));
-		// saveDefaultMenuCW.setAttribute('hidden', cw_active ? 'false' : 'true');
-		saveDefaultMenuCW.id = "savecw";
-		saveDefaultMenuCW.setAttribute('hidden', 'true');
-		// we do this to escape the command xbl event handler
+		saveDefaultMenuCW.setAttribute('hidden', cw_active ? 'false' : 'true');
+		saveDefaultMenuCW.id = "columnswizard-defaultmenu";
 		saveDefaultMenuCW.setAttribute("anonid", "menuitem");
-		// saveDefaultMenuCW.setAttribute("type", "checkbox");
-		// saveDefaultMenuCW.setAttribute("colindex", "2");
-		// saveDefaultMenuCW.setAttribute("class", "menu-text");
-		// saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
-		saveDefaultMenuCW.onclick = miczColumnsWizard.addCWSaveDefaultMenu_OnClick;
-		aPopup.insertBefore(saveDefaultMenuCW, aPopup.lastChild);
+		saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
+		saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
+		saveDefaultMenuCW.setAttribute("oncommand", "miczColumnsWizard.addCWSaveDefaultMenu_OnClick()");
+		
+		aPopup.insertBefore(saveDefaultMenuCW, insertPoint);
 
 		// Add resetMenuCw element
 		let resetMenuCW = document.createXULElement("menuitem");
+		resetMenuCW.id = "columnswizard-resetmenu";
 		resetMenuCW.setAttribute('label', _bundleCW.GetStringFromName("ColumnsWizardNFCols.resetMenu"));
 		resetMenuCW.setAttribute('hidden', cw_active ? 'false' : 'true');
-		// we do this to escape the command xbl event handler
 		resetMenuCW.setAttribute("anonid", "menuitem");
-		// resetMenuCW.setAttribute("colindex", "1");
-		resetMenuCW.setAttribute("class", "menu-text");
-		// resetMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/resetMenuCW.png");
-		resetMenuCW.onclick = miczColumnsWizard.addCWResetMenu_OnClick;
-		aPopup.insertBefore(resetMenuCW, aPopup.lastChild);
+		resetMenuCW.setAttribute("class", "menuitem-iconic");
+		resetMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/resetMenuCW.png");
+		resetMenuCW.setAttribute("oncommand", "miczColumnsWizard.addCWResetMenu_OnClick()");
+		aPopup.insertBefore(resetMenuCW, insertPoint);
 
-		console.debug(aPopup.outerHTML);
-		// aPopup.openPopup(document.popup, "after_start", 0, 0, true);
-		miczColumnsWizard.displayColumnsPicker();
+		insertPoint.remove();
 	},	// buildPopup wrapper function END
-
-	displayColumnsPicker: function () {
-		if (document && document.popupNode) {
-			var target = document.popupNode;
-			// for persistence, save the custom columns state
-			if (target.localName == "treecol") {
-				let treecols = target.parentNode;
-				let nodeList = document.getAnonymousNodes(treecols);
-				let treeColPicker;
-				for (let i = 0; i < nodeList.length; i++) {
-					if (nodeList.item(i).localName == "treecolpicker") {
-						treeColPicker = nodeList.item(i);
-						break;
-					}
-				}
-				let popup = document.getAnonymousElementByAttribute(treeColPicker, "anonid", "popup");
-				treeColPicker.buildPopup(popup);
-				popup.openPopup(target, "after_start", 0, 0, true);
-				return false;
-			}
-		}
-		return true;
-	},
 
 	addCWSaveDefaultMenu_OnClick: function (event) {
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
@@ -412,6 +375,7 @@ var miczColumnsWizard = {
 
 	addCWResetMenu_OnClick: function (event) {
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWSaveDefaultMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
+		
 		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
 		let promptService = Cc["@mozilla.org/embedcomp/prompt-service;1"].getService(Ci.nsIPromptService);
 		let title_msg = _bundleCW.GetStringFromName("ColumnsWizardNFCols.resetMenu");

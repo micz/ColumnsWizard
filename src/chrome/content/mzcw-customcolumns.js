@@ -2,7 +2,7 @@
 
 var EXPORTED_SYMBOLS = ["miczColumnsWizard_CustCols"];
 
-ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
 var miczColumnsWizard_CustCols = {
 
