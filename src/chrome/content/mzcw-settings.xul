@@ -13,12 +13,13 @@
 
 <!-- <!DOCTYPE overlay SYSTEM "chrome://columnswizard/locale/settings.dtd"> -->
 <!-- <prefwindow id="ColumnsWizard_Settings" -->
+  <!-- onload="miczColumnsWizardPref.onLoad(window);"> -->
 
 
 <dialog id="ColumnsWizard_Settings"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
-  title="&ColumnsWizard.SettingsTitle;"
-  onload="miczColumnsWizardPref.onLoad(window);">
+  title="&ColumnsWizard.SettingsTitle;">
+  
   <prefpane id="ColumnsWizard_PrefPane">
     <preferences>
     <!-- Columns in Conversation Tab -->

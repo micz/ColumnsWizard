@@ -28,10 +28,11 @@ var miczColumnsWizard = {
 
 		miczLogger.setLogger(true, miczColumnsWizardPrefsUtils.isDebug);
 
-		if (miczColumnsWizardPrefsUtils.firstRun) {		// adding toolbar button at first run
-			miczColumnsWizardPrefsUtils.firstRunDone();
-			miczColumnsWizard.addToolbarButton();
-		}
+		// cleidigh disable and fix
+		// if (miczColumnsWizardPrefsUtils.firstRun) {		// adding toolbar button at first run
+		// 	miczColumnsWizardPrefsUtils.firstRunDone();
+		// 	miczColumnsWizard.addToolbarButton();
+		// }
 
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 
@@ -496,6 +497,7 @@ var miczColumnsWizard = {
 
 	},
 
+	// cleidigh fix document persist
 	addToolbarButton: function () {
 		let toolbar = document.getElementById("mail-bar3");
 		let buttonId = "mzcw-button";

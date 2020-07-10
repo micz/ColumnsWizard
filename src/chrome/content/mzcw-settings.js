@@ -3,11 +3,16 @@
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 var { miczColumnsWizardPref_CustomColsGrid } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
 var { miczColumnsWizardPref_DefaultColsGrid } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
+var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
 var miczColumnsWizard = window.opener.miczColumnsWizard;
 var miczColumnsWizardPref = {
 
 	onLoad: function (win) {
+		win = window;
+		// temporary preference Fixup
+		this.fixupPreferences(win);
+
 		this.loadCustColRows(win);
 
 		// Load release notes
@@ -26,6 +31,87 @@ var miczColumnsWizardPref = {
 		miczColumnsWizardPref_CustomColsGrid.onEditCustomCol = miczColumnsWizardPref.onEditCustomCol;
 	},
 
+	fixupPreferences: function(win) {
+		// console.debug('FixupPreferences');
+		// Services.console.logStringMessage(" fixup preferences");
+		var preferenceElements = document.getElementsByTagName("preference");
+		for (let pelement of preferenceElements)  {
+			let preferenceId = pelement.getAttribute("id");
+			let preferenceName = pelement.getAttribute("name");
+			let preferenceType = pelement.getAttribute("type");
+			let preferences  = document.querySelectorAll(`[preference="${preferenceId}"]`);
+			for (let element of preferences) {
+				// console.debug(element.outerHTML);
+				var pref;
+				switch (preferenceType) {
+					case 'bool':
+						pref = miczColumnsWizardPrefsUtils.getBoolPref(preferenceName);
+						element.value = pref;
+						if (pref) {
+							element.setAttribute("checked", "true");
+						} else {
+							element.removeAttribute("checked");
+						}
+						Services.console.logStringMessage(`lP: ${preferenceId} : ${pref}`);
+						break;
+					case 'int':
+						pref = miczColumnsWizardPrefsUtils.getIntPref(preferenceName);
+						element.value = pref;
+						Services.console.logStringMessage(`lP: ${preferenceId} : ${pref}`);
+						break;
+					case 'string':
+						pref = miczColumnsWizardPrefsUtils.getCharPref(preferenceName);
+						element.value = pref;
+						Services.console.logStringMessage(`lP: ${preferenceId} : ${pref}`);
+						break;
+					default:
+						break;
+				}
+
+			}
+		}
+	},
+
+	savePreferences: function(win) {
+		// Services.console.logStringMessage("save preferences");
+		var preferenceElements = document.getElementsByTagName("preference");
+		for (let pelement of preferenceElements)  {
+			let preferenceId = pelement.getAttribute("id");
+			let preferenceName = pelement.getAttribute("name");
+			let preferenceType = pelement.getAttribute("type");
+			let preferences  = document.querySelectorAll(`[preference="${preferenceId}"]`);
+			for (let element of preferences) {
+				// console.debug(element.outerHTML);
+				var pref;
+				switch (preferenceType) {
+					case 'bool':
+						pref = element.checked;
+						if (!pref) {
+							pref = false;
+						}
+						miczColumnsWizardPrefsUtils.setBoolPref(preferenceName, pref);
+						Services.console.logStringMessage(`sP: ${preferenceId} : ${pref}`);
+						break;
+					case 'int':
+						pref = element.value;
+						miczColumnsWizardPrefsUtils.setIntPref(preferenceName, pref);
+						Services.console.logStringMessage(`sP: ${preferenceId} : ${pref}`);
+						break;
+					case 'string':
+						pref = element.value;
+						miczColumnsWizardPrefsUtils.setCharPref(preferenceName, pref);
+						Services.console.logStringMessage(`sP: ${preferenceId} : ${pref}`);
+						break;
+					default:
+						break;
+				}
+
+			}
+		}
+		let defaultcols = this.saveDefaultColRows(win);
+		Services.console.logStringMessage(`SaveDefaultC : ${defaultcols}`);
+	},
+
 	loadDefaultColRows: function (win) {
 		let doc = win.document;
 		let container = doc.getElementById('ColumnsWizard.DefaultColsGrid');
@@ -35,10 +121,11 @@ var miczColumnsWizardPref = {
 	},
 
 	saveDefaultColRows: function (win) {
-		let doc = win.document;
+		// let doc = win.document;
+		let doc = document;
 		let container = doc.getElementById('ColumnsWizard.DefaultColsGrid');
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref] saveDefaultColRows called\r\n");
-		return miczColumnsWizardPref_DefaultColsGrid.saveDefaultColsGridRows(doc, container, false);
+		return miczColumnsWizardPref_DefaultColsGrid.saveDefaultColsGridRows(doc, container, true);
 	},
 
 	loadCustColRows: function (win) {
@@ -151,3 +238,12 @@ var miczColumnsWizardPref = {
 		request.send();
 	},
 };
+
+document.addEventListener("dialogaccept", function (event) {
+	miczColumnsWizardPref.savePreferences();
+});
+
+window.addEventListener("load", function (event) {
+	miczColumnsWizardPref.onLoad();
+});
+

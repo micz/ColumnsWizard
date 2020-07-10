@@ -16,13 +16,16 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 		// let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
 		// let DefaultColIndexStr=prefs.getCharPref("DefaultColsList");
 		let DefaultColIndexStr = miczColumnsWizardPrefsUtils.getCharPref_CW("DefaultColsList");
+		// console.debug(`CurrentIndexS: ${DefaultColIndexStr}`);
 		let loadedDefaultColIndex = [];
 		if (DefaultColIndexStr === '') {
 			// Set default cols if none set at the moment
 			loadedDefaultColIndex = miczColumnsWizardPref_DefaultColsGrid.getOriginalColIndex();
+			// console.debug(`D IndexS: ${DefaultColIndexStr}`);
 			// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] default loaded and saved pref\r\n");
 		} else {
 			loadedDefaultColIndex = JSON.parse(DefaultColIndexStr);
+			// console.debug(`L IndexS: ${loadedDefaultColIndex}`); 
 			// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] pref loaded\r\n");
 		}
 		// fix wrong ordina values: columns must have odd ordinal values, because even values are for splitters (used for columns resizing)
@@ -188,9 +191,11 @@ var miczColumnsWizardPref_DefaultColsGrid = {
 
 	saveDefaultColsGridRows: function (doc, container, save_pref) {
 		let value = JSON.stringify(this.getDefaultCols(container));
+		// console.debug(`save V IndexS: ${value}`);
 		if (save_pref) {
 			let preference = doc.getElementById("ColumnsWizard.DefaultColsList");
 			preference.value = value;
+			miczColumnsWizardPrefsUtils.setCharPref("extensions.ColumnsWizard.DefaultColsList", value);
 		}
 		return value;
 	},
