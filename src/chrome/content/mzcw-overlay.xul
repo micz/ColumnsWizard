@@ -64,4 +64,18 @@
 	  class="toolbarbutton-1"/>
 </toolbarpalette>
 
+
+<!-- cleidigh temporary new settings page  -->
+<!-- tools menu item -->
+<menupopup id="taskPopup">
+ <menuitem id="newsettings-menu-item"
+ label="ColumnsWizard (NewUI)"
+ oncommand="miczColumnsWizard.openSettingsTab();"
+ insertafter="joinChatMenuItem"
+ class="menuitem-iconic"
+ image="chrome://columnswizard/skin/mzcw-icon.png"/>
+ <menuseparator id="micz-Separator"
+ insertafter="joinChatMenuItem"/>
+ </menupopup>
+
 </overlay>

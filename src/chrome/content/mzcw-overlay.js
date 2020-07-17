@@ -515,6 +515,22 @@ var miczColumnsWizard = {
 		}
 	},
 
+	
+	getMail3Pane: function () {
+		let windowManager = Cc['@mozilla.org/appshell/window-mediator;1']
+				.getService(Ci.nsIWindowMediator),
+		    win3pane = windowManager.getMostRecentWindow("mail:3pane");
+		return win3pane;
+	},
+
+	openSettingsTab: function () {
+		let url = "chrome://columnswizard/content/settings.html";
+		let tabmail = this.getMail3Pane();
+	
+		tabmail.openTab("chromeTab", { chromePage: url });
+	
+	},
+	
 };
 
 window.addEventListener("load", miczColumnsWizard.init, false);
