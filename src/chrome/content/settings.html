@@ -95,8 +95,8 @@
     <section>
       <div class="section-header">This is the columns' default configuration for the new folders. You can modify it here or use the menu in the column picker of the message list.</div>
 		  <div class="section-content">
-	  <label class="container">Use 'your default columns setup for new folders
-		<input type="checkbox" checked="checked">
+	  <label class="container" height="16px">Use your default columns setup for new folders
+		<input type="checkbox" id="ColumnsWizard.DefaultColsList.active_checkbox">
 		<span class="checkmark"></span>
 	  </label>
 
@@ -119,7 +119,22 @@
         </tbody>
       </table>
     </div>
+
+  <div style="display: flex; justify-content: start;">
+    <label style="padding-right: 20px;">Sort Order: </label>
+    <label class="container" style="padding-right: 15px;">Ascending
+    <input type="radio" id="cw_sort_asc" name="cw_sort_direction_rg" checked="true">
+    <span class="rcheckmark"></span>
+    </label>
   
+    <label class="container">Descending
+      <input type="radio" id="cw_sort_desc" name="cw_sort_direction_rg">
+      <span class="rcheckmark"></span>
+      </label>
+  
+    </div>
+
+    <!-- <input type="button" label="save" onclick="miczColumnsWizardPref2.getDefaultColsFromList()">SaveDefaultColumns</input> -->
 
   </div>
 

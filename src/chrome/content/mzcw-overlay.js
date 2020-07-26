@@ -316,6 +316,7 @@ var miczColumnsWizard = {
 		// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 		// let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
 		// let cw_active=prefs.getBoolPref("active");
+		console.debug('InsertMenus');
 		let cw_active = miczColumnsWizardPrefsUtils.defaultColsListActive;
 
 		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
@@ -325,6 +326,10 @@ var miczColumnsWizard = {
 
 		try {
 			let element = document.getElementById("columnswizard-defaultmenu");
+			if (element) {
+				console.debug('AlreadyInstalled');
+				return;
+			}
 			element.remove();
 			element = document.getElementById("columnswizard-resetmenu");
 			element.remove();
@@ -382,6 +387,7 @@ var miczColumnsWizard = {
 		let title_msg = _bundleCW.GetStringFromName("ColumnsWizardNFCols.resetMenu");
 		let text_msg = _bundleCW.GetStringFromName("ColumnsWizard.resetDefault_OnClick_text");
 		if (!promptService.confirm(null, title_msg, text_msg)) return;
+		// let columnStates = miczColumnsWizardPref2.loadDefaultColRows_Pref();
 		let columnStates = miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
 		gFolderDisplay.setColumnStates(columnStates, true);
 		return;
