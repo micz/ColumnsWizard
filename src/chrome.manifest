@@ -1,5 +1,6 @@
 content   columnswizard                 chrome/content/ contentaccessible=yes
 content   cwrl							./	contentaccessible=yes
+
 #resource   icons 	chrome/skin/ico	contentaccessible=yes
 resource	columnswizard				chrome/resource/
 locale    columnswizard   en-US         chrome/locale/en-US/

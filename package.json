@@ -1,7 +1,7 @@
 {
 	"title": "ColumnsWizard",
 	"name": "columnswizard",
-	"version": "7.0.0-b4",
+	"version": "7.0.0-b5",
 	"description": "Adds some magic to the folder list columns! You can add a custom column directly from the addon preference window to show any mail header you want, define the default columns settings for any new folder and show hidden columns in the Conversation Tab and in the search window.",
 	"main": "./chrome/content/mzcw-overlay.js",
 	"author": "Micz, Christopher Leidigh",
