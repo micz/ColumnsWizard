@@ -316,7 +316,6 @@ var miczColumnsWizard = {
 		// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 		// let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
 		// let cw_active=prefs.getBoolPref("active");
-		console.debug('InsertMenus');
 		let cw_active = miczColumnsWizardPrefsUtils.defaultColsListActive;
 
 		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
@@ -327,7 +326,6 @@ var miczColumnsWizard = {
 		try {
 			let element = document.getElementById("columnswizard-defaultmenu");
 			if (element) {
-				console.debug('AlreadyInstalled');
 				return;
 			}
 			element.remove();
@@ -336,6 +334,8 @@ var miczColumnsWizard = {
 		} catch (error) {
 			// no menus to remove
 		}
+
+		console.debug('CW: InsertMenus');
 
 		let insertPoint = tc.querySelector("menuseparator").nextSibling;
 		// Add saveDefaultMenuCW element

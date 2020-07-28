@@ -44,7 +44,7 @@
 </menupopup>
 
 <!-- Menu entry for the new app main popup menu -->
-
+<!-- 
 <menupopup id="appmenu_messageMenuPopup">
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_newmain_menu"
 	class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png"
@@ -53,7 +53,7 @@
 		<menupopup id="cw_edit_newmain_menu_popup">
 	    </menupopup>
 	</menu>
-</menupopup>
+</menupopup> -->
 
   <!-- Thunderbird mail -->
 <toolbarpalette id="MailToolbarPalette">
