@@ -1,0 +1,27 @@
+
+.custom-col-list-container {
+	border: 1px solid darkgray !important;
+	height: 380px;
+	padding-top: 0px !important;
+	padding-left: 0px !important;
+	margin-left: 25px !important;
+	overflow-y: auto;
+}
+.custom-col-list {
+
+}
+
+.button {
+	background-color: #cccccc;
+	border: none;
+	height: 25px;
+	min-width: 85px;
+
+	/* padding: 15px 32px; */
+	/* padding-top: 4px; */
+	text-align: center;
+	vertical-align: middle;
+	text-decoration: none;
+	display: inline-block;
+	font-size: 16px;
+  }

@@ -9,6 +9,9 @@ if (!Services) {
 var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 var { miczColumnsWizard_CustomColsModUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
 var { miczColumnsWizardPref_DefaultColsGrid } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
+var { miczColumnsWizardPref_CustomColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolslist.jsm");
+
+
 var { miczColumnsWizard_MsgUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
 var { miczColumnsWizardUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-utils.jsm");
 var { miczLogger } = ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
@@ -42,7 +45,7 @@ var miczColumnsWizard = {
 		miczColumnsWizard.updateHeaderEditingMenuObserver(ObserverService);
 
 		// Adding custom columns
-		miczColumnsWizard.CustColPref = miczColumnsWizard_CustCols.loadCustCols();
+		miczColumnsWizard.CustColPref = miczColumnsWizardPref_CustomColsList.loadCustCols();
 
 		for (let index in miczColumnsWizard.CustColPref) {
 			miczColumnsWizard.addDbObserver(miczColumnsWizard.CustColPref[index]);

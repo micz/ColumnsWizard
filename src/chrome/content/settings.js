@@ -4,6 +4,7 @@
 
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 var { miczColumnsWizardPref_CustomColsGrid } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
+var { miczColumnsWizardPref_CustomColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolslist.jsm");
 var { miczColumnsWizardPref_DefaultColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolslist.jsm");
 var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
@@ -22,6 +23,7 @@ var miczColumnsWizardPref2 = {
 	},
 
 	settingsLoad: function () {
+
 
 		let cbelement = document.getElementById("ColumnsWizard.DefaultColsList.active_checkbox");
 		let dca = miczColumnsWizardPrefsUtils.getBoolPref_CW("DefaultColsList.active");
@@ -47,7 +49,7 @@ var miczColumnsWizardPref2 = {
 
 		miczColumnsWizardPref_DefaultColsList.initDefaultColsList(window);
 		
-
+		miczColumnsWizardPref_CustomColsList.initCustomColsList(window);
 
 
 	},
@@ -89,6 +91,15 @@ var miczColumnsWizardPref2 = {
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
 		return loadedDefaultColIndex;
 	},
+
+
+
+	loadCustColRows: function (win) {
+		let doc = win.document;
+		let container = doc.getElementById('ColumnsWizard.CustColsList');
+		miczColumnsWizardPref_CustomColsList.createCustomColsListRows(doc, container);
+	},
+
 
 	sortDefaultColsList: function () {
 		let DefColRows = miczColumnsWizardPref2.loadDefaultColRows_Pref();

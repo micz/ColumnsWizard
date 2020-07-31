@@ -4,6 +4,7 @@
 	<head>
     <link rel="stylesheet" href="./css/settings.css" />
     <link rel="stylesheet" href="./css/defaultColList.css" />
+    <link rel="stylesheet" href="./css/customcolslist.css" />
     <link rel="stylesheet" href="./css/checkbox.css" />
     <link rel="stylesheet" href="./css/radio.css" />
 		</head>
@@ -11,8 +12,8 @@
 <body>
 
 <div class="tabs">
-  <input type="radio" id="tab1" name="tab-control" checked tabindex="0">
-  <input type="radio" id="tab2" name="tab-control" tabindex="0">
+  <input type="radio" id="tab1" name="tab-control"  tabindex="0">
+  <input type="radio" id="tab2" name="tab-control" checked tabindex="0">
   <input type="radio" id="tab3" name="tab-control">
   <input type="radio" id="tab4" name="tab-control">
   <input type="radio" id="tab5" name="tab-control" disabled>
@@ -141,45 +142,58 @@
   </section>
 
     <section>
-      <label class="container">Two
-        <input type="checkbox">
-        <span class="checkmark"></span>
-        </label>
-        <label class="container">Three
-        <input type="checkbox">
-        <span class="checkmark"></span>
-        </label>
-        <label class="container">Four
-        <input type="checkbox">
-        <span class="checkmark"></span>
-        </label>
+      <div class="section-header">Choose here which custom columns you want to add to the messages list.</div>
+		  <div class="section-content">
+    
+        <div id="customColsListDiv" class="table-list-container custom-col-list-container" tabindex="0" >
+
+          <table id="customColsTable" class="table-list custom-col-list" data-currentpage="1">
+      
+            <thead height="20px">
+            <tr height="20px">
+              <th class="En" height="20px">Enabled</th>
+              <th class="srch"  height="20px">Searchable</th>
+              <th class="header-id"  height="20px">ID</th>
+              <th class="mail-header"  height="20px">Mail Header</th>
+              <th class="col-name"  height="20px">Column Name</th>
+              <th class="tooltip"  height="20px">Tooltip</th>
+              </tr>
+            </thead>
+      
+            <!-- IMPORTANT, class="list" must be on tbody -->
+            <tbody class="list">
+                
+            </tbody>
+          </table>
+
+        </div>
         
-        <label class="container">TestRadio
-          <input type="radio">
-          <span class="rcheckmark"></span>
-          </label>
-          <br><br>
-  
+        <div class="section-content">
+        <button class="button">New</button>
+        <button class="button">Edit</button>
+        <button class="button">Delete</button>
+      </div>
+
         </section>
     
     <section>
       <div class="section-header">Choose here which additional columns you want to see in the Conversation Tab.</div>
-      <label class="container">Two
+      <label class="container">Location
         <input type="checkbox">
         <span class="checkmark"></span>
         </label>
-        <label class="container">Three
+        <label class="container">Account
         <input type="checkbox">
         <span class="checkmark"></span>
         </label>
-        <label class="container">Four
+        <label class="container">Attachment
         <input type="checkbox">
         <span class="checkmark"></span>
         </label>
         
-        <label class="container">TestRadio
-          <input type="radio">
-          <span class="rcheckmark"></span>
+        <label class="container">Recipient
+          <input type="checkbox">
+          <span class="checkmark"></span>
           </label>
     
     </section>

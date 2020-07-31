@@ -34,7 +34,7 @@ var miczColumnsWizard_CustCols = {
 			labelString = elementc.labelString;
 			tooltipString = elementc.tooltipString;
 		}
-		let cwCol = document.createXUElement("treecol");
+		let cwCol = document.createXULElement("treecol");
 		cwCol.setAttribute("id", coltype + "Col_cw");
 		cwCol.setAttribute("persist", "hidden ordinal width");
 		cwCol.setAttribute("hidden", "true");
@@ -142,6 +142,8 @@ var miczColumnsWizard_CustCols = {
 	},
 
 	checkCustColDefaultIndex: function (curr_idx) {
+		console.debug('check default index');
+		
 		for (let idx in miczColumnsWizard_CustCols.CustColDefaultIndex) {
 			if ( !curr_idx.includes(miczColumnsWizard_CustCols.CustColDefaultIndex[idx])) {
 				curr_idx.push(miczColumnsWizard_CustCols.CustColDefaultIndex[idx]);
@@ -229,6 +231,7 @@ var miczColumnsWizard_CustCols = {
 	},
 
 	updateCustCol: function (newcol) {
+		console.debug('UpdateCustom');
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 		ObserverService.notifyObservers(null, "CW-updateCustomColumn", JSON.stringify(newcol));
 		miczColumnsWizard_CustCols.saveCustCol(newcol);

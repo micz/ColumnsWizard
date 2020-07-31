@@ -75,7 +75,7 @@
 
 <menupopup id="taskPopup">
  <menuitem id="newsettings-menu-item"
- label="ColumnsWizard (NewUI)"
+ label="ColumnsWizard (NewUI2)"
  oncommand="miczColumnsWizard.openSettingsTab();"
  insertafter="joinChatMenuItem"
  class="menuitem-iconic"
