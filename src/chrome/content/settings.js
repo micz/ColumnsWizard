@@ -284,6 +284,49 @@ var miczColumnsWizardPref2 = {
 		return strOut;
 	},
 
+	onNewCustomCol: function (win) {
+		let doc = win.document;
+		let container = doc.getElementById('ColumnsWizard.CustColsList');
+		let args = { "action": "new" };
+
+		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xul", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
+
+		if (("save" in args && args.save) && ("newcol" in args && args.newcol)) {
+			miczColumnsWizard_CustCols.addNewCustCol(args.newcol);
+			miczColumnsWizardPref_CustomColsGrid.createOneCustomColRow(doc, container, args.newcol);
+			// Select the new custcols, it is at the end of the list.
+			container.selectedIndex = container.itemCount - 1;
+			container.ensureIndexIsVisible(container.selectedIndex);
+		}
+
+	},
+
+	onEditCustomCol: function (win) {
+		let doc = win.document;
+		// let container = doc.getElementById('ColumnsWizard.CustColsList');
+
+		// if (container.selectedIndex === -1) return;
+		// if (doc.getElementById("editButton").disabled) return;
+
+		const item = miczColumnsWizardPref_CustomColsList.customColsListObj.items[1];
+		var vals = item.values();
+			
+		// let args = { "action": "edit", "currcol": JSON.stringify(container.selectedItem._customcol) };
+		let args = { "action": "edit", "currcol": JSON.stringify(vals) };
+
+		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xul", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
+
+		if (("save" in args && args.save) && ("newcol" in args && args.newcol)) {
+			// save the cust col in the pref
+			miczColumnsWizard_CustCols.updateCustCol(args.newcol);
+			// update the cust col in the listbox
+			// miczColumnsWizardPref_CustomColsGrid.editOneCustomColRow(doc, container, args.newcol, container.selectedIndex);
+			// Select the editedcustcols
+			// container.ensureIndexIsVisible(container.selectedIndex);
+		}
+
+	},
+
 	
 	registerPreferenceListeners: function(idArray) {
 		idArray.forEach(element => {

@@ -228,6 +228,7 @@ var miczColumnsWizard = {
 			}
 		}
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [tab folder mode] "+tab.mode.name+" \r\n");
+		console.debug('menu call ');
 		miczColumnsWizard.addCWResetMenu(tab);
 	},
 
@@ -325,10 +326,11 @@ var miczColumnsWizard = {
 
 		// aPopup.childNodes[1].setAttribute('hidden', cw_active ? 'true' : 'false');
 
-
+		console.debug('CheckMenus');
 		try {
 			let element = document.getElementById("columnswizard-defaultmenu");
 			if (element) {
+				console.debug('Menus already installed');
 				return;
 			}
 			element.remove();
@@ -365,6 +367,7 @@ var miczColumnsWizard = {
 		aPopup.insertBefore(resetMenuCW, insertPoint);
 
 		insertPoint.remove();
+		console.debug('MenusFinished');
 	},	// buildPopup wrapper function END
 
 	addCWSaveDefaultMenu_OnClick: function (event) {

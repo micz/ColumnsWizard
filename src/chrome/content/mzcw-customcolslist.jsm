@@ -229,8 +229,8 @@ var miczColumnsWizardPref_CustomColsList = {
 			isBundled: currcol.isBundled,
 			isCustom: currcol.isCustom,
 			sortnumber: currcol.sortnumber,
-			labelString: currcol.labelString,
-			tooltipString: currcol.tooltipString,
+			labelString: labelString,
+			tooltipString: tooltipString,
 		});
 
 	},
