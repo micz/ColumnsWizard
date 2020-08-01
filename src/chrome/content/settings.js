@@ -160,6 +160,10 @@ var miczColumnsWizardPref2 = {
 		const item = miczColumnsWizardPref_CustomColsList.customColsListObj.items[Number(selectedID) - 1];
 		var vals = item.values();
 		var index = vals.index;
+		if (vals.isBundled) {
+			alert("Cannot edit bundled custom column");
+			return;
+		}
 		// let args = { "action": "edit", "args.newcol": JSON.stringify(container.selectedItem._customcol) };
 		let args = { "action": "edit", "currcol": JSON.stringify(vals) };
 
@@ -197,6 +201,56 @@ var miczColumnsWizardPref2 = {
 			// container.ensureIndexIsVisible(container.selectedIndex);
 		}
 
+	},
+
+	
+	onDeleteCustomCol: function (win) {
+		let doc = win.document;
+
+		// let container = doc.getElementById('ColumnsWizard.CustColsList');
+
+		// if (container.selectedIndex === -1) return;
+		// if (doc.getElementById("deleteButton").disabled) return;
+
+		var selectedID = miczColumnsWizardPref_CustomColsList.customColsListObj.controller.getSelectedRowDataId();
+		console.debug(selectedID);
+		if (!selectedID || selectedID === -1) {
+			console.debug('no select');
+			return;
+		}
+
+		const item = miczColumnsWizardPref_CustomColsList.customColsListObj.items[Number(selectedID) - 1];
+		var vals = item.values();
+		var index = vals.index;
+
+		if (vals.isBundled) {
+			alert("Cannot delete bundled custom column");
+			return;
+		}
+		
+		// Are you sure?
+		let prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"].getService(Ci.nsIPromptService);
+		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/settings.properties");
+
+		if (!prompts.confirm(null, _bundleCW.GetStringFromName("ColumnsWizard.deletePrompt.title"), _bundleCW.GetStringFromName("ColumnsWizard.deletePrompt.text"))) return;
+
+		
+		
+		
+		// get the col id
+		let col_idx = index;
+		// dump(">>>>>>>>>>>>> miczColumnsWizard: [onDeleteCustomCol] col_idx ["+col_idx+"]\r\n");
+
+		// delete the custom col
+		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
+		// miczColumnsWizard_CustCols.removeCustomColumn(col_idx,ObserverService)
+		// miczColumnsWizard_CustCols.deleteCustCol(col_idx);
+		ObserverService.notifyObservers(null, "CW-deleteCustomColumn", col_idx);
+
+		// remove the custom col from the list
+		miczColumnsWizardPref_CustomColsList.customColsListObj.remove("id", selectedID);
+
+		// miczColumnsWizardPref_CustomColsGrid.deleteOneCustomColRow(container, container.selectedIndex);
 	},
 
 	

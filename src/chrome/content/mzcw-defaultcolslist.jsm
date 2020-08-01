@@ -28,10 +28,6 @@ var miczColumnsWizardPref_DefaultColsList = {
 
 		Services.scriptloader.loadSubScript("chrome://columnswizard/content/modules/list.controller2.js", window);
 		// Services.scriptloader.loadSubScript("chrome://columnswizard/content/modules/list.js", window);
-		
-		// var List = new List();
-		// var ListC = new window.lc.ListController();
-		// var Listd = new lc.ListController();
 
 
 		var options = {
