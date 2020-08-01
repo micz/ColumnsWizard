@@ -2,7 +2,7 @@
 
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
-
+var { miczColumnsWizard_CustCols } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolumns.js");
 var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_DefaultColsList"];
 
 const colClass = 'cw-col-class';
@@ -18,6 +18,9 @@ var miczColumnsWizardPref_DefaultColsList = {
 		miczColumnsWizardPref_DefaultColsList.window = window;
 		miczColumnsWizardPref_DefaultColsList.document = window.document;
 		var context = {};
+		
+		miczColumnsWizardPref_DefaultColsList.loadedCustCols = miczColumnsWizard_CustCols.loadCustCols();
+
 		
 		// Services.scriptloader.loadSubScript("chrome://columnswizard/content/modules/list.controller.js", miczColumnsWizardPref_DefaultColsList);
 		// Services.scriptloader.loadSubScript("chrome://columnswizard/content/modules/list.js", miczColumnsWizardPref_DefaultColsList);
@@ -440,6 +443,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 				let col_idx = col.replace('Col_cw', '');
 				let col_el = this.loadedCustCols[col_idx];
 				// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid] col_idx "+col_idx+"\r\n");
+		
 				let _bundleCW_overlay = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
 				if (this.loadedCustCols[col_idx]) {
 					if (col_el.isBundled) {

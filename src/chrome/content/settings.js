@@ -3,6 +3,7 @@
 "use strict";
 
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+var { miczColumnsWizard_CustCols } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolumns.js");
 var { miczColumnsWizardPref_CustomColsGrid } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
 var { miczColumnsWizardPref_CustomColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolslist.jsm");
 var { miczColumnsWizardPref_DefaultColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolslist.jsm");
@@ -39,6 +40,7 @@ var miczColumnsWizardPref2 = {
 		]);
 
 
+
 		// const { require } = ChromeUtils.import("resource://gre/modules/commonjs/toolkit/require.js", {});
 
 		// Services.scriptloader.loadSubScript("chrome://columnswizard/content/modules/list.js", {});
@@ -46,6 +48,7 @@ var miczColumnsWizardPref2 = {
 		// var ListObj = new List1.List('defaultColsListDiv');
 		// console.debug(ListObj);
 		console.debug('Start');
+
 
 		miczColumnsWizardPref_DefaultColsList.initDefaultColsList(window);
 		
@@ -101,188 +104,7 @@ var miczColumnsWizardPref2 = {
 	},
 
 
-	sortDefaultColsList: function () {
-		let DefColRows = miczColumnsWizardPref2.loadDefaultColRows_Pref();
-		// Sort the columns, by the ordinal value...
-		let sorted_cols = [];
-		for (let cwcol in DefColRows) {
-			let col_ordinal = DefColRows[cwcol].ordinal === 0 ? 99 : DefColRows[cwcol].ordinal;
-			sorted_cols.push([cwcol, col_ordinal]);
-		}
-		sorted_cols.sort(function (a, b) { return a[1] - b[1]; });
-		for (let index in sorted_cols) {
-			DefColRows[sorted_cols[index][0]].currindex = sorted_cols[index][0];
-			// this.createOneDefaultColListRow(DefColRows[sorted_cols[index][0]]);
-		}
-		return {defaultCols: DefColRows, sorted_cols: sorted_cols};
-	},
 
-
-	createOneDefaultColListRow(cwcol) {
-
-	},
-
-
-	createOneDefaultColRow: function (doc, container, currcol, ref) {
-		const XUL = "http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul";
-		// try {
-		if (!container) return;
-		let row = doc.createElementNS(XUL, "row");
-		row.setAttribute("class", "mzcw-col_grid_rows");
-
-		// we found no valid preference
-		if (currcol.visible === undefined) return;
-
-		let col_id = doc.createElementNS(XUL, "label");
-		col_id.setAttribute("value", currcol.currindex);
-		col_id.setAttribute("cwcol", 'currindex');
-		col_id.setAttribute("hidden", 'true');
-
-		let col_enable = doc.createElementNS(XUL, "checkbox");
-		col_enable.setAttribute("checked", currcol.visible);
-		col_enable.setAttribute("cwcol", 'visible');
-
-		let col_sortby;
-		if (miczColumnsWizardPref_DefaultColsList.getSortType(currcol.currindex) !== -1) { // SORT BY only if a standard col. No way to save a customcol for sorting
-			col_sortby = doc.createElementNS(XUL, "radio");
-			col_sortby.setAttribute("group", "cw_sortby");
-			col_sortby.setAttribute("value", currcol.currindex);
-			col_sortby.setAttribute("cwcol", 'sortby');
-			col_sortby.setAttribute("type", 'radio');
-			// if(currcol.sortby===undefined)currcol.sortby=false;
-			// if(currcol.sortby)col_sortby.setAttribute("selected", true);
-			// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
-			// let prefs = prefsc.getBranch("mailnews.");
-			// let sortcolindex=prefs.getIntPref("default_sort_type");
-			let sortcolindex = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_type");
-			if (sortcolindex === miczColumnsWizardPref_DefaultColsList.getSortType(currcol.currindex)) col_sortby.setAttribute("selected", true);
-		} else {
-			col_sortby = doc.createElementNS(XUL, "label");
-			// col_sortby.setAttribute("hidden", 'true');
-			col_sortby.setAttribute("value", ' ');
-		}
-
-		let col_title = doc.createElementNS(XUL, "label");
-		col_title.setAttribute("value", this.getColLocalizedString(currcol.currindex));
-		col_title.setAttribute("cwcol", 'col_title');
-
-		let [col_flex] = [
-			// filter, value, size
-			["flex", currcol.flex !== undefined ? currcol.flex : 0, "10"]].map(function (attributes) {
-				let element = doc.createElementNS(XUL, "textbox");
-				let [filter, value, size] = attributes;
-				element.setAttribute("cwcol", filter);
-				if (size) element.setAttribute("size", size);
-				element.setAttribute("value", value);
-				if (filter === "flex") element.setAttribute('hidden', true);
-				return element;
-			});
-
-		let [up, down] = [
-			['\u2191', function (aEvent) { miczColumnsWizardPref_DefaultColsList.upDownCol(row, true); }, ''],
-			['\u2193', function (aEvent) { miczColumnsWizardPref_DefaultColsList.upDownCol(row, false); }, '']].map(function (attributes) {
-				let element = doc.createElementNS(XUL, "toolbarbutton");
-				element.setAttribute("label", attributes[0]);
-				element.addEventListener("command", attributes[1], false);
-				if (attributes[2]) element.classList.add(attributes[2]);
-				return element;
-			});
-
-		row.classList.add(colClass);
-		[col_id, col_enable, col_sortby, col_title, col_flex, up, down].forEach(function (item) {
-			row.insertBefore(item, null);
-		});
-		container.insertBefore(row, ref);
-		// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow] "+currindex+"\r\n");
-		return row;
-		/* } catch(err) {
-		  dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid createOneDefaultColRow error] "+err+"\r\n");
-		}*/
-	},
-
-	getColLocalizedString: function (col) {
-		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/settings.properties");
-		let strOut = col;
-
-		switch (col) {
-			case "threadCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.threadColumn.label");
-				break;
-			case "senderCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.fromColumn.label");
-				break;
-			case "recipientCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.recipientColumn.label");
-				break;
-			case "subjectCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.subjectColumn.label");
-				break;
-			case "dateCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.dateColumn.label");
-				break;
-			case "priorityCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.priorityColumn.label");
-				break;
-			case "tagsCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.tagsColumn.label");
-				break;
-			case "accountCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.accountColumn.label");
-				break;
-			case "statusCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.statusColumn.label");
-				break;
-			case "sizeCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.sizeColumn.label");
-				break;
-			case "junkStatusCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.junkStatusColumn.label");
-				break;
-			case "unreadCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.unreadColumn.label");
-				break;
-			case "totalCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.totalColumn.label");
-				break;
-			case "unreadButtonColHeader":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.readColumn.label");
-				break;
-			case "receivedCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.receivedColumn.label");
-				break;
-			case "flaggedCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.starredColumn.label");
-				break;
-			case "locationCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.locationColumn.label");
-				break;
-			case "idCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.idColumn.label");
-				break;
-			case "attachmentCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.attachmentColumn.label");
-				break;
-			case "correspondentCol":
-				strOut = _bundleCW.GetStringFromName("ColumnsWizard.correspondentCol.label");
-				break;
-			default: {
-
-				let col_idx = col.replace('Col_cw', '');
-				let col_el = this.loadedCustCols[col_idx];
-				// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid] col_idx "+col_idx+"\r\n");
-				let _bundleCW_overlay = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
-				if (this.loadedCustCols[col_idx]) {
-					if (col_el.isBundled) {
-						strOut = _bundleCW_overlay.GetStringFromName("ColumnsWizard" + col_el.index + ".label");
-					} else {
-						strOut = col_el.labelString;
-					}
-				}
-				break;
-			}
-		}
-		return strOut;
-	},
 
 	onNewCustomCol: function (win) {
 		let doc = win.document;
@@ -293,10 +115,30 @@ var miczColumnsWizardPref2 = {
 
 		if (("save" in args && args.save) && ("newcol" in args && args.newcol)) {
 			miczColumnsWizard_CustCols.addNewCustCol(args.newcol);
-			miczColumnsWizardPref_CustomColsGrid.createOneCustomColRow(doc, container, args.newcol);
+			console.debug(args.newcol);
+			// miczColumnsWizardPref_CustomColsGrid.createOneCustomColRow(doc, container, args.newcol);
 			// Select the new custcols, it is at the end of the list.
-			container.selectedIndex = container.itemCount - 1;
-			container.ensureIndexIsVisible(container.selectedIndex);
+			// container.selectedIndex = container.itemCount - 1;
+			// container.ensureIndexIsVisible(container.selectedIndex);
+
+			const index = miczColumnsWizardPref_CustomColsList.customColsListObj.items.length;
+
+			miczColumnsWizardPref_CustomColsList.customColsListObj.add({
+				id: index,
+				enabled: args.newcol.enabled,
+				isSearchable: args.newcol.isSearchable,
+				'index': args.newcol.index,
+				'dbHeader': args.newcol.dbHeader,
+				'title': args.newcol.labelString,
+				def: args.newcol.def,
+				tooltip: args.newcol.tooltipString,
+				isBundled: args.newcol.isBundled,
+				isCustom: args.newcol.isCustom,
+				sortnumber: args.newcol.sortnumber,
+				labelString: args.newcol.labelString,
+				tooltipString: args.newcol.tooltipString,
+			});
+	
 		}
 
 	},
@@ -308,18 +150,48 @@ var miczColumnsWizardPref2 = {
 		// if (container.selectedIndex === -1) return;
 		// if (doc.getElementById("editButton").disabled) return;
 
-		const item = miczColumnsWizardPref_CustomColsList.customColsListObj.items[1];
+		var selectedID = miczColumnsWizardPref_CustomColsList.customColsListObj.controller.getSelectedRowDataId();
+		console.debug(selectedID);
+		if (!selectedID || selectedID === -1) {
+			console.debug('no select');
+			return;
+		}
+
+		const item = miczColumnsWizardPref_CustomColsList.customColsListObj.items[Number(selectedID) - 1];
 		var vals = item.values();
-			
-		// let args = { "action": "edit", "currcol": JSON.stringify(container.selectedItem._customcol) };
+		var index = vals.index;
+		// let args = { "action": "edit", "args.newcol": JSON.stringify(container.selectedItem._customcol) };
 		let args = { "action": "edit", "currcol": JSON.stringify(vals) };
 
 		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xul", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
 
+		console.debug('after window close');
+		console.debug(args);
 		if (("save" in args && args.save) && ("newcol" in args && args.newcol)) {
 			// save the cust col in the pref
+			console.debug('SavingAntigenDefault');
+			console.debug(args.newcol);
 			miczColumnsWizard_CustCols.updateCustCol(args.newcol);
-			// update the cust col in the listbox
+
+			// update the cust col in the list
+
+			item.values({
+				id: index,
+				enabled: args.newcol.enabled,
+				isSearchable: args.newcol.isSearchable,
+				'index': args.newcol.index,
+				'dbHeader': args.newcol.dbHeader,
+				'title': args.newcol.labelString,
+				def: args.newcol.def,
+				tooltip: args.newcol.tooltipString,
+				isBundled: args.newcol.isBundled,
+				isCustom: args.newcol.isCustom,
+				sortnumber: args.newcol.sortnumber,
+				labelString: args.newcol.labelString,
+				tooltipString: args.newcol.tooltipString,
+			});
+	
+
 			// miczColumnsWizardPref_CustomColsGrid.editOneCustomColRow(doc, container, args.newcol, container.selectedIndex);
 			// Select the editedcustcols
 			// container.ensureIndexIsVisible(container.selectedIndex);

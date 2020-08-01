@@ -103,7 +103,7 @@ var ListController = {
 			selectedRow.classList.remove('selected-row');
 		}
 		closestRow.classList.add('selected-row');
-
+		// console.debug(this.listElement.outerHTML);
 		if (this.onSelectedCB) {
 			this.onSelectedCB(event, data_id);
 		}

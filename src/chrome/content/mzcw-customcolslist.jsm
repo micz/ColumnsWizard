@@ -64,8 +64,8 @@ var miczColumnsWizardPref_CustomColsList = {
 		// miczColumnsWizardPref_CustomColsList.customColsListObj = new miczColumnsWizardPref_CustomColsList.List('defaultColsListDiv', options);
 		miczColumnsWizardPref_CustomColsList.customColsListObj = new window.List('customColsListDiv', options);
 
-		var defaultColsList = miczColumnsWizardPref_CustomColsList.document.getElementById('customColsTable');
-		defaultColsList.addEventListener('click', miczColumnsWizardPref_CustomColsList.onRowClick);
+		var customColsList = miczColumnsWizardPref_CustomColsList.document.getElementById('customColsTable');
+		customColsList.addEventListener('click', miczColumnsWizardPref_CustomColsList.onRowClick);
 
 		miczColumnsWizardPref_CustomColsList.customColsListObj.controller = new window.ListController.ListController(miczColumnsWizardPref_CustomColsList.customColsListObj, null);
 

@@ -10,10 +10,9 @@
   style=""
   windowtype="mailnews:cwcustomcoleditor"
   persist="screenX screenY"
-  buttons="accept,cancel"
-  onload="miczColumnsWizardPref_CustColEditor.onLoad();"
-  onunload=""
-  ondialogaccept="return miczColumnsWizardPref_CustColEditor.onAccept();">
+  buttons="accept,cancel">
+  
+  <!-- ondialogaccept="return miczColumnsWizardPref_CustColEditor.onAccept();"> -->
 
 <stringbundleset id="stringbundleset">
   <stringbundle id="ColumnsWizard-string-bundle" src="chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties" />

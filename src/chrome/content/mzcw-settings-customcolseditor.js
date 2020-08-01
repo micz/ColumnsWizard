@@ -14,6 +14,7 @@ var miczColumnsWizardPref_CustColEditor = {
 	_sanitize_dbHeader_regex: "([\x21-\x7E2]+)",
 
 	onLoad: function () {
+		console.debug('load');
 		if ("arguments" in window && window.arguments[0]) {
 			let args = window.arguments[0];
 
@@ -78,6 +79,7 @@ var miczColumnsWizardPref_CustColEditor = {
 	},
 
 	onAccept: function () {
+		console.debug('Accept');
 		if (!miczColumnsWizardPref_CustColEditor.checkFields()) {
 			return false;
 		}
@@ -148,6 +150,8 @@ var miczColumnsWizardPref_CustColEditor = {
 					}
 					case "edit": { // Modify the custom column
 						let currcol = JSON.parse(args.currcol);
+						console.debug('current column');
+						console.debug(currcol);
 						// fixed val
 						newcol.isBundled = false;
 						newcol.isCustom = true;
@@ -319,3 +323,12 @@ var miczColumnsWizardPref_CustColEditor = {
 	},
 
 };
+
+document.addEventListener("dialogaccept", function (event) {
+	miczColumnsWizardPref_CustColEditor.onAccept();
+});
+
+window.addEventListener("load", function (event) {
+	miczColumnsWizardPref_CustColEditor.onLoad();
+});
+
