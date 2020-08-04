@@ -4,7 +4,6 @@
 
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 var { miczColumnsWizard_CustCols } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolumns.js");
-var { miczColumnsWizardPref_CustomColsGrid } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
 var { miczColumnsWizardPref_CustomColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolslist.jsm");
 var { miczColumnsWizardPref_DefaultColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolslist.jsm");
 var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
@@ -116,7 +115,7 @@ var miczColumnsWizardPref2 = {
 		if (("save" in args && args.save) && ("newcol" in args && args.newcol)) {
 			miczColumnsWizard_CustCols.addNewCustCol(args.newcol);
 			console.debug(args.newcol);
-			// miczColumnsWizardPref_CustomColsGrid.createOneCustomColRow(doc, container, args.newcol);
+
 			// Select the new custcols, it is at the end of the list.
 			// container.selectedIndex = container.itemCount - 1;
 			// container.ensureIndexIsVisible(container.selectedIndex);
@@ -196,7 +195,6 @@ var miczColumnsWizardPref2 = {
 			});
 	
 
-			// miczColumnsWizardPref_CustomColsGrid.editOneCustomColRow(doc, container, args.newcol, container.selectedIndex);
 			// Select the editedcustcols
 			// container.ensureIndexIsVisible(container.selectedIndex);
 		}
@@ -234,9 +232,6 @@ var miczColumnsWizardPref2 = {
 
 		if (!prompts.confirm(null, _bundleCW.GetStringFromName("ColumnsWizard.deletePrompt.title"), _bundleCW.GetStringFromName("ColumnsWizard.deletePrompt.text"))) return;
 
-		
-		
-		
 		// get the col id
 		let col_idx = index;
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [onDeleteCustomCol] col_idx ["+col_idx+"]\r\n");
@@ -245,12 +240,13 @@ var miczColumnsWizardPref2 = {
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 		// miczColumnsWizard_CustCols.removeCustomColumn(col_idx,ObserverService)
 		// miczColumnsWizard_CustCols.deleteCustCol(col_idx);
+		
+		miczColumnsWizardPref_DefaultColsList.loadDefaultColRows_Pref();
 		ObserverService.notifyObservers(null, "CW-deleteCustomColumn", col_idx);
 
 		// remove the custom col from the list
 		miczColumnsWizardPref_CustomColsList.customColsListObj.remove("id", selectedID);
 
-		// miczColumnsWizardPref_CustomColsGrid.deleteOneCustomColRow(container, container.selectedIndex);
 	},
 
 	

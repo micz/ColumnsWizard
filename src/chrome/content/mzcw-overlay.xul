@@ -65,7 +65,7 @@
 	<toolbarbutton id="mzcw-button"
 	  label="&ColumnsWizard.button.label;"
 	  tooltiptext="&ColumnsWizard.button.tooltip;"
-	  oncommand="miczColumnsWizard.toolbarButtonCommand();"
+	  oncommand="miczColumnsWizard.openSettingsTab();"
 	  class="toolbarbutton-1"/>
 </toolbarpalette>
 
@@ -75,7 +75,7 @@
 
 <menupopup id="taskPopup">
  <menuitem id="newsettings-menu-item"
- label="ColumnsWizard (NewUI2)"
+ label="ColumnsWizard (NewUI)"
  oncommand="miczColumnsWizard.openSettingsTab();"
  insertafter="joinChatMenuItem"
  class="menuitem-iconic"
@@ -84,4 +84,13 @@
  insertafter="joinChatMenuItem"/>
  </menupopup>
 
+<!-- 
+<menupopup id="addonPrefs">
+ <menuitem id="newsettings-menu-item2"
+ label="ColumnsWizard (NewUI)"
+ oncommand="miczColumnsWizard.openSettingsTab();"
+ class="menuitem-iconic"
+ image="chrome://columnswizard/skin/mzcw-icon.png"/>
+ </menupopup>
+ -->
 </overlay>

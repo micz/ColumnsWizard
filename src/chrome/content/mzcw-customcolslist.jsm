@@ -3,6 +3,7 @@
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 var { miczColumnsWizard_CustCols } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolumns.js");
+var { miczColumnsWizardPref_DefaultColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolslist.jsm");
 
 var EXPORTED_SYMBOLS = ["miczColumnsWizardPref_CustomColsList"];
 
@@ -120,7 +121,7 @@ var miczColumnsWizardPref_CustomColsList = {
 	saveCustomColsList: function (idx) {
 		console.debug('SaveCustom');
 
-		console.debug(miczColumnsWizardPref_CustomColsList.customColsListObj.list.outerHTML);
+		// console.debug(miczColumnsWizardPref_CustomColsList.customColsListObj.list.outerHTML);
 		var newCustomCols = {};
 
 		// for (let index = 0; index < miczColumnsWizardPref_CustomColsList.customColsListObj.items.length; index++) {
@@ -402,6 +403,8 @@ var miczColumnsWizardPref_CustomColsList = {
 			}
 			event.stopPropagation();
 			miczColumnsWizardPref_CustomColsList.saveCustomColsList(idx);
+			console.debug('UpdatingDefaultList');
+			miczColumnsWizardPref_DefaultColsList.updateDefaultColsList();
 			return;
 		}
 
@@ -421,6 +424,9 @@ var miczColumnsWizardPref_CustomColsList = {
 			// console.debug(lst.outerHTML);
 			event.stopPropagation();
 			miczColumnsWizardPref_CustomColsList.saveCustomColsList();
+			console.debug('UpdatingDefaultList');
+			miczColumnsWizardPref_DefaultColsList.updateDefaultColsList();
+			
 			return;
 		}
 

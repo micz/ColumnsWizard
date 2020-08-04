@@ -1,6 +1,6 @@
 "use strict";
 
-var { miczColumnsWizardPref_DefaultColsGrid } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
+var { miczColumnsWizardPref_DefaultColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolslist.jsm");
 var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
 miczColumnsWizard.FolderListener = {
@@ -45,6 +45,10 @@ miczColumnsWizard.FolderListener = {
 		if (!(item instanceof Ci.nsIMsgFolder)) {
 			return;
 		}
+		console.debug('IdentityFrench');
+		console.debug(item);
+		console.debug(event);
+		
 		if (miczColumnsWizard.FolderListener.isTrash(item) || miczColumnsWizard.FolderListener.isJunk(item)) {
 			return;
 		}
@@ -139,7 +143,9 @@ miczColumnsWizard.FolderListener = {
 	cw_showColumns_Pref: function (item) {
 		let propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
 		let dbFolderInfo = item.msgDatabase.dBFolderInfo;
-		let cwcolumnStates = miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
+		let cwcolumnStates = miczColumnsWizardPref_DefaultColsList.loadDefaultColRows_Pref();
+		console.debug('ShowColumns');
+		console.debug(cwcolumnStates);
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [cw_showColumns_Pref] "+JSON.stringify(cwcolumnStates)+"\r\n");
 		dbFolderInfo.setCharProperty(propName, JSON.stringify(cwcolumnStates));
 		/* let wMediator = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);

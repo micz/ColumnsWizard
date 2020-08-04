@@ -51,7 +51,7 @@ var miczColumnsWizard_CustCols = {
 		}
 
 		cwCol.setAttribute("tooltiptext", tooltipString);
-		let cwSplitter = document.createElement("splitter");
+		let cwSplitter = document.createXULElement("splitter");
 		cwSplitter.setAttribute("class", "tree-splitter");
 		cwSplitter.setAttribute("resizeafter", "farthest");
 		let element = document.getElementById("threadCols");
@@ -235,6 +235,13 @@ var miczColumnsWizard_CustCols = {
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 		ObserverService.notifyObservers(null, "CW-updateCustomColumn", JSON.stringify(newcol));
 		miczColumnsWizard_CustCols.saveCustCol(newcol);
+		
+		var wMediator = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
+		var mainWindow = wMediator.getMostRecentWindow("mail:3pane");
+		let columnStates = mainWindow.gFolderDisplay.getColumnStates();
+
+		console.debug(columnStates);
+		console.debug('Done');
 	},
 
 	addCustColIndex: function (index) {

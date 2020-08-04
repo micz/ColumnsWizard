@@ -2,13 +2,13 @@
 
 // Services appears to be defined globally in TB64+ ?
 if (!Services) {
-	const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+	var { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 	// Services.console.logStringMessage('Overlay load services');
 }
 
 var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 var { miczColumnsWizard_CustomColsModUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
-var { miczColumnsWizardPref_DefaultColsGrid } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolsgrid.jsm");
+var { miczColumnsWizardPref_DefaultColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolslist.jsm");
 var { miczColumnsWizardPref_CustomColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolslist.jsm");
 
 
@@ -32,10 +32,12 @@ var miczColumnsWizard = {
 		miczLogger.setLogger(true, miczColumnsWizardPrefsUtils.isDebug);
 
 		// cleidigh disable and fix
-		// if (miczColumnsWizardPrefsUtils.firstRun) {		// adding toolbar button at first run
-		// 	miczColumnsWizardPrefsUtils.firstRunDone();
-		// 	miczColumnsWizard.addToolbarButton();
-		// }
+		if (miczColumnsWizardPrefsUtils.firstRun) {		// adding toolbar button at first run
+			miczColumnsWizardPrefsUtils.firstRunDone();
+			miczColumnsWizard.addToolbarButton();
+		}
+
+		// miczColumnsWizard.addCWOptionsMenu();
 
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 
@@ -97,6 +99,9 @@ var miczColumnsWizard = {
 	deleteCustColObserver: function (ObserverService) {
 		let CustColObserver = {
 			observe: function (aSubject, aTopic, aData) {
+				console.debug('DeleteObserver ' );
+				console.debug(aData);
+
 				// dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
 				let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 				miczColumnsWizard_CustCols.removeCustomColumn(aData, ObserverService);
@@ -112,6 +117,8 @@ var miczColumnsWizard = {
 				// dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
 				let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 				// update cust col info in the message list
+				console.debug('CustomColumnUpdate');
+				console.debug(aData);
 				miczColumnsWizard_CustCols.updateCustomColumn(JSON.parse(aData));
 			},
 		};
@@ -119,6 +126,8 @@ var miczColumnsWizard = {
 	},
 
 	addDbObserver: function (currcol) {
+		console.debug('Observer');
+		console.debug(currcol);
 		// Create all the needed DbObservers
 		// dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+currcol.index+"\r\n");
 		// It's needed to to this, to avoid writing each miczColumnsWizard_CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function definition.
@@ -381,8 +390,30 @@ var miczColumnsWizard = {
 		// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 		// let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
 		// prefs.setCharPref("DefaultColsList",JSON.stringify(columnStates));
+		console.debug('Save defaultCW');
+		// console.debug(columnStates);
 		miczColumnsWizardPrefsUtils.setCharPref_CW("DefaultColsList", JSON.stringify(columnStates));
+		// gFolderDisplay.setColumnStates(columnStates, true);
+		setTimeout(function () { gFolderDisplay.setColumnStates(columnStates, true); }, 4);
+
 		return;
+	},
+
+	addCWOptionsMenu: function () {
+
+		var cw_options = document.getElementById('addonPrefs');
+		// Add saveDefaultMenuCW element
+		let saveDefaultMenuCW = document.createXULElement("menuitem");
+		saveDefaultMenuCW.setAttribute('label', 'ColumnsWizard XYZ');
+		saveDefaultMenuCW.setAttribute('hidden', 'false');
+		saveDefaultMenuCW.id = "columnswizard-defaultmenu3";
+		saveDefaultMenuCW.setAttribute("anonid", "menuitem");
+		saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
+		saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
+		saveDefaultMenuCW.setAttribute("oncommand", "miczColumnsWizard.openSettingsTab();");
+		cw_options.appendChild(saveDefaultMenuCW);
+		console.debug('options menu');
+		
 	},
 
 	addCWResetMenu_OnClick: function (event) {
@@ -393,8 +424,8 @@ var miczColumnsWizard = {
 		let title_msg = _bundleCW.GetStringFromName("ColumnsWizardNFCols.resetMenu");
 		let text_msg = _bundleCW.GetStringFromName("ColumnsWizard.resetDefault_OnClick_text");
 		if (!promptService.confirm(null, title_msg, text_msg)) return;
-		// let columnStates = miczColumnsWizardPref2.loadDefaultColRows_Pref();
-		let columnStates = miczColumnsWizardPref_DefaultColsGrid.loadDefaultColRows_Pref();
+
+		let columnStates = miczColumnsWizardPref_DefaultColsList.loadDefaultColRows_Pref();
 		gFolderDisplay.setColumnStates(columnStates, true);
 		return;
 	},
@@ -505,12 +536,13 @@ var miczColumnsWizard = {
 		let features = (miczColumnsWizardUtils.HostSystem === 'linux') ?
 			'chrome,titlebar,centerscreen,resizable,dependent,instantApply' :
 			'chrome,titlebar,centerscreen,resizable,alwaysRaised,instantApply';
-		window.openDialog('chrome://columnswizard/content/mzcw-settings.xul', 'ColumnsWizard_Settings', features).focus();
+		window.openDialog('chrome://columnswizard/content/settings.html', 'ColumnsWizard_Settings', features).focus();
 
 	},
 
 	// cleidigh fix document persist
 	addToolbarButton: function () {
+		console.debug('Button');
 		let toolbar = document.getElementById("mail-bar3");
 		let buttonId = "mzcw-button";
 		let before_el = document.getElementById("gloda-search").previousSibling;
@@ -522,7 +554,8 @@ var miczColumnsWizard = {
 			if (toolbar !== null) {
 				toolbar.insertItem(buttonId, before_el);
 				toolbar.setAttribute("currentset", toolbar.currentSet);
-				document.persist(toolbar.id, "currentset");
+				// document.persist(toolbar.id, "currentset");
+				Services.xulStore.persist(toolbar, "currentset");
 			}
 		}
 	},

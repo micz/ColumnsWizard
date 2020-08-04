@@ -20,15 +20,10 @@ var miczColumnsWizardPref_DefaultColsList = {
 		var context = {};
 		
 		miczColumnsWizardPref_DefaultColsList.loadedCustCols = miczColumnsWizard_CustCols.loadCustCols();
-
 		
-		// Services.scriptloader.loadSubScript("chrome://columnswizard/content/modules/list.controller.js", miczColumnsWizardPref_DefaultColsList);
-		// Services.scriptloader.loadSubScript("chrome://columnswizard/content/modules/list.js", miczColumnsWizardPref_DefaultColsList);
 		context.window = miczColumnsWizardPref_DefaultColsList.window;
 
 		Services.scriptloader.loadSubScript("chrome://columnswizard/content/modules/list.controller2.js", window);
-		// Services.scriptloader.loadSubScript("chrome://columnswizard/content/modules/list.js", window);
-
 
 		var options = {
 			//   valueNames: [ { data: ['date'] }, { data: ['description'] }, { data: ['yearly']} ],
@@ -67,6 +62,14 @@ var miczColumnsWizardPref_DefaultColsList = {
 		defaultColsList.addEventListener('click', miczColumnsWizardPref_DefaultColsList.onRowClick);
 
 		miczColumnsWizardPref_DefaultColsList.defaultColsListObj.controller = new window.ListController.ListController(miczColumnsWizardPref_DefaultColsList.defaultColsListObj, null);
+
+		this.updateDefaultColsList();
+	},
+
+	updateDefaultColsList: function () {
+		console.debug('UpdateDefault');
+		
+		miczColumnsWizardPref_DefaultColsList.loadedCustCols = miczColumnsWizard_CustCols.loadCustCols();
 
 		var dindex = 1;
 
@@ -175,8 +178,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 		return newDefaultCols;
 	},
 
-
-
+	
 	onRowClick: function (event, offset) {
 		// console.debug(event);
 		console.debug('Target ' + event.target.outerHTML);
@@ -312,8 +314,11 @@ var miczColumnsWizardPref_DefaultColsList = {
 		// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 		// let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
 		// let DefaultColIndexStr=prefs.getCharPref("DefaultColsList");
+		console.debug('loadDefaultColRows_Pref');
 		let DefaultColIndexStr = miczColumnsWizardPrefsUtils.getCharPref_CW("DefaultColsList");
 		// console.debug(`CurrentIndexS: ${DefaultColIndexStr}`);
+		console.debug(DefaultColIndexStr);
+
 		let loadedDefaultColIndex = [];
 		if (DefaultColIndexStr === '') {
 			// Set default cols if none set at the moment
@@ -330,16 +335,44 @@ var miczColumnsWizardPref_DefaultColsList = {
 		// check if there are new columns to add
 		let baseColumnStates = miczColumnsWizardPref_DefaultColsList.getOriginalColIndex();
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid] baseColumnState "+JSON.stringify(baseColumnStates)+"\r\n");
+
+		console.debug('LoadedDefaultColumns');
+		console.debug(loadedDefaultColIndex);
+		console.debug('Base DefaultColumns');
+		console.debug(baseColumnStates);
+
+		console.debug('CheckDefault');
+		// for (let key in loadedDefaultColIndex) {
+		// 	// console.debug(key);
+		// 	if (key.includes("Col_cw")) {
+		// 		delete loadedDefaultColIndex[key];
+		// 		console.debug('DeleteK ' + key);
+		// 	}
+		// }
+
 		if (Object.keys(baseColumnStates).length !== Object.keys(loadedDefaultColIndex).length) { // if the length are different so check the column to add
 			// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] different lengths\r\n");
 			for (let key in baseColumnStates) {
+				// console.debug(key);
 				if (!loadedDefaultColIndex.hasOwnProperty(key)) {
+				// if (!loadedDefaultColIndex.hasOwnProperty(key) && this.loadedCustCols[key] && this.loadedCustCols[key].enabled) {
 					loadedDefaultColIndex[key] = baseColumnStates[key];
+					console.debug('Adding ');
+					console.debug(baseColumnStates[key]);
 					// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] key not found "+key+"\r\n");
 				}
+				
+				// } else if (loadedDefaultColIndex.hasOwnProperty(key) && loadedDefaultColIndex[key].isCustom && !this.loadedCustCols.hasOwnProperty(key)) {
+				// 	console.debug('RemovedDefaultCustom.Key ' + key);
+				// 	delete loadedDefaultColIndex[key];
+				// }
+
 			}
 		}
 		miczColumnsWizardPrefsUtils.setCharPref_CW("DefaultColsList", JSON.stringify(loadedDefaultColIndex));
+		console.debug('Saved LoadedDefaultColumns');
+		console.debug(loadedDefaultColIndex);
+		
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
 		return loadedDefaultColIndex;
 	},
