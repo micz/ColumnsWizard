@@ -91,6 +91,8 @@ var miczColumnsWizard_CustCols = {
 		}
 		cwCol.setAttribute("label", labelString);
 		cwCol.setAttribute("tooltiptext", tooltipString);
+		let columnStates = gFolderDisplay.getColumnStates();
+		console.debug(columnStates);
 	},
 
 	removeCustomColumn: function (coltype, ObserverService) {
@@ -224,6 +226,8 @@ var miczColumnsWizard_CustCols = {
 	},
 
 	addNewCustCol: function (newcol) {
+		console.debug('AddNewCustomer');
+		console.debug(newcol);
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 		miczColumnsWizard_CustCols.addCustColIndex(newcol.index);
 		ObserverService.notifyObservers(null, "CW-newCustomColumn", JSON.stringify(newcol));
@@ -232,6 +236,7 @@ var miczColumnsWizard_CustCols = {
 
 	updateCustCol: function (newcol) {
 		console.debug('UpdateCustom');
+		console.debug(newcol);
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 		ObserverService.notifyObservers(null, "CW-updateCustomColumn", JSON.stringify(newcol));
 		miczColumnsWizard_CustCols.saveCustCol(newcol);

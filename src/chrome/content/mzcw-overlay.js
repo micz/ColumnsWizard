@@ -37,7 +37,8 @@ var miczColumnsWizard = {
 			miczColumnsWizard.addToolbarButton();
 		}
 
-		// miczColumnsWizard.addCWOptionsMenu();
+		console.debug('options menu ');
+		miczColumnsWizard.addCWOptionsMenu();
 
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 
@@ -89,6 +90,8 @@ var miczColumnsWizard = {
 	addNewCustColObserver: function (ObserverService) {
 		let CustColObserver = {
 			observe: function (aSubject, aTopic, aData) {
+				console.debug('NewCustomOfTheServer');
+				console.debug(aData);
 				// dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
 				miczColumnsWizard.addDbObserver(JSON.parse(aData));
 			},
@@ -295,7 +298,7 @@ var miczColumnsWizard = {
 					saveDefaultMenuCW.setAttribute("colindex", "-1");
 					saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
 					saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
-					saveDefaultMenuCW.onclick = miczColumnsWizard.addCWSaveDefaultMenu_OnClick;
+					saveDefaultMenuCW.setAttribute("onclick", "miczColumnsWizard.addCWSaveDefaultMenu_OnClick(event)");
 					aPopup.insertBefore(saveDefaultMenuCW, aPopup.lastChild);
 
 					// Add resetMenuCw element
@@ -386,32 +389,42 @@ var miczColumnsWizard = {
 		let title_msg = _bundleCW.GetStringFromName("ColumnsWizardNFCols.saveDefault");
 		let text_msg = _bundleCW.GetStringFromName("ColumnsWizard.saveDefault_OnClick_text");
 		if (!promptService.confirm(null, title_msg, text_msg)) return;
+
 		let columnStates = gFolderDisplay.getColumnStates();
 		// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 		// let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
 		// prefs.setCharPref("DefaultColsList",JSON.stringify(columnStates));
 		console.debug('Save defaultCW');
-		// console.debug(columnStates);
-		miczColumnsWizardPrefsUtils.setCharPref_CW("DefaultColsList", JSON.stringify(columnStates));
+		console.debug(columnStates);
+		const propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
+		let	currentFolder = gFolderDisplay.displayedFolder;
+		// currentFolder.setStringProperty(propName, columnStates);
+		// miczColumnsWizard._applyColumns(currentFolder, false);
 		// gFolderDisplay.setColumnStates(columnStates, true);
-		setTimeout(function () { gFolderDisplay.setColumnStates(columnStates, true); }, 4);
+		// setTimeout(function () { gFolderDisplay.setColumnStates(columnStates, true); }, 1);
+		miczColumnsWizardPrefsUtils.setCharPref_CW("DefaultColsList", JSON.stringify(columnStates));
+		window.event.stopPropagation();
 
+		// setTimeout(function () { miczColumnsWizardPrefsUtils.setCharPref_CW("DefaultColsList", JSON.stringify(columnStates)); }, 10);
+		// console.debug(columnStates);
 		return;
 	},
 
 	addCWOptionsMenu: function () {
 
 		var cw_options = document.getElementById('addonPrefs');
+		console.debug(cw_options.outerHTML);
 		// Add saveDefaultMenuCW element
 		let saveDefaultMenuCW = document.createXULElement("menuitem");
 		saveDefaultMenuCW.setAttribute('label', 'ColumnsWizard XYZ');
-		saveDefaultMenuCW.setAttribute('hidden', 'false');
+		// saveDefaultMenuCW.setAttribute('hidden', 'false');
 		saveDefaultMenuCW.id = "columnswizard-defaultmenu3";
-		saveDefaultMenuCW.setAttribute("anonid", "menuitem");
-		saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
-		saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
-		saveDefaultMenuCW.setAttribute("oncommand", "miczColumnsWizard.openSettingsTab();");
+		// saveDefaultMenuCW.setAttribute("anonid", "menuitem");
+		// saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
+		// saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
+		// saveDefaultMenuCW.setAttribute("oncommand", "miczColumnsWizard.openSettingsTab();");
 		cw_options.appendChild(saveDefaultMenuCW);
+		console.debug(cw_options.outerHTML);
 		console.debug('options menu');
 		
 	},
@@ -427,6 +440,7 @@ var miczColumnsWizard = {
 
 		let columnStates = miczColumnsWizardPref_DefaultColsList.loadDefaultColRows_Pref();
 		gFolderDisplay.setColumnStates(columnStates, true);
+		window.event.stopPropagation();
 		return;
 	},
 
