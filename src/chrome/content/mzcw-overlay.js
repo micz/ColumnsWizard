@@ -414,19 +414,67 @@ var miczColumnsWizard = {
 
 		var cw_options = document.getElementById('addonPrefs');
 		console.debug(cw_options.outerHTML);
+		// let e2 = document.querySelector('menuitem[label=ColumnsWizard]');
+		// console.debug(e2.outerHTML);
+
+		// cw_options.setAttribute("onpopupshowing", "initAddonPrefsMenu(this);");
+		cw_options.setAttribute("onpopupshowing", "miczColumnsWizard.testCB(this);");
 		// Add saveDefaultMenuCW element
-		let saveDefaultMenuCW = document.createXULElement("menuitem");
-		saveDefaultMenuCW.setAttribute('label', 'ColumnsWizard XYZ');
+		// let saveDefaultMenuCW = document.createXULElement("menuitem");
+		// saveDefaultMenuCW.setAttribute('label', 'ColumnsWizard XYZ');
 		// saveDefaultMenuCW.setAttribute('hidden', 'false');
-		saveDefaultMenuCW.id = "columnswizard-defaultmenu3";
+		// saveDefaultMenuCW.id = "columnswizard-defaultmenu3";
 		// saveDefaultMenuCW.setAttribute("anonid", "menuitem");
 		// saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
 		// saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
 		// saveDefaultMenuCW.setAttribute("oncommand", "miczColumnsWizard.openSettingsTab();");
-		cw_options.appendChild(saveDefaultMenuCW);
+		// cw_options.appendChild(saveDefaultMenuCW);
 		console.debug(cw_options.outerHTML);
 		console.debug('options menu');
 		
+	},
+
+	testCB(_this) {
+		console.debug('TestF');
+		
+		initAddonPrefsMenu(_this);
+
+		if (document.getElementById("columnswizard-optionsitem")) {
+			return;
+		}
+
+		// return;
+
+		var cw_options = document.getElementById('addonPrefs');
+		console.debug(cw_options.outerHTML);
+		let e2 = cw_options.querySelector('[disabled="true"]');
+
+		let saveDefaultMenuCW = document.createXULElement("menuitem");
+		saveDefaultMenuCW.setAttribute('label', 'ColumnsWizard');
+		// saveDefaultMenuCW.setAttribute('hidden', 'false');
+		saveDefaultMenuCW.id = "columnswizard-optionsitem";
+		saveDefaultMenuCW.setAttribute("anonid", "menuitem");
+		saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
+		saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/mzcw-icon24.png");
+		// saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
+		saveDefaultMenuCW.setAttribute("oncommand", "miczColumnsWizard.openSettingsTab();");
+		cw_options.insertBefore(saveDefaultMenuCW, e2);
+		e2.setAttribute('hidden', 'true');
+		// e2 = cw_options.querySelector('[value="ColumnsWizard"]');
+		// console.debug(e2.outerHTML);
+		
+		// e2.setAttribute('hidden', 'true');
+		// console.debug(e2.outerHTML);
+
+		console.debug(cw_options.outerHTML);
+
+	},
+
+	shutdown: function (event) {
+		console.debug('ShutDown');
+		var cw_options = document.getElementById("columnswizard-optionsitem");
+		
+		cw_options.remove();
 	},
 
 	addCWResetMenu_OnClick: function (event) {
@@ -593,3 +641,4 @@ var miczColumnsWizard = {
 };
 
 window.addEventListener("load", miczColumnsWizard.init, false);
+window.addEventListener("unload", miczColumnsWizard.shutdown, false);
