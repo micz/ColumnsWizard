@@ -178,6 +178,54 @@ var miczColumnsWizardPref_DefaultColsList = {
 		return newDefaultCols;
 	},
 
+	toggleCustomCol: function (col) {
+		console.debug('Toggleitem');
+		console.debug(col);
+		console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items);
+		
+		let item = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.get("currindex", col.index);
+		console.debug(item);
+		if (col.enabled && !item.length) {
+			console.debug('AddingItem');
+			console.debug(col);
+			miczColumnsWizardPref_DefaultColsList.defaultColsListObj.add({
+				currindex: col.index,
+				show: false,
+				sort_by: false,
+				name: miczColumnsWizardPref_DefaultColsList.getColLocalizedString(col.index),
+				move_up: '<img src="chrome://columnswizard/content/ico/arrow-up-black-64px.png" height="16px" width="16px" class="arrows up-action">',
+				move_down: '<img src="chrome://columnswizard/content/ico/arrow-down-black-64px.png" height="16px" width="16px" class="arrows down-action">',
+				id: miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items.length + 1,
+	
+			});
+			console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items);
+			console.debug('DoneA');
+		} else if (!col.enabled && item.length) {
+			console.debug('RemoveItem' );
+			console.debug(item);
+			console.debug(col);
+			console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items);
+			miczColumnsWizardPref_DefaultColsList.defaultColsListObj.remove("currindex", col.index);
+			console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items);
+		}
+		
+		console.debug('UpdateCheckboxes');
+		let checkedItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('[checked]');
+		for (const element of checkedItems) {
+			// console.debug(element);
+			// if (element.getAttribute("type") !== "checkbox" || element.getAttribute("type") !== "radio") {
+			if (element.id.includes("tab")) {
+				continue;
+			}
+			if (element.getAttribute("checked") !== "true") {
+				element.removeAttribute("checked");
+			} else {
+				element.checked = true;
+			}
+		}
+
+	},
+
 	
 	onRowClick: function (event, offset) {
 		// console.debug(event);

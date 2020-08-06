@@ -103,8 +103,7 @@ var miczColumnsWizardPref2 = {
 	},
 
 
-
-
+	
 	onNewCustomCol: function (win) {
 		let doc = win.document;
 		let container = doc.getElementById('ColumnsWizard.CustColsList');

@@ -151,6 +151,7 @@ var miczColumnsWizardPref_CustomColsList = {
 		console.debug(newCustomCols);
 
 		miczColumnsWizard_CustCols.updateCustCol(newCustomCols[vals.index]);
+		return newCustomCols[vals.index];
 	},
 
 
@@ -338,9 +339,9 @@ var miczColumnsWizardPref_CustomColsList = {
 				item.values({ "enabled": true }, true);
 			}
 			event.stopPropagation();
-			miczColumnsWizardPref_CustomColsList.saveCustomColsList(idx);
+			let col = miczColumnsWizardPref_CustomColsList.saveCustomColsList(idx);
 			console.debug('UpdatingDefaultList');
-			miczColumnsWizardPref_DefaultColsList.updateDefaultColsList();
+			miczColumnsWizardPref_DefaultColsList.toggleCustomCol(col);
 			return;
 		}
 
@@ -359,9 +360,9 @@ var miczColumnsWizardPref_CustomColsList = {
 			// console.debug(item);
 			// console.debug(lst.outerHTML);
 			event.stopPropagation();
-			miczColumnsWizardPref_CustomColsList.saveCustomColsList();
-			console.debug('UpdatingDefaultList');
-			miczColumnsWizardPref_DefaultColsList.updateDefaultColsList();
+			let col = miczColumnsWizardPref_CustomColsList.saveCustomColsList();
+			// console.debug('UpdatingDefaultList');
+			// miczColumnsWizardPref_DefaultColsList.addEnabledCustomCol(col);
 			
 			return;
 		}
