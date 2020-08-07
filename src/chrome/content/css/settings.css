@@ -326,6 +326,17 @@ html {
 	/* background-color: aliceblue; */
   }
 
+  .section-group-content-header  {
+	/* padding-left: 25px; */
+	padding-bottom: 15px;
+	font-size: 17.1px !important;
+	color: black;
+	font-weight: 600 !important;
+	border: none;
+	/* background-color: #909090; */
+  }
+
+
   .tabs .content section h2 {
 	color: #428BFF;
 	display: none;

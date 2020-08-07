@@ -67,3 +67,12 @@ var miczColumnsWizard_MailHeaderEditor = {
 	},
 
 };
+
+document.addEventListener("dialogaccept", function (event) {
+	miczColumnsWizard_MailHeaderEditor.onAccept();
+});
+
+window.addEventListener("load", function (event) {
+	miczColumnsWizard_MailHeaderEditor.onLoad();
+});
+

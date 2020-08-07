@@ -34,8 +34,18 @@ var miczColumnsWizardPref2 = {
 			cbelement.removeAttribute("checked");
 		}
 		
+		cbelement = document.getElementById("ColumnsWizard.CustCols.mod_active_checkbox");
+		dca = miczColumnsWizardPrefsUtils.getBoolPref_CW("CustCols.mod_active");
+
+		if (dca) {
+			cbelement.checked = true;
+		} else {
+			cbelement.removeAttribute("checked");
+		}
+		
 		miczColumnsWizardPref2.registerPreferenceListeners([
 			"ColumnsWizard.DefaultColsList.active_checkbox",
+			"ColumnsWizard.CustCols.mod_active",
 		]);
 
 

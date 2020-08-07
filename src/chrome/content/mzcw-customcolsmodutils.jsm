@@ -30,6 +30,8 @@ var miczColumnsWizard_CustomColsModUtils = {
 		let arrayCustColIndexMod = [];
 
 		if (stringCustColIndexMod !== '') {
+			console.debug('ContextMenu');
+			console.debug(stringCustColIndexMod);
 			arrayCustColIndexMod = JSON.parse(stringCustColIndexMod);
 		}
 
@@ -40,17 +42,25 @@ var miczColumnsWizard_CustomColsModUtils = {
 				let new_menu_item2;
 				let new_menu_item3;
 				if (CustCols[cc].editType !== miczColumnsWizard_CustomColsModUtils.editTypeFixedList) {	// simple menu
+					console.debug('SimpleMenu');
 					new_menu_item = doc.createXULElement("menuitem");
 					new_menu_item.setAttribute('label', CustCols[cc].labelString);
 					new_menu_item.setAttribute('colidx', CustCols[cc].index);
 					new_menu_item.setAttribute('mail_header', CustCols[cc].dbHeader);
 					new_menu_item.setAttribute('edit_type', CustCols[cc].editType);
-					new_menu_item.onclick = first_click_callback;
+					new_menu_item.setAttribute('oncommand', 'miczColumnsWizard.editHeaderMenu_OnClick(event)');
+					
+					// new_menu_item.onclick = first_click_callback;
 					new_menu_item2 = new_menu_item.cloneNode(true);
-					new_menu_item2.onclick = first_click_callback;
+					// new_menu_item2.onclick = first_click_callback;
 					new_menu_item3 = new_menu_item.cloneNode(true);
-					new_menu_item3.onclick = first_click_callback;
+					// new_menu_item3.onclick = first_click_callback;
+					
+					new_menu_item2.setAttribute('oncommand', 'miczColumnsWizard.editHeaderMenu_OnClick(event)');
+					new_menu_item3.setAttribute('oncommand', 'miczColumnsWizard.editHeaderMenu_OnClick(event)');
+
 				} else {	// it's a fixed list, add submenus
+					console.debug('Fixed number');
 					new_menu_item = doc.createXULElement("menu");
 					new_menu_item.setAttribute('label', CustCols[cc].labelString);
 					new_menu_item.setAttribute('colidx', CustCols[cc].index);
@@ -66,9 +76,9 @@ var miczColumnsWizard_CustomColsModUtils = {
 					mpp3.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
 
 					// cleidigh - fix warnings from ANT later
-					// mpp.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
-					// mpp2.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
-					// mpp3.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
+					mpp.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
+					mpp2.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
+					mpp3.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
 
 
 					for (let sbi in CustCols[cc].editFixedList) {

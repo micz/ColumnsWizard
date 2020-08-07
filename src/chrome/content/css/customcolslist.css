@@ -12,9 +12,10 @@
 }
 
 .button {
-	background-color: #cccccc;
+	/* background-color: var(--in-content-button-background); */
+	background-color: #dddddd;
 	border: none;
-	height: 25px;
+	min-height: 32px;
 	min-width: 85px;
 
 	/* padding: 15px 32px; */
@@ -24,4 +25,5 @@
 	text-decoration: none;
 	display: inline-block;
 	font-size: 16px;
+	font-weight: 400;
   }

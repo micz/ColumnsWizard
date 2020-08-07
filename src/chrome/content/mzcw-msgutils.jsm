@@ -150,11 +150,13 @@ miczColumnsWizard_MsgUtils.listener = {
 	QueryInterface: (XPCOMUtils.generateQI && XPCOMUtils.generateQI([Ci.nsIStreamListener, Ci.nsISupports]) ||
 		ChromeUtils.generateQI([Ci.nsIStreamListener, Ci.nsISupports])),
 
-	onStartRequest: function (aRequest, aContext) {
+	// onStartRequest: function (aRequest, aContext) {
+	onStartRequest: function (aRequest) {
 		miczColumnsWizard_MsgUtils.listener.text = "";
 	},
 
-	onStopRequest: function (aRequest, aContext, aStatusCode) {
+	// onStopRequest: function (aRequest, aContext, aStatusCode) {
+	onStopRequest: function (aRequest, aStatusCode) {
 		let isImap = (miczColumnsWizard_MsgUtils.folder.server.type === "imap");
 		let date = miczColumnsWizard_MsgUtils.getOrigDate();
 
@@ -263,8 +265,9 @@ miczColumnsWizard_MsgUtils.listener = {
 		cs.CopyFileMessage(fileSpec, fol, null, false, flags, keys, miczColumnsWizard_MsgUtils.copyListener, miczColumnsWizard_MsgUtils.msgWindow);
 	},
 
-	onDataAvailable: function (aRequest, aContext, aInputStream, aOffset, aCount) {
-		let scriptStream = Cc["@mozilla.org/scriptableinputstream;1"].createInstance().QueryInterface(Ci.nsIScriptableInputStream);
+	// onDataAvailable: function (aRequest, aContext, aInputStream, aOffset, aCount) {
+	onDataAvailable: function (aRequest, aInputStream, aOffset, aCount) {
+	let scriptStream = Cc["@mozilla.org/scriptableinputstream;1"].createInstance().QueryInterface(Ci.nsIScriptableInputStream);
 		scriptStream.init(aInputStream);
 		miczColumnsWizard_MsgUtils.listener.text += scriptStream.read(scriptStream.available());
 	},

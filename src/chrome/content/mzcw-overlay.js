@@ -38,7 +38,7 @@ var miczColumnsWizard = {
 		}
 
 		console.debug('options menu ');
-		miczColumnsWizard.addCWOptionsMenu();
+		// miczColumnsWizard.addCWOptionsMenu();
 
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 
@@ -510,8 +510,15 @@ var miczColumnsWizard = {
 	initHeadersEditingMenu: function () {
 		if (miczColumnsWizardPrefsUtils.headersEditingActive) {
 			miczColumnsWizard.CustColPref = miczColumnsWizard_CustCols.loadCustCols();
-			// miczColumnsWizard_CustomColsModUtils.addContextMenu(document, document.getElementById("cw_edit_main_menu_popup"), document.getElementById("cw_edit_context_menu_popup"), document.getElementById("cw_edit_newmain_menu_popup"), miczColumnsWizard.CustColPref, miczColumnsWizardPrefsUtils.stringCustColIndexMod, miczColumnsWizard.editHeaderMenu_OnClick, miczColumnsWizard.editHeaderSubMenu_OnClick);
-			miczColumnsWizard_CustomColsModUtils.addContextMenu(document, document.getElementById("cw_edit_main_menu_popup"), document.getElementById("cw_edit_context_menu_popup"), miczColumnsWizard.CustColPref, miczColumnsWizardPrefsUtils.stringCustColIndexMod, miczColumnsWizard.editHeaderMenu_OnClick, miczColumnsWizard.editHeaderSubMenu_OnClick);
+			miczColumnsWizard_CustomColsModUtils.addContextMenu(document, document.getElementById("cw_edit_main_menu_popup"), document.getElementById("cw_edit_context_menu_popup"), document.getElementById("cw_edit_newmain_menu_popup"), miczColumnsWizard.CustColPref, miczColumnsWizardPrefsUtils.stringCustColIndexMod, miczColumnsWizard.editHeaderMenu_OnClick, miczColumnsWizard.editHeaderSubMenu_OnClick);
+			
+			// miczColumnsWizard_CustomColsModUtils.addContextMenu(document, document.getElementById("cw_edit_main_menu_popup"),
+			//  document.getElementById("cw_edit_context_menu_popup"),
+			//  miczColumnsWizard.CustColPref,
+			//  miczColumnsWizardPrefsUtils.stringCustColIndexMod,
+			//  miczColumnsWizard.editHeaderMenu_OnClick,
+			//  miczColumnsWizard.editHeaderSubMenu_OnClick);
+			 
 			document.getElementById("cw_edit_main_menu").setAttribute("hidden", false);
 			document.getElementById("cw_edit_context_menu").setAttribute("hidden", false);
 			// document.getElementById("cw_edit_newmain_menu").setAttribute("hidden", false);
@@ -541,6 +548,7 @@ var miczColumnsWizard = {
 
 	editHeaderMenu_OnClick: function (event) {
 		// miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderMenu_OnClick] colidx: "+JSON.stringify(event.target.getAttribute("colidx"))+"\r\n");
+		event = window.event;
 		let colidx = event.target.getAttribute("colidx");
 		let mail_header = event.target.getAttribute("mail_header");
 		let edit_type = event.target.getAttribute("edit_type");
@@ -565,6 +573,8 @@ var miczColumnsWizard = {
 	editHeaderSubMenu_OnClick: function (event) {	// Here editType is always Fixed List
 		// miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] colidx: "+JSON.stringify(event.target.getAttribute("colidx")));
 		let colidx = event.target.getAttribute("colidx");
+		console.debug('have Verano click');
+		console.debug(colidx);
 		let mail_header = event.target.getAttribute("mail_header");
 		let header_value = event.target.getAttribute("label");
 		let current_header_value = gFolderDisplay.selectedMessage.getStringProperty(mail_header);

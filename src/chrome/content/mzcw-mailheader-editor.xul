@@ -9,11 +9,7 @@
   title="&ColumnsWizard.mailheader-editor.title;"
   style=""
   windowtype="mailnews:cwmailheaderditor"
-  persist="screenX screenY"
-  buttons="accept,cancel"
-  onload="miczColumnsWizard_MailHeaderEditor.onLoad();"
-  onunload=""
-  ondialogaccept="return miczColumnsWizard_MailHeaderEditor.onAccept();">
+  persist="screenX screenY">
 
 	<script type="application/javascript" src="chrome://columnswizard/content/mzcw-mailheader-editor.js"/>
 	<vbox id="cw_vbox_mhe" flex="1">
