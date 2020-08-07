@@ -182,22 +182,26 @@ var miczColumnsWizardPref_DefaultColsList = {
 		console.debug('Toggleitem');
 		console.debug(col);
 		console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items);
-		
-		let item = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.get("currindex", col.index);
+		let cwindex = (col.isCustom || col.isBundled) ? "Col_cw" : "";
+
+		let item = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.get("currindex", col.index + cwindex);
 		console.debug(item);
 		if (col.enabled && !item.length) {
 			console.debug('AddingItem');
 			console.debug(col);
 			miczColumnsWizardPref_DefaultColsList.defaultColsListObj.add({
-				currindex: col.index,
+				currindex: col.index + "Col_cw",
 				show: false,
 				sort_by: false,
-				name: miczColumnsWizardPref_DefaultColsList.getColLocalizedString(col.index),
+				name: col.labelString,
 				move_up: '<img src="chrome://columnswizard/content/ico/arrow-up-black-64px.png" height="16px" width="16px" class="arrows up-action">',
 				move_down: '<img src="chrome://columnswizard/content/ico/arrow-down-black-64px.png" height="16px" width="16px" class="arrows down-action">',
 				id: miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items.length + 1,
 	
 			});
+
+			// name: miczColumnsWizardPref_DefaultColsList.getColLocalizedString(col.index),
+
 			console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items);
 			console.debug('DoneA');
 		} else if (!col.enabled && item.length) {
@@ -205,8 +209,9 @@ var miczColumnsWizardPref_DefaultColsList = {
 			console.debug(item);
 			console.debug(col);
 			console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items);
-			miczColumnsWizardPref_DefaultColsList.defaultColsListObj.remove("currindex", col.index);
+			miczColumnsWizardPref_DefaultColsList.defaultColsListObj.remove("currindex", col.index + cwindex) ;
 			console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items);
+			console.debug('FinishMove');
 		}
 		
 		console.debug('UpdateCheckboxes');
@@ -223,7 +228,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 				element.checked = true;
 			}
 		}
-
+		console.debug('ToggleFinish');
 	},
 
 	

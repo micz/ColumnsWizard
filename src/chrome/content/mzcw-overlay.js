@@ -417,8 +417,25 @@ var miczColumnsWizard = {
 		// let e2 = document.querySelector('menuitem[label=ColumnsWizard]');
 		// console.debug(e2.outerHTML);
 
+
+		console.debug(cw_options.outerHTML);
+		let e2 = cw_options.querySelector('[disabled="true"]');
+
+		let saveDefaultMenuCW = document.createXULElement("menuitem");
+		saveDefaultMenuCW.setAttribute('label', 'ColumnsWizard');
+		// saveDefaultMenuCW.setAttribute('hidden', 'false');
+		saveDefaultMenuCW.id = "columnswizard-optionsitem";
+		saveDefaultMenuCW.setAttribute("anonid", "menuitem");
+		saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
+		// saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/mzcw-icon24.png");
+		// saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
+		// saveDefaultMenuCW.setAttribute("oncommand", "miczColumnsWizard.openSettingsTab();");
+		cw_options.insertBefore(saveDefaultMenuCW, e2);
+		// e2.setAttribute('hidden', 'true');
+	
+
 		// cw_options.setAttribute("onpopupshowing", "initAddonPrefsMenu(this);");
-		cw_options.setAttribute("onpopupshowing", "miczColumnsWizard.testCB(this);");
+		// cw_options.setAttribute("onpopupshowing", "miczColumnsWizard.testCB(this);");
 		// Add saveDefaultMenuCW element
 		// let saveDefaultMenuCW = document.createXULElement("menuitem");
 		// saveDefaultMenuCW.setAttribute('label', 'ColumnsWizard XYZ');
@@ -440,8 +457,8 @@ var miczColumnsWizard = {
 		let m = document.getElementById("columnswizard-optionsitem");
 		m.remove();
 		
-		console.debug(cw_options.outerHTML);
-		cw_options.setAttribute("onpopupshowing", "initAddonPrefsMenu(this);");
+		// console.debug(cw_options.outerHTML);
+		// cw_options.setAttribute("onpopupshowing", "initAddonPrefsMenu(this);");
 		console.debug(cw_options.outerHTML);
 
 		console.debug('Finish');
@@ -621,7 +638,7 @@ var miczColumnsWizard = {
 		let features = (miczColumnsWizardUtils.HostSystem === 'linux') ?
 			'chrome,titlebar,centerscreen,resizable,dependent,instantApply' :
 			'chrome,titlebar,centerscreen,resizable,alwaysRaised,instantApply';
-		window.openDialog('chrome://columnswizard/content/settings.html', 'ColumnsWizard_Settings', features).focus();
+		window.openDialog('chrome://columnswizard/content/settings.xhtml', 'ColumnsWizard_Settings', features).focus();
 
 	},
 

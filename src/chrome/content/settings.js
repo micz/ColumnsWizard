@@ -24,6 +24,7 @@ var miczColumnsWizardPref2 = {
 
 	settingsLoad: function () {
 
+		
 
 		let cbelement = document.getElementById("ColumnsWizard.DefaultColsList.active_checkbox");
 		let dca = miczColumnsWizardPrefsUtils.getBoolPref_CW("DefaultColsList.active");
@@ -46,6 +47,9 @@ var miczColumnsWizardPref2 = {
 		miczColumnsWizardPref2.registerPreferenceListeners([
 			"ColumnsWizard.DefaultColsList.active_checkbox",
 			"ColumnsWizard.CustCols.mod_active",
+			"ColumnsWizard.ShowLocation_checkbox",
+			"ColumnsWizard.ShowAccount_checkbox",
+			"ColumnsWizard.ShowAttachment_checkbox",
 		]);
 
 
@@ -129,8 +133,8 @@ var miczColumnsWizardPref2 = {
 			// container.selectedIndex = container.itemCount - 1;
 			// container.ensureIndexIsVisible(container.selectedIndex);
 
-			const index = miczColumnsWizardPref_CustomColsList.customColsListObj.items.length;
-
+			const index = miczColumnsWizardPref_CustomColsList.customColsListObj.items.length + 1;
+			console.debug('NewIndex ' + index);
 			miczColumnsWizardPref_CustomColsList.customColsListObj.add({
 				id: index,
 				enabled: args.newcol.enabled,
@@ -149,6 +153,7 @@ var miczColumnsWizardPref2 = {
 	
 		}
 
+		miczColumnsWizardPref_DefaultColsList.toggleCustomCol(args.newcol);
 	},
 
 	onEditCustomCol: function (win) {
@@ -240,6 +245,9 @@ var miczColumnsWizardPref2 = {
 		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/settings.properties");
 
 		if (!prompts.confirm(null, _bundleCW.GetStringFromName("ColumnsWizard.deletePrompt.title"), _bundleCW.GetStringFromName("ColumnsWizard.deletePrompt.text"))) return;
+		console.debug('DeleteCustom');
+		console.debug(vals);
+
 
 		// get the col id
 		let col_idx = index;
@@ -250,7 +258,11 @@ var miczColumnsWizardPref2 = {
 		// miczColumnsWizard_CustCols.removeCustomColumn(col_idx,ObserverService)
 		// miczColumnsWizard_CustCols.deleteCustCol(col_idx);
 		
-		miczColumnsWizardPref_DefaultColsList.loadDefaultColRows_Pref();
+		vals.enabled = false;
+		miczColumnsWizardPref_DefaultColsList.toggleCustomCol(vals);
+		miczColumnsWizardPref_DefaultColsList.saveDefaultColsList();
+		// miczColumnsWizardPref_DefaultColsList.loadDefaultColRows_Pref();
+
 		ObserverService.notifyObservers(null, "CW-deleteCustomColumn", col_idx);
 
 		// remove the custom col from the list
