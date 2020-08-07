@@ -1,27 +1,37 @@
 
 
-<!-- <!doctype html> -->
+<!DOCTYPE window [ 
+<!ENTITY % mainDTD SYSTEM "chrome://columnswizard/locale/settings.dtd">
+%mainDTD;
+]>
+
+<?xml-stylesheet  href="./css/settings.css" ?>
+<?xml-stylesheet  href="./css/defaultColList.css" ?>
+<?xml-stylesheet   href="./css/customcolslist.css" ?>
+<?xml-stylesheet   href="./css/checkbox.css" ?>
+<?xml-stylesheet  href="./css/radio.css" ?>
 
 <html>
-  <!-- <title>&ColumnsWizard.SettingsTitle;</title> -->
-  <title>ColumnsWizard Settings</title>
+<title>&ColumnsWizard.SettingsTitle;</title>
 	<head>
+<!-- 
     <link rel="stylesheet" href="./css/settings.css" />
     <link rel="stylesheet" href="./css/defaultColList.css" />
     <link rel="stylesheet" href="./css/customcolslist.css" />
     <link rel="stylesheet" href="./css/checkbox.css" />
     <link rel="stylesheet" href="./css/radio.css" />
+ -->
 		</head>
 	
 <body>
 
 <div class="tabs">
-  <input type="radio" id="tab1" name="tab-control"  checked  tabindex="0">
-  <input type="radio" id="tab2" name="tab-control" tabindex="0">
-  <input type="radio" id="tab3" name="tab-control">
-  <input type="radio" id="tab4" name="tab-control">
-  <input type="radio" id="tab5" name="tab-control" disabled>
-  <input type="radio" id="tab6" name="tab-control">
+  <input type="radio" id="tab1" name="tab-control" checked="true" tabindex="0"/>
+  <input type="radio" id="tab2" name="tab-control" tabindex="0"/>
+  <input type="radio" id="tab3" name="tab-control"/>
+  <input type="radio" id="tab4" name="tab-control"/>
+  <input type="radio" id="tab5" name="tab-control" disabled="true"/>
+  <input type="radio" id="tab6" name="tab-control"/>
   <ul>
     <li title="New Folder Columns" tabindex="0">
       <label for="tab1" role="button">
@@ -84,7 +94,7 @@
     <li title="Info" class="info">
       <label for="tab6" role="button"><svg viewBox="0 0 24 24">
         <path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
-        </svg><br>
+        </svg><br/>
         <span>Info</span></label>
         <div class="dt-wrapper">
           <div class="dt"><div class="dt2"></div></div>
@@ -101,7 +111,7 @@
       <div class="section-header">This is the columns' default configuration for the new folders. You can modify it here or use the menu in the column picker of the message list.</div>
 		  <div class="section-content">
 	  <label class="container" height="16px">Use your default columns setup for new folders
-		<input type="checkbox" id="ColumnsWizard.DefaultColsList.active_checkbox">
+		<input type="checkbox" id="ColumnsWizard.DefaultColsList.active_checkbox"/>
 		<span class="checkmark"></span>
 	  </label>
 
@@ -128,12 +138,12 @@
   <div style="display: flex; justify-content: start;">
     <label style="padding-right: 20px;">Sort Order: </label>
     <label class="container" style="padding-right: 15px;">Ascending
-    <input type="radio" id="cw_sort_asc" name="cw_sort_direction_rg" checked="true">
+    <input type="radio" id="cw_sort_asc" name="cw_sort_direction_rg" checked="true"/>
     <span class="rcheckmark"></span>
     </label>
   
     <label class="container">Descending
-      <input type="radio" id="cw_sort_desc" name="cw_sort_direction_rg">
+      <input type="radio" id="cw_sort_desc" name="cw_sort_direction_rg"/>
       <span class="rcheckmark"></span>
       </label>
   
@@ -176,27 +186,28 @@
         <button class="button" onclick="miczColumnsWizardPref2.onNewCustomCol(window);">New</button>
         <button class="button" onclick="miczColumnsWizardPref2.onEditCustomCol(window);" >Edit</button>
         <button class="button" onclick="miczColumnsWizardPref2.onDeleteCustomCol(window);">Delete</button>
-      </div>
+      	</div>
+		  </div>
 
         </section>
     
     <section>
       <div class="section-header">Choose here which additional columns you want to see in the Conversation Tab.</div>
       <label class="container" height="16px">Location
-        <input type="checkbox">
+        <input type="checkbox"/>
         <span class="checkmark"></span>
         </label>
         <label class="container" height="16px">Account
-        <input type="checkbox">
+        <input type="checkbox"/>
         <span class="checkmark"></span>
         </label>
         <label class="container" height="16px">Attachment
-        <input type="checkbox">
+        <input type="checkbox"/>
         <span class="checkmark"></span>
         </label>
         
         <label class="container">Recipient
-          <input type="checkbox">
+          <input type="checkbox"/>
           <span class="checkmark"></span>
           </label>
     
@@ -205,11 +216,11 @@
       <div class="section-group-content-header">Message Header Editor Options</div>
       <div class="section-content">
         <label class="container" height="16px">Enable Message Header Editing
-          <input id="ColumnsWizard.CustCols.mod_active_checkbox" type="checkbox">
+          <input id="ColumnsWizard.CustCols.mod_active_checkbox" type="checkbox"/>
           <span class="checkmark"></span>
           </label>
           <label class="container" height="16px">Force changes when using IMAP
-            <input type="checkbox">
+            <input type="checkbox"/>
             <span class="checkmark"></span>
             </label>
           
@@ -219,7 +230,7 @@
       <div class="section-group-content-header">Debugging Options</div>
       <div class="section-content">
       <label class="container">Enable Message Header Editing
-        <input type="checkbox">
+        <input type="checkbox"/>
         <span class="checkmark"></span>
         </label>
       </div>

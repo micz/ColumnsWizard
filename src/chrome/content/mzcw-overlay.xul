@@ -85,13 +85,25 @@
  insertafter="joinChatMenuItem"/>
  </menupopup>
 
+<!-- <menupopup id="taskPopup">
+ <menuitem id="newsettings-menu-item2"
+ label="ColumnsWizard (Reset)"
+ oncommand="miczColumnsWizard.testRemove();"
+ insertafter="joinChatMenuItem"
+ class="menuitem-iconic"
+ image="chrome://columnswizard/skin/mzcw-icon.png"/>
+ <menuseparator id="micz-Separator"
+ insertafter="joinChatMenuItem"/>
+ </menupopup>
+ -->
 <!-- 
 <menupopup id="addonPrefs">
  <menuitem id="newsettings-menu-item2"
- label="ColumnsWizard (NewUI)"
+ label="ColumnsWizard (NewUI 2)"
  oncommand="miczColumnsWizard.openSettingsTab();"
+ insertbefore="No Add-on settings found."
  class="menuitem-iconic"
  image="chrome://columnswizard/skin/mzcw-icon.png"/>
- </menupopup>
- -->
+ </menupopup> -->
+
 </overlay>

@@ -37,7 +37,7 @@ var miczColumnsWizard = {
 			miczColumnsWizard.addToolbarButton();
 		}
 
-		console.debug('options menu ');
+		// console.debug('options menu ');
 		// miczColumnsWizard.addCWOptionsMenu();
 
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
@@ -432,6 +432,19 @@ var miczColumnsWizard = {
 		console.debug(cw_options.outerHTML);
 		console.debug('options menu');
 		
+	},
+
+	testRemove: function () {
+		console.debug('RemoveMenus 2');
+		var cw_options = document.getElementById('addonPrefs');
+		let m = document.getElementById("columnswizard-optionsitem");
+		m.remove();
+		
+		console.debug(cw_options.outerHTML);
+		cw_options.setAttribute("onpopupshowing", "initAddonPrefsMenu(this);");
+		console.debug(cw_options.outerHTML);
+
+		console.debug('Finish');
 	},
 
 	testCB(_this) {
