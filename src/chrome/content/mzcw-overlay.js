@@ -129,8 +129,9 @@ var miczColumnsWizard = {
 	},
 
 	addDbObserver: function (currcol) {
-		console.debug('Observer');
-		console.debug(currcol);
+		// console.debug('Observer');
+		// console.debug(currcol);
+		
 		// Create all the needed DbObservers
 		// dump(">>>>>>>>>>>>> miczColumnsWizard->CreateDbObserver: [index] "+currcol.index+"\r\n");
 		// It's needed to to this, to avoid writing each miczColumnsWizard_CustCols.CreateDbObserver_COLNAME by hand, because we need to pass the index var inside the observe function definition.
@@ -644,7 +645,6 @@ var miczColumnsWizard = {
 
 	// cleidigh fix document persist
 	addToolbarButton: function () {
-		console.debug('Button');
 		let toolbar = document.getElementById("mail-bar3");
 		let buttonId = "mzcw-button";
 		let before_el = document.getElementById("gloda-search").previousSibling;

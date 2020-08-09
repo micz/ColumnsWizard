@@ -12,7 +12,50 @@ var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard
 var miczColumnsWizard = window.miczColumnsWizard;
 var defaultColsListObj;
 
-var miczColumnsWizardPref2 = {
+var miczColumnsWizardPref2 = {};
+
+miczColumnsWizardPref2 = {
+
+	prefList: [
+		{docid: "ColumnsWizard.DefaultColsList.active_checkbox", pref: "ColumnsWizard.DefaultColsList.active", type: "boolean_checkbox", prefPostOp: null, prefListener: miczColumnsWizardPref2.onPreferenceChange},
+		{docid: "ColumnsWizard.CustCols.mod_active_checkbox", pref: "ColumnsWizard.CustCols.mod_active", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
+		{docid: "ColumnsWizard.debug_checkbox", pref: "ColumnsWizard.debug", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
+		{docid: "ColumnsWizard.ShowLocation_checkbox", pref: "ColumnsWizard.ShowLocation", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
+		{docid: "ColumnsWizard.ShowAccount_checkbox", pref: "ColumnsWizard.ShowAccount", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
+		{docid: "ColumnsWizard.ShowAttachment_checkbox", pref: "ColumnsWizard.ShowAttachment", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
+		{docid: "ColumnsWizard.ShowRecipient_checkbox", pref: "ColumnsWizard.ShowRecipient", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
+		{docid: "ColumnsWizard.MailHeader.use_imap_fix_checkbox", pref: "ColumnsWizard.MailHeader.use_imap_fix_checkbox", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
+		{docid: "ColumnsWizard.MailHeader.put_original_in_trash_checkbox", pref: "ColumnsWizard.MailHeader.put_original_in_trash", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
+	],
+
+	
+	// {docid: "ColumnsWizard.DefaultColsList.active_checkbox", pref: "ColumnsWizard.DefaultColsList.active_checkbox.active", type: "boolean_checkbox", prefPostOp: null},
+
+	// {docid: "ColumnsWizard.ColumnsWizard.cw_sort_asc", pref: "ColumnsWizard.", type: "boolean", prefPostOp: null},
+
+	// {docid: "ColumnsWizard.", pref: "ColumnsWizard.", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
+
+	docSettingsLoad: function () {
+		this.prefList.forEach(prefEntry => {
+			console.debug(prefEntry);
+			var prefElement = document.getElementById(prefEntry.docid);
+			switch (prefEntry.type) {
+				case 'boolean_checkbox':
+					let pref = miczColumnsWizardPrefsUtils.getBoolPref("extensions." + prefEntry.pref);
+					console.debug('BooleanCheckBox: ' + pref);
+					prefElement.checked = pref;
+					if (!pref) {
+						prefElement.removeAttribute("checked");
+					}
+
+					break;
+			
+				default:
+					break;
+			}
+			miczColumnsWizardPref2.registerPreferenceListener(prefEntry);
+		});
+	},
 
 	htmlToElements: function (html) {
 		var domParser = new DOMParser();
@@ -24,10 +67,10 @@ var miczColumnsWizardPref2 = {
 
 	settingsLoad: function () {
 
-		
+		miczColumnsWizardPref2.docSettingsLoad();
 
-		let cbelement = document.getElementById("ColumnsWizard.DefaultColsList.active_checkbox");
-		let dca = miczColumnsWizardPrefsUtils.getBoolPref_CW("DefaultColsList.active");
+		var cbelement = document.getElementById("ColumnsWizard.DefaultColsList.active_checkbox");
+/* 		let dca = miczColumnsWizardPrefsUtils.getBoolPref_CW("DefaultColsList.active");
 
 		if (dca) {
 			cbelement.checked = true;
@@ -37,21 +80,36 @@ var miczColumnsWizardPref2 = {
 		
 		cbelement = document.getElementById("ColumnsWizard.CustCols.mod_active_checkbox");
 		dca = miczColumnsWizardPrefsUtils.getBoolPref_CW("CustCols.mod_active");
-
 		if (dca) {
 			cbelement.checked = true;
 		} else {
 			cbelement.removeAttribute("checked");
 		}
 		
+ */
+		cbelement = document.getElementById("ColumnsWizard.cw_sort_asc");
+		var cbelement2 = document.getElementById("ColumnsWizard.cw_sort_desc");
+		let so = miczColumnsWizardPrefsUtils.getBoolPref("mailnews.default_sort_order");
+
+		if (so) {
+			cbelement.checked = true;
+			cbelement2.removeAttribute("checked");
+		} else {
+			cbelement.removeAttribute("checked");
+			cbelement2.checked = true;
+		}
+		/* 
 		miczColumnsWizardPref2.registerPreferenceListeners([
 			"ColumnsWizard.DefaultColsList.active_checkbox",
 			"ColumnsWizard.CustCols.mod_active",
 			"ColumnsWizard.ShowLocation_checkbox",
 			"ColumnsWizard.ShowAccount_checkbox",
 			"ColumnsWizard.ShowAttachment_checkbox",
+			"ColumnsWizard.cw_sort_asc",
+			"ColumnsWizard.cw_sort_desc",
+			"ColumnsWizard.debug",
 		]);
-
+ */
 
 
 		// const { require } = ChromeUtils.import("resource://gre/modules/commonjs/toolkit/require.js", {});
@@ -67,6 +125,8 @@ var miczColumnsWizardPref2 = {
 		
 		miczColumnsWizardPref_CustomColsList.initCustomColsList(window);
 
+		// Load release notes
+		miczColumnsWizardPref2.loadInfoFile('release_notes');
 
 	},
 
@@ -277,22 +337,80 @@ var miczColumnsWizardPref2 = {
 		});
 	},
 	
+	registerPreferenceListener: function(prefEntry) {
+		let element = document.getElementById(prefEntry.docid);
+		if (prefEntry.prefListener) {
+			element.addEventListener("click", prefEntry.prefListener, false);
+		} else {
+			element.addEventListener("click", miczColumnsWizardPref2.onPreferenceChange, false);
+		}
+	},
+	
 	onPreferenceChange: function (event) {
 		var targetElement = event.target;
 
-		switch (targetElement.id) {
-			case "ColumnsWizard.DefaultColsList.active_checkbox":
-				miczColumnsWizardPrefsUtils.setBoolPref_CW("DefaultColsList.active", targetElement.checked);
-				console.debug('SaveActive ' + targetElement.checked);
-				break;
-			case "cw_sort_asc":
-			case "cw_sort_desc":
+		var prefEntry = miczColumnsWizardPref2.prefList.find(x => x.docid === targetElement.id);
+		console.debug(targetElement.id);
+		console.debug(prefEntry);
+
+		if (!prefEntry) {
+			return;
+		}
+		
+		switch (prefEntry.type) {
+			case 'boolean_checkbox':
+				miczColumnsWizardPrefsUtils.setBoolPref("extensions." + prefEntry.pref, targetElement.checked);
+				console.debug('BooleanCheckBox: ' + targetElement.checked);
+				// if (!pref) {
+				// 	prefElement.removeAttribute("checked");
+				// }
+
 				break;
 		
 			default:
 				break;
 		}
-	}
+		
+/* 
+		switch (targetElement.id) {
+			case "ColumnsWizard.DefaultColsList.active_checkbox":
+				miczColumnsWizardPrefsUtils.setBoolPref_CW("DefaultColsList.active", targetElement.checked);
+				console.debug('SaveActive ' + targetElement.checked);
+				break;
+			case "ColumnsWizard.cw_sort_asc":
+			case "ColumnsWizard.cw_sort_desc":
+				let cbelement = document.getElementById("ColumnsWizard.cw_sort_asc");
+				miczColumnsWizardPrefsUtils.setBoolPref("mailnews.default_sort_order", cbelement.checked);
+				break;
+			case "ColumnsWizard.debug_checkbox":
+				miczColumnsWizardPrefsUtils.setBoolPref_CW("debug", targetElement.checked);
+				break;
+			default:
+				break;
+		}
+ */
+	},
+
+	loadInfoFile: function (filetype) {
+		let url = '';
+		switch (filetype) {
+			case 'release_notes':
+				url = "chrome://cwrl/content/CHANGELOG.md";
+				break;
+			case 'license':
+				url = "chrome://cwrl/content/LICENSE";
+				break;
+		}
+		let request = new XMLHttpRequest();
+		request.responseType = "text";
+		console.debug('load fileThomas');
+		request.addEventListener("load", function () {
+			let relnotes = document.getElementById('mzcw-release-notes');
+			relnotes.textContent = this.responseText;
+		});
+		request.open("GET", url);
+		request.send();
+	},
 };
 
 

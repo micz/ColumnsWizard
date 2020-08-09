@@ -3,7 +3,7 @@
 	"name": "ColumnsWizard",
 	"xpi-name": "columnswizard",
 	"version": "7.0.0-b12",
-	"description": "Test 8 Adds some magic to the folder list columns! You can add a custom column directly from the addon preference window to show any mail header you want, define the default columns settings for any new folder and show hidden columns in the Conversation Tab and in the search window.",
+	"description": "Adds some magic to the folder list columns! You can add a custom column directly from the addon preference window to show any mail header you want, define the default columns settings for any new folder and show hidden columns in the Conversation Tab and in the search window.",
 	"author": "Mic (m@micz.it), Christopher Leidigh",
 	"applications": {
 		"gecko": {
@@ -12,10 +12,13 @@
 		}
 	},
 	"legacy": {
-		"type": "xul"
+		"type": "xul",
+		"options": {
+			"page": "chrome://columnswizard/content/settings-tab-launch.xul"
+		}
 		
 	},
 	"icons": {
-        "64": "chrome/skin/mzcw-icon64.png"
+        "64": "chrome/skin/mzcw-icon64-h.png"
     }
 }
