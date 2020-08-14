@@ -148,14 +148,14 @@ var miczColumnsWizardPref_DefaultColsList = {
 			console.debug('SaveSort ' + vals.sort_by);
 			if (vals.sort_by) {
 				let ci = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_type");
-				// console.debug('CurrentSort ' + ci );
+				console.debug('CurrentSort ' + ci );
 				let so =  miczColumnsWizardPref_DefaultColsList.getSortType(vals.currindex);
 				// console.debug('cO ' +  miczColumnsWizardPref2.getSortType(vals.currindex));
-				// console.debug(so);
+				console.debug(so);
 
 				let sortcolindex = miczColumnsWizardPrefsUtils.setIntPref("mailnews.default_sort_type", so);
 				ci = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_type");
-				// console.debug('NewSort ' + ci);
+				console.debug('NewSort ' + ci);
 				
 				// let sortcolindex = miczColumnsWizardPrefsUtils.setIntPref("mailnews.default_sort_type", miczColumnsWizardPref_DefaultColsGrid.getSortType(vals.currindex));
 				// console.debug(vals.sort_by,);
@@ -255,7 +255,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 		}
 
 		if (event.target.classList.contains('toggle-action-sort-by')) {
-			// console.debug('SortClass');
+			console.debug('Sort By');
 			// console.debug(`click: ${event.target.outerHTML}  : ${event.target.checked}`);
 			if (!event.target.checked) {
 				item.values({ "sort_by": false });

@@ -518,7 +518,15 @@ var miczColumnsWizard = {
 		if (!promptService.confirm(null, title_msg, text_msg)) return;
 
 		let columnStates = miczColumnsWizardPref_DefaultColsList.loadDefaultColRows_Pref();
+		let so = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_order");
+		let st = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_type");
+		console.debug(`SortOrderOnReset ${so}`);
+		console.debug(`SortTypeOnReset ${st}`);
+
+		gFolderDisplay.view.sort(st, so);
+		
 		gFolderDisplay.setColumnStates(columnStates, true);
+		// gDBView.sortType = st;
 		window.event.stopPropagation();
 		return;
 	},

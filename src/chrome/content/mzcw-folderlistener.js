@@ -146,6 +146,15 @@ miczColumnsWizard.FolderListener = {
 		let cwcolumnStates = miczColumnsWizardPref_DefaultColsList.loadDefaultColRows_Pref();
 		console.debug('ShowColumns');
 		console.debug(cwcolumnStates);
+		let so = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_order");
+		let st = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_type");
+		
+		dbFolderInfo.sortType = st;
+		dbFolderInfo.sortOrder = so;
+		console.debug(`SortOrderOnFolder ${so}`);
+		console.debug(`SortTypeOnFolder ${st}`);
+
+		// gFolderDisplay.view.sort(st, so);
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [cw_showColumns_Pref] "+JSON.stringify(cwcolumnStates)+"\r\n");
 		dbFolderInfo.setCharProperty(propName, JSON.stringify(cwcolumnStates));
 		/* let wMediator = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);

@@ -7,6 +7,7 @@ var { miczColumnsWizard_CustCols } = ChromeUtils.import("chrome://columnswizard/
 var { miczColumnsWizardPref_CustomColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolslist.jsm");
 var { miczColumnsWizardPref_DefaultColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolslist.jsm");
 var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+var { DocLocalize } = ChromeUtils.import("chrome://columnswizard/content/doc-localize.jsm");
 
 // var miczColumnsWizard = window.opener.miczColumnsWizard;
 var miczColumnsWizard = window.miczColumnsWizard;
@@ -26,6 +27,8 @@ miczColumnsWizardPref2 = {
 		{docid: "ColumnsWizard.ShowRecipient_checkbox", pref: "ColumnsWizard.ShowRecipient", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
 		{docid: "ColumnsWizard.MailHeader.use_imap_fix_checkbox", pref: "ColumnsWizard.MailHeader.use_imap_fix_checkbox", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
 		{docid: "ColumnsWizard.MailHeader.put_original_in_trash_checkbox", pref: "ColumnsWizard.MailHeader.put_original_in_trash", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
+		{docid: "ColumnsWizard.cw_sort_asc", pref: "", type: "boolean_radio", prefPostOp: null, prefListener: miczColumnsWizardPref2.onPreferenceChange},
+		{docid: "ColumnsWizard.cw_sort_desc", pref: "", type: "boolean_radio", prefPostOp: null, prefListener: miczColumnsWizardPref2.onPreferenceChange},
 	],
 
 	
@@ -65,8 +68,10 @@ miczColumnsWizardPref2 = {
 		return docFragment.body.firstChild;
 	},
 
-	settingsLoad: function () {
+	settingsLoad: async function () {
 
+		await DocLocalize.loadLocaleMessages(document, "messages.json");
+		console.debug('SettingsLive');
 		miczColumnsWizardPref2.docSettingsLoad();
 
 		var cbelement = document.getElementById("ColumnsWizard.DefaultColsList.active_checkbox");
@@ -89,30 +94,19 @@ miczColumnsWizardPref2 = {
  */
 		cbelement = document.getElementById("ColumnsWizard.cw_sort_asc");
 		var cbelement2 = document.getElementById("ColumnsWizard.cw_sort_desc");
-		let so = miczColumnsWizardPrefsUtils.getBoolPref("mailnews.default_sort_order");
+		let so = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_order");
+		console.debug(`SortOrderOn Load ${so}`);
+		// console.debug(`SortTypeOnReset ${st}`);
 
-		if (so) {
+
+		if (so === 1) {
 			cbelement.checked = true;
 			cbelement2.removeAttribute("checked");
 		} else {
 			cbelement.removeAttribute("checked");
 			cbelement2.checked = true;
 		}
-		/* 
-		miczColumnsWizardPref2.registerPreferenceListeners([
-			"ColumnsWizard.DefaultColsList.active_checkbox",
-			"ColumnsWizard.CustCols.mod_active",
-			"ColumnsWizard.ShowLocation_checkbox",
-			"ColumnsWizard.ShowAccount_checkbox",
-			"ColumnsWizard.ShowAttachment_checkbox",
-			"ColumnsWizard.cw_sort_asc",
-			"ColumnsWizard.cw_sort_desc",
-			"ColumnsWizard.debug",
-		]);
- */
-
-
-		// const { require } = ChromeUtils.import("resource://gre/modules/commonjs/toolkit/require.js", {});
+		
 
 		// Services.scriptloader.loadSubScript("chrome://columnswizard/content/modules/list.js", {});
 		// var  { List2 } = ChromeUtils.import("chrome://columnswizard/content/modules/list.js", this);
@@ -366,7 +360,14 @@ miczColumnsWizardPref2 = {
 				// }
 
 				break;
-		
+			case 'boolean_radio':
+				if (targetElement.id === "ColumnsWizard.cw_sort_asc" || targetElement.id === "ColumnsWizard.cw_sort_desc") {
+					let cbelement = document.getElementById("ColumnsWizard.cw_sort_asc");
+					let sort_order = cbelement.checked ? 1 : 2;
+					miczColumnsWizardPrefsUtils.setIntPref("mailnews.default_sort_order", sort_order);
+					console.debug(`New sort order ${sort_order}`);
+				}
+			
 			default:
 				break;
 		}

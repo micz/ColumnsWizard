@@ -2,7 +2,7 @@
 
 <html>
 <!-- <title>&ColumnsWizard.SettingsTitle;</title> -->
-<title>ColumnsWizard Settings</title>
+<title>__MSG_ColumnsWizard.SettingsTitle__</title>
 
 <head>
   <link rel="stylesheet" href="./css/settings.css" />
@@ -22,7 +22,7 @@
     <input type="radio" id="tab5" name="tab-control" disabled>
     <input type="radio" id="tab6" name="tab-control" role="button">
     <ul>
-      <li title="New Folder Columns" tabindex="0">
+      <li title="__MSG_ColumnsWizard.TabNewFolderDefault.label__" tabindex="0">
         <label for="tab1" role="button">
 
           <!-- <div class="tab-img-box">  -->
@@ -30,21 +30,21 @@
             class="tab-img-png tab-img-png-unchecked" />
           <img src="chrome://columnswizard/skin/ico/column-change-blue-64px.png"
             class="tab-img-png tab-img-png-checked" />
-          <span>New Folder Columns</span></label>
+          <span>__MSG_ColumnsWizard.TabNewFolderDefault.label__</span></label>
         <div class="dt-wrapper">
           <div class="dt">
             <div class="dt2"></div>
           </div>
         </div>
       </li>
-      <li title="Custom Columns" tabindex="0" role="button" aria-label="Custom Columns">
+      <li title="__MSG_ColumnsWizard.TabCustomCols.label__" tabindex="0" role="button" aria-label="Custom Columns">
         <label for="tab2" role="button" aria-label="Custom Columns">
           <img src="chrome://columnswizard/skin/ico/custom-columns-blue-64px.png"
             class="tab-img-png tab-img-png-checked" />
           <img src="chrome://columnswizard/skin/ico/custom-columns-gray-64px.png"
             class="tab-img-png tab-img-png-unchecked" />
 
-          <span role="button" aria-label="Custom Columns">Custom Columns</span></label>
+          <span role="button" aria-label="Custom Columns">__MSG_ColumnsWizard.TabCustomCols.label__</span></label>
         <div class="dt-wrapper" role="button" aria-label="Custom Columns">
           <div class="dt">
             <div class="dt2"></div>
@@ -55,21 +55,21 @@
         </div>
  -->
       </li>
-      <li title="Conversation Tab">
+      <li title="__MSG_ColumnsWizard.TabConversation.label__">
         <label for="tab3" role="button">
           <img src="chrome://columnswizard/skin/ico/conversation-tab-blue-64px.png"
             class="tab-img-png tab-img-png-checked" />
           <img src="chrome://columnswizard/skin/ico/conversation-tab-gray-64px.png"
             class="tab-img-png tab-img-png-unchecked" />
 
-          <span>Conversation Tab</span></label>
+          <span>__MSG_ColumnsWizard.TabConversation.label__</span></label>
         <div class="dt-wrapper">
           <div class="dt">
             <div class="dt2"></div>
           </div>
         </div>
       </li>
-      <li title="Advanced">
+      <li title="__MSG_ColumnsWizard.TabAdvanced.label__">
         <label for="tab4" role="button">
           <img src="chrome://columnswizard/skin/ico/settings-circle-blue-64px.png"
             class="tab-img-png tab-img-png-checked" style="height: 20px; width: 20px;" />
@@ -80,7 +80,7 @@
         <path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
         </svg><br>
      -->
-          <span>Advanced</span></label>
+          <span>__MSG_ColumnsWizard.TabAdvanced.label__</span></label>
         <div class="dt-wrapper">
           <div class="dt">
             <div class="dt2"></div>
@@ -89,7 +89,7 @@
       </li>
 
 
-      <li title="Info" class="spacertab">
+      <li title="" class="spacertab">
         <label for="tab5" role="button">
           <span></span></label>
         <!-- <div class="dt-wrapper"> -->
@@ -97,12 +97,12 @@
         <!-- </div> -->
       </li>
 
-      <li title="Info" class="info">
+      <li title="__MSG_ColumnsWizard.TabInfo.label__" class="info">
         <label for="tab6" role="button"><svg viewBox="0 0 24 24">
             <path
               d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
           </svg><br>
-          <span>Info</span></label>
+          <span>__MSG_ColumnsWizard.TabInfo.label__</span></label>
         <div class="dt-wrapper">
           <div class="dt">
             <div class="dt2"></div>
@@ -117,10 +117,9 @@
 
     <div class="content">
       <section>
-        <div class="section-header">This is the columns' default configuration for the new folders. You can modify it
-          here or use the menu in the column picker of the message list.</div>
+        <div class="section-header">__MSG_ColumnsWizard.NewFolderCols.Desc__</div>
         <div class="section-content">
-          <label class="container" height="16px">Use your default columns setup for new folders
+          <label class="container" height="16px">__MSG_ColumnsWizard.NewFolderCols.label__
             <input type="checkbox" id="ColumnsWizard.DefaultColsList.active_checkbox">
             <span class="checkmark"></span>
           </label>
@@ -146,13 +145,13 @@
           </div>
 
           <div style="display: flex; justify-content: start;">
-            <label style="padding-right: 20px;">Sort Order: </label>
-            <label class="container" style="padding-right: 15px;">Ascending
+            <label style="padding-right: 20px;">__MSG_ColumnsWizard.NewFolderColsSortOrder.label__: </label>
+            <label class="container" style="padding-right: 15px;">__MSG_ColumnsWizard.NewFolderColsSortOrder.ASC.label__
               <input type="radio" id="ColumnsWizard.cw_sort_asc" name="cw_sort_direction_rg" checked="true">
               <span class="rcheckmark"></span>
             </label>
 
-            <label class="container">Descending
+            <label class="container">__MSG_ColumnsWizard.NewFolderColsSortOrder.DESC.label__
               <input type="radio" id="ColumnsWizard.cw_sort_desc" name="cw_sort_direction_rg">
               <span class="rcheckmark"></span>
             </label>
@@ -166,7 +165,7 @@
       </section>
 
       <section>
-        <div class="section-header">Choose here which custom columns you want to add to the messages list.</div>
+        <div class="section-header">__MSG_ColumnsWizard.GlobalDescCustCols__</div>
         <div class="section-content">
 
           <div id="customColsListDiv" class="table-list-container custom-col-list-container" tabindex="0">
@@ -177,10 +176,10 @@
                 <tr height="20px">
                   <th class="En" height="20px">Enabled</th>
                   <th class="srch" height="20px">Searchable</th>
-                  <th class="header-id" height="20px">ID</th>
-                  <th class="mail-header" height="20px">Mail Header</th>
-                  <th class="col-name" height="20px">Column Name</th>
-                  <th class="tooltip" height="20px">Tooltip</th>
+                  <th class="header-id" height="20px">__MSG_ColumnsWizard.CustColsList.ID__</th>
+                  <th class="mail-header" height="20px">__MSG_ColumnsWizard.CustColsList.mailheader__</th>
+                  <th class="col-name" height="20px">__MSG_ColumnsWizard.CustColsList.title__</th>
+                  <th class="tooltip" height="20px">__MSG_ColumnsWizard.CustColsList.tooltip__</th>
                 </tr>
               </thead>
 
@@ -193,54 +192,54 @@
           </div>
 
           <div class="section-content">
-            <button class="button" onclick="miczColumnsWizardPref2.onNewCustomCol(window);">New</button>
-            <button class="button" onclick="miczColumnsWizardPref2.onEditCustomCol(window);">Edit</button>
-            <button class="button" onclick="miczColumnsWizardPref2.onDeleteCustomCol(window);">Delete</button>
+            <button class="button" onclick="miczColumnsWizardPref2.onNewCustomCol(window);">__MSG_ColumnsWizard.newButton.label__</button>
+            <button class="button" onclick="miczColumnsWizardPref2.onEditCustomCol(window);">__MSG_ColumnsWizard.editButton.label__</button>
+            <button class="button" onclick="miczColumnsWizardPref2.onDeleteCustomCol(window);">__MSG_ColumnsWizard.deleteButton.label__</button>
           </div>
 
       </section>
 
       <section>
-        <div class="section-header">Choose here which additional columns you want to see in the Conversation Tab.</div>
-        <label class="container" height="16px">Location
+        <div class="section-header">__MSG_ColumnsWizard.GlobalDescConvTab__</div>
+        <label class="container" height="16px">__MSG_ColumnsWizard.ShowLocation.label__
           <input type="checkbox" id="ColumnsWizard.ShowLocation_checkbox">
           <span class="checkmark"></span>
         </label>
-        <label class="container" height="16px">Account
+        <label class="container" height="16px">__MSG_ColumnsWizard.ShowAccount.label__
           <input id="ColumnsWizard.ShowAccount_checkbox" type="checkbox">
           <span class="checkmark"></span>
         </label>
-        <label  class="container" height="16px">Attachment
+        <label  class="container" height="16px">__MSG_ColumnsWizard.ShowAttachment.label__
           <input id="ColumnsWizard.ShowAttachment_checkbox" type="checkbox">
           <span class="checkmark"></span>
         </label>
 
-        <label class="container">Recipient
+        <label class="container">__MSG_ColumnsWizard.ShowRecipient.label__
           <input id="ColumnsWizard.ShowRecipient_checkbox" type="checkbox">
           <span class="checkmark"></span>
         </label>
 
       </section>
       <section>
-        <div class="section-group-content-header">Message Header Editor Options</div>
+        <div class="section-group-content-header">__MSG_ColumnsWizard.MailHeaderGroupbox.label__</div>
         <div class="section-content">
-          <label class="container" height="16px">Enable Message Header Editing
+          <label class="container" height="16px">__MSG_ColumnsWizard.CustCols.mod_active_checkbox.label__
             <input id="ColumnsWizard.CustCols.mod_active_checkbox" type="checkbox">
             <span class="checkmark"></span>
           </label>
-          <label class="container" height="16px">Force changes when using IMAP
+          <label class="container" height="16px">__MSG_ColumnsWizard.MailHeader.use_imap_fix_checkbox.label__
             <input type="checkbox" id="ColumnsWizard.MailHeader.use_imap_fix_checkbox">
             <span class="checkmark"></span>
           </label>
-          <label class="container" height="16px">Put original in trash
+          <label class="container" height="16px">__MSG_ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label__
             <input type="checkbox" id="ColumnsWizard.MailHeader.put_original_in_trash_checkbox">
             <span class="checkmark"></span>
           </label>
 
         </div>
-        <div class="section-group-content-header">Debugging Options</div>
+        <div class="section-group-content-header">Debugging Options - LOC</div>
         <div class="section-content">
-          <label class="container">Enable Debugger System
+          <label class="container">__MSG_ColumnsWizard.ActivateDebug__
             <input type="checkbox" id="ColumnsWizard.debug_checkbox">
             <span class="checkmark"></span>
           </label>
@@ -273,8 +272,10 @@
 
 <!-- <script src="chrome://columnswizard/content/modules/list.controller.js"></script> -->
 
+<script src="chrome://columnswizard/content/doc-localize.js"></script>
 <script src="chrome://columnswizard/content/modules/list.js"></script>
 <script src="chrome://columnswizard/content/settings.js"></script>
+
 <!-- <script src="chrome://columnswizard/content/defaultColList.js"></script> -->
 
 
