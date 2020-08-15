@@ -1,0 +1,11 @@
+{
+	"ColumnsWizard.MenuLabel": {
+		"message": "Columns Wizard - Kopfzeile editieren"
+	},
+	"ColumnsWizard.button.label": {
+		"message": "Columns Wizard"
+	},
+	"ColumnsWizard.button.tooltip": {
+		"message": "Columns Wizard Einstellungen"
+	}
+}

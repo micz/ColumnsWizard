@@ -9,6 +9,42 @@ html {
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  ;
 	height: 100%;
   }
+
+  .tooltip {
+	position:relative; /* making the .tooltip span a container for the tooltip text */
+	border-bottom:1px dashed #000; /* little indicater to indicate it's hoverable */
+  }
+
+  .tooltip::before {
+	content: attr(data-tooltip);
+	position:absolute;
+	
+	/* vertically center */
+	top: 28px;
+	/* transform:translateY(-50%); */
+	
+	/* move to right */
+	left: 50%;
+	margin-left:5px; /* and add a small left margin */
+	
+	/* basic styles */
+	/* width:100%; */
+
+	padding: 3px 6px 3px 6px;
+	border-radius: 3px;
+	background: whitesmoke;
+	color: black;
+	font-size: 14px;
+	font-weight: 400;
+	text-align:center;
+	border: 0.4px solid darkgray;
+	z-index: 1000;
+	display:none; 
+  }
+
+  .tooltip:hover::before {
+	display:block;
+  }
   
   body h1 {
 	text-align: center;

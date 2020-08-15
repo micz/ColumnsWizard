@@ -42,13 +42,13 @@ var miczColumnsWizardPref_CustomColsList = {
 
 			],
 			item: '<tr class="list-row id" >\
-			<td>\
-				<label class="container">\
+			<td class="enabled" >\
+				<label class="container" >\
 					<input type="checkbox" class="enabled toggle-action-enabled">\
 					<span class="checkmark"></span>\
 					</label>\
 			</td>\
-			<td >\
+			<td style="text-align: center;">\
 			<label class="container">\
 					<input type="checkbox" class="isSearchable toggle-action-isSearchable">\
 					<span class="checkmark"></span>\

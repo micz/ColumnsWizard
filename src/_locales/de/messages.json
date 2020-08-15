@@ -137,5 +137,178 @@
 	},
 	"ColumnsWizard.ActivateDebug": {
 		"message": "Debug Modus aktivieren."
+	},
+
+	"ColumnsWizard.threadColumn.label": {
+		"comment": "settings.properties",
+		"message": "Thema"
+	},
+	"ColumnsWizard.fromColumn.label": {
+		"message": "Von"
+	},
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Empfänger"
+	},
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Betreff"
+	},
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Datum"
+	},
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Priorität"
+	},
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "Schlagwörter"
+	},
+	"ColumnsWizard.accountColumn.label": {
+		"message": "Konto"
+	},
+	"ColumnsWizard.statusColumn.label": {
+		"message": "Status"
+	},
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Größe"
+	},
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Junk-Status"
+	},
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "Ungelesen"
+	},
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Gesamt"
+	},
+	"ColumnsWizard.readColumn.label": {
+		"message": "Gelesen / Ungelesen"
+	},
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "Empfangen"
+	},
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Kennzeichnung"
+	},
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Ablageort"
+	},
+	"ColumnsWizard.idColumn.label": {
+		"message": "Eingangsreihenfolge"
+	},
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Anhänge"
+	},
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Spezialspalte löschen"
+	},
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "Diese Spezialspalte löschen?"
+	},
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Korrespondenten"
+	},
+
+	"ColumnsWizard.MenuLabel": {
+		"comment": "overlay.dtd",
+		"message": "Columns Wizard - Kopfzeile editieren"
+	},
+	"ColumnsWizard.button.label": {
+		"message": "Columns Wizard"
+	},
+	"ColumnsWizard.button.tooltip": {
+		"message": "Columns Wizard Einstellungen"
+	},
+
+	"extensions.columnswizard@micz.it.description": {
+		"comment": "overlay.properties",
+		"message": "Eine Thunderbird Erweiterung die versteckte Spalten in der Themenbaum Ansicht anzeigt."
+	},
+	"ColumnsWizardcc.label": {
+		"message": "Kopie (CC)"
+	},
+	"ColumnsWizardccDesc.label": {
+		"message": "Klicken, um nach Kopie (CC) zu sortieren"
+	},
+	"ColumnsWizardbcc.label": {
+		"message": "Blindkopie (BCC)"
+	},
+	"ColumnsWizardbccDesc.label": {
+		"message": "Klicken, um nach Blindkopie (BCC) zu sortieren"
+	},
+	"ColumnsWizardreplyto.label": {
+		"message": "Antwortadresse"
+	},
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "Klicken, um nach Antwortadresse zu sortieren"
+	},
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "Klicken, um nach X-Original-From zu sortieren"
+	},
+	"ColumnsWizardcontentbase.label": {
+		"message": "Content-Base"
+	},
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "Klicken, um nach Content-Base zu sortieren"
+	},
+	"ColumnsWizardNFCols.show": {
+		"message": "Anzeigen"
+	},
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "Sortieren nach"
+	},
+	"ColumnsWizardNFCols.col_title": {
+		"message": "Name"
+	},
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "Flex"
+	},
+	"ColumnsWizardNFCols.up": {
+		"message": "Hoch"
+	},
+	"ColumnsWizardNFCols.down": {
+		"message": "Runter"
+	},
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "Spalten auf CW Standard zurücksetzen"
+	},
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "Spaltenansicht als CW Standard definieren"
+	},
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "Nach X-Spam-Score sortieren"
+	},
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "Dieses Layout als Standard für Columnswizard abspeichern?"
+	},
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "Das Spalten-Layout dieses Ordners auf die ColumnsWizard Standardeinstellung zurücksetzen?"
+	},
+
+	"ColumnsWizard.NewCol.Move": {
+		"comment": "new.json",
+		"message": "Bewegung"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Credits"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Autoren"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Versionshinweise"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Debugging-Optionen"
 	}
+
+
 }

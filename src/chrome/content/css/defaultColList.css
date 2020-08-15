@@ -1,17 +1,3 @@
-/* 
-html {
-	width: 100%;
-	height: 100%;
-  }
-  
-  body {
-	background: #efefef;
-	color: #333;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif  ;
-	height: 100%;
-  }
- */
-
 
 .table-list-container {
 	/* padding-left: 15px; */
@@ -46,7 +32,8 @@ html {
 	padding-top: 6px;
 	padding-bottom: 8px;
 	background-color: #e0f0ff;
-  border-right: .6px solid #d2d2d2;
+  /* border-right: .6px solid #d2d2d2; */
+  border-right: .6px solid red;
   font-weight: 500;
   color: #666666;
 }
@@ -58,6 +45,7 @@ html {
 .table-list tr:nth-child(even) {
 	background-color: #f1f1f1;
 }
+
 
 .table-list td {
   white-space: nowrap;
@@ -89,13 +77,13 @@ html {
 .move-up, .move-down {
 	text-align: center;
 }
-
+	
 .show {
 	/* display: -moz-box; */
 	/* -moz-box-flex: 1; */
 	width: 10%;
 	height: 20px;
-	
+	text-align: center;
   }
 
   .sort-by {

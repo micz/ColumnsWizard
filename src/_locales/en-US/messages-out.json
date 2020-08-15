@@ -1,0 +1,11 @@
+{
+	"ColumnsWizard.MenuLabel": {
+		"message": "CW Header Edit"
+	},
+	"ColumnsWizard.button.label": {
+		"message": "ColumnsWizard"
+	},
+	"ColumnsWizard.button.tooltip": {
+		"message": "Open ColumnsWizard preferences"
+	}
+}

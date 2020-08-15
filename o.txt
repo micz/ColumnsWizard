@@ -1,0 +1,148 @@
+[ 'de', 'en-US', 'fr', 'it', 'nl', 'zh-CN' ]
+Start Fri Aug 14 2020 19:31:13 GMT-0400 (Eastern Daylight Time)
+de
+
+fr
+
+it
+
+nl
+
+zh-cn
+
+de
+[
+  'Bewegung',
+  'Credits',
+  'Autoren',
+  'Versionshinweise',
+  'Debugging-Optionen'
+]
+	"ColumnsWizard.CustCol.Move": {
+		"message": "Bewegung"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Credits"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Autoren"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Versionshinweise"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Debugging-Optionen"
+	},
+
+fr
+[
+  'Bouge toi',
+  'Crédits',
+  'Auteurs',
+  'Notes de version',
+  'Options de débogage'
+]
+	"ColumnsWizard.CustCol.Move": {
+		"message": "Bouge toi"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Crédits"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Auteurs"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Notes de version"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Options de débogage"
+	},
+
+nl
+[
+  'Actie',
+  'Credits',
+  'Auteurs',
+  'Release-opmerkingen',
+  'Foutopsporingsopties'
+]
+	"ColumnsWizard.CustCol.Move": {
+		"message": "Actie"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Credits"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Auteurs"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Release-opmerkingen"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Foutopsporingsopties"
+	},
+
+zh-CN
+[ '移动', '学分', '作者', '发行说明', '调试选项' ]
+	"ColumnsWizard.CustCol.Move": {
+		"message": "移动"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "学分"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "作者"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "发行说明"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "调试选项"
+	},
+
+it
+[
+  'Mossa',
+  'Crediti',
+  'autori',
+  'Note di rilascio',
+  'Opzioni di debug'
+]
+	"ColumnsWizard.CustCol.Move": {
+		"message": "Mossa"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Crediti"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "autori"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Note di rilascio"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Opzioni di debug"
+	},
+
+Stop Fri Aug 14 2020 19:31:14 GMT-0400 (Eastern Daylight Time)
+Stop 1.199

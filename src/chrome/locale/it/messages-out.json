@@ -1,0 +1,22 @@
+Received=ricevuto	"ColumnsWizard.CustCol.Move": {
+		"message": "Mossa"
+	},
+	"ColumnsWizard.CustCol.Move": {
+		"message": "Mossa"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Crediti"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "autori"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Note di rilascio"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Opzioni di debug"
+	},

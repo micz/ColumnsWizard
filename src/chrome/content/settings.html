@@ -130,10 +130,10 @@
 
               <thead height="20px">
                 <tr height="20px">
-                  <th class="Show" height="20px">Show</th>
-                  <th class="sort_by" height="20px">Sort By</th>
-                  <th class="name" height="20px">Name</th>
-                  <th class="move_up" colspan="2" style="text-align: center;" height="20px">Move</th>
+                  <th class="Show" height="20px">__MSG_ColumnsWizardNFCols.show__</th>
+                  <th class="sort_by" height="20px">__MSG_ColumnsWizardNFCols.sort_by__</th>
+                  <th class="name" height="20px">__MSG_ColumnsWizardNFCols.col_title__</th>
+                  <th class="move_up" colspan="2" style="text-align: center;" height="20px">__MSG_ColumnsWizard.NewCol.Move__</th>
                 </tr>
               </thead>
 
@@ -145,7 +145,7 @@
           </div>
 
           <div style="display: flex; justify-content: start;">
-            <label style="padding-right: 20px;">__MSG_ColumnsWizard.NewFolderColsSortOrder.label__: </label>
+            <label style="padding-right: 20px;">__MSG_ColumnsWizard.NewFolderColsSortOrder.label__ </label>
             <label class="container" style="padding-right: 15px;">__MSG_ColumnsWizard.NewFolderColsSortOrder.ASC.label__
               <input type="radio" id="ColumnsWizard.cw_sort_asc" name="cw_sort_direction_rg" checked="true">
               <span class="rcheckmark"></span>
@@ -174,8 +174,12 @@
 
               <thead height="20px">
                 <tr height="20px">
-                  <th class="En" height="20px">Enabled</th>
-                  <th class="srch" height="20px">Searchable</th>
+                  <th class="En tooltip" height="20px" style="text-align: center;" data-tooltip="__MSG_ColumnsWizard.CustColsList.Enabled.tooltip__">
+                    <img src="chrome://columnswizard/skin/checked-box-64px.png"   width="20px" height="20px">
+                    </th>
+                  <th class="srch tooltip" height="20px" style="text-align: center;" data-tooltip="__MSG_ColumnsWizard.CustColsList.Searchable.tooltip__">
+                    <img src="chrome://columnswizard/skin/search-64px.png" title="__MSG_ColumnsWizard.CustColsList.Searchable.tooltip__" width="18px" height="18px">
+                  </th>
                   <th class="header-id" height="20px">__MSG_ColumnsWizard.CustColsList.ID__</th>
                   <th class="mail-header" height="20px">__MSG_ColumnsWizard.CustColsList.mailheader__</th>
                   <th class="col-name" height="20px">__MSG_ColumnsWizard.CustColsList.title__</th>
@@ -237,7 +241,7 @@
           </label>
 
         </div>
-        <div class="section-group-content-header">Debugging Options - LOC</div>
+        <div class="section-group-content-header">__MSG_ColumnsWizard.Advanced.DebuggingOptions__</div>
         <div class="section-content">
           <label class="container">__MSG_ColumnsWizard.ActivateDebug__
             <input type="checkbox" id="ColumnsWizard.debug_checkbox">
@@ -252,13 +256,14 @@
           <div style="display: flex; justify-content: space-between;">
             <div>
             <div class="section-group-content-header">ColumnsWizard v7.0.0</div>
-            <div class="section-content">Authors: Mic, Christopher Leidigh</div>
-            <div class="section-content">Credits: @javve (ListJS) </div>
+            <div class="section-content">__MSG_ColumnsWizard.Info.Authors__ : Mic, Christopher Leidigh</div>
+            <div class="section-content">__MSG_ColumnsWizard.Info.Credits__ : @javve (ListJS) </div>
           </div>
-            <img src="chrome://columnswizard/skin/mzcw-icon64-h.png">
+          <div class="tooltip" data-text="ColumnsWizard 7.0.0">
+            <img src="chrome://columnswizard/skin/mzcw-icon64-h.png" title="ColumnsWizard 7" alt="TestLabel">
           </div>
-
-          <div class="section-group-content-header">Release Notes</div>
+        </div>
+          <div class="section-group-content-header">__MSG_ColumnsWizard.Info.ReleaseNotes__</div>
           <div class="section-content">
             <textarea id="mzcw-release-notes" rows="22" style="width: 100%; padding: 6px;"></textarea>
           </div>

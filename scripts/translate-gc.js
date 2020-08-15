@@ -16,14 +16,19 @@ const translate = new Translate({ projectId, key });
 var translationArray = [
 	// { key: "dateFormatRefTooltipText", text: "Date Format Reference" },
 	// { key: "extFilenameFormatRefTooltipText", text: "Extended Filename Format Reference" },
-	{ key: "Received", text: "Received" },
+	{ key: "ColumnsWizard.CustCol.Move", text: "Move" },
+	{ key: "ColumnsWizard.Info.Credits", text: "Credits" },
+	{ key: "ColumnsWizard.Info.Authors", text: "Authors" },
+	{ key: "ColumnsWizard.Info.ReleaseNotes", text: "Release Notes" },
+	{ key: "ColumnsWizard.Advanced.DebuggingOptions", text: "Debugging Options" },
 ]
 
 // const localeDir = "../src/chrome/locale";
 const localeDir = "./src/chrome/locale";
 // const localeDir = "./locale";
 // const localeFile = "mboximport/mboximport.dtd";
-const localeFile = "mboximport/mboximport.properties";
+// const localeFile = "mboximport/mboximport.properties";
+const localeFile = "messages-out.json";
 const referenceLocaleId = "en";
 
 
@@ -237,7 +242,9 @@ async function translateAllLocales(sourceArray, locales, format) {
 
 		let lt = stringArray.map((s, i) => {
 			// return `<!ENTITY ${translationArray[i].key} "${s}">`;
-			return `${translationArray[i].key}=${s}`;
+			// return `${translationArray[i].key}=${s}`;
+			return `\t"${translationArray[i].key}": {\n\t\t"message": "${s}"\n\t},\n`;
+		
 		});
 		lt = lt.join('\n');
 
@@ -340,8 +347,8 @@ async function translateAll() {
 	console.debug('Stop ' + (st - s) / 1000);
 }
 
-// const localeFolders = _getAllFilesOrFolders(localeDir, true);
-// console.debug(localeFolders);
+const localeFolders = _getAllFilesOrFolders(localeDir, true);
+console.debug(localeFolders);
 
 function t() {
 	let tb_locale = 'hu';
@@ -369,6 +376,6 @@ function t() {
 }
 
 // t();
-translateHelpPage();
+// translateHelpPage();
 // translatePage();
-// translateAll();
+translateAll();

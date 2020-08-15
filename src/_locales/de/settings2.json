@@ -1,0 +1,68 @@
+{
+	"ColumnsWizard.threadColumn.label": {
+		"message": "Thema"
+	},
+	"ColumnsWizard.fromColumn.label": {
+		"message": "Von"
+	},
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Empfänger"
+	},
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Betreff"
+	},
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Datum"
+	},
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Priorität"
+	},
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "Schlagwörter"
+	},
+	"ColumnsWizard.accountColumn.label": {
+		"message": "Konto"
+	},
+	"ColumnsWizard.statusColumn.label": {
+		"message": "Status"
+	},
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Größe"
+	},
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Junk-Status"
+	},
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "Ungelesen"
+	},
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Gesamt"
+	},
+	"ColumnsWizard.readColumn.label": {
+		"message": "Gelesen / Ungelesen"
+	},
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "Empfangen"
+	},
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Kennzeichnung"
+	},
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Ablageort"
+	},
+	"ColumnsWizard.idColumn.label": {
+		"message": "Eingangsreihenfolge"
+	},
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Anhänge"
+	},
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Spezialspalte löschen"
+	},
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "Diese Spezialspalte löschen?"
+	},
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Korrespondenten"
+	}
+}

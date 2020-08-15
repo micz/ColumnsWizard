@@ -8,6 +8,7 @@
 	},
 
 	"ColumnsWizard.SettingsTitle": {
+		"comment": "settings.dtd",
 		"message": "ColumnsWizard Settings"
 	},
 	"ColumnsWizard.GlobalDescConvTab": {
@@ -138,5 +139,177 @@
 	},
 	"ColumnsWizard.ActivateDebug": {
 		"message": "Activate the debug system."
+	},
+
+	"ColumnsWizard.threadColumn.label": {
+		"comment": "settings.properties",
+		"message": "Thread"
+	},
+	"ColumnsWizard.fromColumn.label": {
+		"message": "From"
+	},
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Recipient"
+	},
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Subject"
+	},
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Date"
+	},
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Priority"
+	},
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "Tag"
+	},
+	"ColumnsWizard.accountColumn.label": {
+		"message": "Account"
+	},
+	"ColumnsWizard.statusColumn.label": {
+		"message": "Status"
+	},
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Size"
+	},
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Junk Status"
+	},
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "Unread"
+	},
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Total"
+	},
+	"ColumnsWizard.readColumn.label": {
+		"message": "Read"
+	},
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "Received"
+	},
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Starred"
+	},
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Location"
+	},
+	"ColumnsWizard.idColumn.label": {
+		"message": "Order Received"
+	},
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Attachments"
+	},
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Custom Column Delete"
+	},
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "Do you really want to delete this custom column?"
+	},
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Correspondents"
+	},
+
+	"ColumnsWizard.MenuLabel": {
+		"comment": "overlay.dtd",
+		"message": "CW Header Edit"
+	},
+	"ColumnsWizard.button.label": {
+		"message": "ColumnsWizard"
+	},
+	"ColumnsWizard.button.tooltip": {
+		"message": "Open ColumnsWizard preferences"
+	},
+
+	"extensions.columnswizard'@micz.it.description": {
+		"comment": "overlay.properties",
+		"message": "Adds some magic to the folder list columns! You can add a custom column directly from the addon preference window to show any mail header you want, define the default columns settings for any new folder and show hidden columns in the Conversation Tab and in the search window."
+	},
+	"ColumnsWizardcc.label": {
+		"message": "Cc"
+	},
+	"ColumnsWizardccDesc.label": {
+		"message": "Click to sort by cc"
+	},
+	"ColumnsWizardbcc.label": {
+		"message": "Bcc"
+	},
+	"ColumnsWizardbccDesc.label": {
+		"message": "Click to sort by bcc"
+	},
+	"ColumnsWizardreplyto.label": {
+		"message": "Reply-to"
+	},
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "Click to sort by reply-to"
+	},
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "Click to sort by X-Original-From"
+	},
+	"ColumnsWizardcontentbase.label": {
+		"message": "Content-Base"
+	},
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "Click to sort by Content-Base"
+	},
+	"ColumnsWizardNFCols.show": {
+		"message": "Show"
+	},
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "Sort by"
+	},
+	"ColumnsWizardNFCols.col_title": {
+		"message": "Name"
+	},
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "Flex"
+	},
+	"ColumnsWizardNFCols.up": {
+		"message": "Up"
+	},
+	"ColumnsWizardNFCols.down": {
+		"message": "Down"
+	},
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "Reset columns to CW default"
+	},
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "Save columns as CW default"
+	},
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "Click to sort by X-Spam-Score"
+	},
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "Are you sure you want to save the columns layout of this folder as CW default?"
+	},
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "Are you sure you want to reset this folder columns layout to CW default?"
+	},
+
+	"ColumnsWizard.NewCol.Move": {
+		"comment": "new.json",
+		"message": "Move"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Credits"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Authors"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Release Notes"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Debugging Options"
 	}
+
 }

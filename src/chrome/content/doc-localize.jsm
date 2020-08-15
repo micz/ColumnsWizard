@@ -119,8 +119,13 @@ var DocLocalize = {
 			const key = matched.slice(keyPrefix.length, -2);
 			// return extension.localeData.localizeMessage(key);
 			// return messenger.i18n.getMessage(key) || matched;
-			let m = messages[key].message || matched;
-			return m;
+			console.debug(key);
+
+			if (messages[key]) {
+				console.debug(messages[key].message);
+				return messages[key].message;
+			}
+			return matched;
 		});
 	},
 
@@ -146,6 +151,7 @@ var DocLocalize = {
 		);
 		for (let i = 0, maxi = attributes.snapshotLength; i < maxi; i++) {
 			const attribute = attributes.snapshotItem(i);
+			console.debug(attribute.value);
 			if (attribute.value.includes(keyPrefix)) attribute.value = this.updateString(attribute.value);
 		}
 	},

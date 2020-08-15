@@ -27,3 +27,8 @@
 	font-size: 16px;
 	font-weight: 400;
   }
+
+.enabled {
+	/* background-color: steelblue !important; */
+	text-align: center !important;
+}

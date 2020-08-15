@@ -1,0 +1,22 @@
+Received=已收到	"ColumnsWizard.CustCol.Move": {
+		"message": "移动"
+	},
+	"ColumnsWizard.CustCol.Move": {
+		"message": "移动"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "学分"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "作者"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "发行说明"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "调试选项"
+	},
