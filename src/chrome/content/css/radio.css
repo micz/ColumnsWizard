@@ -1,29 +1,52 @@
 /* Customize the label (the container) */
-/* 
-.container {
-  display: block;
-  position: relative;
-  padding-left: 35px;
-  margin-bottom: 12px;
-  cursor: pointer;
-  font-size: 22px;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-} */
+
+.radio-container-rlabel {
+	display: block;
+	position: relative;
+	padding-left: 35px;
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 16px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 
 
-/* Hide the browser's default radio button */
-/* 
-.container input {
-  position: absolute;
-  opacity: 0;
-  cursor: pointer;
-  height: 0;
-  width: 0;
-} */
+.radio-container-center {
+	display: block;
+	position: relative;
+  left: calc(50% - 10px);
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 16px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+}
 
+  
+  /* Hide the browser's default checkbox */
+  .radio-container-rlabel input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    }
+  
+
+  /* Hide the browser's default checkbox */
+  .radio-container-center input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+    }
+  
 /* Create a custom radio button */
 .rcheckmark {
   position: absolute;
@@ -39,12 +62,23 @@
 }
 
 /* On mouse-over, add a grey background color */
-.container:hover input ~ .rcheckmark {
+.radio-container-rlabel:hover input ~ .rcheckmark {
+  background-color: #ccc;
+}
+
+/* On mouse-over, add a grey background color */
+.radio-container-center:hover input ~ .rcheckmark {
   background-color: #ccc;
 }
 
 /* When the radio button is checked, add a blue background */
-.container input:checked ~ .rcheckmark {
+.radio-container-rlabel input:checked ~ .rcheckmark {
+  /* background-color: #2196F3; */
+  background-color: #ffffff;
+}
+
+/* When the radio button is checked, add a blue background */
+.radio-container-center input:checked ~ .rcheckmark {
   /* background-color: #2196F3; */
   background-color: #ffffff;
 }
@@ -57,17 +91,34 @@
 }
 
 /* Show the indicator (dot/circle) when checked */
-.container input:checked ~ .rcheckmark:after {
+.radio-container-rlabel input:checked ~ .rcheckmark:after {
+  display: block;
+}
+
+
+/* Show the indicator (dot/circle) when checked */
+.radio-container-center input:checked ~ .rcheckmark:after {
   display: block;
 }
 
 
 /* Style the indicator (dot/circle) */
-.container .rcheckmark:after {
-  top: 5px;
-  left: 5px;
-  width: 10px;
-  height: 10px;
+.radio-container-rlabel .rcheckmark:after {
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background-color: #2196F3;
+}
+
+
+/* Style the indicator (dot/circle) */
+.radio-container-center .rcheckmark:after {
+  top: 4px;
+  left: 4px;
+  width: 12px;
+  height: 12px;
   border-radius: 50%;
   background-color: #2196F3;
 }

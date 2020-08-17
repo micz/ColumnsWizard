@@ -119,7 +119,7 @@
       <section>
         <div class="section-header">__MSG_ColumnsWizard.NewFolderCols.Desc__</div>
         <div class="section-content">
-          <label class="container" height="16px">__MSG_ColumnsWizard.NewFolderCols.label__
+          <label class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.NewFolderCols.label__
             <input type="checkbox" id="ColumnsWizard.DefaultColsList.active_checkbox">
             <span class="checkmark"></span>
           </label>
@@ -146,12 +146,12 @@
 
           <div style="display: flex; justify-content: start;">
             <label style="padding-right: 20px;">__MSG_ColumnsWizard.NewFolderColsSortOrder.label__ </label>
-            <label class="container" style="padding-right: 15px;">__MSG_ColumnsWizard.NewFolderColsSortOrder.ASC.label__
+            <label class="radio-container-rlabel" style="padding-right: 15px;">__MSG_ColumnsWizard.NewFolderColsSortOrder.ASC.label__
               <input type="radio" id="ColumnsWizard.cw_sort_asc" name="cw_sort_direction_rg" checked="true">
               <span class="rcheckmark"></span>
             </label>
 
-            <label class="container">__MSG_ColumnsWizard.NewFolderColsSortOrder.DESC.label__
+            <label class="radio-container-rlabel">__MSG_ColumnsWizard.NewFolderColsSortOrder.DESC.label__
               <input type="radio" id="ColumnsWizard.cw_sort_desc" name="cw_sort_direction_rg">
               <span class="rcheckmark"></span>
             </label>
@@ -174,10 +174,14 @@
 
               <thead height="20px">
                 <tr height="20px">
-                  <th class="En tooltip" height="20px" style="text-align: center;" data-tooltip="__MSG_ColumnsWizard.CustColsList.Enabled.tooltip__">
-                    <img src="chrome://columnswizard/skin/checked-box-64px.png"   width="20px" height="20px">
+                  <th class="enabled_th" data-tooltip="__MSG_ColumnsWizard.CustColsList.Enabled.tooltip__">
+                    <div class="ctooltip" data-tooltip="__MSG_ColumnsWizard.CustColsList.Enabled.tooltip__" ></div>
+
+                    <img src="chrome://columnswizard/skin/checked-box-64px.png"   width="22px" height="22px">
+                      
                     </th>
-                  <th class="srch tooltip" height="20px" style="text-align: center;" data-tooltip="__MSG_ColumnsWizard.CustColsList.Searchable.tooltip__">
+                  <th class="searchable_th" >
+                    <div class="ctooltip" data-tooltip="__MSG_ColumnsWizard.CustColsList.Searchable.tooltip__"></div>
                     <img src="chrome://columnswizard/skin/search-64px.png" title="__MSG_ColumnsWizard.CustColsList.Searchable.tooltip__" width="18px" height="18px">
                   </th>
                   <th class="header-id" height="20px">__MSG_ColumnsWizard.CustColsList.ID__</th>
@@ -205,20 +209,20 @@
 
       <section>
         <div class="section-header">__MSG_ColumnsWizard.GlobalDescConvTab__</div>
-        <label class="container" height="16px">__MSG_ColumnsWizard.ShowLocation.label__
+        <label class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.ShowLocation.label__
           <input type="checkbox" id="ColumnsWizard.ShowLocation_checkbox">
           <span class="checkmark"></span>
         </label>
-        <label class="container" height="16px">__MSG_ColumnsWizard.ShowAccount.label__
+        <label class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.ShowAccount.label__
           <input id="ColumnsWizard.ShowAccount_checkbox" type="checkbox">
           <span class="checkmark"></span>
         </label>
-        <label  class="container" height="16px">__MSG_ColumnsWizard.ShowAttachment.label__
+        <label  class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.ShowAttachment.label__
           <input id="ColumnsWizard.ShowAttachment_checkbox" type="checkbox">
           <span class="checkmark"></span>
         </label>
 
-        <label class="container">__MSG_ColumnsWizard.ShowRecipient.label__
+        <label class="checkbox-container-rlabel">__MSG_ColumnsWizard.ShowRecipient.label__
           <input id="ColumnsWizard.ShowRecipient_checkbox" type="checkbox">
           <span class="checkmark"></span>
         </label>
@@ -227,15 +231,15 @@
       <section>
         <div class="section-group-content-header">__MSG_ColumnsWizard.MailHeaderGroupbox.label__</div>
         <div class="section-content">
-          <label class="container" height="16px">__MSG_ColumnsWizard.CustCols.mod_active_checkbox.label__
+          <label class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.CustCols.mod_active_checkbox.label__
             <input id="ColumnsWizard.CustCols.mod_active_checkbox" type="checkbox">
             <span class="checkmark"></span>
           </label>
-          <label class="container" height="16px">__MSG_ColumnsWizard.MailHeader.use_imap_fix_checkbox.label__
+          <label class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.MailHeader.use_imap_fix_checkbox.label__
             <input type="checkbox" id="ColumnsWizard.MailHeader.use_imap_fix_checkbox">
             <span class="checkmark"></span>
           </label>
-          <label class="container" height="16px">__MSG_ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label__
+          <label class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label__
             <input type="checkbox" id="ColumnsWizard.MailHeader.put_original_in_trash_checkbox">
             <span class="checkmark"></span>
           </label>
@@ -243,7 +247,7 @@
         </div>
         <div class="section-group-content-header">__MSG_ColumnsWizard.Advanced.DebuggingOptions__</div>
         <div class="section-content">
-          <label class="container">__MSG_ColumnsWizard.ActivateDebug__
+          <label class="checkbox-container-rlabel">__MSG_ColumnsWizard.ActivateDebug__
             <input type="checkbox" id="ColumnsWizard.debug_checkbox">
             <span class="checkmark"></span>
           </label>

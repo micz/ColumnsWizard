@@ -35,13 +35,13 @@ var miczColumnsWizardPref_DefaultColsList = {
 			],
 			item: '<tr class="list-row id" >\
 			<td>\
-				<label class="container">\
+				<label class="checkbox-container-center">\
 					<input type="checkbox" class="show toggle-action-show">\
 					<span class="checkmark"></span>\
 					</label>\
 			</td>\
 			<td >\
-			<label class="container">\
+			<label class="radio-container-center">\
 					<input type="radio" class="sort_by toggle-action-sort-by" name="sortRadioGroup">\
 					<span class="rcheckmark"></span>\
 					</label>\

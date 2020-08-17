@@ -1,6 +1,7 @@
 
   /* The container */
-  .container {
+
+  .checkbox-container-rlabel {
 	display: block;
 	position: relative;
 	padding-left: 35px;
@@ -12,9 +13,31 @@
 	-ms-user-select: none;
 	user-select: none;
   }
+
+
+  .checkbox-container-center {
+	display: block;
+	position: relative;
+	left: calc(50% - 10px);
+	margin-bottom: 12px;
+	cursor: pointer;
+	font-size: 16px;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+	user-select: none;
+  }
   
   /* Hide the browser's default checkbox */
-  .container input {
+  .checkbox-container-rlabel input {
+	position: absolute;
+	opacity: 0;
+	cursor: pointer;
+	height: 0;
+	width: 0;
+  }
+   
+  .checkbox-container-center input {
 	position: absolute;
 	opacity: 0;
 	cursor: pointer;
@@ -44,7 +67,12 @@
   }
   
   /* On mouse-over, add a grey background color */
-  .container:hover input ~ .checkmark {
+  
+  .checkbox-container-rlabel:hover input ~ .checkmark {
+	background-color: #ccc;
+  }
+ 
+  .checkbox-container-center:hover input ~ .checkmark {
 	background-color: #ccc;
   }
   
@@ -59,16 +87,34 @@
 	position: absolute;
 	display: none;
   }
-  
+
+    /* Show the checkmark when checked */
+	.checkbox-container-rlabel input:checked ~ .checkmark:after {
+		display: block;
+	  } 
+	
   /* Show the checkmark when checked */
-  .container input:checked ~ .checkmark:after {
+  .checkbox-container-center input:checked ~ .checkmark:after {
 	display: block;
   } 
   
   /* Style the checkmark/indicator */
-  .container .checkmark:after {
-	left: 6px;
-	top: 2px;
+  .checkbox-container-rlabel .checkmark:after {
+	left: 7px;
+	top: 3px;
+	width: 5px;
+	height: 12px;
+	border: solid #1E70FF;
+	border-width: 0 2px 2px 0;
+	-webkit-transform: rotate(30deg);
+	-ms-transform: rotate(30deg);
+	transform: rotate(30deg);
+  }
+  
+  /* Style the checkmark/indicator */
+  .checkbox-container-center .checkmark:after {
+	left: 7px;
+	top: 3px;
 	width: 5px;
 	height: 12px;
 	border: solid #1E70FF;

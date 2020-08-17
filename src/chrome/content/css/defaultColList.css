@@ -13,7 +13,8 @@
   .table-list {
   /* min-height: 176px; */
   width: 100%;
-  border-collapse: collapse;
+  border-collapse: separate;
+  border-spacing: 0;
 }
 
 .table-list, tr, td {
@@ -32,8 +33,8 @@
 	padding-top: 6px;
 	padding-bottom: 8px;
 	background-color: #e0f0ff;
-  /* border-right: .6px solid #d2d2d2; */
-  border-right: .6px solid red;
+  border-right: 1px solid #d2d2d2;
+  /* border-right: .6px solid red; */
   font-weight: 500;
   color: #666666;
 }
