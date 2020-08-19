@@ -18,9 +18,9 @@ var miczColumnsWizardPref_DefaultColsList = {
 		miczColumnsWizardPref_DefaultColsList.window = window;
 		miczColumnsWizardPref_DefaultColsList.document = window.document;
 		var context = {};
-		
+
 		miczColumnsWizardPref_DefaultColsList.loadedCustCols = miczColumnsWizard_CustCols.loadCustCols();
-		
+
 		context.window = miczColumnsWizardPref_DefaultColsList.window;
 
 		Services.scriptloader.loadSubScript("chrome://columnswizard/content/modules/list.controller2.js", window);
@@ -68,7 +68,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 
 	updateDefaultColsList: function () {
 		console.debug('UpdateDefault');
-		
+
 		miczColumnsWizardPref_DefaultColsList.loadedCustCols = miczColumnsWizard_CustCols.loadCustCols();
 
 		var dindex = 1;
@@ -139,33 +139,31 @@ var miczColumnsWizardPref_DefaultColsList = {
 		for (let index = 0; index < miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items.length; index++) {
 			const element = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items[index];
 			var vals = element.values();
-			// console.debug('values ' + vals);
 			// console.debug('item ' + element.elm.outerHTML);
 			newDefaultCols[vals.currindex] = {};
 			newDefaultCols[vals.currindex].currindex = vals.currindex;
 			newDefaultCols[vals.currindex].visible = vals.show;
 			newDefaultCols[vals.currindex].ordinal = ordinal;
+
 			console.debug('SaveSort ' + vals.sort_by);
 			if (vals.sort_by) {
 				let ci = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_type");
-				console.debug('CurrentSort ' + ci );
-				let so =  miczColumnsWizardPref_DefaultColsList.getSortType(vals.currindex);
+				console.debug('CurrentSort ' + ci);
+				let so = miczColumnsWizardPref_DefaultColsList.getSortType(vals.currindex);
 				// console.debug('cO ' +  miczColumnsWizardPref2.getSortType(vals.currindex));
 				console.debug(so);
 
 				let sortcolindex = miczColumnsWizardPrefsUtils.setIntPref("mailnews.default_sort_type", so);
 				ci = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_type");
 				console.debug('NewSort ' + ci);
-				
-				// let sortcolindex = miczColumnsWizardPrefsUtils.setIntPref("mailnews.default_sort_type", miczColumnsWizardPref_DefaultColsGrid.getSortType(vals.currindex));
+
 				// console.debug(vals.sort_by,);
 				// console.debug(sortcolindex);
-		}
+			}
 			// newDefaultCols[elemWeent.currindex].
-			
 			// console.debug(element.values());
 			ordinal += 2;
-			
+
 		}
 
 		let cbelement = miczColumnsWizardPref_DefaultColsList.document.getElementById("ColumnsWizard.DefaultColsList.active_checkbox");
@@ -197,7 +195,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 				move_up: '<img src="chrome://columnswizard/content/ico/arrow-up-black-64px.png" height="16px" width="16px" class="arrows up-action">',
 				move_down: '<img src="chrome://columnswizard/content/ico/arrow-down-black-64px.png" height="16px" width="16px" class="arrows down-action">',
 				id: miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items.length + 1,
-	
+
 			});
 
 			// name: miczColumnsWizardPref_DefaultColsList.getColLocalizedString(col.index),
@@ -205,15 +203,15 @@ var miczColumnsWizardPref_DefaultColsList = {
 			console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items);
 			console.debug('DoneA');
 		} else if (!col.enabled && item.length) {
-			console.debug('RemoveItem' );
+			console.debug('RemoveItem');
 			console.debug(item);
 			console.debug(col);
 			console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items);
-			miczColumnsWizardPref_DefaultColsList.defaultColsListObj.remove("currindex", col.index + cwindex) ;
+			miczColumnsWizardPref_DefaultColsList.defaultColsListObj.remove("currindex", col.index + cwindex);
 			console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items);
 			console.debug('FinishMove');
 		}
-		
+
 		console.debug('UpdateCheckboxes');
 		let checkedItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('[checked]');
 		for (const element of checkedItems) {
@@ -231,7 +229,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 		console.debug('ToggleFinish');
 	},
 
-	
+
 	onRowClick: function (event, offset) {
 		// console.debug(event);
 		console.debug('Target ' + event.target.outerHTML);
@@ -256,7 +254,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 
 		if (event.target.classList.contains('toggle-action-sort-by')) {
 			console.debug('Sort By');
-			// console.debug(`click: ${event.target.outerHTML}  : ${event.target.checked}`);
+			console.debug(`click: ${event.target.outerHTML}  : ${event.target.checked}`);
 			if (!event.target.checked) {
 				item.values({ "sort_by": false });
 				event.target.removeAttribute("checked");
@@ -271,7 +269,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 				item.values({ "sort_by": true }, true);
 				console.debug('toggle true');
 			}
-			// console.debug(item.values());
+			console.debug(item.values());
 			// console.debug(item);
 			// console.debug(lst.outerHTML);
 			event.stopPropagation();
@@ -408,13 +406,13 @@ var miczColumnsWizardPref_DefaultColsList = {
 			for (let key in baseColumnStates) {
 				// console.debug(key);
 				if (!loadedDefaultColIndex.hasOwnProperty(key)) {
-				// if (!loadedDefaultColIndex.hasOwnProperty(key) && this.loadedCustCols[key] && this.loadedCustCols[key].enabled) {
+					// if (!loadedDefaultColIndex.hasOwnProperty(key) && this.loadedCustCols[key] && this.loadedCustCols[key].enabled) {
 					loadedDefaultColIndex[key] = baseColumnStates[key];
 					console.debug('Adding ');
 					console.debug(baseColumnStates[key]);
 					// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] key not found "+key+"\r\n");
 				}
-				
+
 				// } else if (loadedDefaultColIndex.hasOwnProperty(key) && loadedDefaultColIndex[key].isCustom && !this.loadedCustCols.hasOwnProperty(key)) {
 				// 	console.debug('RemovedDefaultCustom.Key ' + key);
 				// 	delete loadedDefaultColIndex[key];
@@ -425,7 +423,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 		miczColumnsWizardPrefsUtils.setCharPref_CW("DefaultColsList", JSON.stringify(loadedDefaultColIndex));
 		console.debug('Saved LoadedDefaultColumns');
 		console.debug(loadedDefaultColIndex);
-		
+
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid loadDefaultColRows_Pref] "+JSON.stringify(loadedDefaultColIndex)+"\r\n");
 		return loadedDefaultColIndex;
 	},
@@ -525,7 +523,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 				let col_idx = col.replace('Col_cw', '');
 				let col_el = this.loadedCustCols[col_idx];
 				// dump(">>>>>>>>>>>>> miczColumnsWizard: [miczColumnsWizardPref_DefaultColsGrid] col_idx "+col_idx+"\r\n");
-		
+
 				let _bundleCW_overlay = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
 				if (this.loadedCustCols[col_idx]) {
 					if (col_el.isBundled) {
@@ -618,7 +616,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 			DefColRows[sorted_cols[index][0]].currindex = sorted_cols[index][0];
 			// this.createOneDefaultColListRow(DefColRows[sorted_cols[index][0]]);
 		}
-		return {defaultCols: DefColRows, sorted_cols: sorted_cols};
+		return { defaultCols: DefColRows, sorted_cols: sorted_cols };
 	},
 
 };

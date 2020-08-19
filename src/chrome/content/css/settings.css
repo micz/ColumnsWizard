@@ -379,6 +379,22 @@ html {
 	/* background-color: aliceblue; */
   }
 
+  .section-content2 div {
+	padding-left: 10px;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border: none;
+	/* background-color: aliceblue; */
+  }
+
+  .section-content3 div {
+	padding-left: 45px !important;
+	padding-top: 8px;
+	padding-bottom: 8px;
+	border: none;
+	background-color: aliceblue !important;
+  }
+
   .section-group-content-header  {
 	/* padding-left: 25px; */
 	padding-bottom: 15px;
