@@ -17,3 +17,22 @@
 	"ColumnsWizard.Advanced.DebuggingOptions": {
 		"message": "Debugging-Optionen"
 	},
+	"ColumnsWizard.CustCol.Move": {
+		"message": "Bewegung"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Credits"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Autoren"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Versionshinweise"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Debugging-Optionen"
+	},

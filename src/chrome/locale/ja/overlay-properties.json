@@ -1,0 +1,91 @@
+	"extensions.columnswizard@micz.it.description": {
+		"message": "フォルダーリストの列に魔法を追加します。アドオン設定ウィンドウからカスタム列を直接追加して、必要なメールヘッダーを表示したり、新しいフォルダーのデフォルトの列設定を定義したり、[会話]タブや検索ウィンドウに非表示の列を表示したりできます。"
+	},
+
+	"ColumnsWizardcc.label": {
+		"message": "Cc"
+	},
+
+	"ColumnsWizardccDesc.label": {
+		"message": "クリックしてCCで並べ替え"
+	},
+
+	"ColumnsWizardbcc.label": {
+		"message": "Bcc"
+	},
+
+	"ColumnsWizardbccDesc.label": {
+		"message": "クリックしてbccで並べ替え"
+	},
+
+	"ColumnsWizardreplyto.label": {
+		"message": "に返信"
+	},
+
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "クリックして返信先で並べ替え"
+	},
+
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-オリジナル-から"
+	},
+
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "クリックしてX-Original-Fromで並べ替え"
+	},
+
+	"ColumnsWizardcontentbase.label": {
+		"message": "コンテンツベース"
+	},
+
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "クリックしてコンテンツベースで並べ替え"
+	},
+
+	"ColumnsWizardNFCols.show": {
+		"message": "公演"
+	},
+
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "並び替え"
+	},
+
+	"ColumnsWizardNFCols.col_title": {
+		"message": "名前"
+	},
+
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "フレックス"
+	},
+
+	"ColumnsWizardNFCols.up": {
+		"message": "アップ"
+	},
+
+	"ColumnsWizardNFCols.down": {
+		"message": "ダウン"
+	},
+
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "列をCWのデフォルトにリセット"
+	},
+
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "列をCWデフォルトとして保存"
+	},
+
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "クリックしてX-Spam-Scoreで並べ替え"
+	},
+
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "このフォルダの列レイアウトをCWのデフォルトとして保存してもよろしいですか？"
+	},
+
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "このフォルダ列のレイアウトをCWのデフォルトにリセットしてもよろしいですか？"
+	},

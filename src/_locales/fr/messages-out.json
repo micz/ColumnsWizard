@@ -1,19 +1,19 @@
 	"ColumnsWizard.CustCol.Move": {
-		"message": "Bewegung"
+		"message": "Bouge toi"
 	},
 
 	"ColumnsWizard.Info.Credits": {
-		"message": "Credits"
+		"message": "Crédits"
 	},
 
 	"ColumnsWizard.Info.Authors": {
-		"message": "Autoren"
+		"message": "Auteurs"
 	},
 
 	"ColumnsWizard.Info.ReleaseNotes": {
-		"message": "Versionshinweise"
+		"message": "Notes de version"
 	},
 
 	"ColumnsWizard.Advanced.DebuggingOptions": {
-		"message": "Debugging-Optionen"
+		"message": "Options de débogage"
 	},

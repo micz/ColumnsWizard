@@ -1,148 +1,141 @@
-[ 'de', 'en-US', 'fr', 'it', 'nl', 'zh-CN' ]
-Start Fri Aug 14 2020 19:31:13 GMT-0400 (Eastern Daylight Time)
-de
-
-fr
-
-it
-
-nl
-
-zh-cn
-
-de
 [
-  'Bewegung',
-  'Credits',
-  'Autoren',
-  'Versionshinweise',
-  'Debugging-Optionen'
+  'de',    'en-US',
+  'fr',    'it',
+  'ja',    'nl',
+  'zh-CN'
 ]
-	"ColumnsWizard.CustCol.Move": {
-		"message": "Bewegung"
-	},
-
-	"ColumnsWizard.Info.Credits": {
-		"message": "Credits"
-	},
-
-	"ColumnsWizard.Info.Authors": {
-		"message": "Autoren"
-	},
-
-	"ColumnsWizard.Info.ReleaseNotes": {
-		"message": "Versionshinweise"
-	},
-
-	"ColumnsWizard.Advanced.DebuggingOptions": {
-		"message": "Debugging-Optionen"
-	},
-
-fr
+Processing: overlay.properties
+Loading propertyFile: ./src/chrome/locale/en-US/overlay.properties
+Start Wed Aug 19 2020 01:30:39 GMT-0400 (Eastern Daylight Time)
+Locale ja ja
+translations return
 [
-  'Bouge toi',
-  'Crédits',
-  'Auteurs',
-  'Notes de version',
-  'Options de débogage'
+  '<data-translation class="notranslate" locale="ja">',
+  'フォルダーリストの列に魔法を追加します。アドオン設定ウィンドウからカスタム列を直接追加して、必要なメールヘッダーを表示したり、新しいフォルダーのデフォルトの列設定を定義したり、[会話]タブや検索ウィンドウに非表示の列を表示したりできます。',
+  'Cc',
+  'クリックしてCCで並べ替え',
+  'Bcc',
+  'クリックしてbccで並べ替え',
+  'に返信',
+  'クリックして返信先で並べ替え',
+  'X-オリジナル-から',
+  'クリックしてX-Original-Fromで並べ替え',
+  'コンテンツベース',
+  'クリックしてコンテンツベースで並べ替え',
+  '公演',
+  '並び替え',
+  '名前',
+  'フレックス',
+  'アップ',
+  'ダウン',
+  '列をCWのデフォルトにリセット',
+  '列をCWデフォルトとして保存',
+  'X-Spam-Score',
+  'クリックしてX-Spam-Scoreで並べ替え',
+  'このフォルダの列レイアウトをCWのデフォルトとして保存してもよろしいですか？',
+  'このフォルダ列のレイアウトをCWのデフォルトにリセットしてもよろしいですか？'
 ]
-	"ColumnsWizard.CustCol.Move": {
-		"message": "Bouge toi"
-	},
-
-	"ColumnsWizard.Info.Credits": {
-		"message": "Crédits"
-	},
-
-	"ColumnsWizard.Info.Authors": {
-		"message": "Auteurs"
-	},
-
-	"ColumnsWizard.Info.ReleaseNotes": {
-		"message": "Notes de version"
-	},
-
-	"ColumnsWizard.Advanced.DebuggingOptions": {
-		"message": "Options de débogage"
-	},
-
-nl
+ja
+TranslationArray
 [
-  'Actie',
-  'Credits',
-  'Auteurs',
-  'Release-opmerkingen',
-  'Foutopsporingsopties'
+  {
+    key: 'extensions.columnswizard@micz.it.description',
+    text: 'Adds some magic to the folder list columns! You can add a custom column directly from the addon preference window to show any mail header you want, define the default columns settings for any new folder and show hidden columns in the Conversation Tab and in the search window.'
+  },
+  { key: 'ColumnsWizardcc.label', text: 'Cc' },
+  { key: 'ColumnsWizardccDesc.label', text: 'Click to sort by cc' },
+  { key: 'ColumnsWizardbcc.label', text: 'Bcc' },
+  { key: 'ColumnsWizardbccDesc.label', text: 'Click to sort by bcc' },
+  { key: 'ColumnsWizardreplyto.label', text: 'Reply-to' },
+  {
+    key: 'ColumnsWizardreplytoDesc.label',
+    text: 'Click to sort by reply-to'
+  },
+  { key: 'ColumnsWizardxoriginalfrom.label', text: 'X-Original-From' },
+  {
+    key: 'ColumnsWizardxoriginalfromDesc.label',
+    text: 'Click to sort by X-Original-From'
+  },
+  { key: 'ColumnsWizardcontentbase.label', text: 'Content-Base' },
+  {
+    key: 'ColumnsWizardcontentbaseDesc.label',
+    text: 'Click to sort by Content-Base'
+  },
+  { key: 'ColumnsWizardNFCols.show', text: 'Show' },
+  { key: 'ColumnsWizardNFCols.sort_by', text: 'Sort by' },
+  { key: 'ColumnsWizardNFCols.col_title', text: 'Name' },
+  { key: 'ColumnsWizardNFCols.col_flex', text: 'Flex' },
+  { key: 'ColumnsWizardNFCols.up', text: 'Up' },
+  { key: 'ColumnsWizardNFCols.down', text: 'Down' },
+  {
+    key: 'ColumnsWizardNFCols.resetMenu',
+    text: 'Reset columns to CW default'
+  },
+  {
+    key: 'ColumnsWizardNFCols.saveDefault',
+    text: 'Save columns as CW default'
+  },
+  { key: 'ColumnsWizardxspamscore.label', text: 'X-Spam-Score' },
+  {
+    key: 'ColumnsWizardxspamscoreDesc.label',
+    text: 'Click to sort by X-Spam-Score'
+  },
+  {
+    key: 'ColumnsWizard.saveDefault_OnClick_text',
+    text: 'Are you sure you want to save the columns layout of this folder as CW default?'
+  },
+  {
+    key: 'ColumnsWizard.resetDefault_OnClick_text',
+    text: 'Are you sure you want to reset this folder columns layout to CW default?'
+  }
 ]
-	"ColumnsWizard.CustCol.Move": {
-		"message": "Actie"
-	},
-
-	"ColumnsWizard.Info.Credits": {
-		"message": "Credits"
-	},
-
-	"ColumnsWizard.Info.Authors": {
-		"message": "Auteurs"
-	},
-
-	"ColumnsWizard.Info.ReleaseNotes": {
-		"message": "Release-opmerkingen"
-	},
-
-	"ColumnsWizard.Advanced.DebuggingOptions": {
-		"message": "Foutopsporingsopties"
-	},
-
-zh-CN
-[ '移动', '学分', '作者', '发行说明', '调试选项' ]
-	"ColumnsWizard.CustCol.Move": {
-		"message": "移动"
-	},
-
-	"ColumnsWizard.Info.Credits": {
-		"message": "学分"
-	},
-
-	"ColumnsWizard.Info.Authors": {
-		"message": "作者"
-	},
-
-	"ColumnsWizard.Info.ReleaseNotes": {
-		"message": "发行说明"
-	},
-
-	"ColumnsWizard.Advanced.DebuggingOptions": {
-		"message": "调试选项"
-	},
-
-it
-[
-  'Mossa',
-  'Crediti',
-  'autori',
-  'Note di rilascio',
-  'Opzioni di debug'
-]
-	"ColumnsWizard.CustCol.Move": {
-		"message": "Mossa"
-	},
-
-	"ColumnsWizard.Info.Credits": {
-		"message": "Crediti"
-	},
-
-	"ColumnsWizard.Info.Authors": {
-		"message": "autori"
-	},
-
-	"ColumnsWizard.Info.ReleaseNotes": {
-		"message": "Note di rilascio"
-	},
-
-	"ColumnsWizard.Advanced.DebuggingOptions": {
-		"message": "Opzioni di debug"
-	},
-
-Stop Fri Aug 14 2020 19:31:14 GMT-0400 (Eastern Daylight Time)
-Stop 1.199
+GenerateMessages
+extensions.columnswizard@micz.it.description=フォルダーリストの列に魔法を追加します。アドオン設定ウィンドウからカスタム列を直接追加して、必要なメールヘッダーを表示したり、新しいフォルダーのデフォルトの列設定を定義したり、[会話]タブや検索ウィンドウに非表示の列を表示したりできます。
+ColumnsWizardcc.label=Cc
+ColumnsWizardccDesc.label=クリックしてCCで並べ替え
+ColumnsWizardbcc.label=Bcc
+ColumnsWizardbccDesc.label=クリックしてbccで並べ替え
+ColumnsWizardreplyto.label=に返信
+ColumnsWizardreplytoDesc.label=クリックして返信先で並べ替え
+ColumnsWizardxoriginalfrom.label=X-オリジナル-から
+ColumnsWizardxoriginalfromDesc.label=クリックしてX-Original-Fromで並べ替え
+ColumnsWizardcontentbase.label=コンテンツベース
+ColumnsWizardcontentbaseDesc.label=クリックしてコンテンツベースで並べ替え
+ColumnsWizardNFCols.show=公演
+ColumnsWizardNFCols.sort_by=並び替え
+ColumnsWizardNFCols.col_title=名前
+ColumnsWizardNFCols.col_flex=フレックス
+ColumnsWizardNFCols.up=アップ
+ColumnsWizardNFCols.down=ダウン
+ColumnsWizardNFCols.resetMenu=列をCWのデフォルトにリセット
+ColumnsWizardNFCols.saveDefault=列をCWデフォルトとして保存
+ColumnsWizardxspamscore.label=X-Spam-Score
+ColumnsWizardxspamscoreDesc.label=クリックしてX-Spam-Scoreで並べ替え
+ColumnsWizard.saveDefault_OnClick_text=このフォルダの列レイアウトをCWのデフォルトとして保存してもよろしいですか？
+ColumnsWizard.resetDefault_OnClick_text=このフォルダ列のレイアウトをCWのデフォルトにリセットしてもよろしいですか？
+TranslationMessages 1114
+extensions.columnswizard@micz.it.description=フォルダーリストの列に魔法を追加します。アドオン設定ウィンドウからカスタム列を直接追加して、必要なメールヘッダーを表示したり、新しいフォルダーのデフォルトの列設定を定義したり、[会話]タブや検索ウィンドウに非表示の列を表示したりできます。
+ColumnsWizardcc.label=Cc
+ColumnsWizardccDesc.label=クリックしてCCで並べ替え
+ColumnsWizardbcc.label=Bcc
+ColumnsWizardbccDesc.label=クリックしてbccで並べ替え
+ColumnsWizardreplyto.label=に返信
+ColumnsWizardreplytoDesc.label=クリックして返信先で並べ替え
+ColumnsWizardxoriginalfrom.label=X-オリジナル-から
+ColumnsWizardxoriginalfromDesc.label=クリックしてX-Original-Fromで並べ替え
+ColumnsWizardcontentbase.label=コンテンツベース
+ColumnsWizardcontentbaseDesc.label=クリックしてコンテンツベースで並べ替え
+ColumnsWizardNFCols.show=公演
+ColumnsWizardNFCols.sort_by=並び替え
+ColumnsWizardNFCols.col_title=名前
+ColumnsWizardNFCols.col_flex=フレックス
+ColumnsWizardNFCols.up=アップ
+ColumnsWizardNFCols.down=ダウン
+ColumnsWizardNFCols.resetMenu=列をCWのデフォルトにリセット
+ColumnsWizardNFCols.saveDefault=列をCWデフォルトとして保存
+ColumnsWizardxspamscore.label=X-Spam-Score
+ColumnsWizardxspamscoreDesc.label=クリックしてX-Spam-Scoreで並べ替え
+ColumnsWizard.saveDefault_OnClick_text=このフォルダの列レイアウトをCWのデフォルトとして保存してもよろしいですか？
+ColumnsWizard.resetDefault_OnClick_text=このフォルダ列のレイアウトをCWのデフォルトにリセットしてもよろしいですか？
+Stop Wed Aug 19 2020 01:30:39 GMT-0400 (Eastern Daylight Time)
+Stop 0.174

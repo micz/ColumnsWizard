@@ -1,22 +1,19 @@
-Received=ricevuto	"ColumnsWizard.CustCol.Move": {
-		"message": "Mossa"
-	},
 	"ColumnsWizard.CustCol.Move": {
-		"message": "Mossa"
+		"message": "Actie"
 	},
 
 	"ColumnsWizard.Info.Credits": {
-		"message": "Crediti"
+		"message": "Credits"
 	},
 
 	"ColumnsWizard.Info.Authors": {
-		"message": "autori"
+		"message": "Auteurs"
 	},
 
 	"ColumnsWizard.Info.ReleaseNotes": {
-		"message": "Note di rilascio"
+		"message": "Release-opmerkingen"
 	},
 
 	"ColumnsWizard.Advanced.DebuggingOptions": {
-		"message": "Opzioni di debug"
+		"message": "Foutopsporingsopties"
 	},

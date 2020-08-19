@@ -1,5 +1,7 @@
 const fs = require('fs-extra');
 var parser = require("dtd-file");
+const path = require('path');
+const prettier = require("prettier");
 
 const localeDir = "../src/chrome/locale";
 const referenceLocaleId = "en-US";
@@ -21,8 +23,8 @@ var templates = {
 	},
 }
 
-function loadPropertys(propertyFile) {
-	let propertiesText = fs.readFileSync(propertyFile, 'utf-8');
+function loadPropertys(propertyFile, options) {
+	let propertiesText = fs.readFileSync(`${options.inputLocaleDir}/${propertyFile}`, 'utf-8');
 	console.debug(propertiesText);
 	const rg = /^(.+)=(.+)$/gm;
 	let properties = Array.from(propertiesText.matchAll(rg));
@@ -38,25 +40,28 @@ function loadPropertys(propertyFile) {
 	return propertyStrings;
 }
 
-function loadDTD(dtdFile) {
-	let fileEntitiesKeys = Object.keys(parser.parse(fs.readFileSync(dtdFile, 'utf-8')));
-	let fileEntities = parser.parse(fs.readFileSync(dtdFile, 'utf-8'));
+function loadDTD(dtdFile, options) {
+	let fileEntitiesKeys = Object.keys(parser.parse(fs.readFileSync(`${options.inputLocaleDir}/${dtdFile}`, 'utf-8')));
+	let fileEntities = parser.parse(fs.readFileSync(`${options.inputLocaleDir}/${dtdFile}`, 'utf-8'));
 	// console.debug(fileEntities);
-
 	return fileEntities;
-
 }
 
-function srcItemsToMessageJson(fileEntities, outputFile, options) {
+function srcItemsToMessageJson(fileEntities, iFile, options) {
 	// var itemTemplate = options.template.tmp;
-
+	console.debug('OutputMessages - sj');
+	console.debug(fileEntities);
 	var outputMessages = "{\n";
 
 	if (options.append) {
-		outputMessages = "\n";
+		outputMessages = ",\n";
 	}
 
 	var outputKeys = "";
+
+	let currentFileKey = `\n\n\t"ColumnsWizard-file-src-${iFile}": {\n\t\t"message": "${options.inputLocaleDir}"\n\t},\n`;
+
+	outputMessages += currentFileKey;
 
 	if (options.propertiesType) {
 		fileEntities.forEach((p, i) => {
@@ -72,12 +77,12 @@ function srcItemsToMessageJson(fileEntities, outputFile, options) {
 	} else {
 		let len = Object.keys(fileEntities).length;
 
-		console.debug(fileEntities);
+		// console.debug(fileEntities);
 		for (const entityKey in fileEntities) {
 
 			keyName = entityKey;
 			msg = fileEntities[entityKey];
-			console.debug(msg);
+			// console.debug(msg);
 			let tmp = `\t"${keyName}": {\n\t\t"message": "${msg}"\n\t}`;
 			outputMessages += tmp;
 			if (Object.keys(fileEntities).indexOf(entityKey) !== len - 1) {
@@ -89,47 +94,86 @@ function srcItemsToMessageJson(fileEntities, outputFile, options) {
 		}
 	}
 
-	if (options.append) {
-		outputMessages = "\n";
+	if (options.append && !options.lastFile) {
+		outputMessages += "\n";
+	} else {
+		outputMessages += "\n}\n";
+
 	}
 
-	outputMessages += "\n}\n";
 
+	console.debug('OutputMessages');
 	console.debug(outputMessages);
-	console.debug(outputFile);
+	// console.debug(outputFile);
+	// console.debug(options);
 	// console.debug(JSON.stringify(outputMessages));
-	fs.writeFileSync(outputFile + ".json", outputMessages);
-	fs.writeFileSync(outputFile + ".txt", outputKeys);
-}
-const test1FilePath = `${localeDir}/${dtdTestFile}`;
-// const test1FilePath2 = `${localeDir}/${propertyTestFile}`;
-const test1FilePath2 = `${localeDir}/${propertyTestFile2}`;
-
-function testDtoJ(inputFile, outputFile) {
-	let entities = loadDTD(inputFile);
-	let options = {};
-	options.append = false;
-	options.propertiesType = false;
-	srcItemsToMessageJson(entities, outputFile, options);
+	let outFile = `${options.outputLocaleDir}/${outputFile}`;
+	if (options.append) {
+		console.debug('App ' + outFile);
+		outFile = `${options.outputLocaleDir}/messages.json`;
+		fs.appendFileSync(outFile, outputMessages);
+	} else {
+		fs.outputFileSync(outFile + ".json", outputMessages);
+	fs.outputFileSync(outFile + ".txt", outputKeys);
+	}
+	
 }
 
-function testPtoJ(inputFile, outputFile) {
-	let entities = loadPropertys(inputFile);
-	let options = {};
-	options.append = false;
-	options.propertiesType = true;
-	srcItemsToMessageJson(entities, outputFile, options);
+
+function stringsToJson(inputFiles, outputFile, options) {
+	var inputLocaleDir = options.inputLocaleDir;
+	var outputLocaleDir = options.outputLocaleDir;
+
+	console.debug('Starting');
+
+	if (!fs.existsSync(`${outputLocaleDir}/messages.json`) && options.append) {
+		console.debug('create message base');
+		fs.copyFileSync(`./src/_locales/en-US/messages-base.json`, `${outputLocaleDir}/messages.json`);
+	}
+
+	inputFiles.forEach(iFile => {
+		var strings = [];
+		options.lastFile = false;
+		console.debug('Processing: ' + iFile);
+		if (iFile === inputFiles[inputFiles.length-1]) {
+			options.lastFile = true;
+		}
+		switch (path.extname(iFile)) {
+			case '.dtd':
+				strings = loadDTD(iFile, options);
+				options.propertiesType = false;
+				srcItemsToMessageJson(strings, iFile, options);
+				break;
+			case '.properties':
+				strings = loadPropertys(iFile, options);
+				options.propertiesType = true;
+				srcItemsToMessageJson(strings, iFile, options);
+				break;
+
+			default:
+				break;
+		}
+
+	});
+
 }
 
-// testDtoJ();
-// let inputFile =  `${localeDir}/de/overlay.properties`;
-// let outputFile = "../src/_locales/de/messages-out";
 
-let inputFile =  `${localeDir}/en-US/overlay.dtd`;
-let outputFile = "../src/_locales/en-US/messages-out";
+var options = {
+	inputLocaleDir: `./src/chrome/locale/zh-CN`,
+	outputLocaleDir: "./src/_locales/zh-CN",
+	append: true,
+};
+
+// let inputFile = `${localeDir}/en-US/overlay.dtd`;
+let inputFiles = ["settings.dtd", "settings.properties", "overlay.dtd", "overlay.properties"];
+// let inputFiles = ["overlay.properties"];
+let outputFile = "messages-out";
 
 // let inputFile =  `${localeDir}/de/overlay.dtd`;
 // let outputFile = "../src/_locales/de/messages-out";
 
 // testPtoJ(inputFile, outputFile);
-testDtoJ(inputFile, outputFile);
+console.debug('Start');
+console.debug(options);
+stringsToJson(inputFiles, outputFile, options);

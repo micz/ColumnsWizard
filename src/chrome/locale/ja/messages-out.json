@@ -1,0 +1,175 @@
+	"ColumnsWizard.SettingsTitle": {
+		"message": "ColumnsWizardの設定"
+	},
+
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "ここで、[会話]タブに表示する追加の列を選択します。"
+	},
+
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "ロケーション"
+	},
+
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "アカウント"
+	},
+
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "別添"
+	},
+
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "受取人"
+	},
+
+	"ColumnsWizard.TabConversation.label": {
+		"message": "会話タブ"
+	},
+
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "カスタム列"
+	},
+
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "メッセージリストに追加するカスタム列をここで選択します。"
+	},
+
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "選択したら、必要な場所で列をフォルダビューに表示する必要があります。以前に選択したオプションを削除して再選択した場合は、これを再度行う必要があります。"
+	},
+
+	"ColumnsWizard.AddCc.label": {
+		"message": "Cc"
+	},
+
+	"ColumnsWizard.TabInfo.label": {
+		"message": "情報"
+	},
+
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "このアドオンは無料で、暇なときに開発されました。毎日のルーチンで使用している場合は、下のリンクをクリックして寄付をお願いします。ありがとう!!"
+	},
+
+	"ColumnsWizard.DonateLink": {
+		"message": "寄付をします！"
+	},
+
+	"ColumnsWizard.Addbcc.label": {
+		"message": "Bcc"
+	},
+
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "に返信"
+	},
+
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X-オリジナル-から"
+	},
+
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "コンテンツベース"
+	},
+
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "*この列は、カスタム列のアクティブ化後に受信されるメールに対してのみ入力されます。"
+	},
+
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "新しいフォルダ列"
+	},
+
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "新しいフォルダにはデフォルトの列設定を使用します。"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "ソート順："
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "上昇"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "降順"
+	},
+
+	"ColumnsWizard.newButton.label": {
+		"message": "新着…"
+	},
+
+	"ColumnsWizard.editButton.label": {
+		"message": "編集…"
+	},
+
+	"ColumnsWizard.deleteButton.label": {
+		"message": "削除する"
+	},
+
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "これは、新しいフォルダの列のデフォルト構成です。ここで変更するか、メッセージリストの列ピッカーのメニューを使用できます。"
+	},
+
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "ID"
+	},
+
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "メールヘッダー"
+	},
+
+	"ColumnsWizard.CustColsList.title": {
+		"message": "列名"
+	},
+
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "ツールチップ"
+	},
+
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "有効"
+	},
+
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "検索可能"
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "メールヘッダーの編集を有効にします。"
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "このオプションは、編集オプションを有効にしてカスタム列を保存すると、自動的にチェックされます。"
+	},
+
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "高度な"
+	},
+
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "メールヘッダー編集オプション"
+	},
+
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "IMAPアカウントの使用時に変更を強制します。"
+	},
+
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "元のメッセージをゴミ箱フォルダに入れます。"
+	},
+
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "一部のIMAPプロバイダー（Gmailなど）は、メインヘッダーが既存のメッセージと変わらない場合、メッセージソースに変更を登録しません。この制限を回避するために、「日付」フィールドが変更され、時刻に1秒が追加されます（または秒が59の場合は減少します）。"
+	},
+
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "選択したヘッダー値を変更すると、元のメッセージはごみ箱フォルダーに移動されます。これは、ヘッダーの変更時に発生する可能性がある奇妙な動作に対するセキュリティ対策です。"
+	},
+
+	"ColumnsWizard.ActivateDebug": {
+		"message": "デバッグシステムをアクティブにします。"
+	},

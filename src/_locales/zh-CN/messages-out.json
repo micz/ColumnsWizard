@@ -1,19 +1,19 @@
 	"ColumnsWizard.CustCol.Move": {
-		"message": "Bewegung"
+		"message": "移动"
 	},
 
 	"ColumnsWizard.Info.Credits": {
-		"message": "Credits"
+		"message": "学分"
 	},
 
 	"ColumnsWizard.Info.Authors": {
-		"message": "Autoren"
+		"message": "作者"
 	},
 
 	"ColumnsWizard.Info.ReleaseNotes": {
-		"message": "Versionshinweise"
+		"message": "发行说明"
 	},
 
 	"ColumnsWizard.Advanced.DebuggingOptions": {
-		"message": "Debugging-Optionen"
+		"message": "调试选项"
 	},

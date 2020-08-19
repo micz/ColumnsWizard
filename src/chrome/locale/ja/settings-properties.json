@@ -1,0 +1,87 @@
+	"ColumnsWizard.threadColumn.label": {
+		"message": "糸"
+	},
+
+	"ColumnsWizard.fromColumn.label": {
+		"message": "から"
+	},
+
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "受取人"
+	},
+
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "件名"
+	},
+
+	"ColumnsWizard.dateColumn.label": {
+		"message": "日付"
+	},
+
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "優先"
+	},
+
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "鬼ごっこ"
+	},
+
+	"ColumnsWizard.accountColumn.label": {
+		"message": "アカウント"
+	},
+
+	"ColumnsWizard.statusColumn.label": {
+		"message": "状態"
+	},
+
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "サイズ"
+	},
+
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "ジャンク状態"
+	},
+
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "未読"
+	},
+
+	"ColumnsWizard.totalColumn.label": {
+		"message": "合計"
+	},
+
+	"ColumnsWizard.readColumn.label": {
+		"message": "読んだ"
+	},
+
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "受け取りました"
+	},
+
+	"ColumnsWizard.starredColumn.label": {
+		"message": "スター付き"
+	},
+
+	"ColumnsWizard.locationColumn.label": {
+		"message": "ロケーション"
+	},
+
+	"ColumnsWizard.idColumn.label": {
+		"message": "ご注文承りました"
+	},
+
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "付属品"
+	},
+
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "カスタム列の削除"
+	},
+
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "このカスタム列を本当に削除しますか？"
+	},
+
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "特派員"
+	},
