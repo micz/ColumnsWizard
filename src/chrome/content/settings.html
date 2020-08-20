@@ -22,8 +22,10 @@
     <input type="radio" id="tab5" name="tab-control" disabled>
     <input type="radio" id="tab6" name="tab-control" role="button">
     <ul>
-      <li title="__MSG_ColumnsWizard.TabNewFolderDefault.label__" tabindex="0">
-        <label for="tab1" role="button">
+      <li  tabindex="0" style="position: relative;" class="ctooltip-div-hotspot">
+        <div class="ctooltip-div" data-tooltip="__MSG_ColumnsWizard.TabNewFolderDefault.label__" >__MSG_ColumnsWizard.TabNewFolderDefault.label__</div>
+        <label for="tab1" role="button"  style="position: relative;">
+          <!-- <div class="ctooltip-tabs" data-tooltip="__MSG_ColumnsWizard.TabNewFolderDefault.label__" ></div> -->
 
           <!-- <div class="tab-img-box">  -->
           <img src="chrome://columnswizard/skin/ico/column-change-gray-64px.png"
@@ -36,6 +38,7 @@
             <div class="dt2"></div>
           </div>
         </div>
+
       </li>
       <li title="__MSG_ColumnsWizard.TabCustomCols.label__" tabindex="0" role="button" aria-label="Custom Columns">
         <label for="tab2" role="button" aria-label="Custom Columns">
@@ -262,7 +265,7 @@
           <div style="display: flex; justify-content: space-between;">
             <div>
             <div class="section-group-content-header">ColumnsWizard v7.0.0-b14</div>
-            <div class="section-content3">
+            <div class="section-content3" >
               <span>__MSG_ColumnsWizard.Info.Authors__ : Mic, Christopher Leidigh</span><br>
               <span>__MSG_ColumnsWizard.Info.Credits__ : @javve (ListJS) </span>
             </div>

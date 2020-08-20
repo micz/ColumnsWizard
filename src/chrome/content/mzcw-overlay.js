@@ -59,6 +59,7 @@ var miczColumnsWizard = {
 		}
 
 		miczColumnsWizard.watchFolders();
+		console.debug('InItHarrisMenu');
 		miczColumnsWizard.initHeadersEditingMenu();
 
 		let current_tab = document.getElementById("tabmail").currentTabInfo;
@@ -547,7 +548,9 @@ var miczColumnsWizard = {
 
 	// cleidigh have to figure out "new" Menu
 	initHeadersEditingMenu: function () {
+		console.debug('UpdateHedgersMenu');
 		if (miczColumnsWizardPrefsUtils.headersEditingActive) {
+			console.debug('foreland menu ');
 			miczColumnsWizard.CustColPref = miczColumnsWizard_CustCols.loadCustCols();
 			miczColumnsWizard_CustomColsModUtils.addContextMenu(document, document.getElementById("cw_edit_main_menu_popup"), document.getElementById("cw_edit_context_menu_popup"), document.getElementById("cw_edit_newmain_menu_popup"), miczColumnsWizard.CustColPref, miczColumnsWizardPrefsUtils.stringCustColIndexMod, miczColumnsWizard.editHeaderMenu_OnClick, miczColumnsWizard.editHeaderSubMenu_OnClick);
 			
