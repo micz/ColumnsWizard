@@ -1,6 +1,6 @@
 // var { Services } = ChromeUtils.import('resource://gre/modules/Services.jsm');
 
-console.debug('StartController');
+// console.debug('StartController');
 
 var ListController = {
  ListController: class {
@@ -47,7 +47,7 @@ var ListController = {
 		var selector = 'tr.selected-row';
 		var selectedRow = this.list_container.querySelector(selector);
 		if (selectedRow) {
-			console.debug('selected well ' + selectedRow.outerHTML);
+			// console.debug('selected well ' + selectedRow.outerHTML);
 			selectedRow.classList.remove('selected-row');
 		}
 
@@ -57,15 +57,15 @@ var ListController = {
 		// selector = 'tr';
 		// selectedRow = event.target.closest(selector);
 		
-		console.debug('selective row ');
-		console.debug(selectedRow);
+		// console.debug('selective row ');
+		// console.debug(selectedRow);
 		if (selectedRow) {
 			selectedRow.classList.add('selected-row');
 			this.listElement.setAttribute('selected-index', data_id);
 			this.list_container.focus();
-			console.debug('set focus');
+			// console.debug('set focus');
 		} else {
-			console.debug('no selective');
+			// console.debug('no selective');
 			this.list_container.focus();
 		}
 	}
@@ -95,7 +95,7 @@ var ListController = {
 		var closestRow = event.target.closest(selector)
 		if (!closestRow) return
 		var data_id = closestRow.getAttribute('data-id')
-		console.log("clickRow " + data_id);
+		// console.log("clickRow " + data_id);
 		this.listElement.setAttribute('selected-index', data_id);
 		selector = 'tr.selected-row';
 		var selectedRow = this.listElement.querySelector(selector);

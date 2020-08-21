@@ -40,18 +40,18 @@ html {
 }
 
 .ctooltip-div-hotspot:hover  {
-	background-color: yellow;
+	/* background-color: yellow; */
 }
   
 /* .ctooltip-div-hotspot:hover ~ ul > li:nth-of-type(1).ctooltip-div-hotspot > div.ctooltip-div { */
 	.ctooltip-div-hotspot:hover ~ .ctooltip-div {
-	background-color: darkorange !important;
+	/* background-color: darkorange !important; */
 	display: block;
   }
 
   .ctooltip {
 	position: relative;
-	background-color: yellow;
+	/* background-color: yellow; */
 	height: 100%;
 	width: 100%;
 	margin: 0 !important;

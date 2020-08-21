@@ -294,6 +294,8 @@ var miczColumnsWizard_CustCols = {
 	},
 
 	saveCustCol: function (currcol) {
+		console.debug('SaveCustomColumn');
+		console.debug(currcol);
 		let value = JSON.stringify(currcol);
 		// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 		// Saving custom columns item to prefs
@@ -318,6 +320,7 @@ var miczColumnsWizard_CustCols = {
 		// mod index
 		if (currcol.isEditable) {
 			miczColumnsWizard_CustCols.addCustColIndexMod(currcol.index);
+			console.debug('AndIndex ' + currcol.index);
 		} else {
 			miczColumnsWizard_CustCols.removeCustColIndexMod(currcol.index);
 		}
@@ -377,6 +380,7 @@ var miczColumnsWizard_CustCols = {
 	addCustColIndexMod: function (index) {
 		// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 		// let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
+		console.debug('addCustColIndexMod ' + index);
 		let CustColIndexStr = '';
 		try {
 			// CustColIndexStr=prefs.getCharPref("index_mod");

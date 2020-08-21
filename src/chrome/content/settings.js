@@ -40,12 +40,12 @@ miczColumnsWizardPref2 = {
 
 	docSettingsLoad: function () {
 		this.prefList.forEach(prefEntry => {
-			console.debug(prefEntry);
+			// console.debug(prefEntry);
 			var prefElement = document.getElementById(prefEntry.docid);
 			switch (prefEntry.type) {
 				case 'boolean_checkbox':
 					let pref = miczColumnsWizardPrefsUtils.getBoolPref("extensions." + prefEntry.pref);
-					console.debug('BooleanCheckBox: ' + pref);
+					// console.debug('BooleanCheckBox: ' + pref);
 					prefElement.checked = pref;
 					if (!pref) {
 						prefElement.removeAttribute("checked");
@@ -192,6 +192,7 @@ miczColumnsWizardPref2 = {
 			miczColumnsWizardPref_CustomColsList.customColsListObj.add({
 				id: index,
 				enabled: args.newcol.enabled,
+				isEditable: args.newcol.isEditable,
 				isSearchable: args.newcol.isSearchable,
 				'index': args.newcol.index,
 				'dbHeader': args.newcol.dbHeader,
@@ -249,6 +250,7 @@ miczColumnsWizardPref2 = {
 			item.values({
 				id: index,
 				enabled: args.newcol.enabled,
+				isEditable: args.newcol.isEditable,
 				isSearchable: args.newcol.isSearchable,
 				'index': args.newcol.index,
 				'dbHeader': args.newcol.dbHeader,

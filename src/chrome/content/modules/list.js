@@ -1356,7 +1356,7 @@ var Templater = function(list) {
       var docFragment = domParser.parseFromString(html, 'text/html');
       // console.debug(docFragment.outerHTML);
       // console.debug('first body');
-      console.debug(docFragment.getElementsByTagName("tbody")[0].firstChild.outerHTML);
+      // console.debug(docFragment.getElementsByTagName("tbody")[0].firstChild.outerHTML);
       // console.debug(docFragment.firstChild.outerHTML);
 
       return docFragment.getElementsByTagName("tbody")[0].firstChild;

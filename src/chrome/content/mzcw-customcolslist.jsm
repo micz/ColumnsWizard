@@ -36,13 +36,14 @@ var miczColumnsWizardPref_CustomColsList = {
 				{ name: 'isCustom', attr: 'isCustom' },
 				{ name: 'sortnumber', attr: 'sortnumber'},
 				{ name: 'enabled', attr: 'checked' },
+				{ name: 'isEditable', attr: 'isEditable' },
 				{ name: 'isSearchable', attr: 'checked' },
 				{ name: 'labelString', attr: 'labelString'},
 				{ name: 'tooltipString', attr: 'tooltipString'},
 
 			],
 			item: '<tr class="list-row id" >\
-			<td class="enabled" >\
+			<td>\
 				<label class="checkbox-container-center" >\
 					<input type="checkbox" class="enabled toggle-action-enabled">\
 					<span class="checkmark"></span>\
@@ -134,6 +135,7 @@ var miczColumnsWizardPref_CustomColsList = {
 			newCustomCols[vals.index] = {};
 		
 			newCustomCols[vals.index].enabled = vals.enabled;
+			newCustomCols[vals.index].isEditable = vals.isEditable;
 			newCustomCols[vals.index].isSearchable = vals.isSearchable;
 			newCustomCols[vals.index].index = vals.index;
 			newCustomCols[vals.index].dbHeader = vals.dbHeader;
@@ -222,6 +224,7 @@ var miczColumnsWizardPref_CustomColsList = {
 		miczColumnsWizardPref_CustomColsList.customColsListObj.add({
 			id: index,
 			enabled: currcol.enabled,
+			isEditable: currcol.isEditable,
 			isSearchable: currcol.isSearchable,
 			'index': currcol.index,
 			'dbHeader': currcol.dbHeader,

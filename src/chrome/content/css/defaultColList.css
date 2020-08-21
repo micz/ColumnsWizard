@@ -84,12 +84,13 @@
 	/* -moz-box-flex: 1; */
 	width: 10%;
 	height: 20px;
-	text-align: center;
+	text-align: center !important;
   }
 
   .sort-by {
 	/* width: 10%; */
 	height: 20px;
+	text-align: center !important;
 	/* width: 100%; */
 	/* display: -moz-box; */
 	/* -moz-box-flex: 1; */
@@ -100,7 +101,7 @@
 	/* display: -moz-box; */
 	/* -moz-box-flex: 1; */
 	
-	width: 75%;
+	width: 70%;
 	height: 20px;
   }
 
