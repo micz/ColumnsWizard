@@ -16,15 +16,20 @@
 
   <div class="tabs">
     <input type="radio" id="tab1" name="tab-control" checked tabindex="0">
-    <input type="radio" id="tab2" name="tab-control" tabindex="0" role="button" aria-label="Custom Columns">
+    <input type="radio" id="tab2" name="tab-control" tabindex="0" role="button" aria-label="Custom Columns" label="Custom">
     <input type="radio" id="tab3" name="tab-control">
     <input type="radio" id="tab4" name="tab-control">
     <input type="radio" id="tab5" name="tab-control" disabled>
     <input type="radio" id="tab6" name="tab-control" role="button">
+    <!-- <button onclick="document.getElementById('tab1').checked=true">New Folder Columns</button> -->
+    <!-- <button style="height: 0; width: 0;" onclick="document.getElementById('tab3').checked=true">Conversation Tab</button>     -->
     <ul>
-      <li  tabindex="0" style="position: relative;" class="ctooltip-div-hotspot2" title="stumpy testPalm">
-        <!-- <div class="ctooltip-div2" data-tooltip="__MSG_ColumnsWizard.TabNewFolderDefault.label__" >__MSG_ColumnsWizard.TabNewFolderDefault.label__</div> -->
+      <li  tabindex="0" style="position: relative;" class="ctooltip-div-hotspot" >
+        <div id="t1" class="ctooltip-div" data-tooltip="__MSG_ColumnsWizard.TabNewFolderDefault.label__" >__MSG_ColumnsWizard.TabNewFolderDefault.label__</div>
+        <!-- <button class="button-invisible" onclick="document.getElementById('tab2').checked=true">Custom Columns</button> -->
+        
         <label for="tab1" role="button"  style="position: relative;">
+          <!-- <div id="t1" class="ctooltip-div" data-tooltip="__MSG_ColumnsWizard.TabNewFolderDefault.label__" >__MSG_ColumnsWizard.TabNewFolderDefault.label__</div> -->
           <!-- <div class="ctooltip-tabs" data-tooltip="__MSG_ColumnsWizard.TabNewFolderDefault.label__" ></div> -->
 
           <!-- <div class="tab-img-box">  -->
@@ -40,7 +45,8 @@
         </div>
 
       </li>
-      <li title="__MSG_ColumnsWizard.TabCustomCols.label__" tabindex="0" role="button" aria-label="Custom Columns">
+      <li title="__MSG_ColumnsWizard.TabCustomCols.label__" tabindex="0" role="button" aria-label="Custom Columns" class="ctooltip-div-hotspot" >
+        <div id="t2" class="ctooltip-div" data-tooltip="__MSG_ColumnsWizard.TabCustomCols.label__" >__MSG_ColumnsWizard.TabCustomCols.label__</div>
         <label for="tab2" role="button" aria-label="Custom Columns">
           <img src="chrome://columnswizard/skin/ico/custom-columns-blue-64px.png"
             class="tab-img-png tab-img-png-checked" />
@@ -58,7 +64,8 @@
         </div>
  -->
       </li>
-      <li title="__MSG_ColumnsWizard.TabConversation.label__">
+      <li title="__MSG_ColumnsWizard.TabConversation.label__" class="ctooltip-div-hotspot" >
+        <div id="t1" class="ctooltip-div" data-tooltip="__MSG_ColumnsWizard.TabCustomCols.label__" >__MSG_ColumnsWizard.TabConversation.label__</div>
         <label for="tab3" role="button">
           <img src="chrome://columnswizard/skin/ico/conversation-tab-blue-64px.png"
             class="tab-img-png tab-img-png-checked" />
@@ -72,7 +79,8 @@
           </div>
         </div>
       </li>
-      <li title="__MSG_ColumnsWizard.TabAdvanced.label__">
+      <li title="__MSG_ColumnsWizard.TabAdvanced.label__" class="ctooltip-div-hotspot" >
+        <div id="t1" class="ctooltip-div" >__MSG_ColumnsWizard.TabAdvanced.label__</div>
         <label for="tab4" role="button">
           <img src="chrome://columnswizard/skin/ico/settings-circle-blue-64px.png"
             class="tab-img-png tab-img-png-checked" style="height: 20px; width: 20px;" />
@@ -100,7 +108,8 @@
         <!-- </div> -->
       </li>
 
-      <li title="__MSG_ColumnsWizard.TabInfo.label__" class="info">
+      <li title="__MSG_ColumnsWizard.TabInfo.label__" class="info ctooltip-div-hotspot" >
+        <div id="t1" class="ctooltip-div" >__MSG_ColumnsWizard.TabInfo.label__</div>
         <label for="tab6" role="button"><svg viewBox="0 0 24 24">
             <path
               d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
@@ -283,7 +292,9 @@
 
 
     </div>
+
   </div>
+  
 </body>
 
 <!-- <script src="chrome://columnswizard/content/modules/list.controller.js"></script> -->

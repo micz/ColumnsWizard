@@ -10,6 +10,16 @@ html {
 	height: 100%;
   }
 
+
+.button-invisible {
+	/* position: absolute; */
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: aliceblue;
+}
+
 .dw {
 	position: absolute;
 	top: 0;
@@ -26,25 +36,36 @@ html {
 .ctooltip-div {
 	/* content: attr(data-tooltip); */
 	position: absolute;
-	top: 22px;
-	left: 40px;
-	height: 100%;
-	width: 100%;
-	
-	background-color:lightcoral;
+	top: 31px;
+	left: 55px;
+	height: 18px;
+	/* width: 110%; */
+	background-color: whitesmoke;
+	/* background-color:lightcoral; */
 	/* margin: 6px; */
-	padding: 6px;
+	border: 1px solid darkgray;
+	border-radius: 3px; 
+	padding: 2px 8px 8px 8px ;
 	text-align: center;
-	/* display: none; */
+	white-space: nowrap;
+	display: none;
 	z-index: 2000;
 }
 
-.ctooltip-div-hotspot:hover  {
+.ctooltip-div-hotspot {
 	/* background-color: yellow; */
+	position: relative;
 }
   
-/* .ctooltip-div-hotspot:hover ~ ul > li:nth-of-type(1).ctooltip-div-hotspot > div.ctooltip-div { */
-	.ctooltip-div-hotspot:hover ~ .ctooltip-div {
+ul > li:nth-of-type(1).ctooltip-div-hotspot:hover > div, 
+ul > li:nth-of-type(2).ctooltip-div-hotspot:hover > div, 
+ul > li:nth-of-type(3).ctooltip-div-hotspot:hover > div, 
+ul > li:nth-of-type(4).ctooltip-div-hotspot:hover > div,
+ul > li:nth-of-type(6).ctooltip-div-hotspot:hover > div {
+	/* ul > li.ctooltip-div-hotspot:hover > div { */
+/* .tabs  input[name="tab-control"]:nth-of-type(1):hover ~ ul > li:nth-of-type(1) > div.ctooltip-div { */
+/* ul > li:nth-of-type(1).ctooltip-div-hotspot:hover  ~ ul > li:nth-of-type(1) > div.ctooltip-div { */
+	/* .ctooltip-div-hotspot:hover ~ ul > li:nth-of-type(1) > div.ctooltip-div { */
 	/* background-color: darkorange !important; */
 	display: block;
   }
