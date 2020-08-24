@@ -24,6 +24,7 @@ var miczColumnsWizardPref_CustColEditor = {
 					// break;
 					case "edit": {
 						let currcol = JSON.parse(args.currcol);
+						console.debug(currcol);
 						let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
 						document.getElementById("cw_desc.label").label = _bundleCW.GetStringFromName("ColumnsWizard.DescEdit.label");
 
@@ -63,8 +64,12 @@ var miczColumnsWizardPref_CustColEditor = {
 								document.getElementById('ColumnsWizard.mod_type_fixedlist.list').disabled = false;
 								document.getElementById('ColumnsWizard.mod_type_fixedlist.list.desc').disabled = false;
 							}
+							console.debug('Monotype ');
+							console.debug(document.getElementById("ColumnsWizard.mod_type_fixedlist").getAttribute("checked"));
 						}
-						if (currcol.editFixedList !== undefined) document.getElementById("ColumnsWizard.mod_type_fixedlist.list").setAttribute("value", (currcol.editFixedList).join("\r\n"));
+						if (currcol.editFixedList !== undefined) {
+							 document.getElementById("ColumnsWizard.mod_type_fixedlist.list").textContent = (currcol.editFixedList).join("\r\n");
+						}
 
 						// set the value on the label in the advanced tab
 						document.getElementById('cw_adv_msg_header').setAttribute("value", currcol.dbHeader);

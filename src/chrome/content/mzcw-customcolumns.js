@@ -45,10 +45,25 @@ var miczColumnsWizard_CustCols = {
 			let file = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsIFile);
 			file.initWithPath(elementc.labelImagePath);
 			if ((file) && (file.exists())) {
-				cwCol.setAttribute("src", "file://" + elementc.labelImagePath);
+				// cwCol.setAttribute("src", "file://" + elementc.labelImagePath);
+				// cwCol.setAttribute("src", "chrome://columnswizard/skin/mzcw-icon64-h.png");
 				cwCol.setAttribute("class", "treecol-image cw_col_image");
+				cwCol.setAttribute("is", "treecol-image");
+				cwCol.setAttribute("width", "16px");
+				cwCol.setAttribute("flex", "0");
+				console.debug(cwCol);
+
+				let cwImage = document.createXULElement("image");
+				cwCol.setAttribute("src", "file://" + elementc.labelImagePath);
+				// cwImage.setAttribute("src", "chrome://columnswizard/skin/mzcw-icon64-h.png");
+				cwImage.setAttribute("class", "treecol-icon");
+				cwCol.appendChild(cwImage);
+				console.debug('Column');
+				console.debug(cwCol.outerHTML);
 			}
 		}
+
+
 
 		cwCol.setAttribute("tooltiptext", tooltipString);
 		let cwSplitter = document.createXULElement("splitter");
@@ -64,6 +79,13 @@ var miczColumnsWizard_CustCols = {
 		element.appendChild(cwSplitter);
 		element.appendChild(cwCol);
 
+		let labelElement = document.getElementById(coltype + "Col_cw").children[0].value = "";
+		let imgElement = document.getElementById(coltype + "Col_cw").children[1];
+		imgElement.setAttribute("src", "file://" + elementc.labelImagePath);
+		imgElement.setAttribute("class", "treecol-icon");
+		imgElement.setAttribute("width", "16px");
+
+		// console.debug(imgElement.outerHTML);
 		// dump(">>>>>>>>>>>>> miczColumnsWizard->addCustomColumn: [coltype] "+coltype+"\r\n");
 		// DbObserver Managing
 		miczColumnsWizard_CustCols.addCustomColumnHandler(coltype);

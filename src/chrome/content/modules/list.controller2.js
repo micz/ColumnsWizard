@@ -73,8 +73,12 @@ var ListController = {
 	getSelectedRowDataId() {
 		var selector = 'tr.selected-row';
 		var selectedRow = this.list_container.querySelector(selector);
+		console.debug('SelectedRow:');
+		console.debug(selectedRow.outerHTML);
 		if (selectedRow) {
-			return selectedRow.getAttribute('data-id');
+			let i = selectedRow.getAttribute('data-id');
+			console.debug(i);
+			return i;
 		}
 		return null;
 	}

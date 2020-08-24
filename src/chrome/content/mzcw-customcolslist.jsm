@@ -12,7 +12,7 @@ var miczColumnsWizardPref_CustomColsList = {
 	window: null,
 	document: null,
 	customColsListObj: {},
-	loadedCustCols: {},
+	// loadedCustCols: {},
 
 	win: {},
 	onEditCustomCol: {},
@@ -96,11 +96,11 @@ var miczColumnsWizardPref_CustomColsList = {
 
 
 		// cleidigh temporary , custom, columnsTrip
-		miczColumnsWizardPref_CustomColsList.loadedCustCols =
-			 miczColumnsWizardPref_CustomColsList.loadedCustColPref = miczColumnsWizardPref_CustomColsList.loadCustCols();
-		console.debug(miczColumnsWizardPref_CustomColsList.loadedCustCols);
+		 miczColumnsWizardPref_DefaultColsList.loadedCustCols = miczColumnsWizardPref_CustomColsList.loadCustCols();
+		console.debug('LoadedCustomColumns');
+		 console.debug(miczColumnsWizardPref_DefaultColsList.loadedCustCols);
 
-		miczColumnsWizardPref_CustomColsList.createCustomColsListRows(miczColumnsWizardPref_CustomColsList.loadedCustCols);
+		miczColumnsWizardPref_CustomColsList.createCustomColsListRows(miczColumnsWizardPref_DefaultColsList.loadedCustCols);
 		
 		let checkedItems = miczColumnsWizardPref_CustomColsList.document.querySelectorAll('[checked]');
 		for (const element of checkedItems) {
@@ -162,6 +162,8 @@ var miczColumnsWizardPref_CustomColsList = {
 		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
 		let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");*/
 		// let CustColIndexStr=prefs.getCharPref("index");
+		console.debug('LoadCC');
+
 		let CustColIndexStr = miczColumnsWizardPrefsUtils.getCustColsIndex();
 		let CustColIndex = [];
 		if (CustColIndexStr === '') {
@@ -169,6 +171,8 @@ var miczColumnsWizardPref_CustomColsList = {
 			CustColIndex = miczColumnsWizardPref_CustomColsList.CustColDefaultIndex;
 			// prefs.setCharPref("index",JSON.stringify(CustColIndex));
 			miczColumnsWizardPrefsUtils.setCustColsIndex(JSON.stringify(CustColIndex));
+			console.debug('Set defaultColumns');
+			console.debug(CustColIndex);
 		} else {
 			CustColIndex = miczColumnsWizardPref_CustomColsList.checkCustColDefaultIndex(JSON.parse(CustColIndexStr));
 		}

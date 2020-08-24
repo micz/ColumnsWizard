@@ -225,7 +225,7 @@ miczColumnsWizardPref2 = {
 			return;
 		}
 
-		const item = miczColumnsWizardPref_CustomColsList.customColsListObj.items[Number(selectedID) - 1];
+		var item = miczColumnsWizardPref_CustomColsList.customColsListObj.items[Number(selectedID) - 1];
 		var vals = item.values();
 		var index = vals.index;
 		if (vals.isBundled) {
@@ -233,7 +233,11 @@ miczColumnsWizardPref2 = {
 			return;
 		}
 		// let args = { "action": "edit", "args.newcol": JSON.stringify(container.selectedItem._customcol) };
-		let args = { "action": "edit", "currcol": JSON.stringify(vals) };
+
+		let	custCol = miczColumnsWizardPref_DefaultColsList.loadedCustCols[item.values().index];
+		console.debug(custCol);
+		// let args = { "action": "edit", "currcol": JSON.stringify(vals) };
+		let args = { "action": "edit", "currcol": JSON.stringify(custCol) };
 
 		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xul", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
 
@@ -241,14 +245,17 @@ miczColumnsWizardPref2 = {
 		console.debug(args);
 		if (("save" in args && args.save) && ("newcol" in args && args.newcol)) {
 			// save the cust col in the pref
-			console.debug('SavingAntigenDefault');
+			console.debug('Saving edited column');
 			console.debug(args.newcol);
-			miczColumnsWizard_CustCols.updateCustCol(args.newcol);
 
+			miczColumnsWizard_CustCols.updateCustCol(args.newcol);
+			miczColumnsWizardPref_DefaultColsList.loadedCustCols = miczColumnsWizard_CustCols.loadCustCols();
+			console.debug('NewLoaded');
+			console.debug(miczColumnsWizardPref_DefaultColsList.loadedCustCols);
 			// update the cust col in the list
 
 			item.values({
-				id: index,
+				id: vals.id,
 				enabled: args.newcol.enabled,
 				isEditable: args.newcol.isEditable,
 				isSearchable: args.newcol.isSearchable,

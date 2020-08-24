@@ -6,6 +6,7 @@
 <dialog id="CWCustomColEditor"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
+  xmlns:html="http://www.w3.org/1999/xhtml" 
   title="&ColumnsWizard.window.title;"
   style=""
   windowtype="mailnews:cwcustomcoleditor"
@@ -126,7 +127,8 @@
 				  <radio value="fl" id="ColumnsWizard.mod_type_fixedlist" label="&ColumnsWizard.mod_type_fixedlist.label;"/>
 				</radiogroup>
 				<vbox class="cw_modtype_fixedlist_textbox">
-				<textbox id="ColumnsWizard.mod_type_fixedlist.list" value="" multiline="true" rows="5" disabled="true" onblur="miczColumnsWizardPref_CustColEditor.sanitizeFixedListInput();"/>
+				<!-- <textbox id="ColumnsWizard.mod_type_fixedlist.list" value="" multiline="true" rows="5" disabled="true" onblur="miczColumnsWizardPref_CustColEditor.sanitizeFixedListInput();"/> -->
+				<html:textarea id="ColumnsWizard.mod_type_fixedlist.list" value=""  rows="5" disabled="true" onblur="miczColumnsWizardPref_CustColEditor.sanitizeFixedListInput();"/>
 				<label value="&ColumnsWizard.mod_type_fixedlist.list.desc;" id="ColumnsWizard.mod_type_fixedlist.list.desc"/>
 				</vbox>
 			</groupbox>
@@ -137,4 +139,4 @@
 </tabpanel>
 </tabpanels>
 </tabbox>
-</dialog>
+ </dialog>

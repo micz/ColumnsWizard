@@ -7,7 +7,7 @@ if (!Services) {
 }
 
 var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
-var { miczColumnsWizard_CustomColsModUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
+var { miczColumnsWizard_CustomColsModUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm", this);
 var { miczColumnsWizardPref_DefaultColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolslist.jsm");
 var { miczColumnsWizardPref_CustomColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolslist.jsm");
 
@@ -16,7 +16,10 @@ var { miczColumnsWizard_MsgUtils } = ChromeUtils.import("chrome://columnswizard/
 var { miczColumnsWizardUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-utils.jsm");
 var { miczLogger } = ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
 
+// var { miczColumnsWizard_CustomColsModUtils };
+
 var miczColumnsWizard = {
+
 
 	// Conversation Tab Columns
 	showLocation: true,
@@ -29,6 +32,8 @@ var miczColumnsWizard = {
 
 	init: function () {
 
+		console.debug('LoadModules');
+		miczColumnsWizard_CustomColsModUtils.miczColumnsWizard = miczColumnsWizard;
 		miczLogger.setLogger(true, miczColumnsWizardPrefsUtils.isDebug);
 
 		// cleidigh disable and fix
@@ -573,7 +578,11 @@ var miczColumnsWizard = {
 		}
 	},
 
-	checkHeadersEditingMenuList: function (element) {
+	checkHeadersEditingMenuList: function (event) {
+		console.debug('check MenuList');
+		console.debug(event);
+		let element = event.target;
+		console.debug(element.outerHTML);
 		let current_header = element.parentElement.getAttribute("mail_header");
 		let current_header_value = gFolderDisplay.selectedMessage.getStringProperty(current_header);
 		// miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList] current_header=current_header_value: "+current_header+"="+current_header_value+" \r\n");

@@ -16,6 +16,7 @@ var miczColumnsWizard_CustomColsModUtils = {
 	},
 
 	addContextMenu: function (doc, container1, container2, container3, CustCols, stringCustColIndexMod, first_click_callback, submenu_click_callback) {
+					
 		// clear menu items
 		while (container1.firstChild) {
 			container1.firstChild.remove();
@@ -76,10 +77,11 @@ var miczColumnsWizard_CustomColsModUtils = {
 					mpp3.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
 
 					// cleidigh - fix warnings from ANT later
-					mpp.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
-					mpp2.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
-					mpp3.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
-
+					console.debug('SetUpListYears');
+					mpp.addEventListener("popupshowing", this.miczColumnsWizard.checkHeadersEditingMenuList, true);
+					mpp2.addEventListener("popupshowing", this.miczColumnsWizard.checkHeadersEditingMenuList, true);
+					mpp3.addEventListener("popupshowing", this.miczColumnsWizard.checkHeadersEditingMenuList, true);
+					console.debug('finished listeners');
 
 					for (let sbi in CustCols[cc].editFixedList) {
 						let subm = doc.createXULElement("menuitem");
