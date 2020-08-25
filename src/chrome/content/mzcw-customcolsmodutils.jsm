@@ -72,9 +72,9 @@ var miczColumnsWizard_CustomColsModUtils = {
 					let mpp = doc.createXULElement("menupopup");
 					let mpp2 = doc.createXULElement("menupopup");
 					let mpp3 = doc.createXULElement("menupopup");
-					mpp.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
-					mpp2.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
-					mpp3.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
+					// mpp.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
+					// mpp2.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
+					// mpp3.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
 
 					// cleidigh - fix warnings from ANT later
 					console.debug('SetUpListYears');
@@ -90,11 +90,14 @@ var miczColumnsWizard_CustomColsModUtils = {
 						subm.setAttribute('colidx', CustCols[cc].index);
 						subm.setAttribute('mail_header', CustCols[cc].dbHeader);
 						subm.setAttribute('type', 'checkbox');
-						subm.onclick = submenu_click_callback;
+						// subm.onclick = submenu_click_callback;
+						subm.setAttribute('oncommand', 'miczColumnsWizard.editHeaderSubMenu_OnClick()');
 						let subm2 = subm.cloneNode(true);
-						subm2.onclick = submenu_click_callback;
+						// subm2.onclick = submenu_click_callback;
+						subm2.setAttribute('oncommand', 'miczColumnsWizard.editHeaderSubMenu_OnClick()');
 						let subm3 = subm.cloneNode(true);
-						subm3.onclick = submenu_click_callback;
+						// subm3.onclick = submenu_click_callback;
+						subm3.setAttribute('oncommand', 'miczColumnsWizard.editHeaderSubMenu_OnClick()');
 						mpp.appendChild(subm);
 						mpp2.appendChild(subm2);
 						mpp3.appendChild(subm3);

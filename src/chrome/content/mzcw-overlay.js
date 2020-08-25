@@ -554,10 +554,16 @@ var miczColumnsWizard = {
 	// cleidigh have to figure out "new" Menu
 	initHeadersEditingMenu: function () {
 		console.debug('UpdateHedgersMenu');
+		console.debug(miczColumnsWizardPrefsUtils.headersEditingActive);
 		if (miczColumnsWizardPrefsUtils.headersEditingActive) {
-			console.debug('foreland menu ');
+			console.debug('headers E menu ');
 			miczColumnsWizard.CustColPref = miczColumnsWizard_CustCols.loadCustCols();
-			miczColumnsWizard_CustomColsModUtils.addContextMenu(document, document.getElementById("cw_edit_main_menu_popup"), document.getElementById("cw_edit_context_menu_popup"), document.getElementById("cw_edit_newmain_menu_popup"), miczColumnsWizard.CustColPref, miczColumnsWizardPrefsUtils.stringCustColIndexMod, miczColumnsWizard.editHeaderMenu_OnClick, miczColumnsWizard.editHeaderSubMenu_OnClick);
+			miczColumnsWizard_CustomColsModUtils.addContextMenu(document, document.getElementById("cw_edit_main_menu_popup"),
+			 document.getElementById("cw_edit_context_menu_popup"),
+			 document.getElementById("cw_edit_newmain_menu_popup"),
+			 miczColumnsWizard.CustColPref,
+			 miczColumnsWizardPrefsUtils.stringCustColIndexMod,
+			 miczColumnsWizard.editHeaderMenu_OnClick, miczColumnsWizard.editHeaderSubMenu_OnClick);
 			
 			// miczColumnsWizard_CustomColsModUtils.addContextMenu(document, document.getElementById("cw_edit_main_menu_popup"),
 			//  document.getElementById("cw_edit_context_menu_popup"),
@@ -583,7 +589,10 @@ var miczColumnsWizard = {
 		console.debug(event);
 		let element = event.target;
 		console.debug(element.outerHTML);
+
 		let current_header = element.parentElement.getAttribute("mail_header");
+		console.debug('after ' + current_header);
+
 		let current_header_value = gFolderDisplay.selectedMessage.getStringProperty(current_header);
 		// miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList] current_header=current_header_value: "+current_header+"="+current_header_value+" \r\n");
 		for (let sub_el of Array.from(element.children)) {
@@ -623,9 +632,8 @@ var miczColumnsWizard = {
 
 	editHeaderSubMenu_OnClick: function (event) {	// Here editType is always Fixed List
 		// miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard: [editHeaderSubMenu_OnClick] colidx: "+JSON.stringify(event.target.getAttribute("colidx")));
+		event = window.event;
 		let colidx = event.target.getAttribute("colidx");
-		console.debug('have Verano click');
-		console.debug(colidx);
 		let mail_header = event.target.getAttribute("mail_header");
 		let header_value = event.target.getAttribute("label");
 		let current_header_value = gFolderDisplay.selectedMessage.getStringProperty(mail_header);

@@ -333,6 +333,8 @@ var miczColumnsWizardPref_CustomColsList = {
 		var selector = 'tr';
 		var row = event.target.closest(selector);
 		var idx = Number(row.getAttribute("data-id")) - 1;
+		console.debug(idx);
+		console.debug(miczColumnsWizardPref_CustomColsList.customColsListObj.items);
 		const item = miczColumnsWizardPref_CustomColsList.customColsListObj.items[idx];
 		console.debug(item);
 		

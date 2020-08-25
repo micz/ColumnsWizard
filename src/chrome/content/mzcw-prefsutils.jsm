@@ -65,6 +65,10 @@ var miczColumnsWizardPrefsUtils = {
 		this.setBoolPref(this.pref_custcols + 'active', active);
 	},
 
+	setHeadersEditingActive(v) {
+		return this.setBoolPref_CW("CustCols.mod_active", v);
+	},
+
 	getCustColsIndexMod: function () {
 		return this.getCharPref(this.pref_custcols + 'index_mod');
 	},

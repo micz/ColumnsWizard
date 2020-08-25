@@ -208,6 +208,10 @@ miczColumnsWizardPref2 = {
 	
 		}
 
+		if (args.newcol.isEditable) {
+			miczColumnsWizardPrefsUtils.setHeadersEditingActive(true);
+		}
+
 		miczColumnsWizardPref_DefaultColsList.toggleCustomCol(args.newcol);
 	},
 
@@ -271,7 +275,10 @@ miczColumnsWizardPref2 = {
 				tooltipString: args.newcol.tooltipString,
 			});
 	
-
+			if (args.newcol.isEditable) {
+				miczColumnsWizardPrefsUtils.setHeadersEditingActive(true);
+			}
+			
 			// Select the editedcustcols
 			// container.ensureIndexIsVisible(container.selectedIndex);
 		}

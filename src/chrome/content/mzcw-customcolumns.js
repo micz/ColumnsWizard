@@ -40,17 +40,20 @@ var miczColumnsWizard_CustCols = {
 		cwCol.setAttribute("hidden", "true");
 		cwCol.setAttribute("flex", "4");
 		cwCol.setAttribute("label", labelString);
+		// cwCol.setAttribute("class", "treecol-text");
+		console.debug('Label ' + labelString);
 
 		if ((elementc.labelImagePath) && (elementc.labelImagePath !== "")) {	// we have an image to use!!
 			let file = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsIFile);
 			file.initWithPath(elementc.labelImagePath);
 			if ((file) && (file.exists())) {
+				console.debug('stealthy use icon ');
 				// cwCol.setAttribute("src", "file://" + elementc.labelImagePath);
 				// cwCol.setAttribute("src", "chrome://columnswizard/skin/mzcw-icon64-h.png");
 				cwCol.setAttribute("class", "treecol-image cw_col_image");
 				cwCol.setAttribute("is", "treecol-image");
-				cwCol.setAttribute("width", "16px");
-				cwCol.setAttribute("flex", "0");
+				// cwCol.setAttribute("width", "20px");
+				cwCol.setAttribute("flex", "1");
 				console.debug(cwCol);
 
 				let cwImage = document.createXULElement("image");
@@ -79,12 +82,14 @@ var miczColumnsWizard_CustCols = {
 		element.appendChild(cwSplitter);
 		element.appendChild(cwCol);
 
-		let labelElement = document.getElementById(coltype + "Col_cw").children[0].value = "";
-		let imgElement = document.getElementById(coltype + "Col_cw").children[1];
-		imgElement.setAttribute("src", "file://" + elementc.labelImagePath);
-		imgElement.setAttribute("class", "treecol-icon");
-		imgElement.setAttribute("width", "16px");
-
+		if ((elementc.labelImagePath) && (elementc.labelImagePath !== "")) {	// we have an image - manually set after creation.
+			console.debug('still the set image ');
+			// document.getElementById(coltype + "Col_cw").children[0].value = "";
+			let imgElement = document.getElementById(coltype + "Col_cw").children[1];
+			imgElement.setAttribute("src", "file://" + elementc.labelImagePath);
+			imgElement.setAttribute("class", "treecol-icon");
+			imgElement.setAttribute("width", "16px");
+		}
 		// console.debug(imgElement.outerHTML);
 		// dump(">>>>>>>>>>>>> miczColumnsWizard->addCustomColumn: [coltype] "+coltype+"\r\n");
 		// DbObserver Managing
@@ -167,9 +172,9 @@ var miczColumnsWizard_CustCols = {
 
 	checkCustColDefaultIndex: function (curr_idx) {
 		console.debug('check default index');
-		
+
 		for (let idx in miczColumnsWizard_CustCols.CustColDefaultIndex) {
-			if ( !curr_idx.includes(miczColumnsWizard_CustCols.CustColDefaultIndex[idx])) {
+			if (!curr_idx.includes(miczColumnsWizard_CustCols.CustColDefaultIndex[idx])) {
 				curr_idx.push(miczColumnsWizard_CustCols.CustColDefaultIndex[idx]);
 			}
 		}
@@ -262,7 +267,7 @@ var miczColumnsWizard_CustCols = {
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 		ObserverService.notifyObservers(null, "CW-updateCustomColumn", JSON.stringify(newcol));
 		miczColumnsWizard_CustCols.saveCustCol(newcol);
-		
+
 		var wMediator = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
 		var mainWindow = wMediator.getMostRecentWindow("mail:3pane");
 		let columnStates = mainWindow.gFolderDisplay.getColumnStates();
