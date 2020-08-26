@@ -11,6 +11,7 @@ locale    columnswizard   fr            chrome/locale/fr/
 locale    columnswizard   nl            chrome/locale/nl/
 locale    columnswizard   zh-CN         chrome/locale/zh-CN/
 locale    columnswizard   ja            chrome/locale/ja/
+locale    columnswizard   es-ES         chrome/locale/es-ES/
 
 skin columnswizard default chrome/skin/
 

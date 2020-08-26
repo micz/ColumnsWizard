@@ -1,141 +1,261 @@
 [
   'de',    'en-US',
-  'fr',    'it',
-  'ja',    'nl',
-  'zh-CN'
+  'es-ES', 'fr',
+  'it',    'ja',
+  'nl',    'zh-CN'
 ]
 Processing: overlay.properties
 Loading propertyFile: ./src/chrome/locale/en-US/overlay.properties
-Start Wed Aug 19 2020 01:30:39 GMT-0400 (Eastern Daylight Time)
-Locale ja ja
+Start Tue Aug 25 2020 19:20:44 GMT-0400 (Eastern Daylight Time)
+Locale es-es es-ES
+Processing: settings.properties
+Loading propertyFile: ./src/chrome/locale/en-US/settings.properties
+Start Tue Aug 25 2020 19:20:44 GMT-0400 (Eastern Daylight Time)
+Locale es-es es-ES
+Processing: mzcw-settings-customcolseditor.properties
+Loading propertyFile: ./src/chrome/locale/en-US/mzcw-settings-customcolseditor.properties
+Start Tue Aug 25 2020 19:20:44 GMT-0400 (Eastern Daylight Time)
+Locale es-es es-ES
 translations return
 [
-  '<data-translation class="notranslate" locale="ja">',
-  'フォルダーリストの列に魔法を追加します。アドオン設定ウィンドウからカスタム列を直接追加して、必要なメールヘッダーを表示したり、新しいフォルダーのデフォルトの列設定を定義したり、[会話]タブや検索ウィンドウに非表示の列を表示したりできます。',
-  'Cc',
-  'クリックしてCCで並べ替え',
-  'Bcc',
-  'クリックしてbccで並べ替え',
-  'に返信',
-  'クリックして返信先で並べ替え',
-  'X-オリジナル-から',
-  'クリックしてX-Original-Fromで並べ替え',
-  'コンテンツベース',
-  'クリックしてコンテンツベースで並べ替え',
-  '公演',
-  '並び替え',
-  '名前',
-  'フレックス',
-  'アップ',
-  'ダウン',
-  '列をCWのデフォルトにリセット',
-  '列をCWデフォルトとして保存',
-  'X-Spam-Score',
-  'クリックしてX-Spam-Scoreで並べ替え',
-  'このフォルダの列レイアウトをCWのデフォルトとして保存してもよろしいですか？',
-  'このフォルダ列のレイアウトをCWのデフォルトにリセットしてもよろしいですか？'
+  '<data-translation class="notranslate" locale="es-ES">',
+  'Hilo',
+  'De',
+  'Recipiente',
+  'Tema',
+  'Fecha',
+  'Prioridad',
+  'Etiqueta',
+  'Cuenta',
+  'Estado',
+  'Talla',
+  'Estado basura',
+  'No leído',
+  'Total',
+  'Leer',
+  'Recibido',
+  'Sembrado de estrellas',
+  'Ubicación',
+  'orden recibida',
+  'Archivos adjuntos',
+  'Eliminar columna personalizada',
+  '¿Realmente desea eliminar esta columna personalizada?',
+  'Corresponsales'
 ]
-ja
+es-ES
+[
+  'Hilo',
+  'De',
+  'Recipiente',
+  'Tema',
+  'Fecha',
+  'Prioridad',
+  'Etiqueta',
+  'Cuenta',
+  'Estado',
+  'Talla',
+  'Estado basura',
+  'No leído',
+  'Total',
+  'Leer',
+  'Recibido',
+  'Sembrado de estrellas',
+  'Ubicación',
+  'orden recibida',
+  'Archivos adjuntos',
+  'Eliminar columna personalizada',
+  '¿Realmente desea eliminar esta columna personalizada?',
+  'Corresponsales'
+]
 TranslationArray
 [
   {
-    key: 'extensions.columnswizard@micz.it.description',
-    text: 'Adds some magic to the folder list columns! You can add a custom column directly from the addon preference window to show any mail header you want, define the default columns settings for any new folder and show hidden columns in the Conversation Tab and in the search window.'
+    key: 'ColumnsWizard.DescEdit.label',
+    text: "Modify the custom column information. All the fields are required. You can't modify the ID and the dbHeader."
   },
-  { key: 'ColumnsWizardcc.label', text: 'Cc' },
-  { key: 'ColumnsWizardccDesc.label', text: 'Click to sort by cc' },
-  { key: 'ColumnsWizardbcc.label', text: 'Bcc' },
-  { key: 'ColumnsWizardbccDesc.label', text: 'Click to sort by bcc' },
-  { key: 'ColumnsWizardreplyto.label', text: 'Reply-to' },
+  { key: 'ColumnsWizard.emptyFields.title', text: 'Error!' },
   {
-    key: 'ColumnsWizardreplytoDesc.label',
-    text: 'Click to sort by reply-to'
-  },
-  { key: 'ColumnsWizardxoriginalfrom.label', text: 'X-Original-From' },
-  {
-    key: 'ColumnsWizardxoriginalfromDesc.label',
-    text: 'Click to sort by X-Original-From'
-  },
-  { key: 'ColumnsWizardcontentbase.label', text: 'Content-Base' },
-  {
-    key: 'ColumnsWizardcontentbaseDesc.label',
-    text: 'Click to sort by Content-Base'
-  },
-  { key: 'ColumnsWizardNFCols.show', text: 'Show' },
-  { key: 'ColumnsWizardNFCols.sort_by', text: 'Sort by' },
-  { key: 'ColumnsWizardNFCols.col_title', text: 'Name' },
-  { key: 'ColumnsWizardNFCols.col_flex', text: 'Flex' },
-  { key: 'ColumnsWizardNFCols.up', text: 'Up' },
-  { key: 'ColumnsWizardNFCols.down', text: 'Down' },
-  {
-    key: 'ColumnsWizardNFCols.resetMenu',
-    text: 'Reset columns to CW default'
+    key: 'ColumnsWizard.emptyFields.text',
+    text: 'You must complete all the fields before saving!'
   },
   {
-    key: 'ColumnsWizardNFCols.saveDefault',
-    text: 'Save columns as CW default'
-  },
-  { key: 'ColumnsWizardxspamscore.label', text: 'X-Spam-Score' },
-  {
-    key: 'ColumnsWizardxspamscoreDesc.label',
-    text: 'Click to sort by X-Spam-Score'
+    key: 'ColumnsWizard.duplicatedID.text',
+    text: 'This Custom Column ID is already present in Thunderbird!'
   },
   {
-    key: 'ColumnsWizard.saveDefault_OnClick_text',
-    text: 'Are you sure you want to save the columns layout of this folder as CW default?'
-  },
-  {
-    key: 'ColumnsWizard.resetDefault_OnClick_text',
-    text: 'Are you sure you want to reset this folder columns layout to CW default?'
+    key: 'ColumnsWizard.chooseIcon.title',
+    text: 'Select an image file'
   }
 ]
 GenerateMessages
-extensions.columnswizard@micz.it.description=フォルダーリストの列に魔法を追加します。アドオン設定ウィンドウからカスタム列を直接追加して、必要なメールヘッダーを表示したり、新しいフォルダーのデフォルトの列設定を定義したり、[会話]タブや検索ウィンドウに非表示の列を表示したりできます。
+TranslationMessages 1010
+ColumnsWizard.threadColumn.label=Hilo
+ColumnsWizard.fromColumn.label=De
+ColumnsWizard.recipientColumn.label=Recipiente
+ColumnsWizard.subjectColumn.label=Tema
+ColumnsWizard.dateColumn.label=Fecha
+ColumnsWizard.priorityColumn.label=Prioridad
+ColumnsWizard.tagsColumn.label=Etiqueta
+ColumnsWizard.accountColumn.label=Cuenta
+ColumnsWizard.statusColumn.label=Estado
+ColumnsWizard.sizeColumn.label=Talla
+ColumnsWizard.junkStatusColumn.label=Estado basura
+ColumnsWizard.unreadColumn.label=No leído
+ColumnsWizard.totalColumn.label=Total
+ColumnsWizard.readColumn.label=Leer
+ColumnsWizard.receivedColumn.label=Recibido
+ColumnsWizard.starredColumn.label=Sembrado de estrellas
+ColumnsWizard.locationColumn.label=Ubicación
+ColumnsWizard.idColumn.label=orden recibida
+ColumnsWizard.attachmentColumn.label=Archivos adjuntos
+ColumnsWizard.deletePrompt.title=Eliminar columna personalizada
+ColumnsWizard.deletePrompt.text=¿Realmente desea eliminar esta columna personalizada?
+ColumnsWizard.correspondentCol.label=Corresponsales
+Stop Tue Aug 25 2020 19:20:44 GMT-0400 (Eastern Daylight Time)
+Stop 0.124
+translations return
+[
+  '<data-translation class="notranslate" locale="es-ES">',
+  'Agrega algo de magia a las columnas de la lista de carpetas. Puede agregar una columna personalizada directamente desde la ventana de preferencias del complemento para mostrar cualquier encabezado de correo que desee, definir la configuración de columnas predeterminadas para cualquier carpeta nueva y mostrar columnas ocultas en la pestaña Conversación y en la ventana de búsqueda.',
+  'Cc',
+  'Haga clic para ordenar por cc',
+  'Cco',
+  'Haga clic para ordenar por Cco',
+  'Responder a',
+  'Haga clic para ordenar por respuesta',
+  'X-Original-Desde',
+  'Haga clic para ordenar por X-Original-From',
+  'Base de contenido',
+  'Haga clic para ordenar por contenido-base',
+  'mostrar',
+  'Ordenar por',
+  'Nombre',
+  'Flexionar',
+  'Arriba',
+  'Abajo',
+  'Restablecer las columnas a los valores predeterminados de CW',
+  'Guardar columnas como CW por defecto',
+  'X-Spam-Score',
+  'Haga clic para ordenar por X-Spam-Score',
+  '¿Está seguro de que desea guardar el diseño de columnas de esta carpeta como predeterminado de CW?',
+  '¿Está seguro de que desea restablecer el diseño de las columnas de esta carpeta al valor predeterminado de CW?'
+]
+es-ES
+[
+  'Agrega algo de magia a las columnas de la lista de carpetas. Puede agregar una columna personalizada directamente desde la ventana de preferencias del complemento para mostrar cualquier encabezado de correo que desee, definir la configuración de columnas predeterminadas para cualquier carpeta nueva y mostrar columnas ocultas en la pestaña Conversación y en la ventana de búsqueda.',
+  'Cc',
+  'Haga clic para ordenar por cc',
+  'Cco',
+  'Haga clic para ordenar por Cco',
+  'Responder a',
+  'Haga clic para ordenar por respuesta',
+  'X-Original-Desde',
+  'Haga clic para ordenar por X-Original-From',
+  'Base de contenido',
+  'Haga clic para ordenar por contenido-base',
+  'mostrar',
+  'Ordenar por',
+  'Nombre',
+  'Flexionar',
+  'Arriba',
+  'Abajo',
+  'Restablecer las columnas a los valores predeterminados de CW',
+  'Guardar columnas como CW por defecto',
+  'X-Spam-Score',
+  'Haga clic para ordenar por X-Spam-Score',
+  '¿Está seguro de que desea guardar el diseño de columnas de esta carpeta como predeterminado de CW?',
+  '¿Está seguro de que desea restablecer el diseño de las columnas de esta carpeta al valor predeterminado de CW?'
+]
+TranslationArray
+[
+  {
+    key: 'ColumnsWizard.DescEdit.label',
+    text: "Modify the custom column information. All the fields are required. You can't modify the ID and the dbHeader."
+  },
+  { key: 'ColumnsWizard.emptyFields.title', text: 'Error!' },
+  {
+    key: 'ColumnsWizard.emptyFields.text',
+    text: 'You must complete all the fields before saving!'
+  },
+  {
+    key: 'ColumnsWizard.duplicatedID.text',
+    text: 'This Custom Column ID is already present in Thunderbird!'
+  },
+  {
+    key: 'ColumnsWizard.chooseIcon.title',
+    text: 'Select an image file'
+  }
+]
+GenerateMessages
+TranslationMessages 1732
+extensions.columnswizard@micz.it.description=Agrega algo de magia a las columnas de la lista de carpetas. Puede agregar una columna personalizada directamente desde la ventana de preferencias del complemento para mostrar cualquier encabezado de correo que desee, definir la configuración de columnas predeterminadas para cualquier carpeta nueva y mostrar columnas ocultas en la pestaña Conversación y en la ventana de búsqueda.
 ColumnsWizardcc.label=Cc
-ColumnsWizardccDesc.label=クリックしてCCで並べ替え
-ColumnsWizardbcc.label=Bcc
-ColumnsWizardbccDesc.label=クリックしてbccで並べ替え
-ColumnsWizardreplyto.label=に返信
-ColumnsWizardreplytoDesc.label=クリックして返信先で並べ替え
-ColumnsWizardxoriginalfrom.label=X-オリジナル-から
-ColumnsWizardxoriginalfromDesc.label=クリックしてX-Original-Fromで並べ替え
-ColumnsWizardcontentbase.label=コンテンツベース
-ColumnsWizardcontentbaseDesc.label=クリックしてコンテンツベースで並べ替え
-ColumnsWizardNFCols.show=公演
-ColumnsWizardNFCols.sort_by=並び替え
-ColumnsWizardNFCols.col_title=名前
-ColumnsWizardNFCols.col_flex=フレックス
-ColumnsWizardNFCols.up=アップ
-ColumnsWizardNFCols.down=ダウン
-ColumnsWizardNFCols.resetMenu=列をCWのデフォルトにリセット
-ColumnsWizardNFCols.saveDefault=列をCWデフォルトとして保存
+ColumnsWizardccDesc.label=Haga clic para ordenar por cc
+ColumnsWizardbcc.label=Cco
+ColumnsWizardbccDesc.label=Haga clic para ordenar por Cco
+ColumnsWizardreplyto.label=Responder a
+ColumnsWizardreplytoDesc.label=Haga clic para ordenar por respuesta
+ColumnsWizardxoriginalfrom.label=X-Original-Desde
+ColumnsWizardxoriginalfromDesc.label=Haga clic para ordenar por X-Original-From
+ColumnsWizardcontentbase.label=Base de contenido
+ColumnsWizardcontentbaseDesc.label=Haga clic para ordenar por contenido-base
+ColumnsWizardNFCols.show=mostrar
+ColumnsWizardNFCols.sort_by=Ordenar por
+ColumnsWizardNFCols.col_title=Nombre
+ColumnsWizardNFCols.col_flex=Flexionar
+ColumnsWizardNFCols.up=Arriba
+ColumnsWizardNFCols.down=Abajo
+ColumnsWizardNFCols.resetMenu=Restablecer las columnas a los valores predeterminados de CW
+ColumnsWizardNFCols.saveDefault=Guardar columnas como CW por defecto
 ColumnsWizardxspamscore.label=X-Spam-Score
-ColumnsWizardxspamscoreDesc.label=クリックしてX-Spam-Scoreで並べ替え
-ColumnsWizard.saveDefault_OnClick_text=このフォルダの列レイアウトをCWのデフォルトとして保存してもよろしいですか？
-ColumnsWizard.resetDefault_OnClick_text=このフォルダ列のレイアウトをCWのデフォルトにリセットしてもよろしいですか？
-TranslationMessages 1114
-extensions.columnswizard@micz.it.description=フォルダーリストの列に魔法を追加します。アドオン設定ウィンドウからカスタム列を直接追加して、必要なメールヘッダーを表示したり、新しいフォルダーのデフォルトの列設定を定義したり、[会話]タブや検索ウィンドウに非表示の列を表示したりできます。
-ColumnsWizardcc.label=Cc
-ColumnsWizardccDesc.label=クリックしてCCで並べ替え
-ColumnsWizardbcc.label=Bcc
-ColumnsWizardbccDesc.label=クリックしてbccで並べ替え
-ColumnsWizardreplyto.label=に返信
-ColumnsWizardreplytoDesc.label=クリックして返信先で並べ替え
-ColumnsWizardxoriginalfrom.label=X-オリジナル-から
-ColumnsWizardxoriginalfromDesc.label=クリックしてX-Original-Fromで並べ替え
-ColumnsWizardcontentbase.label=コンテンツベース
-ColumnsWizardcontentbaseDesc.label=クリックしてコンテンツベースで並べ替え
-ColumnsWizardNFCols.show=公演
-ColumnsWizardNFCols.sort_by=並び替え
-ColumnsWizardNFCols.col_title=名前
-ColumnsWizardNFCols.col_flex=フレックス
-ColumnsWizardNFCols.up=アップ
-ColumnsWizardNFCols.down=ダウン
-ColumnsWizardNFCols.resetMenu=列をCWのデフォルトにリセット
-ColumnsWizardNFCols.saveDefault=列をCWデフォルトとして保存
-ColumnsWizardxspamscore.label=X-Spam-Score
-ColumnsWizardxspamscoreDesc.label=クリックしてX-Spam-Scoreで並べ替え
-ColumnsWizard.saveDefault_OnClick_text=このフォルダの列レイアウトをCWのデフォルトとして保存してもよろしいですか？
-ColumnsWizard.resetDefault_OnClick_text=このフォルダ列のレイアウトをCWのデフォルトにリセットしてもよろしいですか？
-Stop Wed Aug 19 2020 01:30:39 GMT-0400 (Eastern Daylight Time)
-Stop 0.174
+ColumnsWizardxspamscoreDesc.label=Haga clic para ordenar por X-Spam-Score
+ColumnsWizard.saveDefault_OnClick_text=¿Está seguro de que desea guardar el diseño de columnas de esta carpeta como predeterminado de CW?
+ColumnsWizard.resetDefault_OnClick_text=¿Está seguro de que desea restablecer el diseño de las columnas de esta carpeta al valor predeterminado de CW?
+Stop Tue Aug 25 2020 19:20:44 GMT-0400 (Eastern Daylight Time)
+Stop 0.136
+translations return
+[
+  '<data-translation class="notranslate" locale="es-ES">',
+  'Modifique la información de la columna personalizada. Todos los campos son obligatorios. No puede modificar el ID y el dbHeader.',
+  '¡Error!',
+  '¡Debes completar todos los campos antes de guardar!',
+  '¡Esta ID de columna personalizada ya está presente en Thunderbird!',
+  'Seleccionar un archivo de imagen'
+]
+es-ES
+[
+  'Modifique la información de la columna personalizada. Todos los campos son obligatorios. No puede modificar el ID y el dbHeader.',
+  '¡Error!',
+  '¡Debes completar todos los campos antes de guardar!',
+  '¡Esta ID de columna personalizada ya está presente en Thunderbird!',
+  'Seleccionar un archivo de imagen'
+]
+TranslationArray
+[
+  {
+    key: 'ColumnsWizard.DescEdit.label',
+    text: "Modify the custom column information. All the fields are required. You can't modify the ID and the dbHeader."
+  },
+  { key: 'ColumnsWizard.emptyFields.title', text: 'Error!' },
+  {
+    key: 'ColumnsWizard.emptyFields.text',
+    text: 'You must complete all the fields before saving!'
+  },
+  {
+    key: 'ColumnsWizard.duplicatedID.text',
+    text: 'This Custom Column ID is already present in Thunderbird!'
+  },
+  {
+    key: 'ColumnsWizard.chooseIcon.title',
+    text: 'Select an image file'
+  }
+]
+GenerateMessages
+TranslationMessages 443
+ColumnsWizard.DescEdit.label=Modifique la información de la columna personalizada. Todos los campos son obligatorios. No puede modificar el ID y el dbHeader.
+ColumnsWizard.emptyFields.title=¡Error!
+ColumnsWizard.emptyFields.text=¡Debes completar todos los campos antes de guardar!
+ColumnsWizard.duplicatedID.text=¡Esta ID de columna personalizada ya está presente en Thunderbird!
+ColumnsWizard.chooseIcon.title=Seleccionar un archivo de imagen
+Stop Tue Aug 25 2020 19:20:44 GMT-0400 (Eastern Daylight Time)
+Stop 0.229

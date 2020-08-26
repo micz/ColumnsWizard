@@ -7,7 +7,7 @@ var EXPORTED_SYMBOLS = ["DocLocalize"];
 var { OS } = ChromeUtils.import("resource://gre/modules/osfile.jsm");
 
 const localesRootDir = "_locales";
-var supportedLocales = ['de', 'en-US', 'nl', 'fr', 'it', 'zh-CN', 'ja'];
+var supportedLocales = ['de', 'en-US', 'nl', 'fr', 'it', 'zh-CN', 'ja', 'es-ES'];
 
 var document;
 const keyPrefix = "__MSG_";
