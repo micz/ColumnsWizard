@@ -1,0 +1,398 @@
+{
+	"extensionName": {
+		"message": "ColumnsWizard"
+	},
+
+	"extensionDescription": {
+		"message": "Добавляет волшебства столбцам списка папок! Вы можете добавить настраиваемый столбец прямо из окна настроек надстройки, чтобы отображать любой заголовок почты, который вы хотите, определить настройки столбцов по умолчанию для любой новой папки и отображать скрытые столбцы на вкладке беседы и в окне поиска."
+	},
+
+	"ColumnsWizard.SettingsTitle": {
+		"message": "ColumnsWizard Настройки"
+	},
+
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "Выберите здесь, какие дополнительные столбцы вы хотите видеть на вкладке беседы."
+	},
+
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "Расположение"
+	},
+
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "учетная запись"
+	},
+
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "Вложение"
+	},
+
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "Получатель"
+	},
+
+	"ColumnsWizard.TabConversation.label": {
+		"message": "Вкладка беседы"
+	},
+
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "Настраиваемые столбцы"
+	},
+
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "Выберите здесь, какие настраиваемые столбцы вы хотите добавить в список сообщений."
+	},
+
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "После выбора вам необходимо отобразить столбец в представлении папки там, где он вам нужен. Вам придется сделать это снова, если вы удалите и повторно выберете ранее выбранный параметр."
+	},
+
+	"ColumnsWizard.AddCc.label": {
+		"message": "Копия"
+	},
+
+	"ColumnsWizard.TabInfo.label": {
+		"message": "Информация"
+	},
+
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "Этот аддон распространяется бесплатно и разрабатываю в свободное время. Если вы используете его в повседневной жизни, не стесняйтесь поддержать его небольшим пожертвованием, перейдя по ссылке ниже. Спасибо!!"
+	},
+
+	"ColumnsWizard.DonateLink": {
+		"message": "Сделать пожертвование!"
+	},
+
+	"ColumnsWizard.Addbcc.label": {
+		"message": "Скрытая копия"
+	},
+
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "Ответить на"
+	},
+
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X-оригинал-от"
+	},
+
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "Content-Base"
+	},
+
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "* Этот столбец заполняется только для писем, которые будут получены после активации настраиваемого столбца."
+	},
+
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "Новые столбцы папки"
+	},
+
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "Используйте настройки столбцов по умолчанию для новых папок."
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "Порядок сортировки:"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "по возрастанию"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "По убыванию"
+	},
+
+	"ColumnsWizard.newButton.label": {
+		"message": "Новый…"
+	},
+
+	"ColumnsWizard.editButton.label": {
+		"message": "Редактировать…"
+	},
+
+	"ColumnsWizard.deleteButton.label": {
+		"message": "Удалить"
+	},
+
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "Это конфигурация столбцов по умолчанию для новых папок. Вы можете изменить его здесь или использовать меню в средстве выбора столбца в списке сообщений."
+	},
+
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "МНЕ БЫ"
+	},
+
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "Заголовок письма"
+	},
+
+	"ColumnsWizard.CustColsList.title": {
+		"message": "Название столбца"
+	},
+
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "Подсказка"
+	},
+
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "Включено"
+	},
+
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "С возможностью поиска"
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "Разрешить редактирование заголовков писем."
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "Этот параметр будет автоматически отмечен, если пользовательский столбец сохранен с включенным параметром редактирования."
+	},
+
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "Продвинутый"
+	},
+
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "Параметры редактирования заголовка письма"
+	},
+
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "Принудительные изменения при использовании учетных записей IMAP."
+	},
+
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "Поместите исходное сообщение в папку &quot;Корзина&quot;."
+	},
+
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "Некоторые провайдеры IMAP (например, Gmail) не регистрируют изменения в источнике сообщения, если основные заголовки не отличаются от существующего сообщения. Чтобы обойти это ограничение, поле «Дата» изменено, добавляя секунду ко времени (или уменьшая ее, если секунды равны 59)."
+	},
+
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "После изменения выбранного значения заголовка исходное сообщение перемещается в корзину. Это мера безопасности от любого странного поведения, которое может произойти при изменении заголовков."
+	},
+
+	"ColumnsWizard.ActivateDebug": {
+		"message": "Активируйте систему отладки."
+	},
+
+	"ColumnsWizard.threadColumn.label": {
+		"message": "Нить"
+	},
+
+	"ColumnsWizard.fromColumn.label": {
+		"message": "Из"
+	},
+
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Получатель"
+	},
+
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Тема"
+	},
+
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Дата"
+	},
+
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Приоритет"
+	},
+
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "Тег"
+	},
+
+	"ColumnsWizard.accountColumn.label": {
+		"message": "учетная запись"
+	},
+
+	"ColumnsWizard.statusColumn.label": {
+		"message": "Положение дел"
+	},
+
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Размер"
+	},
+
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Статус нежелательной почты"
+	},
+
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "Непрочитанный"
+	},
+
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Общее количество"
+	},
+
+	"ColumnsWizard.readColumn.label": {
+		"message": "Читать"
+	},
+
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "Получили"
+	},
+
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Помечено"
+	},
+
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Расположение"
+	},
+
+	"ColumnsWizard.idColumn.label": {
+		"message": "Заявка принята"
+	},
+
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Вложения"
+	},
+
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Пользовательское удаление столбца"
+	},
+
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "Вы действительно хотите удалить этот настраиваемый столбец?"
+	},
+
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Корреспонденты"
+	},
+
+	"ColumnsWizard.MenuLabel": {
+		"message": "CW заголовок Править"
+	},
+
+	"ColumnsWizard.button.label": {
+		"message": "ColumnsWizard"
+	},
+
+	"ColumnsWizard.button.tooltip": {
+		"message": "Настройки Open ColumnsWizard"
+	},
+
+	"extensions.columnswizard'@micz.it.description": {
+		"message": "Добавляет волшебства столбцам списка папок! Вы можете добавить настраиваемый столбец прямо из окна настроек надстройки, чтобы отображать любой заголовок почты, который вы хотите, определить настройки столбцов по умолчанию для любой новой папки и отображать скрытые столбцы на вкладке беседы и в окне поиска."
+	},
+
+	"ColumnsWizardcc.label": {
+		"message": "Копия"
+	},
+
+	"ColumnsWizardccDesc.label": {
+		"message": "Нажмите, чтобы отсортировать по копии"
+	},
+
+	"ColumnsWizardbcc.label": {
+		"message": "Скрытая копия"
+	},
+
+	"ColumnsWizardbccDesc.label": {
+		"message": "Нажмите, чтобы отсортировать по скрытой копии"
+	},
+
+	"ColumnsWizardreplyto.label": {
+		"message": "Ответить на"
+	},
+
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "Нажмите, чтобы отсортировать по ответам"
+	},
+
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-оригинал-от"
+	},
+
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "Нажмите, чтобы отсортировать по X-Original-From"
+	},
+
+	"ColumnsWizardcontentbase.label": {
+		"message": "Content-Base"
+	},
+
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "Нажмите, чтобы отсортировать по Content-Base"
+	},
+
+	"ColumnsWizardNFCols.show": {
+		"message": "Шоу"
+	},
+
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "Сортировать по"
+	},
+
+	"ColumnsWizardNFCols.col_title": {
+		"message": "название"
+	},
+
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "Flex"
+	},
+
+	"ColumnsWizardNFCols.up": {
+		"message": "Вверх"
+	},
+
+	"ColumnsWizardNFCols.down": {
+		"message": "вниз"
+	},
+
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "Сброс столбцов на CW по умолчанию"
+	},
+
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "Сохранить столбцы как CW по умолчанию"
+	},
+
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "Нажмите, чтобы отсортировать по X-Spam-Score"
+	},
+
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "Вы уверены, что хотите сохранить макет столбцов в этой папке как CW по умолчанию?"
+	},
+
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "Вы уверены, что хотите сбросить этот макет столбцов папки на CW по умолчанию?"
+	},
+
+	"ColumnsWizard.NewCol.Move": {
+		"message": "Шаг"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Кредиты"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Авторы"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Примечания к выпуску"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Параметры отладки"
+	}
+
+}

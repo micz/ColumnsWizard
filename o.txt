@@ -1,71 +1,38 @@
 [
-  'de',    'en-US',
-  'es-ES', 'fr',
-  'it',    'ja',
-  'nl',    'zh-CN'
+  'de',    'el',
+  'en-US', 'es-ES',
+  'fr',    'it',
+  'ja',    'nl',
+  'ru',    'zh-CN'
 ]
 Processing: overlay.properties
 Loading propertyFile: ./src/chrome/locale/en-US/overlay.properties
-Start Tue Aug 25 2020 19:20:44 GMT-0400 (Eastern Daylight Time)
-Locale es-es es-ES
+Start Wed Aug 26 2020 18:57:00 GMT-0400 (Eastern Daylight Time)
+Locale ru ru
 Processing: settings.properties
 Loading propertyFile: ./src/chrome/locale/en-US/settings.properties
-Start Tue Aug 25 2020 19:20:44 GMT-0400 (Eastern Daylight Time)
-Locale es-es es-ES
+Start Wed Aug 26 2020 18:57:00 GMT-0400 (Eastern Daylight Time)
+Locale ru ru
 Processing: mzcw-settings-customcolseditor.properties
 Loading propertyFile: ./src/chrome/locale/en-US/mzcw-settings-customcolseditor.properties
-Start Tue Aug 25 2020 19:20:44 GMT-0400 (Eastern Daylight Time)
-Locale es-es es-ES
+Start Wed Aug 26 2020 18:57:00 GMT-0400 (Eastern Daylight Time)
+Locale ru ru
 translations return
 [
-  '<data-translation class="notranslate" locale="es-ES">',
-  'Hilo',
-  'De',
-  'Recipiente',
-  'Tema',
-  'Fecha',
-  'Prioridad',
-  'Etiqueta',
-  'Cuenta',
-  'Estado',
-  'Talla',
-  'Estado basura',
-  'No leído',
-  'Total',
-  'Leer',
-  'Recibido',
-  'Sembrado de estrellas',
-  'Ubicación',
-  'orden recibida',
-  'Archivos adjuntos',
-  'Eliminar columna personalizada',
-  '¿Realmente desea eliminar esta columna personalizada?',
-  'Corresponsales'
+  '<data-translation class="notranslate" locale="ru">',
+  'Измените информацию о настраиваемом столбце. Все поля обязательны. Вы не можете изменить идентификатор и dbHeader.',
+  'Ошибка!',
+  'Перед сохранением необходимо заполнить все поля!',
+  'Этот пользовательский идентификатор столбца уже присутствует в Thunderbird!',
+  'Выберите файл изображения'
 ]
-es-ES
+ru
 [
-  'Hilo',
-  'De',
-  'Recipiente',
-  'Tema',
-  'Fecha',
-  'Prioridad',
-  'Etiqueta',
-  'Cuenta',
-  'Estado',
-  'Talla',
-  'Estado basura',
-  'No leído',
-  'Total',
-  'Leer',
-  'Recibido',
-  'Sembrado de estrellas',
-  'Ubicación',
-  'orden recibida',
-  'Archivos adjuntos',
-  'Eliminar columna personalizada',
-  '¿Realmente desea eliminar esta columna personalizada?',
-  'Corresponsales'
+  'Измените информацию о настраиваемом столбце. Все поля обязательны. Вы не можете изменить идентификатор и dbHeader.',
+  'Ошибка!',
+  'Перед сохранением необходимо заполнить все поля!',
+  'Этот пользовательский идентификатор столбца уже присутствует в Thunderbird!',
+  'Выберите файл изображения'
 ]
 TranslationArray
 [
@@ -88,83 +55,66 @@ TranslationArray
   }
 ]
 GenerateMessages
-TranslationMessages 1010
-ColumnsWizard.threadColumn.label=Hilo
-ColumnsWizard.fromColumn.label=De
-ColumnsWizard.recipientColumn.label=Recipiente
-ColumnsWizard.subjectColumn.label=Tema
-ColumnsWizard.dateColumn.label=Fecha
-ColumnsWizard.priorityColumn.label=Prioridad
-ColumnsWizard.tagsColumn.label=Etiqueta
-ColumnsWizard.accountColumn.label=Cuenta
-ColumnsWizard.statusColumn.label=Estado
-ColumnsWizard.sizeColumn.label=Talla
-ColumnsWizard.junkStatusColumn.label=Estado basura
-ColumnsWizard.unreadColumn.label=No leído
-ColumnsWizard.totalColumn.label=Total
-ColumnsWizard.readColumn.label=Leer
-ColumnsWizard.receivedColumn.label=Recibido
-ColumnsWizard.starredColumn.label=Sembrado de estrellas
-ColumnsWizard.locationColumn.label=Ubicación
-ColumnsWizard.idColumn.label=orden recibida
-ColumnsWizard.attachmentColumn.label=Archivos adjuntos
-ColumnsWizard.deletePrompt.title=Eliminar columna personalizada
-ColumnsWizard.deletePrompt.text=¿Realmente desea eliminar esta columna personalizada?
-ColumnsWizard.correspondentCol.label=Corresponsales
-Stop Tue Aug 25 2020 19:20:44 GMT-0400 (Eastern Daylight Time)
-Stop 0.124
+TranslationMessages 428
+ColumnsWizard.DescEdit.label=Измените информацию о настраиваемом столбце. Все поля обязательны. Вы не можете изменить идентификатор и dbHeader.
+ColumnsWizard.emptyFields.title=Ошибка!
+ColumnsWizard.emptyFields.text=Перед сохранением необходимо заполнить все поля!
+ColumnsWizard.duplicatedID.text=Этот пользовательский идентификатор столбца уже присутствует в Thunderbird!
+ColumnsWizard.chooseIcon.title=Выберите файл изображения
+Stop Wed Aug 26 2020 18:57:00 GMT-0400 (Eastern Daylight Time)
+Stop 0.265
 translations return
 [
-  '<data-translation class="notranslate" locale="es-ES">',
-  'Agrega algo de magia a las columnas de la lista de carpetas. Puede agregar una columna personalizada directamente desde la ventana de preferencias del complemento para mostrar cualquier encabezado de correo que desee, definir la configuración de columnas predeterminadas para cualquier carpeta nueva y mostrar columnas ocultas en la pestaña Conversación y en la ventana de búsqueda.',
-  'Cc',
-  'Haga clic para ordenar por cc',
-  'Cco',
-  'Haga clic para ordenar por Cco',
-  'Responder a',
-  'Haga clic para ordenar por respuesta',
-  'X-Original-Desde',
-  'Haga clic para ordenar por X-Original-From',
-  'Base de contenido',
-  'Haga clic para ordenar por contenido-base',
-  'mostrar',
-  'Ordenar por',
-  'Nombre',
-  'Flexionar',
-  'Arriba',
-  'Abajo',
-  'Restablecer las columnas a los valores predeterminados de CW',
-  'Guardar columnas como CW por defecto',
+  '<data-translation class="notranslate" locale="ru">',
+  'Добавляет волшебства столбцам списка папок! Вы можете добавить настраиваемый столбец прямо из окна настроек надстройки, чтобы отображать любой заголовок почты, который вы хотите, определить настройки столбцов по умолчанию для любой новой папки и отображать скрытые столбцы на вкладке беседы и в окне поиска.',
+  'Копия',
+  'Нажмите, чтобы отсортировать по копии',
+  'Скрытая копия',
+  'Нажмите, чтобы отсортировать по скрытой копии',
+  'Ответить на',
+  'Нажмите, чтобы отсортировать по ответам',
+  'X-оригинал-от',
+  'Нажмите, чтобы отсортировать по X-Original-From',
+  'Content-Base',
+  'Нажмите, чтобы отсортировать по Content-Base',
+  'Шоу',
+  'Сортировать по',
+  'название',
+  'Flex',
+  'Вверх',
+  'вниз',
+  'Сброс столбцов на CW по умолчанию',
+  'Сохранить столбцы как CW по умолчанию',
   'X-Spam-Score',
-  'Haga clic para ordenar por X-Spam-Score',
-  '¿Está seguro de que desea guardar el diseño de columnas de esta carpeta como predeterminado de CW?',
-  '¿Está seguro de que desea restablecer el diseño de las columnas de esta carpeta al valor predeterminado de CW?'
+  'Нажмите, чтобы отсортировать по X-Spam-Score',
+  'Вы уверены, что хотите сохранить расположение столбцов в этой папке как CW по умолчанию?',
+  'Вы уверены, что хотите сбросить этот макет столбцов папки на CW по умолчанию?'
 ]
-es-ES
+ru
 [
-  'Agrega algo de magia a las columnas de la lista de carpetas. Puede agregar una columna personalizada directamente desde la ventana de preferencias del complemento para mostrar cualquier encabezado de correo que desee, definir la configuración de columnas predeterminadas para cualquier carpeta nueva y mostrar columnas ocultas en la pestaña Conversación y en la ventana de búsqueda.',
-  'Cc',
-  'Haga clic para ordenar por cc',
-  'Cco',
-  'Haga clic para ordenar por Cco',
-  'Responder a',
-  'Haga clic para ordenar por respuesta',
-  'X-Original-Desde',
-  'Haga clic para ordenar por X-Original-From',
-  'Base de contenido',
-  'Haga clic para ordenar por contenido-base',
-  'mostrar',
-  'Ordenar por',
-  'Nombre',
-  'Flexionar',
-  'Arriba',
-  'Abajo',
-  'Restablecer las columnas a los valores predeterminados de CW',
-  'Guardar columnas como CW por defecto',
+  'Добавляет волшебства столбцам списка папок! Вы можете добавить настраиваемый столбец прямо из окна настроек надстройки, чтобы отображать любой заголовок почты, который вы хотите, определить настройки столбцов по умолчанию для любой новой папки и отображать скрытые столбцы на вкладке беседы и в окне поиска.',
+  'Копия',
+  'Нажмите, чтобы отсортировать по копии',
+  'Скрытая копия',
+  'Нажмите, чтобы отсортировать по скрытой копии',
+  'Ответить на',
+  'Нажмите, чтобы отсортировать по ответам',
+  'X-оригинал-от',
+  'Нажмите, чтобы отсортировать по X-Original-From',
+  'Content-Base',
+  'Нажмите, чтобы отсортировать по Content-Base',
+  'Шоу',
+  'Сортировать по',
+  'название',
+  'Flex',
+  'Вверх',
+  'вниз',
+  'Сброс столбцов на CW по умолчанию',
+  'Сохранить столбцы как CW по умолчанию',
   'X-Spam-Score',
-  'Haga clic para ordenar por X-Spam-Score',
-  '¿Está seguro de que desea guardar el diseño de columnas de esta carpeta como predeterminado de CW?',
-  '¿Está seguro de que desea restablecer el diseño de las columnas de esta carpeta al valor predeterminado de CW?'
+  'Нажмите, чтобы отсортировать по X-Spam-Score',
+  'Вы уверены, что хотите сохранить расположение столбцов в этой папке как CW по умолчанию?',
+  'Вы уверены, что хотите сбросить этот макет столбцов папки на CW по умолчанию?'
 ]
 TranslationArray
 [
@@ -187,48 +137,82 @@ TranslationArray
   }
 ]
 GenerateMessages
-TranslationMessages 1732
-extensions.columnswizard@micz.it.description=Agrega algo de magia a las columnas de la lista de carpetas. Puede agregar una columna personalizada directamente desde la ventana de preferencias del complemento para mostrar cualquier encabezado de correo que desee, definir la configuración de columnas predeterminadas para cualquier carpeta nueva y mostrar columnas ocultas en la pestaña Conversación y en la ventana de búsqueda.
-ColumnsWizardcc.label=Cc
-ColumnsWizardccDesc.label=Haga clic para ordenar por cc
-ColumnsWizardbcc.label=Cco
-ColumnsWizardbccDesc.label=Haga clic para ordenar por Cco
-ColumnsWizardreplyto.label=Responder a
-ColumnsWizardreplytoDesc.label=Haga clic para ordenar por respuesta
-ColumnsWizardxoriginalfrom.label=X-Original-Desde
-ColumnsWizardxoriginalfromDesc.label=Haga clic para ordenar por X-Original-From
-ColumnsWizardcontentbase.label=Base de contenido
-ColumnsWizardcontentbaseDesc.label=Haga clic para ordenar por contenido-base
-ColumnsWizardNFCols.show=mostrar
-ColumnsWizardNFCols.sort_by=Ordenar por
-ColumnsWizardNFCols.col_title=Nombre
-ColumnsWizardNFCols.col_flex=Flexionar
-ColumnsWizardNFCols.up=Arriba
-ColumnsWizardNFCols.down=Abajo
-ColumnsWizardNFCols.resetMenu=Restablecer las columnas a los valores predeterminados de CW
-ColumnsWizardNFCols.saveDefault=Guardar columnas como CW por defecto
+TranslationMessages 1626
+extensions.columnswizard@micz.it.description=Добавляет волшебства столбцам списка папок! Вы можете добавить настраиваемый столбец прямо из окна настроек надстройки, чтобы отображать любой заголовок почты, который вы хотите, определить настройки столбцов по умолчанию для любой новой папки и отображать скрытые столбцы на вкладке беседы и в окне поиска.
+ColumnsWizardcc.label=Копия
+ColumnsWizardccDesc.label=Нажмите, чтобы отсортировать по копии
+ColumnsWizardbcc.label=Скрытая копия
+ColumnsWizardbccDesc.label=Нажмите, чтобы отсортировать по скрытой копии
+ColumnsWizardreplyto.label=Ответить на
+ColumnsWizardreplytoDesc.label=Нажмите, чтобы отсортировать по ответам
+ColumnsWizardxoriginalfrom.label=X-оригинал-от
+ColumnsWizardxoriginalfromDesc.label=Нажмите, чтобы отсортировать по X-Original-From
+ColumnsWizardcontentbase.label=Content-Base
+ColumnsWizardcontentbaseDesc.label=Нажмите, чтобы отсортировать по Content-Base
+ColumnsWizardNFCols.show=Шоу
+ColumnsWizardNFCols.sort_by=Сортировать по
+ColumnsWizardNFCols.col_title=название
+ColumnsWizardNFCols.col_flex=Flex
+ColumnsWizardNFCols.up=Вверх
+ColumnsWizardNFCols.down=вниз
+ColumnsWizardNFCols.resetMenu=Сброс столбцов на CW по умолчанию
+ColumnsWizardNFCols.saveDefault=Сохранить столбцы как CW по умолчанию
 ColumnsWizardxspamscore.label=X-Spam-Score
-ColumnsWizardxspamscoreDesc.label=Haga clic para ordenar por X-Spam-Score
-ColumnsWizard.saveDefault_OnClick_text=¿Está seguro de que desea guardar el diseño de columnas de esta carpeta como predeterminado de CW?
-ColumnsWizard.resetDefault_OnClick_text=¿Está seguro de que desea restablecer el diseño de las columnas de esta carpeta al valor predeterminado de CW?
-Stop Tue Aug 25 2020 19:20:44 GMT-0400 (Eastern Daylight Time)
-Stop 0.136
+ColumnsWizardxspamscoreDesc.label=Нажмите, чтобы отсортировать по X-Spam-Score
+ColumnsWizard.saveDefault_OnClick_text=Вы уверены, что хотите сохранить расположение столбцов в этой папке как CW по умолчанию?
+ColumnsWizard.resetDefault_OnClick_text=Вы уверены, что хотите сбросить этот макет столбцов папки на CW по умолчанию?
+Stop Wed Aug 26 2020 18:57:00 GMT-0400 (Eastern Daylight Time)
+Stop 0.276
 translations return
 [
-  '<data-translation class="notranslate" locale="es-ES">',
-  'Modifique la información de la columna personalizada. Todos los campos son obligatorios. No puede modificar el ID y el dbHeader.',
-  '¡Error!',
-  '¡Debes completar todos los campos antes de guardar!',
-  '¡Esta ID de columna personalizada ya está presente en Thunderbird!',
-  'Seleccionar un archivo de imagen'
+  '<data-translation class="notranslate" locale="ru">',
+  'Нить',
+  'Из',
+  'Получатель',
+  'Тема',
+  'Дата',
+  'Приоритет',
+  'Тег',
+  'учетная запись',
+  'Положение дел',
+  'Размер',
+  'Статус нежелательной почты',
+  'Непрочитанный',
+  'Общее количество',
+  'Читать',
+  'Получили',
+  'Помечено',
+  'Расположение',
+  'Заявка принята',
+  'Вложения',
+  'Пользовательское удаление столбца',
+  'Вы действительно хотите удалить этот настраиваемый столбец?',
+  'Корреспонденты'
 ]
-es-ES
+ru
 [
-  'Modifique la información de la columna personalizada. Todos los campos son obligatorios. No puede modificar el ID y el dbHeader.',
-  '¡Error!',
-  '¡Debes completar todos los campos antes de guardar!',
-  '¡Esta ID de columna personalizada ya está presente en Thunderbird!',
-  'Seleccionar un archivo de imagen'
+  'Нить',
+  'Из',
+  'Получатель',
+  'Тема',
+  'Дата',
+  'Приоритет',
+  'Тег',
+  'учетная запись',
+  'Положение дел',
+  'Размер',
+  'Статус нежелательной почты',
+  'Непрочитанный',
+  'Общее количество',
+  'Читать',
+  'Получили',
+  'Помечено',
+  'Расположение',
+  'Заявка принята',
+  'Вложения',
+  'Пользовательское удаление столбца',
+  'Вы действительно хотите удалить этот настраиваемый столбец?',
+  'Корреспонденты'
 ]
 TranslationArray
 [
@@ -251,11 +235,28 @@ TranslationArray
   }
 ]
 GenerateMessages
-TranslationMessages 443
-ColumnsWizard.DescEdit.label=Modifique la información de la columna personalizada. Todos los campos son obligatorios. No puede modificar el ID y el dbHeader.
-ColumnsWizard.emptyFields.title=¡Error!
-ColumnsWizard.emptyFields.text=¡Debes completar todos los campos antes de guardar!
-ColumnsWizard.duplicatedID.text=¡Esta ID de columna personalizada ya está presente en Thunderbird!
-ColumnsWizard.chooseIcon.title=Seleccionar un archivo de imagen
-Stop Tue Aug 25 2020 19:20:44 GMT-0400 (Eastern Daylight Time)
-Stop 0.229
+TranslationMessages 1041
+ColumnsWizard.threadColumn.label=Нить
+ColumnsWizard.fromColumn.label=Из
+ColumnsWizard.recipientColumn.label=Получатель
+ColumnsWizard.subjectColumn.label=Тема
+ColumnsWizard.dateColumn.label=Дата
+ColumnsWizard.priorityColumn.label=Приоритет
+ColumnsWizard.tagsColumn.label=Тег
+ColumnsWizard.accountColumn.label=учетная запись
+ColumnsWizard.statusColumn.label=Положение дел
+ColumnsWizard.sizeColumn.label=Размер
+ColumnsWizard.junkStatusColumn.label=Статус нежелательной почты
+ColumnsWizard.unreadColumn.label=Непрочитанный
+ColumnsWizard.totalColumn.label=Общее количество
+ColumnsWizard.readColumn.label=Читать
+ColumnsWizard.receivedColumn.label=Получили
+ColumnsWizard.starredColumn.label=Помечено
+ColumnsWizard.locationColumn.label=Расположение
+ColumnsWizard.idColumn.label=Заявка принята
+ColumnsWizard.attachmentColumn.label=Вложения
+ColumnsWizard.deletePrompt.title=Пользовательское удаление столбца
+ColumnsWizard.deletePrompt.text=Вы действительно хотите удалить этот настраиваемый столбец?
+ColumnsWizard.correspondentCol.label=Корреспонденты
+Stop Wed Aug 26 2020 18:57:00 GMT-0400 (Eastern Daylight Time)
+Stop 0.403

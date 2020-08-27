@@ -34,6 +34,7 @@
 	vertical-align: top !important;
 	padding: 0px !important;
 	width: 65px !important;
+	min-width: 64px !important;
 	position: relative;
 }
 
@@ -43,6 +44,7 @@
 	vertical-align: top !important;
 	padding: 0px !important;
 	width: 64px !important;
+	min-width: 64px !important;
 	position: relative;
 }
 

@@ -370,14 +370,14 @@ function loadTranslationArray(inputFiles, options) {
 
 // var options = {
 // 	inputLocaleDir: `./src/_locales/en-US`,
-// 	outputLocaleDir: "./src/_locales/es-ES",
+// 	outputLocaleDir: "./src/_locales/ru",
 // 	append: true,
 // 	outputFormat: 3,
 // };
 
 var options = {
 	inputLocaleDir: `./src/chrome/locale/en-US`,
-	outputLocaleDir: "./src/chrome/locale/es-ES",
+	outputLocaleDir: "./src/chrome/locale/ru",
 	append: true,
 	outputFormat: 1,
 };
@@ -396,7 +396,7 @@ let inputFiles = ["overlay.properties", "settings.properties", "mzcw-settings-cu
 // let inputFiles = ["mzcw-settings-customcolseditor.properties"];
 let iFile = "settings.dtd";
 // loadDTD(iFile, options);
-localeFolders = ['es-ES'];
+localeFolders = ['ru'];
 localeFile = "settings.json";
 // t();
 // translateHelpPage();

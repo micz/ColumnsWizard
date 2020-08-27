@@ -124,7 +124,7 @@
 	},
 
 	"ColumnsWizard.CustColsList.ID": {
-		"message": "CARNÉ DE IDENTIDAD"
+		"message": "ID"
 	},
 
 	"ColumnsWizard.CustColsList.mailheader": {

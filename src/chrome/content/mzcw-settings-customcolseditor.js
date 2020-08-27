@@ -105,10 +105,15 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.def = "";
 						// get userinput val
 						if (document.getElementById("ColumnsWizard.id").value.match(re_id) !== null) {
-							newcol.index = document.getElementById("ColumnsWizard.id").value.match(re_id).join('').toLowerCase();
+							let index = document.getElementById("ColumnsWizard.id").value.match(re_id).join('');
+							console.debug('new index');
+							console.debug(index);
+							newcol.index = index.toLowerCase();
 						} else {
 							newcol.index = document.getElementById("ColumnsWizard.id").value.toLowerCase();
 						}
+						console.debug(newcol.index);
+
 						// Check if the custom column is already present
 						// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 						// let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
@@ -131,7 +136,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						}
 
 						if (document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh) !== null) {
-							newcol.dbHeader = document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh).join('').replace(':', '');// .toLowerCase();
+							newcol.dbHeader = document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh).join('').replace(':', '').toLowerCase();
 						} else {
 							newcol.dbHeader = document.getElementById("ColumnsWizard.dbHeader").value.toLowerCase();
 						}

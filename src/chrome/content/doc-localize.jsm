@@ -7,7 +7,11 @@ var EXPORTED_SYMBOLS = ["DocLocalize"];
 var { OS } = ChromeUtils.import("resource://gre/modules/osfile.jsm");
 
 const localesRootDir = "_locales";
-var supportedLocales = ['de', 'en-US', 'nl', 'fr', 'it', 'zh-CN', 'ja', 'es-ES'];
+var supportedLocales = ['de', 'en-US', 'nl', 'fr', 'it', 'zh-CN', 'ja', 'es-ES', 'ru', 'hu-HU', 'hy-AM', 'ko-KR',
+						'el'];
+
+// var supportedLocales = ['ca', 'da', 'de', 'en-US', 'es-ES', 'fr', 'gl-ES', 'hu-HU', 'hy-AM',
+// 		'it', 'ja', 'ko-KR', 'nl', 'pl', 'pt-PT', 'ru', 'sk-SK', 'sl-SI', 'sv-SE', 'zh-CN', 'el'];
 
 var document;
 const keyPrefix = "__MSG_";

@@ -1,0 +1,31 @@
+<!ENTITY ColumnsWizard.window.title "Редактор настраиваемых столбцов">
+<!ENTITY ColumnsWizard.Desc.label "Вставьте информацию о новом настраиваемом столбце. Все поля обязательны.">
+<!ENTITY ColumnsWizard.id.label "МНЕ БЫ">
+<!ENTITY ColumnsWizard.id.desc "ID - это уникальный идентификатор настраиваемого столбца. Его нельзя изменить после первого сохранения.">
+<!ENTITY ColumnsWizard.dbHeader.label "Заголовок письма">
+<!ENTITY ColumnsWizard.dbHeader.desc "Заголовок почты - это поле почтовых сообщений, которое должно отображаться в списке сообщений в настраиваемом столбце. Его нельзя изменить после первого сохранения.">
+<!ENTITY ColumnsWizard.labelString.label "Название столбца">
+<!ENTITY ColumnsWizard.btn.setIcon_label "Установить значок">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Щелкните здесь, чтобы установить значок в качестве имени столбца.">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "Удалить значок">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Щелкните здесь, чтобы удалить значок.">
+<!ENTITY ColumnsWizard.labelString.desc "Напишите здесь имя, которое будет отображаться в заголовке столбца в списке сообщений.">
+<!ENTITY ColumnsWizard.tooltipString.label "Подсказка">
+<!ENTITY ColumnsWizard.tooltipString.desc "Введите здесь всплывающую подсказку заголовка столбца в списке сообщений. Обычно это «Сортировать по», за которым следует имя столбца.">
+<!ENTITY ColumnsWizard.enabled.label "Включено">
+<!ENTITY ColumnsWizard.enabled.desc "Немедленно включите этот настраиваемый столбец.">
+<!ENTITY ColumnsWizard.sortnumber.label "Сортировка">
+<!ENTITY ColumnsWizard.sortnumber.desc "Отсортируйте этот настраиваемый столбец как число.">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "В настраиваемом столбце можно сортировать только числа с не более чем 3 десятичными знаками и значением от -1,000,000 до 3,294,967.">
+<!ENTITY ColumnsWizard.searchable.label "Доступен для поиска">
+<!ENTITY ColumnsWizard.searchable.desc "Сделайте этот настраиваемый столбец доступным для поиска в окне расширенного поиска Thunderbird.">
+<!ENTITY ColumnsWizard.CustColEditorTab.General.label "Общее">
+<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "Редактор заголовков писем">
+<!ENTITY ColumnsWizard.editable.label "Редактируется">
+<!ENTITY ColumnsWizard.mod.desc "Заголовок этого почтового сообщения можно изменить вручную.">
+<!ENTITY ColumnsWizard.mod_type.label "Тип заголовка">
+<!ENTITY ColumnsWizard.mod_type.desc "Выберите здесь тип заголовка для этого настраиваемого столбца.">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "Свободный текст">
+<!ENTITY ColumnsWizard.mod_type_number.label "Числа">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "Фиксированный список">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "Вводите по одному значению в каждой строке. Не используйте трубу &quot;|&quot; персонаж.">

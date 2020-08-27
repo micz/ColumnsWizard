@@ -1,0 +1,3 @@
+<!ENTITY ColumnsWizard.mailheader-editor.title "Επεξεργαστής κεφαλίδας αλληλογραφίας">
+<!ENTITY ColumnsWizard.MHE.Desc.label "Εισαγάγετε εδώ την τιμή κεφαλίδας αλληλογραφίας για αυτό το μήνυμα.">
+<!ENTITY ColumnsWizard.MHE.OnlyNumber.label "Επιτρέπονται μόνο αριθμοί.">

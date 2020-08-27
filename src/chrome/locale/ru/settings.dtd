@@ -1,0 +1,44 @@
+<!ENTITY ColumnsWizard.SettingsTitle "ColumnsWizard Настройки">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Выберите здесь, какие дополнительные столбцы вы хотите видеть на вкладке беседы.">
+<!ENTITY ColumnsWizard.ShowLocation.label "Расположение">
+<!ENTITY ColumnsWizard.ShowAccount.label "учетная запись">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Вложение">
+<!ENTITY ColumnsWizard.ShowRecipient.label "Получатель">
+<!ENTITY ColumnsWizard.TabConversation.label "Вкладка беседы">
+<!ENTITY ColumnsWizard.TabCustomCols.label "Настраиваемые столбцы">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Выберите здесь, какие настраиваемые столбцы вы хотите добавить в список сообщений.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "После выбора вам необходимо отобразить столбец в представлении папки там, где он вам нужен. Вам придется сделать это снова, если вы удалите и повторно выберете ранее выбранный параметр.">
+<!ENTITY ColumnsWizard.AddCc.label "Копия">
+<!ENTITY ColumnsWizard.TabInfo.label "Информация">
+<!ENTITY ColumnsWizard.InfoMainDesc "Этот аддон распространяется бесплатно и разрабатываю в свободное время. Если вы используете его в повседневной жизни, не стесняйтесь поддержать его небольшим пожертвованием, перейдя по ссылке ниже. Спасибо!!">
+<!ENTITY ColumnsWizard.DonateLink "Сделать пожертвование!">
+<!ENTITY ColumnsWizard.Addbcc.label "Скрытая копия">
+<!ENTITY ColumnsWizard.Addreplyto.label "Ответить на">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-оригинал-от">
+<!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Этот столбец заполняется только для писем, которые будут получены после активации настраиваемого столбца.">
+<!ENTITY ColumnsWizard.TabNewFolderDefault.label "Новые столбцы папки">
+<!ENTITY ColumnsWizard.NewFolderCols.label "Используйте настройки столбцов по умолчанию для новых папок.">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "Порядок сортировки:">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "по возрастанию">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "По убыванию">
+<!ENTITY ColumnsWizard.newButton.label "Новый…">
+<!ENTITY ColumnsWizard.editButton.label "Редактировать…">
+<!ENTITY ColumnsWizard.deleteButton.label "Удалить">
+<!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "Это конфигурация столбцов по умолчанию для новых папок. Вы можете изменить его здесь или использовать меню в средстве выбора столбца в списке сообщений.">
+<!ENTITY ColumnsWizard.CustColsList.ID "МНЕ БЫ">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "Заголовок письма">
+<!ENTITY ColumnsWizard.CustColsList.title "Название столбца">
+<!ENTITY ColumnsWizard.CustColsList.tooltip "Подсказка">
+<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Включено">
+<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "С возможностью поиска">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "Разрешить редактирование заголовков писем.">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.desc "Этот параметр будет автоматически отмечен, если пользовательский столбец сохранен с включенным параметром редактирования.">
+<!ENTITY ColumnsWizard.TabAdvanced.label "Продвинутый">
+<!ENTITY ColumnsWizard.MailHeaderGroupbox.label "Параметры редактирования заголовка письма">
+<!ENTITY ColumnsWizard.MailHeader.use_imap_fix_checkbox.label "Принудительные изменения при использовании учетных записей IMAP.">
+<!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Поместите исходное сообщение в папку &quot;Корзина&quot;.">
+<!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Некоторые провайдеры IMAP (например, Gmail) не регистрируют изменения в источнике сообщения, если основные заголовки не отличаются от существующего сообщения. Чтобы обойти это ограничение, поле «Дата» изменено, добавляя секунду ко времени (или уменьшая ее, если секунды равны 59).">
+<!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "После изменения выбранного значения заголовка исходное сообщение перемещается в корзину. Это мера безопасности от любого странного поведения, которое может произойти при изменении заголовков.">
+<!ENTITY ColumnsWizard.ActivateDebug "Активируйте систему отладки.">
