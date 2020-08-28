@@ -187,7 +187,7 @@ miczColumnsWizardPref2 = {
 			// container.selectedIndex = container.itemCount - 1;
 			// container.ensureIndexIsVisible(container.selectedIndex);
 
-			const index = miczColumnsWizardPref_CustomColsList.customColsListObj.items.length + 1;
+			var index = miczColumnsWizardPref_CustomColsList.customColsListObj.items.length + 1;
 			console.debug('NewIndex ' + index);
 			miczColumnsWizardPref_CustomColsList.customColsListObj.add({
 				id: index,
@@ -206,6 +206,8 @@ miczColumnsWizardPref2 = {
 				tooltipString: args.newcol.tooltipString,
 			});
 	
+			console.debug('AfterAdd');
+			console.debug(miczColumnsWizardPref_CustomColsList.customColsListObj.items);
 		}
 
 		if (args.newcol.isEditable) {
@@ -213,6 +215,9 @@ miczColumnsWizardPref2 = {
 		}
 
 		miczColumnsWizardPref_DefaultColsList.toggleCustomCol(args.newcol);
+		miczColumnsWizardPref_DefaultColsList.loadedCustCols = miczColumnsWizard_CustCols.loadCustCols();
+		console.debug(miczColumnsWizardPref_CustomColsList.customColsListObj.items);
+		miczColumnsWizardPref_CustomColsList.customColsListObj.controller.selectRowByDataId(index);
 	},
 
 	onEditCustomCol: function (win) {
@@ -221,7 +226,7 @@ miczColumnsWizardPref2 = {
 
 		// if (container.selectedIndex === -1) return;
 		// if (doc.getElementById("editButton").disabled) return;
-
+		console.debug('EditColumn');
 		var selectedID = miczColumnsWizardPref_CustomColsList.customColsListObj.controller.getSelectedRowDataId();
 		console.debug(selectedID);
 		if (!selectedID || selectedID === -1) {
@@ -229,6 +234,7 @@ miczColumnsWizardPref2 = {
 			return;
 		}
 
+		console.debug(miczColumnsWizardPref_CustomColsList.customColsListObj.items);
 		var item = miczColumnsWizardPref_CustomColsList.customColsListObj.items[Number(selectedID) - 1];
 		var vals = item.values();
 		var index = vals.index;
@@ -281,6 +287,7 @@ miczColumnsWizardPref2 = {
 			
 			// Select the editedcustcols
 			// container.ensureIndexIsVisible(container.selectedIndex);
+			miczColumnsWizardPref_CustomColsList.customColsListObj.controller.selectRowByDataId(vals.id);
 		}
 
 	},
@@ -336,7 +343,23 @@ miczColumnsWizardPref2 = {
 		ObserverService.notifyObservers(null, "CW-deleteCustomColumn", col_idx);
 
 		// remove the custom col from the list
+		console.debug('RemoveFromList');
 		miczColumnsWizardPref_CustomColsList.customColsListObj.remove("id", selectedID);
+		miczColumnsWizardPref_CustomColsList.customColsListObj.controller.reIndexIDs();
+
+		let checkedItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('[checked]');
+		for (const element of checkedItems) {
+			// console.debug(element);
+			// if (element.getAttribute("type") !== "checkbox" || element.getAttribute("type") !== "radio") {
+			if (element.id.includes("tab")) {
+				continue;
+			}
+			if (element.getAttribute("checked") !== "true") {
+				element.removeAttribute("checked");
+			} else {
+				element.checked = true;
+			}
+		}
 
 	},
 

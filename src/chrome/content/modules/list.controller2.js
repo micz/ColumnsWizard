@@ -37,7 +37,7 @@ var ListController = {
 			this.list_container.classList.remove('no-outline');
 			this.listElement.setAttribute('selected-index', "-1");
 
-			let selectedRow = event.target.querySelector('tr.selected-row');
+			let selectedRow = this.listElement.querySelector('tr.selected-row');
 			if (selectedRow) {
 				selectedRow.classList.remove('selected-row');
 			}
@@ -92,6 +92,15 @@ var ListController = {
 		return null;
 	}
 
+	reIndexIDs() {
+		let items = this.list.items;
+		console.debug('Reindex');
+		console.debug(items);
+		items.forEach((item, i) => {
+			item.values({"id": String(i + 1)});
+		});
+		console.debug(items);
+	}
 	// Event handlers
 	onClick(event) {
 		// Services.console.logStringMessage('Click');
