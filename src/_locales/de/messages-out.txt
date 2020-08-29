@@ -1,3 +1,0 @@
-__MSG_ColumnsWizard.MenuLabel__
-__MSG_ColumnsWizard.button.label__
-__MSG_ColumnsWizard.button.tooltip__

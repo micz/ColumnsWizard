@@ -31,8 +31,8 @@ var miczColumnsWizard_CustomColsModUtils = {
 		let arrayCustColIndexMod = [];
 
 		if (stringCustColIndexMod !== '') {
-			console.debug('ContextMenu');
-			console.debug(stringCustColIndexMod);
+			// console.debug('ContextMenu');
+			// console.debug(stringCustColIndexMod);
 			arrayCustColIndexMod = JSON.parse(stringCustColIndexMod);
 		}
 
@@ -43,7 +43,7 @@ var miczColumnsWizard_CustomColsModUtils = {
 				let new_menu_item2;
 				let new_menu_item3;
 				if (CustCols[cc].editType !== miczColumnsWizard_CustomColsModUtils.editTypeFixedList) {	// simple menu
-					console.debug('SimpleMenu');
+					// console.debug('SimpleMenu');
 					new_menu_item = doc.createXULElement("menuitem");
 					new_menu_item.setAttribute('label', CustCols[cc].labelString);
 					new_menu_item.setAttribute('colidx', CustCols[cc].index);
@@ -61,7 +61,6 @@ var miczColumnsWizard_CustomColsModUtils = {
 					new_menu_item3.setAttribute('oncommand', 'miczColumnsWizard.editHeaderMenu_OnClick(event)');
 
 				} else {	// it's a fixed list, add submenus
-					console.debug('Fixed number');
 					new_menu_item = doc.createXULElement("menu");
 					new_menu_item.setAttribute('label', CustCols[cc].labelString);
 					new_menu_item.setAttribute('colidx', CustCols[cc].index);
@@ -72,16 +71,11 @@ var miczColumnsWizard_CustomColsModUtils = {
 					let mpp = doc.createXULElement("menupopup");
 					let mpp2 = doc.createXULElement("menupopup");
 					let mpp3 = doc.createXULElement("menupopup");
-					// mpp.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
-					// mpp2.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
-					// mpp3.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
 
 					// cleidigh - fix warnings from ANT later
-					console.debug('SetUpListYears');
 					mpp.addEventListener("popupshowing", this.miczColumnsWizard.checkHeadersEditingMenuList, true);
 					mpp2.addEventListener("popupshowing", this.miczColumnsWizard.checkHeadersEditingMenuList, true);
 					mpp3.addEventListener("popupshowing", this.miczColumnsWizard.checkHeadersEditingMenuList, true);
-					console.debug('finished listeners');
 
 					for (let sbi in CustCols[cc].editFixedList) {
 						let subm = doc.createXULElement("menuitem");

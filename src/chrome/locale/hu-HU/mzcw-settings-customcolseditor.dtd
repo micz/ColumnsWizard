@@ -1,0 +1,31 @@
+<!ENTITY ColumnsWizard.window.title "Egyéni oszlopszerkesztő">
+<!ENTITY ColumnsWizard.Desc.label "Helyezze be az új egyedi oszlopinformációkat. Minden mező kitöltése kötelező.">
+<!ENTITY ColumnsWizard.id.label "ID">
+<!ENTITY ColumnsWizard.id.desc "Az azonosító az egyéni oszlop egyedi azonosítója. Az első mentés után nem módosítható.">
+<!ENTITY ColumnsWizard.dbHeader.label "Levél fejléce">
+<!ENTITY ColumnsWizard.dbHeader.desc "A Levelező fejléc az a levélüzenet mező, amelyet meg kell jeleníteni az Egyedi oszlop üzenetlistájában. Az első mentés után nem módosítható.">
+<!ENTITY ColumnsWizard.labelString.label "Oszlop neve">
+<!ENTITY ColumnsWizard.btn.setIcon_label "Set ikonra">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Kattintson ide, ha egy ikont oszlopnévként szeretne beállítani.">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "Eltávolítás ikonra">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Kattintson ide az ikon eltávolításához.">
+<!ENTITY ColumnsWizard.labelString.desc "Írja ide az üzenetlista oszlopfejlécében megjelenítendõ nevet.">
+<!ENTITY ColumnsWizard.tooltipString.label "Tooltip">
+<!ENTITY ColumnsWizard.tooltipString.desc "Írja ide az oszlopfejléc eszköztippjét az üzenetlistában. Általában ez a &quot;Rendezés&quot;, amelyet az oszlop neve követ.">
+<!ENTITY ColumnsWizard.enabled.label "Engedélyezve">
+<!ENTITY ColumnsWizard.enabled.desc "Azonnal engedélyezze ezt az egyéni oszlopot.">
+<!ENTITY ColumnsWizard.sortnumber.label "Válogató">
+<!ENTITY ColumnsWizard.sortnumber.desc "Osztályozza ezt az egyéni oszlopot számként.">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "Az egyéni oszlop csak számokat rendezhet, legfeljebb 3 tizedesjegyig, és az érték -1 000 000 és 3 294 967 között lehet.">
+<!ENTITY ColumnsWizard.searchable.label "Kereshető">
+<!ENTITY ColumnsWizard.searchable.desc "Ezt az egyéni oszlopot kereshetővé teheti a Thunderbird speciális keresési ablakában.">
+<!ENTITY ColumnsWizard.CustColEditorTab.General.label "Tábornok">
+<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "Levél fejléc szerkesztője">
+<!ENTITY ColumnsWizard.editable.label "Szerkeszthető">
+<!ENTITY ColumnsWizard.mod.desc "Ez az e-mail fejléc kézzel módosítható.">
+<!ENTITY ColumnsWizard.mod_type.label "Fejléc típusa">
+<!ENTITY ColumnsWizard.mod_type.desc "Itt válassza az egyéni oszlop fejlécét.">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "Szabad szöveg">
+<!ENTITY ColumnsWizard.mod_type_number.label "Számok">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "Rögzített lista">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "Adjon meg egy értéket soronként. Ne használja a &quot;|&quot; csövet karakter.">

@@ -114,6 +114,21 @@ async function translateAllLocales(iFile, sourceArray, locales, format, options)
 
 			switch (options.outputFormat) {
 				// messages.json
+				case 0:
+					switch (path.extname(iFile)) {
+						case '.dtd':
+							console.debug('DTD 0  ' + iFile);
+							entry = `<!ENTITY ${sourceArray[i].key} "${s}">`;
+							break;
+		
+						case '.properties':
+							console.debug('Properties 0  ' + iFile);
+							entry = `${sourceArray[i].key}=${s}`;
+							break;
+						default:
+							break;
+					}
+					break;
 				case 1:
 					entry = `${sourceArray[i].key}=${s}`;
 					break;
@@ -146,7 +161,7 @@ async function translateAllLocales(iFile, sourceArray, locales, format, options)
 		console.debug(lt);
 		// let outputFileName = iFile.replace('.', '-') + ".json";
 		let outputFileName = iFile;
-		fs.outputFileSync(`${options.outputLocaleDir}/${outputFileName}`, lt);
+		fs.outputFileSync(`${options.outputLocaleDir}/${targetLocale}/${outputFileName}`, lt);
 	}
 }
 
@@ -370,16 +385,16 @@ function loadTranslationArray(inputFiles, options) {
 
 // var options = {
 // 	inputLocaleDir: `./src/_locales/en-US`,
-// 	outputLocaleDir: "./src/_locales/ru",
+// 	outputLocaleDir: "./src/_locales",
 // 	append: true,
 // 	outputFormat: 3,
 // };
 
 var options = {
 	inputLocaleDir: `./src/chrome/locale/en-US`,
-	outputLocaleDir: "./src/chrome/locale/ru",
+	outputLocaleDir: "./src/chrome/locale",
 	append: true,
-	outputFormat: 1,
+	outputFormat: 0,
 };
 
 // let inputFiles = ["settings.dtd", "settings.properties", "overlay.dtd", "overlay.properties"];
@@ -388,15 +403,18 @@ var options = {
 // let inputFiles = ["overlay.properties"];
 // let inputFiles = ["settings.dtd", "overlay.dtd", "overlay.properties"];
 
-let inputFiles = ["overlay.properties", "settings.properties", "mzcw-settings-customcolseditor.properties"];
+// let inputFiles = ["overlay.properties", "settings.properties", "mzcw-settings-customcolseditor.properties"];
 
 // let inputFiles = ["settings.dtd", "overlay.dtd", "mzcw-mailheader-editor.dtd", "mzcw-settings-customcolseditor.dtd"];
+let inputFiles = ["settings.dtd", "overlay.dtd", "mzcw-mailheader-editor.dtd", "mzcw-settings-customcolseditor.dtd", "overlay.properties", "settings.properties", "mzcw-settings-customcolseditor.properties"];
 
 // let inputFiles = ["messages.json"];
 // let inputFiles = ["mzcw-settings-customcolseditor.properties"];
-let iFile = "settings.dtd";
-// loadDTD(iFile, options);
-localeFolders = ['ru'];
+
+// var supportedLocales = ['de', 'en-US', 'nl', 'fr', 'it', 'zh-CN', 'ja', 'es-ES', 'ru', 'hu-HU', 'hy-AM', 'ko-KR',
+// 						'el', 'pl', 'da', 'pt-PT'];
+
+localeFolders = ['ru', 'hu-HU', 'hy-AM', 'ko-KR', 'pl', 'da', 'pt-PT'];
 localeFile = "settings.json";
 // t();
 // translateHelpPage();

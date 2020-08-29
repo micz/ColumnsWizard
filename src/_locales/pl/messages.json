@@ -1,0 +1,398 @@
+{
+	"extensionName": {
+		"message": "ColumnsWizard"
+	},
+
+	"extensionDescription": {
+		"message": "Dodaje trochę magii do kolumn listy folderów! Możesz dodać niestandardową kolumnę bezpośrednio z okna preferencji dodatku, aby wyświetlić dowolny nagłówek poczty, zdefiniować domyślne ustawienia kolumn dla każdego nowego folderu i pokazać ukryte kolumny na karcie Konwersacja oraz w oknie wyszukiwania."
+	},
+
+	"ColumnsWizard.SettingsTitle": {
+		"message": "ColumnsWizard Settings"
+	},
+
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "Wybierz tutaj dodatkowe kolumny, które chcesz zobaczyć na karcie konwersacja."
+	},
+
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "Lokalizacja"
+	},
+
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "Konto"
+	},
+
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "Załącznik"
+	},
+
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "Odbiorca"
+	},
+
+	"ColumnsWizard.TabConversation.label": {
+		"message": "Karta konwersacji"
+	},
+
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "Kolumny niestandardowe"
+	},
+
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "Wybierz tutaj, które kolumny niestandardowe chcesz dodać do listy wiadomości."
+	},
+
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "Po wybraniu musisz pokazać kolumnę w widoku folderu, w którym jej potrzebujesz. Będziesz musiał to zrobić ponownie, jeśli usuniesz i ponownie wybierzesz wcześniej wybraną opcję."
+	},
+
+	"ColumnsWizard.AddCc.label": {
+		"message": "DW"
+	},
+
+	"ColumnsWizard.TabInfo.label": {
+		"message": "Informacje"
+	},
+
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "Ten dodatek jest darmowy i rozwijany w wolnym czasie. Jeśli używasz go na co dzień, możesz wesprzeć go niewielką darowizną, klikając poniższy link. Dzięki!!"
+	},
+
+	"ColumnsWizard.DonateLink": {
+		"message": "Wesprzyj nas!"
+	},
+
+	"ColumnsWizard.Addbcc.label": {
+		"message": "UDW"
+	},
+
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "Odpowiedź do"
+	},
+
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "Baza zawartości"
+	},
+
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "* Ta kolumna zostanie wypełniona tylko dla wiadomości, które zostaną odebrane po aktywacji kolumny niestandardowej."
+	},
+
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "Nowe kolumny folderów"
+	},
+
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "Użyj domyślnej konfiguracji kolumn dla nowych folderów."
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "Porządek sortowania:"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "Rosnąco"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "Malejąco"
+	},
+
+	"ColumnsWizard.newButton.label": {
+		"message": "Nowy…"
+	},
+
+	"ColumnsWizard.editButton.label": {
+		"message": "Edytować…"
+	},
+
+	"ColumnsWizard.deleteButton.label": {
+		"message": "Usunąć"
+	},
+
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "To jest domyślna konfiguracja kolumn dla nowych folderów. Możesz go zmodyfikować tutaj lub skorzystać z menu w selektorze kolumn listy wiadomości."
+	},
+
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "ID"
+	},
+
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "Nagłówek poczty"
+	},
+
+	"ColumnsWizard.CustColsList.title": {
+		"message": "Nazwa kolumny"
+	},
+
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "Etykietka"
+	},
+
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "Włączone"
+	},
+
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "Przeszukiwalny"
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "Włącz edycję nagłówków wiadomości."
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "Ta opcja zostanie automatycznie zaznaczona, jeśli niestandardowa kolumna zostanie zapisana z włączoną opcją edycji."
+	},
+
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "zaawansowane"
+	},
+
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "Opcje edycji nagłówka poczty"
+	},
+
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "Wymuś zmiany podczas korzystania z kont IMAP."
+	},
+
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "Umieść oryginalną wiadomość w folderze Kosz."
+	},
+
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "Niektórzy dostawcy IMAP (np. Gmail) nie rejestrują zmian w źródle wiadomości, jeśli główne nagłówki nie różnią się od istniejącej wiadomości. Aby obejść ten limit, pole „Data” jest modyfikowane, dodając sekundę do godziny (lub zmniejszając ją, jeśli sekunda wynosi 59)."
+	},
+
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "Po zmianie wybranej wartości nagłówka oryginalna wiadomość jest przenoszona do folderu kosza. Jest to środek zabezpieczający przed dziwnym zachowaniem, które może się zdarzyć podczas modyfikowania nagłówków."
+	},
+
+	"ColumnsWizard.ActivateDebug": {
+		"message": "Aktywuj system debugowania."
+	},
+
+	"ColumnsWizard.threadColumn.label": {
+		"message": "Wątek"
+	},
+
+	"ColumnsWizard.fromColumn.label": {
+		"message": "Z"
+	},
+
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Odbiorca"
+	},
+
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Przedmiot"
+	},
+
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Data"
+	},
+
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Priorytet"
+	},
+
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "Etykietka"
+	},
+
+	"ColumnsWizard.accountColumn.label": {
+		"message": "Konto"
+	},
+
+	"ColumnsWizard.statusColumn.label": {
+		"message": "Status"
+	},
+
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Rozmiar"
+	},
+
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Stan śmieci"
+	},
+
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "nieprzeczytane"
+	},
+
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Całkowity"
+	},
+
+	"ColumnsWizard.readColumn.label": {
+		"message": "Czytać"
+	},
+
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "Odebrane"
+	},
+
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Oznaczone gwiazdką"
+	},
+
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Lokalizacja"
+	},
+
+	"ColumnsWizard.idColumn.label": {
+		"message": "zamówienie przyjęte"
+	},
+
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Załączniki"
+	},
+
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Usunięcie kolumny niestandardowej"
+	},
+
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "Czy na pewno chcesz usunąć tę niestandardową kolumnę?"
+	},
+
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Korespondenci"
+	},
+
+	"ColumnsWizard.MenuLabel": {
+		"message": "Edycja nagłówka CW"
+	},
+
+	"ColumnsWizard.button.label": {
+		"message": "ColumnsWizard"
+	},
+
+	"ColumnsWizard.button.tooltip": {
+		"message": "Otwórz preferencje ColumnsWizard"
+	},
+
+	"extensions.columnswizard'@micz.it.description": {
+		"message": "Dodaje trochę magii do kolumn listy folderów! Możesz dodać niestandardową kolumnę bezpośrednio z okna preferencji dodatku, aby wyświetlić dowolny nagłówek poczty, zdefiniować domyślne ustawienia kolumn dla każdego nowego folderu i pokazać ukryte kolumny na karcie Konwersacja oraz w oknie wyszukiwania."
+	},
+
+	"ColumnsWizardcc.label": {
+		"message": "DW"
+	},
+
+	"ColumnsWizardccDesc.label": {
+		"message": "Kliknij, aby posortować według DW"
+	},
+
+	"ColumnsWizardbcc.label": {
+		"message": "UDW"
+	},
+
+	"ColumnsWizardbccDesc.label": {
+		"message": "Kliknij, aby posortować według UDW"
+	},
+
+	"ColumnsWizardreplyto.label": {
+		"message": "Odpowiedź do"
+	},
+
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "Kliknij, aby posortować według odpowiedzi do"
+	},
+
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "Kliknij, aby posortować według X-Original-From"
+	},
+
+	"ColumnsWizardcontentbase.label": {
+		"message": "Baza zawartości"
+	},
+
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "Kliknij, aby posortować według Content-Base"
+	},
+
+	"ColumnsWizardNFCols.show": {
+		"message": "Pokazać"
+	},
+
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "Sortuj według"
+	},
+
+	"ColumnsWizardNFCols.col_title": {
+		"message": "Imię"
+	},
+
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "Zgiąć"
+	},
+
+	"ColumnsWizardNFCols.up": {
+		"message": "W górę"
+	},
+
+	"ColumnsWizardNFCols.down": {
+		"message": "Na dół"
+	},
+
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "Zresetuj kolumny do domyślnej CW"
+	},
+
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "Zapisz kolumny jako domyślne CW"
+	},
+
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "Kliknij, aby posortować według wyniku X-Spam"
+	},
+
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "Czy na pewno chcesz zapisać układ kolumn tego folderu jako domyślny CW?"
+	},
+
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "Czy na pewno chcesz zresetować ten układ kolumn folderu do domyślnego CW?"
+	},
+
+	"ColumnsWizard.NewCol.Move": {
+		"message": "Ruszaj się"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Kredyty"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Autorski"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Informacje o wydaniu"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Opcje debugowania"
+	}
+
+}

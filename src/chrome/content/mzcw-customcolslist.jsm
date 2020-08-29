@@ -26,7 +26,7 @@ var miczColumnsWizardPref_CustomColsList = {
 		miczColumnsWizardPref_CustomColsList.window = window;
 		miczColumnsWizardPref_CustomColsList.document = window.document;
 		
-		Services.scriptloader.loadSubScript("chrome://columnswizard/content/modules/list.controller2.js", window);
+		Services.scriptloader.loadSubScript("chrome://columnswizard/content/modules/list.controller.js", window);
 
 		var options = {
 			//   valueNames: [ { data: ['date'] }, { data: ['description'] }, { data: ['yearly']} ],
@@ -97,8 +97,8 @@ var miczColumnsWizardPref_CustomColsList = {
 
 		// cleidigh temporary , custom, columnsTrip
 		 miczColumnsWizardPref_DefaultColsList.loadedCustCols = miczColumnsWizardPref_CustomColsList.loadCustCols();
-		console.debug('LoadedCustomColumns');
-		 console.debug(miczColumnsWizardPref_DefaultColsList.loadedCustCols);
+		// console.debug('LoadedCustomColumns');
+		//  console.debug(miczColumnsWizardPref_DefaultColsList.loadedCustCols);
 
 		miczColumnsWizardPref_CustomColsList.createCustomColsListRows(miczColumnsWizardPref_DefaultColsList.loadedCustCols);
 		
@@ -116,11 +116,11 @@ var miczColumnsWizardPref_CustomColsList = {
 			}
 		}
 
-		console.debug('CC finish');
+		// console.debug('CC finish');
 	},
 
 	saveCustomColsList: function (idx) {
-		console.debug('SaveCustom');
+		// console.debug('SaveCustom');
 
 		// console.debug(miczColumnsWizardPref_CustomColsList.customColsListObj.list.outerHTML);
 		var newCustomCols = {};
@@ -149,8 +149,8 @@ var miczColumnsWizardPref_CustomColsList = {
 			newCustomCols[vals.index].tooltipString = vals.tooltipString;
 		// }
 		
-		console.debug('new custom columns');
-		console.debug(newCustomCols);
+		// console.debug('new custom columns');
+		// console.debug(newCustomCols);
 
 		miczColumnsWizard_CustCols.updateCustCol(newCustomCols[vals.index]);
 		return newCustomCols[vals.index];
@@ -162,7 +162,7 @@ var miczColumnsWizardPref_CustomColsList = {
 		let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
 		let prefs_def = prefsc.getBranch("extensions.ColumnsWizard.CustCols.def.");*/
 		// let CustColIndexStr=prefs.getCharPref("index");
-		console.debug('LoadCC');
+		// console.debug('LoadCC');
 
 		let CustColIndexStr = miczColumnsWizardPrefsUtils.getCustColsIndex();
 		let CustColIndex = [];
@@ -171,8 +171,8 @@ var miczColumnsWizardPref_CustomColsList = {
 			CustColIndex = miczColumnsWizardPref_CustomColsList.CustColDefaultIndex;
 			// prefs.setCharPref("index",JSON.stringify(CustColIndex));
 			miczColumnsWizardPrefsUtils.setCustColsIndex(JSON.stringify(CustColIndex));
-			console.debug('Set defaultColumns');
-			console.debug(CustColIndex);
+			// console.debug('Set defaultColumns');
+			// console.debug(CustColIndex);
 		} else {
 			CustColIndex = miczColumnsWizardPref_CustomColsList.checkCustColDefaultIndex(JSON.parse(CustColIndexStr));
 		}
@@ -328,19 +328,19 @@ var miczColumnsWizardPref_CustomColsList = {
 
 	onRowClick: function (event, offset) {
 		// console.debug(event);
-		console.debug('Target ' + event.target.outerHTML);
+		// console.debug('Target ' + event.target.outerHTML);
 		// console.debug(event.target.outerHTML);
 		var selector = 'tr';
 		var row = event.target.closest(selector);
 		var idx = Number(row.getAttribute("data-id")) - 1;
-		console.debug(idx);
-		console.debug(miczColumnsWizardPref_CustomColsList.customColsListObj.items);
+		// console.debug(idx);
+		// console.debug(miczColumnsWizardPref_CustomColsList.customColsListObj.items);
 		const item = miczColumnsWizardPref_CustomColsList.customColsListObj.items[idx];
-		console.debug(item);
+		// console.debug(item);
 		
 		if (event.target.classList.contains('toggle-action-enabled')) {
-			console.debug('Show class');
-			console.debug(`click: ${event.target.outerHTML}  : ${event.target.checked}`);
+			// console.debug('Show class');
+			// console.debug(`click: ${event.target.outerHTML}  : ${event.target.checked}`);
 			if (!event.target.checked) {
 				item.values({ "enabled": false });
 				event.target.removeAttribute("checked");
@@ -349,7 +349,7 @@ var miczColumnsWizardPref_CustomColsList = {
 			}
 			event.stopPropagation();
 			let col = miczColumnsWizardPref_CustomColsList.saveCustomColsList(idx);
-			console.debug('UpdatingDefaultList');
+			// console.debug('UpdatingDefaultList');
 			miczColumnsWizardPref_DefaultColsList.toggleCustomCol(col);
 			return;
 		}

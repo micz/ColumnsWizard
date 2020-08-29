@@ -1,6 +1,9 @@
 // var { Services } = ChromeUtils.import('resource://gre/modules/Services.jsm');
 
-class ListController {
+// console.debug('StartController');
+
+var ListController = {
+ ListController: class {
 
 	constructor(list, options) {
 		this.Keys = {
@@ -34,7 +37,7 @@ class ListController {
 			this.list_container.classList.remove('no-outline');
 			this.listElement.setAttribute('selected-index', "-1");
 
-			let selectedRow = event.target.querySelector('tr.selected-row');
+			let selectedRow = this.listElement.querySelector('tr.selected-row');
 			if (selectedRow) {
 				selectedRow.classList.remove('selected-row');
 			}
@@ -44,7 +47,7 @@ class ListController {
 		var selector = 'tr.selected-row';
 		var selectedRow = this.list_container.querySelector(selector);
 		if (selectedRow) {
-			console.debug('selected well ' + selectedRow.outerHTML);
+			// console.debug('selected well ' + selectedRow.outerHTML);
 			selectedRow.classList.remove('selected-row');
 		}
 
@@ -54,15 +57,15 @@ class ListController {
 		// selector = 'tr';
 		// selectedRow = event.target.closest(selector);
 		
-		console.debug('selective row ');
-		console.debug(selectedRow);
+		// console.debug('selective row ');
+		// console.debug(selectedRow);
 		if (selectedRow) {
 			selectedRow.classList.add('selected-row');
 			this.listElement.setAttribute('selected-index', data_id);
 			this.list_container.focus();
-			console.debug('set focus');
+			// console.debug('set focus');
 		} else {
-			console.debug('no selective');
+			// console.debug('no selective');
 			this.list_container.focus();
 		}
 	}
@@ -70,8 +73,12 @@ class ListController {
 	getSelectedRowDataId() {
 		var selector = 'tr.selected-row';
 		var selectedRow = this.list_container.querySelector(selector);
+		// console.debug('SelectedRow:');
+		// console.debug(selectedRow.outerHTML);
 		if (selectedRow) {
-			return selectedRow.getAttribute('data-id');
+			let i = selectedRow.getAttribute('data-id');
+			// console.debug(i);
+			return i;
 		}
 		return null;
 	}
@@ -85,6 +92,14 @@ class ListController {
 		return null;
 	}
 
+	reIndexIDs() {
+		let items = this.list.items;
+		items.forEach((item, i) => {
+			item.values({"id": String(i + 1)});
+		});
+	}
+
+
 	// Event handlers
 	onClick(event) {
 		// Services.console.logStringMessage('Click');
@@ -92,7 +107,7 @@ class ListController {
 		var closestRow = event.target.closest(selector)
 		if (!closestRow) return
 		var data_id = closestRow.getAttribute('data-id')
-		console.log("clickRow " + data_id);
+		// console.log("clickRow " + data_id);
 		this.listElement.setAttribute('selected-index', data_id);
 		selector = 'tr.selected-row';
 		var selectedRow = this.listElement.querySelector(selector);
@@ -100,7 +115,7 @@ class ListController {
 			selectedRow.classList.remove('selected-row');
 		}
 		closestRow.classList.add('selected-row');
-
+		// console.debug(this.listElement.outerHTML);
 		if (this.onSelectedCB) {
 			this.onSelectedCB(event, data_id);
 		}
@@ -227,3 +242,4 @@ class ListController {
 		}
 	}
 }
+};

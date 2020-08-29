@@ -5,10 +5,11 @@ var EXPORTED_SYMBOLS = ["DocLocalize"];
 // }
 
 var { OS } = ChromeUtils.import("resource://gre/modules/osfile.jsm");
+var { miczLogger } = ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
 
 const localesRootDir = "_locales";
 var supportedLocales = ['de', 'en-US', 'nl', 'fr', 'it', 'zh-CN', 'ja', 'es-ES', 'ru', 'hu-HU', 'hy-AM', 'ko-KR',
-						'el'];
+						'el', 'pl', 'da', 'pt-PT'];
 
 // var supportedLocales = ['ca', 'da', 'de', 'en-US', 'es-ES', 'fr', 'gl-ES', 'hu-HU', 'hy-AM',
 // 		'it', 'ja', 'ko-KR', 'nl', 'pl', 'pt-PT', 'ru', 'sk-SK', 'sl-SI', 'sv-SE', 'zh-CN', 'el'];
@@ -21,6 +22,7 @@ var DocLocalize = {
 
 	determineLocale: function () {
 		var tb_locale = Services.locale.appLocaleAsBCP47;
+		miczLogger.log('ThunderbirdLocale ' + tb_locale);
 
 		var supportedLocaleRegions = supportedLocales.filter(l => {
 			if (l === tb_locale || l.split('-')[0] === tb_locale.split('-')[0]) {
@@ -31,10 +33,13 @@ var DocLocalize = {
 
 		var localeDir = "en-US";
 
+		miczLogger.log('SupportedRegions ' + supportedLocaleRegions);
 		if (!supportedLocaleRegions.length) {
 			return localeDir;
 		} else if (supportedLocaleRegions.includes(tb_locale)) {
 			return tb_locale;
+		} else if (supportedLocaleRegions.length === 1) {
+			return supportedLocaleRegions[0];
 		} else if (supportedLocaleRegions.indexOf(tb_locale.split('-')[0]) !== -1) {
 			return tb_locale.split('-')[0];
 		}
@@ -44,7 +49,7 @@ var DocLocalize = {
 		document = doc;
 		var messages;
 		var localeDir = this.determineLocale();
-		// console.debug(localeDir);
+		miczLogger.log('Using Locale: ' + localeDir);
 
 
 		let messageFile = `${localeDir}/${file}`;
@@ -79,7 +84,7 @@ var DocLocalize = {
 
 	localizeDoc: async function (msgs) {
 		messages = msgs;
-		console.debug('Localize');
+		// console.debug('Localize');
 		await DocLocalize.updateDocument(messages);
 		return;
 
@@ -131,12 +136,3 @@ var DocLocalize = {
 	},
 };
 
-	// document.addEventListener('DOMContentLoaded', () => {
-	// 	localization.updateDocument();
-	// }, { once: true });
-
-// window.addEventListener('DOMContentLoaded', (event) => {
-// 	console.log('DOM fully loaded and parsed');
-
-// 	loadLocaleMessages(localesRootDir + "\\en-US", "settings.json");
-// });

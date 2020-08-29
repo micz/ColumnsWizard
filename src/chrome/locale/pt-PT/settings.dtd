@@ -1,0 +1,44 @@
+<!ENTITY ColumnsWizard.SettingsTitle "Configurações do ColumnsWizard">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Escolha aqui quais colunas adicionais você deseja ver na guia Conversa.">
+<!ENTITY ColumnsWizard.ShowLocation.label "Localização">
+<!ENTITY ColumnsWizard.ShowAccount.label "Conta">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Anexo">
+<!ENTITY ColumnsWizard.ShowRecipient.label "Destinatário">
+<!ENTITY ColumnsWizard.TabConversation.label "Aba de conversa">
+<!ENTITY ColumnsWizard.TabCustomCols.label "Colunas Personalizadas">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Escolha aqui quais colunas personalizadas você deseja adicionar à lista de mensagens.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Uma vez selecionado, você precisa mostrar a coluna na visualização da pasta onde você precisa. Você terá que fazer isso novamente se você selecionar e selecionar novamente uma opção selecionada anteriormente.">
+<!ENTITY ColumnsWizard.AddCc.label "Cc">
+<!ENTITY ColumnsWizard.TabInfo.label "Informações">
+<!ENTITY ColumnsWizard.InfoMainDesc "Este addon é gratuito e desenvolvido nas minhas horas vagas. Se você está usando no dia a dia, fique à vontade para apoiá-lo com uma pequena doação clicando no link abaixo. Obrigado!!">
+<!ENTITY ColumnsWizard.DonateLink "Faça uma doação!">
+<!ENTITY ColumnsWizard.Addbcc.label "Bcc">
+<!ENTITY ColumnsWizard.Addreplyto.label "Responder a">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
+<!ENTITY ColumnsWizard.Addcontentbase.label "Base de Conteúdo">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Esta coluna será preenchida apenas para emails que serão recebidos após a ativação da coluna personalizada.">
+<!ENTITY ColumnsWizard.TabNewFolderDefault.label "Novas Colunas de Pasta">
+<!ENTITY ColumnsWizard.NewFolderCols.label "Use sua configuração de colunas padrão para novas pastas.">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "Ordem de classificação:">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "Ascendente">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "descendente">
+<!ENTITY ColumnsWizard.newButton.label "Novo…">
+<!ENTITY ColumnsWizard.editButton.label "Editar…">
+<!ENTITY ColumnsWizard.deleteButton.label "Excluir">
+<!ENTITY ColumnsWizard.Addxspamscore.label "Pontuação X-Spam">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "Esta é a configuração padrão das colunas para as novas pastas. Você pode modificá-lo aqui ou usar o menu no seletor de coluna da lista de mensagens.">
+<!ENTITY ColumnsWizard.CustColsList.ID "EU IRIA">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "Cabeçalho de Correio">
+<!ENTITY ColumnsWizard.CustColsList.title "Nome da coluna">
+<!ENTITY ColumnsWizard.CustColsList.tooltip "Dica de ferramenta">
+<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "ativado">
+<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Pesquisável">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "Habilite a edição de cabeçalhos de e-mail.">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.desc "Esta opção será marcada automaticamente se uma coluna personalizada for salva com a opção de edição habilitada.">
+<!ENTITY ColumnsWizard.TabAdvanced.label "Avançado">
+<!ENTITY ColumnsWizard.MailHeaderGroupbox.label "Opções de edição de cabeçalho de correio">
+<!ENTITY ColumnsWizard.MailHeader.use_imap_fix_checkbox.label "Força as alterações ao usar contas IMAP.">
+<!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Coloque a mensagem original na pasta Lixeira.">
+<!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Alguns provedores de IMAP (como Gmail) não registram alterações na origem da mensagem se os cabeçalhos principais não forem diferentes de uma mensagem existente. Para contornar esse limite, o campo &quot;Data&quot; é modificado adicionando um segundo à hora (ou diminuindo-o se os segundos forem 59).">
+<!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "Depois de alterar o valor do cabeçalho selecionado, a mensagem original é movida para a pasta de lixo. Esta é uma medida de segurança contra qualquer comportamento estranho que possa acontecer modificando os cabeçalhos.">
+<!ENTITY ColumnsWizard.ActivateDebug "Ative o sistema de depuração.">

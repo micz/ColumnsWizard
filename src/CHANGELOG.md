@@ -1,5 +1,15 @@
 # ![CW] ColumnsWizard Release Notes
 
+### Version 7.0.0 - 8/29/2020
+- Update for TB68 compatibility
+- Convert options dialog to tab
+- Convert options to HTML
+- Use ListJS (@javve)
+- Create Tab interface
+- Add locales:
+   ja, es-ES, ru, hu-HU, hy-AM, ko-KR, el, pl, da, pt-PT
+
+
 ### Version 6.1.2 - 7/03/2019 
 - Add manifest.json - WebExtension
 

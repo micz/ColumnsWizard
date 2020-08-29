@@ -3,7 +3,6 @@
 // Services appears to be defined globally in TB64+ ?
 if (!Services) {
 	var { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
-	// Services.console.logStringMessage('Overlay load services');
 }
 
 var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
@@ -15,8 +14,6 @@ var { miczColumnsWizardPref_CustomColsList } = ChromeUtils.import("chrome://colu
 var { miczColumnsWizard_MsgUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
 var { miczColumnsWizardUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-utils.jsm");
 var { miczLogger } = ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
-
-// var { miczColumnsWizard_CustomColsModUtils };
 
 var miczColumnsWizard = {
 
@@ -32,7 +29,6 @@ var miczColumnsWizard = {
 
 	init: function () {
 
-		console.debug('LoadModules');
 		miczColumnsWizard_CustomColsModUtils.miczColumnsWizard = miczColumnsWizard;
 		miczLogger.setLogger(true, miczColumnsWizardPrefsUtils.isDebug);
 
@@ -41,9 +37,6 @@ var miczColumnsWizard = {
 			miczColumnsWizardPrefsUtils.firstRunDone();
 			miczColumnsWizard.addToolbarButton();
 		}
-
-		// console.debug('options menu ');
-		// miczColumnsWizard.addCWOptionsMenu();
 
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 
@@ -64,7 +57,6 @@ var miczColumnsWizard = {
 		}
 
 		miczColumnsWizard.watchFolders();
-		console.debug('InItHarrisMenu');
 		miczColumnsWizard.initHeadersEditingMenu();
 
 		let current_tab = document.getElementById("tabmail").currentTabInfo;
@@ -96,8 +88,6 @@ var miczColumnsWizard = {
 	addNewCustColObserver: function (ObserverService) {
 		let CustColObserver = {
 			observe: function (aSubject, aTopic, aData) {
-				console.debug('NewCustomOfTheServer');
-				console.debug(aData);
 				// dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
 				miczColumnsWizard.addDbObserver(JSON.parse(aData));
 			},
@@ -108,10 +98,9 @@ var miczColumnsWizard = {
 	deleteCustColObserver: function (ObserverService) {
 		let CustColObserver = {
 			observe: function (aSubject, aTopic, aData) {
-				console.debug('DeleteObserver ' );
-				console.debug(aData);
+				// console.debug('DeleteObserver ' );
+				// console.debug(aData);
 
-				// dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
 				let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 				miczColumnsWizard_CustCols.removeCustomColumn(aData, ObserverService);
 				miczColumnsWizard_CustCols.deleteCustCol(aData);
@@ -126,8 +115,8 @@ var miczColumnsWizard = {
 				// dump(">>>>>>>>>>>>> miczColumnsWizard->CustColObserver: [aSubject] "+aData+"\r\n");
 				let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 				// update cust col info in the message list
-				console.debug('CustomColumnUpdate');
-				console.debug(aData);
+				// console.debug('CustomColumnUpdate');
+				// console.debug(aData);
 				miczColumnsWizard_CustCols.updateCustomColumn(JSON.parse(aData));
 			},
 		};
@@ -247,7 +236,6 @@ var miczColumnsWizard = {
 			}
 		}
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [tab folder mode] "+tab.mode.name+" \r\n");
-		console.debug('menu call ');
 		miczColumnsWizard.addCWResetMenu(tab);
 	},
 
@@ -284,11 +272,7 @@ var miczColumnsWizard = {
 						aPopup.removeChild(aPopup.childNodes[2]);
 						aPopup.removeChild(aPopup.childNodes[2]);
 					}
-					console.debug('have to remove children');
 					// check if we're using the colcw default for new folders
-					// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
-					// let prefs = prefsc.getBranch("extensions.ColumnsWizard.DefaultColsList.");
-					// let cw_active=prefs.getBoolPref("active");
 					let cw_active = miczColumnsWizardPrefsUtils.defaultColsListActive;
 
 					let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
@@ -296,7 +280,6 @@ var miczColumnsWizard = {
 					aPopup.childNodes[1].setAttribute('hidden', cw_active ? 'true' : 'false');
 
 					cw_colmenubind.cw_original_buildPopup(aPopup);
-					console.debug('after pop-up');
 					// Add saveDefaultMenuCW element
 					let saveDefaultMenuCW = document.createXULElement("menuitem");
 					saveDefaultMenuCW.setAttribute('label', _bundleCW.GetStringFromName("ColumnsWizardNFCols.saveDefault"));
@@ -345,11 +328,9 @@ var miczColumnsWizard = {
 
 		// aPopup.childNodes[1].setAttribute('hidden', cw_active ? 'true' : 'false');
 
-		console.debug('CheckMenus');
 		try {
 			let element = document.getElementById("columnswizard-defaultmenu");
 			if (element) {
-				console.debug('Menus already installed');
 				return;
 			}
 			element.remove();
@@ -358,8 +339,6 @@ var miczColumnsWizard = {
 		} catch (error) {
 			// no menus to remove
 		}
-
-		console.debug('CW: InsertMenus');
 
 		let insertPoint = tc.querySelector("menuseparator").nextSibling;
 		// Add saveDefaultMenuCW element
@@ -386,7 +365,6 @@ var miczColumnsWizard = {
 		aPopup.insertBefore(resetMenuCW, insertPoint);
 
 		insertPoint.remove();
-		console.debug('MenusFinished');
 	},	// buildPopup wrapper function END
 
 	addCWSaveDefaultMenu_OnClick: function (event) {
@@ -398,34 +376,21 @@ var miczColumnsWizard = {
 		if (!promptService.confirm(null, title_msg, text_msg)) return;
 
 		let columnStates = gFolderDisplay.getColumnStates();
-		// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
-		// let prefs = prefsc.getBranch("extensions.ColumnsWizard.");
-		// prefs.setCharPref("DefaultColsList",JSON.stringify(columnStates));
-		console.debug('Save defaultCW');
-		console.debug(columnStates);
+		// console.debug('Save defaultCW');
+		// console.debug(columnStates);
+
 		const propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
 		let	currentFolder = gFolderDisplay.displayedFolder;
-		// currentFolder.setStringProperty(propName, columnStates);
-		// miczColumnsWizard._applyColumns(currentFolder, false);
-		// gFolderDisplay.setColumnStates(columnStates, true);
-		// setTimeout(function () { gFolderDisplay.setColumnStates(columnStates, true); }, 1);
 		miczColumnsWizardPrefsUtils.setCharPref_CW("DefaultColsList", JSON.stringify(columnStates));
 		window.event.stopPropagation();
 
-		// setTimeout(function () { miczColumnsWizardPrefsUtils.setCharPref_CW("DefaultColsList", JSON.stringify(columnStates)); }, 10);
-		// console.debug(columnStates);
 		return;
 	},
 
 	addCWOptionsMenu: function () {
 
 		var cw_options = document.getElementById('addonPrefs');
-		console.debug(cw_options.outerHTML);
-		// let e2 = document.querySelector('menuitem[label=ColumnsWizard]');
-		// console.debug(e2.outerHTML);
 
-
-		console.debug(cw_options.outerHTML);
 		let e2 = cw_options.querySelector('[disabled="true"]');
 
 		let saveDefaultMenuCW = document.createXULElement("menuitem");
@@ -434,77 +399,11 @@ var miczColumnsWizard = {
 		saveDefaultMenuCW.id = "columnswizard-optionsitem";
 		saveDefaultMenuCW.setAttribute("anonid", "menuitem");
 		saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
-		// saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/mzcw-icon24.png");
-		// saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
-		// saveDefaultMenuCW.setAttribute("oncommand", "miczColumnsWizard.openSettingsTab();");
 		cw_options.insertBefore(saveDefaultMenuCW, e2);
-		// e2.setAttribute('hidden', 'true');
 	
-
-		// cw_options.setAttribute("onpopupshowing", "initAddonPrefsMenu(this);");
-		// cw_options.setAttribute("onpopupshowing", "miczColumnsWizard.testCB(this);");
-		// Add saveDefaultMenuCW element
-		// let saveDefaultMenuCW = document.createXULElement("menuitem");
-		// saveDefaultMenuCW.setAttribute('label', 'ColumnsWizard XYZ');
-		// saveDefaultMenuCW.setAttribute('hidden', 'false');
-		// saveDefaultMenuCW.id = "columnswizard-defaultmenu3";
-		// saveDefaultMenuCW.setAttribute("anonid", "menuitem");
-		// saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
-		// saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
-		// saveDefaultMenuCW.setAttribute("oncommand", "miczColumnsWizard.openSettingsTab();");
-		// cw_options.appendChild(saveDefaultMenuCW);
-		console.debug(cw_options.outerHTML);
-		console.debug('options menu');
-		
-	},
-
-	testRemove: function () {
-		console.debug('RemoveMenus 2');
-		var cw_options = document.getElementById('addonPrefs');
-		let m = document.getElementById("columnswizard-optionsitem");
-		m.remove();
-		
 		// console.debug(cw_options.outerHTML);
-		// cw_options.setAttribute("onpopupshowing", "initAddonPrefsMenu(this);");
-		console.debug(cw_options.outerHTML);
-
-		console.debug('Finish');
-	},
-
-	testCB(_this) {
-		console.debug('TestF');
+		// console.debug('options menu');
 		
-		initAddonPrefsMenu(_this);
-
-		if (document.getElementById("columnswizard-optionsitem")) {
-			return;
-		}
-
-		// return;
-
-		var cw_options = document.getElementById('addonPrefs');
-		console.debug(cw_options.outerHTML);
-		let e2 = cw_options.querySelector('[disabled="true"]');
-
-		let saveDefaultMenuCW = document.createXULElement("menuitem");
-		saveDefaultMenuCW.setAttribute('label', 'ColumnsWizard');
-		// saveDefaultMenuCW.setAttribute('hidden', 'false');
-		saveDefaultMenuCW.id = "columnswizard-optionsitem";
-		saveDefaultMenuCW.setAttribute("anonid", "menuitem");
-		saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
-		saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/mzcw-icon24.png");
-		// saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
-		saveDefaultMenuCW.setAttribute("oncommand", "miczColumnsWizard.openSettingsTab();");
-		cw_options.insertBefore(saveDefaultMenuCW, e2);
-		e2.setAttribute('hidden', 'true');
-		// e2 = cw_options.querySelector('[value="ColumnsWizard"]');
-		// console.debug(e2.outerHTML);
-		
-		// e2.setAttribute('hidden', 'true');
-		// console.debug(e2.outerHTML);
-
-		console.debug(cw_options.outerHTML);
-
 	},
 
 	shutdown: function (event) {
@@ -526,13 +425,10 @@ var miczColumnsWizard = {
 		let columnStates = miczColumnsWizardPref_DefaultColsList.loadDefaultColRows_Pref();
 		let so = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_order");
 		let st = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_type");
-		console.debug(`SortOrderOnReset ${so}`);
-		console.debug(`SortTypeOnReset ${st}`);
 
 		gFolderDisplay.view.sort(st, so);
 		
 		gFolderDisplay.setColumnStates(columnStates, true);
-		// gDBView.sortType = st;
 		window.event.stopPropagation();
 		return;
 	},
@@ -553,10 +449,8 @@ var miczColumnsWizard = {
 
 	// cleidigh have to figure out "new" Menu
 	initHeadersEditingMenu: function () {
-		console.debug('UpdateHedgersMenu');
-		console.debug(miczColumnsWizardPrefsUtils.headersEditingActive);
+		// console.debug('UpdateHedgersMenu');
 		if (miczColumnsWizardPrefsUtils.headersEditingActive) {
-			console.debug('headers E menu ');
 			miczColumnsWizard.CustColPref = miczColumnsWizard_CustCols.loadCustCols();
 			miczColumnsWizard_CustomColsModUtils.addContextMenu(document, document.getElementById("cw_edit_main_menu_popup"),
 			 document.getElementById("cw_edit_context_menu_popup"),
@@ -565,13 +459,6 @@ var miczColumnsWizard = {
 			 miczColumnsWizardPrefsUtils.stringCustColIndexMod,
 			 miczColumnsWizard.editHeaderMenu_OnClick, miczColumnsWizard.editHeaderSubMenu_OnClick);
 			
-			// miczColumnsWizard_CustomColsModUtils.addContextMenu(document, document.getElementById("cw_edit_main_menu_popup"),
-			//  document.getElementById("cw_edit_context_menu_popup"),
-			//  miczColumnsWizard.CustColPref,
-			//  miczColumnsWizardPrefsUtils.stringCustColIndexMod,
-			//  miczColumnsWizard.editHeaderMenu_OnClick,
-			//  miczColumnsWizard.editHeaderSubMenu_OnClick);
-			 
 			document.getElementById("cw_edit_main_menu").setAttribute("hidden", false);
 			document.getElementById("cw_edit_context_menu").setAttribute("hidden", false);
 			// document.getElementById("cw_edit_newmain_menu").setAttribute("hidden", false);
@@ -585,13 +472,9 @@ var miczColumnsWizard = {
 	},
 
 	checkHeadersEditingMenuList: function (event) {
-		console.debug('check MenuList');
-		console.debug(event);
 		let element = event.target;
-		console.debug(element.outerHTML);
 
 		let current_header = element.parentElement.getAttribute("mail_header");
-		console.debug('after ' + current_header);
 
 		let current_header_value = gFolderDisplay.selectedMessage.getStringProperty(current_header);
 		// miczLogger.log(">>>>>>>>>>>>> miczColumnsWizard [checkHeadersEditingMenuList] current_header=current_header_value: "+current_header+"="+current_header_value+" \r\n");
