@@ -7,16 +7,21 @@ With this addon you can:
   * Show hidden columns in the Conversation Tab and in the search window.
   * Edit a mail header value for a single message.
 
-This add-on is the original work of Micz and with his permission I will be updating
-the code for compatibility going forward and possible improvements.
+This add-on is the original work of Micz (@Mic).
 
-
-![ColumnsWizard_version](https://img.shields.io/badge/version-v6.1.2-darkorange.png?label=ColumnsWizard)
-![ColumnsWizard_tb_version](https://img.shields.io/badge/version-v6.1.2-blue.png?label=Thunderbird%20Add-On)
-![Thunderbird_version](https://img.shields.io/badge/version-v60.0_--_61.*-blue.png?label=Thunderbird)
+![ColumnsWizard_version](https://img.shields.io/badge/version-v7.0.0-darkorange.png?label=ColumnsWizard)
+![ColumnsWizard_tb_version](https://img.shields.io/badge/version-v7.0.0-blue.png?label=Thunderbird%20Add-On)
+![Thunderbird_version](https://img.shields.io/badge/version-v68.0_--_68.*-blue.png?label=Thunderbird)
 [![License: GPL v3](https://img.shields.io/badge/License-GPL%20v3-red.png)](./LICENSE)
-![Release Status](https://img.shields.io/badge/Release%20Status-v6.1.2%20Latest-brightgreen.png)
+![Release Status](https://img.shields.io/badge/Release%20Status-v7.0.0%20Latest-brightgreen.png)
 #
+
+## Latest
+
+v7.0.0 update for Thunderbird 68
+New Locales:
+   ja, es-ES, ru, hu-HU, hy-AM, ko-KR, el, pl, da, pt-PT
+
 
 ## ColumnsWizard Add-On Installation
 
@@ -57,3 +62,4 @@ Locale Translations:
 - French (fr)		: Goofy
 - German (de)		: Axel Grude
 - Chinese (zh-CN) : yfdyh000
+- ja, es-ES, ru, hu-HU, hy-AM, ko-KR, el, pl, da, pt-PT : Google\Christopher
