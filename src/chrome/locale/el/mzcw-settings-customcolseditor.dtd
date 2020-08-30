@@ -1,0 +1,31 @@
+<!ENTITY ColumnsWizard.window.title "Προσαρμοσμένος επεξεργαστής στηλών">
+<!ENTITY ColumnsWizard.Desc.label "Εισαγάγετε τις νέες προσαρμοσμένες πληροφορίες στηλών. Όλα τα πεδία είναι υποχρεωτικά.">
+<!ENTITY ColumnsWizard.id.label "ταυτότητα">
+<!ENTITY ColumnsWizard.id.desc "Το αναγνωριστικό είναι το μοναδικό αναγνωριστικό της προσαρμοσμένης στήλης. Δεν μπορεί να τροποποιηθεί μετά την πρώτη αποθήκευση.">
+<!ENTITY ColumnsWizard.dbHeader.label "Κεφαλίδα αλληλογραφίας">
+<!ENTITY ColumnsWizard.dbHeader.desc "Η κεφαλίδα αλληλογραφίας είναι το πεδίο μηνυμάτων αλληλογραφίας που πρέπει να εμφανίζεται στη λίστα μηνυμάτων στην προσαρμοσμένη στήλη. Δεν μπορεί να τροποποιηθεί μετά την πρώτη αποθήκευση.">
+<!ENTITY ColumnsWizard.labelString.label "Όνομα στήλης">
+<!ENTITY ColumnsWizard.btn.setIcon_label "Ορισμός εικονιδίου">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Κάντε κλικ εδώ για να ορίσετε ένα εικονίδιο ως το όνομα της στήλης.">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "Κατάργηση εικονιδίου">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Κάντε κλικ εδώ για να καταργήσετε το εικονίδιο.">
+<!ENTITY ColumnsWizard.labelString.desc "Γράψτε εδώ το όνομα που θα εμφανίζεται στην κεφαλίδα της στήλης στη λίστα μηνυμάτων.">
+<!ENTITY ColumnsWizard.tooltipString.label "Επεξήγηση εργαλείου">
+<!ENTITY ColumnsWizard.tooltipString.desc "Εισαγάγετε εδώ την επεξήγηση της κεφαλίδας στήλης στη λίστα μηνυμάτων. Συνήθως αυτό είναι &quot;Ταξινόμηση κατά&quot; ακολουθούμενο από το όνομα της στήλης.">
+<!ENTITY ColumnsWizard.enabled.label "Ενεργοποιήθηκε">
+<!ENTITY ColumnsWizard.enabled.desc "Ενεργοποιήστε αυτήν την προσαρμοσμένη στήλη αμέσως.">
+<!ENTITY ColumnsWizard.sortnumber.label "Ταξινόμηση">
+<!ENTITY ColumnsWizard.sortnumber.desc "Ταξινόμηση αυτής της προσαρμοσμένης στήλης ως αριθμού.">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "Η προσαρμοσμένη στήλη μπορεί να ταξινομήσει μόνο αριθμούς με όχι περισσότερα από 3 δεκαδικά και τιμή μεταξύ -1.000.000 και 3.294.967.">
+<!ENTITY ColumnsWizard.searchable.label "Είναι δυνατή η αναζήτηση">
+<!ENTITY ColumnsWizard.searchable.desc "Κάντε αυτήν την προσαρμοσμένη στήλη με δυνατότητα αναζήτησης στο παράθυρο σύνθετης αναζήτησης του Thunderbird.">
+<!ENTITY ColumnsWizard.CustColEditorTab.General.label "Γενικός">
+<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "Επεξεργαστής κεφαλίδας αλληλογραφίας">
+<!ENTITY ColumnsWizard.editable.label "Είναι επεξεργάσιμο">
+<!ENTITY ColumnsWizard.mod.desc "Αυτή η κεφαλίδα μηνύματος αλληλογραφίας μπορεί να τροποποιηθεί χειροκίνητα.">
+<!ENTITY ColumnsWizard.mod_type.label "Τύπος κεφαλίδας">
+<!ENTITY ColumnsWizard.mod_type.desc "Επιλέξτε εδώ τον τύπο κεφαλίδας για αυτήν την προσαρμοσμένη στήλη.">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "Ελεύθερο κείμενο">
+<!ENTITY ColumnsWizard.mod_type_number.label "Αριθμοί">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "Διορθώθηκε η λίστα">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "Εισαγάγετε μία τιμή ανά γραμμή. Μη χρησιμοποιείτε το σωλήνα &quot;|&quot; χαρακτήρας.">

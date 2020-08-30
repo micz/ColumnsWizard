@@ -1,0 +1,31 @@
+<!ENTITY ColumnsWizard.window.title "Պատվերով սյունակի խմբագիր">
+<!ENTITY ColumnsWizard.Desc.label "Տեղադրեք նոր սովորական սյունակի տեղեկատվությունը: Բոլոր դաշտերը պարտադիր են:">
+<!ENTITY ColumnsWizard.id.label "Նույնականացում">
+<!ENTITY ColumnsWizard.id.desc "ID- ն սովորական սյունակի եզակի նույնականացումն է: Առաջին պահումից հետո այն հնարավոր չէ փոփոխել:">
+<!ENTITY ColumnsWizard.dbHeader.label "Փոստի վերնագիր">
+<!ENTITY ColumnsWizard.dbHeader.desc "Փոստի վերնագիրն այն փոստով ուղարկվող հաղորդագրությունների դաշտն է, որը պետք է ցուցադրվի «Պատվերով սյունակում» հաղորդագրությունների ցանկում: Առաջին պահումից հետո այն հնարավոր չէ փոփոխել:">
+<!ENTITY ColumnsWizard.labelString.label "Սյունակի անվանումը">
+<!ENTITY ColumnsWizard.btn.setIcon_label "Սահմանել պատկերակը">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Կտտացրեք այստեղ `պատկերակը որպես սյունակի անվանումը նշելու համար:">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "Հեռացրեք պատկերակը">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Պատկերը հանելու համար սեղմեք այստեղ:">
+<!ENTITY ColumnsWizard.labelString.desc "Գրեք այստեղ անունը, որը պետք է ցույց տրվի սյունակի վերնագրում հաղորդագրությունների ցուցակում:">
+<!ENTITY ColumnsWizard.tooltipString.label "Գործիքակազմ">
+<!ENTITY ColumnsWizard.tooltipString.desc "Մուտքագրեք այստեղ սյունակի վերնագրի գործիքը `հաղորդագրությունների ցանկում: Սովորաբար սա «Տեսակավորել ըստ» է, որին հաջորդում է սյունակի անվանումը:">
+<!ENTITY ColumnsWizard.enabled.label "Միացված">
+<!ENTITY ColumnsWizard.enabled.desc "Անմիջապես միացրեք այս սովորական սյունը:">
+<!ENTITY ColumnsWizard.sortnumber.label "Տեսակավորում">
+<!ENTITY ColumnsWizard.sortnumber.desc "Դասավորեք այս սովորական սյունակը որպես համար:">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "Պատվերով սյունակում կարող են դասակարգվել միայն 3-ից ոչ ավելի, քան տասնորդական թվեր և արժեք ՝ -1.000.000- 3.294.967:">
+<!ENTITY ColumnsWizard.searchable.label "Որոնելի է">
+<!ENTITY ColumnsWizard.searchable.desc "Այս սովորական սյունը որոնելի դարձրեք Thunderbird- ի առաջադեմ որոնման պատուհանում:">
+<!ENTITY ColumnsWizard.CustColEditorTab.General.label "Գեներալ">
+<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "Փոստի վերնագրի խմբագիր">
+<!ENTITY ColumnsWizard.editable.label "Խմբագրելի է">
+<!ENTITY ColumnsWizard.mod.desc "Փոստի այս հաղորդագրության վերնագիրը կարող է ձեռքով փոփոխվել:">
+<!ENTITY ColumnsWizard.mod_type.label "Վերնագրի տեսակը">
+<!ENTITY ColumnsWizard.mod_type.desc "Ընտրեք այստեղ վերնագրի տեսակը այս սովորական սյունակի համար:">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "Ազատ տեքստ">
+<!ENTITY ColumnsWizard.mod_type_number.label "Համարներ">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "Հաստատուն ցուցակ">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "Մուտքագրեք մեկ տող մեկ արժեք: Մի օգտագործեք խողովակը &quot;|&quot; բնույթ">

@@ -1,0 +1,314 @@
+{
+	"extensionName": {
+		"message": "ColumnsWizard"
+	},
+	"extensionDescription": {
+		"message": "Adds some magic to the folder list columns! You can add a custom column directly from the addon preference window to show any mail header you want, define the default columns settings for any new folder and show hidden columns in the Conversation Tab and in the search window."
+	},
+
+	"ColumnsWizard.SettingsTitle": {
+		"message": "ColumnsWizard Einstellungen"
+	},
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "Entscheiden Sie hier welche zusätzlichen Spalten in der Konversations-Ansicht dargestellt werden sollen."
+	},
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "Ablageort"
+	},
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "Konto"
+	},
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "Anhang"
+	},
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "Empfänger"
+	},
+	"ColumnsWizard.TabConversation.label": {
+		"message": "Ansicht im Themenbaum"
+	},
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "Spezial Spalten"
+	},
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "Wählen sie hier welche Spalten Sie hinzufügen wollen."
+	},
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "Die hier ausgewählten Spalten müssen in der je Ordner (anzuzeigende Spalten) gewählt werden. Falls Sie hier eine Spalte löschen und wieder hinzufügen, muss diese im Verzeichnis erneut gewählt werden."
+	},
+	"ColumnsWizard.AddCc.label": {
+		"message": "Kopie (CC)"
+	},
+	"ColumnsWizard.TabInfo.label": {
+		"message": "Info"
+	},
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "Ich entwickle diese Erweiterung in meiner Freizeit. Falls Sie sie täglich benutzen, ziehen Sie eine Spende in Betracht. Vielen Dank!"
+	},
+	"ColumnsWizard.DonateLink": {
+		"message": "Hier Spenden!"
+	},
+	"ColumnsWizard.Addbcc.label": {
+		"message": "Blindkopie (Bcc)"
+	},
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "Antwortadresse"
+	},
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "Content-Base"
+	},
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "* Daten von bereits existierenden Mails werden nicht berücksichtigt"
+	},
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "Spalten für neue Ordner"
+	},
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "In neuen Verzeichnissen Standard-Spaltenansicht anwenden."
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "Sortierung:"
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "Aufsteigend"
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "Absteigend"
+	},
+	"ColumnsWizard.newButton.label": {
+		"message": "Neu…"
+	},
+	"ColumnsWizard.editButton.label": {
+		"message": "Editieren…"
+	},
+	"ColumnsWizard.deleteButton.label": {
+		"message": "Löschen"
+	},
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "Dies ist die Standardkonfiguration für die Spaltenansicht neuer Verzeichnisse. Sie kann hier angepasst werden, oder über das Menü in der Kopfzeile über den Mails."
+	},
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "Id"
+	},
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "Kopfzeile"
+	},
+	"ColumnsWizard.CustColsList.title": {
+		"message": "Spaltentitel"
+	},
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "Tooltip"
+	},
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "Aktiv"
+	},
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "Durchsuchbar"
+	},
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "Unterstütze Kopfzeilen editieren."
+	},
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "Diese Option wird automatisch aktiviert wenn eine Spezialspalte mit der Option &quot;mail header kann manuell verändert werden&quot; gespeichert wird."
+	},
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "Erweitert"
+	},
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "Kopfzeilen Editor Optionen"
+	},
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "Änderungen in IMAP erzwingen."
+	},
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "Originale Email löschen."
+	},
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "Manche IMAP Mail-hosts (z.B. Gmail) erkennen Änderungen in der Email nicht, wenn die Standardkopfzeilen sich nicht unterscheiden. Um dieses Problem zu umgehen, wird das &quot;Datum&quot; Feld durch Addition einer Sekunde (oder Subtraktion bei 59 Sekunden) verändert."
+	},
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "Nach Verändern der Kopfzeile wird die Original-Mail in den Papierkorb verschoben. Dies ist eine Sicherheitsmassnahme gegen unvorhergesehenes Verhalten beim Modifizieren."
+	},
+	"ColumnsWizard.ActivateDebug": {
+		"message": "Debug Modus aktivieren."
+	},
+
+	"ColumnsWizard.threadColumn.label": {
+		"comment": "settings.properties",
+		"message": "Thema"
+	},
+	"ColumnsWizard.fromColumn.label": {
+		"message": "Von"
+	},
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Empfänger"
+	},
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Betreff"
+	},
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Datum"
+	},
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Priorität"
+	},
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "Schlagwörter"
+	},
+	"ColumnsWizard.accountColumn.label": {
+		"message": "Konto"
+	},
+	"ColumnsWizard.statusColumn.label": {
+		"message": "Status"
+	},
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Größe"
+	},
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Junk-Status"
+	},
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "Ungelesen"
+	},
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Gesamt"
+	},
+	"ColumnsWizard.readColumn.label": {
+		"message": "Gelesen / Ungelesen"
+	},
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "Empfangen"
+	},
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Kennzeichnung"
+	},
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Ablageort"
+	},
+	"ColumnsWizard.idColumn.label": {
+		"message": "Eingangsreihenfolge"
+	},
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Anhänge"
+	},
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Spezialspalte löschen"
+	},
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "Diese Spezialspalte löschen?"
+	},
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Korrespondenten"
+	},
+
+	"ColumnsWizard.MenuLabel": {
+		"comment": "overlay.dtd",
+		"message": "Columns Wizard - Kopfzeile editieren"
+	},
+	"ColumnsWizard.button.label": {
+		"message": "Columns Wizard"
+	},
+	"ColumnsWizard.button.tooltip": {
+		"message": "Columns Wizard Einstellungen"
+	},
+
+	"extensions.columnswizard@micz.it.description": {
+		"comment": "overlay.properties",
+		"message": "Eine Thunderbird Erweiterung die versteckte Spalten in der Themenbaum Ansicht anzeigt."
+	},
+	"ColumnsWizardcc.label": {
+		"message": "Kopie (CC)"
+	},
+	"ColumnsWizardccDesc.label": {
+		"message": "Klicken, um nach Kopie (CC) zu sortieren"
+	},
+	"ColumnsWizardbcc.label": {
+		"message": "Blindkopie (BCC)"
+	},
+	"ColumnsWizardbccDesc.label": {
+		"message": "Klicken, um nach Blindkopie (BCC) zu sortieren"
+	},
+	"ColumnsWizardreplyto.label": {
+		"message": "Antwortadresse"
+	},
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "Klicken, um nach Antwortadresse zu sortieren"
+	},
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "Klicken, um nach X-Original-From zu sortieren"
+	},
+	"ColumnsWizardcontentbase.label": {
+		"message": "Content-Base"
+	},
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "Klicken, um nach Content-Base zu sortieren"
+	},
+	"ColumnsWizardNFCols.show": {
+		"message": "Anzeigen"
+	},
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "Sortieren nach"
+	},
+	"ColumnsWizardNFCols.col_title": {
+		"message": "Name"
+	},
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "Flex"
+	},
+	"ColumnsWizardNFCols.up": {
+		"message": "Hoch"
+	},
+	"ColumnsWizardNFCols.down": {
+		"message": "Runter"
+	},
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "Spalten auf CW Standard zurücksetzen"
+	},
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "Spaltenansicht als CW Standard definieren"
+	},
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "Nach X-Spam-Score sortieren"
+	},
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "Dieses Layout als Standard für Columnswizard abspeichern?"
+	},
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "Das Spalten-Layout dieses Ordners auf die ColumnsWizard Standardeinstellung zurücksetzen?"
+	},
+
+	"ColumnsWizard.NewCol.Move": {
+		"comment": "new.json",
+		"message": "Bewegung"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Credits"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Autoren"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Versionshinweise"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Debugging-Optionen"
+	}
+
+
+}

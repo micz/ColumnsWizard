@@ -9,8 +9,8 @@ var EXPORTED_SYMBOLS = ["miczColumnsWizard_MsgUtils"];
 
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
-ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
-ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
+var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+var { miczLogger } = ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
 
 
 // cleidigh - Use correct module - avoids deprecation warning
@@ -20,13 +20,13 @@ const info = Cc["@mozilla.org/xre/app-info;1"].getService(Ci.nsIXULAppInfo);
 
 if (parseInt(info.version.split('.')[0],10)  >= 61) {
 	// Services.console.logStringMessage('MailServices.jsm - TB61+');
-	ChromeUtils.import("resource:///modules/MailServices.jsm");
+	var { MailServices } = ChromeUtils.import("resource:///modules/MailServices.jsm");
 } else {
 	// Services.console.logStringMessage('mailServices.js - TB60');
-	ChromeUtils.import("resource:///modules/mailServices.js");
+	var { MailServices } = ChromeUtils.import("resource:///modules/mailServices.js");
 }
 
-ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
+var { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
 const { toXPCOMArray } = ChromeUtils.import("resource:///modules/iteratorUtils.jsm"); // for toXPCOMArray
 
 var miczColumnsWizard_MsgUtils = {
@@ -150,11 +150,13 @@ miczColumnsWizard_MsgUtils.listener = {
 	QueryInterface: (XPCOMUtils.generateQI && XPCOMUtils.generateQI([Ci.nsIStreamListener, Ci.nsISupports]) ||
 		ChromeUtils.generateQI([Ci.nsIStreamListener, Ci.nsISupports])),
 
-	onStartRequest: function (aRequest, aContext) {
+	// onStartRequest: function (aRequest, aContext) {
+	onStartRequest: function (aRequest) {
 		miczColumnsWizard_MsgUtils.listener.text = "";
 	},
 
-	onStopRequest: function (aRequest, aContext, aStatusCode) {
+	// onStopRequest: function (aRequest, aContext, aStatusCode) {
+	onStopRequest: function (aRequest, aStatusCode) {
 		let isImap = (miczColumnsWizard_MsgUtils.folder.server.type === "imap");
 		let date = miczColumnsWizard_MsgUtils.getOrigDate();
 
@@ -263,8 +265,9 @@ miczColumnsWizard_MsgUtils.listener = {
 		cs.CopyFileMessage(fileSpec, fol, null, false, flags, keys, miczColumnsWizard_MsgUtils.copyListener, miczColumnsWizard_MsgUtils.msgWindow);
 	},
 
-	onDataAvailable: function (aRequest, aContext, aInputStream, aOffset, aCount) {
-		let scriptStream = Cc["@mozilla.org/scriptableinputstream;1"].createInstance().QueryInterface(Ci.nsIScriptableInputStream);
+	// onDataAvailable: function (aRequest, aContext, aInputStream, aOffset, aCount) {
+	onDataAvailable: function (aRequest, aInputStream, aOffset, aCount) {
+	let scriptStream = Cc["@mozilla.org/scriptableinputstream;1"].createInstance().QueryInterface(Ci.nsIScriptableInputStream);
 		scriptStream.init(aInputStream);
 		miczColumnsWizard_MsgUtils.listener.text += scriptStream.read(scriptStream.available());
 	},

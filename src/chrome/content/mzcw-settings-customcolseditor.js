@@ -1,10 +1,11 @@
 "use strict";
 
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
-ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsgrid.jsm");
-ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
-ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
-ChromeUtils.import("resource://gre/modules/osfile.jsm");
+
+var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+var { miczColumnsWizard_CustomColsModUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
+var { miczColumnsWizardPref_CustomColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolslist.jsm");
+var { OS } = ChromeUtils.import("resource://gre/modules/osfile.jsm");
 
 var miczColumnsWizard = {};
 var miczColumnsWizardPref_CustColEditor = {
@@ -13,6 +14,7 @@ var miczColumnsWizardPref_CustColEditor = {
 	_sanitize_dbHeader_regex: "([\x21-\x7E2]+)",
 
 	onLoad: function () {
+		console.debug('load');
 		if ("arguments" in window && window.arguments[0]) {
 			let args = window.arguments[0];
 
@@ -22,6 +24,7 @@ var miczColumnsWizardPref_CustColEditor = {
 					// break;
 					case "edit": {
 						let currcol = JSON.parse(args.currcol);
+						console.debug(currcol);
 						let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties");
 						document.getElementById("cw_desc.label").label = _bundleCW.GetStringFromName("ColumnsWizard.DescEdit.label");
 
@@ -61,8 +64,12 @@ var miczColumnsWizardPref_CustColEditor = {
 								document.getElementById('ColumnsWizard.mod_type_fixedlist.list').disabled = false;
 								document.getElementById('ColumnsWizard.mod_type_fixedlist.list.desc').disabled = false;
 							}
+							console.debug('Monotype ');
+							console.debug(document.getElementById("ColumnsWizard.mod_type_fixedlist").getAttribute("checked"));
 						}
-						if (currcol.editFixedList !== undefined) document.getElementById("ColumnsWizard.mod_type_fixedlist.list").setAttribute("value", (currcol.editFixedList).join("\r\n"));
+						if (currcol.editFixedList !== undefined) {
+							 document.getElementById("ColumnsWizard.mod_type_fixedlist.list").textContent = (currcol.editFixedList).join("\r\n");
+						}
 
 						// set the value on the label in the advanced tab
 						document.getElementById('cw_adv_msg_header').setAttribute("value", currcol.dbHeader);
@@ -77,6 +84,7 @@ var miczColumnsWizardPref_CustColEditor = {
 	},
 
 	onAccept: function () {
+		console.debug('Accept');
 		if (!miczColumnsWizardPref_CustColEditor.checkFields()) {
 			return false;
 		}
@@ -97,10 +105,15 @@ var miczColumnsWizardPref_CustColEditor = {
 						newcol.def = "";
 						// get userinput val
 						if (document.getElementById("ColumnsWizard.id").value.match(re_id) !== null) {
-							newcol.index = document.getElementById("ColumnsWizard.id").value.match(re_id).join('').toLowerCase();
+							let index = document.getElementById("ColumnsWizard.id").value.match(re_id).join('');
+							console.debug('new index');
+							console.debug(index);
+							newcol.index = index.toLowerCase();
 						} else {
 							newcol.index = document.getElementById("ColumnsWizard.id").value.toLowerCase();
 						}
+						console.debug(newcol.index);
+
 						// Check if the custom column is already present
 						// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 						// let prefs = prefsc.getBranch("extensions.ColumnsWizard.CustCols.");
@@ -123,7 +136,7 @@ var miczColumnsWizardPref_CustColEditor = {
 						}
 
 						if (document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh) !== null) {
-							newcol.dbHeader = document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh).join('').replace(':', '');// .toLowerCase();
+							newcol.dbHeader = document.getElementById("ColumnsWizard.dbHeader").value.match(re_dbh).join('').replace(':', '').toLowerCase();
 						} else {
 							newcol.dbHeader = document.getElementById("ColumnsWizard.dbHeader").value.toLowerCase();
 						}
@@ -147,6 +160,8 @@ var miczColumnsWizardPref_CustColEditor = {
 					}
 					case "edit": { // Modify the custom column
 						let currcol = JSON.parse(args.currcol);
+						console.debug('current column');
+						console.debug(currcol);
 						// fixed val
 						newcol.isBundled = false;
 						newcol.isCustom = true;
@@ -318,3 +333,12 @@ var miczColumnsWizardPref_CustColEditor = {
 	},
 
 };
+
+document.addEventListener("dialogaccept", function (event) {
+	miczColumnsWizardPref_CustColEditor.onAccept();
+});
+
+window.addEventListener("load", function (event) {
+	miczColumnsWizardPref_CustColEditor.onLoad();
+});
+

@@ -1,0 +1,398 @@
+{
+	"extensionName": {
+		"message": "ColumnsWizard"
+	},
+
+	"extensionDescription": {
+		"message": "Adiciona um pouco de magia às colunas da lista de pastas! Você pode adicionar uma coluna personalizada diretamente da janela de preferências do addon para mostrar qualquer cabeçalho de e-mail que desejar, definir as configurações de colunas padrão para qualquer nova pasta e mostrar as colunas ocultas na guia Conversação e na janela de pesquisa."
+	},
+
+	"ColumnsWizard.SettingsTitle": {
+		"message": "Configurações do ColumnsWizard"
+	},
+
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "Escolha aqui quais colunas adicionais você deseja ver na guia Conversa."
+	},
+
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "Localização"
+	},
+
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "Conta"
+	},
+
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "Anexo"
+	},
+
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "Destinatário"
+	},
+
+	"ColumnsWizard.TabConversation.label": {
+		"message": "Aba de conversa"
+	},
+
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "Colunas Personalizadas"
+	},
+
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "Escolha aqui quais colunas personalizadas você deseja adicionar à lista de mensagens."
+	},
+
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "Uma vez selecionado, você precisa mostrar a coluna na visualização da pasta onde você precisa. Você terá que fazer isso novamente se você selecionar e selecionar novamente uma opção selecionada anteriormente."
+	},
+
+	"ColumnsWizard.AddCc.label": {
+		"message": "Cc"
+	},
+
+	"ColumnsWizard.TabInfo.label": {
+		"message": "Informações"
+	},
+
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "Este addon é gratuito e desenvolvido nas minhas horas vagas. Se você está usando no dia a dia, fique à vontade para apoiá-lo com uma pequena doação clicando no link abaixo. Obrigado!!"
+	},
+
+	"ColumnsWizard.DonateLink": {
+		"message": "Faça uma doação!"
+	},
+
+	"ColumnsWizard.Addbcc.label": {
+		"message": "Bcc"
+	},
+
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "Responder a"
+	},
+
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "Base de Conteúdo"
+	},
+
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "* Esta coluna será preenchida apenas para emails que serão recebidos após a ativação da coluna personalizada."
+	},
+
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "Novas Colunas de Pasta"
+	},
+
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "Use sua configuração de colunas padrão para novas pastas."
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "Ordem de classificação:"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "Ascendente"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "descendente"
+	},
+
+	"ColumnsWizard.newButton.label": {
+		"message": "Novo…"
+	},
+
+	"ColumnsWizard.editButton.label": {
+		"message": "Editar…"
+	},
+
+	"ColumnsWizard.deleteButton.label": {
+		"message": "Excluir"
+	},
+
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "Pontuação X-Spam"
+	},
+
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "Esta é a configuração padrão das colunas para as novas pastas. Você pode modificá-lo aqui ou usar o menu no seletor de coluna da lista de mensagens."
+	},
+
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "EU IRIA"
+	},
+
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "Cabeçalho de Correio"
+	},
+
+	"ColumnsWizard.CustColsList.title": {
+		"message": "Nome da coluna"
+	},
+
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "Dica de ferramenta"
+	},
+
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "ativado"
+	},
+
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "Pesquisável"
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "Habilite a edição de cabeçalhos de e-mail."
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "Esta opção será marcada automaticamente se uma coluna personalizada for salva com a opção de edição habilitada."
+	},
+
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "Avançado"
+	},
+
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "Opções de edição de cabeçalho de correio"
+	},
+
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "Força as alterações ao usar contas IMAP."
+	},
+
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "Coloque a mensagem original na pasta Lixeira."
+	},
+
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "Alguns provedores de IMAP (como Gmail) não registram alterações na origem da mensagem se os cabeçalhos principais não forem diferentes de uma mensagem existente. Para contornar esse limite, o campo &quot;Data&quot; é modificado adicionando um segundo à hora (ou diminuindo-o se os segundos forem 59)."
+	},
+
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "Depois de alterar o valor do cabeçalho selecionado, a mensagem original é movida para a pasta de lixo. Esta é uma medida de segurança contra qualquer comportamento estranho que possa acontecer modificando os cabeçalhos."
+	},
+
+	"ColumnsWizard.ActivateDebug": {
+		"message": "Ative o sistema de depuração."
+	},
+
+	"ColumnsWizard.threadColumn.label": {
+		"message": "Fio"
+	},
+
+	"ColumnsWizard.fromColumn.label": {
+		"message": "De"
+	},
+
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Destinatário"
+	},
+
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Sujeito"
+	},
+
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Encontro"
+	},
+
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Prioridade"
+	},
+
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "Tag"
+	},
+
+	"ColumnsWizard.accountColumn.label": {
+		"message": "Conta"
+	},
+
+	"ColumnsWizard.statusColumn.label": {
+		"message": "Status"
+	},
+
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Tamanho"
+	},
+
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Status de lixo"
+	},
+
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "Não lida"
+	},
+
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Total"
+	},
+
+	"ColumnsWizard.readColumn.label": {
+		"message": "Ler"
+	},
+
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "Recebido"
+	},
+
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Estrelou"
+	},
+
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Localização"
+	},
+
+	"ColumnsWizard.idColumn.label": {
+		"message": "Pedido Recebido"
+	},
+
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Anexos"
+	},
+
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Exclusão de coluna personalizada"
+	},
+
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "Tem certeza de que deseja excluir esta coluna personalizada?"
+	},
+
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Correspondentes"
+	},
+
+	"ColumnsWizard.MenuLabel": {
+		"message": "Edição de cabeçalho CW"
+	},
+
+	"ColumnsWizard.button.label": {
+		"message": "ColumnsWizard"
+	},
+
+	"ColumnsWizard.button.tooltip": {
+		"message": "Abrir preferências do ColumnsWizard"
+	},
+
+	"extensions.columnswizard'@micz.it.description": {
+		"message": "Adiciona um pouco de magia às colunas da lista de pastas! Você pode adicionar uma coluna personalizada diretamente da janela de preferências do addon para mostrar qualquer cabeçalho de e-mail que desejar, definir as configurações de colunas padrão para qualquer nova pasta e mostrar as colunas ocultas na guia Conversação e na janela de pesquisa."
+	},
+
+	"ColumnsWizardcc.label": {
+		"message": "Cc"
+	},
+
+	"ColumnsWizardccDesc.label": {
+		"message": "Clique para classificar por cc"
+	},
+
+	"ColumnsWizardbcc.label": {
+		"message": "Bcc"
+	},
+
+	"ColumnsWizardbccDesc.label": {
+		"message": "Clique para classificar por bcc"
+	},
+
+	"ColumnsWizardreplyto.label": {
+		"message": "Responder a"
+	},
+
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "Clique para classificar por resposta"
+	},
+
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "Clique para classificar por X-Original-From"
+	},
+
+	"ColumnsWizardcontentbase.label": {
+		"message": "Base de Conteúdo"
+	},
+
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "Clique para classificar por base de conteúdo"
+	},
+
+	"ColumnsWizardNFCols.show": {
+		"message": "mostrar"
+	},
+
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "Ordenar por"
+	},
+
+	"ColumnsWizardNFCols.col_title": {
+		"message": "Nome"
+	},
+
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "Flex"
+	},
+
+	"ColumnsWizardNFCols.up": {
+		"message": "Acima"
+	},
+
+	"ColumnsWizardNFCols.down": {
+		"message": "Baixa"
+	},
+
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "Redefinir colunas para o padrão CW"
+	},
+
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "Salvar colunas como padrão CW"
+	},
+
+	"ColumnsWizardxspamscore.label": {
+		"message": "Pontuação X-Spam"
+	},
+
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "Clique para classificar por X-Spam-Score"
+	},
+
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "Tem certeza de que deseja salvar o layout das colunas desta pasta como padrão CW?"
+	},
+
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "Tem certeza de que deseja redefinir o layout das colunas desta pasta para o padrão CW?"
+	},
+
+	"ColumnsWizard.NewCol.Move": {
+		"message": "Mover"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Créditos"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Autores"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Notas de Lançamento"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Opções de depuração"
+	}
+
+}

@@ -1,0 +1,44 @@
+<!ENTITY ColumnsWizard.SettingsTitle "ColumnsWizard-indstillinger">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Vælg her, hvilke yderligere kolonner, du vil se på fanen Samtale.">
+<!ENTITY ColumnsWizard.ShowLocation.label "Beliggenhed">
+<!ENTITY ColumnsWizard.ShowAccount.label "Konto">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Vedhæftet fil">
+<!ENTITY ColumnsWizard.ShowRecipient.label "Modtager">
+<!ENTITY ColumnsWizard.TabConversation.label "Fanen samtale">
+<!ENTITY ColumnsWizard.TabCustomCols.label "Tilpassede kolonner">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Vælg her, hvilke tilpassede kolonner, du vil tilføje til meddelelseslisten.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Når det er valgt, skal du vise kolonnen i mappevisningen, hvor du har brug for den. Du skal gøre dette igen, hvis du fjerner markeringen og genvælger en tidligere valgt mulighed.">
+<!ENTITY ColumnsWizard.AddCc.label "cc">
+<!ENTITY ColumnsWizard.TabInfo.label "Info">
+<!ENTITY ColumnsWizard.InfoMainDesc "Denne addon er gratis og udviklet i min fritid. Hvis du bruger det i din daglige rutine, er du velkommen til at støtte den med en lille donation ved at klikke på linket herunder. Tak!!">
+<!ENTITY ColumnsWizard.DonateLink "Lav en donation!">
+<!ENTITY ColumnsWizard.Addbcc.label "Bcc">
+<!ENTITY ColumnsWizard.Addreplyto.label "Svar til">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-Fra">
+<!ENTITY ColumnsWizard.Addcontentbase.label "Content-Base">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Denne kolonne udfyldes kun for e-mails, der vil blive modtaget efter aktivering af tilpasset kolonne.">
+<!ENTITY ColumnsWizard.TabNewFolderDefault.label "Nye mappekolonner">
+<!ENTITY ColumnsWizard.NewFolderCols.label "Brug din standardkolonneopsætning til nye mapper.">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "Sorteringsrækkefølge:">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "stigende">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "Aftagende">
+<!ENTITY ColumnsWizard.newButton.label "Ny…">
+<!ENTITY ColumnsWizard.editButton.label "Redigere…">
+<!ENTITY ColumnsWizard.deleteButton.label "Slet">
+<!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "Dette er kolonnernes standardkonfiguration for de nye mapper. Du kan ændre det her eller bruge menuen i kolonnevælgeren i meddelelseslisten.">
+<!ENTITY ColumnsWizard.CustColsList.ID "ID">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "Mail Header">
+<!ENTITY ColumnsWizard.CustColsList.title "Kolonnenavn">
+<!ENTITY ColumnsWizard.CustColsList.tooltip "tooltip">
+<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Aktiveret">
+<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Søgbar">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "Aktivér redigering af mailoverskrifter.">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.desc "Denne indstilling kontrolleres automatisk, hvis en brugerdefineret kolonne gemmes med redigeringsindstillingen aktiveret.">
+<!ENTITY ColumnsWizard.TabAdvanced.label "Fremskreden">
+<!ENTITY ColumnsWizard.MailHeaderGroupbox.label "Indstillinger for redigering af mailhoved">
+<!ENTITY ColumnsWizard.MailHeader.use_imap_fix_checkbox.label "Tving ændringer, når du bruger IMAP-konti.">
+<!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Læg den originale meddelelse i papirkurven.">
+<!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Nogle IMAP-udbydere (som Gmail) registrerer ikke ændringer i meddelelseskilden, hvis hovedoverskrifterne ikke adskiller sig fra en eksisterende meddelelse. For at omgå denne grænse ændres feltet &quot;Dato&quot; til at tilføje et sekund til klokkeslættet (eller formindskes hvis sekundet er 59).">
+<!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "Efter at have ændret den valgte headerværdi flyttes den originale meddelelse til papirkurven. Dette er en sikkerhedsforanstaltning mod enhver underlig opførsel, der kan ske, når de ændrer overskrifterne.">
+<!ENTITY ColumnsWizard.ActivateDebug "Aktivér fejlfindingssystemet.">

@@ -1,0 +1,44 @@
+<!ENTITY ColumnsWizard.SettingsTitle "ColumnsWizard Settings">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Wybierz tutaj dodatkowe kolumny, które chcesz zobaczyć na karcie konwersacja.">
+<!ENTITY ColumnsWizard.ShowLocation.label "Lokalizacja">
+<!ENTITY ColumnsWizard.ShowAccount.label "Konto">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Załącznik">
+<!ENTITY ColumnsWizard.ShowRecipient.label "Odbiorca">
+<!ENTITY ColumnsWizard.TabConversation.label "Karta konwersacji">
+<!ENTITY ColumnsWizard.TabCustomCols.label "Kolumny niestandardowe">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Wybierz tutaj, które kolumny niestandardowe chcesz dodać do listy wiadomości.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Po wybraniu musisz pokazać kolumnę w widoku folderu, w którym jej potrzebujesz. Będziesz musiał to zrobić ponownie, jeśli usuniesz i ponownie wybierzesz wcześniej wybraną opcję.">
+<!ENTITY ColumnsWizard.AddCc.label "DW">
+<!ENTITY ColumnsWizard.TabInfo.label "Informacje">
+<!ENTITY ColumnsWizard.InfoMainDesc "Ten dodatek jest darmowy i rozwijany w wolnym czasie. Jeśli używasz go na co dzień, możesz wesprzeć go niewielką darowizną, klikając poniższy link. Dzięki!!">
+<!ENTITY ColumnsWizard.DonateLink "Wesprzyj nas!">
+<!ENTITY ColumnsWizard.Addbcc.label "UDW">
+<!ENTITY ColumnsWizard.Addreplyto.label "Odpowiedź do">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
+<!ENTITY ColumnsWizard.Addcontentbase.label "Baza zawartości">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Ta kolumna zostanie wypełniona tylko dla wiadomości, które zostaną odebrane po aktywacji kolumny niestandardowej.">
+<!ENTITY ColumnsWizard.TabNewFolderDefault.label "Nowe kolumny folderów">
+<!ENTITY ColumnsWizard.NewFolderCols.label "Użyj domyślnej konfiguracji kolumn dla nowych folderów.">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "Porządek sortowania:">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "Rosnąco">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "Malejąco">
+<!ENTITY ColumnsWizard.newButton.label "Nowy…">
+<!ENTITY ColumnsWizard.editButton.label "Edytować…">
+<!ENTITY ColumnsWizard.deleteButton.label "Usunąć">
+<!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "To jest domyślna konfiguracja kolumn dla nowych folderów. Możesz go zmodyfikować tutaj lub skorzystać z menu w selektorze kolumn listy wiadomości.">
+<!ENTITY ColumnsWizard.CustColsList.ID "ID">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "Nagłówek poczty">
+<!ENTITY ColumnsWizard.CustColsList.title "Nazwa kolumny">
+<!ENTITY ColumnsWizard.CustColsList.tooltip "Etykietka">
+<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Włączone">
+<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Przeszukiwalny">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "Włącz edycję nagłówków wiadomości.">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.desc "Ta opcja zostanie automatycznie zaznaczona, jeśli niestandardowa kolumna zostanie zapisana z włączoną opcją edycji.">
+<!ENTITY ColumnsWizard.TabAdvanced.label "zaawansowane">
+<!ENTITY ColumnsWizard.MailHeaderGroupbox.label "Opcje edycji nagłówka poczty">
+<!ENTITY ColumnsWizard.MailHeader.use_imap_fix_checkbox.label "Wymuś zmiany podczas korzystania z kont IMAP.">
+<!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Umieść oryginalną wiadomość w folderze Kosz.">
+<!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Niektórzy dostawcy IMAP (np. Gmail) nie rejestrują zmian w źródle wiadomości, jeśli główne nagłówki nie różnią się od istniejącej wiadomości. Aby obejść ten limit, pole „Data” jest modyfikowane, dodając sekundę do godziny (lub zmniejszając ją, jeśli sekunda wynosi 59).">
+<!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "Po zmianie wybranej wartości nagłówka oryginalna wiadomość jest przenoszona do folderu kosza. Jest to środek zabezpieczający przed dziwnym zachowaniem, które może się zdarzyć podczas modyfikowania nagłówków.">
+<!ENTITY ColumnsWizard.ActivateDebug "Aktywuj system debugowania.">

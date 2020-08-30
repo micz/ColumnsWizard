@@ -16,6 +16,7 @@ var miczColumnsWizard_CustomColsModUtils = {
 	},
 
 	addContextMenu: function (doc, container1, container2, container3, CustCols, stringCustColIndexMod, first_click_callback, submenu_click_callback) {
+					
 		// clear menu items
 		while (container1.firstChild) {
 			container1.firstChild.remove();
@@ -30,6 +31,8 @@ var miczColumnsWizard_CustomColsModUtils = {
 		let arrayCustColIndexMod = [];
 
 		if (stringCustColIndexMod !== '') {
+			// console.debug('ContextMenu');
+			// console.debug(stringCustColIndexMod);
 			arrayCustColIndexMod = JSON.parse(stringCustColIndexMod);
 		}
 
@@ -40,49 +43,55 @@ var miczColumnsWizard_CustomColsModUtils = {
 				let new_menu_item2;
 				let new_menu_item3;
 				if (CustCols[cc].editType !== miczColumnsWizard_CustomColsModUtils.editTypeFixedList) {	// simple menu
-					new_menu_item = doc.createElement("menuitem");
+					// console.debug('SimpleMenu');
+					new_menu_item = doc.createXULElement("menuitem");
 					new_menu_item.setAttribute('label', CustCols[cc].labelString);
 					new_menu_item.setAttribute('colidx', CustCols[cc].index);
 					new_menu_item.setAttribute('mail_header', CustCols[cc].dbHeader);
 					new_menu_item.setAttribute('edit_type', CustCols[cc].editType);
-					new_menu_item.onclick = first_click_callback;
+					new_menu_item.setAttribute('oncommand', 'miczColumnsWizard.editHeaderMenu_OnClick(event)');
+					
+					// new_menu_item.onclick = first_click_callback;
 					new_menu_item2 = new_menu_item.cloneNode(true);
-					new_menu_item2.onclick = first_click_callback;
+					// new_menu_item2.onclick = first_click_callback;
 					new_menu_item3 = new_menu_item.cloneNode(true);
-					new_menu_item3.onclick = first_click_callback;
+					// new_menu_item3.onclick = first_click_callback;
+					
+					new_menu_item2.setAttribute('oncommand', 'miczColumnsWizard.editHeaderMenu_OnClick(event)');
+					new_menu_item3.setAttribute('oncommand', 'miczColumnsWizard.editHeaderMenu_OnClick(event)');
+
 				} else {	// it's a fixed list, add submenus
-					new_menu_item = doc.createElement("menu");
+					new_menu_item = doc.createXULElement("menu");
 					new_menu_item.setAttribute('label', CustCols[cc].labelString);
 					new_menu_item.setAttribute('colidx', CustCols[cc].index);
 					new_menu_item.setAttribute('mail_header', CustCols[cc].dbHeader);
 					new_menu_item.setAttribute('edit_type', CustCols[cc].editType);
 					new_menu_item2 = new_menu_item.cloneNode(true);
 					new_menu_item3 = new_menu_item.cloneNode(true);
-					let mpp = doc.createElement("menupopup");
-					let mpp2 = doc.createElement("menupopup");
-					let mpp3 = doc.createElement("menupopup");
-					mpp.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
-					mpp2.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
-					mpp3.setAttribute("onpopupshowing", "miczColumnsWizard.checkHeadersEditingMenuList(this);");
+					let mpp = doc.createXULElement("menupopup");
+					let mpp2 = doc.createXULElement("menupopup");
+					let mpp3 = doc.createXULElement("menupopup");
 
 					// cleidigh - fix warnings from ANT later
-					// mpp.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
-					// mpp2.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
-					// mpp3.addEventListener("popupshowing", miczColumnsWizard.checkHeadersEditingMenuList(this), true);
-
+					mpp.addEventListener("popupshowing", this.miczColumnsWizard.checkHeadersEditingMenuList, true);
+					mpp2.addEventListener("popupshowing", this.miczColumnsWizard.checkHeadersEditingMenuList, true);
+					mpp3.addEventListener("popupshowing", this.miczColumnsWizard.checkHeadersEditingMenuList, true);
 
 					for (let sbi in CustCols[cc].editFixedList) {
-						let subm = doc.createElement("menuitem");
+						let subm = doc.createXULElement("menuitem");
 						subm.setAttribute('id', CustCols[cc].dbHeader + '_' + CustCols[cc].editFixedList[sbi]);
 						subm.setAttribute('label', CustCols[cc].editFixedList[sbi]);
 						subm.setAttribute('colidx', CustCols[cc].index);
 						subm.setAttribute('mail_header', CustCols[cc].dbHeader);
 						subm.setAttribute('type', 'checkbox');
-						subm.onclick = submenu_click_callback;
+						// subm.onclick = submenu_click_callback;
+						subm.setAttribute('oncommand', 'miczColumnsWizard.editHeaderSubMenu_OnClick()');
 						let subm2 = subm.cloneNode(true);
-						subm2.onclick = submenu_click_callback;
+						// subm2.onclick = submenu_click_callback;
+						subm2.setAttribute('oncommand', 'miczColumnsWizard.editHeaderSubMenu_OnClick()');
 						let subm3 = subm.cloneNode(true);
-						subm3.onclick = submenu_click_callback;
+						// subm3.onclick = submenu_click_callback;
+						subm3.setAttribute('oncommand', 'miczColumnsWizard.editHeaderSubMenu_OnClick()');
 						mpp.appendChild(subm);
 						mpp2.appendChild(subm2);
 						mpp3.appendChild(subm3);

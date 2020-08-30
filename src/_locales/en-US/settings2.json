@@ -1,0 +1,69 @@
+{
+	"ColumnsWizard.threadColumn.label": {
+		"comment": "settings.properties",
+		"message": "Thread"
+	},
+	"ColumnsWizard.fromColumn.label": {
+		"message": "From"
+	},
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Recipient"
+	},
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Subject"
+	},
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Date"
+	},
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Priority"
+	},
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "Tag"
+	},
+	"ColumnsWizard.accountColumn.label": {
+		"message": "Account"
+	},
+	"ColumnsWizard.statusColumn.label": {
+		"message": "Status"
+	},
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Size"
+	},
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Junk Status"
+	},
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "Unread"
+	},
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Total"
+	},
+	"ColumnsWizard.readColumn.label": {
+		"message": "Read"
+	},
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "Received"
+	},
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Starred"
+	},
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Location"
+	},
+	"ColumnsWizard.idColumn.label": {
+		"message": "Order Received"
+	},
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Attachments"
+	},
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Custom Column Delete"
+	},
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "Do you really want to delete this custom column?"
+	},
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Correspondents"
+	}
+}

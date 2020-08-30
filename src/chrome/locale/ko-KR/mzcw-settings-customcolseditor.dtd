@@ -1,0 +1,31 @@
+<!ENTITY ColumnsWizard.window.title "맞춤 열 편집기">
+<!ENTITY ColumnsWizard.Desc.label "새 사용자 정의 열 정보를 삽입하십시오. 모든 필드는 필수입니다.">
+<!ENTITY ColumnsWizard.id.label "신분증">
+<!ENTITY ColumnsWizard.id.desc "ID는 사용자 지정 열의 고유 식별자입니다. 처음 저장 한 후에는 수정할 수 없습니다.">
+<!ENTITY ColumnsWizard.dbHeader.label "메일 헤더">
+<!ENTITY ColumnsWizard.dbHeader.desc "메일 헤더는 사용자 정의 열의 메시지 목록에 표시되어야하는 메일 메시지 필드입니다. 처음 저장 한 후에는 수정할 수 없습니다.">
+<!ENTITY ColumnsWizard.labelString.label "열 이름">
+<!ENTITY ColumnsWizard.btn.setIcon_label "아이콘 설정">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "아이콘을 열 이름으로 설정하려면 여기를 클릭하십시오.">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "아이콘 제거">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "아이콘을 제거하려면 여기를 클릭하십시오.">
+<!ENTITY ColumnsWizard.labelString.desc "여기에 메시지 목록의 열 머리글에 표시 할 이름을 작성하십시오.">
+<!ENTITY ColumnsWizard.tooltipString.label "툴팁">
+<!ENTITY ColumnsWizard.tooltipString.desc "여기에 메시지 목록에있는 열 머리글의 도구 설명을 입력합니다. 일반적으로 &quot;정렬 기준&quot;다음에 열 이름이 표시됩니다.">
+<!ENTITY ColumnsWizard.enabled.label "활성화 됨">
+<!ENTITY ColumnsWizard.enabled.desc "이 사용자 정의 열을 즉시 활성화하십시오.">
+<!ENTITY ColumnsWizard.sortnumber.label "정렬">
+<!ENTITY ColumnsWizard.sortnumber.desc "이 맞춤 열을 숫자로 정렬합니다.">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "사용자 정의 열은 소수점 3 자리 이하의 숫자와 -1.000.000에서 3.294.967 사이의 값만 정렬 할 수 있습니다.">
+<!ENTITY ColumnsWizard.searchable.label "검색 가능">
+<!ENTITY ColumnsWizard.searchable.desc "이 사용자 정의 열을 Thunderbird의 고급 검색 창에서 검색 할 수 있도록하십시오.">
+<!ENTITY ColumnsWizard.CustColEditorTab.General.label "일반">
+<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "메일 헤더 편집기">
+<!ENTITY ColumnsWizard.editable.label "편집 가능">
+<!ENTITY ColumnsWizard.mod.desc "이 메일 메시지 헤더는 수동으로 수정할 수 있습니다.">
+<!ENTITY ColumnsWizard.mod_type.label "헤더 유형">
+<!ENTITY ColumnsWizard.mod_type.desc "이 맞춤 열의 헤더 유형을 여기에서 선택하세요.">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "무료 문자">
+<!ENTITY ColumnsWizard.mod_type_number.label "번호">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "고정 목록">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "한 줄에 하나의 값을 입력하십시오. 파이프 &quot;|&quot;를 사용하지 마십시오. 캐릭터.">

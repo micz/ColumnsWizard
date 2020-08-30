@@ -1,0 +1,44 @@
+<!ENTITY ColumnsWizard.SettingsTitle "ColumnsWizard beállítások">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Itt válassza ki, mely további oszlopokat szeretné látni a Beszélgetés lapon.">
+<!ENTITY ColumnsWizard.ShowLocation.label "Elhelyezkedés">
+<!ENTITY ColumnsWizard.ShowAccount.label "Fiók">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Melléklet">
+<!ENTITY ColumnsWizard.ShowRecipient.label "Befogadó">
+<!ENTITY ColumnsWizard.TabConversation.label "Beszélgetés lap">
+<!ENTITY ColumnsWizard.TabCustomCols.label "Egyéni oszlopok">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Itt válassza ki, mely egyéni oszlopokat szeretné hozzáadni az üzenetlistához.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Miután kiválasztotta, meg kell jelennie az oszlopnak a mappanézetben, ahol szüksége van rá. Ezt újra meg kell tennie, ha töröl egy korábban kiválasztott opciót, és újra kiválasztja azt.">
+<!ENTITY ColumnsWizard.AddCc.label "cc">
+<!ENTITY ColumnsWizard.TabInfo.label "Információ">
+<!ENTITY ColumnsWizard.InfoMainDesc "Ez a kiegészítő ingyenes és szabadidőben fejlesztették ki. Ha mindennapi tevékenysége során használja, nyugodtan támogassa egy kis adományozással, az alábbi linkre kattintva. Kösz!!">
+<!ENTITY ColumnsWizard.DonateLink "Adakozzon!">
+<!ENTITY ColumnsWizard.Addbcc.label "Bcc">
+<!ENTITY ColumnsWizard.Addreplyto.label "Válaszolni">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
+<!ENTITY ColumnsWizard.Addcontentbase.label "Tartalom-alap">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Ez az oszlop csak azokra az e-mailekre kerül kitöltésre, amelyeket az Egyedi oszlop aktiválása után kap.">
+<!ENTITY ColumnsWizard.TabNewFolderDefault.label "Új mappa oszlopok">
+<!ENTITY ColumnsWizard.NewFolderCols.label "Használja az alapértelmezett oszlopok beállításait az új mappákhoz.">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "Sorrend:">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "Növekvő">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "Csökkenő">
+<!ENTITY ColumnsWizard.newButton.label "Új…">
+<!ENTITY ColumnsWizard.editButton.label "Szerkesztés ...">
+<!ENTITY ColumnsWizard.deleteButton.label "Töröl">
+<!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "Ez az oszlopok alapértelmezett konfigurációja az új mappákhoz. Itt módosíthatja, vagy használja az üzenetlista oszlopválasztójának menüjét.">
+<!ENTITY ColumnsWizard.CustColsList.ID "ID">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "Levél fejléce">
+<!ENTITY ColumnsWizard.CustColsList.title "Oszlop neve">
+<!ENTITY ColumnsWizard.CustColsList.tooltip "Tooltip">
+<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Engedélyezve">
+<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Kereshető">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "Engedélyezze a levélfejlécek szerkesztését.">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.desc "Ezt az opciót automatikusan ellenőrzi, ha menti az egyéni oszlopot, ha a szerkesztési lehetőség engedélyezve van.">
+<!ENTITY ColumnsWizard.TabAdvanced.label "Fejlett">
+<!ENTITY ColumnsWizard.MailHeaderGroupbox.label "E-mail fejléc szerkesztési beállításai">
+<!ENTITY ColumnsWizard.MailHeader.use_imap_fix_checkbox.label "A változások kényszerítése IMAP-fiókok használatakor.">
+<!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Helyezze az eredeti üzenetet a kukába.">
+<!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Egyes IMAP-szolgáltatók (például a Gmail) nem regisztrálják a változásokat az üzenetforrásban, ha a fő fejlécek nem különböznek egy meglévő üzenetétől. Ennek a határnak a megkerülése érdekében a &quot;Dátum&quot; mezőt egy másodperc hozzáadásával módosítják az időhöz (vagy csökkentik, ha a második 59-es).">
+<!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "A kiválasztott fejléc érték megváltoztatása után az eredeti üzenet átkerül a kukába. Ez egy biztonsági intézkedés a fejlécek módosításakor esetlegesen fellépő furcsa viselkedés ellen.">
+<!ENTITY ColumnsWizard.ActivateDebug "Aktiválja a hibakeresési rendszert.">

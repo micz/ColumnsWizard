@@ -65,6 +65,10 @@ var miczColumnsWizardPrefsUtils = {
 		this.setBoolPref(this.pref_custcols + 'active', active);
 	},
 
+	setHeadersEditingActive(v) {
+		return this.setBoolPref_CW("CustCols.mod_active", v);
+	},
+
 	getCustColsIndexMod: function () {
 		return this.getCharPref(this.pref_custcols + 'index_mod');
 	},
@@ -147,18 +151,25 @@ var miczColumnsWizardPrefsUtils = {
 	},
 
 	getCharPref_CW: function getCharPref_CW(p) {
-		return this.service.getCharPref(this.pref_base + p);
+
+		let v = this.service.getCharPref(this.pref_base + p);
+		// console.debug('getCharCW ' + p + ' : ' + v);
+		return v;
 	},
 
 	getCharPref: function getCharPref(p) {
-		return this.service.getCharPref(p);
+		let v = this.service.getCharPref(p);
+		// console.debug('getChar ' + p + ' : ' + v);
+		return v;
 	},
 
 	setCharPref_CW: function setCharPref_CW(p, v) {
+		// console.debug('setCharCW ' + p + ' : ' + v);
 		return this.service.setCharPref(this.pref_base + p, v);
 	},
 
 	setCharPref: function setCharPref(p, v) {
+		// console.debug('setChar ' + p + ' : ' + v);
 		return this.service.setCharPref(p, v);
 	},
 

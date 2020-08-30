@@ -1,0 +1,3 @@
+<!ENTITY ColumnsWizard.mailheader-editor.title "Mail Header Editor">
+<!ENTITY ColumnsWizard.MHE.Desc.label "Indtast her mailhovedværdien for denne meddelelse.">
+<!ENTITY ColumnsWizard.MHE.OnlyNumber.label "Kun numre er tilladt.">

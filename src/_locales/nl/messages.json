@@ -1,0 +1,327 @@
+
+{
+	"extensionName": {
+		"message": "ColumnsWizard"
+	},
+	"extensionDescription": {
+		"message": "Dit is een Thunderbird-extensie die wat magie aan de mappenlijstkolommen toevoegt. Hij geeft verborgen kolommen in het conversatietabblad weer, en maakt toevoegen van aangepaste kolommen aan een willekeurige map mogelijk."
+	},
+
+	"ColumnsWizard-file-src-settings.dtd": {
+		"message": "./src/chrome/locale/nl"
+	},
+	"ColumnsWizard.SettingsTitle": {
+		"message": "ColumnsWizard-instellingen"
+	},
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "Kies hier welke extra kolommen u in het conversatietabblad wilt zien."
+	},
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "Lokatie"
+	},
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "Account"
+	},
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "Bijlage"
+	},
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "Ontvanger"
+	},
+	"ColumnsWizard.TabConversation.label": {
+		"message": "Conversatietabblad"
+	},
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "Aangepaste kolommen"
+	},
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "Kies hier welke aangepaste kolommen u wilt toevoegen."
+	},
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "Na selectie dient u de kolom in de mapweergave waar u deze nodig hebt weer te geven. U dient dit opnieuw te doen als u een eerder geselecteerde optie deselecteert en opnieuw selecteert."
+	},
+	"ColumnsWizard.AddCc.label": {
+		"message": "Cc"
+	},
+	"ColumnsWizard.TabInfo.label": {
+		"message": "Info"
+	},
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "Deze add-on is gratis en ontwikkeld in mijn vrije tijd. Als u hem dagelijks gebruikt, steun hem dan middels een kleine donatie via onderstaande koppeling. Bedankt!"
+	},
+	"ColumnsWizard.DonateLink": {
+		"message": "Donatie doen!"
+	},
+	"ColumnsWizard.Addbcc.label": {
+		"message": "Bcc"
+	},
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "Antwoord-aan"
+	},
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "Content-Base"
+	},
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "* Deze kolom wordt alleen gevuld voor de e-mailberichten die na activeren van de aangepaste kolom worden ontvangen."
+	},
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "Nieuwe mapkolommen"
+	},
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "Uw standaard kolominstellingen gebruiken voor nieuwe mappen."
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "Sorteervolgorde:"
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "Oplopend"
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "Aflopend"
+	},
+	"ColumnsWizard.newButton.label": {
+		"message": "Nieuw…"
+	},
+	"ColumnsWizard.editButton.label": {
+		"message": "Bewerken…"
+	},
+	"ColumnsWizard.deleteButton.label": {
+		"message": "Verwijderen"
+	},
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "Dit is de standaardconfiguratie voor kolommen voor nieuwe mappen. U kunt deze hier wijzigen of het menu in de kolomselectie van de berichtenlijst gebruiken."
+	},
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "Kenmerk"
+	},
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "Berichtheader"
+	},
+	"ColumnsWizard.CustColsList.title": {
+		"message": "Kolomnaam"
+	},
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "Tooltip"
+	},
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "Ingeschakeld"
+	},
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "Doorzoekbaar"
+	},
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "Bewerking van berichtheaders inschakelen."
+	},
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "Deze optie wordt automatisch aangevinkt als een aangepaste kolom wordt opgeslagen terwijl de bewerkingsoptie is ingeschakeld."
+	},
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "Geavanceerd"
+	},
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "Bewerkingsopties berichtheaders"
+	},
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "Wijzigingen afdwingen bij gebruik IMAP-accounts."
+	},
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "Oorspronkelijk bericht verwijderen."
+	},
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "Sommige IMAP-mappen (zoals GMail) registreren wijzigingen in de berichtbron niet als de hoofdheaders niet afwijken van een bestaand bericht. Om dit te omzeilen wordt het veld ‘datum’ aangepast door een seconde aan de tijd toe te voegen (of te verlagen als het aantal seconden 59 bedraagt)."
+	},
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "Na wijziging van de geselecteerde headerwaarde wordt het oorspronkelijke bericht verwijderd. Dit is een beveiligingsmaatregel tegen vreemd gedrag dat kan optreden bij het wijzigen van headers."
+	},
+	"ColumnsWizard.ActivateDebug": {
+		"message": "Het foutopsporingssysteem activeren."
+	}
+,
+
+
+	"ColumnsWizard-file-src-settings.properties": {
+		"message": "./src/chrome/locale/nl"
+	},
+	"ColumnsWizard.threadColumn.label": {
+		"message": "Conversatie"
+	},
+	"ColumnsWizard.fromColumn.label": {
+		"message": "Van"
+	},
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Ontvanger"
+	},
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Onderwerp"
+	},
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Datum"
+	},
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Prioriteit"
+	},
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "Label"
+	},
+	"ColumnsWizard.accountColumn.label": {
+		"message": "Account"
+	},
+	"ColumnsWizard.statusColumn.label": {
+		"message": "Status"
+	},
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Grootte"
+	},
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Ongewenstberichtstatus"
+	},
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "Ongelezen"
+	},
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Totaal"
+	},
+	"ColumnsWizard.readColumn.label": {
+		"message": "Gelezen"
+	},
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "Ontvangen"
+	},
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Met ster"
+	},
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Locatie"
+	},
+	"ColumnsWizard.idColumn.label": {
+		"message": "Volgorde van ontvangst"
+	},
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Bijlagen"
+	},
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Aangepaste kolom verwijderen"
+	},
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "Wilt u echt deze aangepaste kolom verwijderen?"
+	},
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Correspondenten"
+	}
+,
+
+
+	"ColumnsWizard-file-src-overlay.dtd": {
+		"message": "./src/chrome/locale/nl"
+	},
+	"ColumnsWizard.MenuLabel": {
+		"message": "CW header bewerken"
+	},
+	"ColumnsWizard.button.label": {
+		"message": "ColumnsWizard"
+	},
+	"ColumnsWizard.button.tooltip": {
+		"message": "ColumnsWizard-voorkeuren openen"
+	}
+,
+
+
+	"ColumnsWizard-file-src-overlay.properties": {
+		"message": "./src/chrome/locale/nl"
+	},
+	"extensions.columnswizard@micz.it.description": {
+		"message": "Dit is een Thunderbird-extensie die wat magie aan de mappenlijstkolommen toevoegt. Hij geeft verborgen kolommen in het conversatietabblad weer, en maakt toevoegen van aangepaste kolommen aan een willekeurige map mogelijk."
+	},
+	"ColumnsWizardcc.label": {
+		"message": "Cc"
+	},
+	"ColumnsWizardccDesc.label": {
+		"message": "Klik om te sorteren op cc"
+	},
+	"ColumnsWizardbcc.label": {
+		"message": "Bcc"
+	},
+	"ColumnsWizardbccDesc.label": {
+		"message": "Klik om te sorteren op bcc"
+	},
+	"ColumnsWizardreplyto.label": {
+		"message": "Antwoord-naar"
+	},
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "Klik om te sorteren op antwoord-naar"
+	},
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "Klik om te sorteren op X-Original-From"
+	},
+	"ColumnsWizardcontentbase.label": {
+		"message": "Content-Base"
+	},
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "Klik om te sorteren op Content-Base"
+	},
+	"ColumnsWizardNFCols.show": {
+		"message": "Weergeven"
+	},
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "Sorteren op"
+	},
+	"ColumnsWizardNFCols.col_title": {
+		"message": "Naam"
+	},
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "Flex"
+	},
+	"ColumnsWizardNFCols.up": {
+		"message": "Omhoog"
+	},
+	"ColumnsWizardNFCols.down": {
+		"message": "Omlaag"
+	},
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "Kolommen terugzetten naar CW-standaard"
+	},
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "Kolommen opslaan als CW-standaard"
+	},
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "Klik om te sorteren op X-Spam-Score"
+	},
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "Weet u zeker dat u de kolomlay-out van deze map als CW-standaard wilt opslaan?"
+	},
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "Weet u zeker dat u de kolomlay-out van deze map wilt omzetten naar de CW-standaard?"
+	},
+
+	"ColumnsWizard.NewCol.Move": {
+		"message": "Actie"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Credits"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Auteurs"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Release-opmerkingen"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Foutopsporingsopties"
+	}
+}

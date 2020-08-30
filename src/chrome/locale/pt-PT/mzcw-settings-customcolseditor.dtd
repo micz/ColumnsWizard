@@ -1,0 +1,31 @@
+<!ENTITY ColumnsWizard.window.title "Editor de coluna personalizado">
+<!ENTITY ColumnsWizard.Desc.label "Insira as novas informações da coluna personalizada. Todos os campos são obrigatórios.">
+<!ENTITY ColumnsWizard.id.label "EU IRIA">
+<!ENTITY ColumnsWizard.id.desc "O ID é o identificador exclusivo da coluna personalizada. Não pode ser modificado após o primeiro salvamento.">
+<!ENTITY ColumnsWizard.dbHeader.label "Cabeçalho de Correio">
+<!ENTITY ColumnsWizard.dbHeader.desc "O Cabeçalho do Correio é o campo das mensagens de correio que deve ser mostrado na lista de mensagens na Coluna Personalizada. Não pode ser modificado após o primeiro salvamento.">
+<!ENTITY ColumnsWizard.labelString.label "Nome da coluna">
+<!ENTITY ColumnsWizard.btn.setIcon_label "Definir ícone">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Clique aqui para definir um ícone como o nome da coluna.">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "Remover ícone">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Clique aqui para remover o ícone.">
+<!ENTITY ColumnsWizard.labelString.desc "Escreva aqui o nome a ser mostrado no cabeçalho da coluna na lista de mensagens.">
+<!ENTITY ColumnsWizard.tooltipString.label "Dica de ferramenta">
+<!ENTITY ColumnsWizard.tooltipString.desc "Insira aqui a dica de ferramenta do cabeçalho da coluna na lista de mensagens. Normalmente, é &quot;Classificar por&quot; seguido do nome da coluna.">
+<!ENTITY ColumnsWizard.enabled.label "ativado">
+<!ENTITY ColumnsWizard.enabled.desc "Ative esta coluna personalizada imediatamente.">
+<!ENTITY ColumnsWizard.sortnumber.label "Ordenação">
+<!ENTITY ColumnsWizard.sortnumber.desc "Classifique esta coluna personalizada como um número.">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "A coluna personalizada pode classificar apenas números com no máximo 3 decimais e um valor entre -1.000.000 e 3.294.967.">
+<!ENTITY ColumnsWizard.searchable.label "É pesquisável">
+<!ENTITY ColumnsWizard.searchable.desc "Torne esta coluna personalizada pesquisável na janela de pesquisa avançada do Thunderbird.">
+<!ENTITY ColumnsWizard.CustColEditorTab.General.label "Geral">
+<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "Editor de Cabeçalho de Correio">
+<!ENTITY ColumnsWizard.editable.label "É editável">
+<!ENTITY ColumnsWizard.mod.desc "Este cabeçalho da mensagem de correio pode ser modificado manualmente.">
+<!ENTITY ColumnsWizard.mod_type.label "Tipo de cabeçalho">
+<!ENTITY ColumnsWizard.mod_type.desc "Escolha aqui o tipo de cabeçalho para esta coluna personalizada.">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "Texto livre">
+<!ENTITY ColumnsWizard.mod_type_number.label "Números">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "Lista fixa">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "Insira um valor por linha. Não use o tubo &quot;|&quot; personagem.">

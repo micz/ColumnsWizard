@@ -1,0 +1,31 @@
+<!ENTITY ColumnsWizard.window.title "Editor de columnas personalizado">
+<!ENTITY ColumnsWizard.Desc.label "Inserte la nueva información de la columna personalizada. Todos los campos son obligatorios.">
+<!ENTITY ColumnsWizard.id.label "CARNÉ DE IDENTIDAD">
+<!ENTITY ColumnsWizard.id.desc "El ID es el identificador único de la columna personalizada. No se puede modificar después del primer guardado.">
+<!ENTITY ColumnsWizard.dbHeader.label "Encabezado de correo">
+<!ENTITY ColumnsWizard.dbHeader.desc "El encabezado del correo es el campo de los mensajes de correo que se debe mostrar en la lista de mensajes en la columna personalizada. No se puede modificar después del primer guardado.">
+<!ENTITY ColumnsWizard.labelString.label "Nombre de columna">
+<!ENTITY ColumnsWizard.btn.setIcon_label "Establecer icono">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Haga clic aquí para establecer un icono como nombre de columna.">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "Eliminar icono">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Haga clic aquí para eliminar el icono.">
+<!ENTITY ColumnsWizard.labelString.desc "Escriba aquí el nombre que se mostrará en el encabezado de la columna en la lista de mensajes.">
+<!ENTITY ColumnsWizard.tooltipString.label "Descripción emergente">
+<!ENTITY ColumnsWizard.tooltipString.desc "Introduzca aquí la información sobre herramientas del encabezado de la columna en la lista de mensajes. Por lo general, es &quot;Ordenar por&quot; seguido del nombre de la columna.">
+<!ENTITY ColumnsWizard.enabled.label "Habilitado">
+<!ENTITY ColumnsWizard.enabled.desc "Habilite esta columna personalizada de inmediato.">
+<!ENTITY ColumnsWizard.sortnumber.label "Clasificación">
+<!ENTITY ColumnsWizard.sortnumber.desc "Ordene esta columna personalizada como un número.">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "La columna personalizada solo puede ordenar números con no más de 3 decimales y un valor entre -1.000.000 y 3.294.967.">
+<!ENTITY ColumnsWizard.searchable.label "Se puede buscar">
+<!ENTITY ColumnsWizard.searchable.desc "Haga que esta columna personalizada se pueda buscar en la ventana de búsqueda avanzada de Thunderbird.">
+<!ENTITY ColumnsWizard.CustColEditorTab.General.label "General">
+<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "Editor de encabezado de correo">
+<!ENTITY ColumnsWizard.editable.label "Es editable">
+<!ENTITY ColumnsWizard.mod.desc "Este encabezado de mensaje de correo se puede modificar manualmente.">
+<!ENTITY ColumnsWizard.mod_type.label "Tipo de encabezado">
+<!ENTITY ColumnsWizard.mod_type.desc "Elija aquí el tipo de encabezado para esta columna personalizada.">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "Texto libre">
+<!ENTITY ColumnsWizard.mod_type_number.label "Números">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "Lista fija">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "Ingrese un valor por línea. No utilice la tubería &quot;|&quot; personaje.">

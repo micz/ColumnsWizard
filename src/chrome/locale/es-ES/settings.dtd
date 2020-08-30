@@ -1,0 +1,44 @@
+<!ENTITY ColumnsWizard.SettingsTitle "Configuración de ColumnsWizard">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Elija aquí qué columnas adicionales desea ver en la pestaña Conversación.">
+<!ENTITY ColumnsWizard.ShowLocation.label "Ubicación">
+<!ENTITY ColumnsWizard.ShowAccount.label "Cuenta">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Adjunto archivo">
+<!ENTITY ColumnsWizard.ShowRecipient.label "Recipiente">
+<!ENTITY ColumnsWizard.TabConversation.label "Pestaña de conversación">
+<!ENTITY ColumnsWizard.TabCustomCols.label "Columnas personalizadas">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Elija aquí qué columnas personalizadas desea agregar a la lista de mensajes.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Una vez seleccionada, debe mostrar la columna en la vista de carpeta donde la necesite. Tendrá que hacer esto nuevamente si quita y vuelve a seleccionar una opción previamente seleccionada.">
+<!ENTITY ColumnsWizard.AddCc.label "Cc">
+<!ENTITY ColumnsWizard.TabInfo.label "Info">
+<!ENTITY ColumnsWizard.InfoMainDesc "Este complemento es gratuito y se desarrolla en mi tiempo libre. Si lo está utilizando en su rutina diaria, no dude en apoyarlo con una pequeña donación haciendo clic en el enlace a continuación. ¡¡Gracias!!">
+<!ENTITY ColumnsWizard.DonateLink "¡Haz una donación!">
+<!ENTITY ColumnsWizard.Addbcc.label "Cco">
+<!ENTITY ColumnsWizard.Addreplyto.label "Responder a">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-Desde">
+<!ENTITY ColumnsWizard.Addcontentbase.label "Base de contenido">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Esta columna se completará solo para los correos que se recibirán después de la activación de la columna personalizada.">
+<!ENTITY ColumnsWizard.TabNewFolderDefault.label "Nuevas columnas de carpeta">
+<!ENTITY ColumnsWizard.NewFolderCols.label "Utilice su configuración de columnas predeterminada para carpetas nuevas.">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "Orden de clasificación:">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "Ascendente">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "Descendiendo">
+<!ENTITY ColumnsWizard.newButton.label "Nuevo…">
+<!ENTITY ColumnsWizard.editButton.label "Editar…">
+<!ENTITY ColumnsWizard.deleteButton.label "Eliminar">
+<!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "Esta es la configuración predeterminada de las columnas para las nuevas carpetas. Puede modificarlo aquí o usar el menú en el selector de columnas de la lista de mensajes.">
+<!ENTITY ColumnsWizard.CustColsList.ID "CARNÉ DE IDENTIDAD">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "Encabezado de correo">
+<!ENTITY ColumnsWizard.CustColsList.title "Nombre de columna">
+<!ENTITY ColumnsWizard.CustColsList.tooltip "Descripción emergente">
+<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Habilitado">
+<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Buscable">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "Habilite la edición de encabezados de correo.">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.desc "Esta opción se marcará automáticamente si se guarda una columna personalizada con la opción de edición habilitada.">
+<!ENTITY ColumnsWizard.TabAdvanced.label "Avanzado">
+<!ENTITY ColumnsWizard.MailHeaderGroupbox.label "Opciones de edición de encabezado de correo">
+<!ENTITY ColumnsWizard.MailHeader.use_imap_fix_checkbox.label "Forzar cambios al usar cuentas IMAP.">
+<!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Coloque el mensaje original en la carpeta Papelera.">
+<!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Algunos proveedores de IMAP (como Gmail) no registran cambios en la fuente del mensaje si los encabezados principales no son diferentes de un mensaje existente. Para evitar este límite, el campo &quot;Fecha&quot; se modifica agregando un segundo a la hora (o disminuyéndolo si los segundos son 59).">
+<!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "Después de cambiar el valor del encabezado seleccionado, el mensaje original se mueve a la carpeta de basura. Esta es una medida de seguridad contra cualquier comportamiento extraño que pueda ocurrir modificando los encabezados.">
+<!ENTITY ColumnsWizard.ActivateDebug "Activa el sistema de depuración.">

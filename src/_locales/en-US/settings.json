@@ -1,0 +1,134 @@
+{
+	"ColumnsWizard.SettingsTitle": {
+		"message": "ColumnsWizard Settings"
+	},
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "Choose here which additional columns you want to see in the Conversation Tab."
+	},
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "Location"
+	},
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "Account"
+	},
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "Attachment"
+	},
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "Recipient"
+	},
+	"ColumnsWizard.TabConversation.label": {
+		"message": "Conversation Tab"
+	},
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "Custom Columns"
+	},
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "Choose here which custom columns you want to add to the messages list."
+	},
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "Once selected, you need to show the column in the folder view where you need it. You'll have to do this again if you delesect and reselect a previously selected option."
+	},
+	"ColumnsWizard.AddCc.label": {
+		"message": "Cc"
+	},
+	"ColumnsWizard.TabInfo.label": {
+		"message": "Info"
+	},
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "This addon is free and developed in my spare time. If you're using it in your every day routine, feel free to support it with a little donation clicking on the link below. Thanks!!"
+	},
+	"ColumnsWizard.DonateLink": {
+		"message": "Make a donation!"
+	},
+	"ColumnsWizard.Addbcc.label": {
+		"message": "Bcc"
+	},
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "Reply-to"
+	},
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "Content-Base"
+	},
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "* This column will be populated only for mails that will be received after the Custom Column activation."
+	},
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "New Folder Columns"
+	},
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "Use your default columns setup for new folders."
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "Sort order:"
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "Ascending"
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "Descending"
+	},
+	"ColumnsWizard.newButton.label": {
+		"message": "New…"
+	},
+	"ColumnsWizard.editButton.label": {
+		"message": "Edit…"
+	},
+	"ColumnsWizard.deleteButton.label": {
+		"message": "Delete"
+	},
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "This is the columns' default configuration for the new folders. You can modify it here or use the menu in the column picker of the message list."
+	},
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "ID"
+	},
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "Mail Header"
+	},
+	"ColumnsWizard.CustColsList.title": {
+		"message": "Column Name"
+	},
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "Tooltip"
+	},
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "Enabled"
+	},
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "Searchable"
+	},
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "Enable mail headers editing."
+	},
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "This option will be automatically checked if a custom column is saved with the editing option enabled."
+	},
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "Advanced"
+	},
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "Mail Header Editing Options"
+	},
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "Force changes when using IMAP accounts."
+	},
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "Put the original message in the Trash folder."
+	},
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "Some IMAP providers (like Gmail) don't register changes in the message source if the main headers are not different from an existing message. To work around this limit, the &quot;Date&quot; field is modified adding a second to the time (or decreasing it if second are 59)."
+	},
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "After changing the selected header value, the original message is moved to the trash folder. This is a security measure against any odd behaviour that might happen modifying the headers."
+	},
+	"ColumnsWizard.ActivateDebug": {
+		"message": "Activate the debug system."
+	}
+}

@@ -1,0 +1,327 @@
+
+{
+	"extensionName": {
+		"message": "ColumnsWizard"
+	},
+	"extensionDescription": {
+		"message": "给文件夹列表的列增加一点魔力。您可以直接在本扩展的首选项窗口中添加自定义的列来显示任何您需要的邮件头。您还可以自定义新文件夹的默认列设置，以及显示在对话标签页和搜索窗口中被隐藏的列。"
+	},
+
+	"ColumnsWizard-file-src-settings.dtd": {
+		"message": "./src/chrome/locale/zh-CN"
+	},
+	"ColumnsWizard.SettingsTitle": {
+		"message": "ColumnsWizard 设置"
+	},
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "选择您想要在对话标签页中查看的额外的列。"
+	},
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "位置"
+	},
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "账户"
+	},
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "附件"
+	},
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "接收者"
+	},
+	"ColumnsWizard.TabConversation.label": {
+		"message": "对话标签页"
+	},
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "自定义列"
+	},
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "请选择您想添加到消息列表的自定义列。"
+	},
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "选定之后，您需要显示的列就会在您需要它时在文件夹视图中出现。如果您取消又重新选中一个以前选择的选项，您必须再次这样做。"
+	},
+	"ColumnsWizard.AddCc.label": {
+		"message": "抄送"
+	},
+	"ColumnsWizard.TabInfo.label": {
+		"message": "信息"
+	},
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "本附加组件是在我的业余时间下免费开发的。如果你每天都在使用它，希望您能随心做一点点捐款支持它，只需点击下面的链接。十分感谢！"
+	},
+	"ColumnsWizard.DonateLink": {
+		"message": "我要捐款！"
+	},
+	"ColumnsWizard.Addbcc.label": {
+		"message": "密送"
+	},
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "回复给"
+	},
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "Content-Base"
+	},
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "* 此列仅适用在自定义列激活后被接收的邮件。"
+	},
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "新文件夹的列"
+	},
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "对新的文件夹使用您的默认列设置。"
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "排序："
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "升序"
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "降序"
+	},
+	"ColumnsWizard.newButton.label": {
+		"message": "新建…"
+	},
+	"ColumnsWizard.editButton.label": {
+		"message": "编辑…"
+	},
+	"ColumnsWizard.deleteButton.label": {
+		"message": "删除"
+	},
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "这是新文件夹的默认列配置。您可以在这里修改，或者使用消息列表的列选择器菜单修改它。"
+	},
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "ID"
+	},
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "邮件头"
+	},
+	"ColumnsWizard.CustColsList.title": {
+		"message": "列名"
+	},
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "工具提示"
+	},
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "启用"
+	},
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "可搜索"
+	},
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "启用邮件头编辑。"
+	},
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "如果在编辑选项启用时已保存一个自定义列，此选项将自动选中。"
+	},
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "高级"
+	},
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "邮件头编辑选项"
+	},
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "使用 IMAP 账户时强制变更"
+	},
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "将原邮件放入垃圾箱。"
+	},
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "某些 IMAP 提供方（例如 Gmail）在邮件头与现有消息无差异时不注册邮件源代码变更。为了绕过此限制，“日期”字段会被修改，在时间上添加几秒（或者降低几秒，如果已经是59秒）。"
+	},
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "在更改选定的头信息的值之后，原邮件将移入垃圾箱文件夹。这是一种安全保障措施，避免修改头信息后可能发生的任何异常行为。"
+	},
+	"ColumnsWizard.ActivateDebug": {
+		"message": "激活调试系统。"
+	}
+,
+
+
+	"ColumnsWizard-file-src-settings.properties": {
+		"message": "./src/chrome/locale/zh-CN"
+	},
+	"ColumnsWizard.threadColumn.label": {
+		"message": "话题"
+	},
+	"ColumnsWizard.fromColumn.label": {
+		"message": "发件人"
+	},
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "收件人"
+	},
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "主题"
+	},
+	"ColumnsWizard.dateColumn.label": {
+		"message": "日期"
+	},
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "优先级"
+	},
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "标签"
+	},
+	"ColumnsWizard.accountColumn.label": {
+		"message": "账户"
+	},
+	"ColumnsWizard.statusColumn.label": {
+		"message": "状态"
+	},
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "大小"
+	},
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "垃圾状态"
+	},
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "未读"
+	},
+	"ColumnsWizard.totalColumn.label": {
+		"message": "总共"
+	},
+	"ColumnsWizard.readColumn.label": {
+		"message": "已读"
+	},
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "接收时间"
+	},
+	"ColumnsWizard.starredColumn.label": {
+		"message": "已加星标"
+	},
+	"ColumnsWizard.locationColumn.label": {
+		"message": "地址"
+	},
+	"ColumnsWizard.idColumn.label": {
+		"message": "按接收时间排序"
+	},
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "附件"
+	},
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "删除自定义列"
+	},
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "您确定要删除此自定义列吗？"
+	},
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "记者"
+	}
+,
+
+
+	"ColumnsWizard-file-src-overlay.dtd": {
+		"message": "./src/chrome/locale/zh-CN"
+	},
+	"ColumnsWizard.MenuLabel": {
+		"message": "CW 邮件头编辑"
+	},
+	"ColumnsWizard.button.label": {
+		"message": "ColumnsWizard"
+	},
+	"ColumnsWizard.button.tooltip": {
+		"message": "打开 ColumnsWizard 首选项"
+	}
+,
+
+
+	"ColumnsWizard-file-src-overlay.properties": {
+		"message": "./src/chrome/locale/zh-CN"
+	},
+	"extensions.columnswizard@micz.it.description": {
+		"message": "给文件夹列表的列增加一点魔力。您可以直接在本扩展的首选项窗口中添加自定义的列来显示任何您需要的邮件头。您还可以自定义新文件夹的默认列设置，以及显示在对话标签页和搜索窗口中被隐藏的列。"
+	},
+	"ColumnsWizardcc.label": {
+		"message": "抄送"
+	},
+	"ColumnsWizardccDesc.label": {
+		"message": "点击按抄送排序"
+	},
+	"ColumnsWizardbcc.label": {
+		"message": "密送"
+	},
+	"ColumnsWizardbccDesc.label": {
+		"message": "点击按密送排序"
+	},
+	"ColumnsWizardreplyto.label": {
+		"message": "回复给"
+	},
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "点击按回复给排序"
+	},
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "点击按 X-Original-From 排序"
+	},
+	"ColumnsWizardcontentbase.label": {
+		"message": "Content-Base"
+	},
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "点击按 Content-Base 排序"
+	},
+	"ColumnsWizardNFCols.show": {
+		"message": "显示"
+	},
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "排序方式"
+	},
+	"ColumnsWizardNFCols.col_title": {
+		"message": "名称"
+	},
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "弹性"
+	},
+	"ColumnsWizardNFCols.up": {
+		"message": "上升"
+	},
+	"ColumnsWizardNFCols.down": {
+		"message": "下降"
+	},
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "将列重置为本扩展的默认设置"
+	},
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "将列保存为本扩展的默认设置"
+	},
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "点击按照 X-Spam-Score 排序"
+	},
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "您确定要将此文件夹的列布局保存为 ColumnsWizard 的默认设置吗？"
+	},
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "您确定要将此文件夹的列布局重置到 ColumnsWizard 的默认设置吗？"
+	},
+
+	"ColumnsWizard.NewCol.Move": {
+		"message": "移动"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "学分"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "作者"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "发行说明"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "调试选项"
+	}
+}

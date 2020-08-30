@@ -1,0 +1,3 @@
+<!ENTITY ColumnsWizard.mailheader-editor.title "Editor de Cabeçalho de Correio">
+<!ENTITY ColumnsWizard.MHE.Desc.label "Insira aqui o valor do cabeçalho do e-mail para esta mensagem.">
+<!ENTITY ColumnsWizard.MHE.OnlyNumber.label "Somente números são permitidos.">

@@ -1,5 +1,6 @@
 "use strict";
-ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
+
+var { miczColumnsWizard_CustomColsModUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolsmodutils.jsm");
 
 var miczColumnsWizard = {};
 var miczColumnsWizard_MailHeaderEditor = {
@@ -66,3 +67,12 @@ var miczColumnsWizard_MailHeaderEditor = {
 	},
 
 };
+
+document.addEventListener("dialogaccept", function (event) {
+	miczColumnsWizard_MailHeaderEditor.onAccept();
+});
+
+window.addEventListener("load", function (event) {
+	miczColumnsWizard_MailHeaderEditor.onLoad();
+});
+

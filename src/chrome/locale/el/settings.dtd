@@ -1,0 +1,44 @@
+<!ENTITY ColumnsWizard.SettingsTitle "Ρυθμίσεις στήλης">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Επιλέξτε εδώ ποιες επιπλέον στήλες θέλετε να δείτε στην καρτέλα Συνομιλία.">
+<!ENTITY ColumnsWizard.ShowLocation.label "Τοποθεσία">
+<!ENTITY ColumnsWizard.ShowAccount.label "λογαριασμός">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Συνημμένο">
+<!ENTITY ColumnsWizard.ShowRecipient.label "Παραλήπτης">
+<!ENTITY ColumnsWizard.TabConversation.label "Καρτέλα συνομιλίας">
+<!ENTITY ColumnsWizard.TabCustomCols.label "Προσαρμοσμένες στήλες">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Επιλέξτε εδώ ποιες προσαρμοσμένες στήλες θέλετε να προσθέσετε στη λίστα μηνυμάτων.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Μόλις επιλεγεί, πρέπει να εμφανίσετε τη στήλη στην προβολή φακέλου όπου τη χρειάζεστε. Θα πρέπει να το κάνετε ξανά αν διαλέξετε και επανεπιλέξετε μια προηγούμενη επιλογή.">
+<!ENTITY ColumnsWizard.AddCc.label "Γ">
+<!ENTITY ColumnsWizard.TabInfo.label "Πληροφορίες">
+<!ENTITY ColumnsWizard.InfoMainDesc "Αυτό το πρόσθετο είναι δωρεάν και αναπτύχθηκε στον ελεύθερο χρόνο μου. Εάν το χρησιμοποιείτε στην καθημερινή σας ρουτίνα, μη διστάσετε να το υποστηρίξετε με μια μικρή δωρεά κάνοντας κλικ στον παρακάτω σύνδεσμο. Ευχαριστώ!!">
+<!ENTITY ColumnsWizard.DonateLink "Κάντε μια δωρεά!">
+<!ENTITY ColumnsWizard.Addbcc.label "Κρυ">
+<!ENTITY ColumnsWizard.Addreplyto.label "Να απαντήσουν σε">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original-From">
+<!ENTITY ColumnsWizard.Addcontentbase.label "Περιεχόμενο-Βάση">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Αυτή η στήλη θα συμπληρωθεί μόνο για μηνύματα που θα ληφθούν μετά την ενεργοποίηση της προσαρμοσμένης στήλης.">
+<!ENTITY ColumnsWizard.TabNewFolderDefault.label "Νέες στήλες φακέλων">
+<!ENTITY ColumnsWizard.NewFolderCols.label "Χρησιμοποιήστε την προεπιλεγμένη ρύθμιση στηλών για νέους φακέλους.">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "Σειρά ταξινόμησης:">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "Ανερχόμενος">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "Φθίνων">
+<!ENTITY ColumnsWizard.newButton.label "Νέος…">
+<!ENTITY ColumnsWizard.editButton.label "Επεξεργασία…">
+<!ENTITY ColumnsWizard.deleteButton.label "Διαγράφω">
+<!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Βαθμολογία">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "Αυτή είναι η προεπιλεγμένη διαμόρφωση των στηλών για τους νέους φακέλους. Μπορείτε να το τροποποιήσετε εδώ ή να χρησιμοποιήσετε το μενού στον επιλογέα στηλών της λίστας μηνυμάτων.">
+<!ENTITY ColumnsWizard.CustColsList.ID "ταυτότητα">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "Κεφαλίδα αλληλογραφίας">
+<!ENTITY ColumnsWizard.CustColsList.title "Όνομα στήλης">
+<!ENTITY ColumnsWizard.CustColsList.tooltip "Επεξήγηση εργαλείου">
+<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Ενεργοποιήθηκε">
+<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Ερευνήσιμος">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "Ενεργοποίηση επεξεργασίας κεφαλίδων αλληλογραφίας.">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.desc "Αυτή η επιλογή θα ελεγχθεί αυτόματα εάν μια προσαρμοσμένη στήλη αποθηκεύεται με ενεργοποιημένη την επιλογή επεξεργασίας.">
+<!ENTITY ColumnsWizard.TabAdvanced.label "Προχωρημένος">
+<!ENTITY ColumnsWizard.MailHeaderGroupbox.label "Επιλογές επεξεργασίας κεφαλίδας αλληλογραφίας">
+<!ENTITY ColumnsWizard.MailHeader.use_imap_fix_checkbox.label "Επιβολή αλλαγών κατά τη χρήση λογαριασμών IMAP.">
+<!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Τοποθετήστε το αρχικό μήνυμα στο φάκελο Κάδος απορριμμάτων.">
+<!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Ορισμένοι πάροχοι IMAP (όπως το Gmail) δεν καταγράφουν αλλαγές στην πηγή μηνυμάτων εάν οι κύριες κεφαλίδες δεν διαφέρουν από ένα υπάρχον μήνυμα. Για να επιλύσετε αυτό το όριο, το πεδίο &quot;Ημερομηνία&quot; τροποποιείται προσθέτοντας ένα δευτερόλεπτο στην ώρα (ή μειώνοντάς το εάν το δεύτερο είναι 59).">
+<!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "Μετά την αλλαγή της επιλεγμένης τιμής κεφαλίδας, το αρχικό μήνυμα μετακινείται στον φάκελο απορριμμάτων. Αυτό είναι ένα μέτρο ασφαλείας έναντι οποιασδήποτε περίεργης συμπεριφοράς που μπορεί να συμβεί τροποποιώντας τις κεφαλίδες.">
+<!ENTITY ColumnsWizard.ActivateDebug "Ενεργοποιήστε το σύστημα εντοπισμού σφαλμάτων.">

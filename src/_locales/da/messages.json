@@ -1,0 +1,398 @@
+{
+	"extensionName": {
+		"message": "ColumnsWizard"
+	},
+
+	"extensionDescription": {
+		"message": "Tilføjer nogle magi i mappelistens kolonner! Du kan tilføje en brugerdefineret kolonne direkte fra vinduet med addon-præferencer for at vise det ønskede mailhoved, definere standardkolonneindstillingerne for en hvilken som helst ny mappe og vise skjulte kolonner i fanen Samtale og i søgevinduet."
+	},
+
+	"ColumnsWizard.SettingsTitle": {
+		"message": "ColumnsWizard-indstillinger"
+	},
+
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "Vælg her, hvilke yderligere kolonner, du vil se på fanen Samtale."
+	},
+
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "Beliggenhed"
+	},
+
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "Konto"
+	},
+
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "Vedhæftet fil"
+	},
+
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "Modtager"
+	},
+
+	"ColumnsWizard.TabConversation.label": {
+		"message": "Fanen samtale"
+	},
+
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "Tilpassede kolonner"
+	},
+
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "Vælg her, hvilke tilpassede kolonner, du vil tilføje til meddelelseslisten."
+	},
+
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "Når det er valgt, skal du vise kolonnen i mappevisningen, hvor du har brug for den. Du skal gøre dette igen, hvis du fjerner markeringen og genvælger en tidligere valgt mulighed."
+	},
+
+	"ColumnsWizard.AddCc.label": {
+		"message": "cc"
+	},
+
+	"ColumnsWizard.TabInfo.label": {
+		"message": "Info"
+	},
+
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "Denne addon er gratis og udviklet i min fritid. Hvis du bruger det i din daglige rutine, er du velkommen til at støtte den med en lille donation ved at klikke på linket herunder. Tak!!"
+	},
+
+	"ColumnsWizard.DonateLink": {
+		"message": "Lav en donation!"
+	},
+
+	"ColumnsWizard.Addbcc.label": {
+		"message": "Bcc"
+	},
+
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "Svar til"
+	},
+
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X-Original-Fra"
+	},
+
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "Content-Base"
+	},
+
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "* Denne kolonne udfyldes kun for e-mails, der vil blive modtaget efter aktivering af tilpasset kolonne."
+	},
+
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "Nye mappekolonner"
+	},
+
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "Brug din standardkolonneopsætning til nye mapper."
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "Sorteringsrækkefølge:"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "stigende"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "Aftagende"
+	},
+
+	"ColumnsWizard.newButton.label": {
+		"message": "Ny…"
+	},
+
+	"ColumnsWizard.editButton.label": {
+		"message": "Redigere…"
+	},
+
+	"ColumnsWizard.deleteButton.label": {
+		"message": "Slet"
+	},
+
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "Dette er kolonnernes standardkonfiguration for de nye mapper. Du kan ændre det her eller bruge menuen i kolonnevælgeren i meddelelseslisten."
+	},
+
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "ID"
+	},
+
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "Mail Header"
+	},
+
+	"ColumnsWizard.CustColsList.title": {
+		"message": "Kolonnenavn"
+	},
+
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "tooltip"
+	},
+
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "Aktiveret"
+	},
+
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "Søgbar"
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "Aktivér redigering af mailoverskrifter."
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "Denne indstilling kontrolleres automatisk, hvis en brugerdefineret kolonne gemmes med redigeringsindstillingen aktiveret."
+	},
+
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "Fremskreden"
+	},
+
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "Indstillinger for redigering af mailhoved"
+	},
+
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "Tving ændringer, når du bruger IMAP-konti."
+	},
+
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "Læg den originale meddelelse i papirkurven."
+	},
+
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "Nogle IMAP-udbydere (som Gmail) registrerer ikke ændringer i meddelelseskilden, hvis hovedoverskrifterne ikke adskiller sig fra en eksisterende meddelelse. For at omgå denne grænse ændres feltet &quot;Dato&quot; til at tilføje et sekund til klokkeslættet (eller formindskes hvis sekundet er 59)."
+	},
+
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "Efter at have ændret den valgte headerværdi flyttes den originale meddelelse til papirkurven. Dette er en sikkerhedsforanstaltning mod enhver underlig opførsel, der kan ske, når de ændrer overskrifterne."
+	},
+
+	"ColumnsWizard.ActivateDebug": {
+		"message": "Aktivér fejlfindingssystemet."
+	},
+
+	"ColumnsWizard.threadColumn.label": {
+		"message": "Tråd"
+	},
+
+	"ColumnsWizard.fromColumn.label": {
+		"message": "Fra"
+	},
+
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Modtager"
+	},
+
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Emne"
+	},
+
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Dato"
+	},
+
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Prioritet"
+	},
+
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "tag"
+	},
+
+	"ColumnsWizard.accountColumn.label": {
+		"message": "Konto"
+	},
+
+	"ColumnsWizard.statusColumn.label": {
+		"message": "status"
+	},
+
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Størrelse"
+	},
+
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Uønsket status"
+	},
+
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "Ulæst"
+	},
+
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Total"
+	},
+
+	"ColumnsWizard.readColumn.label": {
+		"message": "Læs"
+	},
+
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "Modtaget"
+	},
+
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Stjernemarkerede"
+	},
+
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Beliggenhed"
+	},
+
+	"ColumnsWizard.idColumn.label": {
+		"message": "Ordre modtaget"
+	},
+
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Vedhæftede filer"
+	},
+
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Sletning af tilpasset kolonne"
+	},
+
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "Vil du virkelig slette denne brugerdefinerede kolonne?"
+	},
+
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Korrespondenter"
+	},
+
+	"ColumnsWizard.MenuLabel": {
+		"message": "CW Header Edit"
+	},
+
+	"ColumnsWizard.button.label": {
+		"message": "ColumnsWizard"
+	},
+
+	"ColumnsWizard.button.tooltip": {
+		"message": "Åbn præferencer for ColumnWizard"
+	},
+
+	"extensions.columnswizard'@micz.it.description": {
+		"message": "Tilføjer nogle magi i mappelistens kolonner! Du kan tilføje en brugerdefineret kolonne direkte fra vinduet med addon-præferencer for at vise det ønskede mailhoved, definere standardkolonneindstillingerne for en hvilken som helst ny mappe og vise skjulte kolonner i fanen Samtale og i søgevinduet."
+	},
+
+	"ColumnsWizardcc.label": {
+		"message": "cc"
+	},
+
+	"ColumnsWizardccDesc.label": {
+		"message": "Klik for at sortere efter cc"
+	},
+
+	"ColumnsWizardbcc.label": {
+		"message": "Bcc"
+	},
+
+	"ColumnsWizardbccDesc.label": {
+		"message": "Klik for at sortere efter bcc"
+	},
+
+	"ColumnsWizardreplyto.label": {
+		"message": "Svar til"
+	},
+
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "Klik for at sortere efter svar til"
+	},
+
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-Original-Fra"
+	},
+
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "Klik for at sortere efter X-Original-Fra"
+	},
+
+	"ColumnsWizardcontentbase.label": {
+		"message": "Content-Base"
+	},
+
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "Klik for at sortere efter Content-Base"
+	},
+
+	"ColumnsWizardNFCols.show": {
+		"message": "At vise"
+	},
+
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "Sorter efter"
+	},
+
+	"ColumnsWizardNFCols.col_title": {
+		"message": "Navn"
+	},
+
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "Flex"
+	},
+
+	"ColumnsWizardNFCols.up": {
+		"message": "Op"
+	},
+
+	"ColumnsWizardNFCols.down": {
+		"message": "ned"
+	},
+
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "Nulstil kolonner til CW-standard"
+	},
+
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "Gem kolonner som CW-standard"
+	},
+
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "Klik for at sortere efter X-Spam-Score"
+	},
+
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "Er du sikker på, at du vil gemme kolonnernes layout i denne mappe som CW-standard?"
+	},
+
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "Er du sikker på, at du vil nulstille dette mappekolonnes layout til CW-standard?"
+	},
+
+	"ColumnsWizard.NewCol.Move": {
+		"message": "Bevæge sig"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "credits"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Forfattere"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Udgivelses noter"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Fejlsøgningsindstillinger"
+	}
+
+}

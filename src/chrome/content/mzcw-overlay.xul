@@ -1,5 +1,5 @@
 <?xml version="1.0"?>
-<?xml-stylesheet type="text/css" href="chrome://global/skin/" ?>
+<!-- <?xml-stylesheet type="text/css" href="chrome://global/skin/" ?> -->
 <?xml-stylesheet href="chrome://columnswizard/content/mzcw-overlay.css" type="text/css"?>
 <?xml-stylesheet href="chrome://columnswizard/content/mzcw-button.css" type="text/css"?>
 <!DOCTYPE overlay SYSTEM "chrome://columnswizard/locale/overlay.dtd">
@@ -11,12 +11,15 @@
 <script type="application/javascript" src="chrome://columnswizard/content/mzcw-customcolumns.js" />
 <script type="application/javascript" src="chrome://columnswizard/content/mzcw-prefobserver.js" />
 <script type="application/javascript" src="chrome://columnswizard/content/mzcw-folderlistener.js" />
+<!-- <script type="application/javascript" src="chrome://columnswizard/content/settings.js" /> -->
+
 
 <stringbundleset id="stringbundleset">
   <stringbundle id="ColumnsWizard-string-bundle" src="chrome://columnswizard/locale/overlay.properties" />
 </stringbundleset>
 
 <!-- Menu entry for single mail tab / single mail window main menu -->
+
 <menupopup id="messageMenuPopup">
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_main_menu"
 	class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png"
@@ -28,6 +31,8 @@
 </menupopup>
 
 <!-- Menu entry for the message list context popup menu -->
+
+
 <menupopup id="mailContext">
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_context_menu"
 	 class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png"
@@ -39,7 +44,8 @@
 </menupopup>
 
 <!-- Menu entry for the new app main popup menu -->
-<menupopup id="appmenu_messageMenuPopup">
+
+<menupopup id="taskPopup">
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_newmain_menu"
 	class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png"
 	insertafter="appmenu_editMsgAsNew">
@@ -49,18 +55,21 @@
 	</menu>
 </menupopup>
 
+
   <!-- Thunderbird mail -->
 <toolbarpalette id="MailToolbarPalette">
   <toolbarbutton id="mzcw-button"/>
   </toolbarpalette>
-
 <!-- button details -->
+
 <toolbarpalette id="MailToolbarPalette">
 	<toolbarbutton id="mzcw-button"
 	  label="&ColumnsWizard.button.label;"
 	  tooltiptext="&ColumnsWizard.button.tooltip;"
-	  oncommand="miczColumnsWizard.toolbarButtonCommand();"
+	  oncommand="miczColumnsWizard.openSettingsTab();"
 	  class="toolbarbutton-1"/>
 </toolbarpalette>
+
+
 
 </overlay>

@@ -1,0 +1,44 @@
+<!ENTITY ColumnsWizard.SettingsTitle "ColumnsWizard 설정">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "대화 탭에 표시 할 추가 열을 여기에서 선택하십시오.">
+<!ENTITY ColumnsWizard.ShowLocation.label "위치">
+<!ENTITY ColumnsWizard.ShowAccount.label "계정">
+<!ENTITY ColumnsWizard.ShowAttachment.label "부착">
+<!ENTITY ColumnsWizard.ShowRecipient.label "받는 사람">
+<!ENTITY ColumnsWizard.TabConversation.label "대화 탭">
+<!ENTITY ColumnsWizard.TabCustomCols.label "맞춤 열">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "여기에서 메시지 목록에 추가 할 사용자 정의 열을 선택하십시오.">
+<!ENTITY ColumnsWizard.WarnDescCustCols "선택한 후에는 폴더보기에서 필요한 곳에 열을 표시해야합니다. 이전에 선택한 옵션을 삭제하고 다시 선택하는 경우이 작업을 다시 수행해야합니다.">
+<!ENTITY ColumnsWizard.AddCc.label "참조">
+<!ENTITY ColumnsWizard.TabInfo.label "정보">
+<!ENTITY ColumnsWizard.InfoMainDesc "이 애드온은 무료이며 여가 시간에 개발되었습니다. 일상 생활에서 사용하는 경우 아래 링크를 클릭하여 약간의 기부를 통해 자유롭게 지원하십시오. 감사!!">
+<!ENTITY ColumnsWizard.DonateLink "기부하세요!">
+<!ENTITY ColumnsWizard.Addbcc.label "숨은 참조">
+<!ENTITY ColumnsWizard.Addreplyto.label "답장하다">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X- 원래 출처">
+<!ENTITY ColumnsWizard.Addcontentbase.label "컨텐츠 기반">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "*이 열은 맞춤 열 활성화 후 수신되는 메일에 대해서만 채워집니다.">
+<!ENTITY ColumnsWizard.TabNewFolderDefault.label "새 폴더 열">
+<!ENTITY ColumnsWizard.NewFolderCols.label "새 폴더에 기본 열 설정을 사용합니다.">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "정렬 순서 :">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "오름차순">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "내림차순">
+<!ENTITY ColumnsWizard.newButton.label "새로운…">
+<!ENTITY ColumnsWizard.editButton.label "편집하다…">
+<!ENTITY ColumnsWizard.deleteButton.label "지우다">
+<!ENTITY ColumnsWizard.Addxspamscore.label "X-Spam-Score">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "이것은 새 폴더에 대한 열의 기본 구성입니다. 여기서 수정하거나 메시지 목록의 열 선택기에있는 메뉴를 사용할 수 있습니다.">
+<!ENTITY ColumnsWizard.CustColsList.ID "신분증">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "메일 헤더">
+<!ENTITY ColumnsWizard.CustColsList.title "열 이름">
+<!ENTITY ColumnsWizard.CustColsList.tooltip "툴팁">
+<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "활성화 됨">
+<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "검색 가능">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "메일 헤더 편집을 활성화합니다.">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.desc "이 옵션은 편집 옵션이 활성화 된 상태에서 사용자 정의 열이 저장되면 자동으로 선택됩니다.">
+<!ENTITY ColumnsWizard.TabAdvanced.label "많은">
+<!ENTITY ColumnsWizard.MailHeaderGroupbox.label "메일 헤더 편집 옵션">
+<!ENTITY ColumnsWizard.MailHeader.use_imap_fix_checkbox.label "IMAP 계정을 사용할 때 강제로 변경합니다.">
+<!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "원본 메시지를 휴지통 폴더에 넣으십시오.">
+<!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "Gmail과 같은 일부 IMAP 제공 업체는 기본 헤더가 기존 메일과 다르지 않은 경우 메일 소스에 변경 사항을 등록하지 않습니다. 이 제한을 해결하기 위해 &quot;날짜&quot;필드는 시간에 1 초를 추가 (또는 초가 59 인 경우 감소)가 수정됩니다.">
+<!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "선택한 헤더 값을 변경하면 원본 메시지가 휴지통 폴더로 이동됩니다. 이것은 헤더를 수정할 때 발생할 수있는 이상한 동작에 대한 보안 조치입니다.">
+<!ENTITY ColumnsWizard.ActivateDebug "디버그 시스템을 활성화하십시오.">

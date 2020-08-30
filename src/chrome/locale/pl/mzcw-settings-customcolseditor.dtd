@@ -1,0 +1,31 @@
+<!ENTITY ColumnsWizard.window.title "Edytor niestandardowych kolumn">
+<!ENTITY ColumnsWizard.Desc.label "Wstaw nowe informacje o niestandardowej kolumnie. Wszystkie pola są wymagane.">
+<!ENTITY ColumnsWizard.id.label "ID">
+<!ENTITY ColumnsWizard.id.desc "Identyfikator to unikalny identyfikator kolumny niestandardowej. Nie można go zmodyfikować po pierwszym zapisaniu.">
+<!ENTITY ColumnsWizard.dbHeader.label "Nagłówek poczty">
+<!ENTITY ColumnsWizard.dbHeader.desc "Nagłówek poczty to pole wiadomości e-mail, które musi być pokazane na liście wiadomości w kolumnie niestandardowej. Nie można go zmodyfikować po pierwszym zapisaniu.">
+<!ENTITY ColumnsWizard.labelString.label "Nazwa kolumny">
+<!ENTITY ColumnsWizard.btn.setIcon_label "Ustaw ikonę">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Kliknij tutaj, aby ustawić ikonę jako nazwę kolumny.">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "Usuń ikonę">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Kliknij tutaj, aby usunąć ikonę.">
+<!ENTITY ColumnsWizard.labelString.desc "Wpisz tutaj nazwę, która będzie wyświetlana w nagłówku kolumny na liście wiadomości.">
+<!ENTITY ColumnsWizard.tooltipString.label "Etykietka">
+<!ENTITY ColumnsWizard.tooltipString.desc "Wpisz tutaj podpowiedź nagłówka kolumny na liście wiadomości. Zwykle jest to „Sortuj według”, po którym następuje nazwa kolumny.">
+<!ENTITY ColumnsWizard.enabled.label "Włączone">
+<!ENTITY ColumnsWizard.enabled.desc "Natychmiast włącz tę niestandardową kolumnę.">
+<!ENTITY ColumnsWizard.sortnumber.label "Sortowanie">
+<!ENTITY ColumnsWizard.sortnumber.desc "Sortuj tę niestandardową kolumnę jako liczbę.">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "Kolumna niestandardowa może sortować tylko liczby z nie więcej niż 3 miejscami po przecinku i wartości od -1.000.000 do 3.294.967.">
+<!ENTITY ColumnsWizard.searchable.label "Można przeszukiwać">
+<!ENTITY ColumnsWizard.searchable.desc "Ustaw tę niestandardową kolumnę jako wyszukiwalną w oknie wyszukiwania zaawansowanego Thunderbirda.">
+<!ENTITY ColumnsWizard.CustColEditorTab.General.label "Generał">
+<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "Edytor nagłówków poczty">
+<!ENTITY ColumnsWizard.editable.label "Można edytować">
+<!ENTITY ColumnsWizard.mod.desc "Ten nagłówek wiadomości e-mail można modyfikować ręcznie.">
+<!ENTITY ColumnsWizard.mod_type.label "Typ nagłówka">
+<!ENTITY ColumnsWizard.mod_type.desc "Wybierz tutaj typ nagłówka dla tej niestandardowej kolumny.">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "Dowolny tekst">
+<!ENTITY ColumnsWizard.mod_type_number.label "Liczby">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "Naprawiono listę">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "Wprowadź jedną wartość w każdym wierszu. Nie używaj kreski „|” postać.">

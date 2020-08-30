@@ -1,0 +1,326 @@
+
+{
+	"extensionName": {
+		"message": "ColumnsWizard"
+	},
+	"extensionDescription": {
+		"message": "Aggiungi un po' di magia alle colonne visualizzate nella lista dei messaggi! Puoi creare nuove colonne aggiuntive direttamente dal pannello delle preferenze di questa estensione, definisci le impostazioni di base della configurazione delle colonne della lista dei messaggi e mostra le colonne nascoste nel tab delle visualizzazione in conversazione e della finestra di ricerca."
+	},
+
+
+	"ColumnsWizard-file-src-settings.dtd": {
+		"message": "./src/chrome/locale/it"
+	},
+	"ColumnsWizard.SettingsTitle": {
+		"message": "Opzioni ColumnsWizard"
+	},
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "Scegli qui quali colonne aggiuntive mostrare nel tab di visualizzazione a Conversazione."
+	},
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "Posizione"
+	},
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "Account"
+	},
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "Allegato"
+	},
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "Destinatari"
+	},
+	"ColumnsWizard.TabConversation.label": {
+		"message": "Tab Conversazione"
+	},
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "Colonne Personalizzate"
+	},
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "Scegli qui quale colonna personalizzata vuoi aggiungere alla lista dei messaggi."
+	},
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "Una volta selezionata, devi visualizzare la colonna nella cartella in cui vuoi che sia visibile. Questa operazione deve essere eseguita nuovamente se deselezioni e riselezioni un'opzione."
+	},
+	"ColumnsWizard.AddCc.label": {
+		"message": "Cc"
+	},
+	"ColumnsWizard.TabInfo.label": {
+		"message": "Informazioni"
+	},
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "Questo componente aggiuntivo è gratuito e sviluppato nel mio tempo libero. Se lo usi tutti i giorni, sentiti libero di supportarlo con una piccola donazione cliccando sul link sottostante. Grazie!!"
+	},
+	"ColumnsWizard.DonateLink": {
+		"message": "Fai una donazione!"
+	},
+	"ColumnsWizard.Addbcc.label": {
+		"message": "Ccn"
+	},
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "Reply-to"
+	},
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "Content-Base"
+	},
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "* Questa colonna sarà popolata solo per le mail che saranno ricevute successivamente all'attivazione dell'opzione."
+	},
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "Colonne Predefinite"
+	},
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "Utilizza queste impostazione per le colonne delle nuove cartelle."
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "Ordinamento:"
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "Ascendente"
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "Discendente"
+	},
+	"ColumnsWizard.newButton.label": {
+		"message": "Nuovo…"
+	},
+	"ColumnsWizard.editButton.label": {
+		"message": "Modifica…"
+	},
+	"ColumnsWizard.deleteButton.label": {
+		"message": "Elimina"
+	},
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "Questa è la configurazione standard delle colonne per le nuove cartelle. Puoi modificarla qui o nel menu di scelta delle colonne della lista dei messaggi."
+	},
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "ID"
+	},
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "Mail Header"
+	},
+	"ColumnsWizard.CustColsList.title": {
+		"message": "Nome Colonna"
+	},
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "Tooltip"
+	},
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "Attivato"
+	},
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "Ricercabile"
+	},
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "Attiva la modifica delle intestazioni dei messaggi."
+	},
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "Questa opzione sarà attivata automaticamente se una colonna personalizzata è stata salvata con l'opzione di modifica attivata."
+	},
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "Avanzate"
+	},
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "Opzioni di modifica intestazioni mail"
+	},
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "Forza la modifica quando si usa un account IMAP."
+	},
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "Sposta il messaggio originale nel cestino."
+	},
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "Alcuni fornitori di servizi IMAP (come Gmail) non salvano i cambiamenti nelle intestazioni dei messaggi se le intestazioni principali non subiscono modifiche rispetto al messaggio originale. Per superare questo limite, il campo &quot;Data&quot; viene modificando aggiungendo un secondo all'orario del messaggio (o togliendolo se i secondi sono 59)."
+	},
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "Dopo aver modificato il valore dell'intestazione selezionata, il messaggio originale viene spostato nel cestino. Questa è una misura di sicurezza contro ogni possibile comportamento anomalo che potrebbe accadere modificando le intestazioni."
+	},
+	"ColumnsWizard.ActivateDebug": {
+		"message": "Attiva il sistema di debug"
+	}
+,
+
+
+	"ColumnsWizard-file-src-settings.properties": {
+		"message": "./src/chrome/locale/it"
+	},
+	"ColumnsWizard.threadColumn.label": {
+		"message": "Argomento"
+	},
+	"ColumnsWizard.fromColumn.label": {
+		"message": "Mittente"
+	},
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Destinatario"
+	},
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Oggetto"
+	},
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Data"
+	},
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Priorità"
+	},
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "Etichette"
+	},
+	"ColumnsWizard.accountColumn.label": {
+		"message": "Account"
+	},
+	"ColumnsWizard.statusColumn.label": {
+		"message": "Stato"
+	},
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Dimensione"
+	},
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Stato spam"
+	},
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "Non letti per l'argomento"
+	},
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Totali per l'argomento"
+	},
+	"ColumnsWizard.readColumn.label": {
+		"message": "Letto"
+	},
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "Ricevuto"
+	},
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Speciali"
+	},
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Indirizzo"
+	},
+	"ColumnsWizard.idColumn.label": {
+		"message": "Ordine di ricezione"
+	},
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Allegati"
+	},
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Cancellazione Colonna Aggiuntiva"
+	},
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "Vuoi veramente cancellare questa colonna aggiuntiva?"
+	},
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Corrispondenti"
+	},
+
+
+	"ColumnsWizard-file-src-overlay.dtd": {
+		"message": "./src/chrome/locale/it"
+	},
+	"ColumnsWizard.MenuLabel": {
+		"message": "CW Modifica Header"
+	},
+	"ColumnsWizard.button.label": {
+		"message": "ColumnsWizard"
+	},
+	"ColumnsWizard.button.tooltip": {
+		"message": "Apri le opzioni di ColumnsWizard"
+	},
+
+	"ColumnsWizard-file-src-overlay.properties": {
+		"message": "./src/chrome/locale/it"
+	},
+	"extensions.columnswizard@micz.it.description": {
+		"message": "Aggiungi un po' di magia alle colonne visualizzate nella lista dei messaggi! Puoi creare nuove colonne aggiuntive direttamente dal pannello delle preferenze di questa estensione, definisci le impostazioni di base della configurazione delle colonne della lista dei messaggi e mostra le colonne nascoste nel tab delle visualizzazione in conversazione e della finestra di ricerca."
+	},
+	"ColumnsWizardcc.label": {
+		"message": "Cc"
+	},
+	"ColumnsWizardccDesc.label": {
+		"message": "Ordina per campo 'cc'"
+	},
+	"ColumnsWizardbcc.label": {
+		"message": "Ccn"
+	},
+	"ColumnsWizardbccDesc.label": {
+		"message": "Ordina per campo 'ccn'"
+	},
+	"ColumnsWizardreplyto.label": {
+		"message": "Reply-to"
+	},
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "Ordina per campo 'reply-to'"
+	},
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "Ordina per campo 'X-Original-From'"
+	},
+	"ColumnsWizardcontentbase.label": {
+		"message": "Content-Base"
+	},
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "Ordina per campo 'Content-Base'"
+	},
+	"ColumnsWizardNFCols.show": {
+		"message": "Mostra"
+	},
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "Ordina per"
+	},
+	"ColumnsWizardNFCols.col_title": {
+		"message": "Nome"
+	},
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "Flex"
+	},
+	"ColumnsWizardNFCols.up": {
+		"message": "Su"
+	},
+	"ColumnsWizardNFCols.down": {
+		"message": "Giù"
+	},
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "Ripristina le colonne predefinite CW"
+	},
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "Salva le colonne come predefinite CW"
+	},
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "Ordina per campo 'X-Spam-Score'"
+	},
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "Sei sicuro di voler salvare le impostazioni delle colonne di questa cartella come predefinite CW?"
+	},
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "Sei sicuro di voler modificare le colonne di questa cartella secondo l'impostazione predefinita CW?"
+	},
+
+	"ColumnsWizard.NewCol.Move": {
+		"message": "Mossa"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Crediti"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Autori"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Note di rilascio"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Opzioni di debug"
+	}
+
+}

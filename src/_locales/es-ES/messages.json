@@ -1,0 +1,398 @@
+{
+	"extensionName": {
+		"message": "ColumnsWizard"
+	},
+
+	"extensionDescription": {
+		"message": "Agrega algo de magia a las columnas de la lista de carpetas. Puede agregar una columna personalizada directamente desde la ventana de preferencias del complemento para mostrar cualquier encabezado de correo que desee, definir la configuración de columnas predeterminadas para cualquier carpeta nueva y mostrar columnas ocultas en la pestaña Conversación y en la ventana de búsqueda."
+	},
+
+	"ColumnsWizard.SettingsTitle": {
+		"message": "Configuración de ColumnsWizard"
+	},
+
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "Elija aquí qué columnas adicionales desea ver en la pestaña Conversación."
+	},
+
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "Ubicación"
+	},
+
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "Cuenta"
+	},
+
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "Adjunto archivo"
+	},
+
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "Recipiente"
+	},
+
+	"ColumnsWizard.TabConversation.label": {
+		"message": "Pestaña de conversación"
+	},
+
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "Columnas personalizadas"
+	},
+
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "Elija aquí qué columnas personalizadas desea agregar a la lista de mensajes."
+	},
+
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "Una vez seleccionada, debe mostrar la columna en la vista de carpeta donde la necesite. Tendrá que hacer esto nuevamente si quita y vuelve a seleccionar una opción previamente seleccionada."
+	},
+
+	"ColumnsWizard.AddCc.label": {
+		"message": "Cc"
+	},
+
+	"ColumnsWizard.TabInfo.label": {
+		"message": "Info"
+	},
+
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "Este complemento es gratuito y se desarrolla en mi tiempo libre. Si lo está utilizando en su rutina diaria, no dude en apoyarlo con una pequeña donación haciendo clic en el enlace a continuación. ¡¡Gracias!!"
+	},
+
+	"ColumnsWizard.DonateLink": {
+		"message": "¡Haz una donación!"
+	},
+
+	"ColumnsWizard.Addbcc.label": {
+		"message": "Cco"
+	},
+
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "Responder a"
+	},
+
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X-Original-Desde"
+	},
+
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "Base de contenido"
+	},
+
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "* Esta columna se completará solo para los correos que se recibirán después de la activación de la columna personalizada."
+	},
+
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "Nuevas columnas de carpeta"
+	},
+
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "Utilice su configuración de columnas predeterminada para carpetas nuevas."
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "Orden de clasificación:"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "Ascendente"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "Descendiendo"
+	},
+
+	"ColumnsWizard.newButton.label": {
+		"message": "Nuevo…"
+	},
+
+	"ColumnsWizard.editButton.label": {
+		"message": "Editar…"
+	},
+
+	"ColumnsWizard.deleteButton.label": {
+		"message": "Eliminar"
+	},
+
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "Esta es la configuración predeterminada de las columnas para las nuevas carpetas. Puede modificarlo aquí o usar el menú en el selector de columnas de la lista de mensajes."
+	},
+
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "ID"
+	},
+
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "Encabezado de correo"
+	},
+
+	"ColumnsWizard.CustColsList.title": {
+		"message": "Nombre de columna"
+	},
+
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "Descripción emergente"
+	},
+
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "Habilitado"
+	},
+
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "Buscable"
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "Habilite la edición de encabezados de correo."
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "Esta opción se marcará automáticamente si se guarda una columna personalizada con la opción de edición habilitada."
+	},
+
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "Avanzado"
+	},
+
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "Opciones de edición de encabezado de correo"
+	},
+
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "Forzar cambios al usar cuentas IMAP."
+	},
+
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "Coloque el mensaje original en la carpeta Papelera."
+	},
+
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "Algunos proveedores de IMAP (como Gmail) no registran cambios en la fuente del mensaje si los encabezados principales no son diferentes de un mensaje existente. Para evitar este límite, el campo &quot;Fecha&quot; se modifica agregando un segundo a la hora (o disminuyéndolo si los segundos son 59)."
+	},
+
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "Después de cambiar el valor del encabezado seleccionado, el mensaje original se mueve a la carpeta de basura. Esta es una medida de seguridad contra cualquier comportamiento extraño que pueda ocurrir modificando los encabezados."
+	},
+
+	"ColumnsWizard.ActivateDebug": {
+		"message": "Activa el sistema de depuración."
+	},
+
+	"ColumnsWizard.threadColumn.label": {
+		"message": "Hilo"
+	},
+
+	"ColumnsWizard.fromColumn.label": {
+		"message": "De"
+	},
+
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Recipiente"
+	},
+
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Tema"
+	},
+
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Fecha"
+	},
+
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Prioridad"
+	},
+
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "Etiqueta"
+	},
+
+	"ColumnsWizard.accountColumn.label": {
+		"message": "Cuenta"
+	},
+
+	"ColumnsWizard.statusColumn.label": {
+		"message": "Estado"
+	},
+
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Talla"
+	},
+
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Estado basura"
+	},
+
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "No leído"
+	},
+
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Total"
+	},
+
+	"ColumnsWizard.readColumn.label": {
+		"message": "Leer"
+	},
+
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "Recibido"
+	},
+
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Sembrado de estrellas"
+	},
+
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Ubicación"
+	},
+
+	"ColumnsWizard.idColumn.label": {
+		"message": "orden recibida"
+	},
+
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Archivos adjuntos"
+	},
+
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Eliminar columna personalizada"
+	},
+
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "¿Realmente desea eliminar esta columna personalizada?"
+	},
+
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Corresponsales"
+	},
+
+	"ColumnsWizard.MenuLabel": {
+		"message": "Edición de encabezado de CW"
+	},
+
+	"ColumnsWizard.button.label": {
+		"message": "ColumnsWizard"
+	},
+
+	"ColumnsWizard.button.tooltip": {
+		"message": "Abrir preferencias de ColumnsWizard"
+	},
+
+	"extensions.columnswizard'@micz.it.description": {
+		"message": "Agrega algo de magia a las columnas de la lista de carpetas. Puede agregar una columna personalizada directamente desde la ventana de preferencias del complemento para mostrar cualquier encabezado de correo que desee, definir la configuración de columnas predeterminadas para cualquier carpeta nueva y mostrar columnas ocultas en la pestaña Conversación y en la ventana de búsqueda."
+	},
+
+	"ColumnsWizardcc.label": {
+		"message": "Cc"
+	},
+
+	"ColumnsWizardccDesc.label": {
+		"message": "Haga clic para ordenar por cc"
+	},
+
+	"ColumnsWizardbcc.label": {
+		"message": "Cco"
+	},
+
+	"ColumnsWizardbccDesc.label": {
+		"message": "Haga clic para ordenar por Cco"
+	},
+
+	"ColumnsWizardreplyto.label": {
+		"message": "Responder a"
+	},
+
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "Haga clic para ordenar por respuesta"
+	},
+
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-Original-Desde"
+	},
+
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "Haga clic para ordenar por X-Original-From"
+	},
+
+	"ColumnsWizardcontentbase.label": {
+		"message": "Base de contenido"
+	},
+
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "Haga clic para ordenar por contenido-base"
+	},
+
+	"ColumnsWizardNFCols.show": {
+		"message": "mostrar"
+	},
+
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "Ordenar por"
+	},
+
+	"ColumnsWizardNFCols.col_title": {
+		"message": "Nombre"
+	},
+
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "Flexionar"
+	},
+
+	"ColumnsWizardNFCols.up": {
+		"message": "Arriba"
+	},
+
+	"ColumnsWizardNFCols.down": {
+		"message": "Abajo"
+	},
+
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "Restablecer las columnas a los valores predeterminados de CW"
+	},
+
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "Guardar columnas como CW por defecto"
+	},
+
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "Haga clic para ordenar por X-Spam-Score"
+	},
+
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "¿Está seguro de que desea guardar el diseño de columnas de esta carpeta como predeterminado de CW?"
+	},
+
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "¿Está seguro de que desea restablecer el diseño de las columnas de esta carpeta al valor predeterminado de CW?"
+	},
+
+	"ColumnsWizard.NewCol.Move": {
+		"message": "Moverse"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Créditos"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Autores"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Notas de lanzamiento"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Opciones de depuración"
+	}
+
+}

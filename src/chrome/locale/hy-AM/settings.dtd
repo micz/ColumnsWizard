@@ -1,0 +1,44 @@
+<!ENTITY ColumnsWizard.SettingsTitle "ColumnsWizard- ի կարգավորումներ">
+<!ENTITY ColumnsWizard.GlobalDescConvTab "Ընտրեք այստեղ, թե որ լրացուցիչ սյուները, որոնք ցանկանում եք տեսնել, Զրույցի ներդիրում:">
+<!ENTITY ColumnsWizard.ShowLocation.label "Գտնվելու վայրը">
+<!ENTITY ColumnsWizard.ShowAccount.label "Հաշիվ">
+<!ENTITY ColumnsWizard.ShowAttachment.label "Կցորդ">
+<!ENTITY ColumnsWizard.ShowRecipient.label "Ստացող">
+<!ENTITY ColumnsWizard.TabConversation.label "Խոսակցության ներդիր">
+<!ENTITY ColumnsWizard.TabCustomCols.label "Պատվերով սյուներ">
+<!ENTITY ColumnsWizard.GlobalDescCustCols "Ընտրեք այստեղ, թե որ սովորական սյուները ցանկանում եք ավելացնել հաղորդագրությունների ցանկում:">
+<!ENTITY ColumnsWizard.WarnDescCustCols "Ընտրվելուց հետո անհրաժեշտ է ցույց տալ սյունակը թղթապանակի տեսադաշտում, որտեղ դա անհրաժեշտ է: Դուք պետք է դա անեք կրկին, եթե ջնջեք և վերընտրեք նախկինում ընտրված տարբերակը:">
+<!ENTITY ColumnsWizard.AddCc.label "ԳՀ">
+<!ENTITY ColumnsWizard.TabInfo.label "Տեղեկատվություն">
+<!ENTITY ColumnsWizard.InfoMainDesc "Այս հավելումը անվճար է և զարգացած է իմ ազատ ժամանակում: Եթե դուք օգտագործում եք այն ամենօրյա առօրյայում, ազատ զգացեք աջակցել այն մի փոքր նվիրատվության միջոցով `կտտացնելով ստորև նշված հղմանը: Շնորհակալություն !!">
+<!ENTITY ColumnsWizard.DonateLink "Կատարեք նվիրատվություն:">
+<!ENTITY ColumnsWizard.Addbcc.label "Bcc">
+<!ENTITY ColumnsWizard.Addreplyto.label "Պատասխանել">
+<!ENTITY ColumnsWizard.Addxoriginalfrom.label "X-Original- ից">
+<!ENTITY ColumnsWizard.Addcontentbase.label "Բովանդակություն-բազան">
+<!ENTITY ColumnsWizard.CustomHeadersDescCustCols "* Այս սյունակը կհամալրվի միայն այն փոստերի համար, որոնք ստացվելու են «Սայլակ» սյունակի ակտիվացումից հետո:">
+<!ENTITY ColumnsWizard.TabNewFolderDefault.label "Նոր թղթապանակ սյուներ">
+<!ENTITY ColumnsWizard.NewFolderCols.label "Օգտագործեք ձեր լռելյայն սյունակների կարգավորումը `նոր թղթապանակների համար:">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.label "Տեսակավորել կարգը.">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.ASC.label "Աճող">
+<!ENTITY ColumnsWizard.NewFolderColsSortOrder.DESC.label "Նվազող">
+<!ENTITY ColumnsWizard.newButton.label "Նոր…">
+<!ENTITY ColumnsWizard.editButton.label "Խմբագրել…">
+<!ENTITY ColumnsWizard.deleteButton.label "Նջել">
+<!ENTITY ColumnsWizard.Addxspamscore.label "X- սպամ-միավոր">
+<!ENTITY ColumnsWizard.NewFolderCols.Desc "Սա սյուների լռելյայն կազմաձևն է նոր թղթապանակների համար: Կարող եք այն փոփոխել այստեղ կամ օգտագործել ցանկը հաղորդագրությունների ցուցակի սյունակի ընտրիչում:">
+<!ENTITY ColumnsWizard.CustColsList.ID "Նույնականացում">
+<!ENTITY ColumnsWizard.CustColsList.mailheader "Փոստի վերնագիր">
+<!ENTITY ColumnsWizard.CustColsList.title "Սյունակի անվանումը">
+<!ENTITY ColumnsWizard.CustColsList.tooltip "Գործիքակազմ">
+<!ENTITY ColumnsWizard.CustColsList.Enabled.tooltip "Միացված">
+<!ENTITY ColumnsWizard.CustColsList.Searchable.tooltip "Որոնելի">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.label "Միացնել փոստի վերնագրերի խմբագրումը:">
+<!ENTITY ColumnsWizard.CustCols.mod_active_checkbox.desc "Այս ընտրանքը ինքնաբերաբար ստուգվում է, եթե մաքսային սյունը պահպանվի խմբագրման ընտրանքով:">
+<!ENTITY ColumnsWizard.TabAdvanced.label "Առաջադեմ">
+<!ENTITY ColumnsWizard.MailHeaderGroupbox.label "Փոստի վերնագրի խմբագրման ընտրանքները">
+<!ENTITY ColumnsWizard.MailHeader.use_imap_fix_checkbox.label "Ստիպեք փոփոխություններ IMAP հաշիվներն օգտագործելիս:">
+<!ENTITY ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label "Տեղադրեք բնօրինակ հաղորդագրությունը Աղբարկղ թղթապանակում:">
+<!ENTITY ColumnsWizard.CustCols.use_imap_fix_checkbox.desc "IMAP- ի որոշ մատակարարներ (ինչպես Gmail- ը) չեն գրանցում հաղորդագրության աղբյուրի փոփոխությունները, եթե հիմնական վերնագրերը չեն տարբերվում գոյություն ունեցող հաղորդագրությունից: Այս սահմանի շուրջ աշխատելու համար «Ամսաթիվ» դաշտը փոփոխվում է ՝ ավելացնելով երկրորդը ժամանակի վրա (կամ այն պակասեցնելը, եթե երկրորդը 59-ն է):">
+<!ENTITY ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc "Ընտրված վերնագրի արժեքը փոխելուց հետո բնօրինակ հաղորդագրությունը տեղափոխվում է աղբարկղի թղթապանակ: Սա անվտանգության միջոց է ցանկացած տարօրինակ պահվածքի դեմ, որը կարող է տեղի ունենալ վերնագրերի փոփոխման միջոցով:">
+<!ENTITY ColumnsWizard.ActivateDebug "Ակտիվացրեք կարգաբերման համակարգը:">

@@ -1,5 +1,8 @@
-content   columnswizard                 chrome/content/
-content   cwrl							./
+content   columnswizard                 chrome/content/ contentaccessible=yes
+content   cwrl							./	contentaccessible=yes
+content   cwrl2							./_locales/	contentaccessible=yes
+
+#resource   icons 	chrome/skin/ico	contentaccessible=yes
 resource	columnswizard				chrome/resource/
 locale    columnswizard   en-US         chrome/locale/en-US/
 locale    columnswizard   it            chrome/locale/it/
@@ -7,6 +10,16 @@ locale    columnswizard   de            chrome/locale/de/
 locale    columnswizard   fr            chrome/locale/fr/
 locale    columnswizard   nl            chrome/locale/nl/
 locale    columnswizard   zh-CN         chrome/locale/zh-CN/
+locale    columnswizard   ja            chrome/locale/ja/
+locale    columnswizard   es-ES         chrome/locale/es-ES/
+locale    columnswizard   ko-KR         chrome/locale/ko-KR/
+locale    columnswizard   ru            chrome/locale/ru/
+locale    columnswizard   el            chrome/locale/el/
+locale    columnswizard   da            chrome/locale/da/
+locale    columnswizard   pl            chrome/locale/pl/
+locale    columnswizard   pt-PT         chrome/locale/pt-PT/
+locale    columnswizard   hu-HU         chrome/locale/hu-HU/
+locale    columnswizard   hy-AM         chrome/locale/hy-AM/
 
 skin columnswizard default chrome/skin/
 

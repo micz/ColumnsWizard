@@ -1,0 +1,398 @@
+{
+	"extensionName": {
+		"message": "ColumnsWizard"
+	},
+
+	"extensionDescription": {
+		"message": "Hozzátesz némi varázst a mappalista oszlopokhoz! Hozzáadhat egyéni oszlopot közvetlenül az addon preferenciaablakából, hogy megjelenítsen minden kívánt levélfejlécet, meghatározza az új mappák alapértelmezett oszlopbeállításait, és megjelenítse a Rejtett lapon és a keresőablakban a rejtett oszlopokat."
+	},
+
+	"ColumnsWizard.SettingsTitle": {
+		"message": "ColumnsWizard beállítások"
+	},
+
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "Itt válassza ki, mely további oszlopokat szeretné látni a Beszélgetés lapon."
+	},
+
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "Elhelyezkedés"
+	},
+
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "Fiók"
+	},
+
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "Melléklet"
+	},
+
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "Befogadó"
+	},
+
+	"ColumnsWizard.TabConversation.label": {
+		"message": "Beszélgetés lap"
+	},
+
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "Egyéni oszlopok"
+	},
+
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "Itt válassza ki, mely egyéni oszlopokat szeretné hozzáadni az üzenetlistához."
+	},
+
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "Miután kiválasztotta, meg kell jelennie az oszlopnak a mappanézetben, ahol szüksége van rá. Ezt újra meg kell tennie, ha töröl egy korábban kiválasztott opciót, és újra kiválasztja azt."
+	},
+
+	"ColumnsWizard.AddCc.label": {
+		"message": "cc"
+	},
+
+	"ColumnsWizard.TabInfo.label": {
+		"message": "Információ"
+	},
+
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "Ez a kiegészítő ingyenes és szabadidőben fejlesztették ki. Ha mindennapi tevékenysége során használja, nyugodtan támogassa egy kis adományozással, az alábbi linkre kattintva. Kösz!!"
+	},
+
+	"ColumnsWizard.DonateLink": {
+		"message": "Adakozzon!"
+	},
+
+	"ColumnsWizard.Addbcc.label": {
+		"message": "Bcc"
+	},
+
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "Válaszolni"
+	},
+
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "Tartalom-alap"
+	},
+
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "* Ez az oszlop csak azokra az e-mailekre kerül kitöltésre, amelyeket az Egyedi oszlop aktiválása után kap."
+	},
+
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "Új mappa oszlopok"
+	},
+
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "Használja az alapértelmezett oszlopok beállításait az új mappákhoz."
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "Sorrend:"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "Növekvő"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "Csökkenő"
+	},
+
+	"ColumnsWizard.newButton.label": {
+		"message": "Új…"
+	},
+
+	"ColumnsWizard.editButton.label": {
+		"message": "Szerkesztés ..."
+	},
+
+	"ColumnsWizard.deleteButton.label": {
+		"message": "Töröl"
+	},
+
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "Ez az oszlopok alapértelmezett konfigurációja az új mappákhoz. Itt módosíthatja, vagy használja az üzenetlista oszlopválasztójának menüjét."
+	},
+
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "ID"
+	},
+
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "Levél fejléce"
+	},
+
+	"ColumnsWizard.CustColsList.title": {
+		"message": "Oszlop neve"
+	},
+
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "Tooltip"
+	},
+
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "Engedélyezve"
+	},
+
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "Kereshető"
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "Engedélyezze a levélfejlécek szerkesztését."
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "Ezt az opciót automatikusan ellenőrzi, ha menti az egyéni oszlopot, ha a szerkesztési lehetőség engedélyezve van."
+	},
+
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "Fejlett"
+	},
+
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "E-mail fejléc szerkesztési beállításai"
+	},
+
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "A változások kényszerítése IMAP-fiókok használatakor."
+	},
+
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "Helyezze az eredeti üzenetet a kukába."
+	},
+
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "Egyes IMAP-szolgáltatók (például a Gmail) nem regisztrálják a változásokat az üzenetforrásban, ha a fő fejlécek nem különböznek egy meglévő üzenetétől. Ennek a határnak a megkerülése érdekében a &quot;Dátum&quot; mezőt egy másodperc hozzáadásával módosítják az időhöz (vagy csökkentik, ha a második 59-es)."
+	},
+
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "A kiválasztott fejléc érték megváltoztatása után az eredeti üzenet átkerül a kukába. Ez egy biztonsági intézkedés a fejlécek módosításakor esetlegesen fellépő furcsa viselkedés ellen."
+	},
+
+	"ColumnsWizard.ActivateDebug": {
+		"message": "Aktiválja a hibakeresési rendszert."
+	},
+
+	"ColumnsWizard.threadColumn.label": {
+		"message": "cérna"
+	},
+
+	"ColumnsWizard.fromColumn.label": {
+		"message": "Tól től"
+	},
+
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Befogadó"
+	},
+
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Tantárgy"
+	},
+
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Dátum"
+	},
+
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Kiemelten fontos"
+	},
+
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "Címke"
+	},
+
+	"ColumnsWizard.accountColumn.label": {
+		"message": "Fiók"
+	},
+
+	"ColumnsWizard.statusColumn.label": {
+		"message": "Állapot"
+	},
+
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Méret"
+	},
+
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Rossz állapot"
+	},
+
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "Nem olvasott"
+	},
+
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Teljes"
+	},
+
+	"ColumnsWizard.readColumn.label": {
+		"message": "Olvas"
+	},
+
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "kapott"
+	},
+
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Csillagos"
+	},
+
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Elhelyezkedés"
+	},
+
+	"ColumnsWizard.idColumn.label": {
+		"message": "A megrendelés beérkezett"
+	},
+
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Mellékletek"
+	},
+
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Egyéni oszlop törlése"
+	},
+
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "Tényleg törli ezt az egyéni oszlopot?"
+	},
+
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Levelezők"
+	},
+
+	"ColumnsWizard.MenuLabel": {
+		"message": "CW fejléc szerkesztése"
+	},
+
+	"ColumnsWizard.button.label": {
+		"message": "ColumnsWizard"
+	},
+
+	"ColumnsWizard.button.tooltip": {
+		"message": "Nyissa meg az Oszlopok varázsló beállításait"
+	},
+
+	"extensions.columnswizard'@micz.it.description": {
+		"message": "Hozzátesz némi varázst a mappalista oszlopokhoz! Hozzáadhat egyéni oszlopot közvetlenül az addon preferenciaablakából, hogy megjelenítsen minden kívánt levélfejlécet, meghatározza az új mappák alapértelmezett oszlopbeállításait, és megjelenítse a Rejtett lapon és a keresőablakban a rejtett oszlopokat."
+	},
+
+	"ColumnsWizardcc.label": {
+		"message": "cc"
+	},
+
+	"ColumnsWizardccDesc.label": {
+		"message": "Kattintson a másolat szerinti rendezéshez"
+	},
+
+	"ColumnsWizardbcc.label": {
+		"message": "Bcc"
+	},
+
+	"ColumnsWizardbccDesc.label": {
+		"message": "Kattintson a szkriptek szerinti rendezéshez"
+	},
+
+	"ColumnsWizardreplyto.label": {
+		"message": "Válaszolni"
+	},
+
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "Kattintson a válaszadás szerinti rendezéshez"
+	},
+
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "Kattintson az X-Original-From szerinti rendezéshez"
+	},
+
+	"ColumnsWizardcontentbase.label": {
+		"message": "Tartalom-alap"
+	},
+
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "Kattintson a tartalmalap szerinti rendezéshez"
+	},
+
+	"ColumnsWizardNFCols.show": {
+		"message": "Előadás"
+	},
+
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "Sorrend"
+	},
+
+	"ColumnsWizardNFCols.col_title": {
+		"message": "Név"
+	},
+
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "Flex"
+	},
+
+	"ColumnsWizardNFCols.up": {
+		"message": "Fel"
+	},
+
+	"ColumnsWizardNFCols.down": {
+		"message": "Le"
+	},
+
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "Az oszlopok visszaállítása a CW alapértelmezett értékére"
+	},
+
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "Az oszlopok mentése CW alapértelmezésként"
+	},
+
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "Kattintson az X-Spam-Score szerinti rendezéshez"
+	},
+
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "Biztosan el akarja menteni a mappa oszlopok elrendezését alapértelmezettként?"
+	},
+
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "Biztos benne, hogy vissza szeretné állítani a mappa oszlopok elrendezését a CW alapértelmezettre?"
+	},
+
+	"ColumnsWizard.NewCol.Move": {
+		"message": "Mozog"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Hitelek"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Szerzői"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Kiadási megjegyzések"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Hibakeresési lehetőségek"
+	}
+
+}

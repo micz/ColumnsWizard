@@ -1,0 +1,31 @@
+<!ENTITY ColumnsWizard.window.title "Brugerdefineret kolonneditor">
+<!ENTITY ColumnsWizard.Desc.label "Indsæt de nye brugerdefinerede kolonneoplysninger. Alle felter er påkrævet.">
+<!ENTITY ColumnsWizard.id.label "ID">
+<!ENTITY ColumnsWizard.id.desc "ID&#39;et er den unikke id for den brugerdefinerede kolonne. Det kan ikke ændres efter den første gemning.">
+<!ENTITY ColumnsWizard.dbHeader.label "Mail Header">
+<!ENTITY ColumnsWizard.dbHeader.desc "Mailhovedet er feltet med e-mail-meddelelser, der skal vises på meddelelseslisten i den tilpassede kolonne. Det kan ikke ændres efter den første gemning.">
+<!ENTITY ColumnsWizard.labelString.label "Kolonnenavn">
+<!ENTITY ColumnsWizard.btn.setIcon_label "Indstil ikon">
+<!ENTITY ColumnsWizard.btn.setIcon_tooltip "Klik her for at indstille et ikon som kolonnenavn.">
+<!ENTITY ColumnsWizard.btn.removeIcon_label "Fjern ikon">
+<!ENTITY ColumnsWizard.btn.removeIcon_tooltip "Klik her for at fjerne ikonet.">
+<!ENTITY ColumnsWizard.labelString.desc "Skriv her det navn, der skal vises på kolonneoverskriften i meddelelseslisten.">
+<!ENTITY ColumnsWizard.tooltipString.label "tooltip">
+<!ENTITY ColumnsWizard.tooltipString.desc "Indtast her værktøjstipet for kolonneoverskriften i meddelelseslisten. Normalt er dette &quot;Sorter efter&quot; efterfulgt af kolonnenavnet.">
+<!ENTITY ColumnsWizard.enabled.label "Aktiveret">
+<!ENTITY ColumnsWizard.enabled.desc "Aktivér denne brugerdefinerede kolonne med det samme.">
+<!ENTITY ColumnsWizard.sortnumber.label "Sortering">
+<!ENTITY ColumnsWizard.sortnumber.desc "Sorter denne brugerdefinerede kolonne som et nummer.">
+<!ENTITY ColumnsWizard.sortnumber.desc_limit "Den brugerdefinerede kolonne kan kun sortere tal med højst 3 decimaler og en værdi mellem -1000.000 og 3.294.967.">
+<!ENTITY ColumnsWizard.searchable.label "Kan søges">
+<!ENTITY ColumnsWizard.searchable.desc "Gør denne brugerdefinerede kolonne søgbar i Thunderbirds avancerede søgevindue.">
+<!ENTITY ColumnsWizard.CustColEditorTab.General.label "Generel">
+<!ENTITY ColumnsWizard.CustColEditorTab.Editing.label "Mail Header Editor">
+<!ENTITY ColumnsWizard.editable.label "Kan redigeres">
+<!ENTITY ColumnsWizard.mod.desc "Denne mail-meddelelseshoved kan ændres manuelt.">
+<!ENTITY ColumnsWizard.mod_type.label "Header type">
+<!ENTITY ColumnsWizard.mod_type.desc "Vælg her overskriftstype for denne brugerdefinerede kolonne.">
+<!ENTITY ColumnsWizard.mod_type_freetext.label "Fri tekst">
+<!ENTITY ColumnsWizard.mod_type_number.label "numre">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.label "Fast liste">
+<!ENTITY ColumnsWizard.mod_type_fixedlist.list.desc "Indtast en værdi pr. Linje. Brug ikke røret &quot;|&quot; Karakter.">

@@ -1,0 +1,309 @@
+<!-- <!doctype html> -->
+
+<html>
+<!-- <title>&ColumnsWizard.SettingsTitle;</title> -->
+<title>__MSG_ColumnsWizard.SettingsTitle__</title>
+
+<head>
+  <link rel="stylesheet" href="./css/settings.css" />
+  <link rel="stylesheet" href="./css/defaultColList.css" />
+  <link rel="stylesheet" href="./css/customcolslist.css" />
+  <link rel="stylesheet" href="./css/checkbox.css" />
+  <link rel="stylesheet" href="./css/radio.css" />
+</head>
+
+<body>
+
+  <div class="tabs">
+    <input type="radio" id="tab1" name="tab-control" checked tabindex="0">
+    <input type="radio" id="tab2" name="tab-control" tabindex="0" role="button" aria-label="Custom Columns" label="Custom">
+    <input type="radio" id="tab3" name="tab-control">
+    <input type="radio" id="tab4" name="tab-control">
+    <input type="radio" id="tab5" name="tab-control" disabled>
+    <input type="radio" id="tab6" name="tab-control" role="button">
+    <!-- <button onclick="document.getElementById('tab1').checked=true">New Folder Columns</button> -->
+    <!-- <button style="height: 0; width: 0;" onclick="document.getElementById('tab3').checked=true">Conversation Tab</button>     -->
+    <ul>
+      <li  tabindex="0" style="position: relative;" class="ctooltip-div-hotspot" >
+        <div id="t1" class="ctooltip-div" data-tooltip="__MSG_ColumnsWizard.TabNewFolderDefault.label__" >__MSG_ColumnsWizard.TabNewFolderDefault.label__</div>
+        <!-- <button class="button-invisible" onclick="document.getElementById('tab2').checked=true">Custom Columns</button> -->
+        
+        <label for="tab1" role="button"  style="position: relative;">
+          <!-- <div id="t1" class="ctooltip-div" data-tooltip="__MSG_ColumnsWizard.TabNewFolderDefault.label__" >__MSG_ColumnsWizard.TabNewFolderDefault.label__</div> -->
+          <!-- <div class="ctooltip-tabs" data-tooltip="__MSG_ColumnsWizard.TabNewFolderDefault.label__" ></div> -->
+
+          <!-- <div class="tab-img-box">  -->
+          <img src="chrome://columnswizard/skin/ico/column-change-gray-64px.png"
+            class="tab-img-png tab-img-png-unchecked" />
+          <img src="chrome://columnswizard/skin/ico/column-change-blue-64px.png"
+            class="tab-img-png tab-img-png-checked" />
+          <span>__MSG_ColumnsWizard.TabNewFolderDefault.label__</span></label>
+        <div class="dt-wrapper">
+          <div class="dt">
+            <div class="dt2"></div>
+          </div>
+        </div>
+
+      </li>
+      <li title="__MSG_ColumnsWizard.TabCustomCols.label__" tabindex="0" role="button" aria-label="Custom Columns" class="ctooltip-div-hotspot" >
+        <div id="t2" class="ctooltip-div" data-tooltip="__MSG_ColumnsWizard.TabCustomCols.label__" >__MSG_ColumnsWizard.TabCustomCols.label__</div>
+        <label for="tab2" role="button" aria-label="Custom Columns">
+          <img src="chrome://columnswizard/skin/ico/custom-columns-blue-64px.png"
+            class="tab-img-png tab-img-png-checked" />
+          <img src="chrome://columnswizard/skin/ico/custom-columns-gray-64px.png"
+            class="tab-img-png tab-img-png-unchecked" />
+
+          <span role="button" aria-label="Custom Columns">__MSG_ColumnsWizard.TabCustomCols.label__</span></label>
+        <div class="dt-wrapper" role="button" aria-label="Custom Columns">
+          <div class="dt">
+            <div class="dt2"></div>
+          </div>
+        </div>
+        <!--         <div class="dt-wrapper">
+          <div class="dt"></div>
+        </div>
+ -->
+      </li>
+      <li title="__MSG_ColumnsWizard.TabConversation.label__" class="ctooltip-div-hotspot" >
+        <div id="t1" class="ctooltip-div" data-tooltip="__MSG_ColumnsWizard.TabCustomCols.label__" >__MSG_ColumnsWizard.TabConversation.label__</div>
+        <label for="tab3" role="button">
+          <img src="chrome://columnswizard/skin/ico/conversation-tab-blue-64px.png"
+            class="tab-img-png tab-img-png-checked" />
+          <img src="chrome://columnswizard/skin/ico/conversation-tab-gray-64px.png"
+            class="tab-img-png tab-img-png-unchecked" />
+
+          <span>__MSG_ColumnsWizard.TabConversation.label__</span></label>
+        <div class="dt-wrapper">
+          <div class="dt">
+            <div class="dt2"></div>
+          </div>
+        </div>
+      </li>
+      <li title="__MSG_ColumnsWizard.TabAdvanced.label__" class="ctooltip-div-hotspot" >
+        <div id="t1" class="ctooltip-div" >__MSG_ColumnsWizard.TabAdvanced.label__</div>
+        <label for="tab4" role="button">
+          <img src="chrome://columnswizard/skin/ico/settings-circle-blue-64px.png"
+            class="tab-img-png tab-img-png-checked" style="height: 20px; width: 20px;" />
+          <img src="chrome://columnswizard/skin/ico/settings-circle-gray-64px.png"
+            class="tab-img-png tab-img-png-unchecked" style="height: 20px; width: 20px;" />
+          <!--     
+        <svg viewBox="0 0 24 24">
+        <path d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+        </svg><br>
+     -->
+          <span>__MSG_ColumnsWizard.TabAdvanced.label__</span></label>
+        <div class="dt-wrapper">
+          <div class="dt">
+            <div class="dt2"></div>
+          </div>
+        </div>
+      </li>
+
+
+      <li title="" class="spacertab">
+        <label for="tab5" role="button">
+          <span></span></label>
+        <!-- <div class="dt-wrapper"> -->
+        <!-- <div class="dt"><div class="dt2"></div></div> -->
+        <!-- </div> -->
+      </li>
+
+      <li title="__MSG_ColumnsWizard.TabInfo.label__" class="info ctooltip-div-hotspot" >
+        <div id="t1" class="ctooltip-div" >__MSG_ColumnsWizard.TabInfo.label__</div>
+        <label for="tab6" role="button"><svg viewBox="0 0 24 24">
+            <path
+              d="M11,9H13V7H11M12,20C7.59,20 4,16.41 4,12C4,7.59 7.59,4 12,4C16.41,4 20,7.59 20,12C20,16.41 16.41,20 12,20M12,2A10,10 0 0,0 2,12A10,10 0 0,0 12,22A10,10 0 0,0 22,12A10,10 0 0,0 12,2M11,17H13V11H11V17Z" />
+          </svg><br>
+          <span>__MSG_ColumnsWizard.TabInfo.label__</span></label>
+        <div class="dt-wrapper">
+          <div class="dt">
+            <div class="dt2"></div>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <!-- <div class="slider">
+    <div class="indicator"></div>
+  </div> -->
+
+    <div class="content">
+      <section>
+        <div class="section-header">__MSG_ColumnsWizard.NewFolderCols.Desc__</div>
+        <div class="section-content">
+          <label class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.NewFolderCols.label__
+            <input type="checkbox" id="ColumnsWizard.DefaultColsList.active_checkbox">
+            <span class="checkmark"></span>
+          </label>
+
+          <div id="defaultColsListDiv" class="table-list-container" tabindex="0">
+
+            <table id="defaultColsTable" class="table-list" data-currentpage="1">
+
+              <thead height="20px">
+                <tr height="20px">
+                  <th class="show" height="20px">__MSG_ColumnsWizardNFCols.show__</th>
+                  <th class="sort-by" height="20px">__MSG_ColumnsWizardNFCols.sort_by__</th>
+                  <th class="name" height="20px">__MSG_ColumnsWizardNFCols.col_title__</th>
+                  <th class="move_up" colspan="2" style="text-align: center;" height="20px">__MSG_ColumnsWizard.NewCol.Move__</th>
+                </tr>
+              </thead>
+
+              <!-- IMPORTANT, class="list" must be on tbody -->
+              <tbody class="list">
+
+              </tbody>
+            </table>
+          </div>
+
+          <div style="display: flex; justify-content: start;">
+            <label style="padding-right: 20px;">__MSG_ColumnsWizard.NewFolderColsSortOrder.label__ </label>
+            <label class="radio-container-rlabel" style="padding-right: 15px;">__MSG_ColumnsWizard.NewFolderColsSortOrder.ASC.label__
+              <input type="radio" id="ColumnsWizard.cw_sort_asc" name="cw_sort_direction_rg" checked="true">
+              <span class="rcheckmark"></span>
+            </label>
+
+            <label class="radio-container-rlabel">__MSG_ColumnsWizard.NewFolderColsSortOrder.DESC.label__
+              <input type="radio" id="ColumnsWizard.cw_sort_desc" name="cw_sort_direction_rg">
+              <span class="rcheckmark"></span>
+            </label>
+
+          </div>
+
+          <!-- <input type="button" label="save" onclick="miczColumnsWizardPref2.getDefaultColsFromList()">SaveDefaultColumns</input> -->
+
+        </div>
+
+      </section>
+
+      <section>
+        <div class="section-header">__MSG_ColumnsWizard.GlobalDescCustCols__</div>
+        <div class="section-content">
+
+          <div id="customColsListDiv" class="table-list-container custom-col-list-container" tabindex="0">
+
+            <table id="customColsTable" class="table-list custom-col-list" data-currentpage="1">
+
+              <thead height="20px">
+                <tr height="20px">
+                  <th class="enabled_th" data-tooltip="__MSG_ColumnsWizard.CustColsList.Enabled.tooltip__">
+                    <div class="ctooltip" data-tooltip="__MSG_ColumnsWizard.CustColsList.Enabled.tooltip__" ></div>
+
+                    <img src="chrome://columnswizard/skin/checked-box-64px.png"   width="22px" height="22px">
+                      
+                    </th>
+                  <th class="searchable_th" >
+                    <div class="ctooltip" data-tooltip="__MSG_ColumnsWizard.CustColsList.Searchable.tooltip__"></div>
+                    <img src="chrome://columnswizard/skin/search-64px.png" title="__MSG_ColumnsWizard.CustColsList.Searchable.tooltip__" width="18px" height="18px">
+                  </th>
+                  <th class="header-id" height="20px">__MSG_ColumnsWizard.CustColsList.ID__</th>
+                  <th class="mail-header" height="20px">__MSG_ColumnsWizard.CustColsList.mailheader__</th>
+                  <th class="col-name" height="20px">__MSG_ColumnsWizard.CustColsList.title__</th>
+                  <th class="tooltip" height="20px">__MSG_ColumnsWizard.CustColsList.tooltip__</th>
+                </tr>
+              </thead>
+
+              <!-- IMPORTANT, class="list" must be on tbody -->
+              <tbody class="list">
+
+              </tbody>
+            </table>
+
+          </div>
+
+          <div class="section-content">
+            <button class="button" onclick="miczColumnsWizardPref2.onNewCustomCol(window);">__MSG_ColumnsWizard.newButton.label__</button>
+            <button class="button" onclick="miczColumnsWizardPref2.onEditCustomCol(window);">__MSG_ColumnsWizard.editButton.label__</button>
+            <button class="button" onclick="miczColumnsWizardPref2.onDeleteCustomCol(window);">__MSG_ColumnsWizard.deleteButton.label__</button>
+          </div>
+
+      </section>
+
+      <section>
+        <div class="section-header">__MSG_ColumnsWizard.GlobalDescConvTab__</div>
+        <div class="section-content3">
+        <label class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.ShowLocation.label__
+          <input type="checkbox" id="ColumnsWizard.ShowLocation_checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.ShowAccount.label__
+          <input id="ColumnsWizard.ShowAccount_checkbox" type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+        <label  class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.ShowAttachment.label__
+          <input id="ColumnsWizard.ShowAttachment_checkbox" type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+
+        <label class="checkbox-container-rlabel">__MSG_ColumnsWizard.ShowRecipient.label__
+          <input id="ColumnsWizard.ShowRecipient_checkbox" type="checkbox">
+          <span class="checkmark"></span>
+        </label>
+      </div>
+      </section>
+      <section>
+        <div class="section-group-content-header">__MSG_ColumnsWizard.MailHeaderGroupbox.label__</div>
+        <div class="section-content2">
+          <label class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.CustCols.mod_active_checkbox.label__
+            <input id="ColumnsWizard.CustCols.mod_active_checkbox" type="checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.MailHeader.use_imap_fix_checkbox.label__
+            <input type="checkbox" id="ColumnsWizard.MailHeader.use_imap_fix_checkbox">
+            <span class="checkmark"></span>
+          </label>
+          <label class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label__
+            <input type="checkbox" id="ColumnsWizard.MailHeader.put_original_in_trash_checkbox">
+            <span class="checkmark"></span>
+          </label>
+
+        </div>
+
+        <div class="section-group-content-header">__MSG_ColumnsWizard.Advanced.DebuggingOptions__</div>
+        <div class="section-content2">
+          <label class="checkbox-container-rlabel">__MSG_ColumnsWizard.ActivateDebug__
+            <input type="checkbox" id="ColumnsWizard.debug_checkbox">
+            <span class="checkmark"></span>
+          </label>
+        </div>
+      </section>
+      <section>
+      </section>
+      <section>
+        <div class="section-header">
+          <div style="display: flex; justify-content: space-between;">
+            <div>
+            <div class="section-group-content-header">ColumnsWizard v7.0.0</div>
+            <div class="section-content3" >
+              <span>__MSG_ColumnsWizard.Info.Authors__ : Mic, Christopher Leidigh</span><br>
+              <span>__MSG_ColumnsWizard.Info.Credits__ : @javve (ListJS) </span>
+            </div>
+          </div>
+          <div class="tooltip" data-text="ColumnsWizard 7.0.0">
+            <img src="chrome://columnswizard/skin/mzcw-icon64-h.png" >
+          </div>
+        </div>
+          <div class="section-group-content-header">__MSG_ColumnsWizard.Info.ReleaseNotes__</div>
+          <div class="section-content2">
+            <textarea id="mzcw-release-notes" rows="22" style="width: 100%; padding: 6px;"></textarea>
+          </div>
+        </div>
+      </section>
+
+
+    </div>
+
+  </div>
+  
+</body>
+
+<!-- <script src="chrome://columnswizard/content/modules/list.controller.js"></script> -->
+
+<script src="chrome://columnswizard/content/doc-localize.js"></script>
+<script src="chrome://columnswizard/content/modules/list.js"></script>
+<script src="chrome://columnswizard/content/settings.js"></script>
+
+<!-- <script src="chrome://columnswizard/content/defaultColList.js"></script> -->
+
+
+</html>

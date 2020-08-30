@@ -1,0 +1,328 @@
+
+{
+	"extensionName": {
+		"message": "ColumnsWizard"
+	},
+	"extensionDescription": {
+		"message": "Une extension pour Thunderbird qui permet d'afficher les colonnes masquées dans l'onglet Conversation."
+	},
+
+	"ColumnsWizard-file-src-settings.dtd": {
+		"message": "./src/chrome/locale/fr"
+	},
+	"ColumnsWizard.SettingsTitle": {
+		"message": "Paramètres de l'extension ColumnWizard"
+	},
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "Choisissez ici quelles colonnes supplémentaires vous voulez voir dans l'onglet Conversation"
+	},
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "Emplacement"
+	},
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "Compte"
+	},
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "Pièce jointe"
+	},
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "Destinataire"
+	},
+	"ColumnsWizard.TabConversation.label": {
+		"message": "Onglet Conversation"
+	},
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "Colonnes personnalisées"
+	},
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "Choisissez ici quelles colonnes personnalisées vous souhaitez ajouter à la liste de messages."
+	},
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "Une fois effectué votre choix, vous devez afficher la colonne dans le dossier où vous en avez besoin. Vous devrez recommencer si vous désélectionnez et re-sélectionnez une option choisie auparavant."
+	},
+	"ColumnsWizard.AddCc.label": {
+		"message": "Copie à"
+	},
+	"ColumnsWizard.TabInfo.label": {
+		"message": "Informations"
+	},
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "Cette extension est gratuite, je la développe sur mon temps libre. Si vous l'utilisez régulièrement avec satisfaction, envisagez de faire un petit don en cliquant sur le bouton ci-dessous. Merci !"
+	},
+	"ColumnsWizard.DonateLink": {
+		"message": "Faites un don !"
+	},
+	"ColumnsWizard.Addbcc.label": {
+		"message": "Copie cachée à"
+	},
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "Répondre à"
+	},
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "Content-Base"
+	},
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "* Cette colonne sera remplie seulement de messages que vous recevrez après l'activation des colonnes personnalisées."
+	},
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "Colonnes du nouveau répertoire"
+	},
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "Utilisez les paramètres des colonnes par défaut pour les nouveaux répertoires."
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "type de tri :"
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "Ascendant"
+	},
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "Descendant"
+	},
+	"ColumnsWizard.newButton.label": {
+		"message": "Nouveau…"
+	},
+	"ColumnsWizard.editButton.label": {
+		"message": "Modifier…"
+	},
+	"ColumnsWizard.deleteButton.label": {
+		"message": "Supprimer"
+	},
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "Voici la configuration par défaut pour les nouveaux répertoires. Vous pouvez la modifier ici ou utiliser le menu dans la sélection de colonne de la liste de messages."
+	},
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "ID"
+	},
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "En-tête de message"
+	},
+	"ColumnsWizard.CustColsList.title": {
+		"message": "Nom de colonne"
+	},
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "Infobulle"
+	},
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "Activé"
+	},
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "On peut y chercher"
+	},
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "Activer l'édition d'en-tête de mail"
+	},
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "Cette option sera cochée automatiquement"
+	},
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "Avancées"
+	},
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "Options de l'édition d'en-têtes"
+	},
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "Rendre obligatoires les changements quand vous utilisez des comptes IMAP."
+	},
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "Mettre le message original dans le dossier corbeille"
+	},
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "Certains fournisseurs d'IMAP (tels que Gmail) n'enregistrent pas les changements du message source si les principaux en-têtes ne sont pas différents d'un message existant. Pour outrepasser cette limitation, le champ &quot;Date&quot; est modifié en ajoutant une seconde au temps (ou en diminuant d'une seconde si le nombre des secondes est 59)."
+	},
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "Après avoir modifié la valeur de l'en-tête sélectionné, le message original est envoyé à la corbeille. Il s'agit d'une mesure de sécurité pour empêcher qu'une comportement bizarre puisse survenir à la modification des en-têtes."
+	},
+	"ColumnsWizard.ActivateDebug": {
+		"message": "Activer le système de débogage."
+	}
+,
+
+
+	"ColumnsWizard-file-src-settings.properties": {
+		"message": "./src/chrome/locale/fr"
+	},
+	"ColumnsWizard.threadColumn.label": {
+		"message": "Discussion"
+	},
+	"ColumnsWizard.fromColumn.label": {
+		"message": "Expéditeur"
+	},
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "Destinataire"
+	},
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "Sujet"
+	},
+	"ColumnsWizard.dateColumn.label": {
+		"message": "Date"
+	},
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "Priorité"
+	},
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "Étiquettes"
+	},
+	"ColumnsWizard.accountColumn.label": {
+		"message": "Compte"
+	},
+	"ColumnsWizard.statusColumn.label": {
+		"message": "Statut"
+	},
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "Taille"
+	},
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "Statut indésirable"
+	},
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "Non lu"
+	},
+	"ColumnsWizard.totalColumn.label": {
+		"message": "Total"
+	},
+	"ColumnsWizard.readColumn.label": {
+		"message": "Lu"
+	},
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "Reçu"
+	},
+	"ColumnsWizard.starredColumn.label": {
+		"message": "Suivi"
+	},
+	"ColumnsWizard.locationColumn.label": {
+		"message": "Emplacement"
+	},
+	"ColumnsWizard.idColumn.label": {
+		"message": "Ordre de réception"
+	},
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "Pièces jointes"
+	},
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "Suppression de colonne personnalisée"
+	},
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "Voulez-vous vraiment supprimer cette colonne personnalisée ?"
+	},
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "Correspondants"
+	}
+,
+
+
+	"ColumnsWizard-file-src-overlay.dtd": {
+		"message": "./src/chrome/locale/fr"
+	},
+	"ColumnsWizard.MenuLabel": {
+		"message": "Éditeur d'en-tête pour CW"
+	},
+	"ColumnsWizard.button.label": {
+		"message": "ColumnsWizard"
+	},
+	"ColumnsWizard.button.tooltip": {
+		"message": "Ouvrir les préférences de ColumnWizard"
+	}
+,
+
+
+	"ColumnsWizard-file-src-overlay.properties": {
+		"message": "./src/chrome/locale/fr"
+	},
+	"extensions.columnswizard@micz.it.description": {
+		"message": "Une extension pour Thunderbird qui permet d'afficher les colonnes masquées dans l'onglet Conversation."
+	},
+	"ColumnsWizardcc.label": {
+		"message": "Copie à"
+	},
+	"ColumnsWizardccDesc.label": {
+		"message": "Cliquer pour ordonner suivant les destinataires en copie"
+	},
+	"ColumnsWizardbcc.label": {
+		"message": "Copie cachée à"
+	},
+	"ColumnsWizardbccDesc.label": {
+		"message": "Cliquer pour trier suivant les copies cachées"
+	},
+	"ColumnsWizardreplyto.label": {
+		"message": "Répondre à"
+	},
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "Cliquer pour trier suivant les réponses"
+	},
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X-Original-From"
+	},
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "Cliquer pour trier suivant les X-Original-From"
+	},
+	"ColumnsWizardcontentbase.label": {
+		"message": "Content-Base"
+	},
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "Cliquer pour trier suivant les Content-Base"
+	},
+	"ColumnsWizardNFCols.show": {
+		"message": "Afficher"
+	},
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "Trier par"
+	},
+	"ColumnsWizardNFCols.col_title": {
+		"message": "Nom"
+	},
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "Flex"
+	},
+	"ColumnsWizardNFCols.up": {
+		"message": "Haut"
+	},
+	"ColumnsWizardNFCols.down": {
+		"message": "Bas"
+	},
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "Restaurer les colonnes à leur valeur par défaut de ColumnWizard"
+	},
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "Enregistrer les colonnes comme  par défaut pour ColumnWizard"
+	},
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "Cliquer pour trier suivant X-Spam-Score"
+	},
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "Vous confirmez vouloir enregistrer les paramètres de ces colonnes dans ce répertoire comme par défaut pour ColumnWizard ?"
+	},
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "Voulez-vous vraiment restaurer les paramètres des colonnes de ce répertoire pour en faire les paramètres par défaut de ColumnWizard ?"
+	},
+
+	"ColumnsWizard.CustCol.Move": {
+		"message": "Bouge toi"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "Crédits"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "Auteurs"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "Notes de version"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "Options de débogage"
+	}
+
+}

@@ -1,0 +1,398 @@
+{
+	"extensionName": {
+		"message": "ColumnsWizard"
+	},
+
+	"extensionDescription": {
+		"message": "폴더 목록 열에 마법을 추가합니다! 애드온 기본 설정 창에서 직접 사용자 지정 열을 추가하여 원하는 메일 헤더를 표시하고, 새 폴더에 대한 기본 열 설정을 정의하고, 대화 탭과 검색 창에 숨겨진 열을 표시 할 수 있습니다."
+	},
+
+	"ColumnsWizard.SettingsTitle": {
+		"message": "ColumnsWizard 설정"
+	},
+
+	"ColumnsWizard.GlobalDescConvTab": {
+		"message": "대화 탭에 표시 할 추가 열을 여기에서 선택하십시오."
+	},
+
+	"ColumnsWizard.ShowLocation.label": {
+		"message": "위치"
+	},
+
+	"ColumnsWizard.ShowAccount.label": {
+		"message": "계정"
+	},
+
+	"ColumnsWizard.ShowAttachment.label": {
+		"message": "부착"
+	},
+
+	"ColumnsWizard.ShowRecipient.label": {
+		"message": "받는 사람"
+	},
+
+	"ColumnsWizard.TabConversation.label": {
+		"message": "대화 탭"
+	},
+
+	"ColumnsWizard.TabCustomCols.label": {
+		"message": "맞춤 열"
+	},
+
+	"ColumnsWizard.GlobalDescCustCols": {
+		"message": "여기에서 메시지 목록에 추가 할 사용자 정의 열을 선택하십시오."
+	},
+
+	"ColumnsWizard.WarnDescCustCols": {
+		"message": "선택한 후에는 폴더보기에서 필요한 곳에 열을 표시해야합니다. 이전에 선택한 옵션을 삭제하고 다시 선택하는 경우이 작업을 다시 수행해야합니다."
+	},
+
+	"ColumnsWizard.AddCc.label": {
+		"message": "참조"
+	},
+
+	"ColumnsWizard.TabInfo.label": {
+		"message": "정보"
+	},
+
+	"ColumnsWizard.InfoMainDesc": {
+		"message": "이 애드온은 무료이며 여가 시간에 개발되었습니다. 일상 생활에서 사용하는 경우 아래 링크를 클릭하여 약간의 기부를 통해 자유롭게 지원하십시오. 감사!!"
+	},
+
+	"ColumnsWizard.DonateLink": {
+		"message": "기부하세요!"
+	},
+
+	"ColumnsWizard.Addbcc.label": {
+		"message": "숨은 참조"
+	},
+
+	"ColumnsWizard.Addreplyto.label": {
+		"message": "답장하다"
+	},
+
+	"ColumnsWizard.Addxoriginalfrom.label": {
+		"message": "X- 원래 출처"
+	},
+
+	"ColumnsWizard.Addcontentbase.label": {
+		"message": "컨텐츠 기반"
+	},
+
+	"ColumnsWizard.CustomHeadersDescCustCols": {
+		"message": "*이 열은 맞춤 열 활성화 후 수신되는 메일에 대해서만 채워집니다."
+	},
+
+	"ColumnsWizard.TabNewFolderDefault.label": {
+		"message": "새 폴더 열"
+	},
+
+	"ColumnsWizard.NewFolderCols.label": {
+		"message": "새 폴더에 기본 열 설정을 사용합니다."
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.label": {
+		"message": "정렬 순서 :"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.ASC.label": {
+		"message": "오름차순"
+	},
+
+	"ColumnsWizard.NewFolderColsSortOrder.DESC.label": {
+		"message": "내림차순"
+	},
+
+	"ColumnsWizard.newButton.label": {
+		"message": "새로운…"
+	},
+
+	"ColumnsWizard.editButton.label": {
+		"message": "편집하다…"
+	},
+
+	"ColumnsWizard.deleteButton.label": {
+		"message": "지우다"
+	},
+
+	"ColumnsWizard.Addxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizard.NewFolderCols.Desc": {
+		"message": "이것은 새 폴더에 대한 열의 기본 구성입니다. 여기서 수정하거나 메시지 목록의 열 선택기에있는 메뉴를 사용할 수 있습니다."
+	},
+
+	"ColumnsWizard.CustColsList.ID": {
+		"message": "신분증"
+	},
+
+	"ColumnsWizard.CustColsList.mailheader": {
+		"message": "메일 헤더"
+	},
+
+	"ColumnsWizard.CustColsList.title": {
+		"message": "열 이름"
+	},
+
+	"ColumnsWizard.CustColsList.tooltip": {
+		"message": "툴팁"
+	},
+
+	"ColumnsWizard.CustColsList.Enabled.tooltip": {
+		"message": "활성화 됨"
+	},
+
+	"ColumnsWizard.CustColsList.Searchable.tooltip": {
+		"message": "검색 가능"
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.label": {
+		"message": "메일 헤더 편집을 활성화합니다."
+	},
+
+	"ColumnsWizard.CustCols.mod_active_checkbox.desc": {
+		"message": "이 옵션은 편집 옵션이 활성화 된 상태에서 사용자 정의 열이 저장되면 자동으로 선택됩니다."
+	},
+
+	"ColumnsWizard.TabAdvanced.label": {
+		"message": "많은"
+	},
+
+	"ColumnsWizard.MailHeaderGroupbox.label": {
+		"message": "메일 헤더 편집 옵션"
+	},
+
+	"ColumnsWizard.MailHeader.use_imap_fix_checkbox.label": {
+		"message": "IMAP 계정을 사용할 때 강제로 변경합니다."
+	},
+
+	"ColumnsWizard.MailHeader.put_original_in_trash_checkbox.label": {
+		"message": "원본 메시지를 휴지통 폴더에 넣으십시오."
+	},
+
+	"ColumnsWizard.CustCols.use_imap_fix_checkbox.desc": {
+		"message": "Gmail과 같은 일부 IMAP 제공 업체는 기본 헤더가 기존 메일과 다르지 않은 경우 메일 소스에 변경 사항을 등록하지 않습니다. 이 제한을 해결하기 위해 &quot;날짜&quot;필드는 시간에 1 초를 추가 (또는 초가 59 인 경우 감소)가 수정됩니다."
+	},
+
+	"ColumnsWizard.CustCols.put_original_in_trash_checkbox.desc": {
+		"message": "선택한 헤더 값을 변경하면 원본 메시지가 휴지통 폴더로 이동됩니다. 이것은 헤더를 수정할 때 발생할 수있는 이상한 동작에 대한 보안 조치입니다."
+	},
+
+	"ColumnsWizard.ActivateDebug": {
+		"message": "디버그 시스템을 활성화하십시오."
+	},
+
+	"ColumnsWizard.threadColumn.label": {
+		"message": "실"
+	},
+
+	"ColumnsWizard.fromColumn.label": {
+		"message": "에서"
+	},
+
+	"ColumnsWizard.recipientColumn.label": {
+		"message": "받는 사람"
+	},
+
+	"ColumnsWizard.subjectColumn.label": {
+		"message": "제목"
+	},
+
+	"ColumnsWizard.dateColumn.label": {
+		"message": "데이트"
+	},
+
+	"ColumnsWizard.priorityColumn.label": {
+		"message": "우선 순위"
+	},
+
+	"ColumnsWizard.tagsColumn.label": {
+		"message": "꼬리표"
+	},
+
+	"ColumnsWizard.accountColumn.label": {
+		"message": "계정"
+	},
+
+	"ColumnsWizard.statusColumn.label": {
+		"message": "상태"
+	},
+
+	"ColumnsWizard.sizeColumn.label": {
+		"message": "크기"
+	},
+
+	"ColumnsWizard.junkStatusColumn.label": {
+		"message": "정크 상태"
+	},
+
+	"ColumnsWizard.unreadColumn.label": {
+		"message": "읽히지 않는"
+	},
+
+	"ColumnsWizard.totalColumn.label": {
+		"message": "합계"
+	},
+
+	"ColumnsWizard.readColumn.label": {
+		"message": "읽다"
+	},
+
+	"ColumnsWizard.receivedColumn.label": {
+		"message": "받은"
+	},
+
+	"ColumnsWizard.starredColumn.label": {
+		"message": "별표"
+	},
+
+	"ColumnsWizard.locationColumn.label": {
+		"message": "위치"
+	},
+
+	"ColumnsWizard.idColumn.label": {
+		"message": "접수 된 주문"
+	},
+
+	"ColumnsWizard.attachmentColumn.label": {
+		"message": "첨부 파일"
+	},
+
+	"ColumnsWizard.deletePrompt.title": {
+		"message": "맞춤 열 삭제"
+	},
+
+	"ColumnsWizard.deletePrompt.text": {
+		"message": "이 맞춤 항목을 정말로 삭제 하시겠습니까?"
+	},
+
+	"ColumnsWizard.correspondentCol.label": {
+		"message": "특파원"
+	},
+
+	"ColumnsWizard.MenuLabel": {
+		"message": "CW 헤더 편집"
+	},
+
+	"ColumnsWizard.button.label": {
+		"message": "ColumnsWizard"
+	},
+
+	"ColumnsWizard.button.tooltip": {
+		"message": "ColumnsWizard 환경 설정 열기"
+	},
+
+	"extensions.columnswizard'@micz.it.description": {
+		"message": "폴더 목록 열에 마법을 추가합니다! 애드온 기본 설정 창에서 직접 사용자 지정 열을 추가하여 원하는 메일 헤더를 표시하고, 새 폴더에 대한 기본 열 설정을 정의하고, 대화 탭과 검색 창에 숨겨진 열을 표시 할 수 있습니다."
+	},
+
+	"ColumnsWizardcc.label": {
+		"message": "참조"
+	},
+
+	"ColumnsWizardccDesc.label": {
+		"message": "참조로 정렬하려면 클릭"
+	},
+
+	"ColumnsWizardbcc.label": {
+		"message": "숨은 참조"
+	},
+
+	"ColumnsWizardbccDesc.label": {
+		"message": "숨은 참조로 정렬하려면 클릭하세요."
+	},
+
+	"ColumnsWizardreplyto.label": {
+		"message": "답장하다"
+	},
+
+	"ColumnsWizardreplytoDesc.label": {
+		"message": "답장을 기준으로 정렬하려면 클릭하세요."
+	},
+
+	"ColumnsWizardxoriginalfrom.label": {
+		"message": "X- 원래 출처"
+	},
+
+	"ColumnsWizardxoriginalfromDesc.label": {
+		"message": "X-Original-From으로 정렬하려면 클릭하십시오."
+	},
+
+	"ColumnsWizardcontentbase.label": {
+		"message": "컨텐츠 기반"
+	},
+
+	"ColumnsWizardcontentbaseDesc.label": {
+		"message": "컨텐츠 기반으로 정렬하려면 클릭하십시오."
+	},
+
+	"ColumnsWizardNFCols.show": {
+		"message": "보여 주다"
+	},
+
+	"ColumnsWizardNFCols.sort_by": {
+		"message": "정렬 기준"
+	},
+
+	"ColumnsWizardNFCols.col_title": {
+		"message": "이름"
+	},
+
+	"ColumnsWizardNFCols.col_flex": {
+		"message": "굽힘"
+	},
+
+	"ColumnsWizardNFCols.up": {
+		"message": "쪽으로"
+	},
+
+	"ColumnsWizardNFCols.down": {
+		"message": "하위"
+	},
+
+	"ColumnsWizardNFCols.resetMenu": {
+		"message": "열을 CW 기본값으로 재설정"
+	},
+
+	"ColumnsWizardNFCols.saveDefault": {
+		"message": "CW 기본값으로 열 저장"
+	},
+
+	"ColumnsWizardxspamscore.label": {
+		"message": "X-Spam-Score"
+	},
+
+	"ColumnsWizardxspamscoreDesc.label": {
+		"message": "클릭하여 X-Spam-Score로 정렬"
+	},
+
+	"ColumnsWizard.saveDefault_OnClick_text": {
+		"message": "이 폴더의 열 레이아웃을 CW 기본값으로 저장 하시겠습니까?"
+	},
+
+	"ColumnsWizard.resetDefault_OnClick_text": {
+		"message": "이 폴더 열 레이아웃을 CW 기본값으로 재설정 하시겠습니까?"
+	},
+
+	"ColumnsWizard.NewCol.Move": {
+		"message": "움직임"
+	},
+
+	"ColumnsWizard.Info.Credits": {
+		"message": "크레딧"
+	},
+
+	"ColumnsWizard.Info.Authors": {
+		"message": "저자"
+	},
+
+	"ColumnsWizard.Info.ReleaseNotes": {
+		"message": "릴리즈 노트"
+	},
+
+	"ColumnsWizard.Advanced.DebuggingOptions": {
+		"message": "디버깅 옵션"
+	}
+
+}

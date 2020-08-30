@@ -1,0 +1,133 @@
+
+.table-list-container {
+	/* padding-left: 15px; */
+	/* padding-top: 10px; */
+  /* max-width: 800px; */
+  width: 90%;
+  border: 1px solid #d2d2d2;
+  /* position: relative; */
+  z-index: 0;
+}
+
+
+  .table-list {
+  /* min-height: 176px; */
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.table-list, tr, td {
+	border: 1px solid #d8d8d8;
+
+}
+
+.table-list-container.no-outline {
+  outline: none !important;
+}
+
+.table-list th {
+	text-align: left;
+	padding-left: 4px;
+	padding-right: 4px;
+	padding-top: 6px;
+	padding-bottom: 8px;
+	background-color: #e0f0ff;
+  border-right: 1px solid #d2d2d2;
+  /* border-right: .6px solid red; */
+  font-weight: 500;
+  color: #666666;
+}
+
+.table-list tr:nth-child(odd) {
+	background-color: #e9e9e9;
+}
+
+.table-list tr:nth-child(even) {
+	background-color: #f1f1f1;
+}
+
+
+.table-list td {
+  white-space: nowrap;
+  height: 1.2rem;
+  vertical-align: top;
+  padding: 6px;
+  /* border-bottom: 1px solid #d2d2d2; */
+}
+
+/* .table-list tr:last-child td {
+  height: auto;
+} */
+
+.list-row {
+  background-color: white;
+  /* height: 18px; */
+}
+
+
+.list-row:hover, .list-row:focus {
+	background-color: rgb(229,243,255) !important;
+}
+
+.list-row.selected-row {
+	background-color:  rgb(205,232,255) !important;
+	/* color: white; */
+}
+
+.move-up, .move-down {
+	text-align: center;
+}
+	
+.show {
+	/* display: -moz-box; */
+	/* -moz-box-flex: 1; */
+	width: 10%;
+	height: 20px;
+	text-align: center !important;
+  }
+
+  .sort-by {
+	/* width: 10%; */
+	height: 20px;
+	text-align: center !important;
+	/* width: 100%; */
+	/* display: -moz-box; */
+	/* -moz-box-flex: 1; */
+	/* width: 200px; */
+  }
+
+  .name {
+	/* display: -moz-box; */
+	/* -moz-box-flex: 1; */
+	
+	width: 70%;
+	height: 20px;
+  }
+
+  .table-list tr > td:nth-of-type(4) {
+	  border-right: hidden;
+  }
+  .arrows {
+	/* visibility: hidden; */
+	margin-left: auto;
+	margin-right: auto;
+	opacity: 0.2;
+	/* background-color: chartreuse; */
+  }
+
+  tr:hover > td:nth-of-type(4) > img,
+  tr:hover > td:nth-of-type(5) > img {
+	opacity: 1;
+	/* display: block !important; */
+	/* visibility: visible; */
+	/* background-color: chocolate; */
+  }
+
+/* 
+  td img{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+} */

@@ -2,7 +2,7 @@
 
 var EXPORTED_SYMBOLS = ["miczColumnsWizard_CustCols"];
 
-ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
 var miczColumnsWizard_CustCols = {
 
@@ -34,7 +34,7 @@ var miczColumnsWizard_CustCols = {
 			labelString = elementc.labelString;
 			tooltipString = elementc.tooltipString;
 		}
-		let cwCol = document.createElement("treecol");
+		let cwCol = document.createXULElement("treecol");
 		cwCol.setAttribute("id", coltype + "Col_cw");
 		cwCol.setAttribute("persist", "hidden ordinal width");
 		cwCol.setAttribute("hidden", "true");
@@ -45,13 +45,21 @@ var miczColumnsWizard_CustCols = {
 			let file = Cc["@mozilla.org/file/local;1"].createInstance(Ci.nsIFile);
 			file.initWithPath(elementc.labelImagePath);
 			if ((file) && (file.exists())) {
-				cwCol.setAttribute("src", "file://" + elementc.labelImagePath);
 				cwCol.setAttribute("class", "treecol-image cw_col_image");
+				cwCol.setAttribute("is", "treecol-image");
+				// cwCol.setAttribute("width", "20px");
+				cwCol.setAttribute("flex", "1");
+
+				let cwImage = document.createXULElement("image");
+				cwCol.setAttribute("src", "file://" + elementc.labelImagePath);
+				// cwImage.setAttribute("src", "chrome://columnswizard/skin/mzcw-icon64-h.png");
+				cwImage.setAttribute("class", "treecol-icon");
+				cwCol.appendChild(cwImage);
 			}
 		}
 
 		cwCol.setAttribute("tooltiptext", tooltipString);
-		let cwSplitter = document.createElement("splitter");
+		let cwSplitter = document.createXULElement("splitter");
 		cwSplitter.setAttribute("class", "tree-splitter");
 		cwSplitter.setAttribute("resizeafter", "farthest");
 		let element = document.getElementById("threadCols");
@@ -64,6 +72,13 @@ var miczColumnsWizard_CustCols = {
 		element.appendChild(cwSplitter);
 		element.appendChild(cwCol);
 
+		if ((elementc.labelImagePath) && (elementc.labelImagePath !== "")) {	// we have an image - manually set after creation.
+			let imgElement = document.getElementById(coltype + "Col_cw").children[1];
+			imgElement.setAttribute("src", "file://" + elementc.labelImagePath);
+			imgElement.setAttribute("class", "treecol-icon");
+			imgElement.setAttribute("width", "16px");
+		}
+		// console.debug(imgElement.outerHTML);
 		// dump(">>>>>>>>>>>>> miczColumnsWizard->addCustomColumn: [coltype] "+coltype+"\r\n");
 		// DbObserver Managing
 		miczColumnsWizard_CustCols.addCustomColumnHandler(coltype);
@@ -91,6 +106,8 @@ var miczColumnsWizard_CustCols = {
 		}
 		cwCol.setAttribute("label", labelString);
 		cwCol.setAttribute("tooltiptext", tooltipString);
+		let columnStates = gFolderDisplay.getColumnStates();
+		// console.debug(columnStates);
 	},
 
 	removeCustomColumn: function (coltype, ObserverService) {
@@ -142,8 +159,9 @@ var miczColumnsWizard_CustCols = {
 	},
 
 	checkCustColDefaultIndex: function (curr_idx) {
+
 		for (let idx in miczColumnsWizard_CustCols.CustColDefaultIndex) {
-			if ( !curr_idx.includes(miczColumnsWizard_CustCols.CustColDefaultIndex[idx])) {
+			if (!curr_idx.includes(miczColumnsWizard_CustCols.CustColDefaultIndex[idx])) {
 				curr_idx.push(miczColumnsWizard_CustCols.CustColDefaultIndex[idx]);
 			}
 		}
@@ -222,6 +240,8 @@ var miczColumnsWizard_CustCols = {
 	},
 
 	addNewCustCol: function (newcol) {
+		// console.debug('AddNewCustomer');
+		// console.debug(newcol);
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 		miczColumnsWizard_CustCols.addCustColIndex(newcol.index);
 		ObserverService.notifyObservers(null, "CW-newCustomColumn", JSON.stringify(newcol));
@@ -229,9 +249,18 @@ var miczColumnsWizard_CustCols = {
 	},
 
 	updateCustCol: function (newcol) {
+		// console.debug('UpdateCustom');
+		// console.debug(newcol);
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 		ObserverService.notifyObservers(null, "CW-updateCustomColumn", JSON.stringify(newcol));
 		miczColumnsWizard_CustCols.saveCustCol(newcol);
+
+		var wMediator = Cc["@mozilla.org/appshell/window-mediator;1"].getService(Ci.nsIWindowMediator);
+		var mainWindow = wMediator.getMostRecentWindow("mail:3pane");
+		let columnStates = mainWindow.gFolderDisplay.getColumnStates();
+
+		// console.debug(columnStates);
+		// console.debug('Done');
 	},
 
 	addCustColIndex: function (index) {
@@ -279,6 +308,8 @@ var miczColumnsWizard_CustCols = {
 	},
 
 	saveCustCol: function (currcol) {
+		// console.debug('SaveCustomColumn');
+		// console.debug(currcol);
 		let value = JSON.stringify(currcol);
 		// let prefsc = Cc["@mozilla.org/preferences-service;1"].getService(Ci.nsIPrefService);
 		// Saving custom columns item to prefs
