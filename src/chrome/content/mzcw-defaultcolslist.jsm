@@ -57,6 +57,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 
 		// miczColumnsWizardPref_DefaultColsList.defaultColsListObj = new miczColumnsWizardPref_DefaultColsList.List('defaultColsListDiv', options);
 		miczColumnsWizardPref_DefaultColsList.defaultColsListObj = new window.List('defaultColsListDiv', options);
+		// miczColumnsWizardPref_DefaultColsList.defaultColsListObj = new List('defaultColsListDiv', options);
 
 		var defaultColsList = miczColumnsWizardPref_DefaultColsList.document.getElementById('defaultColsTable');
 		defaultColsList.addEventListener('click', miczColumnsWizardPref_DefaultColsList.onRowClick);

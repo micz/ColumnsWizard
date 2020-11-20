@@ -87,7 +87,7 @@ var miczColumnsWizard = {
 				onTabOpened: function (tab) {
 					console.debug('open to');
 					console.debug(tab);
-					this.showColumns(tab);
+					miczColumnsWizard.showColumns(tab);
 				},
 			};
 			tabmail.registerTabMonitor(monitor);

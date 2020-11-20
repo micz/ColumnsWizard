@@ -26,7 +26,7 @@ messenger.WindowListener.registerChromeUrl([
 console.debug('after registrations');
 // ["content", "cwrl2", "./_locales/", "contentaccessible=yes"],
 
-messenger.WindowListener.registerOptionsPage("chrome://columnswizard/content/settings-tab-launch.xul");
+messenger.WindowListener.registerOptionsPage("chrome://columnswizard/content/settings-tab-launch.xhtml");
 
 // Register each overlay script Which controls subsequent fragment loading
 
@@ -35,5 +35,9 @@ messenger.WindowListener.registerWindow(
 	"chrome://messenger/content/messenger.xul",
 	"chrome://columnswizard/content/messengerOL.js");
 
+messenger.WindowListener.registerWindow(
+	"chrome://messenger/content/messenger.xhtml",
+	"chrome://columnswizard/content/messengerOL.js");
+	
 messenger.WindowListener.startListening();
 

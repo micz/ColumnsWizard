@@ -1,8 +1,8 @@
 var EXPORTED_SYMBOLS = ["DocLocalize"];
 
-// if (!Services) {
-// var { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
-// }
+if (!Services) {
+var { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
+}
 
 var { OS } = ChromeUtils.import("resource://gre/modules/osfile.jsm");
 // var { miczLogger } = ChromeUtils.import("resource://columnswizard/resource/miczLogger.jsm");
