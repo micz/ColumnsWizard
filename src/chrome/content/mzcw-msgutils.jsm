@@ -5,13 +5,15 @@
  * made by Paolo "Kaosmos".
  * */
 
+console.debug('mutilities');
 var EXPORTED_SYMBOLS = ["miczColumnsWizard_MsgUtils"];
 
 const { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
 
 var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
-var { miczLogger } = ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
+var { miczLogger } = ChromeUtils.import("chrome://columnswizard/content/modules/miczLogger.jsm");
 
+console.debug('mutilities after imports');
 
 // cleidigh - Use correct module - avoids deprecation warning
 // mailServices.js => MailServices.jsm in TB63+

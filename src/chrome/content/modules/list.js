@@ -1345,6 +1345,7 @@ var Templater = function(list) {
         }
       }
     } else if (/<tr[\s>]/g.exec(item)) {
+      // cleidigh
       // var tbody = document.createElement('tbody');
       // tbody.innerHTML = item;
       // console.debug('after insert '+tbody.outerHTML);
@@ -1359,8 +1360,12 @@ var Templater = function(list) {
       // console.debug(docFragment.getElementsByTagName("tbody")[0].firstChild.outerHTML);
       // console.debug(docFragment.firstChild.outerHTML);
 
+      console.debug(`source:  ${item}`);
+      // let f = window.MozXULElement.parseXULToFragment(`${item}`);
+      // console.debug(`source:  ${f.outerHTML}`);
+      // return f;
       return docFragment.getElementsByTagName("tbody")[0].firstChild;
-  
+      
     } else if (item.indexOf("<") !== -1) {
       var div = document.createElement('div');
       div.innerHTML = item;

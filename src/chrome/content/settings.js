@@ -64,6 +64,7 @@ miczColumnsWizardPref2 = {
 		var domParser = new DOMParser();
 		domParser.forceEnableXULXBL();
 		var docFragment = domParser.parseFromString(html, 'text/html');
+		console.debug(docFragment.body.outerHTML);
 		return docFragment.body.firstChild;
 	},
 
@@ -93,6 +94,19 @@ miczColumnsWizardPref2 = {
 		// Load release notes
 		miczColumnsWizardPref2.loadInfoFile('release_notes');
 
+
+		// cleidigh 
+		// have to fixup arrows
+		let upItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('[uparrow]');
+		for (const element of upItems) {
+			element.setAttribute("src", "chrome://columnswizard/content/ico/arrow-up-black-64px.png");
+		}
+		
+		let downItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('[downarrow]');
+		for (const element of downItems) {
+			element.setAttribute("src", "chrome://columnswizard/content/ico/arrow-down-black-64px.png");
+		}
+		
 	},
 
 	// cleidigh list functions

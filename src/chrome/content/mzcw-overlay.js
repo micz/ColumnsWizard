@@ -1,5 +1,6 @@
 "use strict";
 
+console.debug('photo overlay ');
 // Services appears to be defined globally in TB64+ ?
 if (!Services) {
 	var { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
@@ -10,10 +11,11 @@ var { miczColumnsWizard_CustomColsModUtils } = ChromeUtils.import("chrome://colu
 var { miczColumnsWizardPref_DefaultColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolslist.jsm");
 var { miczColumnsWizardPref_CustomColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolslist.jsm");
 
-
+console.debug('import2');
 var { miczColumnsWizard_MsgUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
 var { miczColumnsWizardUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-utils.jsm");
-var { miczLogger } = ChromeUtils.import("resource://columnswizard/miczLogger.jsm");
+var { miczLogger } = ChromeUtils.import("chrome://columnswizard/content/modules/miczLogger.jsm");
+console.debug('after imports');
 
 var miczColumnsWizard = {
 
@@ -29,6 +31,7 @@ var miczColumnsWizard = {
 
 	init: function () {
 
+		console.debug('overlaying it');
 		miczColumnsWizard_CustomColsModUtils.miczColumnsWizard = miczColumnsWizard;
 		miczLogger.setLogger(true, miczColumnsWizardPrefsUtils.isDebug);
 
@@ -72,12 +75,20 @@ var miczColumnsWizard = {
 	initDelayed: function () {
 		try {
 			// Conversation Tab add columns
-			let tabmail = document.getElementById("tabmail");
+			let tabmail = window.document.getElementById("tabmail");
+			console.debug(tabmail);
 			let monitor = {
 				onTabTitleChanged: function (tab) { },
-				onTabSwitched: miczColumnsWizard.addCWResetMenu, // this.showColumns,
+				onTabSwitched: function (tab) {
+					console.debug(tab);
+					miczColumnsWizard.addCWResetMenu(tab);
+				},
 				// onTabRestored:function(tab){},
-				onTabOpened: this.showColumns,
+				onTabOpened: function (tab) {
+					console.debug('open to');
+					console.debug(tab);
+					this.showColumns(tab);
+				},
 			};
 			tabmail.registerTabMonitor(monitor);
 		} catch (e) {
@@ -348,7 +359,7 @@ var miczColumnsWizard = {
 		saveDefaultMenuCW.id = "columnswizard-defaultmenu";
 		saveDefaultMenuCW.setAttribute("anonid", "menuitem");
 		saveDefaultMenuCW.setAttribute("class", "menuitem-iconic");
-		saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/saveDefaultMenuCW.png");
+		saveDefaultMenuCW.setAttribute("image", "chrome://columnswizard/content/ico/saveDefaultMenuCW.png");
 		saveDefaultMenuCW.setAttribute("oncommand", "miczColumnsWizard.addCWSaveDefaultMenu_OnClick()");
 		
 		aPopup.insertBefore(saveDefaultMenuCW, insertPoint);
@@ -360,7 +371,7 @@ var miczColumnsWizard = {
 		resetMenuCW.setAttribute('hidden', cw_active ? 'false' : 'true');
 		resetMenuCW.setAttribute("anonid", "menuitem");
 		resetMenuCW.setAttribute("class", "menuitem-iconic");
-		resetMenuCW.setAttribute("image", "chrome://columnswizard/skin/ico/resetMenuCW.png");
+		resetMenuCW.setAttribute("image", "chrome://columnswizard/content/ico/resetMenuCW.png");
 		resetMenuCW.setAttribute("oncommand", "miczColumnsWizard.addCWResetMenu_OnClick()");
 		aPopup.insertBefore(resetMenuCW, insertPoint);
 
@@ -591,5 +602,5 @@ var miczColumnsWizard = {
 	
 };
 
-window.addEventListener("load", miczColumnsWizard.init, false);
-window.addEventListener("unload", miczColumnsWizard.shutdown, false);
+// window.addEventListener("load", miczColumnsWizard.init, false);
+// window.addEventListener("unload", miczColumnsWizard.shutdown, false);

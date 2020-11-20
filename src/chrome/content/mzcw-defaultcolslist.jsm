@@ -98,11 +98,13 @@ var miczColumnsWizardPref_DefaultColsList = {
 					show: element.visible,
 					sort_by: sb,
 					name: miczColumnsWizardPref_DefaultColsList.getColLocalizedString(element.currindex),
-					move_up: '<img src="chrome://columnswizard/content/ico/arrow-up-black-64px.png" height="16px" width="16px" class="arrows up-action" title="Move Up">',
-					move_down: '<img src="chrome://columnswizard/content/ico/arrow-down-black-64px.png" height="16px" width="16px" class="arrows down-action">',
+					move_up: '<img  height="16px" width="16px" class="arrows up-action" title="Move Up" uparrow="1"/>',
+					move_down: '<img height="16px" width="16px" class="arrows down-action" downarrow="1"/>',
 					id: dindex++,
 				});
 
+				// move_down: '<img src="chrome://columnswizard/content/ico/arrow-down-black-64px.png" height="16px" width="16px" class="arrows down-action">',
+				// move_up: '<img src="chrome://columnswizard/content/arrow-up-black-64px.png" height="16px" width="16px" class="arrows up-action" title="Move Up">',
 
 			}
 		}
