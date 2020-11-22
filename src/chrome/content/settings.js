@@ -18,20 +18,20 @@ var miczColumnsWizardPref2 = {};
 miczColumnsWizardPref2 = {
 
 	prefList: [
-		{docid: "ColumnsWizard.DefaultColsList.active_checkbox", pref: "ColumnsWizard.DefaultColsList.active", type: "boolean_checkbox", prefPostOp: null, prefListener: miczColumnsWizardPref2.onPreferenceChange},
-		{docid: "ColumnsWizard.CustCols.mod_active_checkbox", pref: "ColumnsWizard.CustCols.mod_active", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
-		{docid: "ColumnsWizard.debug_checkbox", pref: "ColumnsWizard.debug", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
-		{docid: "ColumnsWizard.ShowLocation_checkbox", pref: "ColumnsWizard.ShowLocation", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
-		{docid: "ColumnsWizard.ShowAccount_checkbox", pref: "ColumnsWizard.ShowAccount", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
-		{docid: "ColumnsWizard.ShowAttachment_checkbox", pref: "ColumnsWizard.ShowAttachment", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
-		{docid: "ColumnsWizard.ShowRecipient_checkbox", pref: "ColumnsWizard.ShowRecipient", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
-		{docid: "ColumnsWizard.MailHeader.use_imap_fix_checkbox", pref: "ColumnsWizard.MailHeader.use_imap_fix_checkbox", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
-		{docid: "ColumnsWizard.MailHeader.put_original_in_trash_checkbox", pref: "ColumnsWizard.MailHeader.put_original_in_trash", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange},
-		{docid: "ColumnsWizard.cw_sort_asc", pref: "", type: "boolean_radio", prefPostOp: null, prefListener: miczColumnsWizardPref2.onPreferenceChange},
-		{docid: "ColumnsWizard.cw_sort_desc", pref: "", type: "boolean_radio", prefPostOp: null, prefListener: miczColumnsWizardPref2.onPreferenceChange},
+		{ docid: "ColumnsWizard.DefaultColsList.active_checkbox", pref: "ColumnsWizard.DefaultColsList.active", type: "boolean_checkbox", prefPostOp: null, prefListener: miczColumnsWizardPref2.onPreferenceChange },
+		{ docid: "ColumnsWizard.CustCols.mod_active_checkbox", pref: "ColumnsWizard.CustCols.mod_active", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange },
+		{ docid: "ColumnsWizard.debug_checkbox", pref: "ColumnsWizard.debug", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange },
+		{ docid: "ColumnsWizard.ShowLocation_checkbox", pref: "ColumnsWizard.ShowLocation", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange },
+		{ docid: "ColumnsWizard.ShowAccount_checkbox", pref: "ColumnsWizard.ShowAccount", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange },
+		{ docid: "ColumnsWizard.ShowAttachment_checkbox", pref: "ColumnsWizard.ShowAttachment", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange },
+		{ docid: "ColumnsWizard.ShowRecipient_checkbox", pref: "ColumnsWizard.ShowRecipient", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange },
+		{ docid: "ColumnsWizard.MailHeader.use_imap_fix_checkbox", pref: "ColumnsWizard.MailHeader.use_imap_fix_checkbox", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange },
+		{ docid: "ColumnsWizard.MailHeader.put_original_in_trash_checkbox", pref: "ColumnsWizard.MailHeader.put_original_in_trash", type: "boolean_checkbox", prefPostOp: null, prefListener: this.onPreferenceChange },
+		{ docid: "ColumnsWizard.cw_sort_asc", pref: "", type: "boolean_radio", prefPostOp: null, prefListener: miczColumnsWizardPref2.onPreferenceChange },
+		{ docid: "ColumnsWizard.cw_sort_desc", pref: "", type: "boolean_radio", prefPostOp: null, prefListener: miczColumnsWizardPref2.onPreferenceChange },
 	],
 
-	
+
 	// {docid: "ColumnsWizard.DefaultColsList.active_checkbox", pref: "ColumnsWizard.DefaultColsList.active_checkbox.active", type: "boolean_checkbox", prefPostOp: null},
 
 	// {docid: "ColumnsWizard.ColumnsWizard.cw_sort_asc", pref: "ColumnsWizard.", type: "boolean", prefPostOp: null},
@@ -52,7 +52,7 @@ miczColumnsWizardPref2 = {
 					}
 
 					break;
-			
+
 				default:
 					break;
 			}
@@ -86,29 +86,67 @@ miczColumnsWizardPref2 = {
 			cbelement.removeAttribute("checked");
 			cbelement2.checked = true;
 		}
-		
+
 		miczColumnsWizardPref_DefaultColsList.initDefaultColsList(window);
-		
+
 		miczColumnsWizardPref_CustomColsList.initCustomColsList(window);
 
+		var principal = Cc["@mozilla.org/systemprincipal;1"].createInstance(Ci.nsIPrincipal);
+		// console.debug(principal);
+		var c = new DOMParser(principal, document.documentURI, document.baseURI).parseFromString("<a></a>", "text/xml").firstChild;
+		// getting the dynamic document in http://htmledit.squarefree.com/
+
+		// console.debug(c.ownerDocument);
+
+		var html = `<span>item</span><html:input type="checkbox" class="show toggle-action-show"/>`;
+		// console.debug('item ' + html);
+		// var f = domParser.parseFromString(html, 'text/html');
+		let f2 = window.MozXULElement.parseXULToFragment(html);
+		var f = document.createElement('div');
+		f.innerHTML = html;
+		
+		// console.debug(f.outerHTML);
+		
+		// var e2 = document.createElement('input');
+		// e2.setAttribute("type","checkbox");
+		// let tcb = window.document.getElementById("tcb");
+		// tcb.insertBefore(e2, tcb.firstChild);
+		// // tcb.appendChild(e2);
+		// console.debug(tcb.outerHTML);
+
+		// let e = window.document.getElementById("section-content3");
+
+		// e.appendChild(f2);
+		// console.debug(e.outerHTML);
+
+		let l = window.document.getElementById("defaultColsTable");
+		// console.debug(l.outerHTML);
 		// Load release notes
 		miczColumnsWizardPref2.loadInfoFile('release_notes');
 
 
+
 		// cleidigh 
 		// have to fixup arrows
-		let upItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('[uparrow]');
+		let upItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('.arrows .up-action');
 		for (const element of upItems) {
 			element.setAttribute("src", "chrome://columnswizard/content/ico/arrow-up-black-64px.png");
 		}
-		
-		let downItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('[downarrow]');
+
+		let downItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('.arrows .down-action');
 		for (const element of downItems) {
 			element.setAttribute("src", "chrome://columnswizard/content/ico/arrow-down-black-64px.png");
 		}
-		
+
+		// console.debug(l.outerHTML);
+		console.debug(l.outerHTML);
 	},
 
+	copyAttrs: function(target, source) { 
+		[...source.attributes].forEach(attr => { 
+			target.setAttribute(attr.nodeName, attr.nodeValue);
+		});
+	},
 	// cleidigh list functions
 
 	loadDefaultColRows_Pref: function () {
@@ -156,7 +194,7 @@ miczColumnsWizardPref2 = {
 	},
 
 
-	
+
 	onNewCustomCol: function (win) {
 		let doc = win.document;
 		let container = doc.getElementById('ColumnsWizard.CustColsList');
@@ -191,7 +229,7 @@ miczColumnsWizardPref2 = {
 				labelString: args.newcol.labelString,
 				tooltipString: args.newcol.tooltipString,
 			});
-	
+
 			// console.debug('AfterAdd');
 			// console.debug(miczColumnsWizardPref_CustomColsList.customColsListObj.items);
 		}
@@ -231,7 +269,7 @@ miczColumnsWizardPref2 = {
 		}
 		// let args = { "action": "edit", "args.newcol": JSON.stringify(container.selectedItem._customcol) };
 
-		let	custCol = miczColumnsWizardPref_DefaultColsList.loadedCustCols[item.values().index];
+		let custCol = miczColumnsWizardPref_DefaultColsList.loadedCustCols[item.values().index];
 		// console.debug(custCol);
 		let args = { "action": "edit", "currcol": JSON.stringify(custCol) };
 
@@ -266,11 +304,11 @@ miczColumnsWizardPref2 = {
 				labelString: args.newcol.labelString,
 				tooltipString: args.newcol.tooltipString,
 			});
-	
+
 			if (args.newcol.isEditable) {
 				miczColumnsWizardPrefsUtils.setHeadersEditingActive(true);
 			}
-			
+
 			// Select the editedcustcols
 			// container.ensureIndexIsVisible(container.selectedIndex);
 			miczColumnsWizardPref_CustomColsList.customColsListObj.controller.selectRowByDataId(vals.id);
@@ -279,7 +317,7 @@ miczColumnsWizardPref2 = {
 
 	},
 
-	
+
 	onDeleteCustomCol: function (win) {
 		let doc = win.document;
 
@@ -298,7 +336,7 @@ miczColumnsWizardPref2 = {
 			alert("Cannot delete bundled custom column");
 			return;
 		}
-		
+
 		// Are you sure?
 		let prompts = Cc["@mozilla.org/embedcomp/prompt-service;1"].getService(Ci.nsIPromptService);
 		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/settings.properties");
@@ -315,7 +353,7 @@ miczColumnsWizardPref2 = {
 		let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
 		// miczColumnsWizard_CustCols.removeCustomColumn(col_idx,ObserverService)
 		// miczColumnsWizard_CustCols.deleteCustCol(col_idx);
-		
+
 		vals.enabled = false;
 		miczColumnsWizardPref_DefaultColsList.toggleCustomCol(vals);
 		miczColumnsWizardPref_DefaultColsList.saveDefaultColsList();
@@ -344,14 +382,14 @@ miczColumnsWizardPref2 = {
 
 	},
 
-	
-	registerPreferenceListeners: function(idArray) {
+
+	registerPreferenceListeners: function (idArray) {
 		idArray.forEach(element => {
 			window.addEventListener("click", miczColumnsWizardPref2.onPreferenceChange, false);
 		});
 	},
-	
-	registerPreferenceListener: function(prefEntry) {
+
+	registerPreferenceListener: function (prefEntry) {
 		let element = document.getElementById(prefEntry.docid);
 		if (prefEntry.prefListener) {
 			element.addEventListener("click", prefEntry.prefListener, false);
@@ -359,7 +397,7 @@ miczColumnsWizardPref2 = {
 			element.addEventListener("click", miczColumnsWizardPref2.onPreferenceChange, false);
 		}
 	},
-	
+
 	onPreferenceChange: function (event) {
 		var targetElement = event.target;
 
@@ -370,7 +408,7 @@ miczColumnsWizardPref2 = {
 		if (!prefEntry) {
 			return;
 		}
-		
+
 		switch (prefEntry.type) {
 			case 'boolean_checkbox':
 				miczColumnsWizardPrefsUtils.setBoolPref("extensions." + prefEntry.pref, targetElement.checked);
@@ -383,11 +421,11 @@ miczColumnsWizardPref2 = {
 					let sort_order = cbelement.checked ? 1 : 2;
 					miczColumnsWizardPrefsUtils.setIntPref("mailnews.default_sort_order", sort_order);
 				}
-			
+
 			default:
 				break;
 		}
-		
+
 	},
 
 	loadInfoFile: function (filetype) {

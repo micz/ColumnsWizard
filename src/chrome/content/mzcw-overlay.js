@@ -76,17 +76,17 @@ var miczColumnsWizard = {
 		try {
 			// Conversation Tab add columns
 			let tabmail = window.document.getElementById("tabmail");
-			console.debug(tabmail);
+			// console.debug(tabmail);
 			let monitor = {
 				onTabTitleChanged: function (tab) { },
 				onTabSwitched: function (tab) {
-					console.debug(tab);
+					// console.debug(tab);
 					miczColumnsWizard.addCWResetMenu(tab);
 				},
 				// onTabRestored:function(tab){},
 				onTabOpened: function (tab) {
-					console.debug('open to');
-					console.debug(tab);
+					// console.debug('open to');
+					// console.debug(tab);
 					miczColumnsWizard.showColumns(tab);
 				},
 			};

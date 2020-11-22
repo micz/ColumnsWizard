@@ -1,5 +1,9 @@
 # ![CW] ColumnsWizard Release Notes
 
+### Version 8.0.0-b1 - 11/22/2020
+
+- Update for TB68 compatibility WIP
+
 ### Version 7.0.0 - 8/29/2020
 - Update for TB68 compatibility
 - Convert options dialog to tab

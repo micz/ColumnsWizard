@@ -1346,10 +1346,11 @@ var Templater = function(list) {
       }
     } else if (/<tr[\s>]/g.exec(item)) {
       // cleidigh
-      // var tbody = document.createElement('tbody');
-      // tbody.innerHTML = item;
+      var tbody = document.createElement('tbody');
+      tbody.innerHTML = item;
       // console.debug('after insert '+tbody.outerHTML);
-      // return tbody.firstChild;
+      console.debug('item ' + item);
+      return tbody.firstChild;
 
       var domParser = new DOMParser();
       var html = `<table>${item}</table>`;
@@ -1361,18 +1362,27 @@ var Templater = function(list) {
       // console.debug(docFragment.firstChild.outerHTML);
 
       console.debug(`source:  ${item}`);
-      // let f = window.MozXULElement.parseXULToFragment(`${item}`);
-      // console.debug(`source:  ${f.outerHTML}`);
-      // return f;
-      return docFragment.getElementsByTagName("tbody")[0].firstChild;
+      let f = window.MozXULElement.parseXULToFragment(`${item}`);
+      console.debug(`source:  ${f.outerHTML}`);
+      return f;
+      
+      // let fragment = document.createDocumentFragment();
+      // let f = docFragment.getElementsByTagName("tbody")[0].firstChild;
+      // fragment.appendChild(f);
+      // return fragment;
+
+      // return docFragment.getElementsByTagName("tbody")[0].firstChild;
       
     } else if (item.indexOf("<") !== -1) {
       var div = document.createElement('div');
       div.innerHTML = item;
+      console.debug('d: ' + item);
       return div.firstChild;
     } else {
       var source = document.getElementById(list.item);
       if (source) {
+        console.debug('source');
+        console.debug(list.item);
         return source;
       }
     }

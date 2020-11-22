@@ -8,7 +8,8 @@ messenger.WindowListener.registerDefaultPrefs("defaults/preferences/prefs.js");
 messenger.WindowListener.registerChromeUrl([
 	["content", "columnswizard", "chrome/content/"],
 	["content", "columnswizard", "chrome/content/ico"],
-	["resource", "columnswizard", "chrome/content/"],
+	["resource", "columnswizard", "chrome/content/", "contentaccessible=yes"],
+	["resource", "columnswizard", "chrome/content/modules/"],
 	["resource", "columnswizard2", "chrome/resource/"],
 	["resource", "columnswizard", "chrome/skin/classic/"],
 	["locale", "columnswizard", "en-US", "chrome/locale/en-US/"],

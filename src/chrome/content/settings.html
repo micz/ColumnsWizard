@@ -15,12 +15,12 @@
 <body>
 
   <div class="tabs">
-    <input type="radio" id="tab1" name="tab-control" checked tabindex="0">
+    <input type="radio" id="tab1" name="tab-control" tabindex="0" checked>
     <input type="radio" id="tab2" name="tab-control" tabindex="0" role="button" aria-label="Custom Columns" label="Custom">
     <input type="radio" id="tab3" name="tab-control">
     <input type="radio" id="tab4" name="tab-control">
     <input type="radio" id="tab5" name="tab-control" disabled>
-    <input type="radio" id="tab6" name="tab-control" role="button">
+    <input type="radio" id="tab6" name="tab-control" role="button"  >
     <!-- <button onclick="document.getElementById('tab1').checked=true">New Folder Columns</button> -->
     <!-- <button style="height: 0; width: 0;" onclick="document.getElementById('tab3').checked=true">Conversation Tab</button>     -->
     <ul>
@@ -131,6 +131,7 @@
       <section>
         <div class="section-header">__MSG_ColumnsWizard.NewFolderCols.Desc__</div>
         <div class="section-content">
+          
           <label class="checkbox-container-rlabel" height="16px">__MSG_ColumnsWizard.NewFolderCols.label__
             <input type="checkbox" id="ColumnsWizard.DefaultColsList.active_checkbox">
             <span class="checkmark"></span>
@@ -273,8 +274,8 @@
         <div class="section-header">
           <div style="display: flex; justify-chrome: space-between;">
             <div>
-            <div class="section-group-content-header">ColumnsWizard v7.1.0-b1</div>
-            <div class="section-content3" >
+            <div class="section-group-content-header">ColumnsWizard v8.0.0-b1</div>
+            <div id="section-content3" class="section-content3" >
               <span>__MSG_ColumnsWizard.Info.Authors__ : Mic, Christopher Leidigh</span><br>
               <span>__MSG_ColumnsWizard.Info.Credits__ : @javve (ListJS) </span>
             </div>
@@ -285,7 +286,7 @@
         </div>
           <div class="section-group-content-header">__MSG_ColumnsWizard.Info.ReleaseNotes__</div>
           <div class="section-content2">
-            <textarea id="mzcw-release-notes" rows="4" style="width: 100%; padding: 6px;"></textarea>
+            <textarea id="mzcw-release-notes" rows="22" style="width: 100%; padding: 6px;"></textarea>
           </div>
         </div>
        
@@ -302,8 +303,9 @@
 
 <!-- <script src="chrome://columnswizard/content/doc-localize.js"></script> -->
 <script src="chrome://columnswizard/content/modules/list.js"></script>
+<!-- <script src="resource://columnswizard/content/modules/list.js"></script> -->
 <script src="chrome://columnswizard/content/settings.js"></script>
-
+<!-- <script src="resource://columnswizard/content/settings.js"></script> -->
 <!-- <script src="chrome://columnswizard/content/defaultColList.js"></script> -->
 
 

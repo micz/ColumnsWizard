@@ -33,27 +33,71 @@ var miczColumnsWizardPref_DefaultColsList = {
 				{ name: 'show', attr: 'checked' },
 				{ name: 'sort_by', attr: 'checked' },
 			],
-			item: '<tr class="list-row id" >\
-			<td>\
-				<label class="checkbox-container-center">\
-					<input type="checkbox" class="show toggle-action-show">\
-					<span class="checkmark"></span>\
-					</label>\
-			</td>\
-			<td >\
-			<label class="radio-container-center">\
-					<input type="radio" class="sort_by toggle-action-sort-by" name="sortRadioGroup">\
-					<span class="rcheckmark"></span>\
-					</label>\
-			</td>\
-			<td class="name"></td>\
-			<td class="move_up up-action" >\
-			</td>\
-			<td class="move_down down-action">\
-			</td>\
-			</tr>',
+		
+					item: '<tr class="list-row id" >\
+<td>\
+<label class="checkbox-container-center">\
+<span type="checkbox" class="data-input show toggle-action-show" ></span>\
+<span class="checkmark"></span>\
+</label>\
+</td>\
+<td >\
+<label class="radio-container-center">\
+<span type="radio" class="data-input sort_by toggle-action-sort-by" name="sortRadioGroup" ></span>\
+<span class="rcheckmark"></span>\
+</label>\
+</td>\
+<td class="name"></td>\
+<td class="move_up up-action" >\
+</td>\
+<td class="move_down down-action">\
+</td>\
+</tr>',
 
+			
 		};
+
+
+		// item: '<html:tr class="list-row id" >\
+		// 	<html:td>\
+		// 		<html:label class="checkbox-container-center">\
+		// 			<html:input type="checkbox" class="show toggle-action-show" />\
+		// 			<html:span class="checkmark"></html:span>\
+		// 			</html:label>\
+		// 	</html:td>\
+		// 	<html:td >\
+		// 	<html:label class="radio-container-center">\
+		// 			<html:input type="radio" class="sort_by toggle-action-sort-by" name="sortRadioGroup" />\
+		// 			<html:span class="rcheckmark"></html:span>\
+		// 			</html:label>\
+		// 	</html:td>\
+		// 	<html:td class="name"></td>\
+		// 	<html:td class="move_up up-action" >\
+		// 	</html:td>\
+		// 	<html:td class="move_down down-action">\
+		// 	</html:td>\
+		// 	</html:tr>',
+
+		// item: '<tr class="list-row id" >\
+		// <td>\
+		// 	<label class="checkbox-container-center">\
+		// 		<input type="checkbox" class="show toggle-action-show">\
+		// 		<span class="checkmark"></span>\
+		// 		</label>\
+		// </td>\
+		// <td >\
+		// <label class="radio-container-center">\
+		// 		<input type="radio" class="sort_by toggle-action-sort-by" name="sortRadioGroup">\
+		// 		<span class="rcheckmark"></span>\
+		// 		</label>\
+		// </td>\
+		// <td class="name"></td>\
+		// <td class="move_up up-action" >\
+		// </td>\
+		// <td class="move_down down-action">\
+		// </td>\
+		// </tr>',
+
 
 		// miczColumnsWizardPref_DefaultColsList.defaultColsListObj = new miczColumnsWizardPref_DefaultColsList.List('defaultColsListDiv', options);
 		miczColumnsWizardPref_DefaultColsList.defaultColsListObj = new window.List('defaultColsListDiv', options);
@@ -99,8 +143,8 @@ var miczColumnsWizardPref_DefaultColsList = {
 					show: element.visible,
 					sort_by: sb,
 					name: miczColumnsWizardPref_DefaultColsList.getColLocalizedString(element.currindex),
-					move_up: '<img  height="16px" width="16px" class="arrows up-action" title="Move Up" uparrow="1"/>',
-					move_down: '<img height="16px" width="16px" class="arrows down-action" downarrow="1"/>',
+					move_up: '<img  height="16px" width="16px" class="arrows up-action" title="Move Up" />',
+					move_down: '<img height="16px" width="16px" class="arrows down-action" />',
 					id: dindex++,
 				});
 
@@ -109,6 +153,22 @@ var miczColumnsWizardPref_DefaultColsList = {
 
 			}
 		}
+
+		let win = miczColumnsWizardPref_DefaultColsList.window;
+		let l = win.document.getElementById("defaultColsTable");
+		// console.debug(l.outerHTML);
+
+		let inputItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
+		console.debug(inputItems.length);
+		for (const element of inputItems) {
+			var e3 = win.document.createElement('input');
+			// console.debug(element.outerHTML);
+			// console.debug(element.firstChild.outerHTML);
+
+			miczColumnsWizardPref_DefaultColsList.copyAttrs(e3, element.firstChild);
+			element.insertBefore(e3, element.firstChild);
+		}
+
 
 		let checkedItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('[checked]');
 		for (const element of checkedItems) {
@@ -124,8 +184,16 @@ var miczColumnsWizardPref_DefaultColsList = {
 			}
 		}
 
+		console.debug(l.outerHTML);
+
 	},
 
+	copyAttrs: function(target, source) { 
+		[...source.attributes].forEach(attr => { 
+			target.setAttribute(attr.nodeName, attr.nodeValue);
+		});
+	},
+	
 	saveDefaultColsList: function () {
 		// console.debug('SaveDefault');
 		// console.debug(tableList.items);
