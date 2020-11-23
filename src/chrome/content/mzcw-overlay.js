@@ -251,7 +251,10 @@ var miczColumnsWizard = {
 	},
 
 	addCWResetMenu: function (tab) {
-		if (tab.mode.name === 'folder') {
+		// if (tab.mode.name === 'folder' || true) {
+		console.debug('addCWResetMenu');
+		if (true) {
+
 
 			// Must query visible for TB64+
 			// let e2 = e.querySelector('treecolpicker');
