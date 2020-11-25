@@ -43,23 +43,23 @@ var miczColumnsWizardPref_CustomColsList = {
 
 			],
 			item: '<tr class="list-row id" >\
-			<td>\
-				<label class="checkbox-container-center" >\
-					<input type="checkbox" class="enabled toggle-action-enabled">\
-					<span class="checkmark"></span>\
-					</label>\
-			</td>\
-			<td style="text-align: center;">\
-			<label class="checkbox-container-center">\
-					<input type="checkbox" class="isSearchable toggle-action-isSearchable">\
-					<span class="checkmark"></span>\
-					</label>\
-			</td>\
-			<td class="index"></td>\
-			<td class="dbHeader"></td>\
-			<td class="title"></td>\
-			<td class="tooltip"></td>\
-			</tr>',
+<td>\
+<label class="checkbox-container-center" >\
+<span type="checkbox" class="data-input enabled toggle-action-enabled" style="display: none;" ></span>\
+<span class="checkmark"></span>\
+</label>\
+</td>\
+<td style="text-align: center;">\
+<label class="checkbox-container-center">\
+<span type="checkbox" class="data-input isSearchable toggle-action-isSearchable" style="display: none;" ></span>\
+<span class="checkmark"></span>\
+</label>\
+</td>\
+<td class="index"></td>\
+<td class="dbHeader"></td>\
+<td class="title"></td>\
+<td class="tooltip"></td>\
+</tr>',
 
 		};
 
@@ -102,6 +102,19 @@ var miczColumnsWizardPref_CustomColsList = {
 
 		miczColumnsWizardPref_CustomColsList.createCustomColsListRows(miczColumnsWizardPref_DefaultColsList.loadedCustCols);
 		
+		let win = miczColumnsWizardPref_CustomColsList.window;
+		let l = win.document.getElementById("customColsTable");
+		// console.debug(l.outerHTML);
+
+		let inputItems = miczColumnsWizardPref_CustomColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
+		// console.debug(inputItems.length);
+		for (const element of inputItems) {
+			var e3 = win.document.createElement('input');
+			miczColumnsWizardPref_CustomColsList.copyAttrs(e3, element.firstChild);
+			element.insertBefore(e3, element.firstChild);
+			// console.debug(e3.outerHTML);
+		}
+
 		let checkedItems = miczColumnsWizardPref_CustomColsList.document.querySelectorAll('[checked]');
 		for (const element of checkedItems) {
 			// console.debug(element);
@@ -117,6 +130,12 @@ var miczColumnsWizardPref_CustomColsList = {
 		}
 
 		// console.debug('CC finish');
+	},
+
+	copyAttrs: function(target, source) { 
+		[...source.attributes].forEach(attr => { 
+			target.setAttribute(attr.nodeName, attr.nodeValue);
+		});
 	},
 
 	saveCustomColsList: function (idx) {

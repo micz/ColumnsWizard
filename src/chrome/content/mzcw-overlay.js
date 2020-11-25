@@ -63,6 +63,8 @@ var miczColumnsWizard = {
 		miczColumnsWizard.initHeadersEditingMenu();
 
 		let current_tab = document.getElementById("tabmail").currentTabInfo;
+		console.debug('Init');
+		console.debug(current_tab);
 		miczColumnsWizard.addCWResetMenu(current_tab);
 
 		// cleidigh not used?

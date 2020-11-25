@@ -91,19 +91,6 @@ miczColumnsWizardPref2 = {
 
 		miczColumnsWizardPref_CustomColsList.initCustomColsList(window);
 
-		var principal = Cc["@mozilla.org/systemprincipal;1"].createInstance(Ci.nsIPrincipal);
-		// console.debug(principal);
-		var c = new DOMParser(principal, document.documentURI, document.baseURI).parseFromString("<a></a>", "text/xml").firstChild;
-		// getting the dynamic document in http://htmledit.squarefree.com/
-
-		// console.debug(c.ownerDocument);
-
-		var html = `<span>item</span><html:input type="checkbox" class="show toggle-action-show"/>`;
-		// console.debug('item ' + html);
-		// var f = domParser.parseFromString(html, 'text/html');
-		let f2 = window.MozXULElement.parseXULToFragment(html);
-		var f = document.createElement('div');
-		f.innerHTML = html;
 		
 		// console.debug(f.outerHTML);
 		
@@ -125,18 +112,20 @@ miczColumnsWizardPref2 = {
 		miczColumnsWizardPref2.loadInfoFile('release_notes');
 
 
-
+		console.debug('fix arrows');
 		// cleidigh 
 		// have to fixup arrows
-		let upItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('.arrows .up-action');
+		let upItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('img[data-img-src]');
 		for (const element of upItems) {
-			element.setAttribute("src", "chrome://columnswizard/content/ico/arrow-up-black-64px.png");
+			// console.debug(element.outerHTML);
+			// element.setAttribute("src", "chrome://columnswizard/content/ico/arrow-up-black-64px.png");
+			element.setAttribute("src", element.getAttribute("data-img-src"));
 		}
 
-		let downItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('.arrows .down-action');
-		for (const element of downItems) {
-			element.setAttribute("src", "chrome://columnswizard/content/ico/arrow-down-black-64px.png");
-		}
+		// let downItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('.arrows.down-action');
+		// for (const element of downItems) {
+		// 	element.setAttribute("src", "chrome://columnswizard/content/ico/arrow-down-black-64px.png");
+		// }
 
 		// console.debug(l.outerHTML);
 		console.debug(l.outerHTML);
@@ -200,7 +189,7 @@ miczColumnsWizardPref2 = {
 		let container = doc.getElementById('ColumnsWizard.CustColsList');
 		let args = { "action": "new" };
 
-		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xul", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
+		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xhtml", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
 
 		if (("save" in args && args.save) && ("newcol" in args && args.newcol)) {
 			miczColumnsWizard_CustCols.addNewCustCol(args.newcol);
@@ -238,8 +227,27 @@ miczColumnsWizardPref2 = {
 			miczColumnsWizardPrefsUtils.setHeadersEditingActive(true);
 		}
 
+		let inputItems = miczColumnsWizardPref_CustomColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
+		// console.debug(inputItems.length);
+		for (const element of inputItems) {
+			var e3 = win.document.createElement('input');
+			miczColumnsWizardPref_CustomColsList.copyAttrs(e3, element.firstChild);
+			element.insertBefore(e3, element.firstChild);
+			// console.debug(e3.outerHTML);
+		}
+
 		miczColumnsWizardPref_DefaultColsList.toggleCustomCol(args.newcol);
 		miczColumnsWizardPref_DefaultColsList.loadedCustCols = miczColumnsWizard_CustCols.loadCustCols();
+
+		inputItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
+		// console.debug(inputItems.length);
+		for (const element of inputItems) {
+			e3 = win.document.createElement('input');
+			miczColumnsWizardPref_DefaultColsList.copyAttrs(e3, element.firstChild);
+			element.insertBefore(e3, element.firstChild);
+			// console.debug(e3.outerHTML);
+		}
+
 		// console.debug(miczColumnsWizardPref_CustomColsList.customColsListObj.items);
 		miczColumnsWizardPref_CustomColsList.customColsListObj.controller.selectRowByDataId(index);
 		miczColumnsWizardPref_CustomColsList.customColsListObj.controller.getSelectedRowElement().scrollIntoView(true);
@@ -273,7 +281,7 @@ miczColumnsWizardPref2 = {
 		// console.debug(custCol);
 		let args = { "action": "edit", "currcol": JSON.stringify(custCol) };
 
-		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xul", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
+		window.openDialog("chrome://columnswizard/content/mzcw-settings-customcolseditor.xhtml", "CustColsEditor", "chrome,modal,titlebar,resizable,centerscreen", args);
 
 		// console.debug('after window close');
 		// console.debug(args);

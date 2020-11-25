@@ -37,7 +37,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 					item: '<tr class="list-row id" >\
 <td>\
 <label class="checkbox-container-center">\
-<span type="checkbox" class="data-input show toggle-action-show" ></span>\
+<span type="checkbox" class="data-input show toggle-action-show" style="display: none;" ></span>\
 <span class="checkmark"></span>\
 </label>\
 </td>\
@@ -143,8 +143,8 @@ var miczColumnsWizardPref_DefaultColsList = {
 					show: element.visible,
 					sort_by: sb,
 					name: miczColumnsWizardPref_DefaultColsList.getColLocalizedString(element.currindex),
-					move_up: '<img  height="16px" width="16px" class="arrows up-action" title="Move Up" />',
-					move_down: '<img height="16px" width="16px" class="arrows down-action" />',
+					move_up: '<img  height="16px" width="16px" class="arrows up-action" title="Move Up" data-img-src="chrome://columnswizard/content/ico/arrow-up-black-64px.png"/>',
+					move_down: '<img height="16px" width="16px" class="arrows down-action" data-img-src="chrome://columnswizard/content/ico/arrow-down-black-64px.png"/>',
 					id: dindex++,
 				});
 
@@ -159,14 +159,12 @@ var miczColumnsWizardPref_DefaultColsList = {
 		// console.debug(l.outerHTML);
 
 		let inputItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
-		console.debug(inputItems.length);
+		// console.debug(inputItems.length);
 		for (const element of inputItems) {
 			var e3 = win.document.createElement('input');
-			// console.debug(element.outerHTML);
-			// console.debug(element.firstChild.outerHTML);
-
 			miczColumnsWizardPref_DefaultColsList.copyAttrs(e3, element.firstChild);
 			element.insertBefore(e3, element.firstChild);
+			// console.debug(e3.outerHTML);
 		}
 
 
@@ -184,7 +182,8 @@ var miczColumnsWizardPref_DefaultColsList = {
 			}
 		}
 
-		console.debug(l.outerHTML);
+		// console.debug('aftershocks');
+		// console.debug(l.outerHTML);
 
 	},
 
@@ -247,6 +246,16 @@ var miczColumnsWizardPref_DefaultColsList = {
 
 		} else if (!col.enabled && item.length) {
 			miczColumnsWizardPref_DefaultColsList.defaultColsListObj.remove("currindex", col.index + cwindex);
+		}
+
+		let win = miczColumnsWizardPref_DefaultColsList.window;
+		let inputItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
+		// console.debug(inputItems.length);
+		for (const element of inputItems) {
+			var e3 = win.document.createElement('input');
+			miczColumnsWizardPref_DefaultColsList.copyAttrs(e3, element.firstChild);
+			element.insertBefore(e3, element.firstChild);
+			// console.debug(e3.outerHTML);
 		}
 
 		let checkedItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('[checked]');

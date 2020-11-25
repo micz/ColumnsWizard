@@ -7,7 +7,7 @@
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
   xmlns:html="http://www.w3.org/1999/xhtml" 
-  title="&ColumnsWizard.window.title; Test"
+  title="&ColumnsWizard.window.title;"
   style=""
   windowtype="mailnews:cwcustomcoleditor"
   persist="screenX screenY"
@@ -42,30 +42,30 @@
           <row>
 			<label value="&ColumnsWizard.id.label;"/>
 			<vbox>
-				<textbox id="ColumnsWizard.id" onblur="miczColumnsWizardPref_CustColEditor.onBlur_sanitize_ID();"/>
+				<html:input id="ColumnsWizard.id" type="text" size="20" onblur="miczColumnsWizardPref_CustColEditor.onBlur_sanitize_ID();"/>
 				<description class="cw_field_label">&ColumnsWizard.id.desc;</description>
 			</vbox>
           </row>
           <row>
 			<label value="&ColumnsWizard.dbHeader.label;"/>
 			<vbox>
-				<textbox id="ColumnsWizard.dbHeader" onblur="miczColumnsWizardPref_CustColEditor.onBlur_sanitize_dbHeader();"/>
+				<html:input id="ColumnsWizard.dbHeader" onblur="miczColumnsWizardPref_CustColEditor.onBlur_sanitize_dbHeader();"/>
 				<description class="cw_field_label">&ColumnsWizard.dbHeader.desc;</description>
 			</vbox>
           </row>
 			<row>
 			<label value="&ColumnsWizard.labelString.label;"/>
 			<vbox>
-				<textbox id="ColumnsWizard.labelString" flex="1" style="min-height: 18.5px;"/>
+				<html:input id="ColumnsWizard.labelString" flex="1" style="min-height: 18.5px;"/>
 				<hbox><button class="cw_btn" id="ColumnsWizard.setIcon_btn" oncommand="miczColumnsWizardPref_CustColEditor.chooseIcon();" label="&ColumnsWizard.btn.setIcon_label;..." tooltiptext="&ColumnsWizard.btn.setIcon_tooltip;"/> <button id="ColumnsWizard.removeIcon_btn" label="&ColumnsWizard.btn.removeIcon_label;" tooltiptext="&ColumnsWizard.btn.setIcon_tooltip;" disabled="true" oncommand="miczColumnsWizardPref_CustColEditor.removeIconUI();"/></hbox>
-				<textbox id="ColumnsWizard.iconString" hidden="true" readonly="true"/>
+				<html:input id="ColumnsWizard.iconString" hidden="true" readonly="true"/>
 				<description class="cw_field_label">&ColumnsWizard.labelString.desc;</description>
 			</vbox>
           </row>
           <row>
 			<label value="&ColumnsWizard.tooltipString.label;"/>
 			<vbox>
-				<textbox id="ColumnsWizard.tooltipString"/>
+				<html:input id="ColumnsWizard.tooltipString"/>
 				<description class="cw_field_label">&ColumnsWizard.tooltipString.desc;</description>
 			</vbox>
           </row>

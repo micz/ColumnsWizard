@@ -14,7 +14,7 @@ var miczColumnsWizardPref_CustColEditor = {
 	_sanitize_dbHeader_regex: "([\x21-\x7E2]+)",
 
 	onLoad: function () {
-		console.debug('load');
+		console.debug('CW editorload');
 		if ("arguments" in window && window.arguments[0]) {
 			let args = window.arguments[0];
 
