@@ -106,14 +106,14 @@ var miczColumnsWizardPref_CustomColsList = {
 		let l = win.document.getElementById("customColsTable");
 		// console.debug(l.outerHTML);
 
-		let inputItems = miczColumnsWizardPref_CustomColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
-		// console.debug(inputItems.length);
-		for (const element of inputItems) {
-			var e3 = win.document.createElement('input');
-			miczColumnsWizardPref_CustomColsList.copyAttrs(e3, element.firstChild);
-			element.insertBefore(e3, element.firstChild);
-			// console.debug(e3.outerHTML);
-		}
+		// let inputItems = miczColumnsWizardPref_CustomColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
+		// // console.debug(inputItems.length);
+		// for (const element of inputItems) {
+		// 	var e3 = win.document.createElement('input');
+		// 	miczColumnsWizardPref_CustomColsList.copyAttrs(e3, element.firstChild);
+		// 	element.insertBefore(e3, element.firstChild);
+		// 	// console.debug(e3.outerHTML);
+		// }
 
 		let checkedItems = miczColumnsWizardPref_CustomColsList.document.querySelectorAll('[checked]');
 		for (const element of checkedItems) {

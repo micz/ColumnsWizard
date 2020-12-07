@@ -227,26 +227,26 @@ miczColumnsWizardPref2 = {
 			miczColumnsWizardPrefsUtils.setHeadersEditingActive(true);
 		}
 
-		let inputItems = miczColumnsWizardPref_CustomColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
-		// console.debug(inputItems.length);
-		for (const element of inputItems) {
-			var e3 = win.document.createElement('input');
-			miczColumnsWizardPref_CustomColsList.copyAttrs(e3, element.firstChild);
-			element.insertBefore(e3, element.firstChild);
-			// console.debug(e3.outerHTML);
-		}
+		// let inputItems = miczColumnsWizardPref_CustomColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
+		// // console.debug(inputItems.length);
+		// for (const element of inputItems) {
+		// 	var e3 = win.document.createElement('input');
+		// 	miczColumnsWizardPref_CustomColsList.copyAttrs(e3, element.firstChild);
+		// 	element.insertBefore(e3, element.firstChild);
+		// 	// console.debug(e3.outerHTML);
+		// }
 
 		miczColumnsWizardPref_DefaultColsList.toggleCustomCol(args.newcol);
 		miczColumnsWizardPref_DefaultColsList.loadedCustCols = miczColumnsWizard_CustCols.loadCustCols();
 
-		inputItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
-		// console.debug(inputItems.length);
-		for (const element of inputItems) {
-			e3 = win.document.createElement('input');
-			miczColumnsWizardPref_DefaultColsList.copyAttrs(e3, element.firstChild);
-			element.insertBefore(e3, element.firstChild);
-			// console.debug(e3.outerHTML);
-		}
+		// inputItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
+		// // console.debug(inputItems.length);
+		// for (const element of inputItems) {
+		// 	e3 = win.document.createElement('input');
+		// 	miczColumnsWizardPref_DefaultColsList.copyAttrs(e3, element.firstChild);
+		// 	element.insertBefore(e3, element.firstChild);
+		// 	// console.debug(e3.outerHTML);
+		// }
 
 		// console.debug(miczColumnsWizardPref_CustomColsList.customColsListObj.items);
 		miczColumnsWizardPref_CustomColsList.customColsListObj.controller.selectRowByDataId(index);

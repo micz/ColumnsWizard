@@ -392,8 +392,8 @@ var miczColumnsWizard = {
 		if (!promptService.confirm(null, title_msg, text_msg)) return;
 
 		let columnStates = gFolderDisplay.getColumnStates();
-		// console.debug('Save defaultCW');
-		// console.debug(columnStates);
+		console.debug('Save defaultCW');
+		console.debug(columnStates);
 
 		const propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
 		let	currentFolder = gFolderDisplay.displayedFolder;

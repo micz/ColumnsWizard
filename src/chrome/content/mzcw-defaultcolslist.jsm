@@ -158,14 +158,14 @@ var miczColumnsWizardPref_DefaultColsList = {
 		let l = win.document.getElementById("defaultColsTable");
 		// console.debug(l.outerHTML);
 
-		let inputItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
+		// let inputItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('.radio-container-center, .checkbox-container-center');
 		// console.debug(inputItems.length);
-		for (const element of inputItems) {
-			var e3 = win.document.createElement('input');
-			miczColumnsWizardPref_DefaultColsList.copyAttrs(e3, element.firstChild);
-			element.insertBefore(e3, element.firstChild);
-			// console.debug(e3.outerHTML);
-		}
+		// for (const element of inputItems) {
+		// 	var e3 = win.document.createElement('input');
+		// 	miczColumnsWizardPref_DefaultColsList.copyAttrs(e3, element.firstChild);
+		// 	element.insertBefore(e3, element.firstChild);
+		// 	// console.debug(e3.outerHTML);
+		// }
 
 
 		let checkedItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('[checked]');
@@ -194,7 +194,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 	},
 	
 	saveDefaultColsList: function () {
-		// console.debug('SaveDefault');
+		console.debug('SaveDefault');
 		// console.debug(tableList.items);
 		var newDefaultCols = {};
 		let ordinal = 1;
@@ -222,7 +222,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 		let cbelement = miczColumnsWizardPref_DefaultColsList.document.getElementById("ColumnsWizard.DefaultColsList.active_checkbox");
 		let dca = cbelement.checked;
 		miczColumnsWizardPrefsUtils.setBoolPref_CW("DefaultColsList.active", dca);
-
+		// console.debug(JSON.stringify(newDefaultCols));
 		miczColumnsWizardPrefsUtils.setCharPref_CW("DefaultColsList", JSON.stringify(newDefaultCols));
 		return newDefaultCols;
 	},
@@ -275,41 +275,88 @@ var miczColumnsWizardPref_DefaultColsList = {
 
 
 	onRowClick: function (event, offset) {
-		// console.debug(event);
-		// console.debug('Target ' + event.target.outerHTML);
-		// console.debug(event.target.outerHTML);
+		console.debug('row click');
+		console.debug(event);
+		console.debug('Target ' + event.target.outerHTML);
+		console.debug(event.target.outerHTML);
+
 		var selector = 'tr';
 		var row = event.target.closest(selector);
 		const item = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.items[Number(row.getAttribute("data-id")) - 1];
-		// console.debug(item.outerHTML);
+		console.debug(item.outerHTML);
 		if (event.target.classList.contains('toggle-action-show')) {
 			if (!event.target.checked) {
 				item.values({ "show": false });
 				event.target.removeAttribute("checked");
+				console.debug('toggle off');
 			} else {
 				item.values({ "show": true }, true);
+				console.debug('toggle on');
 			}
+
+			console.debug('fixup checked');
+			let checkedItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('[checked]');
+			for (const element of checkedItems) {
+				console.debug(element);
+				// if (element.getAttribute("type") !== "checkbox" || element.getAttribute("type") !== "radio") {
+				if (element.id.includes("tab")) {
+					continue;
+				}
+				if (element.getAttribute("checked") !== "true") {
+					element.removeAttribute("checked");
+				} else {
+					element.checked = true;
+				}
+			}
+	
+
+			console.debug(item.outerHTML);
 			event.stopPropagation();
 			miczColumnsWizardPref_DefaultColsList.saveDefaultColsList();
 			return;
 		}
 
 		if (event.target.classList.contains('toggle-action-sort-by')) {
-			// console.debug('Sort By');
-			// console.debug(`click: ${event.target.outerHTML}  : ${event.target.checked}`);
+			console.debug('Sort By');
+			console.debug(`click: ${event.target.outerHTML}  : ${event.target.checked}`);
 			if (!event.target.checked) {
 				item.values({ "sort_by": false });
 				event.target.removeAttribute("checked");
-				// console.debug('toggle false');
+				console.debug('toggle false');
 			} else {
-				// console.debug('SortBy true ');
+				console.debug('SortBy true ');
 				let sbrows = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.get("sort_by", true);
+				console.debug(sbrows);
 				sbrows.forEach(item => {
+					console.debug('before');
+					console.debug(item);
 					item.values({ "sort_by": false });
+					console.debug('after');
+					console.debug(item);
+				console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.list.outerHTML);
+					console.debug('');
 				});
 				// console.debug(sbrows);
 				item.values({ "sort_by": true }, true);
 			}
+			
+			
+			console.debug('fixup checked');
+			let checkedItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('[checked]');
+			for (const element of checkedItems) {
+				console.debug(element);
+				// if (element.getAttribute("type") !== "checkbox" || element.getAttribute("type") !== "radio") {
+				if (element.id.includes("tab")) {
+					continue;
+				}
+				if (element.getAttribute("checked") !== "true") {
+					element.removeAttribute("checked");
+				} else {
+					element.checked = true;
+				}
+			}
+	
+			
 			event.stopPropagation();
 			miczColumnsWizardPref_DefaultColsList.saveDefaultColsList();
 			return;
@@ -326,12 +373,12 @@ var miczColumnsWizardPref_DefaultColsList = {
 	},
 
 	move: function (event, offset) {
-		// console.debug('MoveObject  ' + offset);
-		var listElement = miczColumnsWizardPref_DefaultColsList.defaultColsList;
+		console.debug('MoveObject  ' + offset);
+		var listElement = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.list;
 		var selector = 'tr';
 		var row = event.target.closest(selector);
 
-		// console.debug(row.getAttribute("data-id"));
+		console.debug(row.getAttribute("data-id"));
 		miczColumnsWizardPref_DefaultColsList.defaultColsListObj.controller.selectRowByDataId(row.getAttribute("data-id"));
 
 		var selectedID = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.controller.getSelectedRowDataId();
@@ -345,9 +392,16 @@ var miczColumnsWizardPref_DefaultColsList = {
 			return;
 		}
 
+		console.debug('before move');
+		
+		[...listElement.rows].forEach(row => { 
+			console.debug(row.getAttribute("data-id") + ' : ' + row.getAttribute("data-currindex"));
+		});
+
 
 		var selectedElement = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.controller.getSelectedRowElement();
-		// console.debug(selectedElement);
+		console.debug(selectedElement);
+
 		var swapElement;
 		var swapItem;
 		var selectedItem;
@@ -356,15 +410,26 @@ var miczColumnsWizardPref_DefaultColsList = {
 			selectedItem = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.item[Number(selectedID)];
 			swapItem = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.item[Number(selectedID) - 1];
 			// console.debug('offset1');
-
+			selectedElement.setAttribute("data-id", (Number(selectedID) - 1));
+			swapElement.setAttribute("data-id", (Number(selectedID)));
+	
 		} else {
 			swapElement = selectedElement.nextElementSibling;
+			selectedElement.setAttribute("data-id", (Number(selectedID) + 1));
+			swapElement.setAttribute("data-id", (Number(selectedID)));
+	
 		}
 
-		// console.debug(swapElement);
-		selectedElement.setAttribute("data-id", selectedID - 1);
-		swapElement.setAttribute("data-id", selectedID + 1);
+		[...listElement.rows].forEach(row => { 
+			console.debug(row.getAttribute("data-id") + ' : ' + row.getAttribute("data-currindex"));
+		});
 
+		// console.debug(listElement.outerHTML);
+		// console.debug(swapElement);
+
+		console.debug('after index fixes');
+		console.debug('select element id: ' + selectedElement.getAttribute("data-id"));
+		console.debug('swap element id: ' + swapElement.getAttribute("data-id"));
 		selectedElement.remove();
 
 		if (offset === 1) {
@@ -375,6 +440,11 @@ var miczColumnsWizardPref_DefaultColsList = {
 			swapElement.parentNode.insertBefore(selectedElement, swapElement.nextSibling);
 		}
 
+		console.debug('after swapping');
+		// console.debug(listElement.outerHTML);
+		[...listElement.rows].forEach(row => { 
+			console.debug(row.getAttribute("data-id") + ' : ' + row.getAttribute("data-currindex"));
+		});
 
 		miczColumnsWizardPref_DefaultColsList.defaultColsListObj.reIndex();
 

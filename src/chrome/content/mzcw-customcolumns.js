@@ -38,7 +38,10 @@ var miczColumnsWizard_CustCols = {
 		cwCol.setAttribute("id", coltype + "Col_cw");
 		cwCol.setAttribute("persist", "hidden ordinal width");
 		cwCol.setAttribute("hidden", "true");
-		cwCol.setAttribute("flex", "4");
+		cwCol.setAttribute("flex", "9");
+		// cwCol.setAttribute("fixed", "true");
+		cwCol.setAttribute("closemenu", "none");
+		// cwCol.setAttribute("width", "100%");
 		cwCol.setAttribute("label", labelString);
 
 		if ((elementc.labelImagePath) && (elementc.labelImagePath !== "")) {	// we have an image to use!!
@@ -83,6 +86,8 @@ var miczColumnsWizard_CustCols = {
 		// DbObserver Managing
 		miczColumnsWizard_CustCols.addCustomColumnHandler(coltype);
 		ObserverService.addObserver(miczColumnsWizard_CustCols.CreateDbObserver[coltype], "MsgCreateDBView", false);
+		// let columnStates = gFolderDisplay.getColumnStates();
+		// console.debug(columnStates);
 	},
 
 	updateCustomColumn: function (elementc) {
@@ -106,7 +111,7 @@ var miczColumnsWizard_CustCols = {
 		}
 		cwCol.setAttribute("label", labelString);
 		cwCol.setAttribute("tooltiptext", tooltipString);
-		let columnStates = gFolderDisplay.getColumnStates();
+		// let columnStates = gFolderDisplay.getColumnStates();
 		// console.debug(columnStates);
 	},
 
