@@ -1,5 +1,5 @@
 // background.js - this kicks off the WindowListener framework
-console.debug('background Start');
+// console.debug('background Start');
 
 messenger.WindowListener.registerDefaultPrefs("defaults/preferences/prefs.js");
 
@@ -24,8 +24,8 @@ messenger.WindowListener.registerChromeUrl([
 	
 ]);
 
-console.debug('after registrations');
-// ["content", "cwrl2", "./_locales/", "contentaccessible=yes"],
+
+messenger.WindowListener.registerShutdownScript("chrome://columnswizard/content/shutdown.js");
 
 messenger.WindowListener.registerOptionsPage("chrome://columnswizard/content/settings-tab-launch.xhtml");
 

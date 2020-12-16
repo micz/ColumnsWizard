@@ -9,14 +9,14 @@ var { Services } = ChromeUtils.import('resource://gre/modules/Services.jsm');
 function onLoad() {
 
 
-Services.scriptloader.loadSubScript("chrome://columnswizard/content/mzcw-overlay.js", window);
-Services.scriptloader.loadSubScript("chrome://columnswizard/content/mzcw-customcolumns.js", window);
-Services.scriptloader.loadSubScript("chrome://columnswizard/content/mzcw-prefobserver.js", window);
-Services.scriptloader.loadSubScript("chrome://columnswizard/content/mzcw-folderlistener.js", window);
+	Services.scriptloader.loadSubScript("chrome://columnswizard/content/mzcw-overlay.js", window);
+	Services.scriptloader.loadSubScript("chrome://columnswizard/content/mzcw-customcolumns.js", window);
+	Services.scriptloader.loadSubScript("chrome://columnswizard/content/mzcw-prefobserver.js", window);
+	Services.scriptloader.loadSubScript("chrome://columnswizard/content/mzcw-folderlistener.js", window);
 
-console.debug('ad menu system');
+	console.debug('ad menu system');
 
-WL.injectElements(`
+	WL.injectElements(`
 <menupopup id="messageMenuPopup">
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_main_menu"
 	class="menu-iconic" image="chrome://columnswizard/content/ico/mzcw-email-edit-icon.png"
@@ -28,7 +28,7 @@ WL.injectElements(`
 </menupopup>
 `, ["chrome://columnswizard/locale/overlay.dtd"]);
 
-WL.injectElements(`
+	WL.injectElements(`
 <menupopup id="mailContext">
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_context_menu"
 	 class="menu-iconic" image="chrome://columnswizard/content/ico/mzcw-email-edit-icon.png"
@@ -41,7 +41,7 @@ WL.injectElements(`
 `, ["chrome://columnswizard/locale/overlay.dtd"]);
 
 
-WL.injectElements(`
+	WL.injectElements(`
 <menupopup id="taskPopup">
 	<menu label="&ColumnsWizard.MenuLabel;" hidden="true" id="cw_edit_newmain_menu"
 	class="menu-iconic" image="chrome://columnswizard/skin/ico/mzcw-email-edit-icon.png"
@@ -53,7 +53,7 @@ WL.injectElements(`
 </menupopup>
 `, ["chrome://columnswizard/locale/overlay.dtd"]);
 
-WL.injectElements(`
+	WL.injectElements(`
 <toolbarpalette id="MailToolbarPalette">
   <toolbarbutton id="mzcw-button"/>
   </toolbarpalette>
@@ -67,10 +67,35 @@ WL.injectElements(`
 </toolbarpalette>
 `, ["chrome://columnswizard/locale/overlay.dtd"]);
 
-WL.injectCSS("chrome://columnswizard/content/mzcw-overlay.css");
-WL.injectCSS("chrome://columnswizard/content/mzcw-button.css");
+	WL.injectCSS("chrome://columnswizard/content/mzcw-overlay.css");
+	WL.injectCSS("chrome://columnswizard/content/mzcw-button.css");
 
-window.miczColumnsWizard.init();
-// window.addEventListener("unload", miczColumnsWizard.shutdown, false);
+	window.miczColumnsWizard.init();
+	// window.addEventListener("unload", miczColumnsWizard.shutdown, false);
+
+}
+
+function onUnload(shutdown) {
+	Services.console.logStringMessage("onUnload messenger");
+	let url = "chrome://columnswizard/content/settings.html";
+	let tabmail = window.document.getElementById("tabmail");
+	console.debug('unloading');
+	console.debug(tabmail.tabInfo);
+	var tabNode = null;
+	tabmail.tabInfo.forEach(tab => {
+		console.debug('scan	t ' + tab.tabNode + '  ' + tab.browser.contentDocument.URL);
+		if (tab.browser.contentDocument.URL === url) {
+			tabNode = tab.tabNode;
+		}
+	});
+
+	if (tabNode) {
+		console.debug('would CloseI	t ');
+		// tabmail.selectTabByIndex(tabNode);
+		tabmail.closeTab(tabNode);
+		// tabmail.closeTab(tabNode, true);
+		console.debug(tabmail.tabInfo);
+		tabmail.closeTab(tabNode)
+	}
 
 }

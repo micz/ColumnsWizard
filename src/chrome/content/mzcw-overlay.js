@@ -254,7 +254,7 @@ var miczColumnsWizard = {
 
 	addCWResetMenu: function (tab) {
 		// if (tab.mode.name === 'folder' || true) {
-		console.debug('addCWResetMenu');
+		// console.debug('addCWResetMenu');
 		if (true) {
 
 
@@ -599,9 +599,26 @@ var miczColumnsWizard = {
 
 	openSettingsTab: function () {
 		let url = "chrome://columnswizard/content/settings.html";
-		let tabmail = this.getMail3Pane();
+		// let tabmail = this.getMail3Pane();
+		let tabmail = window.document.getElementById("tabmail");
+		console.debug('open settings');
+		console.debug(tabmail.tabInfo);
+		var tabNode = null;
+		tabmail.tabInfo.forEach(tab => {
+			console.debug('scan	t ' + tab.tabId + '  '+ tab.browser.contentDocument.URL);
+			if (tab.browser.contentDocument.URL === url) {
+				tabNode = tab.tabNode;
+			}
+		});
 	
-		tabmail.openTab("chromeTab", { chromePage: url });
+		if (tabNode) {
+			console.debug('reopen	t ' );
+			// tabmail.selectTabByIndex(tabId);
+			tabmail.switchToTab(tabNode);
+		} else {
+			tabmail.openTab("chromeTab", { chromePage: url });
+			
+		}
 	
 	},
 	

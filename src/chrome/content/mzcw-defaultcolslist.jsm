@@ -33,8 +33,8 @@ var miczColumnsWizardPref_DefaultColsList = {
 				{ name: 'show', attr: 'checked' },
 				{ name: 'sort_by', attr: 'checked' },
 			],
-		
-					item: '<tr class="list-row id" >\
+
+			item: '<tr class="list-row id" >\
 <td>\
 <label class="checkbox-container-center">\
 <span type="checkbox" class="data-input show toggle-action-show" style="display: none;" ></span>\
@@ -54,7 +54,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 </td>\
 </tr>',
 
-			
+
 		};
 
 
@@ -187,12 +187,12 @@ var miczColumnsWizardPref_DefaultColsList = {
 
 	},
 
-	copyAttrs: function(target, source) { 
-		[...source.attributes].forEach(attr => { 
+	copyAttrs: function (target, source) {
+		[...source.attributes].forEach(attr => {
 			target.setAttribute(attr.nodeName, attr.nodeValue);
 		});
 	},
-	
+
 	saveDefaultColsList: function () {
 		console.debug('SaveDefault');
 		// console.debug(tableList.items);
@@ -308,7 +308,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 					element.checked = true;
 				}
 			}
-	
+
 
 			console.debug(item.outerHTML);
 			event.stopPropagation();
@@ -333,14 +333,14 @@ var miczColumnsWizardPref_DefaultColsList = {
 					item.values({ "sort_by": false });
 					console.debug('after');
 					console.debug(item);
-				console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.list.outerHTML);
+					console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.list.outerHTML);
 					console.debug('');
 				});
 				// console.debug(sbrows);
 				item.values({ "sort_by": true }, true);
 			}
-			
-			
+
+
 			console.debug('fixup checked');
 			let checkedItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('[checked]');
 			for (const element of checkedItems) {
@@ -355,8 +355,8 @@ var miczColumnsWizardPref_DefaultColsList = {
 					element.checked = true;
 				}
 			}
-	
-			
+
+
 			event.stopPropagation();
 			miczColumnsWizardPref_DefaultColsList.saveDefaultColsList();
 			return;
@@ -373,12 +373,12 @@ var miczColumnsWizardPref_DefaultColsList = {
 	},
 
 	move: function (event, offset) {
-		console.debug('MoveObject  ' + offset);
+		// console.debug('MoveObject  ' + offset);
 		var listElement = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.list;
 		var selector = 'tr';
 		var row = event.target.closest(selector);
 
-		console.debug(row.getAttribute("data-id"));
+		// console.debug(row.getAttribute("data-id"));
 		miczColumnsWizardPref_DefaultColsList.defaultColsListObj.controller.selectRowByDataId(row.getAttribute("data-id"));
 
 		var selectedID = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.controller.getSelectedRowDataId();
@@ -388,19 +388,16 @@ var miczColumnsWizardPref_DefaultColsList = {
 
 		// 1 === up
 
-		if (selectedID === '1' && offset > 0 || Number(selectedID) === miczColumnsWizardPref_DefaultColsList.defaultColsListObj.list.rows.length - 1 && offset < 0) {
+		if (selectedID === '1' && offset > 0 || Number(selectedID) === miczColumnsWizardPref_DefaultColsList.defaultColsListObj.list.rows.length && offset < 0) {
 			return;
 		}
 
-		console.debug('before move');
-		
-		[...listElement.rows].forEach(row => { 
-			console.debug(row.getAttribute("data-id") + ' : ' + row.getAttribute("data-currindex"));
+		[...listElement.rows].forEach(row => {
+			// console.debug(row.getAttribute("data-id") + ' : ' + row.getAttribute("data-currindex"));
 		});
 
-
 		var selectedElement = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.controller.getSelectedRowElement();
-		console.debug(selectedElement);
+		// console.debug(selectedElement);
 
 		var swapElement;
 		var swapItem;
@@ -412,15 +409,15 @@ var miczColumnsWizardPref_DefaultColsList = {
 			// console.debug('offset1');
 			selectedElement.setAttribute("data-id", (Number(selectedID) - 1));
 			swapElement.setAttribute("data-id", (Number(selectedID)));
-	
+
 		} else {
 			swapElement = selectedElement.nextElementSibling;
 			selectedElement.setAttribute("data-id", (Number(selectedID) + 1));
 			swapElement.setAttribute("data-id", (Number(selectedID)));
-	
+
 		}
 
-		[...listElement.rows].forEach(row => { 
+		[...listElement.rows].forEach(row => {
 			console.debug(row.getAttribute("data-id") + ' : ' + row.getAttribute("data-currindex"));
 		});
 
@@ -442,7 +439,7 @@ var miczColumnsWizardPref_DefaultColsList = {
 
 		console.debug('after swapping');
 		// console.debug(listElement.outerHTML);
-		[...listElement.rows].forEach(row => { 
+		[...listElement.rows].forEach(row => {
 			console.debug(row.getAttribute("data-id") + ' : ' + row.getAttribute("data-currindex"));
 		});
 
@@ -609,6 +606,15 @@ var miczColumnsWizardPref_DefaultColsList = {
 				strOut = _bundleCW.GetStringFromName("ColumnsWizard.correspondentCol.label");
 				break;
 			default: {
+
+				let windowManager = Cc['@mozilla.org/appshell/window-mediator;1']
+					.getService(Ci.nsIWindowMediator),
+					win3pane = windowManager.getMostRecentWindow("mail:3pane");
+
+				// use of label in case of other custom column
+				if (!col.includes('Col_cw')) {
+					return win3pane.document.getElementById(col).getAttribute("label");
+				}
 
 				let col_idx = col.replace('Col_cw', '');
 				let col_el = this.loadedCustCols[col_idx];

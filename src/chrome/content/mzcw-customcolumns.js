@@ -3,6 +3,8 @@
 var EXPORTED_SYMBOLS = ["miczColumnsWizard_CustCols"];
 
 var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
+var { Services } = ChromeUtils.import('resource://gre/modules/Services.jsm');
+var { AppConstants } = ChromeUtils.import("resource://gre/modules/AppConstants.jsm");
 
 var miczColumnsWizard_CustCols = {
 
@@ -74,6 +76,29 @@ var miczColumnsWizard_CustCols = {
 		cwCol.setAttribute("ordinal", cwColOrdinal);
 		element.appendChild(cwSplitter);
 		element.appendChild(cwCol);
+
+
+		// Restore persisted attributes.
+		let columnId = coltype + "Col_cw";
+		let attributes = Services.xulStore.getAttributeEnumerator(
+			document.URL,
+			columnId
+		);
+		console.debug(attributes);
+		for (let attribute of attributes) {
+			let value = Services.xulStore.getValue(document.URL, columnId, attribute);
+			console.debug(attribute);
+			console.debug(value);
+			// See Thunderbird bug 1607575 and bug 1612055.
+			if (attribute != "ordinal" || parseInt(AppConstants.MOZ_APP_VERSION, 10) < 74) {
+				cwCol.setAttribute(attribute, value);
+				console.debug('not Orlando');
+				console.debug(value);
+			} else {
+				cwCol.ordinal = value;
+			}
+		}
+
 
 		if ((elementc.labelImagePath) && (elementc.labelImagePath !== "")) {	// we have an image - manually set after creation.
 			let imgElement = document.getElementById(coltype + "Col_cw").children[1];

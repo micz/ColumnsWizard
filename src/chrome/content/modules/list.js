@@ -1372,10 +1372,10 @@ var List =
             var tbody = document.createElement('tbody');
             tbody.innerHTML = item;
             // console.debug('after insert '+tbody.outerHTML);
-            console.debug('item ' + item);
+            // console.debug('item ' + item);
 
             let inputItems = tbody.querySelectorAll('.radio-container-center, .checkbox-container-center');
-            console.debug(inputItems.length);
+            // console.debug(inputItems.length);
             for (const element of inputItems) {
               var e3 = document.createElement('input');
 
@@ -1399,9 +1399,9 @@ var List =
             // console.debug(docFragment.getElementsByTagName("tbody")[0].firstChild.outerHTML);
             // console.debug(docFragment.firstChild.outerHTML);
 
-            console.debug(`source:  ${item}`);
+            // console.debug(`source:  ${item}`);
             let f = window.MozXULElement.parseXULToFragment(`${item}`);
-            console.debug(`source:  ${f.outerHTML}`);
+            // console.debug(`source:  ${f.outerHTML}`);
             return f;
 
             // let fragment = document.createDocumentFragment();
@@ -1482,7 +1482,7 @@ var List =
               if (elm) {
                 elm.innerHTML = value;
 
-                console.debug('set fix arrows');
+                // console.debug('set fix arrows');
                 // cleidigh 
                 // have to fixup arrows
                 let upItems = elm.querySelectorAll('img[data-img-src]');
@@ -1492,12 +1492,12 @@ var List =
                   element.setAttribute("src", element.getAttribute("data-img-src"));
                 }
 
-                console.debug(elm.outerHTML)
-                console.debug('handle check');
+                // console.debug(elm.outerHTML)
+                // console.debug('handle check');
                 let checkedItems = elm.querySelectorAll('[checked]');
-                console.debug(checkedItems);
+                // console.debug(checkedItems);
                 for (const element of checkedItems) {
-                  console.debug(element);
+                  // console.debug(element);
                   // if (element.getAttribute("type") !== "checkbox" || element.getAttribute("type") !== "radio") {
                   if (element.getAttribute("checked") !== "true") {
                     element.removeAttribute("checked");

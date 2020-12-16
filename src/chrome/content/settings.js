@@ -112,7 +112,7 @@ miczColumnsWizardPref2 = {
 		miczColumnsWizardPref2.loadInfoFile('release_notes');
 
 
-		console.debug('fix arrows');
+		// console.debug('fix arrows');
 		// cleidigh 
 		// have to fixup arrows
 		let upItems = miczColumnsWizardPref_DefaultColsList.document.querySelectorAll('img[data-img-src]');
@@ -128,7 +128,7 @@ miczColumnsWizardPref2 = {
 		// }
 
 		// console.debug(l.outerHTML);
-		console.debug(l.outerHTML);
+		// console.debug(l.outerHTML);
 	},
 
 	copyAttrs: function(target, source) { 
