@@ -2,19 +2,16 @@
 
 // Load all scripts from original overlay file - creates common scope
 // onLoad() installs each overlay xul fragment
-// Menus - Folder, messages, Tools
 
 var { Services } = ChromeUtils.import('resource://gre/modules/Services.jsm');
+var { miczColumnsWizardPrefsUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-prefsutils.jsm");
 
 function onLoad() {
-
 
 	Services.scriptloader.loadSubScript("chrome://columnswizard/content/mzcw-overlay.js", window);
 	Services.scriptloader.loadSubScript("chrome://columnswizard/content/mzcw-customcolumns.js", window);
 	Services.scriptloader.loadSubScript("chrome://columnswizard/content/mzcw-prefobserver.js", window);
 	Services.scriptloader.loadSubScript("chrome://columnswizard/content/mzcw-folderlistener.js", window);
-
-	console.debug('ad menu system');
 
 	WL.injectElements(`
 <menupopup id="messageMenuPopup">
@@ -71,31 +68,53 @@ function onLoad() {
 	WL.injectCSS("chrome://columnswizard/content/mzcw-button.css");
 
 	window.miczColumnsWizard.init();
-	// window.addEventListener("unload", miczColumnsWizard.shutdown, false);
 
 }
 
 function onUnload(shutdown) {
-	Services.console.logStringMessage("onUnload messenger");
-	let url = "chrome://columnswizard/content/settings.html";
+	console.debug('CW unloading');
+	// Services.console.logStringMessage("onUnload messenger");
+
 	let tabmail = window.document.getElementById("tabmail");
-	console.debug('unloading');
-	console.debug(tabmail.tabInfo);
+	tabmail.unregisterTabMonitor(window.miczColumnsWizard.tabMonitor);
+	window.miczColumnsWizard.removeCWMenus();
+	let ObserverService = Cc["@mozilla.org/observer-service;1"].getService(Ci.nsIObserverService);
+	
+	let DefaultColIndexStr = miczColumnsWizardPrefsUtils.getCharPref_CW("DefaultColsList");
+	// console.debug(DefaultColIndexStr);
+	let columns = JSON.parse(DefaultColIndexStr);
+	
+	// console.debug('remove custom columns');
+	for (let col_idx in columns) {
+	// c.forEach(col_idx => {
+		if (col_idx.endsWith("Col_cw")) {
+			col_idx = col_idx.split("Col_cw")[0];
+			window.miczColumnsWizard_CustCols.removeCustomColumn(col_idx,ObserverService)
+			
+		}
+	};
+
+	window.miczColumnsWizard.CWListener.unregister();
+		
+	window.miczColumnsWizard.unwatchFolders();	
+	
+	let url = "chrome://columnswizard/content/settings.html";
+	tabmail = window.document.getElementById("tabmail");
+	// console.debug(tabmail.tabInfo);
 	var tabNode = null;
 	tabmail.tabInfo.forEach(tab => {
-		console.debug('scan	t ' + tab.tabNode + '  ' + tab.browser.contentDocument.URL);
+		// console.debug('scan	t ' + tab.tabNode + '  ' + tab.browser.contentDocument.URL);
 		if (tab.browser.contentDocument.URL === url) {
 			tabNode = tab.tabNode;
 		}
 	});
 
 	if (tabNode) {
-		console.debug('would CloseI	t ');
+		// console.debug('would CloseI	t ');
 		// tabmail.selectTabByIndex(tabNode);
 		tabmail.closeTab(tabNode);
 		// tabmail.closeTab(tabNode, true);
-		console.debug(tabmail.tabInfo);
-		tabmail.closeTab(tabNode)
+		tabmail.closeTab(tabNode);
 	}
 
 }

@@ -91,6 +91,7 @@ miczColumnsWizardPref2 = {
 
 		miczColumnsWizardPref_CustomColsList.initCustomColsList(window);
 
+		console.debug(miczColumnsWizardPref_DefaultColsList.loadedCustCols);
 		
 		// console.debug(f.outerHTML);
 		

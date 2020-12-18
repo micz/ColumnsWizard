@@ -1414,13 +1414,10 @@ var List =
           } else if (item.indexOf("<") !== -1) {
             var div = document.createElement('div');
             div.innerHTML = item;
-            console.debug('d: ' + item);
             return div.firstChild;
           } else {
             var source = document.getElementById(list.item);
             if (source) {
-              console.debug('source');
-              console.debug(list.item);
               return source;
             }
           }

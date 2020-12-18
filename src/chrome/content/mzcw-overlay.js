@@ -1,6 +1,5 @@
 "use strict";
 
-console.debug('photo overlay ');
 // Services appears to be defined globally in TB64+ ?
 if (!Services) {
 	var { Services } = ChromeUtils.import("resource://gre/modules/Services.jsm");
@@ -11,14 +10,14 @@ var { miczColumnsWizard_CustomColsModUtils } = ChromeUtils.import("chrome://colu
 var { miczColumnsWizardPref_DefaultColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-defaultcolslist.jsm");
 var { miczColumnsWizardPref_CustomColsList } = ChromeUtils.import("chrome://columnswizard/content/mzcw-customcolslist.jsm");
 
-console.debug('import2');
 var { miczColumnsWizard_MsgUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-msgutils.jsm");
 var { miczColumnsWizardUtils } = ChromeUtils.import("chrome://columnswizard/content/mzcw-utils.jsm");
 var { miczLogger } = ChromeUtils.import("chrome://columnswizard/content/modules/miczLogger.jsm");
-console.debug('after imports');
 
 var miczColumnsWizard = {
 
+	// Menu placeholders
+	originalRestoreCols: null,
 
 	// Conversation Tab Columns
 	showLocation: true,
@@ -28,10 +27,10 @@ var miczColumnsWizard = {
 
 	// Custom Columns
 	CustColPref: {},
+	tabMonitor: null,
 
 	init: function () {
 
-		console.debug('overlaying it');
 		miczColumnsWizard_CustomColsModUtils.miczColumnsWizard = miczColumnsWizard;
 		miczLogger.setLogger(true, miczColumnsWizardPrefsUtils.isDebug);
 
@@ -63,8 +62,6 @@ var miczColumnsWizard = {
 		miczColumnsWizard.initHeadersEditingMenu();
 
 		let current_tab = document.getElementById("tabmail").currentTabInfo;
-		console.debug('Init');
-		console.debug(current_tab);
 		miczColumnsWizard.addCWResetMenu(current_tab);
 
 		// cleidigh not used?
@@ -79,7 +76,7 @@ var miczColumnsWizard = {
 			// Conversation Tab add columns
 			let tabmail = window.document.getElementById("tabmail");
 			// console.debug(tabmail);
-			let monitor = {
+			miczColumnsWizard.tabMonitor = {
 				onTabTitleChanged: function (tab) { },
 				onTabSwitched: function (tab) {
 					// console.debug(tab);
@@ -92,7 +89,7 @@ var miczColumnsWizard = {
 					miczColumnsWizard.showColumns(tab);
 				},
 			};
-			tabmail.registerTabMonitor(monitor);
+			tabmail.registerTabMonitor(miczColumnsWizard.tabMonitor);
 		} catch (e) {
 			alert("No tabContainer available! " + e);
 		}
@@ -356,7 +353,10 @@ var miczColumnsWizard = {
 			// no menus to remove
 		}
 
-		let insertPoint = tc.querySelector("menuseparator").nextSibling;
+		// console.debug(aPopup);
+		let insertPoint = tc.querySelector("menuseparator").nextSibling;{}
+		// console.debug(tc.outerHTML);
+
 		// Add saveDefaultMenuCW element
 		let saveDefaultMenuCW = document.createXULElement("menuitem");
 		saveDefaultMenuCW.setAttribute('label', _bundleCW.GetStringFromName("ColumnsWizardNFCols.saveDefault"));
@@ -373,16 +373,36 @@ var miczColumnsWizard = {
 		let resetMenuCW = document.createXULElement("menuitem");
 		resetMenuCW.id = "columnswizard-resetmenu";
 		resetMenuCW.setAttribute('label', _bundleCW.GetStringFromName("ColumnsWizardNFCols.resetMenu"));
-		resetMenuCW.setAttribute('hidden', cw_active ? 'false' : 'true');
+		// resetMenuCW.setAttribute('hidden', cw_active ? 'false' : 'true');
+		// resetMenuCW.setAttribute('hidden', 'true');
+		// resetMenuCW.setAttribute('disabled', 'true');
 		resetMenuCW.setAttribute("anonid", "menuitem");
 		resetMenuCW.setAttribute("class", "menuitem-iconic");
 		resetMenuCW.setAttribute("image", "chrome://columnswizard/content/ico/resetMenuCW.png");
 		resetMenuCW.setAttribute("oncommand", "miczColumnsWizard.addCWResetMenu_OnClick()");
 		aPopup.insertBefore(resetMenuCW, insertPoint);
 
+		// console.debug('adding menus');
+		// console.debug(tc.outerHTML);
+		this.originalRestoreCols = insertPoint;
+
 		insertPoint.remove();
+		// insertPoint.setAttribute('hidden', 'true');
+		// insertPoint.setAttribute('id', 'CW_hidden1');
+		// console.debug(tc.outerHTML);
 	},	// buildPopup wrapper function END
 
+	removeCWMenus: function () {
+		let win = miczColumnsWizard.getMail3Pane();
+		win.document.getElementById("columnswizard-resetmenu").remove();
+		win.document.getElementById("columnswizard-defaultmenu").remove();
+
+		let tc = document.querySelector("treecolpicker[is=thread-pane-treecolpicker]");
+		let tc_menu = tc.querySelector("menupopup");
+		let insertPoint = tc.querySelector("menuseparator").nextSibling;
+		tc_menu.insertBefore(this.originalRestoreCols, insertPoint);
+	},
+	
 	addCWSaveDefaultMenu_OnClick: function (event) {
 		// dump(">>>>>>>>>>>>> miczColumnsWizard: [addCWResetMenu_OnClick] test "+event.target.parentNode.getEventHandler('oncommand')+"\r\n");
 		let _bundleCW = Services.strings.createBundle("chrome://columnswizard/locale/overlay.properties");
@@ -392,8 +412,6 @@ var miczColumnsWizard = {
 		if (!promptService.confirm(null, title_msg, text_msg)) return;
 
 		let columnStates = gFolderDisplay.getColumnStates();
-		console.debug('Save defaultCW');
-		console.debug(columnStates);
 
 		const propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
 		let	currentFolder = gFolderDisplay.displayedFolder;
@@ -423,7 +441,6 @@ var miczColumnsWizard = {
 	},
 
 	shutdown: function (event) {
-		console.debug('ShutDown');
 		var cw_options = document.getElementById("columnswizard-optionsitem");
 		
 		cw_options.remove();
@@ -459,6 +476,7 @@ var miczColumnsWizard = {
 	},
 
 	unwatchFolders: function () {
+		// console.debug('unwatchFolders');
 		let mailSessionService = Cc["@mozilla.org/messenger/services/session;1"].getService(Ci.nsIMsgMailSession);
 		mailSessionService.RemoveFolderListener(miczColumnsWizard.FolderListener);
 	},
@@ -601,19 +619,14 @@ var miczColumnsWizard = {
 		let url = "chrome://columnswizard/content/settings.html";
 		// let tabmail = this.getMail3Pane();
 		let tabmail = window.document.getElementById("tabmail");
-		console.debug('open settings');
-		console.debug(tabmail.tabInfo);
 		var tabNode = null;
 		tabmail.tabInfo.forEach(tab => {
-			console.debug('scan	t ' + tab.tabId + '  '+ tab.browser.contentDocument.URL);
 			if (tab.browser.contentDocument.URL === url) {
 				tabNode = tab.tabNode;
 			}
 		});
 	
 		if (tabNode) {
-			console.debug('reopen	t ' );
-			// tabmail.selectTabByIndex(tabId);
 			tabmail.switchToTab(tabNode);
 		} else {
 			tabmail.openTab("chromeTab", { chromePage: url });
@@ -624,5 +637,3 @@ var miczColumnsWizard = {
 	
 };
 
-// window.addEventListener("load", miczColumnsWizard.init, false);
-// window.addEventListener("unload", miczColumnsWizard.shutdown, false);

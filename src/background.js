@@ -25,7 +25,7 @@ messenger.WindowListener.registerChromeUrl([
 ]);
 
 
-messenger.WindowListener.registerShutdownScript("chrome://columnswizard/content/shutdown.js");
+// messenger.WindowListener.registerShutdownScript("chrome://columnswizardSee if/content/shutdown.js");
 
 messenger.WindowListener.registerOptionsPage("chrome://columnswizard/content/settings-tab-launch.xhtml");
 

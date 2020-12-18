@@ -310,31 +310,31 @@ var miczColumnsWizardPref_DefaultColsList = {
 			}
 
 
-			console.debug(item.outerHTML);
+			// console.debug(item.outerHTML);
 			event.stopPropagation();
 			miczColumnsWizardPref_DefaultColsList.saveDefaultColsList();
 			return;
 		}
 
 		if (event.target.classList.contains('toggle-action-sort-by')) {
-			console.debug('Sort By');
-			console.debug(`click: ${event.target.outerHTML}  : ${event.target.checked}`);
+			// console.debug('Sort By');
+			// console.debug(`click: ${event.target.outerHTML}  : ${event.target.checked}`);
 			if (!event.target.checked) {
 				item.values({ "sort_by": false });
 				event.target.removeAttribute("checked");
-				console.debug('toggle false');
+				// console.debug('toggle false');
 			} else {
 				console.debug('SortBy true ');
 				let sbrows = miczColumnsWizardPref_DefaultColsList.defaultColsListObj.get("sort_by", true);
-				console.debug(sbrows);
+				// console.debug(sbrows);
 				sbrows.forEach(item => {
-					console.debug('before');
-					console.debug(item);
+					// console.debug('before');
+					// console.debug(item);
 					item.values({ "sort_by": false });
-					console.debug('after');
-					console.debug(item);
-					console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.list.outerHTML);
-					console.debug('');
+					// console.debug('after');
+					// console.debug(item);
+					// console.debug(miczColumnsWizardPref_DefaultColsList.defaultColsListObj.list.outerHTML);
+					// console.debug('');
 				});
 				// console.debug(sbrows);
 				item.values({ "sort_by": true }, true);

@@ -144,7 +144,7 @@ miczColumnsWizard.FolderListener = {
 		let propName = gFolderDisplay.PERSISTED_COLUMN_PROPERTY_NAME;
 		let dbFolderInfo = item.msgDatabase.dBFolderInfo;
 		let cwcolumnStates = miczColumnsWizardPref_DefaultColsList.loadDefaultColRows_Pref();
-		console.debug('ShowColumns');
+		console.debug('ShowColumns ' + item.name);
 		console.debug(cwcolumnStates);
 		let so = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_order");
 		let st = miczColumnsWizardPrefsUtils.getIntPref("mailnews.default_sort_type");

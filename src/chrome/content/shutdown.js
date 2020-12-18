@@ -1,3 +1,9 @@
+function removeCWMenus() {
+	let win = getMail3Pane();
+	win.document.getElementById("columnswizard-resetmenu").remove();
+	win.document.getElementById("columnswizard-defaultmenu").remove();
+}
+
 
 function getMail3Pane() {
 		let windowManager = Cc['@mozilla.org/appshell/window-mediator;1']
@@ -8,21 +14,25 @@ function getMail3Pane() {
 
 
 Services.console.logStringMessage("onUnload messenger");
-	let url = "chrome://columnswizard/content/settings.html";
-	let tabmail = getMail3Pane().document.getElementById("tabmail");
-	console.debug('unloading');
-	console.debug(tabmail.tabInfo);
-	var tabNode = null;
-	tabmail.tabInfo.forEach(tab => {
-		console.debug('scan	t ' + tab.tabNode + '  ' + tab.browser.contentDocument.URL);
-		if (tab.browser.contentDocument.URL === url) {
-			tabNode = tab.tabNode;
-		}
-	});
+	
+	// removeCWMenus();
 
-	if (tabNode) {
-		console.debug('CloseI	t ');
-		// tabmail.selectTabByIndex(tabNode);
-		// tabmail.closeTab(tabNode, true);
-		tabmail.closeTab(tabNode, false);
-	}
+	// let url = "chrome://columnswizard/content/settings.html";
+	// let tabmail = getMail3Pane().document.getElementById("tabmail");
+	// console.debug('unloading');
+
+	// console.debug(tabmail.tabInfo);
+	// var tabNode = null;
+	// tabmail.tabInfo.forEach(tab => {
+	// 	console.debug('scan	t ' + tab.tabNode + '  ' + tab.browser.contentDocument.URL);
+	// 	if (tab.browser.contentDocument.URL === url) {
+	// 		tabNode = tab.tabNode;
+	// 	}
+	// });
+
+	// if (tabNode) {
+	// 	console.debug('CloseI	t ');
+	// 	// tabmail.selectTabByIndex(tabNode);
+	// 	// tabmail.closeTab(tabNode, true);
+	// 	tabmail.closeTab(tabNode, false);
+	// }

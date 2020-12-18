@@ -40,7 +40,7 @@ var miczColumnsWizard_CustCols = {
 		cwCol.setAttribute("id", coltype + "Col_cw");
 		cwCol.setAttribute("persist", "hidden ordinal width");
 		cwCol.setAttribute("hidden", "true");
-		cwCol.setAttribute("flex", "9");
+		cwCol.setAttribute("flex", "4");
 		// cwCol.setAttribute("fixed", "true");
 		cwCol.setAttribute("closemenu", "none");
 		// cwCol.setAttribute("width", "100%");
@@ -84,16 +84,11 @@ var miczColumnsWizard_CustCols = {
 			document.URL,
 			columnId
 		);
-		console.debug(attributes);
 		for (let attribute of attributes) {
 			let value = Services.xulStore.getValue(document.URL, columnId, attribute);
-			console.debug(attribute);
-			console.debug(value);
 			// See Thunderbird bug 1607575 and bug 1612055.
 			if (attribute != "ordinal" || parseInt(AppConstants.MOZ_APP_VERSION, 10) < 74) {
 				cwCol.setAttribute(attribute, value);
-				console.debug('not Orlando');
-				console.debug(value);
 			} else {
 				cwCol.ordinal = value;
 			}
