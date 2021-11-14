@@ -27,7 +27,7 @@ if (parseInt(info.version.split('.')[0],10)  >= 61) {
 }
 
 var { XPCOMUtils } = ChromeUtils.import("resource://gre/modules/XPCOMUtils.jsm");
-const { toXPCOMArray } = ChromeUtils.import("resource:///modules/iteratorUtils.jsm"); // for toXPCOMArray
+// const { toXPCOMArray } = ChromeUtils.import("resource:///modules/iteratorUtils.jsm"); // for toXPCOMArray
 
 var miczColumnsWizard_MsgUtils = {
 
@@ -124,7 +124,9 @@ var miczColumnsWizard_MsgUtils = {
 		// miczLogger.log('miczColumnsWizard_MsgUtils.postActions SETTING LABELS');
 		// miczLogger.log('miczColumnsWizard_MsgUtils.postActions miczColumnsWizard_MsgUtils.tags: '+miczColumnsWizard_MsgUtils.tags.join(" "));
 		// Check
-		miczColumnsWizard_MsgUtils.folder.addKeywordsToMessages(toXPCOMArray([hdr], Ci.nsIMutableArray), miczColumnsWizard_MsgUtils.tags.join(" "));
+		// cleidigh Check arrays
+
+		// miczColumnsWizard_MsgUtils.folder.addKeywordsToMessages(toXPCOMArray([hdr], Ci.nsIMutableArray), miczColumnsWizard_MsgUtils.tags.join(" "));
 		// miczLogger.log('miczColumnsWizard_MsgUtils.postActions LABELS SET');
 	},
 

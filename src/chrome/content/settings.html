@@ -12,7 +12,7 @@
   <link rel="stylesheet" href="./css/radio.css" />
 </head>
 
-<body>
+<body style="width: 100%; height: 400px">
 
   <div class="tabs">
     <input type="radio" id="tab1" name="tab-control" tabindex="0" checked>
@@ -33,9 +33,9 @@
           <!-- <div class="ctooltip-tabs" data-tooltip="__MSG_ColumnsWizard.TabNewFolderDefault.label__" ></div> -->
 
           <!-- <div class="tab-img-box">  -->
-          <img src="chrome://columnswizard/content/ico/column-change-gray-64px.png"
+          <img src="resource://cwrl3/chrome/content/ico/column-change-gray-64px.png"
             class="tab-img-png tab-img-png-unchecked" />
-          <img src="chrome://columnswizard/content/ico/column-change-blue-64px.png"
+          <img src="resource://cwrl3/chrome/content/ico/column-change-blue-64px.png"
             class="tab-img-png tab-img-png-checked" />
           <span>__MSG_ColumnsWizard.TabNewFolderDefault.label__</span></label>
         <div class="dt-wrapper">
@@ -48,9 +48,9 @@
       <li title="__MSG_ColumnsWizard.TabCustomCols.label__" tabindex="0" role="button" aria-label="Custom Columns" class="ctooltip-div-hotspot" >
         <div id="t2" class="ctooltip-div" data-tooltip="__MSG_ColumnsWizard.TabCustomCols.label__" >__MSG_ColumnsWizard.TabCustomCols.label__</div>
         <label for="tab2" role="button" aria-label="Custom Columns">
-          <img src="chrome://columnswizard/content/ico/custom-columns-blue-64px.png"
+          <img src="resource://cwrl3/chrome/content/ico/custom-columns-blue-64px.png"
             class="tab-img-png tab-img-png-checked" />
-          <img src="chrome://columnswizard/content/ico/custom-columns-gray-64px.png"
+          <img src="resource://cwrl3/chrome/content/ico/custom-columns-gray-64px.png"
             class="tab-img-png tab-img-png-unchecked" />
 
           <span role="button" aria-label="Custom Columns">__MSG_ColumnsWizard.TabCustomCols.label__</span></label>
@@ -67,9 +67,9 @@
       <li title="__MSG_ColumnsWizard.TabConversation.label__" class="ctooltip-div-hotspot" >
         <div id="t1" class="ctooltip-div" data-tooltip="__MSG_ColumnsWizard.TabCustomCols.label__" >__MSG_ColumnsWizard.TabConversation.label__</div>
         <label for="tab3" role="button">
-          <img src="chrome://columnswizard/content/ico/conversation-tab-blue-64px.png"
+          <img src="resource://cwrl3/chrome/content/ico/conversation-tab-blue-64px.png"
             class="tab-img-png tab-img-png-checked" />
-          <img src="chrome://columnswizard/content/ico/conversation-tab-gray-64px.png"
+          <img src="resource://cwrl3/chrome/content/ico/conversation-tab-gray-64px.png"
             class="tab-img-png tab-img-png-unchecked" />
 
           <span>__MSG_ColumnsWizard.TabConversation.label__</span></label>
@@ -82,9 +82,9 @@
       <li title="__MSG_ColumnsWizard.TabAdvanced.label__" class="ctooltip-div-hotspot" >
         <div id="t1" class="ctooltip-div" >__MSG_ColumnsWizard.TabAdvanced.label__</div>
         <label for="tab4" role="button">
-          <img src="chrome://columnswizard/content/ico/settings-circle-blue-64px.png"
+          <img src="resource://cwrl3/chrome/content/ico/settings-circle-blue-64px.png"
             class="tab-img-png tab-img-png-checked" style="height: 20px; width: 20px;" />
-          <img src="chrome://columnswizard/content/ico/settings-circle-gray-64px.png"
+          <img src="resource://cwrl3/chrome/content/ico/settings-circle-gray-64px.png"
             class="tab-img-png tab-img-png-unchecked" style="height: 20px; width: 20px;" />
           <!--     
         <svg viewBox="0 0 24 24">
@@ -190,12 +190,12 @@
                   <th class="enabled_th" data-tooltip="__MSG_ColumnsWizard.CustColsList.Enabled.tooltip__">
                     <div class="ctooltip" data-tooltip="__MSG_ColumnsWizard.CustColsList.Enabled.tooltip__" ></div>
 
-                    <img src="chrome://columnswizard/content/ico/checked-box-64px.png"   width="22px" height="22px">
+                    <img src="resource://cwrl3/chrome/content/ico/checked-box-64px.png"   width="22px" height="22px">
                       
                     </th>
                   <th class="searchable_th" >
                     <div class="ctooltip" data-tooltip="__MSG_ColumnsWizard.CustColsList.Searchable.tooltip__"></div>
-                    <img src="chrome://columnswizard/content/ico/search-64px.png" title="__MSG_ColumnsWizard.CustColsList.Searchable.tooltip__" width="18px" height="18px">
+                    <img src="resource://cwrl3/chrome/content/ico/search-64px.png" title="__MSG_ColumnsWizard.CustColsList.Searchable.tooltip__" width="18px" height="18px">
                   </th>
                   <th class="header-id" height="20px">__MSG_ColumnsWizard.CustColsList.ID__</th>
                   <th class="mail-header" height="20px">__MSG_ColumnsWizard.CustColsList.mailheader__</th>
@@ -213,7 +213,7 @@
           </div>
 
           <div class="section-content">
-            <button class="button" onclick="miczColumnsWizardPrefPage2.onNewCustomCol(window);">__MSG_ColumnsWizard.newButton.label__</button>
+            <button class="button" onclick="miczColumnsWizardPref2.onNewCustomCol(window);">__MSG_ColumnsWizard.newButton.label__</button>
             <button class="button" onclick="miczColumnsWizardPref2.onEditCustomCol(window);">__MSG_ColumnsWizard.editButton.label__</button>
             <button class="button" onclick="miczColumnsWizardPref2.onDeleteCustomCol(window);">__MSG_ColumnsWizard.deleteButton.label__</button>
           </div>
@@ -281,7 +281,7 @@
             </div>
           </div>
           <div class="tooltip" data-text="ColumnsWizard 7.0.0" style="width: 100%; text-align: end;">
-            <img src="chrome://columnswizard/content/ico/mzcw-icon64-h.png" >
+            <img src="resource://cwrl3/chrome/content/ico/mzcw-icon64-h.png" >
           </div>
         </div>
           <div class="section-group-content-header">__MSG_ColumnsWizard.Info.ReleaseNotes__</div>
@@ -299,14 +299,14 @@
   
 </body>
 
-<!-- <script src="chrome://columnswizard/content/modules/list.controller.js"></script> -->
+<!-- <script src="resource://cwrl3/chrome/content/modules/list.controller.js"></script> -->
 
-<!-- <script src="chrome://columnswizard/content/doc-localize.js"></script> -->
-<script src="chrome://columnswizard/content/modules/list.js"></script>
+<!-- <script src="resource://cwrl3/chrome/content/doc-localize.js"></script> -->
+<script src="resource://cwrl3/chrome/content/modules/list.js"></script>
 <!-- <script src="resource://columnswizard/content/modules/list.js"></script> -->
-<script src="chrome://columnswizard/content/settings.js"></script>
+<script src="resource://cwrl3/chrome/content/settings.js"></script>
 <!-- <script src="resource://columnswizard/content/settings.js"></script> -->
-<!-- <script src="chrome://columnswizard/content/defaultColList.js"></script> -->
+<!-- <script src="resource://cwrl3/chrome/content/defaultColList.js"></script> -->
 
 
 </html>

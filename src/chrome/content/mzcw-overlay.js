@@ -616,21 +616,27 @@ var miczColumnsWizard = {
 	},
 
 	openSettingsTab: function () {
+
 		let url = "chrome://columnswizard/content/settings.html";
+		// let url = "resource://cwrl3/chrome/content/settings.html";
+		
 		// let tabmail = this.getMail3Pane();
 		let tabmail = window.document.getElementById("tabmail");
 		var tabNode = null;
-		tabmail.tabInfo.forEach(tab => {
-			if (tab.browser.contentDocument.URL === url) {
-				tabNode = tab.tabNode;
-			}
-		});
+
+		// tabmail.tabInfo.forEach(tab => {
+		// 	if (tab.browser.contentDocument.URL === url) {
+		// 		tabNode = tab.tabNode;
+		// 	}
+		// });
 	
 		if (tabNode) {
 			tabmail.switchToTab(tabNode);
 		} else {
-			tabmail.openTab("chromeTab", { chromePage: url });
-			
+			// tabmail.openTab("chromeTab", { chromePage: url });
+			// tabmail.openTab("contentTab", { url });
+			// window.openDialog(url);
+			window.openDialog(url, "cw","left=50,top=50,width=1100,height=520");
 		}
 	
 	},

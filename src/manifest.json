@@ -7,7 +7,7 @@
 	"applications": {
 		"gecko": {
 			"id": "columnswizard@micz.it",
-			"strict_max_version": "78.*"
+			"strict_max_version": "92.*"
 		}
 	},
 	"experiment_apis": {

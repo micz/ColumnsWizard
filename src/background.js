@@ -21,11 +21,12 @@ messenger.WindowListener.registerChromeUrl([
 	["locale", "columnswizard", "ja", "chrome/locale/ja/"],
 	["content", "cwrl2", "./_locales/"],
 	["content", "cwrl", "./"],
+	["resource", "cwrl3", "./"],
 	
 ]);
 
 
-// messenger.WindowListener.registerShutdownScript("chrome://columnswizardSee if/content/shutdown.js");
+// messenger.WindowListener.registerShutdownScript("chrome://columnswizard/content/shutdown.js");
 
 messenger.WindowListener.registerOptionsPage("chrome://columnswizard/content/settings-tab-launch.xhtml");
 

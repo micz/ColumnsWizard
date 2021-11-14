@@ -358,18 +358,55 @@ var miczColumnsWizardPref_CustomColsList = {
 		// console.debug(item);
 		
 		if (event.target.classList.contains('toggle-action-enabled')) {
-			// console.debug('Show class');
-			// console.debug(`click: ${event.target.outerHTML}  : ${event.target.checked}`);
+			console.debug('for road event start ');
+			console.debug(row.outerHTML);
+			console.debug(event.target.checked);
+			console.debug(event.target.getAttribute("checked"));
+
+			console.debug('Show class');
+			console.debug(`click: ${event.target.outerHTML}  : ${event.target.checked}`);
 			if (!event.target.checked) {
 				item.values({ "enabled": false });
 				event.target.removeAttribute("checked");
+				console.debug('toggle off');
 			} else {
 				item.values({ "enabled": true }, true);
+				event.target.removeAttribute("checked");
+				event.target.setAttribute("checked", "true");
+				// event.target.toggleAttribute("checked");
+				console.debug('toggle on');
 			}
 			event.stopPropagation();
+			
+			console.debug('after toggle ');
+			console.debug(row.outerHTML);
+			console.debug(event.target.checked);
+			console.debug(event.target.getAttribute("checked"));
+
 			let col = miczColumnsWizardPref_CustomColsList.saveCustomColsList(idx);
-			// console.debug('UpdatingDefaultList');
+			console.debug('UpdatingDefaultList');
 			miczColumnsWizardPref_DefaultColsList.toggleCustomCol(col);
+
+
+			console.debug('fixup checked');
+			let checkedItems = miczColumnsWizardPref_CustomColsList.document.customColsList.querySelectorAll('[checked]');
+			for (const element of checkedItems) {
+				console.debug(element);
+				// if (element.getAttribute("type") !== "checkbox" || element.getAttribute("type") !== "radio") {
+				if (element.id.includes("tab")) {
+					continue;
+				}
+				if (element.getAttribute("checked") !== "true") {
+					element.removeAttribute("checked");
+					console.debug('Remove');
+					console.debug(element.outerHTML);
+				} else {
+					element.checked = true;
+				}
+			}
+			console.debug(row.outerHTML);
+
+
 			return;
 		}
 
