@@ -2,7 +2,6 @@
 <?xml-stylesheet href="chrome://global/skin/global.css" type="text/css"?>
 <!DOCTYPE dialog SYSTEM "chrome://columnswizard/locale/mzcw-settings-customcolseditor.dtd">
 <?xml-stylesheet href="mzcw-settings-customcolseditor.css" type="text/css"?>
-
 <dialog id="CWCustomColEditor"
   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
   xmlns="http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul"
@@ -12,131 +11,142 @@
   windowtype="mailnews:cwcustomcoleditor"
   persist="screenX screenY"
   buttons="accept,cancel">
-  
-  <!-- ondialogaccept="return miczColumnsWizardPref_CustColEditor.onAccept();"> -->
-
-<stringbundleset id="stringbundleset">
-  <stringbundle id="ColumnsWizard-string-bundle" src="chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties" />
-</stringbundleset>
-
-  <script type="application/javascript" src="chrome://columnswizard/content/mzcw-settings-customcolseditor.js"/>
-  <script type="application/javascript" src="chrome://columnswizard/content/mzcw-customcolumns.js" />
-<tabbox id="cw_tabbox">
-  <tabs>
-	<tab label="&ColumnsWizard.CustColEditorTab.General.label;"/>
-	<tab label="&ColumnsWizard.CustColEditorTab.Editing.label;"/>
-  </tabs>
-  <tabpanels>
-	<tabpanel id="custcolseditor_general" orient="vertical">
-<!-- General -->
-  <vbox id="cw_vbox" flex="1">
-    <groupbox>
-      <caption id="cw_desc.label" label="&ColumnsWizard.Desc.label;"/>
-      <separator class="thin"/>
-      <grid>
-        <columns>
-          <column/>
-          <column/>
-        </columns>
-        <rows class="general">
-          <row>
-			<label value="&ColumnsWizard.id.label;"/>
-			<vbox>
-				<html:input id="ColumnsWizard.id" type="text" size="20" onblur="miczColumnsWizardPref_CustColEditor.onBlur_sanitize_ID();"/>
-				<description class="cw_field_label">&ColumnsWizard.id.desc;</description>
-			</vbox>
-          </row>
-          <row>
-			<label value="&ColumnsWizard.dbHeader.label;"/>
-			<vbox>
-				<html:input id="ColumnsWizard.dbHeader" onblur="miczColumnsWizardPref_CustColEditor.onBlur_sanitize_dbHeader();"/>
-				<description class="cw_field_label">&ColumnsWizard.dbHeader.desc;</description>
-			</vbox>
-          </row>
-			<row>
-			<label value="&ColumnsWizard.labelString.label;"/>
-			<vbox>
-				<html:input id="ColumnsWizard.labelString" flex="1" style="min-height: 18.5px;"/>
-				<hbox><button class="cw_btn" id="ColumnsWizard.setIcon_btn" oncommand="miczColumnsWizardPref_CustColEditor.chooseIcon();" label="&ColumnsWizard.btn.setIcon_label;..." tooltiptext="&ColumnsWizard.btn.setIcon_tooltip;"/> <button id="ColumnsWizard.removeIcon_btn" label="&ColumnsWizard.btn.removeIcon_label;" tooltiptext="&ColumnsWizard.btn.setIcon_tooltip;" disabled="true" oncommand="miczColumnsWizardPref_CustColEditor.removeIconUI();"/></hbox>
-				<html:input id="ColumnsWizard.iconString" hidden="true" readonly="true"/>
-				<description class="cw_field_label">&ColumnsWizard.labelString.desc;</description>
-			</vbox>
-          </row>
-          <row>
-			<label value="&ColumnsWizard.tooltipString.label;"/>
-			<vbox>
-				<html:input id="ColumnsWizard.tooltipString"/>
-				<description class="cw_field_label">&ColumnsWizard.tooltipString.desc;</description>
-			</vbox>
-          </row>
-          <row>
-			<label value="&ColumnsWizard.sortnumber.label;"/>
-			<vbox>
-				<checkbox id="ColumnsWizard.sortnumber" label="&ColumnsWizard.sortnumber.desc;"/>
-				<description class="cw_field_label">&ColumnsWizard.sortnumber.desc_limit;</description>
-			</vbox>
-          </row>
-          <row>
-			<label value="&ColumnsWizard.searchable.label;"/>
-			<vbox>
-				<checkbox id="ColumnsWizard.searchable" label="&ColumnsWizard.searchable.desc;" checked="true"/>
-			</vbox>
-          </row>
-          <row>
-          <label value="&ColumnsWizard.editable.label;"/>
-			<vbox>
-				<checkbox id="ColumnsWizard.mod2" label="&ColumnsWizard.mod.desc;" oncommand="miczColumnsWizardPref_CustColEditor.clickColumnsWizard_mod2();"/>
-			</vbox>
-          </row>
-          <row>
-			<label value="&ColumnsWizard.enabled.label;"/>
-			<vbox>
-				<checkbox id="ColumnsWizard.enabled" label="&ColumnsWizard.enabled.desc;" checked="true"/>
-			</vbox>
-          </row>
-        </rows>
-      </grid>
-    </groupbox>
-  </vbox>
-</tabpanel>
-	<tabpanel id="custcolseditor_advanced" orient="vertical">
-	<!-- Editing -->
-		<grid>
-        <columns>
-          <column/>
-        </columns>
-        <rows>
-			<row>
-				<hbox>
-					<label value="&ColumnsWizard.dbHeader.label;: "/>
-					<label value="" id="cw_adv_msg_header"/>
-				</hbox>
-			</row>
-          <row>
-			<hbox>
-				<checkbox id="ColumnsWizard.mod" label="&ColumnsWizard.mod.desc;" oncommand="miczColumnsWizardPref_CustColEditor.clickColumnsWizard_mod();"/>
-			</hbox>
-          </row>
-          <row>
-			<groupbox>
-			<caption label="&ColumnsWizard.mod_type.label;"/>
-				<label value="&ColumnsWizard.mod_type.desc;" id="ColumnsWizard.mod_type.desc"/>
-				<radiogroup class="mod_type_radiogroup" id="ColumnsWizard.mod_type_group" oncommand="miczColumnsWizardPref_CustColEditor.enableHeaderFixedList();">
-				  <radio value="tx" id="ColumnsWizard.mod_type_freetext" label="&ColumnsWizard.mod_type_freetext.label;"/>
-				  <radio value="nb" id="ColumnsWizard.mod_type_number" label="&ColumnsWizard.mod_type_number.label;"/>
-				  <radio value="fl" id="ColumnsWizard.mod_type_fixedlist" label="&ColumnsWizard.mod_type_fixedlist.label;"/>
-				</radiogroup>
-				<vbox class="cw_modtype_fixedlist_textbox">
-				<!-- <textbox id="ColumnsWizard.mod_type_fixedlist.list" value="" multiline="true" rows="5" disabled="true" onblur="miczColumnsWizardPref_CustColEditor.sanitizeFixedListInput();"/> -->
-				<html:textarea id="ColumnsWizard.mod_type_fixedlist.list" value=""  rows="5" disabled="true" onblur="miczColumnsWizardPref_CustColEditor.sanitizeFixedListInput();"/>
-				<label value="&ColumnsWizard.mod_type_fixedlist.list.desc;" id="ColumnsWizard.mod_type_fixedlist.list.desc"/>
-				</vbox>
-			</groupbox>
-          </row>
-        </rows>
-      </grid>
-<!-- Advanced -->
-</tabpanel>
-</tabpanels>
-</tabbox>
- </dialog>
+	<!-- ondialogaccept="return miczColumnsWizardPref_CustColEditor.onAccept();"> -->
+	<stringbundleset id="stringbundleset">
+		<stringbundle id="ColumnsWizard-string-bundle" src="chrome://columnswizard/locale/mzcw-settings-customcolseditor.properties" />
+	</stringbundleset>
+	<script type="application/javascript" src="chrome://columnswizard/content/mzcw-settings-customcolseditor.js"/>
+	<script type="application/javascript" src="chrome://columnswizard/content/mzcw-customcolumns.js" />
+	<tabbox id="cw_tabbox">
+		<tabs>
+			<tab label="&ColumnsWizard.CustColEditorTab.General.label;"/>
+			<tab label="&ColumnsWizard.CustColEditorTab.Editing.label;"/>
+		</tabs>
+		<tabpanels>
+			<tabpanel id="custcolseditor_general" orient="vertical">
+				<!-- General -->
+				<vbox id="cw_vbox" flex="1">
+					<groupbox>
+						<caption id="cw_desc.label" label="&ColumnsWizard.Desc.label;"/>
+						<separator class="thin"/>
+						<html:table>
+							<html:tr>
+								<html:td>
+									<label value="&ColumnsWizard.id.label;"/>
+									<vbox>
+										<html:input id="ColumnsWizard.id" type="text" size="20" onblur="miczColumnsWizardPref_CustColEditor.onBlur_sanitize_ID();"/>
+										<description class="cw_field_label">&ColumnsWizard.id.desc;</description>
+									</vbox>
+								</html:td>
+							</html:tr>
+							<html:tr>
+								<html:td>
+									<label value="&ColumnsWizard.dbHeader.label;"/>
+									<vbox>
+										<html:input id="ColumnsWizard.dbHeader" onblur="miczColumnsWizardPref_CustColEditor.onBlur_sanitize_dbHeader();"/>
+										<description class="cw_field_label">&ColumnsWizard.dbHeader.desc;</description>
+									</vbox>
+								</html:td>
+							</html:tr>
+							<html:tr>
+								<html:td>
+									<label value="&ColumnsWizard.labelString.label;"/>
+									<vbox>
+										<html:input id="ColumnsWizard.labelString" flex="1" style="min-height: 18.5px;"/>
+										<hbox>
+											<button class="cw_btn" id="ColumnsWizard.setIcon_btn" oncommand="miczColumnsWizardPref_CustColEditor.chooseIcon();" label="&ColumnsWizard.btn.setIcon_label;..." tooltiptext="&ColumnsWizard.btn.setIcon_tooltip;"/>
+											<button id="ColumnsWizard.removeIcon_btn" label="&ColumnsWizard.btn.removeIcon_label;" tooltiptext="&ColumnsWizard.btn.setIcon_tooltip;" disabled="html:true" oncommand="miczColumnsWizardPref_CustColEditor.removeIconUI();"/>
+										</hbox>
+										<html:input id="ColumnsWizard.iconString" hidden="html:true" readonly="html:true"/>
+										<description class="cw_field_label">&ColumnsWizard.labelString.desc;</description>
+									</vbox>
+								</html:td>
+								</html:tr>
+								<html:tr>
+									<html:td>
+										<label value="&ColumnsWizard.tooltipString.label;"/>
+										<vbox>
+											<html:input id="ColumnsWizard.tooltipString"/>
+											<description class="cw_field_label">&ColumnsWizard.tooltipString.desc;</description>
+										</vbox>
+									</html:td>
+								</html:tr>
+								<html:tr>
+									<html:td>
+										<label value="&ColumnsWizard.sortnumber.label;"/>
+										<vbox>
+											<checkbox id="ColumnsWizard.sortnumber" label="&ColumnsWizard.sortnumber.desc;"/>
+											<description class="cw_field_label">&ColumnsWizard.sortnumber.desc_limit;</description>
+										</vbox>
+									</html:td>
+								</html:tr>
+								<html:tr>
+									<html:td>
+										<label value="&ColumnsWizard.searchable.label;"/>
+										<vbox>
+											<checkbox id="ColumnsWizard.searchable" label="&ColumnsWizard.searchable.desc;" checked="html:true"/>
+										</vbox>
+									</html:td>
+								</html:tr>
+								<html:tr>
+									<html:td>
+										<label value="&ColumnsWizard.editable.label;"/>
+										<vbox>
+											<checkbox id="ColumnsWizard.mod2" label="&ColumnsWizard.mod.desc;" oncommand="miczColumnsWizardPref_CustColEditor.clickColumnsWizard_mod2();"/>
+										</vbox>
+									</html:td>
+								</html:tr>
+								<html:tr>
+									<html:td>
+										<label value="&ColumnsWizard.enabled.label;"/>
+										<vbox>
+											<checkbox id="ColumnsWizard.enabled" label="&ColumnsWizard.enabled.desc;" checked="html:true"/>
+										</vbox>
+									</html:td>
+								</html:tr>
+							</html:table>
+						</groupbox>
+					</vbox>
+				</tabpanel>
+				<tabpanel id="custcolseditor_advanced" orient="vertical">
+					<!-- Editing -->
+					<html:table>
+						<html:tr>
+							<html:td>
+								<hbox>
+									<label value="&ColumnsWizard.dbHeader.label;: "/>
+									<label value="" id="cw_adv_msg_header"/>
+								</hbox>
+							</html:td>
+						</html:tr>
+						<html:tr>
+							<html:td>
+								<hbox>
+									<checkbox id="ColumnsWizard.mod" label="&ColumnsWizard.mod.desc;" oncommand="miczColumnsWizardPref_CustColEditor.clickColumnsWizard_mod();"/>
+								</hbox>
+							</html:td>
+						</html:tr>
+						<html:tr>
+							<html:td>
+								<groupbox>
+									<caption label="&ColumnsWizard.mod_type.label;"/>
+									<label value="&ColumnsWizard.mod_type.desc;" id="ColumnsWizard.mod_type.desc"/>
+									<radiogroup class="mod_type_radiogroup" id="ColumnsWizard.mod_type_group" oncommand="miczColumnsWizardPref_CustColEditor.enableHeaderFixedList();">
+										<radio value="tx" id="ColumnsWizard.mod_type_freetext" label="&ColumnsWizard.mod_type_freetext.label;"/>
+										<radio value="nb" id="ColumnsWizard.mod_type_number" label="&ColumnsWizard.mod_type_number.label;"/>
+										<radio value="fl" id="ColumnsWizard.mod_type_fixedlist" label="&ColumnsWizard.mod_type_fixedlist.label;"/>
+									</radiogroup>
+									<vbox class="cw_modtype_fixedlist_textbox">
+										<!-- <textbox id="ColumnsWizard.mod_type_fixedlist.list" value="" multiline="html:true" html:tds="5" disabled="html:true" onblur="miczColumnsWizardPref_CustColEditor.sanitizeFixedListInput();"/> -->
+										<html:textarea id="ColumnsWizard.mod_type_fixedlist.list" value=""  html:tds="5" disabled="html:true" onblur="miczColumnsWizardPref_CustColEditor.sanitizeFixedListInput();"/>
+										<label value="&ColumnsWizard.mod_type_fixedlist.list.desc;" id="ColumnsWizard.mod_type_fixedlist.list.desc"/>
+									</vbox>
+								</groupbox>
+							</html:td>
+						</html:tr>
+					</html:table>
+					<!-- Advanced -->
+				</tabpanel>
+			</tabpanels>
+		</tabbox>
+	</dialog>

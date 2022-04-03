@@ -52,10 +52,6 @@ function onLoad() {
 
 	WL.injectElements(`
 <toolbarpalette id="MailToolbarPalette">
-  <toolbarbutton id="mzcw-button"/>
-  </toolbarpalette>
-
-<toolbarpalette id="MailToolbarPalette">
 	<toolbarbutton id="mzcw-button"
 	  label="&ColumnsWizard.button.label;"
 	  tooltiptext="&ColumnsWizard.button.tooltip;"

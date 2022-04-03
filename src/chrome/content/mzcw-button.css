@@ -1,2 +1,2 @@
 #mzcw-button,#mail-toolbox > toolbar[brighttext] #mzcw-button.toolbarbutton-1{list-style-image:url("chrome://columnswizard/content/ico/mzcw-icon24.png");}
-toolbar[iconsize="small"] #mzcw-button,#mail-toolbox > toolbar[brighttext][iconsize="small"] #mzcw-button.toolbarbutton-1{list-style-image:url("chrome://columnswizard/content/ico/mzcw-icon16.png") !important;}
+toolbar[iconsize="small"] #mzcw-button,#mail-toolbox > toolbar[brighttext][iconsize="small"] #mzcw-button.toolbarbutton-1{list-style-image:url("//columnswizard/content/ico/mzcw-icon16.png") !important;}

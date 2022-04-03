@@ -382,6 +382,9 @@ var miczColumnsWizard = {
 		resetMenuCW.setAttribute("oncommand", "miczColumnsWizard.addCWResetMenu_OnClick()");
 		aPopup.insertBefore(resetMenuCW, insertPoint);
 
+		
+		console.debug(aPopup.outerHTML);
+
 		// console.debug('adding menus');
 		// console.debug(tc.outerHTML);
 		this.originalRestoreCols = insertPoint;
@@ -636,7 +639,7 @@ var miczColumnsWizard = {
 			// tabmail.openTab("chromeTab", { chromePage: url });
 			// tabmail.openTab("contentTab", { url });
 			// window.openDialog(url);
-			window.openDialog(url, "cw","left=50,top=50,width=1100,height=520");
+			window.openDialog(url, "cw","left=50,top=50,width=1160,height=560");
 		}
 	
 	},
