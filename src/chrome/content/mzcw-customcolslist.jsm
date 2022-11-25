@@ -347,7 +347,7 @@ var miczColumnsWizardPref_CustomColsList = {
 
 	onRowClick: function (event, offset) {
 		// console.debug(event);
-		// console.debug('Target ' + event.target.outerHTML);
+		console.debug('Target ' + event.target.outerHTML);
 		// console.debug(event.target.outerHTML);
 		var selector = 'tr';
 		var row = event.target.closest(selector);
@@ -365,9 +365,10 @@ var miczColumnsWizardPref_CustomColsList = {
 
 			console.debug('Show class');
 			console.debug(`click: ${event.target.outerHTML}  : ${event.target.checked}`);
-			if (!event.target.checked) {
+			if (event.target.getAttribute("checked") == "true") {
 				item.values({ "enabled": false });
 				event.target.removeAttribute("checked");
+				event.target.classList.remove("enabled")
 				console.debug('toggle off');
 			} else {
 				item.values({ "enabled": true }, true);
@@ -389,7 +390,8 @@ var miczColumnsWizardPref_CustomColsList = {
 
 
 			console.debug('fixup checked');
-			let checkedItems = miczColumnsWizardPref_CustomColsList.document.customColsList.querySelectorAll('[checked]');
+			var customColsList = miczColumnsWizardPref_CustomColsList.document.getElementById('customColsTable');
+			let checkedItems = customColsList.querySelectorAll('[checked]');
 			for (const element of checkedItems) {
 				console.debug(element);
 				// if (element.getAttribute("type") !== "checkbox" || element.getAttribute("type") !== "radio") {

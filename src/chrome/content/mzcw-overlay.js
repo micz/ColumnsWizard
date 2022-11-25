@@ -383,7 +383,7 @@ var miczColumnsWizard = {
 		aPopup.insertBefore(resetMenuCW, insertPoint);
 
 		
-		console.debug(aPopup.outerHTML);
+		//console.debug(aPopup.outerHTML);
 
 		// console.debug('adding menus');
 		// console.debug(tc.outerHTML);

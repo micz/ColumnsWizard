@@ -34,10 +34,6 @@ messenger.WindowListener.registerOptionsPage("chrome://columnswizard/content/set
 
 
 messenger.WindowListener.registerWindow(
-	"chrome://messenger/content/messenger.xul",
-	"chrome://columnswizard/content/messengerOL.js");
-
-messenger.WindowListener.registerWindow(
 	"chrome://messenger/content/messenger.xhtml",
 	"chrome://columnswizard/content/messengerOL.js");
 	
